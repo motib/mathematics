@@ -1,0 +1,700 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+
+\textwidth=15.5cm
+\textheight=23cm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=2em
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+
+\begin{document}
+\thispagestyle{empty}
+
+\selectlanguage{hebrew}
+
+\begin{center}
+\textbf{\Huge הבעיה של
+\L{Langford}}
+
+\bigskip
+\bigskip
+
+\textbf{\Large מוטי בן-ארי}
+
+\bigskip
+
+\textbf{\Large המחלקה להוראת המדעים}
+
+\bigskip
+
+\textbf{\Large מכון ויצמן למדע}
+
+\bigskip
+
+\url{http://www.weizmann.ac.il/sci-tea/benari/}
+
+\bigskip
+
+\end{center}
+
+\selectlanguage{english}
+
+\begin{center}
+\copyright{}\  2017 by Moti Ben-Ari.
+\end{center}
+
+\begin{footnotesize}
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+\end{footnotesize}
+
+\bigskip
+
+\begin{center}
+\includegraphics[width=.2\textwidth]{../../by-sa.png}
+\end{center}
+
+\bigskip
+
+\selectlanguage{hebrew}
+\newpage
+
+\begin{center}
+\textbf{\Large הגדרת הבעיה של
+\L{Langford}
+}
+\end{center}
+
+המתמטיקאי הסקוטי
+\L{C. Dudley Langford}
+שם לב שבנו סידר קוביות צבעוניות לפי הסדר:
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{../blocks.png}
+\end{center}
+%\begin{center}
+%\fbox{\rule[-5pt]{0pt}{16pt}\R{כחול}\ }
+%\fbox{\rule[-5pt]{0pt}{16pt}\R{ירוק}\ }
+%\fbox{\rule[-5pt]{0pt}{16pt}\ \R{אדום}}
+%\fbox{\rule[-5pt]{0pt}{16pt}\R{כחול}\ }
+%\fbox{\rule[-5pt]{0pt}{16pt}\ \R{אדום}}
+%\fbox{\rule[-5pt]{0pt}{16pt}\R{ירוק}\ }
+%\end{center}
+קוביה אחת נמצאת בין שתי הקוביות האדומות, שתי קוביות בין הקוביות הכחולות, ושלוש קוביות בין הקוביות הירוקות. ניתן לנסח את הבעיה כך:
+
+\begin{quote}
+נתון שק של מספרים
+$\{1,1,2,2,3,3\}$,
+האם אפשר לסדר אותם בסדרה כך שלכל
+$1\leq i \leq 3$,
+$i$
+מספרים נמצאים בין שני המופעים של
+$i$?\footnote{
+שק הוא כמו קבוצה רק שאיבר יכול להופיע מספר פעמים.}
+\end{quote}
+מהסידור של הקוביות הצבעונית, אנו מקבלים את הפתרון
+$312132$.
+
+הבעיה הכללית היא:
+\begin{quote}
+\textbf{
+הבעיה של
+\L{Langford} $L(n)$}:
+נתון שק של מספרים
+$\{1,1,2,2,3,3,\ldots,n,n\}$,
+האם ניתן לרשום אותם בסדרה כך שלכל
+$1\leq i \leq n$, $i$
+מספרים נמצאים בין שני המופעים של
+$i$?
+\end{quote}
+
+\bigskip
+
+\begin{center}
+\textbf{\Large
+הבעיה של
+\L{Langford}
+כבעיית כיסוי}
+\end{center}
+
+ניתן להציג את הבעיה של
+\L{Langford}
+באמצעות מערך. עבור
+$L(3)$,
+יש
+$6$
+עמודות, אחת לכל 
+$2\cdot 3$
+המספרים. השורות מוגדרות לפי הגדרת הבעיה: בין שני המופעים של 
+$k$
+קיימים
+$k$
+מספרים. קל לראות שיש ארבעה מקומות אפשריים עבור
+$1$,
+שלושה עבור
+$2$
+ושניים עבור
+$3$:
+
+\selectlanguage{english}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+&1&2&3&4&5&6\\\hline\hline
+1&1&&1&&&\\\hline
+2&&1&&1&&\\\hline
+3&&&1&&1&\\\hline
+4&&&&1&&1\\\hline
+5&2&&&2&&\\\hline
+6&&2&&&2&\\\hline
+7&&&2&&&2\\\hline
+8&3&&&&3&\\\hline
+9&&3&&&&3\\\hline
+\end{tabular}
+\end{center}
+\selectlanguage{hebrew}
+
+כדי לפתור את הבעיה, עלינו לבחור שורה
+\textbf{אחת}
+עבור המופעים של
+$1$
+בסדרה, שורה
+\textbf{אחת}
+עבור המופעים של
+$2$
+ושורה
+\textbf{אחת}
+עבור המופעים של
+$3$,
+כך שאם הנמקם את השורות אחת מעל לשניה, בכל עמודה יש רק מספר אחד:
+
+\selectlanguage{english}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+&1&2&3&4&5&6\\\hline\hline
+2&&1&&1&&\\\hline
+7&&&2&&&2\\\hline
+8&3&&&&3&\\\hline
+\end{tabular}
+\end{center}
+\selectlanguage{hebrew}
+
+תחילה, נשים לב ששורה
+$9$
+אינה נחוצה בגלל סימטריה: סדרה המתחילה עם השורה
+$9$
+זהה לסדרה מתקבלת מהפיכת הסדר של סדרה המתקבלת כאשר מתחילים עם שורה
+$8$.
+
+שורה 
+$8$
+היא היחידה המכילה את המספר
+$3$
+כך שחובה לבחור אותה, והסדרה המתקבלת היא
+\L{3\textvisiblespace \textvisiblespace \textvisiblespace 3\textvisiblespace}. 
+אי אפשר להשתמש בכל שורה שיש לה מספרים בעמודות
+$1$
+ו-
+$5$,
+כי מותר רק מספר אחד בכל מקום בסדרה. נסמן את השורות שניתן לבחור ושלא ניתן לבחור כך:
+$\not 1,2,\not 3,4,\not 5, \not 6, 7, 8$.
+
+שורה
+$7$
+היא השורה היחידה שנשארת עבור המספר
+$2$
+כך שחובה לבחור בה והתוצאה היא
+\L{3\textvisiblespace 2\textvisiblespace 3{}2}.
+אם נמחק את השורות שלא ניתן לבחור אותן נקבל:
+$\not 1,2,\not 3,\not 4,\not 5, \not 6, 7, 8$.
+
+כעת, ניתן לבחור רק שורה
+$2$
+ומתקבל הפתרון
+$3{}1{}2{}1{}3{}2$.
+למעשה הוכחנו שזה הפתרון היחיד.
+
+\bigskip
+
+\begin{center}
+\textbf{\Large 
+הבעיה של
+\L{Langford}
+$L(4)$
+}
+\end{center}
+
+הנה המערך עבור
+$L(4)$:
+\selectlanguage{english}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+\hline
+&1&2&3&4&5&6&7&8\\\hline\hline
+1&1&&1&&&&&\\\hline
+2&&1&&1&&&&\\\hline
+3&&&1&&1&&&\\\hline
+4&&&&1&&1&&\\\hline
+5&&&&&1&&1&\\\hline
+6&&&&&&1&&1\\\hline
+7&2&&&2&&&&\\\hline
+8&&2&&&2&&&\\\hline
+9&&&2&&&2&&\\\hline
+10&&&&2&&&2&\\\hline
+11&&&&&2&&&2\\\hline
+12&3&&&&3&&&\\\hline
+13&&3&&&&3&&\\\hline
+14&&&3&&&&3&\\\hline
+15&&&&3&&&&3\\\hline
+16&4&&&&&4&&\\\hline
+17&&4&&&&&4&\\\hline
+18&&&4&&&&&4\\\hline
+\end{tabular}
+\end{center}
+\selectlanguage{hebrew}
+
+הקורא מוזמן להוכיח שהפרתון היחיד הוא
+$41312432$.
+
+\newpage
+
+\begin{center}
+\textbf{\Large
+עבור איזה ערכים של
+$n$
+ניתן לפתור את הבעיה של
+\L{Langford}?}
+\end{center}
+
+\textbf{משפט}
+ניתן לפתור את
+$L(n)$
+אם ורק אם
+$n=4k$
+או
+$n=4k-1$.
+
+נביא שתי הוכחות מבוססות על
+\L{Miller (2014)}
+שאם יש פתרון אזי $n=4k$
+או
+$n=4k-1$.
+ניתן למצוא את ההוכחה של הטענה ההפוכה ב-
+\L{Davies (1959)}.
+
+\bigskip
+
+\textbf{הוכחה
+\L{1}}
+
+
+
+אם המופע הראשון של המספר
+$k$
+נמצא במקום
+$i_k$,
+המופע השני נמצא במקום
+$i_k+k+1$.
+לכן, סכום המקומות של כל המספרים הוא:
+\[
+S_n=\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(i_k+k+1)\,.
+\]
+אבל
+$S_n$,
+סכום כל המקומות, הוא פשוט
+$1+2+3+\cdots+2n$
+ו:
+\[
+S_n=\sum_{k=1}^{2n}k = \frac{2n(2n+1)}{2}\,,
+\]
+לפי הנוסחה לסכום של סדרה חשבונית. נפשט:
+\[
+S_n=\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(i_k+k+1) = 2\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(k+1) = 2\sum_{k=1}^{n}i_k+\frac{n(n+3)}{2}\,,
+\]
+נשווה את שני הביטויים עבור
+$S_n$:
+\[
+2\sum_{k=1}^{n}i_k+\frac{n(n+3)}{2} = \frac{2n(2n+1)}{2}\,,
+\]
+ונקבל:
+\[
+\sum_{k=1}^{n}i_k = \frac{1}{2}\left(\frac{2n(2n+1)}{2} - \frac{n(n+3)}{2}\right) = \frac{3n^2-n}{4}\,.
+\]
+הצד השמאלי חייב להיות מספר שלם כי הוא סכום של מספרים שלמים )המקומות בסדרה(. לכן, הצד הימני חייב גם הוא להיות מספר שלם. מתי 
+$3n^3-n$
+מתחלק ב-%
+$4$?
+נפרק לגורמים ונקבל
+$3n^2-n=n(3n-1)$,
+כך שאם 
+$n$
+מתחלק ב-%
+$4$,
+המכפלה גם היא מתחלקת ב-%
+$4$.
+
+מתי 
+$3n-1$
+מתחלק ב-%
+$4$?
+ניתן להציג כל מספר
+$n$
+כ-%
+$n=4i+j$
+עבור
+$j=0,1,2,3$.
+אם 
+$3n-1$
+מתחלק ב-%
+$4$,
+גם
+$3(4i+j)-1 = 12i+3j-1$
+מתחלק ב-%
+$4$.
+ברור ש-%
+$12i$
+מתחלק ב-%
+$4$,
+וקל לראות ש-%
+$3j-1$
+מתחלק ב-%
+$4$
+)עבור 
+$j=0,1,2,3$%
+( רק אם
+$j=3$, 
+כלומר,
+$n=4i+3=4(i+1)-1$.
+
+
+
+\newpage
+
+\textbf{הוכחה
+\L{2}}
+
+
+נעיין בפתרון עבור
+$n=4$:
+
+\selectlanguage{english}
+\begin{center}
+\begin{tabular}{cccccccc}
+1&2&3&4&5&6&7&8\\
+4&1&3&1&2&4&3&2
+\end{tabular}
+\end{center}
+\selectlanguage{hebrew}
+
+המקומות של המופעים של
+$4$
+הם
+$1$
+ו-
+$6$,
+והמקומות של המופעים של
+$2$
+הם
+$5$
+ו-
+$8$.
+מקום אחד זוגי והשני אי-זוגי. במקרה הכללי, אם
+$i$
+הוא המקום של המופע הראשון של מספר
+\textbf{זוגי}
+$k$,
+אזי המקום של המופע השני הוא
+$i+k+1$.
+בגלל ש-
+$k$
+זוגי,
+$k+1$
+אי-זוגי. חיבור של אי-זוגי ואי-זוגי נותן זוגי, וחיבור של זוגי ואי-זוגי נותן אי-זוגי. לכן, אחד מ-
+$i$, $i+k+1$
+יהיה זוגי והשני אי-זוגי.
+
+
+המקומות של המופעים של
+$1$
+הם
+$2$
+ו-
+$4$,
+והמקומות של המופעים של
+$3$
+הם
+$3$
+ו-
+$7$.
+במקרה הכללי, אם
+$k$
+הוא מספר
+\textbf{אי-זוגי},
+$k+1$
+הוא מספר זוגי, כך שאם
+$i$
+זוגי, גם
+$i+k+1$
+הוא זוגי, ואם
+$i$
+אי-זוגי, גם
+$i+k+1$
+הוא אי-זוגי.
+
+ברור שרשימת המקומות של המספרים בסדרה,
+$1,2,\ldots,2n-1,2n$,
+מכילה מספר שווה של מקומות זוגיים ומקומות אי-זוגיים. כאשר מציבים את שני המופעים של מספר בסדרה, הם "תופסים" שני מקומות. כאשר מסיימים להציב את כל המספרים בפתרון, חייבים להיות מספר שווה של מקומות זוגיים ואי-זוגיים ש-"תפסו" אותם. נשתמש במונח
+\textbf{זוגיות}
+עבור ההפרש בין מספר המקומות הזוגיים שנתפסו לבין מספר המקומות האי-זוגיים שנתפסו. תחילה, הזוגיות הוא אפס, ואם יש פתרון, לסדרה השלמה יש גם זוגיות אפס.
+
+כאשר ממקמים את שני המופעים של מספר זוגי, הם תופסים מקום אחד זוגי ומקום אחר אי-זוגי, כך שאין שינוי בזוגיות. כאשר ממקמים את שני המופעים של מספר אי-זוגי, הזוגיות משתנה ב-
+$+2$
+או
+$-2$,
+כך שחייב להיות שני מופעים של מספר אי-זוגי
+\textbf{אחר}
+המקזז את השינוי בזוגיות שגרם המופע הראשון. כלומר,
+\textbf{חייב להיות מספר זוגי של מספרים אי-זוגיים ב}-%
+$\{1,\ldots,n\}$.
+
+המשפט טוען שאם יש פתרון אזי
+$n=4k$
+או
+$n=4k-1$,
+ואם אין פתרון אזי
+$n=4k-2$
+או
+$4k-3$.
+נוכיח באינדוקציה. עבור טענת הבסיס,
+$k=1$,
+ברור שלקבוצות
+$\{1\}$
+ו-
+$\{1,2\}$
+אין פתרון, ובנוסף, יש מספר אי-זוגי של מספרים אי-זוגיים. לקבוצות
+$\{1,2,3\}$
+ו-
+$\{1,2,3,4\}$
+הראינו שיש להן פתרונות, ובנוסף, יש מספר זוגי של מספרים אי-זוגיים.
+
+הטענה האינדוקטיבית היא שיש פתרונות עבור 
+$\{1,\ldots,4k-j\}$, $k\ge 1$, $j=0,1$
+)ויש להן מספר זוגי של מספרים אי-זוגיים(, ואין פתרונות עבור
+$j=2,3$
+)ויש להן מספר אי-זוגי של מספרים אי-זוגיים(. בגלל ש-
+$4k+1$
+אי-זוגי, אם נוסיף אותו לקבוצה, נקבל מספר אי-זוגי של מספרים אי-זוגיים כך אין פתרון. באופן דומה, אם נוסיף
+$4k+1,4k+2$,
+לא יהיה פתרון כי 
+$4k+1$
+אי-זוגי ו-
+$4k+2$
+זוגי. אם נוסיף
+$4k+1,4k+2,4k+3$
+או
+$4k+1,4k+2,4k+3,4k+4$,
+נוסיף שני מספרים אי-זוגיים, כך שנישאר עם מספר זוגי של מספרים אי-זוגיים ויכול להיות פתרון. הוכחנו שהטענה נכונה עבור
+$4(k+1)-j$,
+ולפי אינדוקציה היא נכונה עבור כל
+$n\ge 1$.
+
+\newpage
+
+\selectlanguage{hebrew}
+
+\begin{center}
+\L{\textbf{\Large SAT solving}}
+\end{center}
+
+בתחשיב הפסוקים, השמה של "אמת" ו-"שקר" לפסוקים האטומיים של נוסחה
+$A$
+מספקת את
+$A$
+)$A$ \L{satisfies}(
+אם מתקבל "אמת" מחישוב הערך של
+$A$.
+\L{SAT solver}
+היא תכנה הבודקת אם נוסחה בצורת
+\L{CNF}
+היא
+\L{satisifable}
+או
+\L{unsatisfiable}.
+)למבוא על
+\L{SAT solving}
+ראו
+\L{Ben-Ari (2012)}
+פרק 6.(
+\L{Knuth (2015)}
+מראה איך ניתן למצוא פתרונות לבעיית
+\L{Langford}
+באמצעות
+\L{SAT solver},
+על ידי קידוד המערך כנוסחת
+\L{CNF}.
+
+נגדיר שהמשתנה
+$x_i$
+הוא "אמת" אם בוחרים בשורה
+$i$.
+עבור
+$L(3)$,
+הפסקאות שלהלן מקדדות שניתן לבחור רק אחד מהשורת 
+$1$--$4$
+המכילות את המספר
+$1$:
+
+\selectlanguage{english}
+\begin{ttfamily}
+  [x1,x2,x3,x4],\par
+  [\verb+~+x1,\verb+~+x2], [\verb+~+x1,\verb+~+x3], [\verb+~+x1,\verb+~+x4], [\verb+~+x2,\verb+~+x3], [\verb+~+x2,\verb+~+x4], [\verb+~+x3,\verb+~+x4]
+\end{ttfamily}
+\selectlanguage{hebrew}
+
+הפסקה הראשונה מקדדת את העובדה שיש לבחור לפחות אחת מהשורות. הפסקה הבאה מקדדת שאם בוחרים שורה
+$1$,
+$x_1=T$,
+לא ניתן לבחור בשורה
+$2$,
+$x_2=F$.
+וכנ"ל עבור שאר הזוגות של השורות. פסקאות נוספות מקדדות שניתן לבחור בדיוק אחת מהשורות
+$5,6,7$,
+וכן חובה לבחור את שורה
+$8$.
+
+נחוצים גם פסקאות המביעות את האילוצים על העמודות. למשל, עמודה
+$1$
+קובעת שניתן לבחור בדיוק אחד מתוך השורות
+$1,5,8$:
+
+\selectlanguage{english}
+\begin{ttfamily}
+  [x1,x5,x8], [\verb+~+x1,\verb+~+x5], [\verb+~+x1,\verb+~+x8], [\verb+~+x5,\verb+~+x8]
+\end{ttfamily}
+\selectlanguage{hebrew}
+
+הרצת
+\L{SAT solver}
+מחזיר את הפתרון שיש לבחור את השורות
+$2,7,8$:
+
+\selectlanguage{english}
+\begin{ttfamily}
+Satisfying assignments: [x1=0,x2=1,x3=0,x4=0,x5=0,x6=0,x7=1,x8=1]
+\end{ttfamily}
+\selectlanguage{hebrew}
+
+\bigskip
+
+
+נוסחאות ה-
+\L{CNF}
+עבור
+$L(3)$, $L(4)$
+ניתן למצוא בארכיון של
+\L{LearnSAT}, \L{SAT solver}
+שפיתחתי לצורך הוראה. ניתן להוריד מהאתר
+\L{\url{http://www.weizmann.ac.il/sci-tea/benari/}}
+דרך הקישוריות
+\L{Software and Learning Materials}
+ואח"כ
+\L{LearnSAT}.
+
+
+\bigskip
+
+\textbf{\Large
+ מקורות
+}
+
+\selectlanguage{english}
+\begin{small}
+M. Ben-Ari. \textit{Mathematical Logic for Computer Science (Third Edition)}, Springer, 2012.
+
+R.O. Davies. On Langford's problem (II), \textit{Mathematical Gazette}, 43, 1959, 253-5.
+
+D.E. Knuth. \textit{The Art of Computer Programming, Volume 4, Fascicle 6: Satisfiability}, Pearson, 2015.
+
+J.E. Miller. \textit{Langford's Problem, Remixed}, \url{http://dialectrix.com/langford.html}, 2014.
+
+\end{small}
+
+\end{document}
+
+\begin{comment}
+
+%%%%%%%%%%%% Solution for L(4) %%%%%%%%%%%%%%%%%%
+
+By symmetry, row 18 may be eliminated.
+
+$1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17$
+
+Choose row 16 and the result is 4\textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace 4 \textvisiblespace\textvisiblespace.
+
+$\not 1,2,3,\not 4,5,\not 6,\not 7,8,\not 9,10,11,\not 12,\not 13,14,15,16,\not 17$
+
+Choose row 14 and the result is 4\textvisiblespace 3\textvisiblespace\textvisiblespace 4{}3\textvisiblespace.
+
+$\not 1,2,\not 3,\not 4,\not 5,\not 6,\not 7,8,\not 9,\not 10,11,\not 12,\not 13,14, \not 15,16,\not 17$
+
+Choose 8 and the result is 4{}2{}3\textvisiblespace 2{}4{}3\textvisiblespace.
+
+$\not 1,\not 2,\not 3,\not 4,\not 5,\not 6,\not 7,8,\not 9,\not 10,\not 11,\not 12,\not 13,14, \not 15,16,\not 17$
+
+All of the choices for 1 have been eliminated.
+
+Instead of 8 choose 11 and the result is 4\textvisiblespace 3\textvisiblespace 2{}4{}3{}2.
+
+$\not 1,2,\not 3,\not 4,\not 5,\not 6,\not 7,\not 8,\not 9,\not 10,11,\not 12,\not 13,14, \not 15,16,\not 17$
+
+Choose 2 and we have a solution 4{}1{}3{}1{}2{}4{}3{}2.
+
+\bigskip
+
+
+Instead of 14 choose 15 and the result is 4\textvisiblespace \textvisiblespace 3\textvisiblespace 4\textvisiblespace 3.
+
+$\not 1,\not 2,3,\not 4,5,\not 6,\not 7,8,\not 9,\not 10,\not 11,\not 12,\not 13,\not 14,15,16,\not 17$
+
+8 must be chosen and the result is 4{}2\textvisiblespace 3{}2{}4\textvisiblespace 3.
+
+$\not 1,\not 2,\not 3,\not 4,\not 5,\not 6,\not 7,8,\not 9,\not 10,\not 11,\not 12,\not 13,\not 14,15,16,\not 17$
+
+All of the choices for 1 have been eliminated.
+
+\bigskip
+
+
+Instead of 16 choose 17 and the result is \textvisiblespace 4\textvisiblespace \textvisiblespace \textvisiblespace\textvisiblespace 4\textvisiblespace.
+
+$1,\not 2,3,4,\not 5,6,7,\not 8,9,\not 10,11,12,\not 13,\not 14,15,\not 16,17$
+
+Choose 15 and the result is \textvisiblespace 4\textvisiblespace 3\textvisiblespace\textvisiblespace 4{}3.
+
+$1,\not 2,3,\not 4,\not 5,\not 6,\not 7,\not 8,9,\not 10,\not 11,\not 12,\not 13,\not 14,15,\not 16,17$
+
+Choose 9 and the result is \textvisiblespace 4{}2{}3\textvisiblespace 2{}4{}3.
+
+$1,\not 2,\not 3,\not 4,\not 5,\not 6,\not 7,\not 8,9,\not 10,\not 11,\not 12,\not 13,\not 14,15,\not 16,17$
+
+The only choice for the 1's is 1 and that is impossible.
+
+\bigskip
+
+
+$1,\not 2,3,4,\not 5,6,7,\not 8,9,\not 10,11,12,\not 13,\not 14,15,\not 16,17$
+
+Instead of 15 choose 12 and the result is 3{}4\textvisiblespace \textvisiblespace 3\textvisiblespace 4.
+
+$\not 1,\not 2,\not 3,\not 4,\not 5,\not 6,\not 7,\not 8,9,\not 10,\not 11,12,\not 13,\not 14,\not 15,\not 16,17$
+
+All of the choices for 1 have been eliminated.
+\end{comment}

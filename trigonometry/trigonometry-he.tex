@@ -1,0 +1,1191 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+
+\usepackage{tikz}
+\usetikzlibrary{external,positioning,through,calc,intersections,arrows.meta}
+\tikzexternalize[prefix=tikz/]
+
+\textwidth=15.5cm
+\textheight=23cm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=2em
+\headsep=0pt
+\parindent=0pt
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\selectlanguage{hebrew}
+
+\begin{center}
+\textbf{\Huge איך לעשות טריגונומטריה}
+
+\bigskip
+
+\textbf{\Huge )כמעט( בלי לשנן בעל פה}
+
+\bigskip
+\bigskip
+
+\textbf{\Large מוטי בן-ארי}
+
+\bigskip
+
+\textbf{\Large המחלקה להוראת המדעים}
+
+\bigskip
+
+\textbf{\Large מכון ויצמן למדע}
+
+\bigskip
+
+\url{http://www.weizmann.ac.il/sci-tea/benari/}
+
+\bigskip
+
+\end{center}
+
+\selectlanguage{english}
+
+\begin{center}
+\copyright{}\  2016--17 by Moti Ben-Ari.
+\end{center}
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+
+\bigskip
+
+\begin{center}
+\includegraphics[width=.2\textwidth]{../by-sa.png}
+\end{center}
+
+\bigskip
+
+\selectlanguage{hebrew}
+
+אני מודה לאביטל אלבוים כהן ורונית בן-בסט לוי על הערותיהן המועילות.
+
+\bigskip
+\bigskip
+
+\section{מבוא}
+
+טריגונומטריה מאפשרת הסקת תוצאות גיאומטרית תוך שימוש בחישובים אלגבריים. לתלמידים, טריגונומטריה יכולה להיראות כאוסף של נוסחאות סתמיות שיש לזכור בעל פה. מטרת מסמך זה להראות שניתן לשחזר נוסחאות טריגונומטריות ופונקציות טריגונומטריות על יד חשיבה גיאומטרית עם מעט מאוד שינון בעל פה.
+
+בנספחים מופיעים הוכחות לחוק הסינוסים ולחוק הקוסינוסים. הנוסחאות קלות לשינון אבל כדאי לראות כמה קל להוכיח אותם תוך שימוש בעובדות גיאומטריות בלבד.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{הגדרות בסיסיות}
+
+אין ברירה אלא להתחיל עם ההגדרות שיש ללמוד בעל פה. במשולש ישר-זווית:
+\begin{center}
+\selectlanguage{english}
+% Right triangles
+\begin{tikzpicture}[scale=4]
+% Outer triangle
+\coordinate (origin1) at (0,0);
+% Draw ray at 30
+\draw[rotate=30] (origin1) node [above right,xshift=26pt,yshift=1pt] {$\theta$} -- node [above] {$c$} +(1.4,0) coordinate (point1);
+% Drop altitude from end of ray
+\draw (point1) -- node [right] {$a$}  (point1 |- origin1) coordinate (altitude1);
+% Connect origin to altitude
+\draw (origin1) -- node [below] {$b$} (altitude1);
+% Square for right angle
+\draw (altitude1) rectangle +(-1pt,1pt);
+\end{tikzpicture}
+\end{center}
+
+הסינוס והקוסינוס מוגדרים כיחס בין הצלעות והיתר:%
+\footnote{לא נדון בטנגנס. מההגדרה
+$\tan\theta = \sin\theta/\cos\theta$,
+הנוסחאות לטנגנס מתקבלות מאלו של סינוס וקוסינוס.
+}
+\[
+\sin \theta = \frac{a}{c},\;\; \cos\theta = \frac{b}{c}\,.
+\]
+את היחסים ניתן לבטא: "סינוס הוא הניצב מול היתר חלקי היתר" ו-"קוסינוס הוא הניצב ליד היתר חלקי היתר".
+
+הפונקציות הטריגונומטריות מוגדרות על הזווית בלבד ואינן תלויות בגודל המשולש. נתון שני משולשים עם אותן זוויות:
+\begin{center}
+\selectlanguage{english}
+% Nested right triangles
+\begin{tikzpicture}[scale=5]
+% Outer triangle
+\coordinate (origin1) at (0,0);
+% Draw ray at 30
+\draw[rotate=30] (origin1) node [above right,xshift=26pt,yshift=1pt] {$\theta$} -- node [above] {$c$} +(1.4,0) coordinate (point1);
+% Drop altitude from end of ray
+\draw (point1) -- node [right] {$a$}  (point1 |- origin1) coordinate (altitude1);
+% Connect origin to altitude
+\draw (origin1) -- node [below] {$b$} (altitude1);
+% Square for right angle
+\draw (altitude1) rectangle +(-1pt,1pt);
+% Inner triangle slightly offset from (0,0)
+\coordinate (origin2) at (1.5pt,.4pt);
+% Draw ray at 30
+\draw[rotate=30] (origin2) -- node [below,xshift=4pt,yshift=2pt] {$c'$} +(1,0) coordinate (point2);
+% Drop altitude from end of ray
+\draw (point2) -- node [left] {$a'$} (point2 |- origin2) coordinate (altitude2);
+% Connect origin to altitude
+\draw (origin2) -- node [above,xshift=4pt] {$b'$} (altitude2);
+% Square for right angle
+\draw (altitude2) rectangle +(-1pt,1pt);
+\end{tikzpicture}
+\end{center}
+מהדמיון בין המשולשים מתקבלות הנוסחאות:
+\[
+\frac{c'}{c} = \frac{a'}{a} = \frac{b'}{b}\,,
+\]
+ומכאן:
+\[
+\frac{a}{c} = \frac{a'}{c'} = \sin \theta
+\]
+
+\[
+\frac{b}{c} = \frac{b'}{c'} = \cos \theta\,.
+\]
+
+הדמיון מאפשר לבחור צלע אחד באופן שרירותי, ונקל על עצמנו אם נקבע שאורך היתר הוא
+$1$:
+\begin{center}
+\selectlanguage{english}
+% Right triangles with hypotenuse 1
+\begin{tikzpicture}[scale=4]
+% Outer triangle
+\coordinate (origin1) at (0,0);
+% Draw ray at 30
+\draw[rotate=30] (origin1) node [above right,xshift=26pt,yshift=1pt] {$\theta$} -- node [above] {$1$} +(1.4,0) coordinate (point1);
+% Drop altitude from end of ray
+\draw (point1) -- node [right] {$\sin \theta$}  (point1 |- origin1) coordinate (altitude1);
+% Connect origin to altitude
+\draw (origin1) -- node [below] {$\cos \theta$} (altitude1);
+% Square for right angle
+\draw (altitude1) rectangle +(-1pt,1pt);
+\end{tikzpicture}
+\end{center}
+המכנה של יחסים של סינוס וקוסינוס הוא
+$1$
+וניתן להתעלם ממנו. ערכי הפונקציות
+$\sin\theta$
+ו
+$\cos\theta$
+הם האורכים של הצלעות במשולש. ממשפט פיתגורס מתקבלת הנוסחה:
+\[
+\sin^2\theta + \cos^2\theta = 1^2 = 1\,.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{מעגל היחידה}
+
+קביעת אורך היתר ל
+$1$
+מאפשרת להציג טריגונומטריה במסגרת של
+\textbf{מעגל היחידה}
+במערכת הצירים של המישור. הערכים של
+$\cos\theta$
+ו
+$\sin\theta$
+הם לא רק אורכי הצלעות של המשולש, אלא גם הקואורדינטות
+$(\cos\theta,\sin\theta)$
+של החיתוך בין הקרן ממרכז המעגל למעגל:
+\begin{center}
+\selectlanguage{english}
+% The unit circle
+\begin{tikzpicture}[scale=2.4]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw[name path=circle] (origin) node [above left] {$(0,0)$} circle [radius=1];
+% Draw axes
+\draw[name path=x] (-1,0) node [left] {$(-1,0)$} -- (1,0) node [right] {$(1,0)$};
+\draw (0,-1) node [below] {$(0,-1)$} -- (0,1) node [above] {$(0,1)$};
+% Draw ray
+\draw[rotate=30,name path=ray] (origin) node [above right,xshift=8mm] {$\theta$} -- node [above] {$1$} (1,0);
+% Get intersection of circle and ray
+\path [name intersections={of=circle and ray, by=on-circle}];
+% Draw altitude from intersection to x-axis
+\draw[name path=altitude] (on-circle) node[above right] {$(\cos\theta,\sin\theta)$} -- node [right,xshift=4mm] {$\sin \theta$} (on-circle |- origin);
+\draw[->] (1.1,.25) -- +(-6pt,0);
+% Get intersection of altitude and x-axis
+\path [name intersections={of=altitude and x, by=on-x}] (origin) -- node [below] {$\cos \theta$} (on-x);
+% Square for right angle at intersection
+\draw (on-x) rectangle +(-2pt,2pt);
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\end{center}
+
+היחידה של זווית היא ה-%
+\textbf{מעלה}.
+במעגל מודדים זוויות  נגד כיוון השעון החל מציר ה-%
+$x$
+החיובי. במעגל
+$360$
+מעלות )מסומן
+$360^\circ$(.
+הצירים של המרחב הקרטזי מחלקים את מעגל היחידה באופן טבעי לארבעה
+\textbf{רבעים}:
+\begin{center}
+\selectlanguage{english}
+% The unit circle with main axes
+\begin{tikzpicture}[scale=1.8]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$180,-180$} -- (1,0) node [right] {$0,\pm 360$};
+\draw (0,-1) node [below] {$270,-90$} -- (0,1) node [above] {$90,-270$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\end{center}
+
+יחידה אחרת לזווית היא ה-%
+\textbf{רדיאן}.
+רדיאן אחד הוא הזווית כולאת קשת על היקף המעגל שאורכו שווה לרדיוס. במעגל היחידה הרדיוס הוא
+$1$
+ולכן אורך ההיקף הוא
+$2\pi$.
+כאשר קרן מסתובבת לאורך כל ההיקף )נגד כיוון השעון( היא עוברת מזווית
+$0$
+רדיאנים לזווית
+$2\pi$
+רדיאנים:
+\begin{center}
+\selectlanguage{english}
+% The unit circle with main axes
+\begin{tikzpicture}[scale=1.8]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$\pi,-\pi$} -- (1,0) node [right] {$0,\pm 2\pi$};
+\draw (0,-1) node [below] {$3\pi/2,-\pi/2$} -- (0,1) node [above] {$\pi/2,-3\pi/2$};
+% Draw one radian
+\draw[thick] (origin) -- (57.3:1);
+\draw[thick]  (1,0) arc(0:57:1);
+\node at (29:1.15) {$1$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\end{center}
+
+רדיאן אחד שווה בערך
+$57.3$	
+מעלות.
+
+מהקואורדינטות של החיתוכים של הצירים
+$x,y$
+עם מעגל היחידה נקבל את ערכי הסינוס והקוסינוס של הזוויות:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.2}
+\begin{array}{|c|c|c|c|}
+\hline
+\textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
+\textrm{(\R{מעלות})} & \textrm{(\R{רדיאנים})} & & \\\hline
+0 & 0 & 0 & 1\\\hline
+90 & \pi/2 & 1 & 0\\\hline
+180 & \pi & 0 & -1\\\hline
+270 & 3\pi/2 & -1 & 0\\
+\hline
+\end{array}
+\end{displaymath}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{חלוקת מעגל היחידה ל
+$8$
+קטעים
+}
+
+ראינו שהצירים מחלקים את מעגל היחידה ל-%
+$4$
+רבעים. כדאי גם לבדוק את ערכי הפונקציות הטריגונומטריות כאשר מחלקים את המעגל ל-%
+$6,8,12$
+קטעים. תחילה נחלק כל רבע בחצי כדי לקבל
+$8$
+קטעים, כאשר הזווית של כל קטע הוא
+$45^\circ$
+או
+$\pi/4$
+רדיאנים:
+\begin{center}
+\selectlanguage{english}
+% The unit circle divided into 45 degree segments
+\begin{tikzpicture}[scale=2.2]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$180$} -- (1,0) node [right] {$0$};
+\draw (0,-1) node [below] {$270$} -- (0,1) node [above] {$90$};
+% Draw other angles
+\draw[dashed] (origin) -- +(45:1) node[above right] {$45$};
+\draw[dashed] (origin) -- +(135:1) node[above left] {$135$};
+\draw[dashed] (origin) -- +(225:1) node[below left] {$225$};
+\draw[dashed] (origin) -- +(315:1) node[below right] {$315$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\hspace{5em}
+% The unit circle with radians divided into pi/4 segments
+\begin{tikzpicture}[scale=2.2]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$\pi$} -- (1,0) node [right] {$0$};
+\draw (0,-1) node [below] {$3\pi/2$} -- (0,1) node [above] {$\pi/2$};
+% Draw other angles
+\draw[dashed] (origin) -- +(45:1) node[above right] {$\pi/4$};
+\draw[dashed] (origin) -- +(135:1) node[above left] {$3\pi/4$};
+\draw[dashed] (origin) -- +(225:1) node[below left] {$5\pi/4$};
+\draw[dashed] (origin) -- +(315:1) node[below right] {$7\pi/4$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\end{center}
+
+מה הם ערכי הסינוס והקוסינוס של 
+$45^\circ$?
+במשולש:
+\begin{center}
+\selectlanguage{english}
+% Right triangle with 45 degree angles
+\begin{tikzpicture}[scale=3.5]
+% Coordinates
+\coordinate (origin) at (0,0);
+\coordinate (lower-right) at (1,0);
+\coordinate (upper-right) at (1,1);
+% Draw triangle
+\draw (origin) node[left] {$A$} node[above right,xshift=10pt] {$45$} -- node[below] {$\cos 45$} (lower-right) node[right] {$C$} -- node[right] {$\sin 45$} (upper-right) node[right] {$B$} node[below left,xshift=2pt,yshift=-10pt] {$45$} -- node[left,xshift=-2pt,yshift=2pt] {$1$} cycle;
+% Square for right angle
+\draw (lower-right) rectangle +(-2pt,2pt);
+\end{tikzpicture}
+\end{center}
+אם הזווית
+$\angle BAC$
+הוא
+$45^\circ$,
+הזווית הנגדית
+$\angle ABC$
+חייבת להיות גם היא
+$45^\circ$
+כדי שסכום הזוויות במשולש יהיה
+$180^\circ$.
+המשולש שווי-שוקיים כך שערכי הסינוס והקוסינוס שווים. ממשפט פיתגורס:
+\begin{eqnarray*}
+\sin^2 45 + \cos^2 45 &=& 1\\
+2\sin^2 45 &=& 1\\
+\sin 45 &=& \frac{1}{\sqrt{2}} = \frac{1}{\sqrt{2}}\cdot \frac{2}{2} =\frac{\sqrt{2}}{2}\\
+\cos 45 &=& \sin 45 = \frac{\sqrt{2}}{2}\,.
+\end{eqnarray*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{סינוס וקוסינוס של זוויות הגדולות מ-%
+$90^\circ$}
+
+עכשיו שאנו יודעים את ערכי הסינוס והקוסינוס של
+$45^\circ$,
+נוכל לשאול על הזוויות הסימטריות
+$135^\circ$, $225^\circ$, $315^\circ$.
+בעזרת חברינו מעגל היחידה, נמצא מיד את ערכי הסינוס והקוסינוס שלהן.
+
+תחילה נחשב את הערכים עבור זווית שרירותית
+$\theta$
+ברבע הראשון. היטלי הקרניים על הצירים
+$x,y$
+שווים כך שיש רק לשנות את הסימנים. ברבע השני:
+\begin{center}
+\selectlanguage{english}
+% Functions of 180-\theta
+\begin{tikzpicture}[scale=2.4]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw[name path=circle] (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) -- (1,0);
+\draw (0,-1) -- (0,1);
+% Draw first ray
+\path[name path=ray1] (origin) -- +(40:1.1);
+\path[name intersections={of=circle and ray1,by=on-circle1}];
+\draw (origin) node[above right,xshift=14pt,yshift=-1pt] {$\theta$} -- (on-circle1) node[above right,xshift=-4pt] {$(\cos \theta, \sin \theta)$};
+% Draw altitude and square for right angle
+\draw[dashed] (on-circle1) -- (on-circle1 |- origin);
+\draw (on-circle1 |- origin) rectangle +(-2pt,2pt);
+% Draw second ray
+\path[name path=ray2] (origin) -- +(140:1.1);
+\path[name intersections={of=circle and ray2,by=on-circle2}];
+\draw (origin) -- (on-circle2) node[above left,xshift=4pt] {$(-\cos \theta, \sin \theta)$};
+% Draw altitude and square for right angle
+\draw[dashed] (on-circle2) -- (on-circle2 |- origin);
+\draw (on-circle2 |- origin) rectangle +(2pt,2pt);
+% Draw the arc for 180-\theta
+\draw (12pt,0) arc(0:140:12pt);
+\node at (8pt,18pt) {$180-\theta$};
+\draw[->] (6pt,16pt) -- +(0,-4pt);
+\end{tikzpicture}
+\end{center}
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{l}
+\cos 135=\cos (180-45)= -\cos 45= \displaystyle -\frac{\sqrt{2}}{2}\\
+\sin 135=\sin (180-45)= \sin 45= \displaystyle \frac{\sqrt{2}}{2}\,.
+\end{array}
+\]
+ברבע השלישי:
+\begin{center}
+\selectlanguage{english}
+% Functions of 180+\theta
+\begin{tikzpicture}[scale=2.4]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw[name path=circle] (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) -- (1,0);
+\draw (0,-1) -- (0,1);
+% Draw first ray
+\path[name path=ray1] (origin) -- +(40:1.1);
+\path[name intersections={of=circle and ray1,by=on-circle1}];
+\draw (origin) node[above right,xshift=14pt,yshift=-1pt] {$\theta$} -- (on-circle1) node[above right,xshift=-4pt] {$(\cos \theta, \sin \theta)$};
+% Draw altitude and square for right angle
+\draw[dashed] (on-circle1) -- (on-circle1 |- origin);
+\draw (on-circle1 |- origin) rectangle +(-2pt,2pt);
+% Draw second ray
+\path[name path=ray2] (origin) -- +(-140:1.1);
+\path[name intersections={of=circle and ray2,by=on-circle2}];
+\draw (origin) -- (on-circle2) node[below left,xshift=4pt] {$(-\cos \theta, -\sin \theta)$};
+% Draw altitude and square for right angle
+\draw[dashed] (on-circle2) -- (on-circle2 |- origin);
+\draw (on-circle2 |- origin) rectangle +(2pt,-2pt);
+% Draw the arc for 180+\theta
+\draw (12pt,0) arc(0:220:12pt);
+\node at (8pt,18pt) {$180+\theta$};
+\draw[->] (6pt,16pt) -- +(0,-4pt);
+\end{tikzpicture}
+\end{center}
+\[
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{l}
+\cos 225 =\cos (180+45)= -\cos 45= \displaystyle -\frac{\sqrt{2}}{2}\\
+\sin 225 =\sin (180+45)= -\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\,.
+\end{array}
+\]
+עבור הרבע הרביעי, נוח להשתמש בזווית השלילית
+$-\theta$
+במקום הזווית החיובית
+$360-\theta$:
+\begin{center}
+\selectlanguage{english}
+% Functions of -\theta
+\begin{tikzpicture}[scale=2.4]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw[name path=circle] (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) -- (1,0);
+\draw (0,-1) -- (0,1);
+% Draw first ray
+\path[name path=ray1] (origin) -- +(40:1.1);
+\path[name intersections={of=circle and ray1,by=on-circle1}];
+\draw (origin) node[above right,xshift=12pt] {$\theta$} -- (on-circle1) node[right] {$(\cos \theta, \sin \theta)$};
+% Draw altitude and square for right angle
+\draw[dashed] (on-circle1) -- (on-circle1 |- origin);
+\draw (on-circle1 |- origin) rectangle +(-2pt,2pt);
+% Draw second ray
+\path[name path=ray2] (origin) -- +(-40:1.1);
+\path[name intersections={of=circle and ray2,by=on-circle2}];
+\draw (origin) node[below right,xshift=13pt] {$-\theta$} -- (on-circle2) node[right] {$(\cos \theta, -\sin \theta)$};
+% Draw altitude and square for right angle
+\draw[dashed] (on-circle2) -- (on-circle2 |- origin);
+\draw (on-circle2 |- origin) rectangle +(-2pt,-2pt);
+\end{tikzpicture}
+\end{center}
+\[
+\begin{array}{l}
+\cos 315=\cos (-45)= \cos 45= \displaystyle \frac{\sqrt{2}}{2}\\
+\sin 315=\sin (-45)= -\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\,.
+\end{array}
+\]
+נסכם את הערכים בטבלה:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|c|c|}
+\hline
+\textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
+\textrm{(\R{מעלות})} & \textrm{(\R{רדיאנים})} & & \\\hline
+\theta& \theta&  \sin\theta &  \cos\theta \\\hline
+180-\theta& \pi - \theta&  \sin\theta &  -\cos\theta\\\hline
+180+\theta& \pi+\theta&  -\sin\theta &  -\cos\theta\\\hline
+-\theta& \theta&  -\sin\theta &  \cos\theta\\
+\hline
+\end{array}
+\end{displaymath}
+
+ועבור
+$45^\circ$:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|c|c|}
+\hline
+\textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
+\textrm{(\R{מעלות})} & \textrm{(\R{רדיאנים})} & & \\\hline
+45& \pi/4&  \sqrt{2}/2 &  \sqrt{2}/2 \\\hline
+135& 3\pi/4&  \sqrt{2}/2 &  -\sqrt{2}/2\\\hline
+225& 5\pi/4&  -\sqrt{2}/2 &  -\sqrt{2}/2\\\hline
+315& 7\pi/4&  -\sqrt{2}/2 &  \sqrt{2}/2\\
+\hline
+\end{array}
+\end{displaymath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{הסינוס והקוסינוס של
+$30^\circ$
+ו
+$60^\circ$}
+
+את מעגל היחידה ניתן לחלק ל-%
+$6$
+קטעים של
+$60^\circ$
+או ל-%
+$12$
+קטעים של
+$30^\circ$:
+\begin{center}
+\selectlanguage{english}
+% The unit circle divided into 60 degree segments
+\begin{tikzpicture}[scale=2.2]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$180$} -- (1,0) node [right] {$0$};
+%\draw (0,-1) node [below] {$270$} -- (0,1) node [above] {$90$};
+% Draw other angles
+\draw[dashed] (origin) -- +(60:1) node[above right] {$60$};
+\draw[dashed] (origin) -- +(120:1) node[above left] {$120$};
+\draw[dashed] (origin) -- +(240:1) node[below left] {$240$};
+\draw[dashed] (origin) -- +(300:1) node[below right] {$300$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\hspace{5em}
+% The unit circle divided into 30 degree segments
+\begin{tikzpicture}[scale=2.2,baseline=-70pt]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$180$} -- (1,0) node [right] {$0$};
+\draw (0,-1) node [below] {$270$} -- (0,1) node [above] {$90$};
+% Draw other angles
+\draw[dashed] (origin) -- +(30:1) node[above right] {$30$};
+\draw[dashed] (origin) -- +(60:1) node[above right] {$60$};
+\draw[dashed] (origin) -- +(120:1) node[above left] {$120$};
+\draw[dashed] (origin) -- +(150:1) node[above left] {$150$};
+\draw[dashed] (origin) -- +(210:1) node[below left] {$210$};
+\draw[dashed] (origin) -- +(240:1) node[below left] {$240$};
+\draw[dashed] (origin) -- +(300:1) node[below right] {$300$};
+\draw[dashed] (origin) -- +(330:1) node[below right] {$330$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\end{center}
+
+\pagebreak[3]
+ברדיאנים:
+\begin{center}
+\selectlanguage{english}
+% The unit circle with radians divided into pi/3 segments
+\begin{tikzpicture}[scale=2.2]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$\pi$} -- (1,0) node [right] {$0$};
+% Draw other angles
+\draw[dashed] (origin) -- +(60:1) node[above right] {$\pi/3$};
+\draw[dashed] (origin) -- +(120:1) node[above left] {$2\pi/3$};
+\draw[dashed] (origin) -- +(240:1) node[below left] {$4\pi/3$};
+\draw[dashed] (origin) -- +(300:1) node[below right] {$5\pi/3$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\hspace{4em}
+% The unit circle with radians divided into pi/6 segments
+\begin{tikzpicture}[scale=2.2,baseline=-71pt]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$\pi$} -- (1,0) node [right] {$0$};
+\draw (0,-1) node [below] {$3\pi/2$} -- (0,1) node [above] {$\pi/2$};
+% Draw other angles
+\draw[dashed] (origin) -- +(30:1) node[above right] {$\pi/6$};
+\draw[dashed] (origin) -- +(60:1) node[above right] {$\pi/3$};
+\draw[dashed] (origin) -- +(120:1) node[above left] {$2\pi/3$};
+\draw[dashed] (origin) -- +(150:1) node[above left] {$5\pi/6$};
+\draw[dashed] (origin) -- +(210:1) node[below left] {$7\pi/6$};
+\draw[dashed] (origin) -- +(240:1) node[below left] {$4\pi/3$};
+\draw[dashed] (origin) -- +(300:1) node[below right] {$5\pi/3$};
+\draw[dashed] (origin) -- +(330:1) node[below right] {$11\pi/6$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\end{center}
+
+נחשב תחילה את הסינוס של 
+$30^\circ$.
+במשולש ישר-זווית:
+\begin{center}
+\selectlanguage{english}
+% Right triangle with 30 and 60 degree angles
+\begin{tikzpicture}[scale=6]
+% Coordinates
+\coordinate (origin) at (0,0);
+\coordinate (lower-right) at (1,0);
+\coordinate (upper-right) at (1,.5);
+% Draw triangle
+\draw (origin)
+  node[left] {$A$} node[above right,xshift=24pt] {$30$} --
+  node[below] {$b=\cos 30$} (lower-right) node[right] {$C$} --
+  node[right] {$a=\sin 30$} (upper-right)
+    node[right] {$B$} node[below left,yshift=-5pt] {$60$} --
+  node[left,yshift=5pt] {$1$} cycle;
+% Square for right angle
+\draw (lower-right) rectangle +(-1pt,1pt);
+\end{tikzpicture}
+\end{center}
+צייר קו מ-%
+$C$
+אל היתר כך שהזווית עם הצלע
+$AC$
+היא 
+$30^\circ$:
+\begin{center}
+\selectlanguage{english}
+% Right triangle with 30 and 60 degree angles
+\begin{tikzpicture}[scale=6]
+% Coordinates
+\coordinate (origin) at (0,0);
+\coordinate (lower-right) at (1,0);
+\coordinate (upper-right) at (1,.5);
+% Draw triangle
+\draw (origin)
+  node[left] {$A$} node[above right,xshift=24pt] {$30$} --
+  node[below] {$b=\cos 30$} (lower-right) node[right] {$C$} --
+  node[right] {$a=\sin 30$} (upper-right)
+  node[right] {$B$} node[below left,yshift=-5pt] {$60$} --
+  cycle;
+% Get intersection of hypotenuse with line at 30 degrees
+\path[name path=hypotenuse] (origin) -- (upper-right);
+\path[name path=to-hyp] (lower-right) -- +(150:6mm);
+\path[name intersections={of=hypotenuse and to-hyp,by=on-hyp}];
+% Draw the line and label the angles
+\draw (lower-right) 
+    node[above left,yshift=5pt,xshift=2pt] {$60$}
+    node [left,yshift=6pt,xshift=-16pt] {$30$} --
+    (on-hyp)
+    node[right,xshift=8pt] {$60$}
+    node[below,yshift=-4pt] {$120$}
+    node[above] {$D$};
+% Label line segments
+\path (lower-right) -- node[above] {$a$} (on-hyp);
+\path (on-hyp) -- node[above] {$a$} (upper-right);
+\path (origin) -- node[above,yshift=4pt] {$1-a$} (on-hyp);
+% Square for right angle
+\draw (lower-right) rectangle +(-1pt,1pt);
+\end{tikzpicture}
+\end{center}
+מעובדות על זוויות במשולש השלמנו בציור את שאר הזוויות. המשולש
+$\triangle BCD$
+שווי-צלעות ואורך כל צלע הוא
+$a=\sin 30$.
+בנוסף,
+$\triangle ACD$
+שווי-שוקיים כך ש-%
+$a=1-a$
+)זכור שהמשלוש נמצא במעגל היחידה ואורך היתר הוא
+$1$(.
+מכאן:
+\begin{eqnarray*}
+\sin a &=& a = 1-a\\
+&=& \frac{1}{2}\,.
+\end{eqnarray*}
+מהנוסחה
+$\sin^2\theta + \cos^2\theta = 1$
+מתקבל ערך הקוסינוס:
+\[
+\cos 30 = \sqrt{1-\sin^2 30} = \sqrt{1-\left(\frac{1}{2}\right)^2} = \sqrt{\frac{3}{4}} = \frac{\sqrt{3}}{2}\,.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{סינוס וקוסינוס של
+$(90-\theta)$}
+
+נפנה עכשיו לחישוב של סינוס וקוסינוס של
+$60^\circ$.
+מ-
+$60 = 90 - 30$,
+אפשר לחשוד שיש קשר פשוט בין הפונקציות הטריגונומטריות של
+$60^\circ$
+ו-
+$30^\circ$.
+הקשר מתברר כאשר נצייר זוויות של
+$90-\theta$
+במעגל היחידה:
+\begin{center}
+\selectlanguage{english}
+% Quadrant with angle 90 - theta
+\begin{tikzpicture}[scale=4]
+\coordinate (origin) at (0,0);
+% Draw arc
+\draw[name path=arc] (1,0) arc [start angle=0, end angle=90, radius=1];
+% Draw x-axis
+\draw[name path=x] (origin) -- (1,0);
+% Draw y-axis
+\draw (origin) -- (0,1);
+% Draw ray
+\draw[rotate=60,name path=ray] (origin) node [above right,xshift=2mm] {$90-\theta$} -- node [above,yshift=1pt,xshift=-1pt] {$1$} (1,0);
+% Get intersection of arc and ray
+\path [name intersections={of=ray and arc, by=on-circle}];
+% Draw altitude from intersection to x-axis
+\draw[name path=altitude] (on-circle) node[below,yshift=-8pt,xshift=-4pt] {$\theta$} -- node [right] {$\sin (90-\theta)$} (on-circle |- origin);
+% Get intersection of altitude and x-axis
+\path [name intersections={of=altitude and x, by=on-x}] (origin) -- node [below] {$\cos (90-\theta)$} (on-x);
+% Square for right angle at intersection
+\draw (on-x) rectangle +(-1pt,1pt);
+% Dot at origin
+\fill (origin) circle [radius=.5pt];
+\end{tikzpicture}
+\end{center}
+הזווית בנקודה שהמשולש נושק למעגל היחידה היא
+$\theta$,
+כך שהפונקציות הטריגונומטריות של
+$90-\theta$
+מתקבלות מאלו של 
+$\theta$
+על ידי החלפת הצלעות "נגדי" ו-"צדדי" בהגדרות:
+\begin{eqnarray*}
+\cos (90-\theta) &=& \sin \theta\\
+\sin (90-\theta) &=& \cos \theta\,.
+\end{eqnarray*}
+דרך אחרת לראות את הקשר היא לשים לב שהמשולש חופף את המשולש שהשתמשנו לחשב
+$\sin\theta$
+ו-
+$\cos \theta$:
+\begin{center}
+\selectlanguage{english}
+% Quadrant with angles 90 and 90 - theta
+\begin{tikzpicture}[scale=4]
+\coordinate (origin) at (0,0);
+% Draw arc
+\draw[name path=arc] (1,0) arc [start angle=0, end angle=90, radius=1];
+% Draw x-axis
+\draw[name path=x] (origin) -- (1,0);
+% Draw y-axis
+\draw (origin) -- (0,1);
+% Draw ray
+\draw[rotate=30,name path=ray] (origin) node [above right,xshift=8mm] {$\theta$} -- node [above] {$1$} (1,0);
+% Get intersection of arc and ray
+\path [name intersections={of=ray and arc, by=on-circle}];
+% Draw altitude from intersection to x-axis
+\draw[name path=altitude] (on-circle) node [above right] {$90-\theta$} -- node [right,xshift=4mm] {$\sin \theta = \cos (90-\theta)$} (on-circle |- origin);
+% Arrow from label
+\draw[->] (1,.5) -- +(-.2,-.1);
+% Get intersection of altitude and x-axis
+\path [name intersections={of=altitude and x, by=on-x}] (origin) -- node [below] {$\cos \theta = \sin (90-\theta)$} (on-x);
+% Square for right angle at intersection
+\draw (on-x) rectangle +(-1pt,1pt);
+\fill (origin) circle [radius=.5pt];
+\end{tikzpicture}
+\end{center}
+מכאן:
+\[
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{l}
+\cos 60 = \cos (90-30) = \sin 30 = \displaystyle\frac{1}{2}\\
+\sin 60 = \sin (90-30) = \cos 30 = \displaystyle\frac{\sqrt{3}}{2}\,.
+\end{array}
+\]
+ניתן לחשב בקלות את ערכי הפונקציות הטריגונומטריות של כפולות של
+$30^\circ$, $60^\circ$
+על ידי התבוננות במעגל היחידה:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|c|c|}
+\hline
+\textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
+\textrm{(\R{מעלות})} & \textrm{(\R{רדיאנים})} & & \\\hline
+0& 0& 0 & 1\\\hline
+30& \pi/6&  1/2 &  \sqrt{3}/2 \\\hline
+60& \pi/3&  \sqrt{3}/2 &  1/2 \\\hline
+90& \pi/2& 1 & 0\\\hline
+120& 2\pi/3&  \sqrt{3}/2 &  -1/2\\\hline
+150& 5\pi/6&  1/2 &  -\sqrt{3}/2\\\hline
+180& \pi& 0 & -1\\\hline
+210& 7\pi/6&  -1/2 &  -\sqrt{3}/2\\\hline
+240& 4\pi/3&  -\sqrt{3}/2 &  -1/2\\\hline
+270& 3\pi/2& -1 & 0\\\hline
+300& 5\pi/3&  -\sqrt{3}/2 &  1/2\\\hline
+330& 11\pi/6&  -1/2 &  \sqrt{3}/2\\
+\hline
+\end{array}
+\end{displaymath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{נוסחאות עבור זוויות מרובות}
+
+לצערי, עליך לזכור בעל פה את הנוסחה עבור הסינוס של סכום של שתי זוויות )או לחפש בנוסחאון(:
+\[
+\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\,.
+\]
+ההוכחה היא לא קשה במיוחד אבל קשה לשחזר אותה בן רגע. לאחר שלומדים את הנוסחה בעל פה, שאר הנוסחאות מתקבלות בקלות. הסינוס של ההפרש בין שתי זוויות הוא:
+\[
+\sin(\alpha-\beta)=\sin(\alpha+(-\beta))=\sin\alpha\cos(-\beta)+\cos\alpha\sin(-\beta) = 
+\sin\alpha\cos\beta-\cos\alpha\sin\beta\,.
+\]
+הנוסחאות לקוסינוס הן:
+\begin{eqnarray*}
+\cos(\alpha+\beta)&=&\sin(90-(\alpha+\beta))\\
+&=& \sin((90-\alpha)-\beta)\\
+&=& \sin(90-\alpha)\cos\beta-\cos(90-\alpha)\sin\beta\\
+&=&\cos\alpha\cos\beta - \sin\alpha\sin\beta\,,
+\end{eqnarray*}
+ו:
+\[
+\cos(\alpha-\beta) = \cos\alpha\cos(-\beta) - \sin\alpha\sin(-\beta) = 
+\cos\alpha\cos\beta + \sin\alpha\sin\beta\,.
+\]
+
+הנוסחאות עבור כפל זוויות מתקבלות מהנוסחאות לסכום של שתי זוויות:
+\begin{eqnarray*}
+\sin 2\alpha &=& \sin(\alpha+\alpha)\\
+&=& \sin\alpha\cos\alpha+\cos\alpha\sin\alpha\\
+&=& 2\sin\alpha\cos\alpha\\
+\cos 2\alpha &=& \cos(\alpha+\alpha)\\
+&=& \cos\alpha\cos\alpha - \sin\alpha\sin\alpha\\
+&=& \cos^2\alpha-\sin^2\alpha\\
+&=& \cos^2\alpha- (1-\cos^2\alpha)\\
+&=& 2\cos^2\alpha-1\\
+\cos 2\alpha &=& \cos^2\alpha-\sin^2\alpha\\
+&=& (1-\sin^2\alpha) -\sin^2\alpha\\
+&=&  1-2\sin^2\alpha\,.
+\end{eqnarray*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{סיכום}
+
+התחלנו מההגדרות של הפונקציות הטריגונומטריות סינוס וקוסינוס כיחסים בין הצלעות של משולש ישר-זווית. ערכי הפונקציות תלויים רק ביחס בין אורכי הצלעות ולכן קבענו שאורך היתר הוא
+$1$.
+ממשפט פתגורס קבלנו:
+\[
+\sin^2 \theta + \cos^2\theta = 1\,
+\]
+ו:
+\[
+\sin 45 = \cos 45 = \frac{\sqrt{2}}{2}\,.
+\]
+מבניית עזר פשוטה ועובדות גיאומטריות על משולש חישבנו:
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{l}
+\sin 30 = \cos 60 = \displaystyle\frac{1}{2}\\
+\cos 30 = \sin 60 = \displaystyle\frac{\sqrt{3}}{2}\,.
+\end{array}
+\]
+כאשר נתונים הסינוס והקוסינוס של זווית שרירותית 
+$\theta$
+ברבע הראשון, בעזרת חברינו מעגל היחידה מיד מצאנו את ערכי הפונקציות הטריגונומטריות של כל זווית המתקבלת מ-%
+$\theta$
+על ידי חיבור וחיסור כפולות של 
+$90^\circ$.
+בפרט, חישבנו את הסינוס והקוסינוס של הזוויות:
+\begin{center}
+\selectlanguage{english}
+% The unit circle with degrees
+\begin{tikzpicture}[scale=2.2]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$180$} -- (1,0) node [right] {$0$};
+\draw (0,-1) node [below] {$270$} -- (0,1) node [above] {$90$};
+% Draw other angles
+\draw[dashed] (origin) -- +(30:1) node[above right] {$30$};
+\draw[dashed] (origin) -- +(45:1) node[above right] {$45$};
+\draw[dashed] (origin) -- +(60:1) node[above right] {$60$};
+\draw[dashed] (origin) -- +(120:1) node[above left] {$120$};
+\draw[dashed] (origin) -- +(135:1) node[above left] {$135$};
+\draw[dashed] (origin) -- +(150:1) node[above left] {$150$};
+\draw[dashed] (origin) -- +(210:1) node[below left] {$210$};
+\draw[dashed] (origin) -- +(225:1) node[below left] {$225$};
+\draw[dashed] (origin) -- +(240:1) node[below left] {$240$};
+\draw[dashed] (origin) -- +(300:1) node[below right] {$300$};
+\draw[dashed] (origin) -- +(315:1) node[below right] {$315$};
+\draw[dashed] (origin) -- +(330:1) node[below right] {$330$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\hfil
+% The unit circle with radians
+\begin{tikzpicture}[scale=2.2]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$\pi$} -- (1,0) node [right] {$0$};
+\draw (0,-1) node [below] {$3\pi/2$} -- (0,1) node [above] {$\pi/2$};
+% Draw other angles
+\draw[dashed] (origin) -- +(30:1) node[above right] {$\pi/6$};
+\draw[dashed] (origin) -- +(45:1) node[above right] {$\pi/4$};
+\draw[dashed] (origin) -- +(60:1) node[above right] {$\pi/3$};
+\draw[dashed] (origin) -- +(120:1) node[above left] {$2\pi/3$};
+\draw[dashed] (origin) -- +(135:1) node[above left] {$3\pi/4$};
+\draw[dashed] (origin) -- +(150:1) node[above left] {$5\pi/6$};
+\draw[dashed] (origin) -- +(210:1) node[below left] {$7\pi/6$};
+\draw[dashed] (origin) -- +(225:1) node[below left] {$5\pi/4$};
+\draw[dashed] (origin) -- +(240:1) node[below left] {$4\pi/3$};
+\draw[dashed] (origin) -- +(300:1) node[below right] {$5\pi/3$};
+\draw[dashed] (origin) -- +(315:1) node[below right] {$7\pi/4$};
+\draw[dashed] (origin) -- +(330:1) node[below right] {$11\pi/6$};
+% Dot at origin
+\fill (origin) circle [radius=1pt];
+\end{tikzpicture}
+\end{center}
+
+\bigskip
+
+\textbf{\large
+כל זה בלי לזכור כלום בעל פה פרט להגדרות של סינוס וקוסינוס!
+}
+
+\bigskip
+
+הנןסחאות לזוויות מרובות מתקבלות בקלות מהנוסחה ל 
+$\sin(\alpha+\beta)$
+שצריך ללמוד בעל פה או לחפש בנוסחאון.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\newpage
+
+\begin{center}
+\textbf{\Large נספחים}
+\end{center}
+
+\section{משפט הסינוסים}
+
+לא קשה לזכור את משפט הסינוסים )והמשפט מופיע בנוסחאון של בחינת הבגרות(, אבל כדאי לראות כמה קל להוכיח אותו. נתון משולש
+$\triangle ABC$,
+הורד גובה מקודקוד אחד:
+\begin{center}
+\selectlanguage{english}
+% Law of sines
+\begin{tikzpicture}[scale=5]
+% Coordinates
+\coordinate (a) at (0,0);
+\coordinate (b) at (1,0);
+\coordinate (c) at (.7,.6);
+% Draw triangle
+\draw (a) node[left]  {$A$} node[above right,xshift=14pt] {$\alpha$} --
+      (b) node[right] {$B$} node[above left,xshift=-10pt] {$\beta$} --
+          node[right] {$a$}
+      (c) node[above] {$C$} --
+          node[left,xshift=-2pt]  {$b$}
+      cycle;
+\draw (c) -- node[left] {$h$} (c |- b);
+\draw (c |- b) rectangle +(-1pt,1pt);
+\end{tikzpicture}
+\end{center}
+לפי ההגדרה:
+\begin{eqnarray*}
+\sin\alpha &=& \frac{h}{b}\\
+\sin\beta &=& \frac{h}{a}\,,
+\end{eqnarray*}
+ולכן:
+\begin{eqnarray*}
+b\sin\alpha &=& a\sin\beta\\
+\frac{\sin\alpha}{a} &=& \frac{\sin\beta}{b}\,.
+\end{eqnarray*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{חוק הסינוסים במעגל}
+
+קיימת הוכחה אחרת לחוק הסינוסים המקשר בין היחסים של הסינוסים לצלעות לבין הרדיוס של המעגל החוסם.%
+\footnote{אני מודה לאביטל אלבוים כהן שהביאה לתשומת ליבי הוכחה לו.}
+
+נתון משולש 
+$\triangle ABC$
+והמעגל החוסם אותו.%
+\footnote{ההוכחה היא למשולש חד-זווית. ההוכחה למשולש קהה-זווית דומה.
+}
+)ניתן לחסום כל משולש במעגל שמרכזו הוא החיתוך של האנכים האמצעיים.( מצא נקודה
+$D$
+כך שהקו
+$DB$
+עובר דרך מרכז המעגל. צייר את הקו
+$AD$:
+% Angles subtending the same chord are equal
+%
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+% Draw the circle at the origin
+\coordinate (origin) at (0,0);
+\draw [name path=circle] (origin) circle [radius=3];
+% Define a path that intersects the circle
+\coordinate (a) at (-3,-2);
+\coordinate (b) at (3.3,-.8);
+\path [name path=chord] (a) -- node [below] {$c$} (b);
+% Get the intersections and draw the chord
+\path [name intersections={of=circle and chord,by={i1,i2}}];
+\draw (i1) node [left] {$A$} -- (i2) node [right] {$B$};
+% Define a path to the third vertex and get the intersection
+\coordinate (c) at (1.3,3);
+\path [name path=side] (i2) -- (c);
+\path [name intersections={of=circle and side,by={i3,i4}}];
+% Draw the other two sides of the triangle
+\draw (i2) -- (i3) node [above] {$C$} node [below,xshift=-2pt,yshift=-6pt] {$\gamma$} -- (i1);
+% Define a path through the origin and get its intersection with the circle
+\path [name path=diameter] (i2) -- ($ (i2) ! 2.2 ! (origin) $);
+\path [name intersections={of=circle and diameter,by={i5,i6}}];
+% Draw the triangle subtending the diameter
+\draw (i2) -- (i5) node [left] {$D$} node [below right,xshift=2pt,yshift=-4pt] {$\gamma$} -- (i1);
+\path (i2) -- node [above] {$r$} ($(i2)!.5!(i5)$) -- node [above] {$r$} (i5);
+% Dot at origin
+\fill (origin) circle (2pt);
+% Draw small square
+\draw [rotate=10] (i1) rectangle +(8pt,8pt);
+\end{tikzpicture}
+\end{center}
+
+הזוויות
+$\angle ADB$
+ו
+$\angle ACB$
+נשענות על אותו מיתר
+$AB$
+ולכן הן שוות ומוסמנות
+$\gamma$.
+הזווית
+$\angle DAB$
+נשען על הקוטר ולכן שווה ל-%
+$90^\circ$.
+מכאן:
+\[
+\sin\gamma = \displaystyle \frac{c}{2r}\,.
+\]
+מבנייה דומה בקודקודים האחרים מתקבלות הנוסחאות:
+\[
+\frac{1}{2r} = \frac{\sin\gamma}{c} = \frac{\sin\beta}{b} = \frac{\sin\alpha}{a}\,.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{משפט הקוסינוסים}
+
+משפט הקוסינוסים גם הוא לא קשה לזכור בעל פה )ומופיע בנוסחאון(, אבל ההוכחה לא ברורה מאליה. בכל זאת, נביא את ההוכחה כדי לראות שנחוצים רק עובדות גיאמטריות וההגדרות של סינוס וקוסינוס.%
+\footnote{ההוכחה היא למשולש חד-זווית. ההוכחה למשולש קהה-זווית דומה.
+}
+הורד גובה מקודקוד אחד:
+\begin{center}
+\selectlanguage{english}
+% Law of cosines for acute triangle
+\begin{tikzpicture}[scale=6]
+% Coordinates
+\coordinate (a) at (0,0);
+\coordinate (b) at (1,0);
+\coordinate (c) at (.7,.6);
+% Draw triangle
+\draw (a) node[left]  {$A$} --
+          node[below] {$c$}
+      (b) node[right] {$B$} --
+      (c) node[above] {$C$} node[below,yshift=-5pt,xshift=-2pt] {$\gamma$} --
+          node[left,xshift=-2pt]  {$b$}
+      cycle;
+\draw (a) -- node[below right,yshift=3pt,xshift=2pt] {$b\sin\gamma$} ($(b)!(a)!(c)$);
+\draw[rotate=118] ($(b)!(a)!(c)$) -- ++(0,1pt) -- ++(1pt,0) -- ++(0,-1.1pt);
+\path (c) -- node[right] {$b\cos\gamma$} ($(b)!(a)!(c)$) node[right] {$D$};
+\path ($(b)!(a)!(c)$) -- node[right] {$a-b\cos\gamma$} (b);
+\end{tikzpicture}
+\end{center}
+במשולש ישר-הזווית
+$\triangle ADC$,
+היתר הוא 
+$b$
+וניתן לחשב את אורכי הצלעות האחרים באמצעות טריגונומטריה. האורך של
+$DB$
+הוא האורך של
+$CB$ )$a$,
+לא מסומן בציור(
+פחות האורך של 
+$CD$
+שחישבנו. לפי משפט פיתגורוס במשולש
+$\triangle ABD$:
+\begin{eqnarray*}
+c^2 &=& (a-b\cos\gamma)^2 + b^2\sin^2\gamma\\
+&=& a^2-2ab\cos\gamma + b^2\cos^2\gamma + b^2\sin^2\gamma\\
+&=& a^2-2ab\cos\gamma + b^2(\cos^2\gamma + \sin^2\gamma)\\
+&=& a^2+b^2-2ab\cos\gamma\,.
+\end{eqnarray*}
+משפט פיתגורוס מתקבל על ידי הצבת
+$\gamma=90^\circ$,
+כך שאפשר לראות במשפט הקוסינוסים הרחבה של משפט פיתגורוס.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{שטח משולוש}
+
+מאותה בנייה:
+\begin{center}
+\selectlanguage{english}
+% Area of a triangle
+\begin{tikzpicture}[scale=6]
+% Coordinates
+\coordinate (a) at (0,0);
+\coordinate (b) at (1,0);
+\coordinate (c) at (.7,.6);
+% Draw triangle
+\draw (a) node[left]  {$B$} --
+%          node[below] {$c$}
+      (b) node[right] {$C$} --
+      (c) node[above] {$A$} node[below,yshift=-5pt,xshift=-2pt] {$\alpha$} --
+          node[left,xshift=-2pt]  {$c$}
+      cycle;
+\draw (a) -- node[below right,yshift=3pt,xshift=2pt] {$c\sin\alpha$} ($(b)!(a)!(c)$);
+\draw[rotate=118] ($(b)!(a)!(c)$) -- ++(0,1pt) -- ++(1pt,0) -- ++(0,-1.1pt);
+\path (c) -- ($(b)!(a)!(c)$);
+\path (b) -- node[right] {$b$} (c);
+\end{tikzpicture}
+\end{center}
+מתקבלת הנוסחה הכללית עבור שטח של משולש:
+\[
+S(\triangle ABC) = \frac{1}{2}\cdot\textrm{\R{בסיס}}\cdot\textrm{\R{גובה}} = \frac{1}{2}bc\sin\alpha\,.
+\]
+כאשר
+$\alpha$
+זווית ישרה מתקבלת הנוסחה המוכרת
+$S(\triangle ABC) = \frac{1}{2}bc$.
+
+\end{document}
+
+\end{document}

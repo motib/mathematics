@@ -1,0 +1,63 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+
+\usepackage{tikz}
+\usetikzlibrary{external,intersections,shapes.geometric}
+\tikzexternalize[prefix=tikz/]
+
+% Use stealth arrows
+\tikzset {
+  >=stealth
+}
+
+\textwidth=15cm
+\textheight=23cm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=2em
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{2pt plus 1pt minus 1pt}
+
+\setcounter{tocdepth}{1}
+
+\newcommand*{\p}[1]{\texttt{\textup{\footnotesize #1}}}
+\newcommand*{\ih}{\stackrel{\bullet}{=}}
+\newcommand*{\ihge}{\stackrel{\bullet}{\geq}}
+\newcommand*{\ihlt}{\stackrel{\bullet}{<}}
+\newcommand*{\ihle}{\stackrel{\bullet}{\leq}}
+\newcommand*{\qeq}{\stackrel{?}{=}}
+\newcommand*{\qge}{\stackrel{?}{\geq}}
+
+\newcommand*{\qed}{\hfill\rule{1ex}{1.5ex}}
+\newcommand*{\qedd}[1]{\vspace*{-#1ex}\qed}
+
+\newtheorem{theorem}{\R{משפט}}
+\newtheorem{definition}[theorem]{\R{הגדרה}}
+\newtheorem{axiom}{\R{אקסיומה}}
+\newtheorem{lemma}[theorem]{\R{למה}}
+\newtheorem{exercise}{\R{תרגיל}}
+
+\selectlanguage{hebrew}
+
+%\includeonly{}
+
+\begin{document}
+\include{he-intro}
+\include{he-axiom}
+\include{he-integers}
+\include{he-notjust}
+\include{he-watch}
+\include{he-logic}
+\include{he-models}
+\include{he-verif}
+\include{he-deduction}
+\include{he-well}
+\include{he-challenge}
+\include{he-solutions}
+\end{document}
