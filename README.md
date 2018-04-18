@@ -25,6 +25,7 @@ Copyright 2018 by Moti Ben-Ari under the Creative Commons Attribution-ShareAlike
 ### Enrichment
 
 - induction: The many guises of induction (en,he)
+- compass: Help, my compass collapsed (he)
 - circle: How to (almost) square a circle (en,he)
 - quadratrix: How to trisect an angle (if you are willing to cheat) (en,he)
 - five-equation: Solve: sqrt(x+5) = 5 - x^2 (en,he)

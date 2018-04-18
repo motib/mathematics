@@ -4,4 +4,6 @@ others
 plot
 *.bat
 *.zip
+*.ggb
+*~
 
