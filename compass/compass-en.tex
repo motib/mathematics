@@ -601,7 +601,13 @@ Given an arbitrary triangle $\triangle ABC$, let $P$ be the intersection of the 
 \end{center}
 \end{figure}
 \vspace*{-4ex}
-The triangles $\triangle APF, \triangle APE$ are right triangles with equal angle $\alpha$ and a common side $AP$. Therefore, they are congruent by angle-angle-side. $PD$ is perpendicular bisector so $DC=BD$; since $PD$ is a common side, the right triangles $\triangle DPC, \triangle DPB$ are congruent by side-angle-side and we conclude that $BP=PC$. We have already shown that $\triangle APF, \triangle APE$ are congruent so $EP=FP$; therefore, $\triangle EPB, \triangle EPC$ are congruent since they are both right triangles with two sides known. (The third side can be calculated by Pythagoras' Theorem, so they are congruent by side-side-side.) It follows that $EB=FC$. We conclude that $AB= AE+EB=AF+FC =AC$ and the triangle $\triangle ABC$ is isosceles.
+The triangles $\triangle APF, \triangle APE$ are right triangles with equal angle $\alpha$ and a common side $AP$. Therefore, they are congruent by angle-angle-side and $AE=AF$.
+
+$PD$ is perpendicular bisector so $DC=BD$; since $PD$ is a common side, the right triangles $\triangle DPC, \triangle DPB$ are congruent by side-angle-side and we conclude that $PB=PC$.
+
+We have already shown that $\triangle APF, \triangle APE$ are congruent so $EP=FP$; therefore, the triangles $\triangle EPB, \triangle EPC$ are congruent since they are both right triangles with two sides equal. (The third side can be calculated by Pythagoras' Theorem, so they are congruent by side-side-side.) It follows that $EB=FC$.
+
+We conclude that $AB= AE+EB=AF+FC =AC$ and the triangle $\triangle ABC$ is isosceles.
 
 The proof is \emph{correct} but the diagram is not. I have prepared a GeoGebra file \texttt{isosceles.ggb} which shows a triangle for which the point $P$ is \emph{outside} the triangle.
 
