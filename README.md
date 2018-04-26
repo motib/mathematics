@@ -26,6 +26,7 @@ Copyright 2018 by Moti Ben-Ari under the Creative Commons Attribution-ShareAlike
 
 - induction: The many guises of induction (en,he)
 - compass: Help, my compass collapsed (en,he)
+- mohr-mascheroni: Mascheroni's compass theorem (en)
 - circle: How to (almost) square a circle (en,he)
 - quadratrix: How to trisect an angle (if you are willing to cheat) (en,he)
 - five-equation: Solve: sqrt(x+5) = 5 - x^2 (en,he)
