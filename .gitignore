@@ -2,8 +2,9 @@ adasha
 ahva
 others
 plot
+mohr-mascheroni/tikz
+tikz-examples.tex
 *.bat
 *.zip
-*.ggb
 *~
 
