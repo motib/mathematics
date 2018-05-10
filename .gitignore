@@ -3,8 +3,15 @@ ahva
 others
 plot
 mohr-mascheroni/tikz
+compass/tikz
+steiner/tikz
 tikz-examples.tex
 *.bat
 *.zip
 *~
-
+*.aux
+*.log
+*.auxlock
+*.bbl
+*.blg
+*.synctex.gz
