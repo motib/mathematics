@@ -20,6 +20,9 @@
 \setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
 \parindent=0pt
 
+\newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
+
+
 \begin{document}
 \thispagestyle{empty}
 
@@ -27,7 +30,7 @@
 
 \begin{center}
 \textbf{\Huge%
-אני מסתפק במחוגה%
+אני מסתפק בסרגל )ועוד משהו(
 }
 
 \bigskip
@@ -49,7 +52,7 @@
 
 \selectlanguage{english}
 \url{http://www.weizmann.ac.il/sci-tea/benari/}
-\end{center}
+\selectlanguage{hebrew}\end{center}
 
 \bigskip
 \bigskip
@@ -59,7 +62,6 @@
 \begin{center}
 \selectlanguage{english}
 \copyright{}\  2018 by Moti Ben-Ari.
-
 \end{center}
 
 \selectlanguage{english}
@@ -68,9 +70,9 @@
 
 \bigskip
 
-\begin{center}
+\begin{center}\selectlanguage{english}
 \includegraphics[width=.2\textwidth]{../by-sa.png}
-\end{center}
+\selectlanguage{hebrew}\end{center}
 
 \selectlanguage{hebrew}
 
@@ -81,19 +83,30 @@
 \section{%
 מבוא
 }\label{s.intro}
-בשנת
-$1797$
-המתימטיקאי האיטלקי
-\L{Lorenzo Mascheroni}
-הוכיח שכל בנייה גיאומטרית עם סרגל ומחוגה ניתנת לבנייה עם מחוגה בלבד! במאה העשרים התגלה שהמשפט הוכח בשנת
+
+כל בנייה בסרגל ומחוגה ניתנת לבנייה עם מחוגה בלבד. משפט זה הוכח בשנת 
 $1672$
-על ידי המתימטיקאי הדני
-\L{Georg Mohr}.
-לכן, המשפט נקרא היום משפט
-\L{Mohr-Mascheroni}.
+על ידי
+\L{Georg Mohr}
+וב-
+$1797$
+על ידי
+\L{Lorenzo Mascheroni}.
+נשאלת השאלה: האם כל בנייה בסגל ומחוגה ניתנת לבנייה עם סרגל בלבד? התשובה היא שלילית. ב-
+$1822$
+המתיטיקאי הצרפתי
+\L{Jean-Victor Poncelet}
+שיער שכן ניתן להסתפק בסרגל בלבד, בתנאי שקיים במישור מעגל
+\textbf{%
+אחד%
+}
+עם מרכזו. המשפט הוכח ב-
+$1833$
+על ידי המתימטיקאי השוויצרי
+\L{Jakob Steiner}.
 
 במסמך זה אביא את הוכחת המשפט המבוססת על הוכחה שמופיעה כבעייה
-$33$
+$34$
 בספר:
 
 \selectlanguage{english}
@@ -103,55 +116,33 @@ Heinrich D\"{o}rrie: \textit{100 Problems of Elementary Mathematics: Their Histo
 ועובדה על ידי
 \L{Michael Woltermann}.\footnote{\url{http://www2.washjeff.edu/users/mwoltermann/Dorrie/DorrieContents.htm}.
 ברצוני להודות לו על הרשות להתשמש בעבודתו.
-},%
-\footnote{%
-הוכחה אחרת )מפורטת פחות( ניתן למצוא ב%
-\textit{%
-בניות גיאומטריות: בעיות קלאסיות, אתגריות וממוחשבות.
-}%
-משה סטופל, קלרה זיסקין )עורכים(, הוצאת שאנן,
-$2015$.
-הוכחה נוספת:
-\L{Norbert Hungerb\"{u}hler. A short elementary proof of the Mohr-Mascheroni theorem. \textit{American Mathematical Monthly} 101(8), 1994, 784--787.}%
+}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+במאה ה-
+$19$
+הוכח שאם נתחיל עם קטע קו עם אורך 
+$1$
+)המידות לא משנות, פשוט קובעים שאורך הקטע הוא אחד(, ניתן לבנות קטעי קו באורך המתקבלים מהמספרים הרציונליים על ידי פעולות החשבון 
+$+,-,\times,\div$
+ועוד פעולת שורש ריבועי 
+$\sqrt{}$,
+\textbf{%
+ורק%
 }
+מספרים אלה.
 
+משפט זה מסביר למה לא ניתן לפתור את הבעיות המפורסמות שהציגו היוונים: חלוקת זוויות לשלושה חלקים שווים, בניית קוביה שהנפח שלו פי שניים מהנפח של קוביה נתונה, ובניית ריבוע שהשטח שלו שווה לשטח של מעגל נתון. שתי הבניות הראשונות מחייבות בניית קטע קו שאורכו שורש שלישי של קו אחר, וריבוע המעגל מחייב בניית קטע באורך
+$\pi$
+שהוא מספר "טרנסנדנטלי", כלומר, אי אפשר לחשב אותו מהמספרים הרציונליים ועוד פעולה שורש מחזקה כלשהי.
 
-מה המשמעות של בנייה גיאומטרית עם מחוגה בלבד ללא סרגל? האיור הימני מראה את הבנייה של משולש שווה צלעות עם סרגל ומחוגה.
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=0.6]
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\path (A) node[below left] {$A$} -- (B) node[below right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\draw[name path=larc] (A) ++(-10:4cm) arc (-10:80:4cm);
-\draw[name path=rarc] (B) ++(-170:4cm) arc (-170:-260:4cm);
-\path [name intersections={of=larc and rarc,by={t}}];
-\fill (t) node[above right,xshift=-2pt,yshift=3pt] {$C$} circle[radius=3pt];
-\begin{scope}[xshift=10cm]
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\draw (A) node[below left] {$A$} -- (B) node[below right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\draw[name path=larc] (A) ++(-10:4cm) arc (-10:80:4cm);
-\draw[name path=rarc] (B) ++(-170:4cm) arc (-170:-260:4cm);
-\path [name intersections={of=larc and rarc,by={t}}];
-\fill (t) node[above right,xshift=-2pt,yshift=3pt] {$C$} circle[radius=3pt];
-\draw (A) -- (t);
-\draw (B) -- (t);
-\end{scope}
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\end{center}
-איך אפשר לבנות משולש ללא קטעי הקווים
-$AB,AC,BC$?
-למעשה, אין כל צורך
-\textbf{לראות}
-את הקווים. קו או קטע קו מוגדר על ידי שתי נקודות, ומספיק שנבנה את נקודות כדי לקבל בנייה שקולה בנייה עם סרגל. האיור השמאלי מראה בנייה של משולש שווה צלעות עם מחוגה ללא סרגל.
+עם סרגל בלבד ניתן לבנות רק קווים הנחתכים ביניהם, שהיא פעולה לשמעשה פותרת משוואות מסדר ראשון, כלומר, אי אפשר לחשב שורש ריבועי. בנייה של
+\L{Poncelet-Steiner}
+מראה שאם קיים מעגל אחד, ניתן להשתמש בו כדי לחשב שורש ריבועי וכך לבניות כל בנייה על סרגל ומחוגה.
 
-באיורים במסמך זה נצייר בכל זאת קווים, אולם הקווים משמשים אך ורק להבנת הבנייה ולהוכחת נכונותה. חשוב שתשתכנעו שבבנייה עצמה משתמשים רק במחוגה.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 עיון בבנייה גיאומטרית יגלה שכל צעד הוא אחת משלוש פעולות:
 \begin{itemize}
@@ -162,1035 +153,863 @@ $AB,AC,BC$?
 \item
 מציאת נקודות החיתוך בין שני מעגלים.
 \end{itemize}
-ברור שניתן לבצע את הפעולה השלישית רק עם מחוגה. עלינו להראות שעבור שתי הפעולות הראשונות ניתן למוצא בנייה שקולה המשתמשת רק במחוגה.
+ברור שניתן לבצע את הפעולה הראשונה עם סרגל בלבד. עלינו להראות שעבור שתי הפעולות הראשונות ניתן למוצא בנייה שקולה המשתמשת רק בסרגל עם מעגל אחד.
 
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 סימונים:
 \begin{itemize}
-\item $C(O,A)$: 
+\item $c(O,A)$: 
 המעגל שמרכזו
 $O$
 העובר דרך הנקודה
 $A$.
-\item $C(O,r)$:
+\item $c(O,r)$:
 המעגל שמרכזו
 $O$
 עם רדיוס
 $r$.
-\item $C(O,AB)$:
+\item $c(O,AB)$:
 המעגל שמרכזו
 $O$
 עם רדיוס שהוא אורך קטע קו נתון
 $AB$.
 \end{itemize}
 
-תחילה נביא ארבע בניות עזר נחוצות )סעיפים
-\L{\ref{s.reflection}--\ref{s.relative}}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+מה המשמעות של בנייה עם סרגל בלבד? מעגל מוגדר על יהי המרכז שלו
+$O$
+וקטע קו שאחת מהנקודות הקצה שלה היא
+$O$,
+קטע המגדיר את הרדיוס. אם נצליח לבנות את הנקודות
+$X,Y$
+בהתרשים להלן, נוכל לטעון שהצלחנו לבנות את נקודות החיתוך של מעגל נתון וקו נתון ושל שני מעגלים. המעגלים מצויירים בקו מקווקוו כי אם לא ממש מפיעים בבנייה. נמשיך לנקוט בסימון זה: המעגל היחיד הנתון יצוייר בקו רגיל, ומעגלים המשמשים רק להדגמת הבנייה והוכחתה יהיו מקווקווים.
+
+
+\begin{center}
+\selectlanguage{english}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+\fill (0,0) node[above right] {$O$} circle[radius=2pt];
+\draw[thick,dashed,name path=circle] (0,0) circle[radius=2cm];
+\draw (0,0) -- node[left] {$r$} ++(-60:2cm);
+\fill (0,0) ++(-60:2cm) circle[radius=2pt];
+\draw[name path=line] (-3,-.5) -- ++(20:6cm);
+\path [name intersections={of=circle and line,by={X,Y}}];
+\fill (X) node[above right,xshift=-2pt,yshift=4pt] {$X$} circle[radius=2pt];
+\fill (Y) node[above left] {$Y$} circle[radius=2pt];
+\begin{scope}[xshift=6cm]
+\fill (0,0) node[above right] {$O_1$} circle[radius=2pt];
+\fill (3,0) node[above right] {$O_2$} circle[radius=2pt];
+\draw[thick,dashed,name path=circle1] (0,0) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (3,0) circle[radius=2cm];
+\draw (0,0) -- node[left] {$r_1$} ++(-60:2cm);
+\draw (3,0) -- node[left,below] {$r_2$} ++(-20:2cm);
+\fill (3,0) ++(-20:2cm) circle[radius=2pt];
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\fill (X) node[above,yshift=4pt] {$X$} circle[radius=2pt];
+\fill (Y) node[below,yshift=-4pt] {$Y$} circle[radius=2pt];
+\end{scope}
+\end{tikzpicture}
+\selectlanguage{hebrew}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+תחילה נביא חמש בניות עזר נחוצות )סעיפים
+\L{\ref{s.parallel}--\ref{s.root}}%
 (,
-ואחר כך נראה את הבעיות למציאת חיתוך של שני קווים )סעיף
-\L{\ref{s.two-lines}}%
-( ושל קו ומעגל )סעיף
+ואחר כך נראה איך למצוא תקודות חיתוך בין קו ומעגל )סעיף
 \L{\ref{s.line-circle}}%
+( ובין שני מעלגים )סעיף
+\L{\ref{s.circle-circle}}%
 (.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \section{%
-שיקוף נקודה%
-}\label{s.reflection}
+בניית קו המקביל לקו נתון%
+}\label{s.parallel}
+
 \textbf{%
-נתון קטע קו
-$AB$
+נתון קו
+$l$
+המוגדר על ידי שתי נקודות
+$A,B$,
 ונקודה 
-$C$
-שלא נמצאת על
+$P$
+)שאיננה על הקו( ניתן לבנות קו דרך
+$P$
+המקביל ל-
+$AB$.%
+}
+
+נפריד את הבנייה לשני מקרים, כאשר הבנייה של המקרה הראשון תעזור לנו בבנייה של המקרה השני.
+\begin{itemize}
+\item
+"קו מכוון": נתון שתי נקודות
+$A,B$
+על הקו והנקודה 
+$M$
+החוצה את
 $AB$.
-ניתן לבנות נקודה 
-$C'$
-שהיא השיקוף של
-$C$
-מסביב ל-%
-$AB$.
-}
+\item
+כל קו אחר.
+\end{itemize}
 
 \textbf{%
-הגדרה:%
+קו מכוון:
 }
-הנקודה
-$C'$
-היא
-\textbf{%
-שיקוף%
-}
-של הנקודה
-$C$
-מסביב לקטע קו
-$AB$,
-אם 
-$AB$
-)או הקו המכיל אותו( הוא האנך האמצעי של
-$CC'$.
-
-נבנה מעגל שמרכזו
-$A$
-העובר דרך
-$C$
-ומעגל שמרכזו
-$B$
-העובר דרך
-$C$.
-החיתוך של שני המעגלים הוא הנקודה
-$C'$
-שהיא השיקוף של
-$C$.
-
-\begin{center}
-\selectlanguage{english}
-\vspace*{-6pt}
-\begin{tikzpicture}[scale=.65]
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\coordinate (C) at (2.5,1.5);
-\draw[thick,dashed,name path=ab] ($(B)!2!(A)$) -- ($(A)!2!(B)$);
-\fill (A) node[above left] {$A$} circle[radius=2pt];
-\fill (B) node[above right] {$B$} circle[radius=2pt];
-\fill (C) node[above,yshift=4pt] {$C$} circle[radius=2pt];
-\node[draw,circle through=(C),name path=ac] at (A) {};
-\node[draw,circle through=(C),name path=bc] at (B) {};
-\path [name intersections={of=ac and bc,by={x1,Cp}}];
-\fill (Cp) node[below,yshift=-4pt] {$C'$} circle[radius=2pt];
-\draw (C) -- (Cp);
-\draw[thick,dashed] (A) -- (C);
-\draw[thick,dashed] (B) -- (C);
-\draw[thick,dashed] (A) -- (Cp);
-\draw[thick,dashed] (B) -- (Cp);
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-8pt}
-\end{center}
-הוכחה:
-$\triangle ABC$
-ו-%
-$\triangle ABC'$
-חופפים לפי צלע-צלע-צלע, כי
-$AC,AC'$
-הם רדיוסים של אותו מעגל כמו גם
-$BC,BC'$
-ו-%
-$AB$
-הוא צלע משותף. מכאן ש-%
-$\angle CAB = \angle C'AB$,
-ולכן
-$AB$
-הוא חוצה הזווית של
-$\angle CAC'$.
-אבל
-$\triangle CAC'$
-הוא משולש שווה שוקיים, וחוצה הזווית
-$AB$
-הוא גם האנך האמצעי של בסיס המשולש
-$CC'$.
-לפי ההגדרה,
-$C'$
-היא השיקוף של
-$C$
-מסביב ל-%
-$AB$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{%
-בניית מעגל עם רדיוס נתון
-}\label{s.radius}
-
-\textbf{%
-נתונה שלוש נקודות
-$A,B,C$.
-ניתן לבנות מעגל
-$c(A,BC)$
-שמרכזו 
-$A$
-עם רדיוס שווה לאורך קטע הקו 
-$BC$.
-}
-
-לכאורה, אין כאן שום בעייה. נציב את רגלי המחוגה כך שרגל אחת נמצאת על
-$B$
-והרגל השניה על
-$C$,
-ואז נציב את הרגל עם החוד על
-$A$,
-ולמעגל שיתקבל רדיוס שווה ל-%
-$BC$.
-הסיבה לבנייה המסובכת להלן היא שהמחוגה של אוקלידס היא מחוגה "מתמוטטת"
-\L{(collapsing)},
-שלא שומרת על המרחק בין הרגליים כאשר מרימים את המחוגה מהנייר. אוקלידיס הוכיח במשפט הנקרא היום
-\L{Compass Equivalence Theorem}
-שכל בנייה עם מחוגה קבועה ניתנת לבנייה עם מחוגה מתמוטטת. סעיף זה למעשה מוכיח המשפט כאשר משתמשים במחוגה בלבד. ראו באתר שלי את המאמר "אמאלה, המחוגה שלי התמוטטה!" עבור ההוכחה של אוקלידס.
-
-נבנה את המעגלים 
-$c(A,B)$, $c(B,A)$
-ונסמן את נקודות החיתוך
-$X,Y$.
-
-\begin{center}
-\vspace*{-4pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
-\coordinate (A) at (0,1.5);
-\coordinate (B) at (0,-1.5);
-\coordinate (C) at (1.5,-3);
-\coordinate (Cp) at (1.5,3);
-\fill (A) node[above] {$A$} circle[radius=3pt];
-\fill (B) node[below] {$B$} circle[radius=3pt];
-\fill (C) node[below] {$C$} circle[radius=3pt];
-%\fill (Cp) node[above] {$C'$} circle[radius=3pt];
-\node[draw,circle through=(B),name path=ab] at (A) {};
-\node[draw,circle through=(A),name path=ba] at (B) {};
-\path [name intersections={of=ab and ba,by={Y,X}}];
-\fill (X) node[above right,xshift=4pt] {$X$} circle[radius=3pt];
-\fill (Y) node[above left,xshift=-4pt] {$Y$} circle[radius=3pt];
-\draw[thick,dashed] ($(X)!2.3!(Y)$) -- ($(Y)!2!(X)$);
-%\draw[thick,dashed] (C) -- (Cp);
-\end{tikzpicture}
-\vspace*{-4pt}
-\selectlanguage{hebrew}
-\end{center}
-
-נבנה את
-$C'$,
-השיקוף של
-$C$
-מסביב לקו
-$XY$
-לפי הבנייה בסעיף
-\L{\ref{s.reflection}}.
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.45]
-\coordinate (A) at (0,1.5);
-\coordinate (B) at (0,-1.5);
-\coordinate (C) at (1.5,-3);
-\coordinate (Cp) at (1.5,3);
-\fill (A) node[right] {$A$} circle[radius=3pt];
-\fill (B) node[right] {$B$} circle[radius=3pt];
-\fill (C) node[below,yshift=-2pt] {$C$} circle[radius=3pt];
-\fill (Cp) node[above,xshift=2pt,yshift=2pt] {$C'$} circle[radius=3pt];
-\node[circle through=(B),name path=ab] at (A) {};
-\node[circle through=(A),name path=ba] at (B) {};
-\path [name intersections={of=ab and ba,by={Y,X}}];
-\fill (X) node[above right,xshift=4pt] {$X$} circle[radius=3pt];
-\fill (Y) node[above left,xshift=-4pt] {$Y$} circle[radius=3pt];
-\node[draw,circle through=(C)] at (X) {};
-\node[draw,circle through=(C)] at (Y) {};
-\draw[thick,dashed] ($(X)!2.3!(Y)$) -- ($(Y)!2!(X)$);
-%\draw (X) -- (Y) -- (C) -- (X) -- (Cp) -- (Y);
-\draw[thick,dashed] (C) -- (Cp);
-\end{tikzpicture}
-\vspace*{-6pt}
-\selectlanguage{hebrew}
-\end{center}
-
-המעגל
-$c(A,C')$
-הוא המעגל המבוקש.
-
-\begin{center}
-\vspace*{-6pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.5]
-\coordinate (A) at (0,1.5);
-\coordinate (B) at (0,-1.5);
-\coordinate (C) at (1.5,-3);
-\coordinate (Cp) at (1.5,3);
-\fill (A) node[above,yshift=2pt] {$A$} circle[radius=3pt];
-\fill (B) node[below,yshift=-2pt] {$B$} circle[radius=3pt];
-\fill (C) node[below,yshift=-2pt] {$C$} circle[radius=3pt];
-\fill (Cp) node[above,yshift=2pt] {$C'$} circle[radius=3pt];
-\node[circle through=(B),name path=ab] at (A) {};
-\node[circle through=(A),name path=ba] at (B) {};
-\path [name intersections={of=ab and ba,by={Y,X}}];
-\fill (X) node[above right,xshift=4pt] {$X$} circle[radius=3pt];
-\fill (Y) node[above left,xshift=-4pt] {$Y$} circle[radius=3pt];
-\node[circle through=(C)] at (X) {};
-\node[draw,circle through=(C)] at (Y) {};
-\draw[thick,dashed] ($(X)!2.3!(Y)$) -- ($(Y)!2!(X)$);
-\path[name path=xy] (X) -- (Y);
-\node[draw,thick,circle through=(Cp)] at (A) {};
-\draw[very thick] (A) -- (Cp);
-\draw[very thick] (B) -- (C);
-\draw[very thick,name path=abline] (A) -- (B);
-\draw[very thick,name path=ccp] (C) -- (Cp);
-\path [name intersections={of=xy and abline,by={D}}];
-\path [name intersections={of=xy and ccp,by={E}}];
-\fill (D) node[above left] {$D$} circle[radius=3pt];
-\fill (E) node[below right] {$E$} circle[radius=3pt];
-\draw[thick,dashed] (D) -- (Cp);
-\draw[thick,dashed] (D) -- (C);
-\end{tikzpicture}
-\vspace*{-6pt}
-\selectlanguage{hebrew}
-\end{center}
-הוכחה: הנקודה
-$A$
-היא השיקוף של 
-$B$
-סביב 
-$XY$
-)ניתן להוכיח בהסתמך על זה שהמשולשים
-$\triangle YAX, \triangle YBX$
-חופפים(, ו-%
-$C'$
-נבנה כשיקוף של 
-$C$
-סביב
-$XY$.
-לפי ההגדרה, 
-$XY$
-הוא האנך האמצעי לקטעי הקו 
-$AB$, $CC'$,
-ולכן
-$C'E=EC$
-)וגם
-$AD=DB$(,
-ו-%
-$\angle DEC=\angle DEC'(=90^\circ)$.
-$\triangle DEC$
-חופף ל-%
-$\triangle DEC'$
-לפי צלע-זווית-צלע. מכאן, ש-%
-$DC=DC'$
-ו-%
-$\angle ADC'=\angle BDC$
-)כי הן זוויות משלימות ל-%
-$\angle EDC, \angle EDC'$%
-(.
-המשולש
-$\triangle ADC'$
-חופף ל-%
-$\triangle BDC$
-לפי צלע-זווית-צלע,
-כך ש-%
-$AC'=BC$.
-
-הוכחה זו מראה באופן כללי ששיקוף משמר מרחקים.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{%
-בניית חיבור וחיסור של שני קטעי קווים%
-}\label{s.add-subtract}
-
-\textbf{%
-נתון קטע קו
-$PQ$
-באורך
-$a$
-וקטע קו
-$RS$
-באורך
-$b$.
-ניתן לבנות קטעי קו
-$QT,QU$
-כך ש-%
-$PUQT$
-הוא קטע קו, כאשר האורך של
-$PU$
-הוא
-$a-b$
-והאורך של
-$PT$
-הוא
-$a+b$.
-}
-
-\begin{center}
-\selectlanguage{english}
-\vspace*{-2ex}
-\begin{tikzpicture}[scale=.8]
-\draw (0,0) -- (5,0);
-\fill (0,0) node[above] {$P$} circle[radius=2pt];
-\fill (5,0) node[above left] {$Q$} circle[radius=2pt];
-\fill (3,0) node[above left] {$U$} circle[radius=2pt];
-\fill (7,0) node[above right] {$T$} circle[radius=2pt];
-\draw[thick,dashed] (5,0) -- (8,0);
-\draw (5,0) circle[radius=2cm];
-\draw[thick,dashed] (5,0) -- node[left] {$b$} ++(60:2cm);
-\draw (9,-1) node[above] {$R$} -- node[below right] {$b$} ++(20:2cm) node[above] {$S$};
-\fill (9,-1) circle[radius=2pt];
-\fill (9,-1) ++(20:2cm) circle[radius=2pt];
-\draw[<->] (0,-.5) -- node[fill=white] {$a$} (5,-.5);
-\draw[<->] (0,-1) -- node[fill=white] {$a-b$} (3,-1);
-\draw[<->] (0,-1.5) -- node[fill=white] {$a+b$} (7,-1.5);
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\end{center}
-\vspace*{-2ex}
-שוב, לו היה לנו סרגל הבנייה היתה פשוטה ביותר: בנה מעגל שמרכזו
-$Q$
-עם רדיוס
-$b$,
-והנקודות
-$U,T$
-הן נקודות החיתוך של המעגל עם
-\textbf{%
-הקרן%
-}
-שממשיך את
-$PQ$.
-
-נבחר
-$H$,
-היא נקודה כלשהי על המעגל
-$c(Q,b)$,
-ונבנה את הנקודה
-$H'$,
-השיקוף שלה סביב
-$PQ$.
-$h$
-הוא האורך של
-$HH'$.
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
-\coordinate (Q) at (0,0);
-\coordinate (P) at (-6.8,0);
-\coordinate (B) at (-3,-2);
-\draw[thick,dashed] ($(Q)!1.3!(P)$) -- node[above,near start] {$a$} ($(P)!2.3!(Q)$);
-\fill (Q) node[above left] {$Q$} circle[radius=2pt];
-\fill (P) node[above] {$P$} circle[radius=2pt];
-\fill (B) circle[radius=2pt];
-\node[draw,circle through=(B),name path=qb] at (Q) {};
-\draw[thick,dashed] (Q) -- node[left,xshift=-1pt,yshift=2pt] {$b$} (B);
-\path[name path=qh] (Q) -- (-40:5cm);
-\path[name path=qhp] (Q) -- (40:5cm);
-\path [name intersections={of=qb and qh,by={H}}];
-\path [name intersections={of=qb and qhp,by={Hp}}];
-\fill[below right] (H) node[right,xshift=2pt] {$H$} circle[radius=2pt];
-\fill[above right] (Hp) node[right,xshift=2pt] {$H'$} circle[radius=2pt];
-\draw[thick,dashed] (H) -- node[below left,yshift=-2pt] {$h$} (Hp);
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\end{center}
-נבנה את המעגלים
-$c(Q,h)$, $c(H,b)$.
-$K$
-היא נקודת החיתוך בין המעגלים,
-ן-%
-$K'$
-היא השיקוף של
-$K$
-מסביב ל-%
-$PQ$.
-\begin{center}
-\selectlanguage{english}
-\vspace*{-4pt}
-\begin{tikzpicture}[scale=.5]
-\coordinate (Q) at (0,0);
-\coordinate (P) at (-6.8,0);
-\coordinate (B) at (-3,-2);
-\draw[thick,dashed] ($(Q)!1.3!(P)$) -- ($(P)!2.3!(Q)$);
-\fill (Q) node[above right] {$Q$} circle[radius=3pt];
-\fill (P) node[above] {$P$} circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\node[draw,circle through=(B),name path=qb] at (Q) {};
-\draw[thick,dashed] (Q) -- node[left,xshift=-1pt,yshift=2pt] {$b$} (B);
-\path[name path=qh] (Q) -- (-40:5cm);
-\path[name path=qhp] (Q) -- (40:5cm);
-\path [name intersections={of=qb and qh,by={Hp}}];
-\path [name intersections={of=qb and qhp,by={H}}];
-\fill (H) node[right,xshift=2pt] {$H$} circle[radius=3pt];
-\fill (Hp) node[right,xshift=2pt] {$H'$} circle[radius=3pt];
-\draw (H) -- node[below left,yshift=-3pt] {$h$} (Hp);
-\draw[thick,name path=circleqh] (Q) let
-  \p1 = ($ (H) - (Hp) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  circle (\n2)
-  (Q) edge [dashed] node[below] {$h$} +(140:\n2) ++(140:\n2) coordinate (q);
-\fill (q) circle[radius=3pt];
-\draw[thick,name path=circlehb] (H) let
-  \p1 = ($ (Q) - (B) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  circle (\n2)
-  (H) edge [dashed] node[below,near end] {$b$} +(50:\n2) ++(50:\n2)  coordinate (h);
-\fill (h) circle[radius=3pt];
-\path [name intersections={of=circleqh and circlehb,by={K}}];
-\fill (K) node[above left] {$K$} circle[radius=3pt];
-%\draw[thick] (H) -- (K);
-\draw let
-  \p1 = ($ (K) - (Q) $)
-in
-  coordinate (Kp) at (\x1,-\y1);
-\fill (Kp) node[below left] {$K'$} circle[radius=3pt];
-\draw (K) -- (Kp);
-\end{tikzpicture}
-\vspace*{-8pt}
-\selectlanguage{hebrew}
-\end{center}
-$PQ$
-הוא האנך האמצעי גם ל-%
-$HH'$
-וגם ל-%
-$KK'$,
-לכן שני קטעי הקו מקבילים. 
-$KH = K'H' = b$
-כי
-$K$
-נמצאת על המגעל שמרכזו 
-$H$,
-ו-%
-$K',H'$
-הן שיקופים של
-$K,H$.
-מכאן שהמרובע 
-$KHH'K'$
-הוא טרפז שווה שוקיים עם בסיסים
-$KK' = 2h$, $HH'=h$.
+נבנה קו המכיל את
+$AP$.
+נבחר נקודה
+$S$,
+נקודה כלשהי על הממשך הקו מעבר ל-%
+$AP$.
+נבנה את הקווים
+$MS$, $BS$.
 נסמן ב-%
-$d$
-את האלכסונים
-$K'H=KH'$.
-
+$O$
+את החיתוך של 
+$BP$
+ו-%
+$MS$.
+נבנה קו המכיל את
+$AO$
+ונסמן ב-%
+$Q$
+את החיתוך של ההמשך של
+$AO$
+עם
+$BS$.
 \begin{center}
 \selectlanguage{english}
+\vspace*{-8pt}
+\begin{tikzpicture}
+\draw[name path=pq] (-4,0) -- (4,0);
+\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+\fill (A) circle[radius=2pt];
+\fill (B) circle[radius=2pt];
+\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+\fill (S) circle[radius=2pt];
+\draw[name path=sb] (S) -- (B);
+\path [name intersections={of=pq and as,by={P}}];
+\path [name intersections={of=pq and sb,by={Q}}];
+\fill (P) node[above left] {$P$} circle[radius=2pt];
+\fill (Q) node[above right] {$Q$} circle[radius=2pt];
+\draw[name path=pb] (P) -- (B);
+\draw[name path=qa] (Q) -- (A);
+\path [name intersections={of=pb and qa,by={O}}];
+\fill (O) node[right,xshift=2pt] {$O$} circle[radius=2pt];
+\fill (0,-2) coordinate (M) node[below right] {$M$} circle[radius=2pt];
+\draw (S) -- (M);
+\end{tikzpicture}
 \vspace*{-6pt}
-\begin{tikzpicture}[scale=.5]
-\coordinate (Q) at (0,0);
-\coordinate (P) at (-6.8,0);
-\coordinate (B) at (-3,-2);
-\draw[thick,dashed] ($(Q)!1.3!(P)$) -- ($(P)!2.3!(Q)$);
-\fill (Q) node[above left] {$Q$} circle[radius=3pt];
-\fill (P) node[above] {$P$} circle[radius=3pt];
-%\fill (B) circle[radius=3pt];
-\node[draw,circle through=(B),name path=qb] at (Q) {};
-%\draw[thick,dashed] (Q) -- node[left,xshift=-1pt,yshift=2pt] {$b$} (B);
-\path[name path=qh] (Q) -- (-40:5cm);
-\path[name path=qhp] (Q) -- (40:5cm);
-\path [name intersections={of=qb and qh,by={Hp}}];
-\path [name intersections={of=qb and qhp,by={H}}];
-\fill (H) node[right,xshift=2pt] {$H$} circle[radius=3pt];
-\fill (Hp) node[right,xshift=2pt] {$H'$} circle[radius=3pt];
-\draw (H) -- node[below right,yshift=-2pt] {$h$} (Hp);
-\path[name path=circleqh] (Q) let
-  \p1 = ($ (H) - (Hp) $)
-in
-  circle ({veclen(\x1,\y1)});
-\path[name path=circlehb] (H) let
-  \p1 = ($ (Q) - (B) $)
-in
-  circle ({veclen(\x1,\y1)});
-\path [name intersections={of=circleqh and circlehb,by={K,k2}}];
-\fill (K) node[above left] {$K$} circle[radius=3pt];
-\draw (Q) -- node[left] {$h$} (K);
-\draw (H) -- node[right,xshift=4pt] {$b$} (K);
-\draw let
-  \p1 = ($ (K) - (Q) $)
-in
-  coordinate (Kp) at (\x1,-\y1);
-\fill (Kp) node[below left] {$K'$} circle[radius=3pt];
-\draw (Q) -- node[left] {$h$} (Kp) -- node[right,xshift=2pt,yshift=-2pt] {$b$} (Hp);
-\draw (K) -- node[above right] {$d$} (Hp);
-\draw (Kp) -- node[left] {$d$} (H);
-\end{tikzpicture}\label{p.ptolemy}
 \selectlanguage{hebrew}
-\vspace*{-12pt}
 \end{center}
-
-אנחנו רוצים להוכיח ש-
-$KHH'K'$
-הוא
-\textbf{%
-מרובע ציקלי%
-}
-שניתן לבחסום במעגל. המשפט שאנחנו צריכים להוכחה הוא: אם  הזוויות הנגדיות של מרובע צמודות, אזי המרובע ציקלי. אם נוכיח שבטרפז שווה שוקיים הזוויות הנגדיות צמודות, נקבל שהטרפז הוא ציקלי. בספרי גיאומטריה ניתן למצוא הוכחה פשוטה לטיעון ההפוך: במרובע ציקלי, הזוויות הנגדיות הן צמודות, אבל קשה למצוא הוכחה של הטיעון עצמו. לכן, אביא כאן את שתי ההוכחות.
-
-\textbf{%
-הזוויות הנגדיות של מרובע ציקלי הן צמודות:%
-}
-ערכה של זווית היקפית הנשענת על קשת הוא מחצית ערכה של הקשת, לכן 
-$\angle DAB$
-היא מחצית מהקשת
-$DCB$
-והזווית
-$\angle DCB$
-היא מחצית מהקשת
-$DAB$.
-אבל שתי הקשתות נתמכות על כל היקף המעגל, ולכן הסכום שלהן הוא
-$360^\circ$.
-מכאן,
-$\angle DAB + \angle DCB = \frac{1}{2} \cdot 360^\circ =  180^\circ$.
-באופן דומה,
-$\angle ADC + \angle ABC = 180^\circ$.
-
-
-\begin{center}
-\vspace*{-12pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
-\coordinate (origin) at (0,0);
-\coordinate (A) at (1,3);
-\node[draw,circle through=(A),name path=circle] at (origin) {};
-\fill (A) node[above right] {$A$} circle[radius=3pt];
-\path[name path=b] (A) -- (-50:4.5cm);
-\path[name path=c] (A) -- (-120:4.5cm);
-\path[name path=d] (A) -- (150:4.5cm);
-\path [name intersections={of=circle and b,by={b1,B}}];
-\fill (B) node[right] {$B$} circle[radius=3pt];
-\path [name intersections={of=circle and c,by={c1,C}}];
-\fill (C) node[below left] {$C$} circle[radius=3pt];
-\path [name intersections={of=circle and d,by={d1,D}}];
-\fill (D) node[above left] {$D$} circle[radius=3pt];
-\draw (A) -- (B) -- (C) -- (D) -- cycle;
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-12pt}
-\end{center}
-
-
-\textbf{%
-מרובע שהזוויות הנגדיות שלו צמודות הוא ציקלי:%
-}
-ניתן לחסום כל משולש במעגל. נבנה מעגל החוסם את 
-$\triangle DAB$
-ונניח ש-%
-$C'$
-היא נקודה כך ש-%
-$\angle DAB + \angle DC'B = 180^\circ$,
-אבל
-$C'$
-\textbf{אינה}
-על היקף מעגל. ללא הגבלת הכללית, נניח ש-%
-$C'$
-נמצאת בתוך המעגל.
-
-\begin{center}
-\vspace*{-12pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
-\coordinate (origin) at (0,0);
-\coordinate (A) at (1,3);
-\node[draw,circle through=(A),name path=circle] at (origin) {};
-\fill (A) node[above right] {$A$} circle[radius=3pt];
-\path[name path=b] (A) -- (-50:4cm);
-\path[name path=c] (A) -- (-120:4cm);
-\path[name path=d] (A) -- (150:4cm);
-\path [name intersections={of=circle and b,by={b1,B}}];
-\fill (B) node[right] {$B$} circle[radius=3pt];
-\path [name intersections={of=circle and c,by={c1,C}}];
-\fill (C) node[below left] {$C$} circle[radius=3pt];
-\path [name intersections={of=circle and d,by={d2,D}}];
-\fill (D) node[above left] {$D$} circle[radius=3pt];
-\coordinate (Cp) at ($(C)!.2!(D)$);
-\draw (A) -- (B) -- (Cp) -- (D) -- cycle;
-\fill (Cp) node[left,xshift=1pt,yshift=2pt] {$C'$} circle[radius=3pt];
-\draw[thick,dashed] (D) -- (B) -- (C) -- (Cp);
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-12pt}
-\end{center}
-
-נבנה קרן היוצאת מ-%
-$DC$
-כאשר
-$C$
-היא נקודת החיתוך שלה עם המעגל. לפי הטיעון שהוכחנו לעיל, המרובע 
-$ABCD$
-חסום מעגל ולכן:
-\begin{eqnarray*}
-\angle DAB + \angle DCB &=& 180^\circ\\
-\angle DAB + \angle DCB &=& \angle DAB + \angle DC'B\\
-\angle DCB &=& \angle DC'B\,,
-\end{eqnarray*}
-מצב שאינו אפשרי אם 
-$C$
-נמצא על המעגל ו-%
-$C'$
-נמצאת בתוך המעגל.
-
-כדי להשלים את ההוכחה, נראה שהזוויות נגדיות של טרפז שווה שוקיים צמודות, ולכן הטרפז הוא ציקלי וניתן לחוסם אותו במעגל.
-
-\begin{center}
-\vspace*{-12pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
-\coordinate (origin) at (0,0);
-\coordinate (A) at (2.5,1.8);
-\node[circle through=(A),name path=circle] at (origin) {};
-\fill (A) node[above right] {$A$} circle[radius=3pt];
-\path[name path=b] (A) -- ++(-80:4cm);
-\path[name path=d] (A) -- ++(180:6cm);
-\path [name intersections={of=circle and b,by={b1,B}}];
-\fill (B) node[below right] {$B$} circle[radius=3pt];
-\path [name intersections={of=circle and d,by={d1,D}}];
-\fill (D) node[above left] {$D$} circle[radius=3pt];
-\path[name path=c] (D) -- ++(-100:4cm);
-\path [name intersections={of=circle and c,by={c1,C}}];
-\fill (C) node[below left] {$C$} circle[radius=3pt];
-\draw (A) -- node[right,xshift=8pt] {$x$} (B);
-\draw[name path=bc] (B) -- node[below] {$y$} (C);
-\draw (C) -- node[left,xshift=-8pt] {$x$} (D) -- node[above] {$y$} (A);
-\path[name path=para] (A) -- ++(-100:4cm);
-\path [name intersections={of=para and bc,by={Bp}}];
-\fill (Bp) node[below left] {$B'$} circle[radius=3pt];
-\draw[thick,dashed] (A) -- node[left,xshift=-2pt] {$x$} (Bp);
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-24pt}
-\end{center}
-נבנה קטע קו
-$AB'$
+מהתרשים נראה ברור שהקו 
+$PQ$
 מקביל ל-%
-$CD$.
-המרובע
-$AB'CD$
-הוא מקבילית והמשולש
-$\triangle ABB'$
-שווה שוקיים, כך ש-%
-$\angle C= \angle AB'B = \angle B$.
-באופן דומה,
-$\angle A = \angle D$.
-אבל הסכום של הזוויות הפנימיות של מרובע כלשהו שווה ל-%
-$360^\circ$:
-\begin{eqnarray*}
-\angle A + \angle B + \angle C + \angle D &=& 360^\circ\\
-2\angle A + 2 \angle C &=& 360^\circ\\
-\angle A +  \angle C &=& 180^\circ\,,
-\end{eqnarray*}
-ובאופן דומה
-$\angle B +  \angle D = 180^\circ$.
+$AB$,
+אבל זה בדיוק מה שעלינו להוכיח.
 
-עכשיו נשתמש במשפט של תלמי
-\L{(Ptolemy)}.
-המשפט טוען שעבור כל מרובע החסום על ידי מעגל, מתקיים שוויון הקושר את אורכי האלכסונים ואורכי הצלעות: 
+ההוכחה תשתמש במשפט של
+\L{Ceva}
+שנוכיח בהמשך. לפי המשפט, קיים קשר בין האורכים של קטעים המרכיבים את היקף המשולש:
 \[
-ef = ac + bd\,.
+\frac{AM}{MB}\frac{BQ}{QS}\frac{SP}{PA} = 1
 \]
-\begin{center}
-\vspace*{-28pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.6]
-\coordinate (origin) at (0,0);
-\coordinate (A) at (1,3);
-\node[draw,circle through=(A),name path=circle] at (origin) {};
-\fill (A) node[above right] {$A$} circle[radius=3pt];
-\path[name path=b] (A) -- (-50:4cm);
-\path[name path=c] (A) -- (-120:4cm);
-\path[name path=d] (A) -- (150:4cm);
-\path [name intersections={of=circle and b,by={b1,B}}];
-\fill (B) node[right] {$B$} circle[radius=3pt];
-\path [name intersections={of=circle and c,by={C,c2}}];
-\fill (C) node[below left] {$C$} circle[radius=3pt];
-\path [name intersections={of=circle and d,by={D,d2}}];
-\fill (D) node[above left] {$D$} circle[radius=3pt];
-\draw (A) -- node[right] {$a$} (B) -- node[below,yshift=-10pt] {$b$} (C) -- node[left] {$c$} (D) -- node[above,xshift=2pt,yshift=16pt] {$d$}  cycle;
-\draw (A) -- node[right,near start] {$e$} (C);
-\draw (B) -- node[left,near end,yshift=-6pt] {$f$} (D);
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-12pt}
-\end{center}
-קיימת הוכחה גיאומטרית )ראו ויקיפדיה(, אבל אני אביא הוכחה טריגונומטרית פשוטה.
-
-מחוק הקוסינוסים עבור המשולשים
-$\triangle ABC$, $\triangle ADC$, $\triangle DAB$, $\triangle DCB$,
-מקבלים את המשוואות:
-\begin{eqnarray*}
-e^2 &=& a^2 + b^2 - 2ab \cos \angle B\\
-e^2 &=& c^2 + d^2 - 2cd \cos \angle D\\
-f^2 &=& a^2 + d^2 - 2ad \cos \angle A\\
-f^2 &=& b^2 + c^2 - 2bc \cos \angle C\,.
-\end{eqnarray*}
-הזוויות הנגדיות של מרובע חסום במעגל צמודות
-$\angle C = 180^\circ - \angle A$
+נזכור ש-%
+$M$
+היא הנקודה החוצה של
+$AB$,
+כך ש-%
+$AM=MB$
 ו-%
-$\angle D = 180^\circ - \angle B$,
-ולכן:
-\begin{eqnarray*}
-\cos \angle D &=& - \cos \angle B\\
-\cos \angle C &=& -\cos \angle A\,,
-\end{eqnarray*}
-וניתן להיפטר מהגורמים עם הקוסינוסים משתי המשוואות הראשונות ומשתי המשוואות האחרונות. לאחר חישובים מעיקים נקבל:
-\begin{eqnarray*}
-e^2 &=& \frac{(ac+bd)(ad+bc)}{(ab+cd)}\\
-f^2 &=& \frac{(ab+cd)(ac+bd)}{(ad+bc)}\,.
-\end{eqnarray*}
-נכפיל את שתי המשוואות ונפשט כדי לקבל את המשפט של תלמי:
-\begin{eqnarray*}
-e^2\cdot f^2 &=& (ac+bd)^2\\
-ef &=& (ac+bd)\,. 
-\end{eqnarray*}
-עבור הבנייה בעמוד~%
-\L{\pageref{p.ptolemy}},
-אורך האלכסונים הוא
-$d$,
-אורך השוקיים הוא
-$b$,
-ואורכי הבסיסים הם
-$h$
-ו-%
-$2h$.
-ממשפט תלמי:
-$d\cdot d = b\cdot b + h\cdot 2h$
-או
-$d^2=b^2+2h^2$.
-
-תהי
-$X$
-נקודה על הקו
+$\frac{AM}{MB}=1$.
+הגורם הראשון של המכלפה יורד ונרשום את המשוואה:
+\begin{equation}
+\frac{BS}{QS}=\frac{AS}{PS}\,.
+\end{equation}
+נוכיח שהמשולש
+$\triangle ABS$
+דומה ל-%
+$\triangle PQS$,
+ולכן הקו
 $PQ$
-המאריך את
-$PQ$
-ב-%
-$b$.
-בהמשך נבנה את 
-$X$
-ובינתיים נדמה לעצמנו שהיא קיימת. נגדיר 
-$x = K'X$.
-המשולש
-$\triangle QK'X$
-הוא משולש ישר זווית ולכן
-$x^2 = b^2 + h^2$:
-\begin{center}
-\vspace*{-14pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.7]
-\coordinate (Q) at (0,0);
-\coordinate (P) at (-6.8,0);
-\coordinate (B) at (-3,-2);
-\draw[thick,dashed,name path=pq] ($(Q)!1.3!(P)$) -- ($(P)!2.3!(Q)$);
-\fill (Q) node[above left] {$Q$} circle[radius=2pt];
-\fill (P) node[above] {$P$} circle[radius=2pt];
-%\fill (B) circle[radius=2pt];
-\node[draw,circle through=(B),name path=qb] at (Q) {};
-%\draw[thick,dashed] (Q) -- node[left,xshift=-1pt,yshift=2pt] {$b$} (B);
-\path[name path=qh] (Q) -- (-40:5cm);
-\path[name path=qhp] (Q) -- (40:5cm);
-\path [name intersections={of=qb and qh,by={hp}}];
-\path [name intersections={of=qb and qhp,by={H}}];
-\fill (H) node[right,xshift=2pt] {$H$} circle[radius=2pt];
-\fill (hp) node[right,xshift=2pt] {$H'$} circle[radius=2pt];
-\draw[thick,dashed] (H) -- (hp);
-\path[name path=circleqh] (Q) let
-  \p1 = ($ (H) - (hp) $)
-in
-  circle ({veclen(\x1,\y1)});
-\path[name path=circlehb] (H) let
-  \p1 = ($ (Q) - (B) $)
-in
-  circle ({veclen(\x1,\y1)});
-\path [name intersections={of=circleqh and circlehb,by={K,k2}}];
-\fill (K) node[above left] {$K$} circle[radius=2pt];
-\draw[thick,dashed] (Q) -- (K);
-\draw[thick,dashed] (H) -- (K);
-\draw[thick,dashed] let
-  \p1 = ($ (K) - (Q) $)
-in
-  coordinate (kp) at (\x1,-\y1);
-\fill (kp) node[below left] {$K'$} circle[radius=2pt];
-\draw[thick,dashed] (Q) -- node[left] {$h$} (kp) -- (hp);
-\draw[thick,dashed] (K) -- (hp);
-\draw[thick,dashed] (kp) -- (H);
-\path [name intersections={of=pq and qb,by={X,x2}}];
-\fill (X) node[below right] {$X$} circle[radius=2pt];
-\draw[thick,dashed] (kp) -- node[left] {$x$} (X);
-\draw[very thick] (Q) -- (kp) -- (X) -- node[above,xshift=-8pt] {$b$} cycle;
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-12pt}
-\end{center}
-לפי המשפט של תלמי
-$d^2 = b^2 + 2h^2$
-ולכן:
-\begin{eqnarray*}
-d^2 &=& b^2 + 2h^2\\
-&=&(x^2-h^2)+2h^2\\
-&=&x^2+h^2\,.
-\end{eqnarray*}
-\vspace*{-6pt}
-אל תחפשו משולש ישר זווית באיור. אנחנו רק קובעים 
-\textbf{%
-שניתן לבנות%
-}
-משולש ישר זווית עם צלעות
-$x,h,d$.
-
-נבנה את הנקודה
-$S$
-כנקודת החיתוך של המעגלים
-$c(K,d)$
-ו-%
-$c(K',d)$:
-
-\begin{center}
-\vspace*{-16pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
-\coordinate (Q) at (0,0);
-\coordinate (P) at (-6.8,0);
-\coordinate (B) at (-3,-2);
-\draw[dashed,name path=pq] ($(Q)!1.3!(P)$) -- ($(P)!2.3!(Q)$);
-\fill (Q) node[above left] {$Q$} circle[radius=3pt];
-\fill (P) node[above] {$P$} circle[radius=3pt];
-\node[draw,circle through=(B),name path=qb] at (Q) {};
-\path[name path=qh] (Q) -- (-40:5cm);
-\path[name path=qhp] (Q) -- (40:5cm);
-\path [name intersections={of=qb and qh,by={Hp}}];
-\path [name intersections={of=qb and qhp,by={H}}];
-%\fill (H) node[right,xshift=2pt] {$H$} circle[radius=3pt];
-%\fill (Hp) node[right,xshift=2pt] {$H'$} circle[radius=3pt];
-\path[name path=circleqh] (Q) let
-  \p1 = ($ (H) - (Hp) $)
-in
-  circle ({veclen(\x1,\y1)});
-\path[name path=circlehb] (H) let
-  \p1 = ($ (Q) - (B) $)
-in
-  circle ({veclen(\x1,\y1)});
-\path [name intersections={of=circleqh and circlehb,by={K,k2}}];
-\fill (K) node[above left] {$K$} circle[radius=3pt];
-\draw[thick,dashed] let
-  \p1 = ($ (K) - (Q) $)
-in
-  coordinate (Kp) at (\x1,-\y1);
-\fill (Kp) node[below left] {$K'$} circle[radius=3pt];
-\draw[thick] (Q) -- node[left] {$h$} (Kp);
-\draw[thick,name path=khp] (K) let
-  \p1 = ($ (H) - (Kp) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  (K) ++(-100:\n2) arc (-100:-30:\n2);
-\draw[thick,name path=kph] (Kp) let
-  \p1 = ($ (H) - (Kp) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  (Kp) ++(100:\n2) arc (100:30:\n2);
-\path [name intersections={of=kph and khp,by={S}}];
-\fill (S) node[above right,xshift=6pt] {$S$} circle[radius=3pt];
-\draw[thick] (Kp) -- node[right,near start,yshift=-6pt] {$d$} (S);
-\draw[thick] (Q) -- (S);
-\path [name intersections={of=pq and qb,by={X,Xp}}];
-\fill (X) node[above right] {$X$} circle[radius=3pt];
-%\fill (Xp) node[above left] {$X'$} circle[radius=3pt];
-%\draw (Kp) -- node[left] {$x$} (X);
-%\draw (K) -- node[left] {$x$} (X);
-%\fill (B) circle[radius=3pt];
-%\draw[thick,dashed] (Q) -- node[left,xshift=-1pt,yshift=2pt] {$b$} (B);
-\end{tikzpicture}
-\vspace*{-14pt}
-\selectlanguage{hebrew}
-\end{center}
-מתקבל משולש ישר זווית
-$\triangle QSK'$.
-לפי משפט פיתגורס
-$QS^2 + h^2 = d^2$,
-ולכן:
+מקביל לקו
+$AB$
+כי
+$\angle ABS = \angle PQS$.
+ההוכחה שהמשולשים דומים היא:
 \[
-QS^2 = d^2 - h^2 = x^2\,,
+\renewcommand*{\arraystretch}{2}
+\begin{array}{rcl}
+BS&=&BQ+QS\\
+\disfrac{BS}{QS}&=&\disfrac{BQ}{QS}+\disfrac{QS}{QS} = \disfrac{BQ}{QS}+1\\
+AS&=&AP+PS\\
+\disfrac{AS}{PS} &=& \disfrac{AP}{PS} + \disfrac{PS}{PS} = \disfrac{AP}{PS} + 1\\
+\disfrac{BS}{QS}&=&\disfrac{AS}{PS}\,.
+\end{array}
 \]
-ו-%
-$QS = x$.
-ניתן לבנות את הנקודה
-$X$
-כנקודות החיתוך בין המעגלים
-$c(K,x)$
-ו-%
-$c(K',x)$:
+כאשר המשוואה האחרונה מתקבלת ממשוואה-)1(.
 
+כדי להוכיח את המשפט של
+\L{Ceva},
+נתבונן בתרשימים שלהן:
 \begin{center}
-\vspace*{-14pt}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
-\coordinate (Q) at (0,0);
-\coordinate (P) at (-6.8,0);
-\coordinate (B) at (-3,-2);
-\draw[dashed,name path=pq] ($(Q)!1.3!(P)$) -- ($(P)!2.3!(Q)$);
-\fill (Q) node[above left] {$Q$} circle[radius=3pt];
-\fill (P) node[above] {$P$} circle[radius=3pt];
-\node[draw,circle through=(B),name path=qb] at (Q) {};
-\path[name path=qh] (Q) -- (-40:5cm);
-\path[name path=qhp] (Q) -- (40:5cm);
-\path [name intersections={of=qb and qh,by={Hp}}];
-\path [name intersections={of=qb and qhp,by={H}}];
-%\fill (H) node[right,xshift=2pt] {$H$} circle[radius=3pt];
-%\fill (Hp) node[right,xshift=2pt] {$H'$} circle[radius=3pt];
-\path[name path=circleqh] (Q) let
-  \p1 = ($ (H) - (Hp) $)
-in
-  circle ({veclen(\x1,\y1)});
-\path[name path=circlehb] (H) let
-  \p1 = ($ (Q) - (B) $)
-in
-  circle ({veclen(\x1,\y1)});
-\path [name intersections={of=circleqh and circlehb,by={K,k2}}];
-\fill (K) node[above left] {$K$} circle[radius=3pt];
-\path[thick,dashed] let
-  \p1 = ($ (K) - (Q) $)
-in
-  coordinate (Kp) at (\x1,-\y1);
-\fill (Kp) node[below left] {$K'$} circle[radius=3pt];
-%\draw[thick] (Q) -- node[left] {$h$} (Kp);
-\path[name path=khp] (K) let
-  \p1 = ($ (H) - (Kp) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  (K) ++(-100:\n2) arc (-100:-30:\n2);
-\path[name path=kph] (Kp) let
-  \p1 = ($ (H) - (Kp) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  (Kp) ++(100:\n2) arc (100:30:\n2);
-\path [name intersections={of=kph and khp,by={S}}];
-\fill (S) node[above right,xshift=6pt] {$S$} circle[radius=3pt];
-%\draw[thick] (Kp) -- node[right,near start,yshift=-6pt] {$d$} (S);
-%\draw[thick] (Q) -- (S);
-\path [name intersections={of=pq and qb,by={X,Xp}}];
-\fill (X) node[above right,xshift=8pt] {$X$} circle[radius=3pt];
-\fill (Xp) node[above left] {$X'$} circle[radius=3pt];
-\draw (Kp) -- node[left] {$x$} (X);
-\draw (K) -- node[left] {$x$} (X);
-%\fill (B) circle[radius=3pt];
-%\draw[thick,dashed] (Q) -- node[left,xshift=-1pt,yshift=2pt] {$b$} (B);
-\draw[name path=kx] (K) let
-  \p1 = ($ (X) - (Kp) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  (K) ++(-100:\n2) arc (-100:-30:\n2);
-\draw[name path=kpx] (Kp) let
-  \p1 = ($ (X) - (Kp) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  (Kp) ++(100:\n2) arc (100:30:\n2);
-\path (Xp) -- node[below] {$b$} (Q);
-\path (Q) -- node[below] {$b$} (X);
-\node at (-5,2) {\mbox{\boldmath $PQ=a$}};
-\draw[thick,dashed] (Q) -- node[left] {$h$} (Kp);
-\draw[thick,dashed] (Q) -- (X);
+\vspace*{-8pt}
+\begin{tikzpicture}
+\path[name path=pq] (-4,0) -- (4,0);
+\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+\coordinate (M) at (0,-2);
+\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+\draw[name path=sb] (S) -- (B);
+\path [name intersections={of=pq and as,by={P}}];
+\path [name intersections={of=pq and sb,by={Q}}];
+\path[name path=pb] (P) -- (B);
+\path[name path=qa] (Q) -- (A);
+\path [name intersections={of=pb and qa,by={O}}];
+\draw[fill=gray!40] (B) -- (O) -- (Q);
+\draw[fill=gray!70] (S) -- (O) -- (Q);
+\draw (B) -- (O) -- (A);
+\draw (S) -- (O) -- (A);
+\draw (A) -- (B) -- (S) -- cycle;
+\draw (S) -- (O);
+\draw (B) -- (O);
+\fill (A) circle[radius=2pt];
+\fill (B) circle[radius=2pt];
+\fill (S) circle[radius=2pt];
+\fill (Q) node[above right] {$Q$} circle[radius=2pt];
+\fill (O) node[above left] {$O$} circle[radius=2pt];
+\path[name path=al1] (O) -- ($(Q)!(O)!(B)$);
+\path [name intersections={of=al1 and sb,by={A1}}];
+\draw[thick,dashed] (O) -- (A1);
+\begin{scope}[xshift=6cm]
+\path[name path=pq] (-4,0) -- (4,0);
+\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+\coordinate (M) at (0,-2);
+\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+\draw[name path=sb] (S) -- (B);
+\path [name intersections={of=pq and as,by={P}}];
+\path [name intersections={of=pq and sb,by={Q}}];
+\draw[name path=pb] (P) -- (B);
+\draw[name path=qa] (Q) -- (A);
+\path [name intersections={of=pb and qa,by={O}}];
+\draw (B) -- (O) -- (Q);
+\draw (A) -- (Q) -- (B);
+\draw[fill=gray!40] (B) -- (Q) -- (A);
+\draw[fill=gray!70] (S) -- (Q) -- (A);
+\draw (A) -- (B) -- (S) -- cycle;
+\draw (S) -- (O);
+\draw (B) -- (O);
+\fill (A) circle[radius=2pt];
+\fill (B) circle[radius=2pt];
+\fill (S) circle[radius=2pt];
+\fill (Q) node[above right] {$Q$} circle[radius=2pt];
+\fill (O) node[above left] {$O$} circle[radius=2pt];
+\path[name path=al2] (A) -- ($(Q)!(A)!(B)$);
+\path [name intersections={of=al2 and sb,by={A2}}];
+\draw[thick,dashed] (A) -- (A2);
+\end{scope}
 \end{tikzpicture}
 \vspace*{-10pt}
 \selectlanguage{hebrew}
 \end{center}
-נזכור מה אנחנו רוצים: להאריך את אורכו של
+אם הגבהים של שני משולשים שוואים, יחס השטחים שווה ליחס הבסיסים:
+\[
+A_1 = \frac{1}{2}hb_1,\quad A_2 = \frac{1}{2}hb_2, \quad \frac{A_1}{A_2}=\frac{b_1}{b_2}\,.
+\]
+בכל אחד מהתרשימים, הגבהים של זוג המשולשים המסומנים באפור שווים. לכן:%
+\footnote{%
+נשתמש בשם המשולש כקיצור לשטחו.%
+}
+\[\frac{\triangle BQO}{\triangle SQO} = \frac{BQ}{QS}\;,\quad\quad \frac{\triangle BQA}{\triangle SQA} = \frac{BQ}{QS}\;.
+\]
+על ידי חיסור של המשולשים המסומנים, נקבל יחס בין המשולשים המסומנים באפור בתרשים שלהן:
+
+
+\begin{center}\selectlanguage{english}
+\vspace*{-8pt}
+\begin{tikzpicture}
+\path[name path=pq] (-4,0) -- (4,0);
+\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+\coordinate (M) at (0,-2);
+\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+\draw[name path=sb] (S) -- (B);
+\path [name intersections={of=pq and as,by={P}}];
+\path [name intersections={of=pq and sb,by={Q}}];
+\path[name path=pb] (P) -- (B);
+\draw[thick,name path=qa] (Q) -- (A);
+\path [name intersections={of=pb and qa,by={O}}];
+\draw[fill=gray!50] (B) -- (O) -- (A);
+\draw[fill=gray!70] (S) -- (O) -- (A);
+\draw (B) -- (O) -- (A);
+\draw (S) -- (O) -- (A);
+\draw (A) -- (B) -- (S) -- cycle;
+\draw (S) -- (O);
+\draw (B) -- (O);
+\fill (A) circle[radius=2pt];
+\fill (B) circle[radius=2pt];
+\fill (S) circle[radius=2pt];
+\fill (Q) node[above right] {$Q$} circle[radius=2pt];
+\fill (O) node[right,xshift=2pt] {$O$} circle[radius=2pt];
+\end{tikzpicture}
+\vspace*{-6pt}
+\selectlanguage{hebrew}\end{center}
+\[
+\frac{BQ}{QS} = \frac{\triangle BQA - \triangle BQO}{\triangle SQA-\triangle SQO} = \frac{\triangle BOA}{\triangle SOA}\,.
+\]
+החישוב עלול להיראות חשוד. נסביר אותו תוך שימוש בסימונים פשוטים יותר:
+\[
+\renewcommand*{\arraystretch}{1.6}
+\begin{array}{rcl}
+ \disfrac{c}{d} &=&\disfrac{a}{b}\\
+ \disfrac{e}{f} &=&\disfrac{a}{b}\\
+c-e &=& \disfrac{ad}{b} - \disfrac{af}{b}\\
+c-e &=& \disfrac{a}{b}(d-f)\\
+\disfrac{c-e}{d-f} &=& \disfrac{a}{b}\,.
+\end{array}
+\]
+באופן דומה ניתן להוכיח:
+\[
+\frac{AM}{MB} = \frac{\triangle AOS}{\triangle BOS}\;,\quad\quad \frac{SP}{PA} =\frac{\triangle SOB}{\triangle AOB}\;,
+\]
+ומכאן
+\[
+\frac{AM}{MB}\frac{BQ}{QS}\frac{SP}{PA} = \frac{\triangle AOS}{\triangle BOS}\frac{\triangle BOA}{\triangle SOA}\frac{\triangle SOB}{\triangle AOB}=1\,,
+\]
+כי השטחים במונה ובמכנה מצטצמים )זכרו שסדר הקודקים במשלוש לא חשוב(.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{%
+כל קו אחר:
+}
+נסמן את הקו ב-%
+$l$,
+את המעגל הקבוע ב-%
+$c=c(O,r)$,
+והנקודה שלא על הקו ב-%
+$P$.
+עליך להשתכנע שהבנייה, כאן ובהמשך, לא תלוייה מיקום המעגל במישור או ברדיוס שלו.
+
+נבחר 
+$M$,
+נקודה כלשהי על הקו 
+$l$,
+ובנה את הקו מ-%
+$M$
+ל-%
+$O$
+)נקודת חיתוך
+$U$(
+ונמשיך את הקו עד לנקודת החיתוך השני
+$V$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O) at (0,0);
+\fill (O) node[below right] {$O$} circle[radius=2pt];
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) -- node[above, near end] {$l$} +(9,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- ($(-2,-3)!1.65!(O)$);
+\fill (M) node[below] {$M$} circle[radius=2pt];
+\path [name intersections={of=circle and mo,by={V,U}}];
+\fill (U) node[below,xshift=2pt,yshift=-4pt] {$U$} circle[radius=2pt];
+\fill (V) node[right,xshift=4pt] {$V$} circle[radius=2pt];
+\draw (M) -- (V);
+\node at (-1.6,1.6) {$c$};
+\fill (-1,-4) node[right] {$P$} circle[radius=2pt];
+\end{tikzpicture}
+\vspace*{-16pt}
+\selectlanguage{hebrew}
+\end{center}
+קו זה הוא
+\textbf{%
+קו מכוון%
+}
+כי 
+$O$,
+מרכז המעגל, חוצה את קטע הקו
+$UV$.
+נבחר נקודה שנייה 
+$A$
+על הקו 
+$l$
+ונשתמש בבבנייה המתואר במקרה הראשון כי לבנות קו מקביל ל-%
+$UV$
+החותך את המעגל בנקודות
+$X,Y$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O) at (0,0);
+\fill (O) node[below right] {$O$} circle[radius=2pt];
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) -- node[above,near end,xshift=24pt] {$l$} +(9,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- ($(-2,-3)!1.65!(O)$);
+\fill (M) node[below] {$M$} circle[radius=2pt];
+\path [name intersections={of=circle and mo,by={V,U}}];
+\fill (U) node[below,xshift=2pt,yshift=-4pt] {$U$} circle[radius=2pt];
+\fill (V) node[right,xshift=4pt] {$V$} circle[radius=2pt];
+\draw (M) -- (V);
+\path[name path=ax] (-3,-3) coordinate (A) -- ($(-3,-3)!1.8!(-1,0)$);
+\fill (A) node[below] {$A$} circle[radius=2pt];
+\path [name intersections={of=circle and ax,by={Y,X}}];
+\fill (X) node[left] {$X$} circle[radius=2pt];
+\fill (Y) node[above] {$Y$} circle[radius=2pt];
+\node at (-1.6,1.6) {$c$};
+\draw (A) -- (Y);
+\fill (-1,-4) node[right] {$P$} circle[radius=2pt];
+\end{tikzpicture}
+\vspace*{-10pt}
+\selectlanguage{hebrew}
+\end{center}
+נבנה קוטר עם נקודת קצה דרך
+$X$
+וקוטר עם נקודת קצה דרך
+$Y$,
+ונגדיר את נקודות החיתוך האחרות שלהם
+$X',Y'$.
+נבנה את הקו 
+$X',Y'$
+ונמשיך אותו עד ל-%
+$B$,
+נקודת החיתוך עם 
+$l$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O) at (0,0);
+\fill (O) node[below right] {$O$} circle[radius=2pt];
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) -- node[above,near end,xshift=24pt] {$l$} +(9,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- ($(-2,-3)!1.65!(O)$);
+\fill (M) node[below] {$M$} circle[radius=2pt];
+\path [name intersections={of=circle and mo,by={V,U}}];
+\fill (U) node[below,xshift=2pt,yshift=-4pt] {$U$} circle[radius=2pt];
+\fill (V) node[right,xshift=4pt] {$V$} circle[radius=2pt];
+\draw (M) -- (V);
+\path[name path=ax] (-3,-3) coordinate (A) -- ($(-3,-3)!1.8!(-1,0)$);
+\fill (A) node[below] {$A$} circle[radius=2pt];
+\path [name intersections={of=circle and ax,by={Y,X}}];
+\fill (X) node[left] {$X$} circle[radius=2pt];
+\fill (Y) node[above] {$Y$} circle[radius=2pt];
+\node at (-1.6,1.6) {$c$};
+\draw (A) -- (Y);
+\fill (-1,-4) node[right] {$P$} circle[radius=2pt];
+\path[name path=xo] (X) -- ($(X)!2.2!(O)$);
+\path[name intersections={of=circle and xo,by={Xp}}];
+\fill (Xp) node[right,xshift=2pt,yshift=-2pt] {$X'$} circle[radius=2pt];
+\draw (X) -- (Xp);
+\path[name path=yo] (Y) -- ($(Y)!2.2!(O)$);
+\path[name intersections={of=circle and yo,by={y,Yp}}];
+\fill (Yp) node[below right] {$Y'$} circle[radius=2pt];
+\draw (Y) -- (Yp);
+\path[name path=xy] (Xp) -- ($(Xp)!1.6!(Yp)$);
+\path[name intersections={of=l and xy,by={B}}];
+\fill (B) node[below] {$B$} circle[radius=2pt];
+\draw (Xp) -- (B);
+\draw[thick,dashed,name path=z] (-4,0) -- (4,0) node[above,near end,xshift=40pt] {$l'$};
+\path[name intersections={of=ax and z,by={Z}}];
+\path[name intersections={of=xy and z,by={Zp}}];
+\fill (Z) node[above left] {$Z$} circle[radius=2pt];
+\fill (Zp) node[below right] {$Z'$} circle[radius=2pt];
+\end{tikzpicture}
+\vspace*{-10pt}
+\selectlanguage{hebrew}
+\end{center}
+\textbf{%
+טענה:%
+}
+הקו המכיל את 
+$AB$
+הוא
+\textbf{%
+קו מכוון
+}
+כי
+$M$
+חוצה אותו.
+
+מהטענה אפשר לבנות קו דרך 
+$P$
+מקביל ל-%
+$AB$
+כמתואר במקרה הראשון.
+
+\textbf{%
+הוכחה:%
+}
+$OX,OX',OY,OY'$
+הם כולם רדיוסים את המעגל, ו-%
+$\angle XOY = \angle X'OY'$
+כי הן זוויות נגדיות. לכן,
+$\triangle XOY$
+חופף ל-%
+$\triangle X'OY'$
+לפי צלע-זווית-צלע. נגדיר
+$l'$,
+קו מקביל ל-%
+$l$,
+החותך את 
+$XY$
+בנקודה
+$Z$
+וחותך את 
+$X',Y'$
+בנקודה
+$Z'$.
+המשולשים
+$\triangle XOZ$,
+$\triangle X'OZ'$
+חופפים לפי זווית-צלע-זווית, ולכן
+$ZO=OZ'$. 
+הוכחנו ש-%
+$AMOZ$
+ו-%
+$BMOZ'$
+מקביליות, ולכן
+$AM=ZO=OZ'=MB$.
+
+\textbf{%
+מסקנה:%
+}
+נתון קטע קו 
+$AB$
+ונקודה
+$P$
+שאיננה על הקו. ניתן לבנות קטע קו
 $PQ$
-ב-%
-$b$
-או לקצר אותו ב-%
-$b$.
-אורכו של
-$QX$
-הוא
-$\sqrt{x^2-h^2}=b$,
-ולכן אורכו של 
-$PX$
-הוא 
-$a+b$
-ואורכו של
-$PX'$
-הוא
-$a-b$.
+עם נקודת קצה 
+$P$
+המקביל ל-%
+$AB$.
+
+\textbf{%
+הוכחה:%
+}
+הוכחנו שנתון 
+$AB$
+ו-%
+$P$
+ניתן לבנות קו 
+$m$
+דרך 
+$P$
+המקביל ל-%
+$AB$,
+וקו
+$n$
+דרך 
+$B$
+המקביל ל-%
+$AP$.
+המרובע 
+$ABQP$
+הוא מקבילית, ולכן הצלעות הנגדיות שוות ו-%
+$AB=PQ$
+ו-%
+$PQ$
+מקביל ל-%
+$AB$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+\coordinate (P) at (0,0);
+\coordinate (Q) at (3,0);
+\coordinate (A) at (-2,2.5);
+\coordinate (B) at (1,2.5);
+\draw ($(P)!-.6!(Q)$) -- node[above,near end,xshift=36pt] {$m$} ($(P)!1.8!(Q)$);
+\fill (P) node[below] {$P$} circle[radius=2pt];
+\fill (Q) node[below left] {$Q$} circle[radius=2pt];
+\draw ($(A)!-.6!(B)$) -- node[above,near end,xshift=40pt] {$l$} ($(A)!2.5!(B)$);
+\fill (A) node[above left] {$A$} circle[radius=2pt];
+\fill (B) node[above right] {$B$} circle[radius=2pt];
+\draw (A) -- (P);
+\draw ($(B)!-.3!(Q)$) -- node[above,near end,xshift=24pt,yshift=-24pt] {$n$} ($(B)!1.4!(Q)$);
+\end{tikzpicture}
+\selectlanguage{hebrew}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{%
+בניית אנח לקו נתון%
+}\label{s.perpendicular}
+
+\textbf{%
+נתון קו
+$l$
+המוגדר על ידי שתי נקודות
+$A,B$,
+ונקודה
+$P$
+)שאיננה על הקו( ניתן לבנות קו דרך
+$P$
+אנח ל-
+$AB$.%
+}
+
+נבנה )כפי שתואר בסעיף
+\L{\ref{s.parallel}}(
+קו
+$l'$
+מקביל ל-%
+$l$
+החותך את המעגל הקבוע ב-%
+$U,V$.
+נבנה את הקוטר
+$UOU'$
+והמיתר
+$VU'$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O) at (0,0);
+\coordinate (P) at (3.5,.6);
+\node at (-1.6,1.6) {$c$};
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) -- node[above,near end,xshift=45pt] {$l$} ++(9,0);
+\draw[name path=lp] (-3,-1) -- node[above,near end,xshift=45pt] {$l'$} ++(7,0);
+\fill (O) node[left] {$O$} circle[radius=2pt];
+\fill (P) node[right] {$P$} circle[radius=2pt];
+\path[name intersections={of=circle and lp,by={U,V}}];
+\fill (U) node[below left] {$U$} circle[radius=2pt];
+\fill (V) node[below right] {$V$} circle[radius=2pt];
+\path[name path=d] (U) -- ($(U)!2.3!(O)$);
+\path[name intersections={of=circle and d,by={Up}}];
+\draw (U) -- (Up);
+\fill (Up) node[above right] {$U'$} circle[radius=2pt];
+\draw (Up) -- (V);
+\path[name path=p] (P) -- ++(0,-4);
+\draw[name intersections={of=p and l,by={X}}];
+\fill (X) circle[radius=2pt];
+\draw[thick,dashed] (P) -- (X);
+\draw ($(U)!.9!(V)$) -- ++(0,.3) -| (V);
+\end{tikzpicture}
+\vspace*{-12pt}
+\selectlanguage{hebrew}
+\end{center}
+$\angle UVU'$
+היא זווית הנשענת על מחצית המעגל, לכן היא זווית ישרה. מכאן ש-%
+$VU'$
+הוא אנח ל-%
+$UV$
+ו-
+$l$.
+לבסוף, נבנה קו העובר דרך 
+$P$
+מקביל ל-%
+$VU'$
+כפי שתואר בסעיף
+\L{\ref{s.parallel}}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{%
+העתקת קטע קו נתון בכיוון נתון%
+}\label{s.direction}
+
+\textbf{%
+נתון נקודה
+$A$,
+קטע קו
+$PQ$
+וכיוון, ניתן לבנות קטע קו
+$AS$
+בכיוון הנתון.%
+}
+הכוונה של המושג כיוון היא שנתון קו המוגדר על ידי שתי נקובות
+$A',H'$
+המגדיר זווית
+$\theta$
+יחסית לציר מסויים. המשימה היא להעתיק קטע קו
+$PQ$
+ל-%
+$AS$
+כך ש-%
+$AS$
+יהיה באותה זווית
+$\theta$.
+\begin{center}
+\selectlanguage{english}
+\vspace*{-4pt}
+\begin{tikzpicture}[scale=.8]
+\coordinate (A) at (0,0);
+\coordinate (P) at (1,-1.5);
+\coordinate (Q) at (2.5,-1.5);
+\draw (P) -- (Q);
+\fill (P) node[left] {$P$} circle[radius=2pt];
+\fill (Q) node[right] {$Q$} circle[radius=2pt];
+\coordinate (A1) at (-3,1);
+\draw (A1) -- ++(60:3cm) coordinate (H1);
+\draw[thick,dashed] (A1) -- ++(0:1.5cm);
+\fill (A1) node[left] {$A'$} circle[radius=2pt];
+\fill (H1) node[left] {$H'$} circle[radius=2pt];
+\draw[thick,dashed] (A) -- ++(60:1.5cm);
+\draw[thick,dashed] (A) -- ++(1.5,0);
+\fill (A) node[left] {$A$} circle[radius=2pt];
+\node[above right,xshift=4pt] at (A1) {$\theta$};
+\node[above right,xshift=4pt] at (A) {$\theta$};
+\end{tikzpicture}
+\vspace*{-8pt}
+\selectlanguage{hebrew}
+\end{center}
+נתחיל את הבנייה על ידי העתקת קטע הקו
+$A'H'$
+אל 
+$AH$
+כך ש-%
+$AH$
+יהיה מקביל ל-%
+$A'H'$.
+הבנייה אפשרית לפי המסקנה בסוף סעיף
+\L{\ref{s.parallel}}.
+באותו אופן נעתיק את
+$PQ$
+ל-%
+$AK$
+כך ש-%
+$AK$
+מקביל ל-%
+$PQ$.
+\begin{center}
+\selectlanguage{english}
+\vspace*{-4pt}
+\begin{tikzpicture}[scale=.8]
+\coordinate (A) at (0,0);
+\coordinate (P) at (1,-1.5);
+\coordinate (Q) at (2.5,-1.5);
+\draw (P) -- (Q);
+\fill (P) node[left] {$P$} circle[radius=2pt];
+\fill (Q) node[right] {$Q$} circle[radius=2pt];
+\coordinate (A1) at (-3,1);
+\draw (A1) -- ++(60:3cm) coordinate (H1);
+\draw[thick,dashed] (A1) -- ++(0:1.5cm);
+\fill (A1) node[left] {$A'$} circle[radius=2pt];
+\fill (H1) node[left] {$H'$} circle[radius=2pt];
+\draw (A) -- ++(60:3cm) coordinate (H);
+\fill (H) node[left] {$H$} circle[radius=2pt];
+\draw (A) -- ++(1.5,0) coordinate (K);
+\fill (K) node[below right] {$K$} circle[radius=2pt];
+\draw (A) -- (K);
+\fill (A) node[left] {$A$} circle[radius=2pt];
+\node[above right,xshift=4pt] at (A1) {$\theta$};
+\node[above right,xshift=4pt] at (A) {$\theta$};
+\end{tikzpicture}
+\vspace*{-8pt}
+\selectlanguage{hebrew}
+\end{center}
+הזווית
+$\angle HAK$
+שווה ל-%
+$\theta$,
+לכן כל מה שנשאר הוא למצוא נקודה
+$S$
+על
+$AH$
+כך ש-%
+$AS=AK$.
+
+במעגל הקבוע 
+$c$
+נבנה שני רדיוסים
+$OU$
+ו-%
+$OV$
+מקביליים ל-%
+$AH$
+ו-%
+$AK$,
+בהתאמה. לבסוף, נבנה קו דרך
+$K$
+מקביל ל-%
+$UV$.
+
+\textbf{%
+טענה:
+}
+$S$
+היא נקודת החיתוך של הקו עם 
+$AH$
+ו-%
+$AS=AK$.
+\begin{center}
+\selectlanguage{english}
+\vspace*{-4pt}
+\begin{tikzpicture}[scale=.8]
+\coordinate (A) at (0,0);
+\coordinate (P) at (1,-1.5);
+\coordinate (Q) at (2.5,-1.5);
+\draw (P) -- (Q);
+\fill (P) node[left] {$P$} circle[radius=2pt];
+\fill (Q) node[right] {$Q$} circle[radius=2pt];
+\coordinate (A1) at (-3,1);
+\draw (A1) -- ++(60:3cm) coordinate (H1);
+\fill (A1) node[left] {$A'$} circle[radius=2pt];
+\fill (H1) node[left] {$H'$} circle[radius=2pt];
+\draw (A) -- ++(60:3cm) coordinate (H);
+\fill (A) node[left] {$A$} circle[radius=2pt];
+\fill (H) node[left] {$H$} circle[radius=2pt];
+\coordinate (O) at (6,1);
+\node at (4.8,3.4) {$c$};
+\draw[name path=circle] (O) circle[radius=2.5cm];
+\fill (O) node[above left] {$O$} circle[radius=2pt];
+\draw (A) -- ++(1.5,0) coordinate (K);
+\fill (K) node[below right] {$K$} circle[radius=2pt];
+\draw (A) -- (K);
+\path[name path=u] (O) -- ++(60:2.5cm);
+\path[name path=v] (O) -- ++(2.5,0);
+\path[name intersections={of=circle and u,by={U}}];
+\path[name intersections={of=circle and v,by={V}}];
+\fill (U) node[above right] {$U$} circle[radius=2pt];
+\fill (V) node[right] {$V$} circle[radius=2pt];
+\draw (O) -- (U) -- (V) -- cycle;
+\path (A) -- ++(60:1.5cm) coordinate (S);
+\fill (S) node[above left] {$S$} circle[radius=2pt];
+\draw (K) -- (S);
+\draw[very thick] (A) -- (S);
+\node[above right,xshift=4pt] at (A) {$\theta$};
+\node[above right,xshift=4pt] at (O) {$\theta$};
+\node[above right,xshift=4pt] at (A1) {$\theta$};
+\draw[thick,dashed] (A1) -- ++(1.5,0);
+\end{tikzpicture}
+\vspace*{-8pt}
+\selectlanguage{hebrew}
+\end{center}
+\textbf{%
+הוכחה:
+}
+$AH$
+מקביל ל-%
+$OU$
+ו-%
+$AK$
+מקביל ל-%
+$OV$
+ולכן
+$\angle SAK=\angle HAK=\theta=\angle UOV$.
+$SK$
+מקביל ל-%
+$UV$,
+ולכן המשולש
+$\triangle SAK$
+דומה למשולש
+$\triangle UOV$
+שהוא משולש שווה שוקיים 
+($OU$, $OV$
+הם רדיוסים של אותו מעגל.( מכאן,
+$\triangle SAK$
+הוא משולש שווה שוקיים ו-%
+$AS=AK=PQ$.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1200,673 +1019,477 @@ $a-b$.
 }\label{s.relative}
 
 \textbf{%
-נתון שלושה קטע קו באורכים 
-$n,m,s$.
-ניתן לבנות קטע קו שאורכו
-$x = \frac{n}{m}s$.%
+נתון קטעי קו באורכים
+$n, m, s$,
+ניתן לבנות קטע קו באורך
+$x=\disfrac{n}{m}s$.%
 }
 
-בנה שני מעגלים משותפי מרכז:
-$c_1 = c(Z,m)$
-,
-$c_2 = c(Z,n)$.
-נבחר נקודה
-$A$
-כלשהי על המעגל ונבנה את המיתר
-$AB$
-שאורכו
-$s$
-במעגל
-$c_1$.
-)בניית המיתר עם מחוגה בלבד לפי בסעיף
-\L{\ref{s.radius}}.%
-(
+קטעי הקו הנתונים נמצאים במיקומים כלשהם במישור ובכיוונים כלשהם.
 \begin{center}
-\vspace*{-4pt}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.4]
-\coordinate (Z) at (0,0);
-\coordinate (A) at (-130:5cm);
-\coordinate (B) at (-80:5cm);
-\fill (Z) node[above left] {$Z$} circle[radius=4pt];
-\fill (A) node[below left] {$A$} circle[radius=4pt];
-\fill (B) node[below] {$B$} circle[radius=4pt];
-\draw[name path=c1] (Z) circle[radius=5cm];
-\draw[name path=c2] (Z) circle[radius=3cm];
-\node at (2,5) {$c_1$};
-\node at (2,3) {$c_2$};
-\draw[thick] (A) -- node[below,yshift=-6pt] {$s$} (B);
-\draw[thick,dashed] (Z) -- node[below] {$m$} ++(10:5cm);
-\draw[thick,dashed] (Z) -- node[below] {$n$} ++(-40:3cm);
-\fill (Z) ++ (10:5cm) circle[radius=4pt];
-\fill (Z) ++ (-40:3cm) circle[radius=4pt];
-\begin{scope}[xshift=-14cm,yshift=3cm]
-\coordinate (m) at (0,0);
-\coordinate (n) at (0,-1.5);
-\coordinate (s) at (0,-3);
-\coordinate (mp) at (5,0);
-\coordinate (np) at (2,-1.5);
-\coordinate (sp) at (4,-3);
-\fill (m) circle[radius=4pt];
-\fill (n) circle[radius=4pt];
-\fill (s) circle[radius=4pt];
-\fill (mp) circle[radius=4pt];
-\fill (np) circle[radius=4pt];
-\fill (sp) circle[radius=4pt];
-\draw[thick,dashed] (m) -- node[above] {$m$} (mp);
-\draw[thick,dashed] (n) -- node[above] {$n$} (np);
-\draw[thick,dashed] (s) -- node[above] {$s$} (sp);
-\end{scope}
+\begin{tikzpicture}[scale=.9]
+\draw (0,0) -- node[above] {$s$} ++(30:1.5cm);
+\draw (2,1.2) -- node[above] {$m$} ++(-10:2.5cm);
+\draw (-2,1.5) -- node[above] {$n$} ++(5:2cm);
+\fill (0,0) circle[radius=2pt];
+\fill (2,1.2) circle[radius=2pt];
+\fill (-2,1.5) circle[radius=2pt];
+\fill (0,0) ++(30:1.5cm) circle[radius=2pt];
+\fill (2,1.2) ++(-10:2.5cm) circle[radius=2pt];
+\fill (-2,1.5) ++(5:2cm) circle[radius=2pt];
 \end{tikzpicture}
-\vspace*{-16pt}
+\vspace*{-8pt}
 \selectlanguage{hebrew}
 \end{center}
-הנחות:
-\vspace*{-10pt}
-\begin{itemize}
-\item
-$m>n$:
-אם לא, נחליף את הסימונים של
-$m,n$.
-\vspace*{-8pt}
-\item
-המיתר 
-$s$
-נמצא בתוך
-$c_1$
-ואינו חותך את
-$c_2$.
-אם לא, נשתמש בבנייה של סעיף
-\L{\ref{s.add-subtract}}
-כדי להכפיל את
-$m,n$
-במספר שלם
-$k$
-עד שהמיתר לא חותך. שימו לב שהכפלת הערכים אינה משנה את הערך שאנחנו בונים
-$x = \frac{kn}{km}s = \frac{n}{m}s$.
-\end{itemize}
-\vspace*{-8pt}
-
 נבחר נקודה כלשהי
-$H$
-על המעגל
-$c_2$.
-נסמן את אורך הקטע
-$AH$
+$A$
+ונבה שתי קרונות 
+$AB$ and $AC$.
+כפי שמתואר בסעיף
+\L{\ref{s.direction}}
+ניתן למצוא נקודות
+$M,N,S$
+כך ש-%
+$AM= m$, $AN =n$
+ו-%
+$AS=s$.
+נבנה דרך
+$N$
+קו המקביל ל-%
+$MS$
+החותך את
+$AC$
 ב-%
-$w$.
-נבנה נקודה
-$K$
-על 
-$c_2$
-כך שאורך הקטע
-$BK$
-גם הוא
-$w$.
+$X$,
+ונסמן את אורכו ב-%
+$x$.
+המשולש
+$\triangle MAS$
+דומה למשולש
+$\triangle NAX$, 
+ולכן:
+\[
+\frac{m}{n}=\frac{s}{x}, \quad\quad x=\disfrac{n}{m}s\,.
+\]
 \begin{center}
 \selectlanguage{english}
-\vspace*{-4pt}
-\begin{tikzpicture}[scale=.4]
-\coordinate (Z) at (0,0);
-\coordinate (A) at (-130:5cm);
-\coordinate (B) at (-90:5cm);
-\fill (Z) node[above left] {$Z$} circle[radius=4pt];
-\fill (A) node[below left] {$A$} circle[radius=4pt];
-\fill (B) node[below] {$B$} circle[radius=4pt];
-\draw[name path=c1] (Z) circle[radius=5cm];
-\draw[name path=c2] (Z) circle[radius=2.5cm];
-\node at (2,5) {$c_1$};
-\node at (2,2.5) {$c_2$};
-\draw[thick] (A) -- node[below,yshift=-6pt] {$s$} (B);
-\draw[thick] (A) -- node[above,xshift=-4pt,yshift=-2pt] {$w$} +(20:120pt) coordinate (H);
-\fill (H) node[above right,xshift=-2pt,yshift=4pt] {$H$} circle[radius=4pt];
-\draw[thick] (B) -- node[right] {$w$} +(60:120pt) coordinate (K);
-\fill (K) node[right] {$K$} circle[radius=4pt];
-\begin{scope}[xshift=-14cm,yshift=3cm]
-\coordinate (m) at (0,0);
-\coordinate (n) at (0,-1.5);
-\coordinate (s) at (0,-3);
-\coordinate (w) at (0,-4.5);
-\coordinate (mp) at (5,0);
-\coordinate (np) at (2,-1.5);
-\coordinate (sp) at (4,-3);
-\coordinate (wp) at (4.5,-4.5);
-\fill (m) circle[radius=4pt];
-\fill (n) circle[radius=4pt];
-\fill (s) circle[radius=4pt];
-\fill (w) circle[radius=4pt];
-\fill (mp) circle[radius=4pt];
-\fill (np) circle[radius=4pt];
-\fill (sp) circle[radius=4pt];
-\fill (wp) circle[radius=4pt];
-\draw[thick,dashed] (m) -- node[above] {$m$} (mp);
-\draw[thick,dashed] (n) -- node[above] {$n$} (np);
-\draw[thick,dashed] (s) -- node[above] {$s$} (sp);
-\draw[thick,dashed] (w) -- node[above] {$w$} (wp);
-\end{scope}
-\end{tikzpicture}
-\vspace*{-8pt}
-\selectlanguage{hebrew}
-\end{center}
-המשולשים
-$\triangle AHZ$, $\triangle BZK$
-חופפים לפי צלע-צלע-צלע: 
-$ZA=ZB=m$
-הרדיוס של מעגל
-$c_1$,
-$ZH=ZK=n$
-הרדיוס של המעגל
-$c_2$,
-ו-%
-$AH=BK=w$
-לפי הבנייה.
-\begin{center}
-\vspace*{-6pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.45]
-\coordinate (Z) at (0,0);
-\coordinate (A) at (-130:5cm);
-\coordinate (B) at (-90:5cm);
-\fill (Z) node[above left] {$Z$} circle[radius=4pt];
-\fill (A) node[below left] {$A$} circle[radius=4pt];
-\fill (B) node[below] {$B$} circle[radius=4pt];
-\draw[name path=c1] (Z) circle[radius=5cm];
-\draw[name path=c2] (Z) circle[radius=2.5cm];
-\node at (2,5) {$c_1$};
-\node at (2,2.5) {$c_2$};
-\draw[thick,dashed] (A) -- node[below,yshift=-6pt] {$s$} (B);
-\draw[thick] (A) -- node[above] {$w$} +(20:120pt) coordinate (H);
-\fill (H) node[above right,xshift=-2pt,yshift=4pt] {$H$} circle[radius=4pt];
-\draw[thick] (B) -- node[right] {$w$} +(60:120pt) coordinate (K);
-\fill (K) node[right] {$K$} circle[radius=4pt];
-\draw[thick] (Z) -- node[left,xshift=-2pt,yshift=-2pt] {$m$} (A);
-\draw[thick] (Z) -- (B);
-\draw[thick] (Z) -- (H);
-\draw[thick] (Z) -- node[above] {$n$} (K);
-\draw[thick,dashed] (H) -- (K);
-\end{tikzpicture}
-\vspace*{-12pt}
-\selectlanguage{hebrew}
-\end{center}
-מהחפיפה של המשולשים
-$\triangle AZH = \triangle BZK$,
-אנו מקבלים
-$\angle AZB = \angle HZK$.
-קצת קשה לראות את השוויונות האלה באיור, אבל האיור שלהלן מבהיר את היחסים בין הזוויות. נגדיר
-$\alpha = \angle AZH = \angle BZK$
-ו-%
-$\beta = \angle BZH$,
-וקל לראות ש-%
-$\angle AZB = \angle HZK = \alpha - \beta$.
-\begin{center}
-\vspace*{-8pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.6]
-\coordinate (Z) at (0,0);
-\coordinate (A) at (-150:5cm);
-\coordinate (B) at (-100:5cm);
-\coordinate (H) at (-60:4.5cm);
-\coordinate (K) at (-20:4.5cm);
-\fill (Z) circle[radius=2pt];
+\vspace*{-10pt}
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\draw[name path=ac] (A) node[left] {$A$} -- ++(7,0) node[right] {$C$};
+\draw (A) -- ++(40:5cm) node[right] {$B$};
 \fill (A) circle[radius=2pt];
-\fill (B) circle[radius=2pt];
-\fill (H) circle[radius=2pt];
-\fill (K) circle[radius=2pt];
-\draw[thick] (A) node[below left] {$A$} -- (Z) node[above] {$Z$} -- (B) node[below] {$B$};
-\draw[thick] (H) node[below] {$H$} -- (Z) -- (K) node[below right] {$K$};
-\draw (-150:1cm) arc (-150:-60:1);
-\draw (-100:2cm) arc (-100:-20:2);
-\draw (-100:3cm) arc (-100:-60:3);
-\draw[thick,dashed] (-150:4cm) arc (-150:-100:4);
-\draw[thick,dashed] (-60:4cm) arc (-60:-20:4);
-\node at (-115:1.4) {$\alpha$};
-\node at (-50:2.4) {$\alpha$};
-\node at (-80:3.5) {$\beta$};
-\node at (-40:5) {$\alpha - \beta$};
-\node at (-125:5) {$\alpha - \beta$};
-\end{tikzpicture}
-\vspace*{-10pt}
-\selectlanguage{hebrew}
-\end{center}
-זווית הקודקוד של שני משולשים שווי שוקיים שוות, ולכן
-$\triangle AZB$
-ו-%
-$\triangle HZK$
-דומים. 
-\begin{center}
-\selectlanguage{english}
-\vspace*{-4pt}
-\begin{tikzpicture}[scale=.45]
-\coordinate (Z) at (0,0);
-\coordinate (A) at (-130:5cm);
-\coordinate (B) at (-90:5cm);
-\fill (Z) node[above left] {$Z$} circle[radius=4pt];
-\fill (A) node[below left] {$A$} circle[radius=3pt];
-\fill (B) node[below] {$B$} circle[radius=3pt];
-\draw[name path=c1] (Z) circle[radius=5cm];
-\draw[name path=c2] (Z) circle[radius=2.5cm];
-\node at (2,5) {$c_1$};
-\node at (2,2.5) {$c_2$};
-\draw[thick] (A) -- node[below,yshift=-6pt] {$s$} (B);
-\path[thick,dashed] (A) -- +(20:120pt) coordinate (H);
-\fill (H) node[below] {$H$} circle[radius=3pt];
-\path[thick,dashed] (B) -- +(60:120pt) coordinate (K);
-\fill (K) node[right] {$K$} circle[radius=3pt];
-\draw[thick] (Z) -- node[left,xshift=-2pt,yshift=-2pt] {$m$} (A);
-\draw[thick] (Z) -- (B);
-\draw[thick] (Z) -- (H);
-\draw[thick] (Z) -- node[above] {$n$} (K);
-\draw[thick] (H) -- node[below right] {$x$} (K);
-\draw[thick,dashed] (A) -- (H);
-\draw[thick,dashed] (B) -- (K);
+\fill (A) ++(40:5cm) circle[radius=2pt];
+\fill (A) ++(7,0) circle[radius=2pt];
+\path (A) -- node[above,xshift=-2pt] {$m$} ++(40:3cm) coordinate (M) node[above left] {$M$};
+\path (A) -- ++(40:4cm) coordinate (N) node[above left] {$N$};
+\fill (M) circle[radius=2pt];
+\fill (N) circle[radius=2pt];
+\path[name path=ms] (M) -- ++(-50:3.5cm);
+\path[name path=nx] (N) -- ++(-50:4cm);
+\path[name intersections={of=ac and ms,by={S}}];
+\path[name intersections={of=ac and nx,by={X}}];
+\fill (S) circle[radius=2pt] node[below] {$S$};
+\fill (X) circle[radius=2pt] node[below] {$X$};
+\path (A) -- node[below] {$s$} (S);
+\draw (S) -- (M);
+\draw (X) -- (N);
+\node at (7,2.5) {$AN=n$};
+\node at (7,2) {$AX=x$};
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\vspace*{-10pt}
 \end{center}
-נסמן את קטע הקו
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{%
+בניית שורש ריבועי של המכפלה של אורכי שני קטעי קו נתונים%
+}\label{s.root}
+
+\textbf{%
+נתון קטעי קו באורכים
+$a,b$,
+ניתן לבעות קטע קו שאורכו
+$\sqrt{ab}$.}
+
+אפו שואפים להראות שניתן לבטא את
+$x=\sqrt{ab}$
+בצורה
+$x=\frac{n}{m}s$
+כדי להשתמש בבנייה מסעיף
+\L{\ref{s.relative}}.
+עבור
+$n$
+נשתמש ב-%
+$d$
+הקוטר של המעגל הקבוע, עבור
+$m$
+נשתמש ב-%
+$t=a+b$
+שניתן לבנות מהאורכים הנתונים
+$a,b$
+לפי הבנייה בסעיף
+\L{\ref{s.direction}},
+ועבור
+$s$
+נמצא הגדרה של האורכים
+$h,k$
+תוך שימוש באורכים
+$a,b,t,d$
+כך ש-%
+$s=\sqrt{hk}$,
+ונראה איך ניתן לבנות קטע קו באורך זה.
+
+נגדיר
+$h=\frac{d}{t}a$, $k=\frac{d}{t}b$, $s=\sqrt{hk}$.
+נחשב:
+\[
+x=\sqrt{ab}=\sqrt{\frac{th}{d}\frac{tk}{d}}=\frac{t}{d}s\,.
+\]
+ונחשב גם: 
+\[
+h+k = \frac{d}{t}a + \frac{d}{t}b = \frac{d(a+b)}{t} = \frac{dt}{t} = d\,.
+\]
+לפי סעיף
+\L{\ref{s.direction}}
+ניתן לבנות קטע קו
+$HA= h$
+על הקוטר
 $HK$
-ב-%
-$x$,
-ונקבל:
-\begin{eqnarray*}
-\frac{m}{s} &=& \frac{n}{x}\\
-x&=&\frac{n}{m}s\,.
-\end{eqnarray*}
-\vspace*{-20pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{%
-מציאת נקודת החיתוך של שני קווים%
-}\label{s.two-lines}
-
-\textbf{%
-נתון שני קווים המוגדרים על ידי קטעי הקו
-$AB,CD$.
-ניתן לבנות את נקודת החיתוך שלהם עם מחוגה בלבד.%
-}
-
-נבנה את הנקודה
-$C'$
-כשיקוף של
-$C$
-מסביב ל-%
-$AB$,
-ו-%
-$D'$
-כשיקוף של
-$D$
-מסביב לקו
-$AB$.
-
-נקודת החיתוך
+של המעגל הקבוע, ו-%
+$AK=HK-HA=d-h=k$.
+לפי סעיף
+\L{\ref{s.perpendicular}}
+ניתן לבנות דרך
+$A$
+אנח ל-%
+$HK$.
+נסמן ב-%
 $S$
-נמצאת על הקו
-$AB$,
-כי
-$\triangle CZS, \triangle C'SZ$
-הם משולשים ישר זווית חופפים:
-$CZ=C'Z$,
-ו-%
-$\angle CZS = \angle C'ZS = 90^\circ$
-כי לפי ההגדרה של שיקוף
-$AB$
-הוא האנך האמצעי של 
-$CC'$.
-מכאן ש-%
-$C'S=CS$,
-ובאופן דומה
-$D'S=DS$.
+את החיתוך של האנח עם המעגל הקבוע.
 \begin{center}
 \selectlanguage{english}
+\vspace*{-8pt}
 \begin{tikzpicture}[scale=.8]
-\coordinate (A) at (-4,0);
-\coordinate (B) at (2,0);
-\coordinate (C) at (-3,2);
-\coordinate (D) at (1,-1);
-\coordinate (Cp) at (-3,-2);
-\coordinate (Dp) at (1,1);
+\coordinate (O) at (0,0);
+\coordinate (H) at (-3,0);
+\coordinate (K) at (3,0);
+\node at (-2.4,2.4) {$c$};
+\draw (H) -- (K);
+\draw[name path=circle] (O) circle[radius=3cm];
+\fill (O) node[below] {$O$} circle[radius=2pt];
+\fill (H) node[left] {$H$} circle[radius=2pt];
+\fill (K) node[right] {$K$} circle[radius=2pt];
+\path[name path=as] (1,0) coordinate (A) -- ++(0,3.2);
 \fill (A) node[below] {$A$} circle[radius=2pt];
-\fill (B) node[below] {$B$} circle[radius=2pt];
-\fill (C) node[above] {$C$} circle[radius=2pt];
-\fill (D) node[below] {$D$} circle[radius=2pt];
-\fill (Cp) node[below] {$C'$} circle[radius=2pt];
-\fill (Dp) node[above] {$D'$} circle[radius=2pt];
-\draw[name path=ab] ($(A)!1.3!(B)$) -- ($(B)!1.3!(A)$);
-\draw[name path=cd] ($(C)!1.2!(D)$) -- ($(D)!1.1!(C)$);
-\path [name intersections={of=ab and cd,by={S}}];
+\path[name intersections={of=circle and as,by={S}}];
 \fill (S) node[above] {$S$} circle[radius=2pt];
-\draw (Cp) -- (Dp);
-\draw[thick,dashed] (C) -- node[above left] {$c$} (Cp);
-\draw[thick,dashed] (D) -- node[above right] {$d$} (Dp);
-\path (C) -- node[right,xshift=2pt] {$x$} (S);
-\path (S) -- node[left,near end,xshift=-2pt] {$e-x$} (D);
-\node at (1,-2.5) {\mbox{\boldmath $CD=C'D'=e$}};
-\fill (-3,0) node[below right] {$Z$} circle[radius=2pt];
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\end{center}
-המשולשים
-$\triangle CSC'$
-ו-%
-$\triangle DSD'$
-דומים, ולכן
-$\frac{CS}{DS} = \frac{CC'}{DD'}$.
-
-נסמן
-$x = CS, c = CC', d = DD', e = CD$.
-מהיחסים במשולשים בדומים מתקבל
-$\frac{x}{e-x} = \frac{c}{d}$.
-נפתור עבור
-$x$
-ונקבל
-$x=\frac{c}{c+d}e$.
-
-אם
-$D$
-נמצאת באותו צד של
-$AB$
-ש-%
-$C$
-נמצאת:
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.8]
-\coordinate (A) at (-4,0);
-\coordinate (B) at (2,0);
-\coordinate (C) at (-3,2);
-\coordinate (D) at (-1,1);
-\coordinate (Cp) at (-3,-2);
-\coordinate (Dp) at (-1,-1);
-\fill (A) node[below] {$A$} circle[radius=2pt];
-\fill (B) node[below] {$B$} circle[radius=2pt];
-\fill (C) node[above] {$C$} circle[radius=2pt];
-\fill (D) node[above] {$D$} circle[radius=2pt];
-\fill (Cp) node[below] {$C'$} circle[radius=2pt];
-\fill (Dp) node[below] {$D'$} circle[radius=2pt];
-\draw[name path=ab] ($(A)!1.3!(B)$) -- ($(B)!1.3!(A)$);
-\draw[name path=cd] ($(C)!2.2!(D)$) -- ($(D)!1.1!(C)$);
-\path [name intersections={of=ab and cd,by={S}}];
-\fill (S) node[above] {$S$} circle[radius=2pt];
-\draw (Cp) -- (S);
-\draw[thick,dashed] (C) -- node[above left] {$c$} (Cp);
-\draw[thick,dashed] (D) -- node[above right] {$d$} (Dp);
-\path (C) -- node[above] {$e$} (D);
-\path (Cp) -- node[below] {$e$} (Dp);
-\path (D) -- node[above right,xshift=-4pt] {$x-e$} (S);
-\path (Dp) -- node[below right,xshift=-4pt] {$x-e$} (S);
-\node at (1,-2.5) {\mbox{\boldmath $CS=C'S=x$}};
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-8pt}
-\end{center}
- המשולשים
-$\triangle CSC'$
-ו-%
-$\triangle DSD'$
-דומים, ולכן
-$\frac{x}{x-e}=\frac{c}{d}$.
-נפתור עבור
-$x$
-ונקבל
-$x=\frac{c}{c-d}e$.
-
-נבנה את המעגלים
-$c(C',d)$
-,
-$c(D,e)$,
-ונסמן נקודת החיתוך שלהם ב-%
-$H$.
-סכום האורכים של שני הקטעים
-$CC',C'H$
-הוא
-$c + d$.
-יש להראות ש-%
-$H$
-נמצאת בהמשך הקו של
-$CC'$
-ואז אורך הקטע
-$CH$
-יהיה
-$c+d$.
-)במקרה ש-%
-$D$
-נמצאת על אותו צד של
-$AB$
-ש-%
-$C$
-נמצאת, 
-$CH = c - d$.(
-\begin{center}
-\vspace*{-4pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.8]
-\coordinate (A) at (-4,0);
-\coordinate (B) at (2,0);
-\coordinate (C) at (-3,2);
-\coordinate (D) at (1,-1);
-\coordinate (Cp) at (-3,-2);
-\coordinate (Dp) at (1,1);
-\fill (A) node[below left] {$A$} circle[radius=2pt];
-\fill (B) node[below] {$B$} circle[radius=2pt];
-\fill (C) node[above] {$C$} circle[radius=2pt];
-\fill (D) node[below] {$D$} circle[radius=2pt];
-\fill (Cp) node[left] {$C'$} circle[radius=2pt];
-\fill (Dp) node[above] {$D'$} circle[radius=2pt];
-\draw[name path=ab] ($(A)!1.3!(B)$) -- ($(B)!1.3!(A)$);
-\draw[name path=cd] ($(C)!1.2!(D)$) -- ($(D)!1.1!(C)$);
-\path [name intersections={of=ab and cd,by={S}}];
-\fill (S) node[above,yshift=4pt] {$S$} circle[radius=2pt];
-\draw (Cp) -- node[below right] {$e$} (Dp);
-\path (C) -- node[above left] {$c$} (Cp);
-\draw[thick,dashed] (D) -- node[above right] {$d$} (Dp);
-\node at (3.5,-3) {\mbox{\boldmath $CD=C'D'=DH=e$}};
-\draw[name path=circled] (D) let
-  \p1 = ($ (D) - (C) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  ++(130:\n2) arc (130:230:\n2);
-
-\draw[name path=circlecp] (Cp) let
-  \p1 = ($ (D) - (Dp) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  ++(-180:\n2) arc (-180:0:\n2);
-\path [name intersections={of=circled and circlecp,by={H}}];
-\fill (H) node[below left] {$H$} circle[radius=2pt];
-\draw[thick,dashed] ($(C)!1.2!(H)$) -- (C);
-\draw (H) -- node[right] {$d$} (Cp);
-\draw (D) -- node[right,xshift=14pt,yshift=8pt] {$e$} (H);
+\draw (A) -- node[right,yshift=-6pt] {$\sqrt{hk}$} node[right,near end,yshift=-6pt] {$s=$} (S);
+\path (H) -- node[above] {$h$} (A);
+\path (A) -- node[above] {$k$} (K);
+\draw[thick,dashed] (O) -- node[left] {$\frac{d}{2}$} (S);
+\node at (.5,-1.5) {$\frac{d}{2}-k$};
+\draw[->] (.5, -1.2) -- ++(0,1);
+\draw (.8,0) -- ++(0,.2) -- ++(.2,0);
 \end{tikzpicture}
 \vspace*{-8pt}
 \selectlanguage{hebrew}
 \end{center}
-מההגדרה של
-$H$
-כחיתוך של המעגלים
-$c(C',d)$
-,
-$c(D,e)$
-אנו מקבלים
-$C'H=d$
-,
-$DH=e$.
-אבל 
-$C'D'=e, DD'=e$,
-ולכן המרובע
-$C'D'DH$
-הוא מקבילית כי האורכים של זוגות הצלעות הנגדיות שוות. לפי הבנייה, קטע הקו
-$DD'$
-מקביל ל-%
-$CC'$,
-ולכן
-$C'H$
-שמקביל ל-%
-$DD'$
-מקביל גם ל-%
-$CC'$.
-אחת מנקודות הקצה של הקטע היא
-$C'$,
-והקטע חייב להיות על ההמשך של הקטע
-$CC'$.
+הטטע הקו
+$OS$
+הוא רדיוס של המעגל ולכן אורכו שווה ל-%
+$\frac{d}{2}$.
+לפי הבנייה אורכו של
+$OA$
+שווה ל-%
+$\frac{d}{2}-k$.
+לפי משפט פיתגורס:
+\[
+\renewcommand*{\arraystretch}{1.5}
+\begin{array}{rcl}
+SA^2 &=& \frac{d}{2}^2 - (\frac{d}{2}-k)^2\\
+&=& dk - k^2\\
+&=& k(d-k)\\
+&=& kh,\quad\quad \textrm{since}\; h+k=d,\\
+s&=&SA=\sqrt{hk}\,.
+\end{array}
+\]
+כעת ניתן לבנות
+$x=\disfrac{t}{d}s$
+לפי סעיף
+\L{\ref{s.relative}}.
 
-האורכים
-$c,d,e$
-נתונים והוכחנו בסעיף
-\L{\ref{s.add-subtract}}
-שניתן לבנות קטע באורך
-$c+d$,
-ובסעיף
-\L{\ref{s.relative}}
-הוכחנו שניתן לבנות קטע באורך
-$x=\frac{c}{c+d}e$.
-$S$
-היא נקודת החיתוך של המעגלים
-$c(C,x)$
-ו-%
-$c(C',x)$.
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.8]
-\coordinate (A) at (-4,0);
-\coordinate (B) at (2,0);
-\coordinate (C) at (-3,2);
-\coordinate (D) at (1,-1);
-\coordinate (Cp) at (-3,-2);
-\coordinate (Dp) at (1,1);
-\fill (A) node[below left] {$A$} circle[radius=2pt];
-\fill (B) node[below] {$B$} circle[radius=2pt];
-\fill (C) node[above] {$C$} circle[radius=2pt];
-\fill (D) node[below] {$D$} circle[radius=2pt];
-\fill (Cp) node[left] {$C'$} circle[radius=2pt];
-\fill (Dp) node[above] {$D'$} circle[radius=2pt];
-\draw[name path=ab] ($(A)!1.3!(B)$) -- ($(B)!1.3!(A)$);
-\draw[name path=cd] ($(C)!1.2!(D)$) -- ($(D)!1.1!(C)$);
-\path [name intersections={of=ab and cd,by={S}}];
-\fill (S) node[above,yshift=4pt] {$S$} circle[radius=2pt];
-\draw (Cp) -- (Dp);
-\path (C) -- node[above,yshift=4pt] {$x$} (S);
-\path (Cp) -- node[below,yshift=-4pt] {$x$} (S);
-\path (C) -- node[above left] {$c$} (Cp);
-\draw[thick,dashed] (D) -- node[above right] {$d$} (Dp);
-\node at (3,-3) {\mbox{\boldmath $CD=C'D'=DH=e$}};
-\draw[name path=circled] (C) let
-  \p1 = ($ (S) - (C) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  ++(-10:\n2) arc (-10:-100:\n2);
-
-\draw[name path=circlecp] (Cp) let
-  \p1 = ($ (S) - (C) $),
-  \n2 = {veclen(\x1,\y1)}
-in
-  ++(100:\n2) arc (100:0:\n2);
-\draw[thick,dashed] (Cp) -- (C);
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-8pt}
-\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{%
-מציאת נקודת החיתוך של קו עם מעגל
+בניית נקודות חיתוך בין קו למעגל%
 }\label{s.line-circle}
-
 \textbf{%
-נתון מעגל
-$k$
-וקו
-$AB$,
-ניתן לבנות את נקודות החיתוך שלהם עם מחוגה בלבד.%
+נתון קו
+$l$
+ומעגל
+$c(O,r)$,
+ניתן לבנות את נקודות החיתוך בין הקו והמעגל.%
 }
 
-נסמן את מרכז המעגל
-$k$
-ב-%
-$M$
-והרדיוס שלו ב-%
-$r$: $k = c(M,r)$,
-ונבנה את 
-$M'$,
-השיקוף של
-$M$
-מסביב ל-%
-$AB$.
-נבנה את המעגל
-$k'=c(M',r)$.
-נקודות החיתוך של המעגלים
-$k,k'$
-הן נקודות החיתוך של הקו 
-$AB$
-והמעגל
-$k$.
+לא מדובר על המעגל הקבוע, אלא על מעגל המוגדר על ידי מרכזו וקטע קו שהוא הרדיוס.
 \begin{center}
-\vspace*{-10pt}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.5]
-\coordinate (A) at (-7,0);
-\coordinate (B) at (8,0);
-\coordinate (M) at (0,-2);
-\coordinate (Mp) at (0,2);
-\fill (A) node[below] {$A$} circle[radius=3pt];
-\fill (B) node[below] {$B$} circle[radius=3pt];
-\fill (M) node[below left] {$M$} circle[radius=3pt];
-\fill (Mp) node[above left] {$M'$} circle[radius=2pt];
-\draw[name path=c1] (M) circle[radius=3cm];
-\draw[name path=c2] (Mp) circle[radius=3cm];
-\draw[name path=ab] ($(A)!1.2!(B)$) -- ($(B)!1.2!(A)$);
-\path [name intersections={of=c1 and c2,by={S1,S2}}];
-\fill (S1) circle[radius=3pt];
-\fill (S2) circle[radius=3pt];
-\path[name path=radius1] (M) -- ++(15:4cm);
-\path [name intersections={of=c1 and radius1,by={R1}}];
-\draw[thick,dashed] (M) -- node[below] {$r$} (R1);
-\path[name path=radius2] (Mp) -- ++(40:4cm);
-\path [name intersections={of=c2 and radius2,by={R2}}];
-\draw[thick,dashed] (Mp) -- node[above] {$r$} (R2);
-\fill (R1) circle[radius=3pt];
-\fill (R2) circle[radius=3pt];
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\node at (2.6,-2) {$c$};
+\draw[thick,dashed] (O) circle[radius=3cm];
+\fill (O) node[below right] {$O$} circle[radius=2pt];
+\draw (O) -- node[right] {$r$} ++(-110:3cm) coordinate (R);
+\fill (R) circle[radius=2pt] node[above right,xshift=2pt] {$R$};
+\draw (O) +(170:4cm) -- node[below, near end,xshift=40pt,yshift=8pt] {$l$} ++(30:4.5cm);
 \end{tikzpicture}
-\selectlanguage{hebrew}
-\vspace*{-10pt}
-\end{center}
-בנייה זו אינה אפשרית אם מרכז המעגל
-$M$
-נמצא על הקו
-$AB$.
-במקרה זה, יש להאריך ולקצר את הקטע
-$AM$
-באורך 
-$r$
-לפי הבנייה המתוארת בסעיף~
-\L{\ref{s.add-subtract}}.
-נקודות הקצה של הקטעים האלה הן נקודות החיתוך של
-$k$
-עם
-$AB$.
-\begin{center}
 \vspace*{-8pt}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.5]
-\coordinate (A) at (-7,0);
-\coordinate (B) at (8,0);
-\coordinate (M) at (0,0);
-\fill (A) node[below] {$A$} circle[radius=3pt];
-\fill (B) node[below] {$B$} circle[radius=3pt];
-\fill (M) node[below left] {$M$} circle[radius=3pt];
-\draw[name path=c1] (M) circle[radius=3cm];
-\draw[name path=ab] ($(A)!1.2!(B)$) -- ($(B)!1.2!(A)$);
-\path[name path=radius1] (M) -- ++(-30:4cm);
-\path [name intersections={of=c1 and radius1,by={R1}}];
-\draw[thick,dashed] (M) -- node[below] {$r$} (R1);
-\path [name intersections={of=c1 and ab,by={S1,S2}}];
-\fill (S1) node[above right] {$AM+r$} circle[radius=3pt];
-\fill (S2) node[above left] {$AM-r$} circle[radius=3pt];
-\fill (R1) circle[radius=3pt];
-\end{tikzpicture}
-\vspace*{-10pt}
 \selectlanguage{hebrew}
 \end{center}
+כפי שתואר בסעיף
+\L{\ref{s.perpendicular}}
+ניתן לבנות את הנקודה
+$M$
+שהיא נקודת החיתוך של הקו עם האנח אליו ממרכז המעגל.
+$M$
+תהיה החוצה של המיתר 
+$XY$,
+כאשר 
+$X,Y$
+הן נקודות החיתוך של של הקו עם המעגל. באיור שלהלן
+$X$, $Y$, $s$
+הם רק סימונים. טרם בנינו את נקודות החיתוך.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\node at (2.6,-2) {$c$};
+\draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
+\fill (O) node[below right] {$O$} circle[radius=2pt];
+\draw (O) -- node[right] {$r$} ++(-110:3cm) coordinate (R);
+\fill (R) node[above right,xshift=2pt] {$R$} circle[radius=2pt];
+\draw[name path=l] (O) ++(170:4cm) -- node[below, near end,xshift=40pt,yshift=12pt] {$l$} ++(20:8cm);
+\path[name intersections={of=circle and l,by={Y,X}}];
+\fill (X) node[above left] {$X$} circle[radius=2pt];
+\fill (Y) node[above right] {$Y$} circle[radius=2pt];
+\draw[thick,dashed] (O) -- node[below] {$r$} (X);
+\path (X) -- ($(X)!.5!(Y)$) coordinate (M);
+\fill (M) node[above] {$M$} circle[radius=2pt];
+\draw[thick,dashed] (O) -- node[right] {$t$} (M);
+\path (X) -- node[above] {$s$} (M);
+\path (M) -- node[above] {$s$} (Y);
+\draw (O) ++(170:4cm) -- ++(20:3.1cm) -- ++(-70:10pt) -- ++(20:10pt);
+\end{tikzpicture}
+\vspace*{-6pt}
+\selectlanguage{hebrew}
+\end{center}
+$\triangle OMX$
+הוא מעגל ישר זווית. לפי משפט פיתגורס,
+$s^2=r^2-t^2=\sqrt{(r+t)(r-t)}$.
+קטע קו באורך
+$r$
+נתון כרדיוס המעגל, ובנינו את הנקודה
+$M$
+כך שיש לנו את 
+$OM$
+באורך
+$t$.
+כפי שמתואר בסעיף
+\L{\ref{s.direction}}
+ניתן לבנות קטע קו שאורכו 
+$t$
+מהנקודה 
+$O$
+בכיוון
+$RO$,
+וגם קטע קו שאורכו
+$t$
+מהנקודה
+$O$
+בכיוון 
+$OR$,
+כלומר, ניתן לבנות קטעים באורכים
+$r+t,r-t$.
+כפי שתואר בסעיף
+\L{\ref{s.root}}
+ניתן לבנות קטע קו באורך
+$s=\sqrt{(r+t)(r-t)}$.
+שוב לפי סעיף
+\L{\ref{s.direction}},
+ניתן לבנות קטעי קו באורך 
+$s$
+על הקו הנתון
+$l$
+מהנקודה
+$M$
+בשני הכיוונים. הקצה השני של כל אחד מקטעי הקו הוא נקודת חיתוך של הקו והמעגל.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{%
+בניית נקודות חיתוך בין שני מעגלים%
+}\label{s.circle-circle}
+
+\textbf{%
+נתון שני מעגלים
+$c_1(O_1,r),c_2(O_2,r)$,
+ניתן לבנות את נקודות החיתוך שלהם
+$X,Y$%
+}
+המעגלים נתונים כנקודות מרכז וקטעי קו שהם הרדיוסים. עם הסרגל ניתן לבנות את קנע הקו
+$O_1O_2$
+המחבר את המרכזים. נסמן את אורכו ב-%
+$t$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.1]
+\coordinate (O1) at (0,0);
+\coordinate (O2) at (2.5,0);
+\fill (O1) node[below left] {$O_1$} circle[radius=2pt];
+\fill (O2) node[below right] {$O_2$} circle[radius=2pt];
+\draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\draw (O1) -- node[above] {$r_1$} ++(160:2cm);
+\draw (O2) -- node[above] {$r_2$} ++(30:1.6cm);
+\fill (O1) ++(160:2cm) circle[radius=2pt];
+\fill (O2) ++(30:1.6cm) circle[radius=2pt];
+\draw (O1) -- (O2);
+\node at (-1.7,1.6) {$c_1$};
+\node at (3.8,1.4) {$c_2$};
+\draw[<->] (0,-1) -- node[fill=white] {$t$} (2.5,-1);
+\node at (6,0) {$t=O_1O_2$};
+\end{tikzpicture}
+\selectlanguage{hebrew}
+\end{center}
+נסמן ב-%
+$A$
+את נקודת החיתוך בין
+$O_1O_2$
+לבין
+$XY$,
+והאורכים
+$q=O_1A,x=XA$.
+שימו לב שטרם גנינו את הנקודה
+$A$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.1]
+\coordinate (O1) at (0,0);
+\coordinate (O2) at (2.5,0);
+\fill (O1) node[below left] {$O_1$} circle[radius=2pt];
+\fill (O2) node[below right] {$O_2$} circle[radius=2pt];
+\draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\fill (X) node[above,yshift=4pt] {$X$} circle[radius=2pt];
+\fill (Y) node[below,yshift=-4pt] {$Y$} circle[radius=2pt];
+\draw[thick,dashed] (O1) -- node[above,xshift=-4pt] {$r_1$} (X);
+\draw[thick,dashed] (O2) -- node[above,xshift=4pt] {$r_2$} (X);
+\draw[name path=oo] (O1) -- (O2);
+\node at (-1.7,1.6) {$c_1$};
+\node at (3.8,1.4) {$c_2$};
+\draw[name path=xy] (X) -- (Y);
+\path[name intersections={of=xy and oo,by={A}}];
+\fill (A) node[below left] {$A$} circle[radius=2pt];
+\path (O1) -- node[below,xshift=-2pt] {$q$} (A);
+\path (X) -- node[left,yshift=-2pt] {$x$} (A);
+\draw[<->] (0,-1) -- node[fill=white] {$t$} (2.5,-1);
+\node at (6,.5) {$t=O_1O_2$};
+\node at (6,0) {$q=O_1A$};
+\node at (6,-.5) {$x=XA$};
+\end{tikzpicture}
+\selectlanguage{hebrew}
+\end{center}
+אם נצליח לבנות את האורכים
+$q,x$,
+לפי סעיף
+\L{\ref{s.direction}}
+נוכל לבנות את 
+$A$
+באורך
+$q$
+מהנקודה
+$O_1$
+לכיוון
+$O_1O_2$.
+לפי סעיף
+\L{\ref{s.perpendicular}}
+ניתן לבנות את האנח ל-%
+$O_1O_2$
+בנקודה
+$A$,
+ושוב לפי סעיף
+\L{\ref{s.direction}}
+קטעי קו באורך
+$x$
+מהנקודה
+$A$
+בשני הכיוונים לאורך האנח. הקצה השני של כל קטע קו
+$X,Y$
+הוא נקודת חיתוך של שני המעגלים כי הן נמצאות במרחקים 
+$r_1,r_2$
+מהמרכזים
+$O_1O_2$.
+
+\textbf{%
+בניית האורך
+$q$:}
+נסמן
+$d=\sqrt{r_1^2+t^2}$.
+$d$
+הוא האורך של היתר של משולש ישר זווית, ולפי סעיפים
+\L{\ref{s.perpendicular},\ref{s.direction}}
+ניתן לבנות אותו מ-%
+$r,t$,
+האורכים הידועים של שני הצלעות האחרות, לפי חוק הקוסינוסים במשולש
+$\triangle O_1O_2X$:
+\[
+\renewcommand*{\arraystretch}{1.8}
+\begin{array}{rcl}
+r_2^2 &=& r_1^2 + t^2 - 2r_1t\cos\angle XO_1O_2\\
+      &=& r_1^2 + t^2 - 2t(r_1\cos\angle XO_1O_2)\\
+&=& r_1^2 + t^2 - 2tq\\
+2tq &=& (r_1^2+t^2) - r_2^2\\
+q&=&\disfrac{(d+r_2)(d-r_2)}{2t}\,.
+\end{array}
+\]
+נסמן
+$n= d+ r_2$, $m= 2t$, $s =d -r_2$.
+ניתן לבנות את כל האורכים האלה לפי סעיף
+\L{\ref{s.direction}}.
+לבסוף, ניתן לבנות את
+$q=\frac{n}{m}s$
+לפי סעיף
+\L{\ref{s.relative}}.
+
+שימו לב שהמשולש לא מופיע האיור. ניתן לבנות אותו בכל מקום במישור כדי לבנות את האורכים
+$d,q$
+מהארוכים הידועים
+$r_1,r_2,t$.
+
+\textbf{%
+בניית האורך
+$x$:}
+$\triangle AO_1X$
+הוא משולש ישר זווית, ולכן
+$x^2=r_1^2-q^2 =\sqrt{(r_1+q)(r_1-q)}$.
+לפי
+\L{\ref{s.direction}}
+ניתן לבנות את
+$h =r_1+ q$
+ו-%
+$k= r_1 - q$,
+ולפי
+\L{\ref{s.root}}
+ניתן לבנות את
+$x= \sqrt{hk}$. 
 
 \end{document}
+
 
