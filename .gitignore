@@ -5,6 +5,8 @@ plot
 mohr-mascheroni/tikz
 compass/tikz
 steiner/tikz
+motion/tikz
+motion/images
 tikz-examples.tex
 *.bat
 *.zip
@@ -15,3 +17,4 @@ tikz-examples.tex
 *.bbl
 *.blg
 *.synctex.gz
+langford\blocks.*

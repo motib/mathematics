@@ -50,6 +50,10 @@
 
 \url{http://www.weizmann.ac.il/sci-tea/benari/}
 
+\bigskip
+
+\L{27/05/2018}
+
 \end{center}
 
 \selectlanguage{english}
@@ -61,7 +65,7 @@
 \bigskip
 
 \begin{center}
-\includegraphics[width=.2\textwidth]{../by-sa.png}
+\includegraphics[width=.15\textwidth]{../by-sa.png}
 \end{center}
 
 \selectlanguage{hebrew}
@@ -74,7 +78,7 @@
 
 מסמך זה מכיל תרשימים ופתרונות של בעיות התנועה וההספק משאלוני
 $806$
-מהשנים תשע"ד ועד תשע"ז. תחילה מופיעות בעיות תנועה ואחר כך בעיות הספק.
+מ תשע"ד. תחילה מופיעות בעיות תנועה ואחר כך בעיות הספק.
 
 \smallskip
 
@@ -106,6 +110,12 @@ $14$-$19$.
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{\huge
+בעיות תנועה}
+\end{center}
+
 
 \section*{חורף תשע"ד}
 
@@ -1095,6 +1105,7 @@ $t=1/2$
 \fill (7,0) circle [radius=2pt];
 \fill (10,6) circle [radius=2pt];
 \fill (10,4.5) circle [radius=2pt];
+\fill (0,6) circle [radius=2pt];
 \fill (distance) circle [radius=2pt];
 \draw[<->] (-.4,0) -- node[fill=white] {$d_r$} (distance -| -.4,0);
 \draw[<->] (distance -| -.4,0) -- node[fill=white] {$d_s$} (-.4,6);
@@ -1244,6 +1255,115 @@ t_1+t_2=5+\frac{5}{4}=\frac{25}{4}\,.
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{קיץ תשע"ח מועד א}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2018a-1}
+\end{center}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\draw (0,0) node[left] {
+\R{א}
+} -- (10,0);
+\draw (0,0) -- (0,6) node[left] {
+\R{ב}
+};
+\draw[dashed] (0,6) -- (10,6);
+\draw[thick,name path=amir] (0,0) -- node[above left,near start] {
+\R{אמיר}
+} (6,6);
+\draw[thick,name path=moshe] (0,6) -- node[above right,near start] {
+\R{משה}
+} (10,0);
+\fill (0,6) circle [radius=2pt];
+\fill (0,0) circle [radius=2pt];
+\fill (6,6) circle [radius=2pt];
+\fill (10,0) circle [radius=2pt];
+\path[name intersections={of=amir and moshe,by=meeting}];
+\fill (meeting) circle [radius=2pt];
+\draw[dashed] (meeting) |- coordinate (meeting-time) (0,0);
+\fill (meeting-time) circle [radius=2pt];
+\draw[thick] (meeting-time) -- node[right,yshift=20pt,xshift=20pt] {
+\R{יסמין}
+} (8,6);
+\fill (8,6) circle [radius=2pt];
+\draw[dashed] (6,6) -- (6,0);
+\draw[dashed] (8,6) -- (8,0);
+\draw[dashed] (meeting) -| coordinate (meeting-distance) (0,0);
+\fill (8,0) circle [radius=2pt];
+\fill (meeting-distance) circle [radius=2pt];
+\draw[<->] (0,-5mm) -- node[fill=white] {$t$} (meeting-time |- 0,-5mm);
+\draw[<->] (meeting-time |- 0,-5mm) -- node[fill=white] {$2$} (6,-5mm);
+\draw[<->] (meeting-time |- 0,-10mm) -- node[fill=white] {$8$} (10,-10mm);
+\draw[<->] (meeting-time |- 0,-15mm) -- node[fill=white] {$t_y$} (8,-15mm);
+\end{tikzpicture}
+\end{center}
+
+נסמן:
+$=t$
+הזמן עד ממפגש בין אמיר למשה,
+$=t_y$
+זמן הנסיעה של יסמין מעיר א לעיר ב, 
+$=v_y,v_m,y_a$
+המהירויות של אמיר, משה ויסמין.
+
+\paragraph{סעיף א}\mbox{}\\
+
+מהתרשים רואים שיש שלושה ביטויים עבור המרחק בין הערים: סכום המרחקים שנסעו אמיר ומשה עד למפגש, והמרחקים שנסעו אמיר ומשה:
+\[
+tv_a + tv_m = (t+2) v_a = (t+8) v_m\,.
+\]
+משני הביטויים הראשונים אנו מקבלים 
+$\displaystyle \frac{v_a}{v_m}=\frac{t}{2}$.
+נציב בשני הביטויים האחרונים:
+\[
+(t+2)\cdot \frac{tv_m}{2} = (t+8) v_m\,.
+\]
+$v_m$
+מצטמצם ונקבל משוואה ריבועית עם הפתרון חיובי 
+$t=4$.
+המפגש התקיים בשעה 
+$10:00$.
+
+
+\paragraph{סעיף ב}\mbox{}\\
+
+המרחק בין הערים הוא 
+$(t+2)v_a=6v_a$.
+
+
+\paragraph{סעיף ג}\mbox{}\\
+
+מהתרשים רואים ש:
+\[
+2 < t_y < 8\,.
+\]
+זמן הוא מרחק חלקי מהירות ואת המרחק חישבנו בסעיף ב:
+\[
+2 < \frac{6v_a}{v_j} < 8\,,
+\]
+או:
+\[
+\frac{1}{3v_a} < \frac{1}{v_j} < \frac{4}{3v_a}\,.
+\]
+כיווני האי-שוויון מתחלפים עם היפוך השבר:
+\[
+\frac{3}{4}v_a < v_j < 3v_a\,.
+\]
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{\huge
+בעיות הספק}
+\end{center}
+
 
 \section*{חורף תשע"ה}
 
