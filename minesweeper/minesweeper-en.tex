@@ -1,0 +1,954 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{graphicx}
+
+\textwidth=15cm
+\textheight=23cm
+\topmargin=1cm
+\headheight=0pt
+\oddsidemargin=2em
+\headsep=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.5\baselineskip plus 1pt minus 1pt}
+\parindent=0pt
+
+\newlength{\lng}
+\setlength{\lng}{1pt}
+\unitlength=\lng
+\newcommand{\lrg}[0]{\Large\sf} 
+\newcommand{\mdm}[0]{\normalsize\sf}
+
+\newsavebox{\grid}
+\sbox{\grid}{
+\thicklines
+  \put(0,0){\framebox(120,120){}}           % Outer box
+  \multiput(20,0)(20,0){5}{\line(0,1){120}} % Vertical grid lines
+  \multiput(0,20)(0,20){5}{\line(1,0){120}} % Horizontal grid lines
+  \put(-20,0){\makebox(20,20){\sf 1}}
+  \put(-20,20){\makebox(20,20){\sf 2}}
+  \put(-20,40){\makebox(20,20){\sf 3}}
+  \put(-20,60){\makebox(20,20){\sf 4}}
+  \put(-20,80){\makebox(20,20){\sf 5}}
+  \put(-20,100){\makebox(20,20){\sf 6}}
+  \put(0,120){\makebox(20,20){\sf 1}}
+  \put(20,120){\makebox(20,20){\sf 2}}
+  \put(40,120){\makebox(20,20){\sf 3}}
+  \put(60,120){\makebox(20,20){\sf 4}}
+  \put(80,120){\makebox(20,20){\sf 5}}
+  \put(100,120){\makebox(20,20){\sf 6}}
+}
+
+% A puzzle is a grid filled with zero and the parameter n
+\newcommand{\puz}[1]{
+  \thicklines
+  \usebox{\grid}
+  \multiput(20,20)(0,60){2}{
+    \multiput(0,0)(20,0){4}{\makebox(20,20){\lrg #1}}
+  }
+  \multiput(20,40)(0,20){2}{
+    \multiput(0,0)(60,0){2}{\makebox(20,20){\lrg #1}}
+    \multiput(20,0)(20,0){2}{\makebox(20,20){\lrg 0}}
+  }
+}
+
+% Save boxes for puzzles with 2's and 3's
+\newsavebox{\puztwo}
+\sbox{\puztwo}{\puz{2}}
+
+\newsavebox{\puzthree}
+\sbox{\puzthree}{\puz{3}}
+
+% Commands for symbols
+\newcommand{\mine}[0]{\makebox(20,20){\rule{9\lng}{9\lng}}}
+\newcommand{\ques}[0]{\makebox(20,20){\lrg ?}}
+\newcommand{\open}[0]{\put(10,10){\circle{10}}}
+\newcommand{\incon}[0]{\put(5,5){\line(1,1){10}}\put(5,15){\line(1,-1){10}}}
+\newcommand{\fulfil}[0]{\put(4,4){\framebox(12,12){}}}
+\newcommand{\smallmine}[0]{\makebox(10,10){\rule{4\lng}{4\lng}}}
+\newcommand{\smallopen}[0]{\put(5,5){\circle{5}}}
+\newcommand{\smallincon}[0]{\put(1,1){\line(1,1){8}}\put(1,9){\line(1,-1){8}}}
+
+% Commands for each configuration
+\newcommand{\configa}[0]{
+  \usebox{\puztwo}
+  \multiput(80,100)(20,0){2}{\mine}
+  \put(60,100){\open}
+  \multiput(100,80)(0,-20){2}{\open}
+  \put(80,80){\fulfil}
+  \put(80,60){\incon}
+}
+
+\newcommand{\configb}[0]{
+  \usebox{\puztwo}
+  \multiput(60,100)(40,0){2}{\mine}
+  \put(80,100){\open}
+  \multiput(100,80)(0,-20){2}{\open}
+  \put(80,80){\fulfil}
+  \put(80,60){\incon}
+}
+
+\newcommand{\configc}[0]{
+  \usebox{\puztwo}
+  \multiput(40,100)(60,0){2}{\mine}
+  \multiput(60,100)(20,0){2}{\ques}
+  \put(60,80){\incon}
+}
+
+\newcommand{\configd}[0]{
+  \usebox{\puztwo}
+  \multiput(20,100)(80,0){2}{\mine}
+  \multiput(40,100)(20,0){3}{\ques}
+  \multiput(40,80)(20,0){2}{\incon}
+}
+
+\newcommand{\confige}[0]{
+  \usebox{\puztwo}
+  \multiput(0,100)(100,0){2}{\mine}
+  \multiput(20,100)(20,0){4}{\ques}
+  \multiput(40,80)(20,0){2}{\incon}
+}
+
+\newcommand{\configf}[0]{
+  \usebox{\puztwo}
+  \multiput(60,100)(20,0){2}{\mine}
+  \put(40,100){\open}
+  \multiput(100,100)(0,-20){3}{\open}
+  \multiput(60,80)(20,0){2}{\fulfil}
+  \put(80,60){\incon}
+}
+
+\newcommand{\configg}[0]{
+  \usebox{\puztwo}
+  \put(80,100){\mine}
+  \put(100,80){\mine}
+  \put(60,100){\open}
+  \put(100,100){\open}
+  \put(100,60){\open}
+  \put(80,80){\fulfil}
+}
+
+\newcommand{\configh}[0]{
+  \usebox{\puztwo}
+  \put(80,100){\mine}
+  \put(100,80){\mine}
+  \put(40,100){\mine}
+  \put(20,100){\mine}
+  \put(60,100){\open}
+  \put(100,100){\open}
+  \put(100,60){\open}
+  \put(80,80){\fulfil}
+  \put(60,80){\fulfil}
+  \put(40,80){\fulfil}
+  \put(20,80){\fulfil}
+  \put(0,100){\open}
+  \put(0,80){\open}
+  \put(0,60){\open}
+  \put(20,60){\incon}
+}
+
+%\newcommand{\configh}[0]{
+%  \usebox{\puztwo}
+%  \multiput(20,100)(60,0){2}{\mine}
+%  \multiput(40,100)(20,0){2}{\ques}
+%  \multiput(40,80)(20,0){2}{\incon}
+%}
+
+\newcommand{\configi}[0]{
+  \usebox{\puztwo}
+  \multiput(0,0)(0,100){2}{
+    \multiput(40,0)(20,0){2}{\mine}
+  }
+  \multiput(0,20)(0,60){2}{
+    \multiput(20,0)(20,0){4}{\fulfil}
+  }
+  \multiput(0,0)(100,0){2}{
+    \multiput(0,40)(0,20){2}{\mine}
+  }
+  \multiput(20,0)(60,0){2}{
+    \multiput(0,40)(0,20){2}{\fulfil}
+  }
+}
+
+\newcommand{\configj}[0]{
+  \usebox{\puzthree}
+  \multiput(40,100)(20,0){3}{\mine}
+  \put(60,80){\fulfil}
+}
+
+\newcommand{\configk}[0]{
+  \usebox{\puzthree}
+  \multiput(0,0)(0,100){2}{
+    \multiput(20,0)(20,0){4}{\mine}
+  }
+  \multiput(0,20)(0,20){4}{
+    \multiput(0,0)(100,0){2}{\mine}
+  }
+  \multiput(0,20)(0,60){2}{
+    \multiput(40,0)(20,0){2}{\fulfil}
+    \multiput(20,0)(60,0){2}{\incon}
+  }
+  \multiput(0,40)(0,20){2}{
+    \multiput(20,0)(60,0){2}{\fulfil}
+  }
+}
+
+
+\begin{document}
+\begin{center}
+
+\textbf{\huge Minesweeper is NP-Complete}
+
+\bigskip
+\bigskip
+\bigskip
+
+\textbf{\LARGE Moti Ben-Ari}
+
+\bigskip
+
+\textbf{\Large Department of Science Teaching}
+
+\bigskip
+
+\textbf{\Large Weizmann Institute of Science}
+
+\bigskip
+
+\url{http://www.weizmann.ac.il/sci-tea/benari/}
+
+\end{center}
+
+\bigskip
+\bigskip
+
+\begin{center}
+\copyright{}\  2018 by Moti Ben-Ari.
+\end{center}
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+
+\bigskip
+
+\begin{center}
+\includegraphics[width=.2\textwidth]{../by-sa.png}
+\end{center}
+
+\thispagestyle{empty}
+
+\newpage
+
+Richard Kaye showed that a puzzle based on the minesweeper game is NP-complete. This document presents Kaye's result with detailed explanations.
+
+Kaye, R. (2000) Minesweeper is NP-complete. \textit{Mathematical Intelligencer} 22(2), 9—15. \url{http://web.mat.bham.ac.uk/R.W.Kaye/minesw/}.
+
+Stewart, I. (2005) Ian Stewart on Minesweeper. Clay Mathematics Institute, 
+\url{http://www.claymath.org/Popular_Lectures/Minesweeper/}.
+
+
+\section{The Minesweeper puzzle}
+
+I will assume that you are familiar with---if not addicted to---the \emph{minesweeper game}. There is a rectangular array of hidden cells partially filled with mines, and you have to uncover all non-mined cells. Cells adjacent to mines contain a number between 0 and 8 indicating the number of adjacent mines. A game is constructed by randomly assigning mines to cells and then computing the adjacency counts for each cell. 
+
+The minesweeper \emph{puzzle} is the opposite of the game: given an array in which some cells contain mines and some adjacency numbers, is there an an arrangement of mines that is \emph{consistent} with the numbers?
+
+\section{NP-completeness}
+
+Kaye showed that the minesweeper puzzle is NP-complete by reducing instances of SAT (satisfiability of formulas of propositional logic) to instances of the puzzle. The SAT instances are given as circuits constructed of Boolean logic gates. Configurations of mines and adjacency numbers are constructed such that they are consistent iff they represent the logic gates \texttt{not}, \texttt{and} and \texttt{or}. In addition, configurations are needed to represent the wires in the circuit: straight wires, turns, crossovers, joiners and splitters. From these configurations, given a digital circuit, a minesweeper puzzle can be constructed in polynomial time that is consistent if and only if the circuit is satisfiable.
+
+
+\section{Minesweeper puzzles}
+
+An assignment of mines is consistent if it assigns mines to some of the open cells such that number of mines adjacent to each cell equals the number in the cell.
+
+In our presentation, the cells are numbered from the lower left-hand corner right and up. A cell is said to be \emph{fulfilled} if and only if the number in the cell is the same as the number of adjacent mines; otherwise, the cell and thus the configuration is \emph{inconsistent}.
+
+
+The following notation is used:
+\begin{center}
+\begin{tabular}{|c|l|}
+\hline
+\begin{picture}(20,22)\mine{}  \end{picture}& mine\\\hline
+\begin{picture}(20,22)\open{}  \end{picture}& no mine\\\hline
+\begin{picture}(20,22)\ques{}  \end{picture}& possible mine\\\hline
+\begin{picture}(20,22)
+  \put(0,0){\makebox(20,20){\Large 2}}
+  \put(0,0){\incon}
+\end{picture}& inconsistent cell\\\hline
+\begin{picture}(20,22)
+  \put(0,0){\makebox(20,20){\Large 2}}
+  \put(0,0){\fulfil}
+\end{picture}& fulfilled cell\\\hline
+\end{tabular}
+\end{center}
+
+
+\section{Simple puzzles---a square of twos}
+
+
+\begin{center}
+\begin{picture}(130,140)
+\put(0,0){\usebox{\puztwo}}
+\end{picture}
+\end{center}
+We first show that a mine cannot be placed in a corner cell. By symmetry, it is sufficient to show that a mine cannot be placed in cell $(6,6)$, the upper right-hand corner. If a mine is placed in $(6,6)$, the second mine needed to fulfill $(5,5)$ cannot be placed in $(6,5)$. The two mines fulfill $(5,5)$, but force cells $(6,4)$, $(5,6)$ and $(4,6)$ to be open. Therefore, $(4,5)$ is inconsistent since there is no place to put the second adjacent mine.
+
+\begin{center}
+\begin{picture}(130,140)
+\put(0,0){\configa}
+\end{picture}
+\end{center}
+
+Suppose now that the second mine to fulfill $(5,5)$ is in cell $(6,4)$.
+\begin{center}
+\begin{picture}(130,140)
+\put(0,0){\configb}
+\end{picture}
+\end{center}
+As in the previous case, this forces cell $(4,5)$ to be inconsistent.
+
+By symmetry, placing the second mine to fulfill $(5,5)$ in cell $(5,6)$ leads to inconsistency.
+
+Next we show that there cannot be a mine in a cell adjacent to a corner cell. By symmetry, we show this for cell $(6,5)$. We can fulfill cell $(5,5)$ by placing a mine in cell $(6,4)$. Cells $(5,5)$ and $(5,4)$ are now fulfilled, but this forces $(5,4)$ to be inconsistent.
+\begin{center}
+\begin{picture}(130,140)
+\put(0,0){\configf}
+\end{picture}
+\end{center}
+Instead, let us try to fulfill cell $(5,5)$ by placing the second mine in cell $(5,6)$.
+\begin{center}
+\begin{picture}(130,140)
+\put( 10,10){\configg}
+\end{picture}
+\end{center}
+To fulfill cell $(5,4)$ a mine must be placed in $(6,3)$. To fulfill cell $(5,3)$ a mine must be placed in $(6,2)$, also fulfilling cell $(5,2)$. This forces open cells in $(6,1)$, $(5,1)$ and $(4,1)$, making $(4,2)$ an inconsistent cell.
+\begin{center}
+\begin{picture}(130,140)
+\put(0,10){\configh}
+\end{picture}
+\end{center}
+Since mines cannot be placed in a corner cell or in a cell adjacent to a corner cell, the only possible configuration is:
+\begin{center}
+\begin{picture}(130,140)
+\put(0,0){\configi}
+\end{picture}
+\end{center}
+A quick check shows that this configuration is consistent.
+
+\section{Simple puzzles---a square of threes}
+
+\begin{center}
+\begin{picture}(130,140)
+\put(0,0){\usebox{\puzthree}}
+\end{picture}
+\end{center}
+Clearly, non-corner cells containing $3$ can only be fulfilled by assigning mines to all three of its open neighbors. For example, fulfill $(5,4)$ there must be mines in $(6,3)$, $(6,4)$ and $(6,5)$.
+\begin{center}
+\begin{picture}(130,140)
+\put(0,0){\configj}
+\end{picture}
+\end{center}
+When mines are placed to fulfill all non-corner cells, the four corner cells $(2,2)$, $(2,5)$, $(5,2)$ and $(5,5)$ are inconsistent.
+\begin{center}
+\begin{picture}(130,140)
+\put(10,10){\configk}
+\end{picture}
+\end{center}
+
+
+\section{Digital Logic Circuits}
+
+Kaye reduces of SAT (satisfiability of CNF formulas in propositional logic) in the form of digital logic circuits to minesweeper puzzles. The reduction shows representations for \texttt{not} and \texttt{or} gates as minesweeper puzzles; \texttt{and} gates can be constructed from \texttt{or} and \texttt{not}. The connecting wires also have to be represented. We show the representation for straight wires; see Kaye's papers for the reduction for other forms of wires.
+
+\begin{center}
+\unitlength=1.1pt
+\begin{picture}(290,100)
+\thicklines
+\put(0,80){\makebox(20,30){\sf P}}
+\put(0,60){\makebox(20,30){\sf Q}}
+\put(0,40){\makebox(20,30){\sf R}}
+\put(40,15){\line(1,0){10}}
+\put(20,75){\line(1,0){30}}
+\put(20,95){\line(1,0){30}}
+\put(40,95){\line(0,-1){80}}
+\put(38,93){\rule{4pt}{4pt}}
+\put(20,55){\line(1,0){120}}
+\put(120,55){\line(0,-1){45}}
+\put(118,53){\rule{4pt}{4pt}}
+\put(100,20){\line(1,0){40}}
+\put(120,10){\line(1,0){20}}
+\put(100,90){\line(1,0){20}}
+\put(120,90){\line(0,-1){20}}
+\put(120,70){\line(1,0){20}}
+\put(190,65){\line(1,0){20}}
+\put(210,65){\line(0,-1){10}}
+\put(210,55){\line(1,0){20}}
+\put(190,15){\line(1,0){20}}
+\put(210,15){\line(0,1){20}}
+\put(210,35){\line(1,0){20}}
+\put(280,45){\line(1,0){25}}
+\put(50,0){\framebox(50,30){\sf Not}}
+\put(50,70){\framebox(50,30){\sf And}}
+\put(140,0){\framebox(50,30){\sf Or}}
+\put(140,50){\framebox(50,30){\sf Or}}
+\put(230,30){\framebox(50,30){\sf And}}
+\end{picture}
+\end{center}
+
+
+\newsavebox{\wire}
+\sbox{\wire}{
+\thicklines
+\put(0,0){\framebox(220,100){}}
+\multiput(20,0)(20,0){10}{\line(0,1){100}}
+\multiput(0,20)(0,20){4}{\line(1,0){220}}
+\multiput(0,0)(20,0){11}{
+  \put(0,0){\makebox(20,20){\lrg 0}}
+  \put(0,20){\makebox(20,20){\lrg 1}}
+  \put(0,60){\makebox(20,20){\lrg 1}}
+  \put(0,80){\makebox(20,20){\lrg 0}}
+}
+\multiput(40,40)(60,0){3}{\makebox(20,20){\lrg 1}}
+  \put(-20,0){\makebox(20,20){\sf 1}}
+  \put(-20,20){\makebox(20,20){\sf 2}}
+  \put(-20,40){\makebox(20,20){\sf 3}}
+  \put(-20,60){\makebox(20,20){\sf 4}}
+  \put(-20,80){\makebox(20,20){\sf 5}}
+  \put(0,100){\makebox(20,20){\sf 1}}
+  \put(20,100){\makebox(20,20){\sf 2}}
+  \put(40,100){\makebox(20,20){\sf 3}}
+  \put(60,100){\makebox(20,20){\sf 4}}
+  \put(80,100){\makebox(20,20){\sf 5}}
+  \put(100,100){\makebox(20,20){\sf 6}}
+  \put(120,100){\makebox(20,20){\sf 7}}
+  \put(140,100){\makebox(20,20){\sf 8}}
+  \put(160,100){\makebox(20,20){\sf 9}}
+  \put(180,100){\makebox(20,20){\sf 10}}
+  \put(200,100){\makebox(20,20){\sf 11}}
+}
+
+\newsavebox{\notgate}
+\sbox{\notgate}{
+\thicklines
+\put(0,0){\framebox(260,60){}}
+\put(100,-20){
+  \put(0,0){\framebox(60,100){}}
+%  \multiput(20,0)(0,80){2}{\line(0,1){20}}
+%  \multiput(40,0)(0,80){2}{\line(0,1){20}}
+  \multiput( 0,0)(0,80){2}{
+    \multiput(0,0)(20,0){3}{\makebox(20,20){\lrg 1}}
+  }
+}
+\multiput( 0,20)( 0,20){2}{\line(1,0){260}}
+\multiput(20, 0)(20, 0){4}{\line(0,1){60}}
+\multiput(120,-20)(20, 0){2}{\line(0,1){100}}
+\multiput(180, 0)(20, 0){4}{\line(0,1){60}}
+\multiput(0,0)(0,40){2}{
+  \multiput(  0,0)(20,0){5}{\makebox(20,20){\lrg 1}}
+  \multiput(160,0)(20,0){5}{\makebox(20,20){\lrg 1}}
+  \multiput(100,0)(40,0){2}{\makebox(20,20){\lrg 2}}
+  \put(120,0){\mine}
+}
+\multiput(40,20)(160,0){2}{\makebox(20,20){\lrg 1}}
+\multiput(100,20)(40,0){2}{\makebox(20,20){\lrg 3}}
+  \put(-20,0){\makebox(20,20){\sf 1}}
+  \put(-20,20){\makebox(20,20){\sf 2}}
+  \put(-20,40){\makebox(20,20){\sf 3}}
+  \put(0,80){\makebox(20,20){\sf 1}}
+  \put(20,80){\makebox(20,20){\sf 2}}
+  \put(40,80){\makebox(20,20){\sf 3}}
+  \put(60,80){\makebox(20,20){\sf 4}}
+  \put(80,80){\makebox(20,20){\sf 5}}
+  \put(100,80){\makebox(20,20){\sf 6}}
+  \put(120,80){\makebox(20,20){\sf 7}}
+  \put(140,80){\makebox(20,20){\sf 8}}
+  \put(160,80){\makebox(20,20){\sf 9}}
+  \put(180,80){\makebox(20,20){\sf 10}}
+  \put(200,80){\makebox(20,20){\sf 11}}
+  \put(220,80){\makebox(20,20){\sf 12}}
+  \put(240,80){\makebox(20,20){\sf 13}}
+}
+
+Notation: an open cell followed by a cell with a mine (open/mine) represents $1$, while a cell with a mine followed by an open cell (mine/open) represents $0$. 
+
+
+\section{Representation of a straight wire}
+
+\begin{center}
+\begin{picture}(240,120)
+\usebox{\wire}
+\end{picture}
+\end{center}
+An input of mine/open ($0$) at $(3,1)$--$(3,2)$, results in an output of mine/open ($0$) at $(3,10)$--$(3,11)$:
+\begin{center}
+\begin{picture}(240,120)
+\usebox{\wire}
+\multiput( 0,40)(60,0){4}{\mine}
+\multiput(20,40)(60,0){4}{\open}
+\end{picture}
+\end{center}
+An input of open/mine ($1$) at $(3,1)$--$(3,2)$, results in an output of open/mine ($1$) at $(3,10)$--$(3,11)$:
+\begin{center}
+\begin{picture}(240,120)
+\usebox{\wire}
+\multiput( 0,40)(60,0){4}{\open}
+\multiput(20,40)(60,0){4}{\mine}
+\end{picture}
+\end{center}
+
+\section{Representation of a \texttt{not} gate}
+\begin{center}
+\begin{picture}(280,100)
+\usebox{\notgate}
+\end{picture}
+\end{center}
+\bigskip
+An input of open/mine at $(2,1)$--$(2,2)$ results in an output of mine/open at $(2,12)$--$(2,13)$:
+\begin{center}
+\begin{picture}(280,100)
+\usebox{\notgate}
+\multiput(0,  20)(60,0){3}{\open}
+\multiput(180,20)(60,0){2}{\open}
+\multiput(20, 20)(60,0){2}{\mine}
+\multiput(160,20)(60,0){2}{\mine}
+\end{picture}
+\end{center}
+\bigskip
+An input of mine/open at $(2,1)$--$(2,2)$ results in an output of open/mine $(2,12)$--$(2,13)$:
+\begin{center}
+\begin{picture}(280,100)
+\usebox{\notgate}
+\multiput(180,20)(60,0){2}{\mine}
+\multiput(  0,20)(60,0){3}{\mine}
+\multiput( 20,20)(60,0){2}{\open}
+\multiput(160,20)(60,0){2}{\open}
+\end{picture}
+\end{center}
+There are mines at cells $(1,7)$ and $(3,7)$. Therefore, if there is an open cell at $(2,5)$, the $3$ at $(2,6)$ forces a mine at $(2,9)$ and mine at $(2,5)$, the $3$ at $(2,6)$ forces an open cell at $(2,9)$.
+
+\setlength{\lng}{2pt}
+\unitlength=\lng
+\newcommand{\sml}[0]{\large\sf}
+
+
+\newsavebox{\orgate}
+\sbox{\orgate}{
+\thicklines
+\multiput(30,0)(50,0){2}{\line(1,0){40}}
+\put(30,10){\line(1,0){90}}
+\multiput(30,20)(0,10){2}{\line(1,0){100}}
+\multiput( 0,40)(0,10){4}{\line(1,0){160}}
+\put(30,80){\line(1,0){100}}
+\multiput(40,90)(0,10){3}{\line(1,0){30}}
+\put(80,90){\line(1,0){50}}
+
+\multiput( 0,40)(10,0){3}{\line(0,1){30}}
+\put(30,0){\line(0,1){80}}
+\multiput(40,0)(10,0){4}{\line(0,1){110}}
+\multiput(80,0)(10,0){5}{\line(0,1){90}}
+\put(130,20){\line(0,1){70}}
+\multiput(140,40)(10,0){3}{\line(0,1){30}}
+
+\multiput(0,40)(10,0){3}{\makebox(10,10){\sml 1}}
+\multiput(0,60)(10,0){3}{\makebox(10,10){\sml 1}}
+\multiput(130,40)(10,0){3}{\makebox(10,10){\sml 1}}
+\multiput(130,60)(10,0){3}{\makebox(10,10){\sml 1}}
+\multiput(40,80)(0,10){3}{\makebox(10,10){\sml 1}}
+\multiput(60,80)(0,10){3}{\makebox(10,10){\sml 1}}
+\put(0,50){\makebox(10,10){\sml 1}}
+\multiput(30,70)(40,0){2}{\makebox(10,10){\sml 1}}
+\multiput(80,50)(40,0){2}{\makebox(10,10){\sml 1}}
+\multiput(80,70)(40,0){2}{\makebox(10,10){\sml 1}}
+\multiput(80,80)(40,0){2}{\makebox(10,10){\sml 1}}
+\multiput(30,00)(30,0){2}{\makebox(10,10){\sml 1}}
+\multiput(80,00)(30,0){2}{\makebox(10,10){\sml 1}}
+\multiput(120,20)(0,10){2}{\makebox(10,10){\sml 1}}
+\put(50,100){\makebox(10,10){\sml 1}}
+\put(150,50){\makebox(10,10){\sml 1}}
+
+\multiput(30,60)(40,0){2}{\makebox(10,10){\sml 2}}
+\multiput(80,60)(40,0){2}{\makebox(10,10){\sml 2}}
+\multiput(30,10)(40,0){2}{\makebox(10,10){\sml 2}}
+\multiput(30,20)(0,10){3}{\makebox(10,10){\sml 2}}
+\multiput(110,40)(10,0){2}{\makebox(10,10){\sml 2}}
+\multiput(40,0)(10,0){2}{\makebox(10,10){\sml 2}}
+\multiput(90,0)(10,0){2}{\makebox(10,10){\sml 2}}
+\multiput(40,70)(20,0){2}{\makebox(10,10){\sml 2}}
+\multiput(90,80)(20,0){2}{\makebox(10,10){\sml 2}}
+\put(100,50){\makebox(10,10){\sml 2}}
+\put(110,10){\makebox(10,10){\sml 2}}
+
+\put(30,50){\makebox(10,10){\sml 3}}
+\put(50,70){\makebox(10,10){\sml 3}}
+\put(60,10){\makebox(10,10){\sml 3}}
+\put(80,10){\makebox(10,10){\sml 3}}
+\put(90,40){\makebox(10,10){\sml 3}}
+\put(90,60){\makebox(10,10){\sml 3}}
+\put(100,80){\makebox(10,10){\sml 3}}
+\put(110,20){\makebox(10,10){\sml 3}}
+\put(110,60){\makebox(10,10){\sml 3}}
+
+\put(40,30){\makebox(10,10){\sml 4}}
+\put(80,40){\makebox(10,10){\sml 4}}
+\put(100,30){\makebox(10,10){\sml 4}}
+\put(70,40){\makebox(10,10){\sml 5}}
+\put(50,50){\makebox(10,10){\sml 6}}
+
+\multiput(40,10)(10,0){2}{\makebox(10,10){\smallmine}}
+\multiput(90,10)(10,0){2}{\makebox(10,10){\smallmine}}
+\multiput(40,20)(60,0){2}{\makebox(10,10){\smallmine}}
+\multiput(50,30)(10,0){5}{\makebox(10,10){\smallmine}}
+\put(110,30){\makebox(10,10){\smallmine}}
+\multiput(40,40)(20,0){2}{\makebox(10,10){\smallmine}}
+\multiput(40,60)(20,0){2}{\makebox(10,10){\smallmine}}
+\multiput(90,70)(10,0){3}{\makebox(10,10){\smallmine}}
+
+  \put(-10,0){\makebox(10,10){\sf 1}}
+  \put(-10,10){\makebox(10,10){\sf 2}}
+  \put(-10,20){\makebox(10,10){\sf 3}}
+  \put(-10,30){\makebox(10,10){\sf 4}}
+  \put(-10,40){\makebox(10,10){\sf 5}}
+  \put(-10,50){\makebox(10,10){\sf 6}}
+  \put(-10,60){\makebox(10,10){\sf 7}}
+  \put(-10,70){\makebox(10,10){\sf 8}}
+  \put(-10,80){\makebox(10,10){\sf 9}}
+  \put(-10,90){\makebox(10,10){\sf 10}}
+  \put(-10,100){\makebox(10,10){\sf 11}}
+
+  \put(0,110){\makebox(10,10){\sf 1}}
+  \put(10,110){\makebox(10,10){\sf 2}}
+  \put(20,110){\makebox(10,10){\sf 3}}
+  \put(30,110){\makebox(10,10){\sf 4}}
+  \put(40,110){\makebox(10,10){\sf 5}}
+  \put(50,110){\makebox(10,10){\sf 6}}
+  \put(60,110){\makebox(10,10){\sf 7}}
+  \put(70,110){\makebox(10,10){\sf 8}}
+  \put(80,110){\makebox(10,10){\sf 9}}
+  \put(90,110){\makebox(10,10){\sf 10}}
+  \put(100,110){\makebox(10,10){\sf 11}}
+  \put(110,110){\makebox(10,10){\sf 12}}
+  \put(120,110){\makebox(10,10){\sf 13}}
+  \put(130,110){\makebox(10,10){\sf 14}}
+  \put(140,110){\makebox(10,10){\sf 15}}
+  \put(150,110){\makebox(10,10){\sf 16}}
+}
+
+\newpage
+
+\section*{Representation of an \texttt{or} gate}
+
+Here is the representation of the gate:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\end{picture}
+\end{center}
+The inputs are placed at $(6,2)$--$(6,3)$ and $(10,6)$--$(9,6)$. The result appears at $(6,14)$--$(6,15)$. We show in detail the that if the input is open/mine ($1$) at the left and mine/open ($0$) at the top, then the result at the right is open/mine ($1$). The initial configuration is:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\end{picture}
+\end{center}
+
+\newpage
+
+The $3$ at $(6,4)$ forces an open cell at $(6,5)$, while the $3$ at $(8,6)$ forces a mine at $(7,6)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\end{picture}
+\end{center}
+Next, we need to place mines so that the $6$ at $(6,6)$ is adjacent to six mines. There are two possibilities: case (1), an open cell at $(6,7)$ and a mine at $(5,6)$, or case (2), an open cell at $(5,6)$ and a mine at $(6,7)$.
+
+\subsection*{Case 1}
+There is an open cell at $(6,7)$ and a mine at $(5,6)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallopen}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallmine}
+\end{picture}
+\end{center}
+The $2$ at $(7,8)$ forces a mine $(6,8)$ and the $4$ at $(4,5)$ forces an open cell at $(3,6)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallopen}
+\put(70,50){\smallmine}
+
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallmine}
+\put(50,20){\smallopen}
+\end{picture}
+\end{center}
+The $1$ at $(6,9)$ forces an open cell at $(6,10)$ and the $3$ at $(2,7)$ forces mines at $(3,7),(3,8)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallopen}
+\put(70,50){\smallmine}
+\put(90,50){\smallopen}
+
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallmine}
+\put(50,20){\smallopen}
+\put(60,20){\smallmine}
+\put(70,20){\smallmine}
+\end{picture}
+\end{center}
+
+\newpage
+The $2$ at $(2,8)$ forces an open cell at $(3,9)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallopen}
+\put(70,50){\smallmine}
+\put(90,50){\smallopen}
+
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallmine}
+\put(50,20){\smallopen}
+\put(60,20){\smallmine}
+\put(70,20){\smallmine}
+\put(80,20){\smallopen}
+\end{picture}
+\end{center}
+The $3$ at $(2,9)$ forces a mine at $(3,10)$ and the $4$ at $(4,11)$ forces an open cell at $(5,11)$, but now the $3$ at $(5,10)$ is inconsistent, because it is adjacent to only two mines:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallopen}
+\put(70,50){\smallmine}
+\put(90,50){\smallopen}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallmine}
+\put(50,20){\smallopen}
+\put(60,20){\smallmine}
+\put(70,20){\smallmine}
+\put(80,20){\smallopen}
+\put(90,20){\smallmine}
+\put(90,40){\smallincon}
+\put(100,40){\smallopen}
+\end{picture}
+\end{center}
+
+\newpage
+
+\subsection*{Case 2}
+An open cell at $(5,6)$ and a mine at $(6,7)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallmine}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallopen}
+\end{picture}
+\end{center}
+The $2$ at $(7,8)$ forces an open cell at $(6,8)$ and the $4$ at $(4,5)$ forces a mine at $(3,6)$. In addition, the $1$ at $(6,9)$ forces a mine at $(6,10)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallmine}
+\put(70,50){\smallopen}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallopen}
+\put(50,20){\smallmine}
+\put(90,50){\smallmine}
+\end{picture}
+\end{center}
+
+\newpage
+
+We now have two cases for the $3$ at $(2,7)$. First, let's try to place an open cell at $(3,7)$ and a mine at $(3,8)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallmine}
+\put(70,50){\smallopen}
+\put(90,50){\smallmine}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallopen}
+\put(50,20){\smallmine}
+\put(60,20){\smallopen}
+\put(70,20){\smallmine}
+\end{picture}
+\end{center}
+The $2$ at $(2,8)$ forces a mine at $(3,9)$ and the $3$ at $(2,9)$ forces an open cell at $(3,10)$. This in turn causes the $4$ at $(4,3)$ to force a mine at $(5,11)$, but now the $3$ at $(5,10)$ is inconsistent:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallmine}
+\put(70,50){\smallopen}
+\put(90,50){\smallmine}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallopen}
+\put(50,20){\smallmine}
+\put(60,20){\smallopen}
+\put(70,20){\smallmine}
+\put(80,20){\smallmine}
+\put(90,20){\smallopen}
+\put(90,40){\smallincon}
+\put(100,40){\smallmine}
+%\put(100,30){\smallincon}
+\end{picture}
+\end{center}
+
+\newpage
+
+Now let's try to place a mine at $(3,7)$ and an open cell at $(3,8)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallmine}
+\put(70,50){\smallopen}
+\put(90,50){\smallmine}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallopen}
+\put(50,20){\smallmine}
+\put(60,20){\smallmine}
+\put(70,20){\smallopen}
+\end{picture}
+\end{center}
+The $3$ at $(2,9)$ forces the placement of mines at $(3,9)$ and $(3,10)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallmine}
+\put(70,50){\smallopen}
+\put(90,50){\smallmine}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallopen}
+\put(50,20){\smallmine}
+\put(60,20){\smallmine}
+\put(70,20){\smallopen}
+\put(80,20){\smallmine}
+\put(90,20){\smallmine}
+\end{picture}
+\end{center}
+
+\newpage
+
+The $4$ at $(4,11)$ forces an open cell at $(5,11)$, which is consistent with the $3$ at $(5,10)$. In addition, the $3$ at $(7,10)$ forces an open cell at $(7,11)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallmine}
+\put(70,50){\smallopen}
+\put(90,50){\smallmine}
+\put(90,50){\smallmine}
+\put(100,40){\smallopen}
+\put(100,60){\smallopen}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallopen}
+\put(50,20){\smallmine}
+\put(60,20){\smallmine}
+\put(70,20){\smallmine}
+\put(80,20){\smallopen}
+\put(90,20){\smallmine}
+\end{picture}
+\end{center}
+The puzzle is now quickly solved successfully. The $2$ at $(6,11)$ forces a mine at $(6,12)$, which forces an open cell at $(6,14)$, which in turn forces a mine at $(6,15)$:
+\begin{center}
+\begin{picture}(170,120)
+\usebox{\orgate}
+\put(10,50){\smallopen}
+\put(20,50){\smallmine}
+\put(40,50){\smallopen}
+\put(60,50){\smallmine}
+\put(70,50){\smallopen}
+\put(90,50){\smallmine}
+\put(90,50){\smallmine}
+\put(100,40){\smallopen}
+\put(100,60){\smallopen}
+\put(110,50){\smallmine}
+\put(130,50){\smallopen}
+\put(140,50){\smallmine}
+\put(50,90){\smallmine}
+\put(50,80){\smallopen}
+\put(50,60){\smallmine}
+\put(50,40){\smallopen}
+\put(50,20){\smallmine}
+\put(60,20){\smallmine}
+\put(70,20){\smallmine}
+\put(80,20){\smallopen}
+\put(90,20){\smallmine}
+\end{picture}
+\end{center}
+The open cell at $(6,14)$ and the mine at $(6,15)$ form the output open/mine ($1$), which is the result of ($0$ \texttt{or} $1$). The reader is invited to check the solutions to the puzzle for ($0$ \texttt{or} $0$), ($1$ \texttt{or} $0$) and ($1$ \texttt{or} $1$).
+
+\end{document}
