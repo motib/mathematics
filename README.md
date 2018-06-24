@@ -34,4 +34,6 @@ Copyright 2018 by Moti Ben-Ari under the Creative Commons Attribution-ShareAlike
 
 ### Advanced (post-secondary)
 
+- Minesweeper is NP-complete (en)
 - quaternions: Three-dimensional rotations (en)
+
