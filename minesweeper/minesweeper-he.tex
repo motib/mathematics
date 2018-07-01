@@ -1,20 +1,19 @@
-\documentclass[11pt,a4paper]{article}
-
-\usepackage{mathpazo}
-\usepackage{microtype}
-\usepackage{url}
-\usepackage{verbatim}
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
 \usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
 
-\textwidth=15cm
+\textwidth=15.5cm
 \textheight=23cm
-\topmargin=1cm
+\topmargin=0pt
 \headheight=0pt
 \oddsidemargin=2em
 \headsep=0pt
-\renewcommand{\baselinestretch}{1.1}
-\setlength{\parskip}{0.5\baselineskip plus 1pt minus 1pt}
 \parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
 
 \newlength{\lng}
 \setlength{\lng}{1pt}
@@ -198,38 +197,44 @@
 
 
 \begin{document}
+\thispagestyle{empty}
+
+\selectlanguage{hebrew}
+
 \begin{center}
-
-\textbf{\huge Minesweeper is NP-Complete}
-
-\bigskip
-\bigskip
-\bigskip
-
-\textbf{\LARGE Moti Ben-Ari}
+\textbf{\Huge שולת מוקשים היא
+\L{NP-Complete}}
 
 \bigskip
+\bigskip
 
-\textbf{\Large Department of Science Teaching}
+\textbf{\Large מוטי בן-ארי}
 
 \bigskip
 
-\textbf{\Large Weizmann Institute of Science}
+\textbf{\Large המחלקה להוראת המדעים}
+
+\bigskip
+
+\textbf{\Large מכון ויצמן למדע}
 
 \bigskip
 
 \url{http://www.weizmann.ac.il/sci-tea/benari/}
 
+\bigskip
+
 \end{center}
 
-\bigskip
-\bigskip
+\selectlanguage{english}
 
 \begin{center}
 \copyright{}\  2018 by Moti Ben-Ari.
 \end{center}
 
+\begin{footnotesize}
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+\end{footnotesize}
 
 \bigskip
 
@@ -237,135 +242,251 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 \includegraphics[width=.2\textwidth]{../by-sa.png}
 \end{center}
 
-\thispagestyle{empty}
+\bigskip
 
+\selectlanguage{hebrew}
 \newpage
 
-Richard Kaye showed that a puzzle based on the minesweeper game is NP-complete. This document presents Kaye's result with detailed explanations.
+\L{Richard Kaye}
+הראה שחידה המבוססת על המשחק שולת מוקשים היא
+\L{NP-complete}.
+מסמך זה מביא את הבנייה של 
+\L{Kaye}
+ביחד עם הסברים מפורטים.
 
+\selectlanguage{english}
 Kaye, R. (2000) Minesweeper is NP-complete. \textit{Mathematical Intelligencer} 22(2), 9—15. \url{http://web.mat.bham.ac.uk/R.W.Kaye/minesw/}.
 
+\selectlanguage{hebrew}
 
-\section{The Minesweeper puzzle}
+\section{%
+חידה מבוססת שולת מוקשים%
+}
+אני מניח שאתם מכירים, ואולי אף מכורים, למשחק "שולת מוקשים". קיים סורג מרובע של תאים מוסתרים, חלקם עם מוקשים. יש למצוא את כל התאים שאין בהם מוקשים בלי לדרוך על מוקש. תאים פתוחים שהם שכנים לתאים עם מוקשים מכילים מספר בין 
+$0$
+ל-%
+$8$
+המציין את מספר התאים השכנים עם מוקשים.
 
-I will assume that you are familiar with---if not addicted to---the \emph{minesweeper game}. There is a rectangular array of hidden cells partially filled with mines, and you have to uncover all non-mined cells without stepping on a mine. Cells adjacent to mines contain a number between 0 and 8 indicating the number of adjacent mines. 
+חידת שולת המוקשים היא היפוכה של המשחק. נתון סורג עם תאים המכילים מוקשים ותאים המכילים מספרים, האם קיים דרך למלא חלק מהתאים הנותרים כך שמספרי השכנים עם מוקשים יתאים למספרים הרשומים בתאים.
 
-The minesweeper \emph{puzzle} is the opposite of the game: given an array in which some cells contain mines and some adjacency numbers, is there an an arrangement of mines that is \emph{consistent} with the numbers?
+\section{\L{NP-completeness}}
 
-\section{NP-completeness}
+\L{Kaye}
+הראה שחידת שולת המוקשים היא
+\L{NP-complete}
+על ידי תרגום לבעיית
+\L{SAT}:
+האם ניתן למצוא הצבה של
+\L{T,F}
+%
+לטענות האטמיות של נוסח בתחשיב הפסוקים, כך שערך האמת של הנוסחה הוא
+\L{T}.
+הוא בנה תצורות של תאים עם מוקשים ומספרי שכנים, כך שאפשר להתאים להם מספרים אם ורק אם התצורות מהנהגות לפי השערים הלוגיים
+\L{\texttt{not}, \texttt{and}, \texttt{or}}.
+בנוסף יש לבנות תצורות המתנהגות כמו חוטים למיניהם: ישרים, פונים לכיוון אחר, עבורים אחד מעל לשני, מתלכדים ומתפצלים. 
 
-Kaye showed that the minesweeper puzzle is NP-complete by reducing instances of SAT (satisfiability of formulas of propositional logic) to instances of the puzzle. The SAT instances are given as circuits constructed of Boolean logic gates. Configurations of mines and adjacency numbers are constructed such that they are consistent iff they represent the logic gates \texttt{not}, \texttt{and} and \texttt{or}. In addition, configurations are needed to represent the wires in the circuit: straight wires, turns, crossovers, joiners and splitters. 
+\section{\R{חידות שלות מוקשים}}
 
-\section{Minesweeper puzzles}
+נציג את הסורג כאשר סופרים שורות של תאים מלמטה למעלה וטורים של תאים משמאל לימין.
 
-In this document, the cells are numbered from the lower left-hand corner right and up.
+מונחים: תא שיש מספר מוקשים שכנים השווה למספר הרשום בתא נקרא תא מסופק. תא עם מספר שכנים קטן מהמספר בתא נרקאה תא לא מסופק. תא עם מספר שכנים גדול מהמספר בתא או תא שאין מספיק תאים פתוחים כדי להניח מוקשים ולספק אותו נקרא תא לא עיקבי.
 
-An assignment of mines is consistent if it assigns mines to some of the open cells such that number of mines adjacent to each cell equals the number in the cell.
-
-A cell is \emph{fulfilled} if the number in the cell is the same as the number of adjacent mines. If the number of mines is less than the number in the cell, the cell is \emph{not fulfilled}. If the number of mines is greater than the number in the cell, or if there are not sufficient open cells in order to place mines so that the cell is fulfilled, the cell is said to be \emph{inconsistent}.
-
-
-The following notation is used:
+נשתמש בסימונים שלהלן:
 \begin{center}
+\selectlanguage{english}
 \begin{tabular}{|c|l|}
 \hline
-\begin{picture}(20,22)\mine{}  \end{picture}& mine\\\hline
-\begin{picture}(20,22)\open{}  \end{picture}& no mine\\\hline
-\begin{picture}(20,22)\ques{}  \end{picture}& possible mine\\\hline
+\begin{picture}(20,22)\mine{}  \end{picture}& \hfill\R{מוקש}\\\hline
+\begin{picture}(20,22)\open{}  \end{picture}& \hfill\R{אין מוקש}\\\hline
+\begin{picture}(20,22)\ques{}  \end{picture}& \hfill\R{מוקש אפשרי}\\\hline
 \begin{picture}(20,22)
   \put(0,0){\makebox(20,20){\lrg 2}}
   \put(0,0){\incon}
-\end{picture}& inconsistent cell\\\hline
+\end{picture}& \hfill\R{תא לא עיקבי}\\\hline
 \begin{picture}(20,22)
   \put(0,0){\makebox(20,20){\lrg 2}}
   \put(0,0){\fulfil}
-\end{picture}& fulfilled cell\\\hline
+\end{picture}& \hfill\R{תא מסופק}\\\hline
 \begin{picture}(20,22)
-\put(0,0){\makebox(20,20){\lrg 2}} \end{picture} & unfulfilled cell\\\hline
+\put(0,0){\makebox(20,20){\lrg 2}} \end{picture} & \hfill\R{תא לא מסופק}\\\hline
 \end{tabular}
+\selectlanguage{hebrew}
 \end{center}
 
 
-\section{A simple puzzle---a square of twos}
+
+
+\section{\R{חידה פשוטה---ריבוע של תאים עם מספרי שכנים 2}}
 
 
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(0,0){\usebox{\puztwo}}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-We first show that a mine cannot be placed in a corner cell. By symmetry, it is sufficient to show that a mine cannot be placed in cell $(6,6)$, the upper right-hand corner. If a mine is placed in $(6,6)$, the second mine needed to fulfill $(5,5)$ cannot be placed in $(6,5)$, because cells $(6,4)$, $(5,6)$, $(4,6)$ must be open, and there is no way to fulfill $(4,5)$.
+תחילה נראה שלא ניתן להניח מוקש בתא פינתי. לפי סימטריה, מספיק לראות שאי אפשר להניח מוקש בפינה הימנית העליונה 
+$(6,6)$.
+אם נניח מוקש בתא זה, לא ניתן להניח את המוקש השני כדי לספק את תא 
+$(5,5)$
+בתא
+$(6,5)$,
+כי התאים
+$(6,4)$, $(5,6)$, $(4,6)$
+חייבים להיות ללא מוקשים, ואין דרך להניח מוקשים שיספקו את
+$(4,5)$.
 
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(0,0){\configa}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
-Suppose now that the second mine to fulfill $(5,5)$ is in cell $(6,4)$.
+כעת נניח את המוקש השני לספק את תא
+$(5,5)$
+בתא
+$(6,4)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(0,0){\configb}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-Two mines cannot be placed to fulfill $(4,5)$, because $(4,6)$, $(5,6)$, $(6,5)$ must be open.
+אי אפשר להניח שני מוקשים שיספקו את תא
+$(4,5)$,
+כי
+$(6,5), (5,6), (4,6)$
+חייבים להיות פתוחים.
 
-This proves that a mine cannot be placed in a corner cell.
+הוכחנו שאי אפשר להניח מוקש בתא פינתי.
 
 \bigskip
 
-Next we show that there cannot be a mine in a cell adjacent to a corner cell. By symmetry, we show this for cell $(6,5)$. We can fulfill cell $(5,5)$ by placing a mine in cell $(6,4)$, but this forces $(6,6), (5,6), (4,6)$ to be open and $(5,4)$ cannot be fulfilled.
+כעת נראה שאי אפשר להניח מוקש בתא שהוא שכן של תא פינתי. לפי סימטריה, מספיק לבדוק עבור תא
+$(6,5)$.
+אפשר לספק את תא
+$(5,5)$
+על ידי הנחת מוקש בתא
+$(6,4)$,
+אבל זה מחייב שהתאים 
+$(6,6), (5,6), (4,6)$
+יהיו פתוחים, ואי אפשר לספק את תא
+$(5,4)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(0,0){\configf}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-Instead, let us try to fulfill cell $(5,5)$ by placing the second mine in cell $(5,6)$ and leaving $(6,4)$ open.
+אולי אפשר להניח את המוקש השני עבור 
+$(5,5)$
+בתא
+$(5,6)$,
+ולהשאיר את 
+$(6,4)$
+פתוח?
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put( 10,10){\configg}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-To fulfill cell $(5,4)$ a mine must be placed in $(6,3)$ and to fulfill cell $(5,3)$ a mine must be placed in $(6,2)$, which also fulfills $(5,2)$. This forces cells in $(6,1)$, $(5,1)$, $(4,1)$ to be open, making $(4,2)$ inconsistent.
+כדי לספק תא
+$(5,4)$
+חייבים להניח מוקש בתא
+$(6,3)$,
+וכדי לספק תא
+$(5,3)$
+חייבים להניח מוקש בתא
+$(6,2)$,
+שגם מספק את תא
+$(5,2)$.
+זה מחייב שתאים
+$(6,1), (5,1), (4,1)$
+יהיו פתוחים, ולכן אי אפשר לספק את תא
+$(4,2)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(0,10){\configh}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-Since mines cannot be placed in a corner cell or in a cell adjacent to a corner cell, the only possible configuration is:
+
+לאחר שהוכחנו שאי אפשר להניח מוקש בתא פינתי או בתא ליד תא פינתי, התצורה היחידה שנשארת היא:
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(0,0){\configi}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-A quick check shows that this configuration is consistent.
+בדיקה קצרה מראה שתצורה זו מספקת את כל התאים.
 
-\section{A simple puzzle---a square of threes}
+
+\section{\R{חידה פשוטה---ריבוע של תאים עם מספרי שכנים 3}}
+
 
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(0,0){\usebox{\puzthree}}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-In order to fulfull a cell containing $3$ that is not at a corner, mines must be placed in all of its adjacent open neighbors. For example, to fulfill $(5,4)$ there must be mines in $(6,3)$, $(6,4)$ and $(6,5)$.
+כדי לספק תאים עם
+$3$
+שאינם בפינות הריבוע, חייבים להניח מוקשים בכל השכנים שלו. למשל, כדי לספק תא
+$(5,4)$
+חייבים להניח מוקשים ב-%
+$(6,3)$, $(6,4)$
+ו-%
+$(6,5)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(0,0){\configj}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-When mines are placed to fulfill all non-corner cells, the four corner cells $(2,2)$, $(2,5)$, $(5,2)$ and $(5,5)$ will be inconsistent. Therefore, this puzzle has no solution.
+לאחר שנניח מוקשים כדי לספק את כל התאים שאינם בפינות, התאים
+$(2,2)$, $(2,5)$, $(5,2)$, $(5,5)$
+יהיו לא עקביים. מכאן שאין פתרון לחידה זו.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(130,140)
 \put(10,10){\configk}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
 
-\section{Digital Logic Circuits}
+\section{\R{מעגלים ספרתיים}}
 
-Kaye showed that CNF formulas in propositional logic, expressed as digital logic circuits, can be reduced to minesweeper puzzles. The formulas are reduced to circuits using \texttt{not} and \texttt{or} gates. (\texttt{and} gates can be constructed from \texttt{or} and \texttt{not} gates.) The connecting wires also have to be represented. We show the representation for straight wires; see Kaye's paper for the reduction for other forms of wires.
-
+\L{Kaye}
+הראה חידת שולת המוקשים היא
+\L{NP-complete}
+על ידי תרגום נוסחאות בתחשבים הפסוקים ב-%
+\L{CNF}
+לחידות שולת מוקשים. הנוסחאות מוצגות כמעגלים ספרתיים על שערים 
+\L{\texttt{not}}
+ו-%
+\L{\texttt{or}}.
+)ניתן לבנות שערי 
+\L{\texttt{and}}
+משערי
+\L{\texttt{or},  \texttt{not}}.(
+כמו כן, יש להציג את החוטים כחידות שולת מוקשים. נראה את הייצוג עבור חוטים ישרים. ניתן למצוא את הייצוג של חוטים אחרים במאמר של
+\L{Kaye}.
 \begin{center}
+\selectlanguage{english}
 \unitlength=1.1pt
 \begin{picture}(290,100)
 \thicklines
@@ -398,6 +519,7 @@ Kaye showed that CNF formulas in propositional logic, expressed as digital logic
 \put(140,50){\framebox(50,30){\sf Or}}
 \put(230,30){\framebox(50,30){\sf And}}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
 
@@ -474,42 +596,77 @@ Kaye showed that CNF formulas in propositional logic, expressed as digital logic
   \put(240,80){\makebox(20,20){\sf 13}}
 }
 
-Notation: an open cell followed by a cell with a mine (open/mine) represents $1$, while a cell with a mine followed by an open cell (mine/open) represents $0$. 
+סימן: הערך 
+$0$
+יוצג על ידי שני תאים שכנים, כאשר בראשון מונח מוקש והשני הוא תא פתוח. הערך 
+$1$
+יוצג על ידי שני תאים שכנים, כאשר התא הראשון פתוח ובשני מונח מוקש. 
 
-
-\section{Representation of a straight wire}
+\section{\R{ייצוג חוט ישר}}
 
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(240,120)
 \usebox{\wire}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-An input of mine/open ($0$) at $(3,1)$--$(3,2)$, results in an output of mine/open ($0$) at $(3,10)$--$(3,11)$:
+בתרשים שלהלן, אנו רואים שקלט של 
+$0$
+)מוקש/פתוח( בתאים
+$(3,1)$--$(3,2)$
+גורם לפלט של 
+$0$
+)מוקש/פתוח( בתאים
+$(3,10)$--$(3,11)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(240,120)
 \usebox{\wire}
 \multiput( 0,40)(60,0){4}{\mine}
 \multiput(20,40)(60,0){4}{\open}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-An input of open/mine ($1$) at $(3,1)$--$(3,2)$, results in an output of open/mine ($1$) at $(3,10)$--$(3,11)$:
+קלט של 
+$1$
+)פתוח/מוקש( בתאים
+$(3,1)$--$(3,2)$
+גורם לפלט של 
+$1$
+)פתוח/מוקש( בתאים
+$(3,10)$--$(3,11)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(240,120)
 \usebox{\wire}
 \multiput( 0,40)(60,0){4}{\open}
 \multiput(20,40)(60,0){4}{\mine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
-\section{Representation of a \texttt{not} gate}
+\section{יצוג של שער \L{\texttt{not}}}
+
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(280,100)
 \usebox{\notgate}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 \bigskip
-An input of open/mine ($1$) at $(2,1)$--$(2,2)$ results in an output of mine/open ($0$) at $(2,12)$--$(2,13)$:
+קלט של 
+$1$
+)פתוח/מוקש( בתאים
+$(2,1)$--$(2,2)$
+גורם לפלט של 
+$0$
+)מוקש/פתוח( בתאים
+$(2,12)$--$(2,13)$.
+
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(280,100)
 \usebox{\notgate}
 \multiput(0,  20)(60,0){3}{\open}
@@ -517,12 +674,46 @@ An input of open/mine ($1$) at $(2,1)$--$(2,2)$ results in an output of mine/ope
 \multiput(20, 20)(60,0){2}{\mine}
 \multiput(160,20)(60,0){2}{\mine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 \bigskip
-There are mines at cells $(1,7)$ and $(3,7)$. Therefore, if there is an mine at $(2,5)$, the $3$ at $(2,6)$ forces $(2,7)$ to be open. It follows that there must be a mine at $(2,9)$ to fulfill $(2,8)$. It is now easy to see that $(2,10)$ is open, a mine is placed in $(2,12)$ and $(2,13)$ is open.
 
-Similarly, an input of mine/open ($0$) at $(2,1)$--$(2,2)$ results in an output of open/mine ($1$) at $(2,12)$--$(2,13)$:
+מוקשים מונחים בתאים 
+$(1,7)$
+ו-%
+$(3,7)$.
+לכן, אם יש מוקש ב-%
+$(2,5)$,
+תא
+$(2,6)$
+עם 
+$3$
+שכנים מסופק, ותא 
+$(2,7)$
+חייב להיות פתוח. מכאן חייב להיות מוקש ב-%
+$(2,9)$
+כדי לספק את תא
+$(2,8)$.
+קל לראות ש-%
+$(2,10)$
+פתוח, מוקש מונח ב-%
+$(2,12)$,
+ותא
+$(2,13)$
+פתוח.
+
+
+\bigskip
+באופן דומה, קלט של 
+$0$
+)מוקש/פתוח( בתאים
+$(2,1)$--$(2,2)$
+גורם לפלט של 
+$1$
+)פתוח/מוקש( בתאים
+$(2,12)$--$(2,13)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(280,100)
 \usebox{\notgate}
 \multiput(180,20)(60,0){2}{\mine}
@@ -530,6 +721,7 @@ Similarly, an input of mine/open ($0$) at $(2,1)$--$(2,2)$ results in an output 
 \multiput( 20,20)(60,0){2}{\open}
 \multiput(160,20)(60,0){2}{\open}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 \bigskip
 
@@ -610,17 +802,17 @@ Similarly, an input of mine/open ($0$) at $(2,1)$--$(2,2)$ results in an output 
 \multiput(40,60)(20,0){2}{\makebox(10,10){\smallmine}}
 \multiput(90,70)(10,0){3}{\makebox(10,10){\smallmine}}
 
-  \put(-10,0){\makebox(10,10){\sf 1}}
-  \put(-10,10){\makebox(10,10){\sf 2}}
-  \put(-10,20){\makebox(10,10){\sf 3}}
-  \put(-10,30){\makebox(10,10){\sf 4}}
-  \put(-10,40){\makebox(10,10){\sf 5}}
-  \put(-10,50){\makebox(10,10){\sf 6}}
-  \put(-10,60){\makebox(10,10){\sf 7}}
-  \put(-10,70){\makebox(10,10){\sf 8}}
-  \put(-10,80){\makebox(10,10){\sf 9}}
-  \put(-10,90){\makebox(10,10){\sf 10}}
-  \put(-10,100){\makebox(10,10){\sf 11}}
+  \put(-15,0){\makebox(10,10){\sf 1}}
+  \put(-15,10){\makebox(10,10){\sf 2}}
+  \put(-15,20){\makebox(10,10){\sf 3}}
+  \put(-15,30){\makebox(10,10){\sf 4}}
+  \put(-15,40){\makebox(10,10){\sf 5}}
+  \put(-15,50){\makebox(10,10){\sf 6}}
+  \put(-15,60){\makebox(10,10){\sf 7}}
+  \put(-15,70){\makebox(10,10){\sf 8}}
+  \put(-15,80){\makebox(10,10){\sf 9}}
+  \put(-15,90){\makebox(10,10){\sf 10}}
+  \put(-15,100){\makebox(10,10){\sf 11}}
 
   \put(0,110){\makebox(10,10){\sf 1}}
   \put(10,110){\makebox(10,10){\sf 2}}
@@ -642,20 +834,33 @@ Similarly, an input of mine/open ($0$) at $(2,1)$--$(2,2)$ results in an output 
 
 \newpage
 
-\section*{Representation of an \texttt{or} gate}
+\section{יצוג של שער \L{\texttt{or}}}
 
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \end{picture}
 \end{center}
-The inputs are placed at $(6,2)$--$(6,3)$ and $(10,6)$--$(9,6)$. The result appears at $(6,14)$--$(6,15)$.
+את שני ערכי הקלט מניחים ב-%
+$(6,2)$--$(6,3)$
+וב-%
+$(10,6)$--$(9,6)$.
+התוצאה מופיעה ב-%
+$(6,14)$--$(6,15)$.
 
-We will show that if the input is open/mine ($1$) at the left and mine/open ($0$) at the top, then the result at the right is open/mine ($1$). The reader is invited to check the solutions to the puzzle for ($0$ \texttt{or} $0$), ($1$ \texttt{or} $0$) and ($1$ \texttt{or} $1$).
+נראה שאם הקלט משמאל הוא )פתוח/מוקש( 
+$1$,
+והקלט מלמעלה הוא )מוקש/פתוח(
+$0$,
+אז התוצאה מימין הוא )פתוח/מוקש( 
+$1$.
+הקורא מוזמן לבדוק את הפתרונות לחידה עבור
+\L{($0$ \texttt{or} $0$), ($1$ \texttt{or} $0$), ($1$ \texttt{or} $1$)}.
 
-
-The initial configuration is:
+התצורה התחילתית היא:
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -667,8 +872,20 @@ The initial configuration is:
 
 \newpage
 
-The $3$ at $(6,4)$ forces $(6,5)$ to be open, while the $3$ at $(8,6)$ forces a mine at $(7,6)$:
+ה-%
+$3$
+ב-%
+$(6,4)$
+מחייב שהתא ב-%
+$(6,5)$
+יהיה פתוח, וה-%
+$3$
+ב-%
+$(8,6)$ 
+מחייב הנחת מוקש ב-%
+$(7,6)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -678,12 +895,29 @@ The $3$ at $(6,4)$ forces $(6,5)$ to be open, while the $3$ at $(8,6)$ forces a 
 \put(50,80){\smallopen}
 \put(50,60){\smallmine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-Next, we need to place mines so that the $6$ at $(6,6)$ is adjacent to six mines. There are two possibilities: (1), an open cell at $(6,7)$ and a mine at $(5,6)$, and (2), an open cell at $(5,6)$ and a mine at $(6,7)$.
+עלינו להניח מוקשים כך שלתא
+$(6,6)$
+עם המספר
+$6$
+יהיו ששה שכנים. יש שתי אפשרויות: )1( תא פתוח ב-%
+$(6,7)$
+ומוקש ב-%
+$(5,6)$,
+או )2( תא פתוח ב-%
+$(5,6)$
+ומוקש ב-%
+$(6,7)$.
 
-\subsection*{Case 1}
-There is an open cell at $(6,7)$ and a mine at $(5,6)$.
+\subsection*{אפשרות
+$1$}
+תא פתוח ב-%
+$(6,7)$
+ומוקש ב-%
+$(5,6)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -695,9 +929,23 @@ There is an open cell at $(6,7)$ and a mine at $(5,6)$.
 \put(50,60){\smallmine}
 \put(50,40){\smallmine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-The $2$ at $(7,8)$ forces a mine $(6,8)$ and the $4$ at $(4,5)$ forces an open cell at $(3,6)$.
+התא
+$(7,8)$
+עם
+$2$
+מחייב הנחת מוקש ב-%
+$(6,8)$
+והתא ב-%
+$(4,5)$
+עם
+$4$
+מחייב שהתא 
+$(3,6)$
+יהיה פתוח.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -712,9 +960,22 @@ The $2$ at $(7,8)$ forces a mine $(6,8)$ and the $4$ at $(4,5)$ forces an open c
 \put(50,40){\smallmine}
 \put(50,20){\smallopen}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-The $1$ at $(6,9)$ forces an open cell at $(6,10)$ and the $3$ at $(2,7)$ forces mines at $(3,7),(3,8)$.
+תא 
+$(6,9)$
+עם
+$1$
+מחייב שתא 
+$(6,10)$
+יהיה פתוח, והתא
+$(2,7)$
+עם
+$3$
+מחייב הנחת מוקשים ב-%
+$(3,7),(3,8)$:
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -732,10 +993,19 @@ The $1$ at $(6,9)$ forces an open cell at $(6,10)$ and the $3$ at $(2,7)$ forces
 \put(60,20){\smallmine}
 \put(70,20){\smallmine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
 \newpage
-The $2$ at $(2,8)$ forces an open cell at $(3,9)$.\begin{center}
+התא
+$(2,8)$
+עם 
+$2$
+מחייב שתא
+$(3,9)$
+יהיה פתוח.
+\begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -754,9 +1024,27 @@ The $2$ at $(2,8)$ forces an open cell at $(3,9)$.\begin{center}
 \put(70,20){\smallmine}
 \put(80,20){\smallopen}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-The $3$ at $(2,9)$ forces a mine at $(3,10)$ and the $4$ at $(4,11)$ forces an open cell at $(5,11)$, but now the $3$ at $(5,10)$ is inconsistent, because it is adjacent to only two mines.
+תא 
+$(2,9)$
+עם
+$3$
+מחייב הנחת מוקש ב-%
+$(3,10)$
+והתא
+$(4,11)$
+עם
+$4$
+מחייב שהתא
+$(5,11)$
+יהיה פתוח. אבל במצב זה, תא
+$(5,10)$
+אינו עיקבי כי רשום בו
+$3$
+אבל יש לו רק שני תאים שכנים עם מוקשים.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -777,13 +1065,19 @@ The $3$ at $(2,9)$ forces a mine at $(3,10)$ and the $4$ at $(4,11)$ forces an o
 \put(90,40){\smallincon}
 \put(100,40){\smallopen}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
 \newpage
 
-\subsection*{Case 2}
-An open cell at $(5,6)$ and a mine at $(6,7)$.
+\subsection*{אפשרות
+$2$}
+תא פתוח ב-%
+$(5,6)$
+ומוקש בתא
+$(6,7)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -795,9 +1089,28 @@ An open cell at $(5,6)$ and a mine at $(6,7)$.
 \put(50,60){\smallmine}
 \put(50,40){\smallopen}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-The $2$ at $(7,8)$ forces an open cell at $(6,8)$ and the $4$ at $(4,5)$ forces a mine at $(3,6)$. In addition, the $1$ at $(6,9)$ forces a mine at $(6,10)$.
+התא 
+$(7,8)$
+עם
+$2$
+מחייב שתא
+$(6,8)$
+יהיה פתוח, ותא
+$(4,5)$
+עם
+$4$
+מחייב הנחת מוקש ב-%
+$(3,6)$.
+בנוסף, תא
+$(6,9)$
+עם
+$1$
+מחייב מוקש ב-%
+$(6,10)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -812,16 +1125,25 @@ The $2$ at $(7,8)$ forces an open cell at $(6,8)$ and the $4$ at $(4,5)$ forces 
 \put(50,20){\smallmine}
 \put(90,50){\smallmine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
 \newpage
 
-We now have two cases for the $3$ at $(2,7)$.
+יש שתי אפשרויות עבור תא
+$(2,7)$
+עם
+$3$.
 
-\subsection*{Case 2.1}
+\subsection*{אפשרות
+$2.1$}
 
-There is an open cell at $(3,7)$ and a mine at $(3,8)$.
+תא
+$(3,7)$
+פתוח ויש מוקש ב-%
+$(3,8)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -838,9 +1160,33 @@ There is an open cell at $(3,7)$ and a mine at $(3,8)$.
 \put(60,20){\smallopen}
 \put(70,20){\smallmine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-The $2$ at $(2,8)$ forces a mine at $(3,9)$ and the $3$ at $(2,9)$ forces an open cell at $(3,10)$. This in turn causes the $4$ at $(4,3)$ to force a mine at $(5,11)$, but now the $3$ at $(5,10)$ is inconsistent because the cell has four adjacent cells with mines.
+תא 
+$(2,8)$ 
+עם
+$2$
+מחייב הנחת מוקש ב-%
+$(3,9)$,
+ותא
+$(2,9)$
+עם
+$3$
+מחייב שתא 
+$(3,10)$
+יהיה פתוח. מכאן, ה-%
+$4$
+בתא
+$(4,3)$
+מחייב הנחת מוקש ב-%
+$(5,11)$, 
+אבל אז התא ב-%
+$(5,10)$
+לא עיקבי כי רשום שם
+$3$
+אבל יש לו ארבעה שכנים עם מוקשים.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -862,14 +1208,21 @@ The $2$ at $(2,8)$ forces a mine at $(3,9)$ and the $3$ at $(2,9)$ forces an ope
 \put(100,40){\smallmine}
 %\put(100,30){\smallincon}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
 \newpage
 
-\subsection*{Case 2.2}
+\subsection*{אפשרות
+$2.2$}
 
-There is a mine at $(3,7)$ and an open cell at $(3,8)$.
+מוקש מונח ב-%
+$(3,7)$
+ותא 
+$(3,8)$
+פתוח.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -886,9 +1239,18 @@ There is a mine at $(3,7)$ and an open cell at $(3,8)$.
 \put(60,20){\smallmine}
 \put(70,20){\smallopen}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-The $3$ at $(2,9)$ forces mines at $(3,9)$ and $(3,10)$.
+תא 
+$(2,9)$
+עם
+$3$
+מחייב הנחת מוקשים ב-%
+$(3,9)$
+ו-%
+$(3,10)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -907,12 +1269,30 @@ The $3$ at $(2,9)$ forces mines at $(3,9)$ and $(3,10)$.
 \put(80,20){\smallmine}
 \put(90,20){\smallmine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
 
 \newpage
 
-The $4$ at $(4,11)$ forces an open cell at $(5,11)$, which is consistent with the $3$ at $(5,10)$. In addition, the $3$ at $(7,10)$ forces an open cell at $(7,11)$:
+תא
+$(4,11)$
+עם
+$4$
+מחייב שתא
+$(5,11)$
+יהיה פתוח. תצורה זו עיקבית עם ה-%
+$3$
+בתא
+$(5,10)$.
+בנוסף,
+$(7,10)$
+עם
+$3$
+מחייב שתא
+$(7,11)$
+יהיה פתוח.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -934,9 +1314,20 @@ The $4$ at $(4,11)$ forces an open cell at $(5,11)$, which is consistent with th
 \put(80,20){\smallopen}
 \put(90,20){\smallmine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-The puzzle is now quickly solved successfully. The $2$ at $(6,11)$ forces a mine at $(6,12)$, which forces an open cell at $(6,14)$, which in turn forces a mine at $(6,15)$:
+מכאן אפשר להשלים את הפתרון לחידה במהירות. תא
+$(6,11)$
+עם 
+$2$
+מחייב הנחת מוקש ב-%
+$(6,12)$,
+וזה מחייב שתא
+$(6,14)$ 
+יהיה פתוח, המחייב שיהיה מוקש בתא
+$(6,15)$.
 \begin{center}
+\selectlanguage{english}
 \begin{picture}(170,120)
 \usebox{\orgate}
 \put(10,50){\smallopen}
@@ -961,6 +1352,16 @@ The puzzle is now quickly solved successfully. The $2$ at $(6,11)$ forces a mine
 \put(80,20){\smallopen}
 \put(90,20){\smallmine}
 \end{picture}
+\selectlanguage{hebrew}
 \end{center}
-The open cell at $(6,14)$ and the mine at $(6,15)$ form the output open/mine ($1$), which is the result of ($0$ \texttt{or} $1$). 
+התא הפתוח ב-%
+$(6,14)$
+והמוקש ב-%
+$(6,15)$
+מהווים פלט )פתוח/מוקש(
+$1$
+הערך של
+\L{($0$ \texttt{or} $1$)}.
+
+
 \end{document}
