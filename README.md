@@ -34,6 +34,7 @@ Copyright 2018 by Moti Ben-Ari under the Creative Commons Attribution-ShareAlike
 
 ### Advanced (post-secondary)
 
-- Minesweeper is NP-complete (en)
+- minesweeper: Minesweeper is NP-complete (en,he)
+- triples: Pythagorean triples found by SAT solving (en,he)
 - quaternions: Three-dimensional rotations (en)
 
