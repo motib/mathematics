@@ -67,7 +67,7 @@ Weizmann Institute of Science\\
 
 
 \begin{Large}
-Version 2.0
+Version 2.0.1
 \end{Large}
 \end{center}
 
@@ -80,7 +80,7 @@ Version 2.0
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
 \begin{center}
-\includegraphics[width=.2\textwidth]{by-sa.png}
+\includegraphics[width=.2\textwidth]{../by-sa.png}
 \end{center}
 
 \clearpage
@@ -135,12 +135,12 @@ Suppose now that the vector is rotated by the angle $\theta$:
 \begin{tikzpicture}[scale=1.3]
 \draw (3,0) -- (0,0) coordinate (origin) -- (0,3);
 % Before rotation
-\draw[->] (origin) node[right,xshift=18pt,yshift=8pt] {$\theta$} -- node[above] {$r$} (30:3) coordinate (point1);
+\draw[->] (origin) node[right,xshift=20pt,yshift=8pt] {$\phi$} -- node[above] {$r$} (30:3) coordinate (point1);
 \draw[fill] (point1) circle [radius=2pt,xshift=1.5pt,yshift=1.5pt];
 \draw[dashed] (point1) -- node[right,midway] {$y$} (point1 |- origin);
 \draw[dashed] (point1) -- node[above,near start] {$x$} (point1 -| origin);
 % After rotation
-\draw[->] (origin) node[right,xshift=15pt,yshift=22pt] {$\phi$} -- node[above,xshift=2pt,yshift=10pt] {$r$} (60:3) coordinate (point2);
+\draw[->] (origin) node[right,xshift=15pt,yshift=22pt] {$\theta$} -- node[above,xshift=2pt,yshift=10pt] {$r$} (60:3) coordinate (point2);
 \draw[fill] (point2) circle [radius=2pt,xshift=1.5pt,yshift=1.5pt];
 \draw[dashed] (point2) -- node[right,near start,yshift=2pt] {$y'$} (point2 |- origin);
 \draw[dashed] (point2) -- node[above,midway] {$x'$} (point2 -| origin);
