@@ -1,4 +1,4 @@
-# Learning Materials for Secondary School Mathematics
+x# Learning Materials for Secondary School Mathematics
 
 **Mordechai (Moti) Ben-Ari**
 
@@ -29,8 +29,10 @@ Copyright 2018 by Moti Ben-Ari under the Creative Commons Attribution-ShareAlike
 - mohr-mascheroni: Mascheroni's compass theorem (en)
 - circle: How to (almost) square a circle (en,he)
 - quadratrix: How to trisect an angle (if you are willing to cheat) (en,he)
+- steiner: Construction with only a straightedge and a single circle (en,he)
 - five-equation: Solve: sqrt(x+5) = 5 - x^2 (en,he)
 - langford: Langford's problem (en,he)
+- triangles: Are triangles with the equal area and perimeter congruent? (en,he)
 
 ### Advanced (post-secondary)
 
