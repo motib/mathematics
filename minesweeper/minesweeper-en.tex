@@ -241,6 +241,9 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 \newpage
 
+This document assumes a basic knowledge NP-completeness. An overview of this topic is given in the Appendix.
+
+
 Richard Kaye showed that a puzzle based on the minesweeper game is NP-complete. This document presents Kaye's result with detailed explanations.
 
 Kaye, R. (2000) Minesweeper is NP-complete. \textit{Mathematical Intelligencer} 22(2), 9—15. \url{http://web.mat.bham.ac.uk/R.W.Kaye/minesw/}.
@@ -963,4 +966,38 @@ The puzzle is now quickly solved successfully. The $2$ at $(6,11)$ forces a mine
 \end{picture}
 \end{center}
 The open cell at $(6,14)$ and the mine at $(6,15)$ form the output open/mine ($1$), which is the result of ($0$ \texttt{or} $1$). 
+
+
+
+\newpage
+
+\textbf{\Large Appendix}
+
+\appendix
+
+\section{NP-completeness}
+
+A problem $Q$ is NP-complete if:
+\begin{itemize}
+\item A proposed answer to $Q$ can be checked in polynomial time.
+\item All other problems in the class can be reduced to $Q$, meaning that if $Q$ has a polynomial-time algorithm, then so do all the other problems.
+\end{itemize}
+Given an assignment for a formula $A$ in CNF, it is easy to check if the truth value of $A$ is $T$, so SAT fulfills the first condition. Stephen Cook (1971) and Leonid Levin (1973) showed that the second condition also holds, so SAT is an NP-complete problem.
+
+The first condition states that an NP-complete problem can be solved in polynomial time by a \emph{non-deterministic} algorithm. The question of whether NP-complete problems can be solved in polynomial time by a \emph{deterministic} algorithm is called the $\mathcal{P}=\mathcal{NP}?$ problem.
+
+If there is an efficient (\emph{deterministic polynomial-time}) algorithm for one NP-complete problem, then there are efficient algorithms for all the problems in the class. Currently, no efficient algorithm is known for any problem in the class.
+
+If there is \emph{no} efficient algorithm for one NP-complete problem, then there are no efficient algorithms for all the problems in the class. Currently, there is no proof that any of the problem in the class cannot be solved in deterministic polynomial time.
+
+The Clay Mathematics Institute offers a $\$1$ million prize for a proof that answers $\mathcal{P}=\mathcal{NP}?$.\\ \url{http://claymath.org/millennium-problems/p-vs-np-problem}.
+
+NP-completeness is presented in textbooks in theoretical computer science such as:
+
+Hopcroft, J.E, Motwani, R., Ullman, J.D. \textit{Introduction to Automata Theory, Languages, and Computation}, Third edition,  Addison-Wesley, 2006.
+
+Cormen, T.H., Leiserson, C.E., Rivest, R.L., Stein, C. \textit{Introduction to Algorithms}, Second edition, MIT Press, 2001.
+
+Sipser, M. \textit{Introduction to the Theory of Computation}. PWS Publishing, 1997.
+
 \end{document}

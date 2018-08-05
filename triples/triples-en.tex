@@ -67,6 +67,8 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+This document assumes a basic knowledge of propositional logic and NP-completeness. Overviews of these topics are given in the Appendices.
+
 \section{Introduction}
 
 SAT solving is a method of solving problems by translating a problem into a formula of propositional logic and searching for a satisfying assignment. The advantage of SAT solving is that one highly optimized program can be used to solve many different problems.
@@ -92,60 +94,6 @@ SAT solving is a method of solving problems by translating a problem into a form
 This document contains an overview of SAT solving and then describes how Heule and Kullman used a SAT solver to solve an open problem in mathematics.
 
 Marijn J.H. Heule and Oliver Kullmann. The Science of Brute Force. \textit{Communications of the ACM} 60(8), 2017, 70--79.
-
-\section{Satisfiability in propositional logic}
-
-Formulas in propositional logic are constructed from \emph{atomic propositions} or \emph{atoms} and operators. We use three operators: the unary operator $\ngg$ (\emph{not}, negation), and two binary operators $\wedge$ (\emph{and}, conjunction) and $\vee$ (\emph{or}, disjunction). We limit ourselves to formulas in \emph{conjunctive normal form (CNF)}: a conjunction of \emph{clauses} which are disjunctions of literals (atoms or negations of atoms). Here is a syntactically correct formula in CNF:
-\[
-A=(\ngg p \vee q \vee r) \;\wedge\; (\ngg q \vee r) \;\wedge\; (\ngg r)\,.
-\]
-Because the structure of a CNF formula is known, set notation is frequently used:
-\[
-A=\{\{\ngg p, q, r\}, \; \{\ngg q, r\}, \; \{\ngg r\}\}\,.
-\]
-The semantics of a formula in propositional logic is given by an assignment of the truth values $\{T,F\}$ to the atoms, and then evaluating the truth value of the formula. If there is an assignment such that the truth value of the formula is $T$, the formula is \emph{satisfiable}.
-
-The satisfiability of a formula can be decided by constructing a \emph{truth table}, which has a row for each possible assignment to the atoms and whose last column gives the truth value of the formula for that assignment. Here is the truth table for the formula $A$:
-\begin{center}
-\begin{tabular}{|c|c|c||c|}
-\hline
-p & q & r & $A$\\\hline
-T & T & T & F\\\hline
-T & T & F & F\\\hline
-T & F & T & F\\\hline
-T & F & F & F\\\hline
-F & T & T & F\\\hline
-F & T & F & F\\\hline
-F & F & T & F\\\hline
-F & F & F & T\\\hline
-\end{tabular}
-\end{center}
-The assignment in the last row causes the truth value of $A$ to be $T$, so $A$ is satisfiable.
-
-The SAT problem is to construct an algorithm whose input is a formula in CNF and whose output is a satisfying assignment or a message that the formula is unsatisfiable. A \emph{SAT solver} is program implementing the algorithm.
-
-SAT is decidable using the truth table algorithm, but the algorithm is extremely inefficient, because there are $2^n$ rows, where $n$ is the number of atoms.
-
-For more detail on propositional logic and SAT solving, see Chapters~2, 4, 6 of:
-
-M. Ben-Ari. \textit{Mathematical Logic for Computer Science (Third Edition)}, Springer, 2012.
-
-\section{SAT is NP-complete}
-
-A problem $Q$ is NP-complete if:
-\begin{itemize}
-\item A proposed answer to $Q$ can be checked in polynomial time.
-\item All other problems in the class can be reduced to $Q$, meaning that if $Q$ has a polynomial-time algorithm, then so do all the other problems.
-\end{itemize}
-Given an assignment for a formula $A$ in CNF, it is easy to check if the truth value of $A$ is $T$, so SAT fulfills the first condition. Stephen Cook (1971) and Leonid Levin (1973) showed that the second condition also holds, so SAT is an NP-complete problem.
-
-The first condition states that an NP-complete problem can be solved in polynomial time by a \emph{non-deterministic} algorithm. The question of whether NP-complete problems can be solved in polynomial time by a \emph{deterministic} algorithm is called the $\mathcal{P}=\mathcal{NP}?$ problem.
-
-If there is an efficient (\emph{deterministic polynomial-time}) algorithm for one NP-complete problem, then there are efficient algorithms for all the problems in the class. Currently, no efficient algorithm is known for any problem in the class.
-
-If there is \emph{no} efficient algorithm for one NP-complete problem, then there are no efficient algorithms for all the problems in the class. Currently, there is no proof that any of the problem in the class cannot be solved in deterministic polynomial time.
-
-The Clay Mathematics Institute offers a $\$1$ million prize for a proof that answers $\mathcal{P}=\mathcal{NP}?$.\\ \url{http://claymath.org/millennium-problems/p-vs-np-problem}.
 
 \section{The DPLL algorithm for SAT}
 
@@ -500,5 +448,86 @@ in at least one of $N_1,N_2,N_3$?
 This will be solved if there exists some $n$ such that for every decomposition of $\{1,\ldots,n\}$ into three mutually exclusive subsets, at least one subset contains a Pythagorean triple.
 
 It is possible that the answer will never be found, because $n$, \emph{if it exists}, is greater than $10^7$.
+
+\newpage
+
+\textbf{\Large Appendices}
+
+\appendix
+
+\section{Satisfiability in propositional logic}
+
+Formulas in propositional logic are constructed from \emph{atomic propositions} or \emph{atoms} and operators. We use three operators: the unary operator $\ngg$ (\emph{not}, negation), and two binary operators $\wedge$ (\emph{and}, conjunction) and $\vee$ (\emph{or}, disjunction). A \emph{literal} is an atomic proposition or the negation of an atomic proposition.
+
+We limit ourselves to formulas in \emph{conjunctive normal form (CNF)}: a conjunction of \emph{clauses} which are disjunctions of literals. Here is a syntactically correct formula in CNF:
+\[
+A=(\ngg p \vee q \vee r) \;\wedge\; (\ngg q \vee r) \;\wedge\; (\ngg r)\,.
+\]
+Because the structure of a CNF formula is known, set notation is frequently used:
+\[
+A=\{\{\ngg p, q, r\}, \; \{\ngg q, r\}, \; \{\ngg r\}\}\,.
+\]
+The semantics of a formula in propositional logic is given by an assignment of the truth values $\{T,F\}$ to the atoms, and then evaluating the truth value of the formula. If there is an assignment such that the truth value of the formula is $T$, the formula is \emph{satisfiable}.
+
+The truth value of a formula is obtained from the assignment of truth values to the atoms and then using the following definitions:
+\[
+\begin{array}{|c|c||c|c|c|}
+\hline
+p & q & \ngg p & p\vee q & p \wedge q\\\hline
+T & T & F & T & T\\\hline
+T & F & F & T & F\\\hline
+F & T & T & T & F\\\hline
+F & F & T & F & F\\\hline
+\end{array}
+\]
+The satisfiability of a formula can be decided by constructing a \emph{truth table}, which has a row for each possible assignment to the atoms and whose last column gives the truth value of the formula for that assignment. Here is the truth table for the formula $A$:
+\begin{center}
+\begin{tabular}{|c|c|c||c|}
+\hline
+p & q & r & $A$\\\hline
+T & T & T & F\\\hline
+T & T & F & F\\\hline
+T & F & T & F\\\hline
+T & F & F & F\\\hline
+F & T & T & F\\\hline
+F & T & F & F\\\hline
+F & F & T & F\\\hline
+F & F & F & T\\\hline
+\end{tabular}
+\end{center}
+The assignment in the last row causes the truth value of $A$ to be $T$, so $A$ is satisfiable.
+
+The SAT problem is to construct an algorithm whose input is a formula in CNF and whose output is a satisfying assignment or a message that the formula is unsatisfiable. A \emph{SAT solver} is program implementing the algorithm.
+
+SAT is decidable using the truth table algorithm, but the algorithm is extremely inefficient, because there are $2^n$ rows, where $n$ is the number of atoms.
+
+For more detail on propositional logic and SAT solving, see Chapters~2, 4, 6 of:
+
+M. Ben-Ari. \textit{Mathematical Logic for Computer Science (Third Edition)}, Springer, 2012.
+
+\section{SAT is NP-complete}
+
+A problem $Q$ is NP-complete if:
+\begin{itemize}
+\item A proposed answer to $Q$ can be checked in polynomial time.
+\item All other problems in the class can be reduced to $Q$, meaning that if $Q$ has a polynomial-time algorithm, then so do all the other problems.
+\end{itemize}
+Given an assignment for a formula $A$ in CNF, it is easy to check if the truth value of $A$ is $T$, so SAT fulfills the first condition. Stephen Cook (1971) and Leonid Levin (1973) showed that the second condition also holds, so SAT is an NP-complete problem.
+
+The first condition states that an NP-complete problem can be solved in polynomial time by a \emph{non-deterministic} algorithm. The question of whether NP-complete problems can be solved in polynomial time by a \emph{deterministic} algorithm is called the $\mathcal{P}=\mathcal{NP}?$ problem.
+
+If there is an efficient (\emph{deterministic polynomial-time}) algorithm for one NP-complete problem, then there are efficient algorithms for all the problems in the class. Currently, no efficient algorithm is known for any problem in the class.
+
+If there is \emph{no} efficient algorithm for one NP-complete problem, then there are no efficient algorithms for all the problems in the class. Currently, there is no proof that any of the problem in the class cannot be solved in deterministic polynomial time.
+
+The Clay Mathematics Institute offers a $\$1$ million prize for a proof that answers $\mathcal{P}=\mathcal{NP}?$.\\ \url{http://claymath.org/millennium-problems/p-vs-np-problem}.
+
+NP-completeness is presented in textbooks in theoretical computer science such as:
+
+Hopcroft, J.E, Motwani, R., Ullman, J.D. \textit{Introduction to Automata Theory, Languages, and Computation}, Third edition,  Addison-Wesley, 2006.
+
+Cormen, T.H., Leiserson, C.E., Rivest, R.L., Stein, C. \textit{Introduction to Algorithms}, Second edition, MIT Press, 2001.
+
+Sipser, M. \textit{Introduction to the Theory of Computation}. PWS Publishing, 1997.
 
 \end{document}

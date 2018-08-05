@@ -68,6 +68,10 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+מסמך זה מניח היכרות עם תחשיב הפסוקים בלוגיקה ועם
+\L{NP-completeness}.
+סקירה של נושאים אלה נמצאת בנספחים.
+
 \section{\R{מבוא}}
 
 \L{SAT solving}
@@ -106,157 +110,6 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 \selectlanguage{english}
 Marijn J.H. Heule and Oliver Kullmann. The Science of Brute Force. \textit{Communications of the ACM} 60(8), 2017, 70--79.
 \selectlanguage{hebrew}
-
-\section{\L{Satisfiability} \R{בתחשיב הפסוקים}}
-
-נוסחאות בתחשיב הפסוקים מורכבות מ-%
-\textbf{טענות אטומיות}
-או
-\textbf{אטומים},
-ופעולות. נשתמש בשלוש פעולות: פעולה על נוסחה אחת
-$\ngg$
-)שלילה(, ושתי פעולות על שתי נוסחאות
-$\wedge$
-)וגם(
-$\vee$
-)או(. נשתמש רק בנוסחאות מהצורה
-\L{conjunctive normal form (CNF)}
-המורכבות מפסקאות המחוברות ב-"וגם", כאשר כל פסקה מורכבת מליטרלים )אטומים או שלילה של אטרמים( המחוברים ב-"או". הנה נוסחאות נכונה תחבירית ב-%
-\L{CNF}:
-\[
-A=(\ngg p \vee q \vee r) \;\wedge\; (\ngg q \vee r) \;\wedge\; (\ngg r)\,.
-\]
-בגלל שמיקמן של הפעולות בנוסחה ב-%
-\L{CNF}
-ידועה, לעתים נשמתמש בסימון של קבוצות:
-\[
-A=\{\{\ngg p, q, r\}, \; \{\ngg q, r\}, \; \{\ngg r\}\}\,.
-\]
-הסמנטיקה של נוסחה בתחשיב הפסוקים מתקבלת על ידי הצבה של ערכי האמת
-$\{T,F\}$
-לאטומים, ואז חישוב ערך האמת של הנוסחה. אם קיימת הצבה כך שערך האמת של הנוסחה הוא
-$T$,
-הנוסחה היא 
-\textbf{ספיקה}
-\L{(satisfiable)}.
-
-דרך אחת להחליט אם נוסחה היא ספיקה היא לבנות
-\textbf{טבלת אמת},
-שיש בה שורה לכל הצבה אפשרית לאטומים, ובטור האחרון ערך האמת של הנוסחה עבור אותה הצבה. הנה טבלת האמת עבור הנוסחה
-$A$:
-\begin{center}
-\selectlanguage{english}
-\begin{tabular}{|c|c|c||c|}
-\hline
-p & q & r & $A$\\\hline
-T & T & T & F\\\hline
-T & T & F & F\\\hline
-T & F & T & F\\\hline
-T & F & F & F\\\hline
-F & T & T & F\\\hline
-F & T & F & F\\\hline
-F & F & T & F\\\hline
-F & F & F & T\\\hline
-\end{tabular}
-\selectlanguage{hebrew}
-\end{center}
-ההצבה בשורה האחרונה גורמת ל-%
-$A$
-לקבל את ערך האמת
-$T$,
-ולכן
-$A$
-היא ספיקה.
-
-בעיית 
-\L{SAT}
-היא למצוא אלגוריתם הקולט נוסחה בצורת
-\L{CNF}
-ומחזירה הצבה עבורה הנוסחה ספיקה, או להודיע שאין הצבה מתאימה והנוסחה אינה ספיקה. תכנית המיישמת את האלגוריתם נקראת
-\L{SAT solver}.
-
-בניית טבלאות אמת היא אלגוריתם ל-%
-\L{SAT}
-כך שקיים לפחות אלגוריתם אחד לבעיה, אבל טבלאות אמת הן מאוד לא יעילות כי יש 
-$2^n$
-שורות, כאשר
-$n$
-הוא מספר האטומים בנוסחה.
-
-פרטים נוספים על תחשיב הפסוקים ועל
-\L{SAT solving}
-ניתן למצוא בפרקים
-$2,4,6$
-של הספר:
-
-\selectlanguage{english}
-M. Ben-Ari. \textit{Mathematical Logic for Computer Science (Third Edition)}, Springer, 2012.
-\selectlanguage{hebrew}
-
-\section{\L{SAT} היא \L{NP-complete}}
-
-בעיה 
-$Q$
-היא
-\L{NP-complete}
-אם:
-\begin{itemize}
-\item
-ניתן לבדוק בזמן פולינומיאלי אם פתרון מוצע ל-%
-$Q$
-נכון.
-\item
-ניתן לתרגם את כל הבעיות במשפחה לבעיות מסוג 
-$Q$,
-כך שאם יש ל-%
-$Q$
-אלגוריתם פלינומיאלי, אזי לכל הבעיות במשפחה יש אלגוריתם פולינומיאלי.
-\end{itemize}
-נתונה הצבה עבור נוסחה
-$A$
-בצורה
-\L{CNF},
-קל לבדוק עם ערך האמת של
-$A$
-הוא
-$T$,
-ולכן בעיית
-\L{SAT}
-מקיימת את התנאי הראשון. בעיית 
-\L{SAT}
-היא 
-\L{NP-complete}
-כי היא מקיימת את התנאי השני, כפי שהוכח על ידי
-\L{Stephen Cook (1971), Leonid Levin (1973)}.
-
-התנאי הראשון שקול לטענה שבעיה במשפחת
-\L{NP-complete}
-ניתנת לפתרון בזמן פולינומיאלי על ידי אלגוריתם
-\L{\emph{non-deterministic}}.
-השאלה אם בעיות 
-\L{NP-complete}
-ניתנות לפתרון בזמן פולינומיאלי על ידי אלגוריתם
-\L{deterministic}
-ידועה בשם
-$\mathcal{P}=\mathcal{NP}?$.
-
-אם קיים אלגוריתם יעיל )המתבצע בזמן פולינומיאלי( בחישוב
-\L{deterministic}
-לבעיה במשפחת
-\L{NP-complete},
-אז קיים אלגוריתם יעיל לכל הבעיות במשפחה. נכון להיום, לא ידוע אם קיים אלגוריתם יעיל לאף אחת מבעיות.
-
-אם ניתן להוכיח 
-\textbf{שאין}
-אלגוריתם יעיל לאחת מהבעיות במשפחת
-\L{NP-complete},
-אז אין אלגוריתם יעיל לכל הבעיות במשפחה. נכון להיום, אין הוכחה שאין אלגוריתם יעיל לאחת מהבעיות במשפחה.
-
-ה-%
-\L{Clay Mathematics Institute}
-מציע פרס של מיליון דולר למי שיצליח למצוא תשובה ל-%
-$\mathcal{P}=\mathcal{NP}?$\\
-\L{\url{http://claymath.org/millennium-problems/p-vs-np-problem}}.
 
 \section{אלגוריתם \L{DPLL} עבור \L{SAT}}
 
@@ -1052,5 +905,194 @@ $n$,
 \textbf{אם הוא קיים},
 גדול מ-%
 $10^7$.
+
+\newpage
+
+\textbf{\Large נספחים}
+
+\appendix
+
+\section{\L{Satisfiability} \R{בתחשיב הפסוקים}}
+
+נוסחאות בתחשיב הפסוקים מורכבות מ-%
+\textbf{טענות אטומיות}
+או
+\textbf{אטומים},
+ופעולות. נשתמש בשלוש פעולות: פעולה על נוסחה אחת
+$\ngg$
+)שלילה(, ושתי פעולות על שתי נוסחאות
+$\wedge$
+)וגם(
+$\vee$
+)או(. 
+\textbf{ליטרל}
+\L{(literal)}
+הוא אטום או שלילה של אטום.
+
+נשתמש בנוסחאות מהצורה
+\L{conjunctive normal form (CNF)}
+המורכבות מפסקאות המחוברות ב-"וגם", כאשר כל פסקה מורכבת  המחוברים ב-"או". הנה נוסחאות נכונה תחבירית ב-%
+\L{CNF}:
+\[
+A=(\ngg p \vee q \vee r) \;\wedge\; (\ngg q \vee r) \;\wedge\; (\ngg r)\,.
+\]
+בגלל שמיקמן של הפעולות בנוסחה ב-%
+\L{CNF}
+ידועה, לעתים נשמתמש בסימון של קבוצות:
+\[
+A=\{\{\ngg p, q, r\}, \; \{\ngg q, r\}, \; \{\ngg r\}\}\,.
+\]
+הסמנטיקה של נוסחה בתחשיב הפסוקים מתקבלת על ידי הצבה של ערכי האמת
+$\{T,F\}$
+לאטומים, ואז חישוב ערך האמת של הנוסחה. אם קיימת הצבה כך שערך האמת של הנוסחה הוא
+$T$,
+הנוסחה היא 
+\textbf{ספיקה}
+\L{(satisfiable)}.
+
+ערך האמת של נוסחה מחושב מערכי האמת של האטומים וזה לפי ההגדרות שלהלן:
+\[
+\begin{array}{|c|c||c|c|c|}
+\hline
+p & q & \ngg p & p\vee q & p \wedge q\\\hline
+T & T & F & T & T\\\hline
+T & F & F & T & F\\\hline
+F & T & T & T & F\\\hline
+F & F & T & F & F\\\hline
+\end{array}
+\]
+
+
+דרך אחת להחליט אם נוסחה היא ספיקה היא לבנות
+\textbf{טבלת אמת},
+שיש בה שורה לכל הצבה אפשרית לאטומים, ובטור האחרון ערך האמת של הנוסחה עבור אותה הצבה. הנה טבלת האמת עבור הנוסחה
+$A$:
+\begin{center}
+\selectlanguage{english}
+\begin{tabular}{|c|c|c||c|}
+\hline
+p & q & r & $A$\\\hline
+T & T & T & F\\\hline
+T & T & F & F\\\hline
+T & F & T & F\\\hline
+T & F & F & F\\\hline
+F & T & T & F\\\hline
+F & T & F & F\\\hline
+F & F & T & F\\\hline
+F & F & F & T\\\hline
+\end{tabular}
+\selectlanguage{hebrew}
+\end{center}
+ההצבה בשורה האחרונה גורמת ל-%
+$A$
+לקבל את ערך האמת
+$T$,
+ולכן
+$A$
+היא ספיקה.
+
+בעיית 
+\L{SAT}
+היא למצוא אלגוריתם הקולט נוסחה בצורת
+\L{CNF}
+ומחזירה הצבה עבורה הנוסחה ספיקה, או להודיע שאין הצבה מתאימה והנוסחה אינה ספיקה. תכנית המיישמת את האלגוריתם נקראת
+\L{SAT solver}.
+
+בניית טבלאות אמת היא אלגוריתם ל-%
+\L{SAT}
+כך שקיים לפחות אלגוריתם אחד לבעיה, אבל טבלאות אמת הן מאוד לא יעילות כי יש 
+$2^n$
+שורות, כאשר
+$n$
+הוא מספר האטומים בנוסחה.
+
+פרטים נוספים על תחשיב הפסוקים ועל
+\L{SAT solving}
+ניתן למצוא בפרקים
+$2,4,6$
+של הספר:
+
+\selectlanguage{english}
+M. Ben-Ari. \textit{Mathematical Logic for Computer Science (Third Edition)}, Springer, 2012.
+\selectlanguage{hebrew}
+
+
+
+\section{\L{SAT} היא \L{NP-complete}}
+
+בעיה 
+$Q$
+היא
+\L{NP-complete}
+אם:
+\begin{itemize}
+\item
+ניתן לבדוק בזמן פולינומיאלי אם פתרון מוצע ל-%
+$Q$
+נכון.
+\item
+ניתן לתרגם את כל הבעיות במשפחה לבעיות מסוג 
+$Q$,
+כך שאם יש ל-%
+$Q$
+אלגוריתם פלינומיאלי, אזי לכל הבעיות במשפחה יש אלגוריתם פולינומיאלי.
+\end{itemize}
+נתונה הצבה עבור נוסחה
+$A$
+בצורה
+\L{CNF},
+קל לבדוק עם ערך האמת של
+$A$
+הוא
+$T$,
+ולכן בעיית
+\L{SAT}
+מקיימת את התנאי הראשון. בעיית 
+\L{SAT}
+היא 
+\L{NP-complete}
+כי היא מקיימת את התנאי השני, כפי שהוכח על ידי
+\L{Stephen Cook (1971), Leonid Levin (1973)}.
+
+
+
+התנאי הראשון שקול לטענה שבעיה במשפחת
+\L{NP-complete}
+ניתנת לפתרון בזמן פולינומיאלי על ידי אלגוריתם
+\L{\emph{non-deterministic}}.
+השאלה אם בעיות 
+\L{NP-complete}
+ניתנות לפתרון בזמן פולינומיאלי על ידי אלגוריתם
+\L{deterministic}
+ידועה בשם
+$\mathcal{P}=\mathcal{NP}?$.
+
+אם קיים אלגוריתם יעיל )המתבצע בזמן פולינומיאלי( בחישוב
+\L{deterministic}
+לבעיה במשפחת
+\L{NP-complete},
+אז קיים אלגוריתם יעיל לכל הבעיות במשפחה. נכון להיום, לא ידוע אם קיים אלגוריתם יעיל לאף אחת מבעיות.
+
+אם ניתן להוכיח 
+\textbf{שאין}
+אלגוריתם יעיל לאחת מהבעיות במשפחת
+\L{NP-complete},
+אז אין אלגוריתם יעיל לכל הבעיות במשפחה. נכון להיום, אין הוכחה שאין אלגוריתם יעיל לאחת מהבעיות במשפחה.
+
+ה-%
+\L{Clay Mathematics Institute}
+מציע פרס של מיליון דולר למי שיצליח למצוא תשובה ל-%
+$\mathcal{P}=\mathcal{NP}?$\\
+\L{\url{http://claymath.org/millennium-problems/p-vs-np-problem}}.
+
+\L{NP-completeness}
+מוצגת בספרי לימוד בתיאוריה של מדעי המחשב כגון:
+
+\selectlanguage{english}
+Hopcroft, J.E, Motwani, R., Ullman, J.D. \textit{Introduction to Automata Theory, Languages, and Computation}, Third edition,  Addison-Wesley, 2006.
+
+Cormen, T.H., Leiserson, C.E., Rivest, R.L., Stein, C. \textit{Introduction to Algorithms}, Second edition, MIT Press, 2001.
+
+Sipser, M. \textit{Introduction to the Theory of Computation}. PWS Publishing, 1997.
 
 \end{document}

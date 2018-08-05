@@ -247,6 +247,11 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 \selectlanguage{hebrew}
 \newpage
 
+
+מסמך זה מניח היכרות עם
+\L{NP-completeness}.
+סקירה של הנושא נמצאת בנספח.
+
 \L{Richard Kaye}
 הראה שחידה המבוססת על המשחק שולת מוקשים היא
 \L{NP-complete}.
@@ -1363,5 +1368,88 @@ $1$
 הערך של
 \L{($0$ \texttt{or} $1$)}.
 
+\newpage
+
+\textbf{\Large נספח}
+
+\appendix
+
+\section{\L{SAT} היא \L{NP-complete}}
+
+בעיה 
+$Q$
+היא
+\L{NP-complete}
+אם:
+\begin{itemize}
+\item
+ניתן לבדוק בזמן פולינומיאלי אם פתרון מוצע ל-%
+$Q$
+נכון.
+\item
+ניתן לתרגם את כל הבעיות במשפחה לבעיות מסוג 
+$Q$,
+כך שאם יש ל-%
+$Q$
+אלגוריתם פלינומיאלי, אזי לכל הבעיות במשפחה יש אלגוריתם פולינומיאלי.
+\end{itemize}
+נתונה הצבה עבור נוסחה
+$A$
+בצורה
+\L{CNF},
+קל לבדוק עם ערך האמת של
+$A$
+הוא
+$T$,
+ולכן בעיית
+\L{SAT}
+מקיימת את התנאי הראשון. בעיית 
+\L{SAT}
+היא 
+\L{NP-complete}
+כי היא מקיימת את התנאי השני, כפי שהוכח על ידי
+\L{Stephen Cook (1971), Leonid Levin (1973)}.
+
+
+
+התנאי הראשון שקול לטענה שבעיה במשפחת
+\L{NP-complete}
+ניתנת לפתרון בזמן פולינומיאלי על ידי אלגוריתם
+\L{\emph{non-deterministic}}.
+השאלה אם בעיות 
+\L{NP-complete}
+ניתנות לפתרון בזמן פולינומיאלי על ידי אלגוריתם
+\L{deterministic}
+ידועה בשם
+$\mathcal{P}=\mathcal{NP}?$.
+
+אם קיים אלגוריתם יעיל )המתבצע בזמן פולינומיאלי( בחישוב
+\L{deterministic}
+לבעיה במשפחת
+\L{NP-complete},
+אז קיים אלגוריתם יעיל לכל הבעיות במשפחה. נכון להיום, לא ידוע אם קיים אלגוריתם יעיל לאף אחת מבעיות.
+
+אם ניתן להוכיח 
+\textbf{שאין}
+אלגוריתם יעיל לאחת מהבעיות במשפחת
+\L{NP-complete},
+אז אין אלגוריתם יעיל לכל הבעיות במשפחה. נכון להיום, אין הוכחה שאין אלגוריתם יעיל לאחת מהבעיות במשפחה.
+
+
+ה-%
+\L{Clay Mathematics Institute}
+מציע פרס של מיליון דולר למי שיצליח למצוא תשובה ל-%
+$\mathcal{P}=\mathcal{NP}?$\\
+\L{\url{http://claymath.org/millennium-problems/p-vs-np-problem}}.
+
+\L{NP-completeness}
+מוצגת בספרי לימוד בתיאוריה של מדעי המחשב כגון:
+
+\selectlanguage{english}
+Hopcroft, J.E, Motwani, R., Ullman, J.D. \textit{Introduction to Automata Theory, Languages, and Computation}, Third edition,  Addison-Wesley, 2006.
+
+Cormen, T.H., Leiserson, C.E., Rivest, R.L., Stein, C. \textit{Introduction to Algorithms}, Second edition, MIT Press, 2001.
+
+Sipser, M. \textit{Introduction to the Theory of Computation}. PWS Publishing, 1997.
 
 \end{document}
