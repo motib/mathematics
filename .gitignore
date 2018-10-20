@@ -7,6 +7,9 @@ compass/tikz
 steiner/tikz
 motion/tikz
 motion/images
+series/tikz
+geometry/tikz
+probability/tikz
 tikz-examples.tex
 *.bat
 *.zip
@@ -18,3 +21,4 @@ tikz-examples.tex
 *.blg
 *.synctex.gz
 five-unit.docx
+*.mp4
