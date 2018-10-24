@@ -600,7 +600,8 @@ child {
     edge from parent node[above] {\R{אדום} I}
 };
 \end{tikzpicture}
-\caption{\R{עץ ההסתברויות של הוצאת הכדורים}}\label{fig.summer-2017b.1}
+\selectlanguage{hebrew}
+\caption{עץ ההסתברויות של הוצאת הכדורים}\label{fig.summer-2017b.1}
 \end{center}
 \end{figure}
 נשווה את הסתברות הנתונה לשתי האפשרויות לסכום ההסתברויות של שני המסלולים:
@@ -754,7 +755,8 @@ child {
 }
 ;
 \end{tikzpicture}
-\caption{\R{עץ ההסתברויות של המשחקים}}\label{fig.winter-2017.1}
+\selectlanguage{hebrew}
+\caption{עץ ההסתברויות של המשחקים}\label{fig.winter-2017.1}
 \end{center}
 \end{figure}
 חישוב ההסתברות המותנת:
@@ -1026,7 +1028,8 @@ child {
     edge from parent node[above] {\R{זוגי}}
 };
 \end{tikzpicture}
-\caption{\R{עץ ההסתברויות של בחירת הספרות}}\label{fig.summer-2015a.1}
+\selectlanguage{hebrew}
+\caption{עץ ההסתברויות של בחירת הספרות}\label{fig.summer-2015a.1}
 \end{center}
 \end{figure}
 
@@ -1105,7 +1108,8 @@ child {
     edge from parent node[above,yshift=2mm] {\R{זוגי}}
 };
 \end{tikzpicture}
-\caption{\R{עץ ההסתברויות של בחירת הספרות}}\label{fig.summer-2015a.2}
+\selectlanguage{hebrew}
+\caption{עץ ההסתברויות של בחירת הספרות}\label{fig.summer-2015a.2}
 \end{center}
 \end{figure}
 
@@ -1163,7 +1167,8 @@ child {
     edge from parent node[above,yshift=2mm] {\R{זוגי}}
 };
 \end{tikzpicture}
-\caption{\R{עץ ההסתברויות של בחירת הספרות}}\label{fig.summer-2015a.3}
+\selectlanguage{hebrew}
+\caption{עץ ההסתברויות של בחירת הספרות}\label{fig.summer-2015a.3}
 \end{center}
 \end{figure}
 לפי עץ ההסתברויות החדש )איור~%
@@ -1237,7 +1242,8 @@ child {
     edge from parent node[above,xshift=-4mm,yshift=3mm] {\R{לא מביא מהבית}}
 };
 \end{tikzpicture}
-\caption{\R{עץ ההסתברויות של אפשרויות האכילה}}\label{fig.summer-2015b.1}
+\selectlanguage{hebrew}
+\caption{עץ ההסתברויות של אפשרויות האכילה}\label{fig.summer-2015b.1}
 \end{center}
 \end{figure}
 
@@ -1265,41 +1271,267 @@ P(\textrm{\R{מביא אוכל}})
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 
+\textbf{\R{
+חורף תשע"ד
+}}
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=.9\textwidth]{winter-2014-3}
+\end{center}
 
-%\textbf{\R{
-%חורף תשע"ד
-%}}
-%\begin{center}
-%\selectlanguage{english}
-%\includegraphics[width=.9\textwidth]{winter-2014-3}
-%\end{center}
+נסמן
+$=T$
+מספר המשתתפים בתאטרון,
+$=R$
+מספר המשתתפים בריקודי עם. המילה 
+\textbf{מבין}
+מכוון להתסברות מותנית. נתון
+$P(R/T)=0.6$,
+אבל נתון שהסתברויות של שני האירועים בלתי תלויים ולכן:
+\[
+0.6=P(R/T)=\frac{P(R\cap T)}{P(T)}=\frac{P(R)\cdot P(T))}{P(T)}=P(R)\,.
+\]
+ביחד עם הנתון
+$P(R)=2P(T)$
+נתחיל למלא את הטבלה:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.25]
+\draw (0,0) grid (3,3);
+\node at (2.5,3.3) {$\bm{T}$};
+\node at (1.5,3.3) {$\bover{T}$};
+\node at (3.3,2.5) {$\bm{R}$};
+\node at (3.3,1.5) {$\bover{R}$};
+\node at (0.5,2.5) {$0.60$};
+\node at (2.5,0.5) {$0.30$};
+\end{tikzpicture}
+\end{center}
+שבו נסתמך על העובדה של האירועים בלתי תלויים ונקבל:
+\[
+P(R\cap T)=P(R)\cdot P(T)=0.6\cdot 0.3=0.18\,,
+\]
+ואז יש לנו מספיק נתונים למלא את הטבלה:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.25]
+\draw (0,0) grid (3,3);
+\node at (2.5,3.3) {$\bm{T}$};
+\node at (1.5,3.3) {$\bover{T}$};
+\node at (3.3,2.5) {$\bm{R}$};
+\node at (3.3,1.5) {$\bover{R}$};
+\node at (2.5,2.5) {$0.18$};
+\node at (0.5,2.5) {$0.60$};
+\node at (1.5,2.5) {$0.42$};
+\node at (0.5,1.5) {$0.40$};
+\node at (0.5,0.5) {$1.0$};
+\node at (1.5,0.5) {$0.70$};
+\node at (2.5,0.5) {$0.30$};
+\node at (1.5,1.5) {$0.28$};
+\node at (2.5,1.5) {$0.12$};
+\end{tikzpicture}
+\end{center}
+סעיף א. כבר חישבנו ש-%
+$P(R\cap T)=0.18$.
+
+סעיף ב. "כל התושבים המשתתפים בחוג לריקודי עם, ורק הם". ניסוח אחר שמכוון להסתברות מותנית. אם ידוע שתושב משתתף בריקודי עם, ההסתברות שהוא משתתף גם בתאטרון היא
+$P(T/R) = P(T) = 0.3$,
+כאשר שוב השתמשנו בנתון שהאירועים בלתי תלויים. כדי לחשב "לפחות שניים" עדיף לחשב את המשלים לאפס או אחד":
+\[
+1-{6\choose 0}(0.3)^0(0.7)^6 +{6\choose 1}(0.3)^1(0.7)^5=0.5798\,.
+\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%
-%\textbf{\R{
-%קיץ תשע"ד, מועד א
-%}}
-%
-%\begin{center}
-%\selectlanguage{english}
-%\includegraphics[width=.9\textwidth]{summer-2014a-3}
-%\end{center}
 
+\textbf{\R{
+קיץ תשע"ד, מועד א
+}}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=.9\textwidth]{summer-2014a-3}
+\end{center}
+
+סעיף א. איור~
+\L{\ref{fig.summer-2015a.1}}
+מראה את צבירת הנקודות של אבא בשני הסיבובים. באיור, מעברים מסודרים עם אבא למעלה, דני באמצע ותיקו למטה. המצבים בהם אבא צובר
+\textbf{יותר}
+מנקודה אחת מסומנים בכוכבית. ההסתברות של האירוע היא:
+\[
+0.2\cdot 0.2 \,+\, 0.2\cdot 0.7 \,+\, 0.7\cdot 0.2 \,=\,0.32\,.
+\]
+
+\begin{figure}
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+[grow=right,
+level 1/.append style={font=\sffamily,level distance=3cm,sibling distance=8em},
+level 2/.append style={font=\sffamily,level distance=4cm,sibling distance=3em}]
+\node[left] {$0$} % root
+child {
+  node[right] {$\frac{1}{2}$}
+    child {
+      node[right] {$1$}
+      edge from parent node[below,yshift=-1mm] {$0.7$}
+    }
+    child {
+      node[right] {$\frac{1}{2}$}
+      edge from parent node[below,xshift=4mm] {$0.1$}
+    }
+    child {
+      node[right] {$1\frac{1}{2}\quad *$}
+      edge from parent node[above,yshift=1mm] {$0.2$}
+    }
+    edge from parent node[below,yshift=-3mm] {$0.7$}
+}
+child {
+  node[right] {$0$}
+    child {
+      node[right] {$\frac{1}{2}$}
+      edge from parent node[below,yshift=-1mm] {$0.7$}
+    }
+    child {
+      node[right] {$0$}
+      edge from parent node[below,xshift=4mm] {$0.1$}
+    }
+    child {
+      node[right] {$1$}
+      edge from parent node[above,yshift=1mm] {$0.2$}
+    }
+    edge from parent node[below] {$0.1$}
+}
+child {
+  node[right] {$1$}
+    child {
+      node[right] {$1\frac{1}{2}\quad *$}
+      edge from parent node[below,yshift=-1mm] {$0.7$}
+    }
+    child {
+      node[right] {$1$}
+      edge from parent node[below,xshift=4mm] {$0.1$}
+    }
+    child {
+      node[right] {$2\quad *$}
+      edge from parent node[above,yshift=1mm] {$0.2$}
+    }
+    edge from parent node[above,yshift=3mm] {$0.2$}
+};
+\end{tikzpicture}
+\selectlanguage{hebrew}
+\caption{עץ ההסתברויות של המשחקים: צבירת נקודות של אבא}\label{fig.summer-2015a.1}
+\end{center}
+\end{figure}
+
+סעיף ב. איור~
+\L{\ref{fig.summer-2015b.1}}
+מראה את צבירת הנקודות של דני בשני הסיבובים. המצבים בהם דני צובר 
+\textbf{לפחות}
+נקודה אחת מסומנים בכוכבית. ההסתברות של האירוע היא:
+\[
+0.2\cdot 0.1 \,+\,0.1\cdot 0.2 \,+\, 0.1\cdot 0.1 \,+\,0.1\cdot 0.7 \,+\, 0.7\cdot 0.1\,+\,0.7\cdot 0.7\,=\,0.68\,.
+\]
+
+\begin{figure}
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+[grow=right,
+level 1/.append style={font=\sffamily,level distance=3cm,sibling distance=8em},
+level 2/.append style={font=\sffamily,level distance=4cm,sibling distance=3em}]
+\node[left] {$0$} % root
+child {
+  node[right] {$\frac{1}{2}$}
+    child {
+      node[right] {$1\quad *$}
+      edge from parent node[below,yshift=-1mm] {$0.7$}
+    }
+    child {
+      node[right] {$1\frac{1}{2}\quad *$}
+      edge from parent node[below,xshift=4mm] {$0.1$}
+    }
+    child {
+      node[right] {$\frac{1}{2}$}
+      edge from parent node[above,yshift=1mm] {$0.2$}
+    }
+    edge from parent node[below,yshift=-3mm] {$0.7$}
+}
+child {
+  node[right] {$1$}
+    child {
+      node[right] {$1\frac{1}{2}\quad *$}
+      edge from parent node[below,yshift=-1mm] {$0.7$}
+    }
+    child {
+      node[right] {$2\quad *$}
+      edge from parent node[below,xshift=4mm] {$0.1$}
+    }
+    child {
+      node[right] {$1\quad *$}
+      edge from parent node[above,yshift=1mm] {$0.2$}
+    }
+    edge from parent node[below] {$0.1$}
+}
+child {
+  node[right] {$0$}
+    child {
+      node[right] {$\frac{1}{2}$}
+      edge from parent node[below,yshift=-1mm] {$0.7$}
+    }
+    child {
+      node[right] {$1\quad *$}
+      edge from parent node[below,xshift=4mm] {$0.1$}
+    }
+    child {
+      node[right] {$0$}
+      edge from parent node[above,yshift=1mm] {$0.2$}
+    }
+    edge from parent node[above,yshift=3mm] {$0.2$}
+};
+\end{tikzpicture}
+\selectlanguage{hebrew}
+\caption{עץ ההסתברויות של המשחקים: צבירת נקודות של דני}\label{fig.summer-2015b.1}
+\end{center}
+\end{figure}
+
+סעיף ג. המילים
+\textbf{ידוע כי}
+מכוונות להסתברות מותנית:
+\[
+\begin{array}{c}
+P(\textrm{\R{תיקו אחד, ניצחון אחד}} / \textrm{\R{דני צבר לפחות נקודה אחת}})=\\\\
+\displaystyle\frac{
+P(\textrm{\R{תיקו אחד, ניצחון אחד}} \cap \textrm{\R{דני צבר לפחות נקודה אחת}})
+}
+{P(\textrm{\R{דני צבר לפחות נקודה אחת}})}=\\\\
+\displaystyle\frac{
+P(\textrm{\R{תיקו אחד, ניצחון אחד}})
+}
+{P(\textrm{\R{דני צבר לפחות נקודה אחת}})}\,.
+\end{array}
+\]
+החיתוך מצטמצם כי באירוע "תיקו אחד, ניצחון אחד", "דני צבר לפחות נקודה אחת". את המכנה חישבנו בסעיף הקודם, וניתן לחשב את המנה על ידי חיבור ההסתברויות של שני מסלולים בעץ:
+\[
+\frac{0.1\cdot 0.7 \,+\, 0.7\cdot 0.1}{0.68} = .2059\,.
+\]
+
+סעיף ד. בסעיף 2 חישבנו את ההסתברות של האירוע בכל סיבוב, ומכאן נשאר רק לחשב לפי נוסחת ברנולי:
+\[
+{4\choose 2}(0.68)^2 (0.32)^2= 0.2841\,.
+\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\textbf{\R{
-%קיץ תשע"ד, מועד ב
-%}}
-%
-%\begin{center}
-%\selectlanguage{english}
-%\includegraphics[width=.95\textwidth]{summer-2014b-3}
-%\end{center}
-%\vspace{-2ex}
+\textbf{\R{
+קיץ תשע"ד, מועד ב
+}}
 
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=.95\textwidth]{summer-2014b-3}
+\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1329,7 +1561,11 @@ $100$.
 נתון גם שיש שלוש הצלחות מתוך חמש, אז ההסתברות לקבל שני "כשלונות" צריכה להיות שווה להסתברות לקבל שתי "הצלחות".
 
 \item
-שימו לב לניסוחים המכוונים להסתברות מותנת:
+שימו לב לעושר הניסוחים המכוונים
+\textbf{להסתברות מותנת}!
+
+****************************  ידוע ש   ידוע כי **********************
+
 \begin{itemize}
 \item
 בבחינה של
@@ -1355,6 +1591,13 @@ $(1)$
 כתוב "%
 \textbf{מה ההסתברות לבחור} $\ldots$
 \textbf{מבין} $\ldots$".
+
+\item
+בבחינה של 
+\textbf{חורף תשע"ד}
+יש ניסוח אחר:
+\textbf{כל התושבים המשתתפים ב-} $\ldots$,
+\textbf{ורק הם}.
 \end{itemize}
 
 \item
@@ -1384,6 +1627,16 @@ P(\textrm{\R{סכום זוגי}}) \cdot P(\textrm{\R{ספרה ראשונה זו�
 }
 {P(\textrm{\R{ספרה ראשונה זוגית}})}\,.
 \]
+\item
+בבחינה של 
+\textbf{חורף תשע"ד}
+נתון
+$P(T/R)$
+וגם נתון ששני אירועים הם
+\textbf{בלתי תלויים}.
+החיתוך שווה למכפלת ההסתברויות, ההסתברות הידועה מצטצמת ונקבל ש-%
+$P(T)=P(T/R)$.
+
 \item
  בבחינה של
 \textbf{קיץ תשע"ז א}
