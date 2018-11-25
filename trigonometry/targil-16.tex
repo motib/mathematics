@@ -1,0 +1,219 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+
+\usepackage{tikz}
+\usetikzlibrary{external,positioning,through,calc,intersections,arrows.meta}
+\tikzexternalize[prefix=tikz/]
+
+\textwidth=15.5cm
+\textheight=23cm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=2em
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+
+\begin{document}
+\thispagestyle{empty}
+
+\selectlanguage{hebrew}
+\begin{center}
+\textbf{%
+תרגיל
+$16$
+בעמוד 
+$228$
+בספר בני גורן, מתמטיקה
+$5$
+יח"ל - חלק ב%
+$2$
+- שאלון
+$806$.}
+
+\textbf{מוטי בן-ארי}
+\end{center}
+עבור הפונקציה
+$y=3\cos x -  \cos 3x$
+בתחום
+$0\leq x \leq \displaystyle \frac{3\pi}{2}$,
+מצא )א( נקודות קיצון, )ב( תחומי עלייה וירידה, )ג( נקודות חיתוך עם הצירים, )ד( שרטט את גרף הפונקציה.
+
+הנגזרת: 
+\[
+y'=-3\sin x + 3 \sin 3x
+\]
+מתאפסת כאשר 
+$\sin x = \sin 3x$.
+מתי שני סינוסים שווים? כאשר הקואורדינטות בציר ה-%
+$y$
+שוות, וזה קורה כאשר קואורדינטות ה-%
+$x$
+שוות או כאשר אחת מהן היא
+$\pi$
+פחות השנייה:
+\begin{center}
+\selectlanguage{english}
+% The unit circle with main axes
+\begin{tikzpicture}[scale=1.5]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) -- (1,0);
+\draw (0,-1) -- (0,1);
+\draw[thick,dashed] (-1.2,.3) -- (1.2,.3);
+\draw[thick,dashed] (-1.2,-.5) -- (1.2,-.5);
+\fill (18:1) node[above right] {$x_1$} circle [radius=1pt];
+\fill (162:1) node[above left] {$\pi-x_1$} circle [radius=1pt];
+\fill (210:1) node[below left] {$\pi-x_2$} circle [radius=1pt];
+\fill (-30:1) node[below right] {$x_2$} circle [radius=1pt];
+\end{tikzpicture}
+\end{center}
+הוספת כפולה של
+$2\pi$
+לקואורדינטת ה-%
+$x$
+לא משנה את הערך של פונקציה טריגונומטרית. הפתרונות של
+$\sin x = \sin 3x$
+בתחום 
+$0\leq x \leq \displaystyle \frac{3\pi}{2}$
+הם:
+\begin{eqnarray*}
+3x &=& x + 2\pi k\\
+x &=& \pi k\\
+x&=& 0, \; \pi\,,
+\end{eqnarray*}
+\vspace{-2ex}
+ו:
+\vspace{-2ex}
+\begin{eqnarray*}
+3x &=& (\pi - x) + 2\pi k\\
+x &=& \frac{\pi}{4} + \frac{\pi}{2} k\\
+x&=& \frac{\pi}{4},\; \frac{3\pi}{4}, \; \frac{5\pi}{4}\,.
+\end{eqnarray*}
+
+\vspace{-2ex}
+
+$\displaystyle x=\frac{3\pi}{2}$
+היא נקודת קיצון )מקומית( נוספת. נסמן את נקודות הקיצון על מעגל היחידה:
+\begin{center}
+\selectlanguage{english}
+% The unit circle with main axes
+\begin{tikzpicture}[scale=1.5]
+\coordinate (origin) at (0,0);
+% Draw circle
+\draw (origin) circle [radius=1];
+% Draw axes
+\draw (-1,0) node [left] {$\pi$} -- (1,0) node [right] {$0$};
+\draw (0,-1) node [below] {$3\pi/2$} -- (0,1) node [above] {$\pi/2$};
+\fill (1,0) circle [radius=1pt];
+\fill (-1,0) circle [radius=1pt];
+\fill (45:1) node[above right] {$\pi/4$} circle [radius=1pt];
+\fill (135:1) node[above left] {$3\pi/4$} circle [radius=1pt];
+\fill (225:1) node[below left] {$5\pi/4$} circle [radius=1pt];
+\fill (270:1) node[below] {$3\pi/2$} circle [radius=1pt];
+\draw (315:1) node[below right] {$(7\pi/4)$} circle [radius=0pt];
+%\node at (315:1) {$(7\pi/4$)};
+\end{tikzpicture}
+\end{center}
+כדאי לבדוק שאם מכפילים ב-%
+$3$
+את הזוויות המסומנת בנקודה מקבלים זווית עם
+\textbf{אותו סינוס}
+)לא אותה נקודה(. למשל:
+\[
+3\cdot \frac{5\pi}{4} = \frac{15\pi}{4} = \frac{8\pi}{4}+\frac{7\pi}{4}= 2\pi + \frac{7\pi}{4}\,,
+\]
+
+והסינוס של
+$\displaystyle \frac{7\pi}{4}$
+שווה לסינוס של
+$\displaystyle \frac{5\pi}{4}$.
+
+נקודות הקיצון הן:
+
+\[
+(0,2),\quad \left(\frac{\pi}{4},2\sqrt{2}\right),\quad \left(\frac{3\pi}{4},-2\sqrt{2}\right),\quad (\pi,-2),\quad \left(\frac{5\pi}{4},-2\sqrt{2}\right),\quad \left(\frac{3\pi}{2},0\right)\,.
+\]
+אין אסימטוטות אנכיות, ולכן תחומי העלייה והירידה ואיפיון נקודות הקיצון כמינימום או מקסימום מוגדרים על ידי ההפרשים בקואורדינטות ה-%
+$y$
+של נקודות הקיצון:
+
+\[
+(0,2) \;\nearrow \; \left(\frac{\pi}{4},2\sqrt{2}\right) \;\searrow \;  \left(\frac{3\pi}{4},-2\sqrt{2}\right) \;\nearrow \;  (\pi,-2) \;\searrow \;  \left(\frac{5\pi}{4},-2\sqrt{2}\right) \;\searrow \;  \left(\frac{3\pi}{2},0\right)\,.
+\]
+
+\vspace{-4ex}
+$\quad$
+מקסימום
+$\quad\quad$
+מינימום
+$\quad\quad\quad$
+מקסימום
+$\quad\quad$
+מינימום 
+$\quad\quad\quad$
+מקסימום
+$\quad\quad$
+מינימום 
+
+עבור נקודות הקיצון בפנימיות, אפשר לחשב מינימום או מקסימום לפי הנגזרת השנייה:
+\[
+y'' = -3\cos x + 9\cos 3x=3(3\cos 3x-\cos x)\,.
+\]
+כדי לבדוק את הסימן אפשר להשמיט את הגורם הקבוע ולחשב
+$3\cos 3x-\cos x$:
+\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+x& \pi/4 & 3\pi/4 & \pi & 5\pi/4 \\\hline
+y''& -2\sqrt{2}<0&\sqrt{2}>0 & -2<0&2\sqrt{2}>0 \\\hline
+& \textrm{max}& \textrm{min}& \textrm{max}&\textrm{min}\\\hline
+\end{array}
+\]
+
+
+נקודות החיתוך עם הצירים הן הנקודות בקצה התחום: 
+$(0,2)$
+עם ציר ה-%
+$y$,\ \ 
+$(\frac{3}{2},0)$
+עם ציר ה-%
+$x$,\ \ 
+ועוד חיתוך עם ציר ה-% 
+$x$
+בין
+$\frac{\pi}{4}$
+ו-%
+$\frac{3\pi}{4}$.
+אנו יודעים ש-%
+$\cos \frac{\pi}{2} =\cos \frac{3\pi}{2}=0$,
+ולכן:
+\[
+y= 3\cos\frac{\pi}{2} - \cos \frac{3\pi}{2} = 0-0=0\,,
+\]
+ונקודת החיתוך היא 
+$(\frac{3\pi}{2},0)$.
+
+הגרף של הפונקציה הוא:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+\draw (0,3)--(0,-3);
+\draw (0,0)--(5,0);
+\draw[samples=100,domain=0:3*pi/2] plot (\x,{3*cos(\x r) - cos(3*\x r)});
+\fill (0,2) node[left] {$(0,2)$} circle [radius=2pt];
+\fill (pi/4,2*sqrt 2) node[above] {$(\frac{\pi}{4},2\sqrt{2})$} circle [radius=2pt];
+\fill (3*pi/4,-2*sqrt 2) node[below left,xshift=12pt] {$(\frac{3\pi}{4},-2\sqrt{2})$} circle [radius=2pt];
+\fill (pi,-2) node[above] {$(\pi,-2)$} circle [radius=2pt];
+\fill (5*pi/4,-2*sqrt 2) node[below right,xshift=-12pt] {$(\frac{5\pi}{4},-2\sqrt{2})$} circle [radius=2pt];
+\fill (3*pi/2,0) node[above] {$(\frac{3\pi}{2},0)$} circle [radius=2pt];
+\end{tikzpicture}
+\end{center}
+\end{document}
