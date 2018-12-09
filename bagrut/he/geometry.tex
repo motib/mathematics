@@ -14,8 +14,8 @@
 \usepackage{tkz-euclide}
 \usetkzobj{all}
 
-%\usetikzlibrary{external}
-%\tikzexternalize[prefix=tikz/]
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/]
 
 % Use stealth arrows
 \tikzset {
@@ -39,7 +39,7 @@
 
 \selectlanguage{hebrew}
 
-%\begin{comment}
+%%\begin{comment}
 
 \begin{center}
 \textbf{\Huge גיאומטריה}
@@ -91,7 +91,6 @@ $806$(.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\begin{comment}
 
 \section*{קיץ תשע"ח מועד ב}
 
@@ -102,7 +101,197 @@ $806$(.
 \vspace{-8mm}
 \textbf{סעיף א}
 
+כאשר יש תיכונים נחתכים מיד חושבים על משפט
+$45$
+"שלושת התיכונים במשולש נחתכים בנקודה אחת", ובמשפט
+$46$
+"נקודת חיתוך התיכונים מחלקת כל תיכון ביחס
+$2:1$".
+$BE$
+הוא התיכון מ-%
+$B$
+ל-%
+$AC$,
+שחותך את מפגש התיכונים האחרים ב-%
+$D$.
+סימנו אורכים לפי משפט
+$46$
+והנתון שהמשולש
+$ABC$
+שווה שוקיים.
+$BE\perp AC$
+לפי משפט
+$6$
+"במשולש שווה שוקיים , חוצה זווית הראש, התיכון לבסיס והגובה לבסיס מתלכדים".
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\draw[thick] (0,0) coordinate (A) -- (6,0) coordinate (C);
+\draw[thick] (A) -- (3,8) coordinate (B) -- (C);
+\coordinate (K) at ($(B) ! .5 ! (C)$);
+\coordinate (L) at ($(A) ! .5 ! (B)$);
+\draw[thick,name path=ak] (A) -- (K);
+\draw[thick,name path=cl] (C) -- (L);
+\path[name intersections={of=ak and cl,by={D}}];
+\fill (A) node[below] {$A$} circle(1.5pt);
+\fill (B) node[above] {$B$} circle(1.5pt);
+\fill (C) node[below] {$C$} circle(1.5pt);
+\fill (D) node[above,yshift=6pt] {$D$} circle(1.5pt);
+\fill (K) node[right] {$K$} circle(1.5pt);
+\fill (L) node[left] {$L$} circle(1.5pt);
+\draw[rotate=-45] (D) rectangle +(7pt,7pt);
+\draw[dashed,thick] (B) |- (A);
+\coordinate (E) at ($(A)!.5!(C)$);
+\fill (E) node[below] {$E$} circle(1.5pt);
+\draw (E) rectangle +(7pt,7pt);
+\path (A) -- node[right,yshift=-4pt] {$2a$} (D) -- node[right,yshift=-4pt] {$a$} (K);
+\path (C) -- node[left,yshift=-4pt] {$2a$} (D) -- node[left,yshift=-4pt] {$a$} (L);
+\path (B) -- node[left] {$2b$} (D) -- node[left] {$b$} (E);
+\end{tikzpicture}
+\end{center}
+נתון ש-%
+$AK\perp CL$,
+כך שהזוויות
+$\angle ADE,\angle CDE$
+שוות
+$45^\circ$,
+לפי משפט
+$48$
+"אם נקודה נמצאת במרחקים שווים משני שוקי זווית , אז היא נמצאת על חוצה הזווית". 
+אם במשולשים ישר זווית
+$\triangle ADE,\triangle CDE$
+יש זווית אחת של
+$45^\circ$,
+גם הזוויות החדות האחרות
+$\angle DAE,\angle DCE$
+שוות
+$45^\circ$,
+והמשולשים שווה שוקיים. מכאן ש-%
+$AE=EC=DE=b$
+ו-%
+$BD=2b=AE+EC=AC$.
+
+אפשרות אחרת היא להשתמש במשפט
+$86$
+"במשולש ישר זווית התיכון ליתר שווה למחצית היתר" כדי להסיק ש-%
+$AE=EC=DE$.
+
+\textbf{סעיף ב}
+
+נראה שכדאי לחשב 
+$S_{BLDK}$
+על ידי חיסור שאר המצולע
+$ALDKC$
+מהשטח של
+$\triangle ABC$
+כי המצולע מורכב ממשולשים ישר זווית וחישוב השטח שלהם קל מאוד.
+\begin{eqnarray*}
+S_{ABC}&=&\frac{1}{2}AC\cdot BE= \frac{1}{2}2b\cdot 3b=3b^2\\
+S_{ALDKC}&=&2S_{ADL}+S_{ADC}\\
+&=&2\cdot \frac{1}{2} AD\cdot DL + \frac{1}{2} AC\cdot DE\\
+&=&2a\cdot a + \frac{1}{2} 2b \cdot b\\
+&=&2a^2+b^2\,.
+\end{eqnarray*}
+כדי לקבל את השטח
+$S_{ALDKC}$
+כפונקציה של
+$b$
+בלבד, נפעיל משפט פיתגורס על
+$\triangle ADE$:
+\begin{eqnarray*}
+b^2+b^2&=&(2a)^2\\
+b^2&=&2a^2\\
+S_{ALDKC}&=&2a^2+b^2=2b^2\\
+S_{BLDK}&=&S_{ABC}-S_{ALDKC}=3b^2-2b^2=b^2\\
+\frac{S_{BLDK}}{S_{ABC}}&=&\frac{b^2}{3b^2}=\frac{1}{3}\,.
+\end{eqnarray*}
+
+\textbf{סעיף ג}
+$1$
+
+לא הצלחתי להתקדם בפתרון עד שציירתי ציור חדש, עם המעגל ובלי מידע מיותר. נשים לב שהזווית ההיקפית
+$\angle LKA$
+נשענת על המיתר עליו נשענת הזווית המרכזית
+$\angle AML$,
+כך ש-%
+$\angle AML=2\angle LKA$
+לפי משפט
+$69$
+"במעגל, זווית היקפית שווה למחצית הזווית המרכזית הנשענת על אותה הקשת". אבל לפי משפט
+$14$
+"קטע אמצעים במשולש מקביל לצלע השלישית ושווה למחציתה",
+$LK\|AC$.
+$\angle KAC=\angle LKA=\alpha$
+לפי זוויות מתחלפות, והוכחנו בסעיף הקודם ש-%
+$\alpha = 45^\circ$,
+לכן,
+$\angle AML = 2\alpha=90^\circ$.
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\clip (-1,-2.2) rectangle +(8,7);
+\draw[thick] (0,0) coordinate (A) -- (6,0) coordinate (C);
+\path (A) -- (3,8) coordinate (B) -- (C);
+\coordinate (K) at ($(B) ! .5 ! (C)$);
+\coordinate (L) at ($(A) ! .5 ! (B)$);
+\path[name path=ak] (A) -- (K);
+\draw[thick,name path=cl] (C) -- (L);
+\path[name intersections={of=ak and cl,by={D}}];
+\fill (A) node[below,xshift=-4pt] {$A$} circle(1.5pt);
+\fill (C) node[below,xshift=4pt] {$C$} circle(1.5pt);
+\fill (D) node[above] {$D$} circle(1.5pt);
+\fill (K) node[right,xshift=4pt] {$K$} circle(1.5pt);
+\fill (L) node[left,xshift=-4pt] {$L$} circle(1.5pt);
+\draw[rotate=135] (D) rectangle +(7pt,7pt);
+\tkzCircumCenter(A,L,K)\tkzGetPoint{M}
+\tkzDrawCircle[thick,name path=circle](M,A)
+\fill (M) node[above right] {$M$} circle(1.5pt);
+\draw[rotate=110] (M) rectangle +(7pt,7pt);
+\draw[thick] (A) -- (M);
+\draw[thick,name path=ml] (M) -- (L);
+\path[name intersections={of=ak and ml,by={G}}];
+\fill (G) node[left,xshift=-4pt] {$G$} circle(1.5pt);
+\draw[thick] (A) -- (L) -- (K) -- (C);
+\draw[thick] (A) -- (K);
+\node[below left,xshift=-8pt] at (K) {$\alpha$};
+\node[left,xshift=-6pt,yshift=4pt] at (M) {$2\alpha$};
+\draw[thick] ($(A)+(10mm,0)$) arc[start angle=0,end angle=45,radius=9mm];
+\node[above right,yshift=10pt,xshift=22pt] at (A) {$\alpha$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ג}
+$2$
+
+תחילה שמתי לב ש-%
+$\triangle MGA\sim \triangle DGL$
+כי במשלושים ישר זווית, הזוויות
+$\angle MGA\sim \angle DGL$
+קודקודיות. גישה זו לא הצליחה כי לא מצאתי דרך לבטא את הקשר בין
+$AD$
+לבין 
+$AG, GD$.
+לבסוף שמתי לב למשולשים
+$\triangle LDA,\triangle LMA$
+יתר משותף, והמשולש
+$\triangle LMA$
+שווה שוקיים כי הצלעות הם רדיוסים. ממשפט פיתגורס:
+\begin{eqnarray*}
+AM^2+ML^2&=&AL^2\\
+AM&=&ML\\
+2AM^2&=&AL^2\\
+LD^2+AD^2&=&AL^2\\
+LD^2&=&a^2\\
+a^2+AD^2&=&2AM^2\\
+AD^2&=&4a^2\\
+\frac{1}{4}AD^2+AD^2&=&2AM^2\\
+\frac{AM}{AD}&=&\sqrt{\frac{5}{8}}\,.
+\end{eqnarray*}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{comment}
+
 
 \section*{קיץ תשע"ח מועד א}
 
@@ -112,9 +301,166 @@ $806$(.
 \end{center}
 \vspace{-8mm}
 \textbf{סעיף א}
-%\end{comment}
+
+מעויין הוא מקבילית עם צלעות שווים. כמקבילית, משפט 
+$28$
+"במקבילית האלכסונים חוצים זה את זה" טופס, וסימנו את אורכי האלכסון
+$AC$
+ב-%
+$b$.
+ביחד עם משפט
+$35$
+"במעוין האלכסונים מאונכים זה לזה", 
+$GB$
+הוא אנך אמצעי ל-%
+$AC$.
+$G$
+היא נקודת החיתוך של שני אנכים אמצעיים, והטענה נובעת ממשפט
+$54$
+"במשולש, שלושת האנכים האמצעיים נחתכים בנקודה אחת , שהיא מרכז המעגל החוסם את המשולש".
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\draw[thick] (0,0) coordinate (A) -- ++(40:5) coordinate (D) -- ++(5,0) coordinate (C);
+\draw[thick] (A) -- ++(5,0) coordinate (B) -- (C);
+\coordinate (F) at ($(B) ! .5 ! (C)$);
+\coordinate (E) at ($(A) ! .5 ! (B)$);
+\fill (A) node[below] {$A$} circle(1.5pt);
+\fill (B) node[below] {$B$} circle(1.5pt);
+\fill (C) node[above] {$C$} circle(1.5pt);
+\fill (D) node[above right] {$D$} circle(1.5pt);
+\fill (E) node[below] {$E$} circle(1.5pt);
+\fill (F) node[right] {$F$} circle(1.5pt);
+\draw[thick,name path=ac] (A) -- (C);
+\path[name path=bg] (B) -- ($(B) ! 2.3 ! (D)$);
+\path[name path=ge] (E) -- +(0,7.3);
+\path[name intersections={of=ge and bg,by={G}}];
+\fill (G) node[above] {$G$} circle(1.5pt);
+\draw[dashed,thick] (G) -- (E);
+\draw[thick] (G) -- (B);
+\path[name intersections={of=ac and bg,by={K}}];
+\fill (K) node[above,xshift=5pt,yshift=2pt] {$K$} circle(1.5pt);
+\draw[rotate=110] (K) rectangle +(7pt,7pt);
+\draw (E) rectangle +(7pt,7pt);
+\path (A) -- node[below] {$a$} (E) -- node[below] {$a$} (B);
+\path (B) -- node[right] {$a$} (F) -- node[right] {$a$} (C);
+\path (A) -- node[below,near end] {$b$} (K) -- node[below,near start] {$b$} (C);
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ב}
+
+לפי משפט 
+$35$
+האלכסון 
+$AC$
+הוא אנך אמצעי ל-%
+$DB$,
+ונתון שהנקודה
+$M$
+היא מרכז המעגל החוסם את
+$\triangle BDC$,
+ולכן
+$GF$
+הוא אנך אמצעי ל-%
+$BC$.
+בציור למטה הדגשנו את המשולשים שיש להוכיח שהם דומים. אפשר לראות שהזווית
+$\alpha$
+היא משותפת למשולשים ישר זווית, כך ש-%
+$\triangle BKC\sim \triangle MFC$.
+הזווית
+$\beta$
+משותפת למשולשים ישר זווית, כך ש-%
+$\triangle BFG\sim \triangle BKC \sim \triangle MFC$.
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\draw[thick] (0,0) coordinate (A) -- ++(40:5) coordinate (D) -- ++(5,0) coordinate (C);
+\draw[thick] (A) -- ++(5,0) coordinate (B) -- (C);
+\coordinate (F) at ($(B) ! .5 ! (C)$);
+\coordinate (E) at ($(A) ! .5 ! (B)$);
+\fill (A) node[below] {$A$} circle(1.5pt);
+\fill (B) node[below] {$B$} node[above,xshift=3pt,yshift=4pt] {$\beta$}  circle(1.5pt);
+\fill (C) node[above] {$C$} node[below left,xshift=-20pt,yshift=-10pt] {$\alpha$} circle(1.5pt);
+\fill (D) node[above right] {$D$} circle(1.5pt);
+\fill (E) node[below] {$E$} circle(1.5pt);
+\fill (F) node[right] {$F$} circle(1.5pt);
+\draw[thick,name path=ac] (A) -- (C);
+\path[name path=bg] (B) -- ($(B) ! 2.3 ! (D)$);
+\path[name path=ge] (E) -- +(0,7.3);
+\path[name intersections={of=ge and bg,by={G}}];
+\fill (G) node[above] {$G$} circle(1.5pt);
+\draw[thick] (G) -- (B);
+\path[name intersections={of=ac and bg,by={K}}];
+\fill (K) node[above,xshift=5pt,yshift=2pt] {$K$} circle(1.5pt);
+\draw[rotate=110] (K) rectangle +(7pt,7pt);
+\draw[thick,dashed,name path=gf] (G) -- (F);
+\path[name intersections={of=gf and ac,by={M}}];
+\fill (M) node[below,xshift=-4pt,yshift=-4pt] {$M$} circle(1.5pt);
+\draw[rotate=130] (F) rectangle +(7pt,7pt);
+\draw[ultra thick] (M) -- (F) -- (C) -- cycle;
+\draw[ultra thick] (B) -- (K) -- (C) -- cycle;
+\draw[ultra thick] (B) -- (F) -- (G) -- cycle;
+\path (B) -- node[right,xshift=4pt] {$a$} (F) -- node[right,xshift=-6pt,yshift=-10pt] {$a$} (C);
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ג}
+$(1)$
+
+היחס 
+\[
+\frac{MC}{GB}=\frac{MF}{BF}=\frac{MF}{CF}
+\]
+מתקבל מדמיון המשולשים
+$\triangle BFG\sim \triangle MFC$
+ו-%
+$BF=CF$
+כי 
+$F$
+הוא אמצע הצלע
+$BC$.
+
+מדמיון המשולשים
+$\triangle BKC \sim \triangle MFC$.
+מתקבל
+\begin{eqnarray*}
+\frac{MF}{BK}&=&\frac{CF}{CK}\\
+\frac{MF}{CF}&=&\frac{BK}{CK}\,.
+\end{eqnarray*}
+
+
+
+
+\textbf{סעיף ג}
+$(2)$
+
+מרכז המעגל
+$ABC$
+הוא
+$G$
+כך ש-%
+$R=GB$.
+מרכז המעגל
+$BDC$
+מוא 
+$M$
+כך ש-%
+$r=MC$.
+\[
+\frac{r}{R}=\frac{MC}{GB}=\frac{BK}{CK}=\frac{DB/2}{AC/2}=\frac{DB}{AC}\,
+\]
+כי האלכסונים של מקבילית )מעוין( חוצים אחד את השני.
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{comment}
+
 
 \section*{חורף תשע"ח}
 
@@ -123,10 +469,181 @@ $806$(.
 \includegraphics[width=\textwidth]{winter-2018-4}
 \end{center}
 \vspace{-8mm}
+
 \textbf{סעיף א}
 
+רואים הבציור ש-%
+$ABCG$
+הוא דלתון אבל לא ברור בשלב זה אם זה יעזור בפתרון. נתון שהמרובע 
+$ABCD$
+חסום במעגל, ולפי משפט
+$56$
+"ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
+$180^\circ$".
+סימנו זוויות
+$\alpha,\beta$
+ו-%
+$\alpha'=180-\alpha, \beta'=180-\beta$:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\coordinate (L) at (60mm,-51mm);
+\fill (L) node[right] {$L$} circle(1.5pt);
+\node[circle,draw,thick,name path=circle] (O) at (0,0) [minimum size=50mm] {};
+\coordinate (A) at (tangent cs:node=O,point={(L)},solution=2);
+\fill (A) node[below] {$A$} node[above right,yshift=8pt] {$\alpha'$} circle(1.5pt);
+\path[name path=la] (L) -- ($(L)!1.4!(A)$);
+\node[circle,name path=abd] (c) at (A) [minimum size=55mm] {};
+\path[name intersections={of=circle and abd,by={B,D}}];
+\fill (D) node[right,xshift=4pt] {$D$} node[left,xshift=-10pt,yshift=2pt] {$\beta$} circle(1.5pt);
+\fill (B) node[left] {$B$} node[below right,xshift=4pt,yshift=5pt] {$\beta'$} circle(1.5pt);
+\path[name path=ld] (L) -- ($(L)!2!(D)$);
+\path[name intersections={of=circle and ld,by={C}}];
+\fill (C) node[above left] {$C$} node[below,xshift=3pt,yshift=-6pt] {$\alpha$} circle(1.5pt);
+\draw[thick,name path=lc] (L) -- (C);
+\path[name path=cb] (C) -- ($(C)!2.4!(B)$);
+\path[name intersections={of=cb and la,by={K}}];
+\fill (K) node[below left] {$K$} circle(1.5pt);
+\path[name intersections={of=abd and lc,by={dummy,G}}];
+\fill (G) node[above] {$G$} circle(1.5pt);
+\draw[thick] (A) -- node[left] {$a$} (B);
+\draw[thick] (A) -- (D);
+\draw[thick] (A) -- node[right] {$a$} (G);
+\draw[thick] (L) -- (K);
+\draw[thick] (C) -- node[left,xshift=-4pt] {$b$} (B);
+\draw[thick] (B) -- (K);
+\path (C) -- node[right,near start,xshift=4pt] {$b$} (G);
+\draw ($ (A)!.15!(D) $) arc [radius=14pt,start angle=20,delta angle=94];
+\draw[dashed] (B) -- (G);
+\end{tikzpicture}
+\end{center}
+כדי להראות ש-%
+$AD=AG$
+נוכיח שהמשולש
+$\triangle GAD$
+שווה שוקיים על ידי הוכחה ש-%
+$\angle AGD=\beta$
+כי המשלים שלה
+$\angle CGA=\beta'$.
+נזכור ש-%
+$ABCG$
+דלתון והזוויות הצדדיות שלו שוות. רשימת המשפטים לא כוללתת משפט זה אז נצטרך להוכיח אותו. דלתון הוא ריבוע עם שני זוגות של צלעות סמוכות שוות. במילים אחרות, דלתון מורכב משני משולשים שווה שוקיים המוצמדים בבסיסיהם: 
+\[
+\angle ABC = \angle ABG + \angle GBC = \angle AGB + \angle BGC = \angle AGC\,.
+\]
+מכאן, 
+\[
+\angle AGC = 180-AGC=180-\angle ABC=180-(180-\beta)=\beta\,.
+\]
 
-%\begin{comment}
+\textbf{סעיף ב %
+$(1)$}
+
+נדגיש בציור את
+$\triangle ABK,\triangle CDA$.
+הוכחנו ש-% 
+$\angle CGA=\angle CBA$,
+ולפי זוויות משלימות:
+\[
+\angle KBA=180-\angle CBA = 180-\angle CGA=\angle AGD=\angle GDA\,,
+\]
+כי
+$\triangle GAD$
+שווה שוקיים.
+$\angle BAK$
+היא הזווית בין המשיק
+$KA$
+והמיתר
+$AB$.
+לפי משפט
+$79$
+"זווית בין משיק ומיתר שווה לזווית ההיקפית הנשענת על מיתר זה מצידו השני", 
+$\angle BAK=\angle BCA$.
+לפי משפט
+$21$
+"האלכסון הראשי בדלתון חוצה את זוויות הראש ...",
+$\angle BAK=\angle BCA=\angle ACD$.
+מכאן ש-%
+$\triangle ABK \sim \triangle CDA$
+לפי ז.ז.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\coordinate (L) at (60mm,-51mm);
+\node[circle,draw,name path=circle] (O) at (0,0) [minimum size=50mm] {};
+\coordinate (A) at (tangent cs:node=O,point={(L)},solution=2);
+\fill (A) node[below] {$A$} circle(1.5pt);
+\path[name path=la] (L) -- ($(L)!1.4!(A)$);
+\node[circle,name path=abd] (c) at (A) [minimum size=55mm] {};
+\path[name intersections={of=circle and abd,by={B,D}}];
+\fill (D) node[right,xshift=4pt] {$D$} node[left,xshift=-10pt,yshift=2pt] {$\beta$} circle(1.5pt);
+\fill (B) node[left] {$B$} node[right,yshift=1pt] {$\beta'$} node[below,xshift=2pt,yshift=-8pt] {$\beta$} circle(1.5pt);
+\path[name path=ld] (L) -- ($(L)!2!(D)$);
+\path[name intersections={of=circle and ld,by={C}}];
+\fill (C) node[above left] {$C$} circle(1.5pt);
+\path[name path=lc] (L) -- (C);
+\path[name path=cb] (C) -- ($(C)!2.4!(B)$);
+\path[name intersections={of=cb and la,by={K}}];
+\fill (K) node[below left] {$K$} circle(1.5pt);
+\path[name intersections={of=abd and lc,by={dummy,G}}];
+\fill (G) node[above] {$G$} node[below right,xshift=-1pt,yshift=-6pt] {$\beta$} node[below left,xshift=1pt,yshift=0pt] {$\beta'$} circle(1.5pt);
+\draw (A) -- (G);
+\draw (C) -- (B);
+\draw[very thick] (A) -- (B);
+\draw[very thick] (A) -- (D);
+\draw[very thick] (B) -- (K);
+\draw[very thick] (C) -- (A);
+\draw[very thick] (A) -- (K);
+\draw[very thick] (D) -- (C);
+\node at ($(C)+(-8mm,-5mm)$) {$\alpha$};
+\draw[->] ($(C)+(-4mm,-4mm)$) -- +(14pt,0);
+\draw[->] ($(C)+(-4mm,-6mm)$) -- +(22pt,0);
+\node at ($(A)+(-8mm,-2mm)$) {$\alpha$};
+\draw[->] ($(A)+(-7mm,0mm)$) -- +(7pt,11pt);
+\end{tikzpicture}
+\end{center}
+\vspace*{-25mm}
+דרך אחרת להוכיח ש-%
+$\angle BCA=\angle ACD$
+היא לשים לב ש-%
+$AB=AD$
+ולהשתמש במשפט
+$63$
+"במעגל, מיתרים שווים זה לזה אם ורק אם שתי הקשתות המתאימות להם שוות זו לזו", ומשפט
+$71$
+"במעגל, מיתרים שווים זה לזה אם ורק אם שתי הקשתות המתאימות להם שוות זו לזו".
+
+\textbf{סעיף ב %
+$(2)$}
+
+לפי דמיון המשלושים והחלק הראשון של הסעיף:
+\begin{eqnarray*}
+\frac{AB}{CD}&=&\frac{BK}{AD}\\
+AB\cdot AD &=& BK\cdot CD\\
+AB&=&AD\\
+AD^2 &=& BK\cdot CD\,.
+\end{eqnarray*}
+\vspace{-10mm}
+
+\textbf{סעיף ג}
+
+היחס בין השטחים של שני משולשים שווה ליחס בין הבסיסים אם הגבהים שווים. הוכחנו ש-%
+$AB=AD$
+כך שהגבהים יהיו שווים אם
+$\angle DAL = \angle BAK$.
+אבל 
+$\angle DAL=\angle DCA$
+כי 
+$\angle DAL$
+היא הזווית בין המשיק
+$LA$
+והמיתר 
+$AD$,
+והזווית
+$\angle DCA$
+נשענת על מיתר זה. לפי דמיון המשולשים
+$\angle DCA=\angle BAK$.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1608,7 +2125,7 @@ $\triangle DEC\sim \triangle DPB$
 \draw[rotate=90] (B) rectangle +(5pt,5pt);
 \draw[thick,name path=ac] (A) -- ($(D)!(A)!(B)$) node[below] {$C$} coordinate (C);
 \draw[rotate=90] (C) rectangle +(5pt,5pt);
-\path [name intersections={of=pd and ac,by={E}}];
+\path [name intersections={of=bd and ac,by={E}}];
 \fill (E) node[right,yshift=4pt] {$E$} circle(1.5pt);
 \draw[thick] (E) -- (D) -- (P);
 \end{tikzpicture}
@@ -3128,7 +3645,7 @@ $P$
 \end{tikzpicture}
 \end{minipage}
 
-%%\end{comment}
+%\end{comment}
 
 
 \end{document}

@@ -10,6 +10,7 @@ motion/images
 series/tikz
 geometry/tikz
 probability/tikz
+bagrut/he/tikz
 tikz-examples.tex
 *.bat
 *.zip
