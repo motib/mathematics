@@ -6,6 +6,7 @@
 \usepackage{url}
 \usepackage{bm}
 \usepackage{float}
+\usepackage{eqnarray}
 
 \graphicspath{{images/}}
 
@@ -22,24 +23,24 @@
   >=stealth
 }
 
-\textwidth=15.5cm
-\textheight=23cm
+\textwidth=155mm
+\textheight=235mm
 \topmargin=0pt
 \headheight=0pt
-\oddsidemargin=2em
+\oddsidemargin=-5mm
+\evensidemargin=5mm
 \headsep=0pt
 \parindent=0pt
 \renewcommand{\baselinestretch}{1.1}
 \setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
 
-\newcommand{\bover}[1]{\bm{\overline{#1}}}
+\newcommand*{\bover}[1]{\bm{\overline{#1}}}
+\newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
 
 \begin{document}
 \thispagestyle{empty}
 
 \selectlanguage{hebrew}
-
-%%\begin{comment}
 
 \begin{center}
 \textbf{\Huge גיאומטריה}
@@ -82,17 +83,44 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 \newpage
 \selectlanguage{hebrew}
 
+\tableofcontents
 
-במסמך זה אביא פתרונות לשאלות על גיאומטריה )שאלה 4( בבחינות הבגרות )שאלון
-$806$(.
-אנסה לתאר את דרכי החשיבה המובילות לפתרונות עם דגש על בחירת המשפטים שמשתמשים בהם בפתרונות, תוך ציון מספרי המשפטים כפי שמופיע ברשימה של משרד החינוך. בסוף אביא מספר המלצות המבוססות על תהליכי הפתרון.
-
-%\end{comment}
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{מבוא}
 
-\section*{קיץ תשע"ח מועד ב}
+מתמטיקאים ידועים לשמצה כי הם מפרסמים והוכחות מסודרות וברורות, ומסתירים את העובדה שסל הניירות שלהם מלא עד אפס מקום בניסיונות שהובילו למבוא סתום וטעויות. ההיעדר של 
+\textbf{תהליכי}
+הפתרון עלול לתסכל תלמידים שמתייאשים כאשר הם לא מצליחים לפתור בעיות בניסיון הראשון. לא חסרים פתרונות של בחינות הבגרות, אבל גם הם "נקיים" ללא ניסיונות שלא צלחו.
+
+מסמך זה מכיל פתרונות לשאלה מספר 
+$4$
+של הבחינות 
+$806$
+בשנים תשע"ד עד תשע"ח, כאשר ניסיתי לתאר את החוויות שלי בחיפוש פתרונות.
+
+הפתרונות מביאים ציטוטים של המשפטים המתקדמים מתוך רשימת
+$106$
+המשפטים שהתלמידים רשאים לצטט ללא הוכחה. כל אחד זוכר ללא קושי שמשולשים חופפים לפי צ.צ.צ., אבל קשה יותר לזכור משפטים כגון השווין הזווית בין משיק למיתר שווה לזווית.
+
+בתהליך הפתרונות מצאתי חשיבות רבה לציורים גדולים שעליהם ניתן לרשום ערכים, נעלמים ובניות עזר בצורה ברורה. לעתים קרובות הצלחתי להתקדם כאשר הכנתי ציורים שונים לסעיפים שונים באותה שאלה.
+
+בסוף המסמך רשמתי המלצות שגיבשתי לאורך העבודה.
+
+נספח א מכיל "הוכחה" ידועה שכל משולש שווה שוקיים. עם כל החשיבות לציורים בהבנת הדמות הגיאומטרית, ציור אינו מהווה הוכחה.
+
+נספח ב מכיל ציורים צבעוניים של מספר משפטים מתקדמים. דווקא בנושא כל כך מוחשי כגון גיאומטריה, קל יותר לזכור ציור ולא תיאור מילולי מסורבל.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+
+\newpage
+
+\section{קיץ תשע"ח מועד ב}
 
 \begin{center}
 \selectlanguage{english}
@@ -114,18 +142,15 @@ $B$
 $AC$,
 שחותך את מפגש התיכונים האחרים ב-%
 $D$.
-סימנו אורכים לפי משפט
-$46$
-והנתון שהמשולש
-$ABC$
-שווה שוקיים.
 $BE\perp AC$
 לפי משפט
 $6$
-"במשולש שווה שוקיים , חוצה זווית הראש, התיכון לבסיס והגובה לבסיס מתלכדים".
+"במשולש שווה שוקיים , חוצה זווית הראש, התיכון לבסיס והגובה לבסיס מתלכדים". מכאן קל להראות שהתיכונים
+$AK,CL$
+שווים.
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=.7]
 \draw[thick] (0,0) coordinate (A) -- (6,0) coordinate (C);
 \draw[thick] (A) -- (3,8) coordinate (B) -- (C);
 \coordinate (K) at ($(B) ! .5 ! (C)$);
@@ -136,7 +161,7 @@ $6$
 \fill (A) node[below] {$A$} circle(1.5pt);
 \fill (B) node[above] {$B$} circle(1.5pt);
 \fill (C) node[below] {$C$} circle(1.5pt);
-\fill (D) node[above,yshift=6pt] {$D$} circle(1.5pt);
+\fill (D) node[above right,xshift=-2pt,yshift=8pt] {$D$} circle(1.5pt);
 \fill (K) node[right] {$K$} circle(1.5pt);
 \fill (L) node[left] {$L$} circle(1.5pt);
 \draw[rotate=-45] (D) rectangle +(7pt,7pt);
@@ -147,69 +172,83 @@ $6$
 \path (A) -- node[right,yshift=-4pt] {$2a$} (D) -- node[right,yshift=-4pt] {$a$} (K);
 \path (C) -- node[left,yshift=-4pt] {$2a$} (D) -- node[left,yshift=-4pt] {$a$} (L);
 \path (B) -- node[left] {$2b$} (D) -- node[left] {$b$} (E);
+\path (A) -- node[below] {$b?$} (E);
+\path (E) -- node[below] {$b?$} (C);
 \end{tikzpicture}
 \end{center}
-נתון ש-%
-$AK\perp CL$,
-כך שהזוויות
-$\angle ADE,\angle CDE$
-שוות
-$45^\circ$,
+אם נוכיח ש-%
+$AE=EC=DE$,
+נוכיח ש-% 
+$BD=2b=2DE=AE+ED=AC$.
 לפי משפט
-$48$
-"אם נקודה נמצאת במרחקים שווים משני שוקי זווית , אז היא נמצאת על חוצה הזווית". 
-אם במשולשים ישר זווית
-$\triangle ADE,\triangle CDE$
-יש זווית אחת של
+$6$,
+$BE$
+הוא חוצה זווית של
+$\angle ABC$,
+וגם של
+$\angle ADC$
+כי חוצה הזווית והתיכון מתלכדים. נתון ש-%
+$AK\perp CL$
+כך ש-%
+$\angle ADC=90^\circ$,
+ולכן 
+$\angle ADE,\angle CDE$
+שוות ל-%
+$\frac{1}{2}\cdot 90^\circ=45^\circ$.
+במשולשים ישר זווית
+$\triangle ADE,\triangle CDE$,
+זוויות חדות של
 $45^\circ$,
-גם הזוויות החדות האחרות
+ולכן גם הזוויות
 $\angle DAE,\angle DCE$
 שוות
 $45^\circ$,
 והמשולשים שווה שוקיים. מכאן ש-%
-$AE=EC=DE=b$
-ו-%
-$BD=2b=AE+EC=AC$.
+$AE=EC=DE=b$.
 
-אפשרות אחרת היא להשתמש במשפט
+אפשרות אחרת, פשוטה יותר, להוכיח
+$AE=EC=DE=b$
+היא להשתמש במשפט
 $86$
-"במשולש ישר זווית התיכון ליתר שווה למחצית היתר" כדי להסיק ש-%
-$AE=EC=DE$.
+"במשולש ישר זווית התיכון ליתר שווה למחצית היתר".
+
 
 \textbf{סעיף ב}
 
-נראה שכדאי לחשב 
+כדאי לחשב 
 $S_{BLDK}$
-על ידי חיסור שאר המצולע
+על ידי חיסור שטח המצולע
 $ALDKC$
 מהשטח של
-$\triangle ABC$
-כי המצולע מורכב ממשולשים ישר זווית וחישוב השטח שלהם קל מאוד.
-\begin{eqnarray*}
-S_{ABC}&=&\frac{1}{2}AC\cdot BE= \frac{1}{2}2b\cdot 3b=3b^2\\
+$\triangle ABC$,
+כי המצולע מורכב ממשולשים ישר זווית וחישוב השטח שלהם קל מאוד:
+\erh{12pt}
+\begin{equationarray*}{rcl}
 S_{ALDKC}&=&2S_{ADL}+S_{ADC}\\
 &=&2\cdot \frac{1}{2} AD\cdot DL + \frac{1}{2} AC\cdot DE\\
-&=&2a\cdot a + \frac{1}{2} 2b \cdot b\\
+&=&2a\cdot a + \frac{1}{2}\cdot 2b \cdot b\\
 &=&2a^2+b^2\,.
-\end{eqnarray*}
-כדי לקבל את השטח
+\end{equationarray*}
+אפשר להניח שהיחס המבוקש אינו תלוי באורכם של הצלעות, לכן נחפש דרך להביע את שטח המצולע
 $S_{ALDKC}$
 כפונקציה של
 $b$
-בלבד, נפעיל משפט פיתגורס על
+בלבד. ממשפט פיתגורס על
 $\triangle ADE$:
-\begin{eqnarray*}
-b^2+b^2&=&(2a)^2\\
-b^2&=&2a^2\\
-S_{ALDKC}&=&2a^2+b^2=2b^2\\
+\erh{12pt}
+\begin{equationarray*}{rcl}
+b^2+b^2&=&(2a)^2=4a^2\\
+%b^2&=&2a^2\\
+S_{ALDKC}&=&2a^2+b^2=2\cdot\frac{1}{4}(b^2+b^2)+ b^2=2b^2\\
+S_{ABC}&=&\frac{1}{2}AC\cdot BE= \frac{1}{2}2b\cdot 3b=3b^2\\
 S_{BLDK}&=&S_{ABC}-S_{ALDKC}=3b^2-2b^2=b^2\\
 \frac{S_{BLDK}}{S_{ABC}}&=&\frac{b^2}{3b^2}=\frac{1}{3}\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 \textbf{סעיף ג}
 $1$
 
-לא הצלחתי להתקדם בפתרון עד שציירתי ציור חדש, עם המעגל ובלי מידע מיותר. נשים לב שהזווית ההיקפית
+לא התקדמתי בפתרון עד שציירתי ציור חדש עם המעגל וראיתי שהזווית ההיקפית
 $\angle LKA$
 נשענת על המיתר עליו נשענת הזווית המרכזית
 $\angle AML$,
@@ -227,6 +266,7 @@ $\alpha = 45^\circ$,
 לכן,
 $\angle AML = 2\alpha=90^\circ$.
 
+\vspace{-1mm}
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
@@ -258,6 +298,8 @@ $\angle AML = 2\alpha=90^\circ$.
 \node[left,xshift=-6pt,yshift=4pt] at (M) {$2\alpha$};
 \draw[thick] ($(A)+(10mm,0)$) arc[start angle=0,end angle=45,radius=9mm];
 \node[above right,yshift=10pt,xshift=22pt] at (A) {$\alpha$};
+\path (L) -- node[right] {$a$} (D);
+\path (A) -- node[left,xshift=4pt,yshift=8pt] {$2a$} (D);
 \end{tikzpicture}
 \end{center}
 
@@ -267,33 +309,36 @@ $2$
 תחילה שמתי לב ש-%
 $\triangle MGA\sim \triangle DGL$
 כי במשלושים ישר זווית, הזוויות
-$\angle MGA\sim \angle DGL$
+$\angle MGA=\angle DGL$
 קודקודיות. גישה זו לא הצליחה כי לא מצאתי דרך לבטא את הקשר בין
 $AD$
 לבין 
 $AG, GD$.
-לבסוף שמתי לב למשולשים
+לבסוף שמתי לב שלמשולשים
 $\triangle LDA,\triangle LMA$
 יתר משותף, והמשולש
 $\triangle LMA$
-שווה שוקיים כי הצלעות הם רדיוסים. ממשפט פיתגורס:
-\begin{eqnarray*}
+שווה שוקיים כי שני הצלעות
+$AM,ML$
+הם רדיוסים. ממשפט פיתגורס:
+\erh{12pt}
+\begin{equationarray*}{rcl}
 AM^2+ML^2&=&AL^2\\
-AM&=&ML\\
+%AM&=&ML\\
 2AM^2&=&AL^2\\
 LD^2+AD^2&=&AL^2\\
-LD^2&=&a^2\\
+%LD^2&=&a^2\\
 a^2+AD^2&=&2AM^2\\
-AD^2&=&4a^2\\
+%AD^2&=&4a^2\\
 \frac{1}{4}AD^2+AD^2&=&2AM^2\\
 \frac{AM}{AD}&=&\sqrt{\frac{5}{8}}\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{comment}
 
+\newpage
 
-\section*{קיץ תשע"ח מועד א}
+\section{קיץ תשע"ח מועד א}
 
 \begin{center}
 \selectlanguage{english}
@@ -302,9 +347,15 @@ AD^2&=&4a^2\\
 \vspace{-8mm}
 \textbf{סעיף א}
 
-מעויין הוא מקבילית עם צלעות שווים. כמקבילית, משפט 
+כדי להוכיח שהנקודה
+$G$
+היא מרכז של מעגל חוסם נשתמש במשפט
+$54$
+"במשולש, שלושת האנכים האמצעיים נחתכים בנקודה אחת , שהיא מרכז המעגל החוסם את המשולש". צריך להוכיח ש-%
+$GE,GB$
+הם אנכים אמצעיים. מעוין הוא מקבילית עם צלעות שווים, וכמקבילית, ניתן להשתמש במשפט 
 $28$
-"במקבילית האלכסונים חוצים זה את זה" טופס, וסימנו את אורכי האלכסון
+"במקבילית האלכסונים חוצים זה את זה". סימנו בציר את אורכי האלכסון
 $AC$
 ב-%
 $b$.
@@ -314,14 +365,23 @@ $35$
 $GB$
 הוא אנך אמצעי ל-%
 $AC$.
+נתון שנקודת
+$E$
+היא אמצע של 
+$AB$,
+וש-%
+$GE$
+הוא אנך ל-%
+%
+$AB$,
+ולכן
 $G$
-היא נקודת החיתוך של שני אנכים אמצעיים, והטענה נובעת ממשפט
-$54$
-"במשולש, שלושת האנכים האמצעיים נחתכים בנקודה אחת , שהיא מרכז המעגל החוסם את המשולש".
+היא נקודת החיתוך של שני אנכים אמצעיים ומרכז של מעגל חוסם ל-%
+$\triangle ABC$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=.8]
 \draw[thick] (0,0) coordinate (A) -- ++(40:5) coordinate (D) -- ++(5,0) coordinate (C);
 \draw[thick] (A) -- ++(5,0) coordinate (B) -- (C);
 \coordinate (F) at ($(B) ! .5 ! (C)$);
@@ -331,7 +391,7 @@ $54$
 \fill (C) node[above] {$C$} circle(1.5pt);
 \fill (D) node[above right] {$D$} circle(1.5pt);
 \fill (E) node[below] {$E$} circle(1.5pt);
-\fill (F) node[right] {$F$} circle(1.5pt);
+\fill (F) node[right,xshift=2pt] {$F$} circle(1.5pt);
 \draw[thick,name path=ac] (A) -- (C);
 \path[name path=bg] (B) -- ($(B) ! 2.3 ! (D)$);
 \path[name path=ge] (E) -- +(0,7.3);
@@ -344,39 +404,45 @@ $54$
 \draw[rotate=110] (K) rectangle +(7pt,7pt);
 \draw (E) rectangle +(7pt,7pt);
 \path (A) -- node[below] {$a$} (E) -- node[below] {$a$} (B);
-\path (B) -- node[right] {$a$} (F) -- node[right] {$a$} (C);
+\path (B) -- node[right,xshift=2pt] {$a$} (F) -- node[right,xshift=2pt] {$a$} (C);
 \path (A) -- node[below,near end] {$b$} (K) -- node[below,near start] {$b$} (C);
 \end{tikzpicture}
 \end{center}
 
 \textbf{סעיף ב}
 
-לפי משפט 
+ההוכחה שהמשולשים דומים תהיה קל יותר אם נצייר מחדש את הציור תוך הדגשת צלעות המשולשים. לפי משפט 
 $35$
 האלכסון 
 $AC$
 הוא אנך אמצעי ל-%
-$DB$,
-ונתון שהנקודה
+$DB$.
+נתון שהנקודה
 $M$
 היא מרכז המעגל החוסם את
 $\triangle BDC$,
-ולכן
+ולכן הנקודה
 $GF$
-הוא אנך אמצעי ל-%
+שחותכת את 
+$CK$
+ב-%
+$M$
+היא אנך אמצעי ל-%
 $BC$.
-בציור למטה הדגשנו את המשולשים שיש להוכיח שהם דומים. אפשר לראות שהזווית
+הזווית
 $\alpha$
-היא משותפת למשולשים ישר זווית, כך ש-%
+משותפת לשני משולשים ישר זווית, כך ש-%
 $\triangle BKC\sim \triangle MFC$.
 הזווית
 $\beta$
-משותפת למשולשים ישר זווית, כך ש-%
+משותפת לשני משולשים ישר זווית, כך ש-%
+$\triangle BFG\sim \triangle BKC$
+ו-%
 $\triangle BFG\sim \triangle BKC \sim \triangle MFC$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=.8]
 \draw[thick] (0,0) coordinate (A) -- ++(40:5) coordinate (D) -- ++(5,0) coordinate (C);
 \draw[thick] (A) -- ++(5,0) coordinate (B) -- (C);
 \coordinate (F) at ($(B) ! .5 ! (C)$);
@@ -410,7 +476,7 @@ $\triangle BFG\sim \triangle BKC \sim \triangle MFC$.
 \textbf{סעיף ג}
 $(1)$
 
-היחס 
+היחס: 
 \[
 \frac{MC}{GB}=\frac{MF}{BF}=\frac{MF}{CF}
 \]
@@ -425,44 +491,46 @@ $BC$.
 
 מדמיון המשולשים
 $\triangle BKC \sim \triangle MFC$.
-מתקבל
-\begin{eqnarray*}
+מתקבל:
+\erh{12pt}
+\begin{equationarray*}{rcl}
 \frac{MF}{BK}&=&\frac{CF}{CK}\\
 \frac{MF}{CF}&=&\frac{BK}{CK}\,.
-\end{eqnarray*}
-
-
-
+\end{equationarray*}
 
 \textbf{סעיף ג}
 $(2)$
 
-מרכז המעגל
-$ABC$
-הוא
-$G$
-כך ש-%
-$R=GB$.
-מרכז המעגל
-$BDC$
-מוא 
+מהנתון שהנקודה 
 $M$
-כך ש-%
-$r=MC$.
+היא המכרז של המעגל החוסם את
+$BDC$,
+אנו מקבלים שהאלכסון
+$MC$
+שווה ל-%
+$r$.
+בסעיף א הוכחנו שהנקודה 
+$G$
+היא מרכז המעגל החוסם את
+$ABC$,
+ולכן 
+$GB$
+שווה ל-%
+$R$.
+נחשב את יחס הרדיוסים תוך שימוש ביחס שחישבנו בסעיף ג
+$1$
+ומשפט 
+$29$
+שהאלכסונים של מקבילית )מעוין( חוצים אחד את השני:
 \[
 \frac{r}{R}=\frac{MC}{GB}=\frac{BK}{CK}=\frac{DB/2}{AC/2}=\frac{DB}{AC}\,
 \]
-כי האלכסונים של מקבילית )מעוין( חוצים אחד את השני.
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 
-%\begin{comment}
-
-
-\section*{חורף תשע"ח}
+\section{חורף תשע"ח}
 
 \begin{center}
 \selectlanguage{english}
@@ -617,13 +685,15 @@ $71$
 $(2)$}
 
 לפי דמיון המשלושים והחלק הראשון של הסעיף:
-\begin{eqnarray*}
+\erh{12pt}
+\begin{equationarray*}{rcl}
 \frac{AB}{CD}&=&\frac{BK}{AD}\\
 AB\cdot AD &=& BK\cdot CD\\
 AB&=&AD\\
 AD^2 &=& BK\cdot CD\,.
-\end{eqnarray*}
-\vspace{-10mm}
+\end{equationarray*}
+
+\vspace{-6mm}
 
 \textbf{סעיף ג}
 
@@ -645,7 +715,12 @@ $\angle DCA$
 $\angle DCA=\angle BAK$.
 
 
+\end{comment}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
 
 \section*{קיץ תשע"ז מועד ב}
 
@@ -715,10 +790,11 @@ $5$%
 א "שטח מקבילית שווה למכפלת צלע המקבילית בגובה לצלע זו". הגובה של המקבילית כפול מהגובה של המשולש לפי דמיון של משולשים 
 $\triangle FCK, \triangle DCJ$.
 חישוב השטחים נותן:
-\begin{eqnarray*}
+\erh{12pt}
+\begin{equationarray*}{rcl}
 S_{ECF}&=&\frac{1}{2}ah=S\\
 S_{ABCD}&=&2a\cdot 2h=4ah=8S\,.
-\end{eqnarray*}
+\end{equationarray*}
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1]
@@ -797,13 +873,14 @@ $a,b,c$.
 \end{tikzpicture}
 \end{center}
 \vspace{-3ex}
-\begin{eqnarray*}
+\erh{12pt}
+\begin{equationarray*}{rcl}
 \frac{c}{b-c}&=&\frac{a}{3a}=\frac{1}{3}\\
 b&=&4c\\
 \frac{LM}{MN}&=&\frac{c}{2b-c}\\
 &=&\frac{a}{2\cdot 4c-c}\\
 &=&\frac{1}{7}\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 \textbf{סעיף ג}
 לפי משפט
@@ -979,23 +1056,25 @@ $\angle BCD=2\alpha= 2\angle{DEF}$.
 אפשרות אחרת היא להשתמש במשפט
 $103$
 "אם מנקודה שמחוץ למעגל יוצאים חותך ומשיק, אז מכפלת החותך בחלקו החיצוני שווה לריבוע המשיק". לכן:
-\begin{eqnarray*}
+\erh{12pt}
+\begin{equationarray*}{rcl}
 ED^2&=&DC\cdot DF\\
 \frac{ED}{DF}&=&\frac{DC}{ED}\\
 \triangle EDF &\sim& \triangle CDE\,.
-\end{eqnarray*}
+\end{equationarray*}
 נשתמש במשפט
 $69$
 "במעגל, זווית היקפית שווה למחצית הזווית המרכזית הנשענת על אותה הקשת" ובעובדה ש-%
 $\angle BOE=\angle BCD$,
 זוויות מתחלפות:
-\begin{eqnarray*}
+\erh{12pt}
+\begin{equationarray*}{rcl}
 \angle BCD &=& \angle BOE\\
 &=& 2\cdot BCE\\
 \angle ECD &=& \angle BCD-\angle BCE\\
 &=&\angle BCD/2\\
 \angle DEF &=& \angle BCD/2\,,
-\end{eqnarray*}
+\end{equationarray*}
 לפי הדמיון של המשולשים שכבר הוכחנו.
 
 \textbf{סעיף ב}
@@ -1135,14 +1214,15 @@ $EO$
 אפשרות אחרת היא להשתמש במשפט פיתגורס ומשפט 
 $103$
 על משיק וקו חותך. נסמן את אורכי הצלעות באיור ונקבל:
-\begin{eqnarray*}
+\erh{6pt}
+\begin{equationarray*}{rcl}
 a^2&=&bc\\
 BC^2&=& (2a)^2 + (c-b)^2\\
 &=&4bc+c^2-2bc+b^2\\
 &=&c^2+2bc+b^2\\
 &=&(c+b)^2\\
 BC&=&c+b=DC+DF\,.
-\end{eqnarray*}
+\end{equationarray*}
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}%[scale=.8]
@@ -1189,11 +1269,11 @@ BC&=&c+b=DC+DF\,.
 כאשר יש שני משיקים ברור שמשפט
 $80$
 "שני משיקים למעגל היוצאים מאותה נקודה שווים זה לזה" עשוייה לעזור. נפעיל את המשפט על שני המעגלים ונקבל:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 AD&=&AB=a\\
 AE&=&AC=a+b\\
 DE&=&BC=b\,.
-\end{eqnarray*}
+\end{equationarray*}
 אם נוכיח ש-%
 $DB\|EC$,
 המרובע
@@ -1363,6 +1443,7 @@ $DB\|EC$
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{comment}
 
 \section*{קיץ תשע"ו מועד ב}
 
@@ -1436,10 +1517,10 @@ $56$
 המרובע 
 $ABCD$
 בר-חסימה אם:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 \alpha + \beta' &=& 180\\
 \alpha' + \beta &=& 180\,.
-\end{eqnarray*}
+\end{equationarray*}
 כל אחת מהמשוואות נותן את התשובה
 $\alpha=\beta$,
 כלומר שהמשולש
@@ -1462,11 +1543,11 @@ $PA$.
 לפי משפט 
 $100$
 יחס הצלעות הוא השורש של יחס השטחים, ולכן:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 \frac{PA}{PD}&=&\frac{1}{5}\\
 \frac{3}{PD}&=&\frac{1}{5}\\
 PD&=&15\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 \textbf{סעיף ד}
 היה לי קשה למצוא את המשולשים הדומים המוזכרים ברמז עד שציירתי את המשולש עם ערכי הצלעות שחישבנו וללא המעגלים:
@@ -1505,11 +1586,11 @@ $\triangle PBA \sim \triangle PKL$,
 \left(\frac{PA}{PL}\right)^2=\left(\frac{3}{9}\right)^2=\left(\frac{1}{3}\right)^2=\frac{1}{9}\,.
 \]
 מכאן:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 \frac{S_{PBA}}{S_{PKL}}&=&\frac{1}{9}\\
 S_{PKL}&=&9S_{PBA}=9S\\
 S_{KLCD}&=&S_{PDC}-S_{PKL}=25S-9S=16S\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1619,10 +1700,10 @@ $AGDE$
 GF=GD-DF=AE-DF=4a-3a=a\,.
 \]
 מכאן ש-%
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 \frac{S_{BFG}}{S_{DFE}}&=&\left(\frac{a}{3a}\right)^2=\frac{1}{9}\\\\
 S_{BFG}&=&\frac{1}{9}S_{DFE}=\frac{1}{9}\cdot\frac{1}{2}S_{CEF}=\frac{1}{(9\cdot 2)}\frac{9}{8}S=\frac{1}{16}S\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 \vspace{-25mm}
 
@@ -2216,12 +2297,12 @@ $AB, DC$
 ב-%
 $x$,
 והשטח הוא:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 S_{BDC} &=& \frac{1}{2}x(h_1+h_2) - \frac{1}{2}xh_1\\
 &=& \frac{1}{2}x\left(h_1+\frac{4}{3}h_1-h_1\right)\\
 &=& \frac{1}{2}x\cdot \frac{4}{3}h_1\\
 &=& \frac{4}{3}\left(\frac{1}{2}xh_1\right)=\frac{4}{3}\left(S_{ABE}\right)= \frac{4}{3}\cdot 27 = 36\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 הדרך השנייה קשה לראות אבל החישוב מאוד פשוט. למשולשים 
 $\triangle AEB,\triangle BED$
@@ -2255,10 +2336,10 @@ $\triangle AEB,\triangle DFE$.
 \end{tikzpicture}
 \end{center}
 \vspace{-12mm}
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 \frac{S_{BED}}{S_{AEB}} &=& \frac{4}{3}\\
 S_{BED} &=& \frac{4}{3}S_{AEB}=\frac{4}{3}\cdot 27 = 36\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 \vspace{-8mm}
 
@@ -2307,12 +2388,12 @@ $\angle BED$
 $180 - (180-(\alpha+\beta))=\alpha+\beta$\,.
 לפי משפט
 $(56)$:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 \angle BCD + \angle BED &=& 180\\
 \alpha + (\alpha + \beta) &=& 180\\
 180-(\alpha+\beta) &=& \alpha\\
 \angle AEB &=& \alpha\,,
-\end{eqnarray*}
+\end{equationarray*}
 וגם 
 $\angle FED=\alpha$
 בגלל זוויות קודקודיות.
@@ -2619,11 +2700,11 @@ $T$
 $(46)$,
 $TB/TE=2$.
 כעת החישוב פשוט:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 TB\cdot TE &=& MT\cdot AT\\
 TB\cdot (TB/2) &=& MT\cdot AT\\
 TB^2 &=& 2MT\cdot AT\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 \textbf{סעיף ג}
 $\angle MBA$
@@ -2633,7 +2714,7 @@ $MA$
 הוא קוטר. עם הערכים הנתונים
 $MT=1, TE=\frac{\sqrt{10}}{2}$
 נחשב את הרדיוס:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 R &=& \frac{1}{2}MA\\
 &=&\frac{1}{2}(MT+TA)\\
 %&=&\frac{1}{2}(1+TA)\\
@@ -2641,7 +2722,7 @@ R &=& \frac{1}{2}MA\\
 &=&\frac{1}{2}(1+2TE^2)\\
 &=&\frac{1}{2}(1+2\frac{10}{4})\\
 &=&3\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2710,10 +2791,10 @@ $CL\|DB$
 והזוויות המתחלפות שוות
 $\angle LEB = \angle CLA$.
 מכאן:
-\begin{eqnarray*}
+\begin{equationarray*}{rcl}
 60^\circ=\angle CBA &=& \angle CLA =\angle LEB\\
 60^\circ=\angle CAB &=& \angle CDB\,.
-\end{eqnarray*}
+\end{equationarray*}
 $DC\|LE$
 כי
 $\angle LEB,\angle CDB$
@@ -2781,11 +2862,13 @@ $\angle DCL=120^\circ$
 כך ש-%
 $\angle LBE=\angle LBD=60^\circ$.
 
+\end{comment}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 
-\section*{המלצות}
+\section{המלצות}
 
 \begin{itemize}
 \item
@@ -2814,52 +2897,55 @@ $\angle ABC$,
 רצוי לרשום את המשפטים שיכולים להיות רלוונטיים לפני שמנסים לפתור את השאלה. זה יכול לכוון לפתרון. עם זאת יש לזכור שלא כל המשפטים נחוצים. בבחינה של בבבב היחס בין משיק לקו החותך מעגל נראה רלוונטי אבל אין בו צורך.
 
 \item
-יש משפטים שזוכרים בקלות כי הם די אינטואטיביים, למשל, שמשולשים חופפים לפי צ.צ.צ. ודומים לפי ז.ז. יש משפטים אחרים שקשה יותר לזכור אותם ושהוכחת נכונותם לא קלה. הכנתי מסמך: " " 
+יש משפטים שזוכרים בקלות כי הם די אינטואטיביים, למשל, שמשולשים חופפים לפי צ.צ.צ. ודומים לפי ז.ז. יש משפטים אחרים שקשה יותר לזכור אותם ושהוכחת נכונותם לא קלה.
 \url{}
-עם ציוריים צבעוניים של מבחר משפטים כדי לעזור לזכור אותם. מה שקשה לזכור מניסוח מילולי מסורבל, קל לזכור מציור:
-\begin{quote}
-$45.$
-שלושת התיכונים במשולש נחתכים בנקודה אחת.\\
-$46.$
-נקודת חיתוך התיכונים מחלקת כל תיכון ביחס 2:1.\\
-)החלק הקרוב לקדקוד הוא פי 2 מהחלק האחר(.
-\end{quote}
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=1.1]
-\coordinate (a) at (0,0);   % Points of the triangle
-\coordinate (b) at (6,0);
-\coordinate (c) at (4,3);
-% Coordinates of bisectors
-\coordinate (ab) at ($(a)!.5!(b)$);
-\coordinate (bc) at ($(b)!.5!(c)$);
-\coordinate (ac) at ($(a)!.5!(c)$);
-% Draw the triangle and bisectors
-\draw[blue,very thick] (a) -- node[above] {$\bm{x}$} (ac) -- node[above] {$\bm{x}$} (c);
-\draw[red,very thick] (b) -- node[right] {$\bm{y}$} (bc) -- node[right] {$\bm{y}$} (c);
-\draw[green!60!black,very thick] (a) -- node[below] {$\bm{z}$} (ab) -- node[below] {$\bm{z}$} (b);
-\draw[very thick,red,name path=da] (a) -- (bc);
-\draw[very thick,blue,name path=db] (b) -- (ac);
-\draw[very thick,green!60!black,name path=dc] (c) -- (ab);
-% Get their intersection
-\path [name intersections={of=da and db,by={intersection}}];
-% Labels
-\path (a) -- node[above,red] {$\bm{2a}$} (intersection);
-\path (bc) -- node[above,red] {$\bm{a}$} (intersection);
-\path (b) -- node[above,blue] {$\bm{2b}$} (intersection);
-\path (ac) -- node[above,blue] {$\bm{b}$} (intersection);
-\path (c) -- node[right,green!60!black] {$\bm{2c}$} (intersection);
-\path (ab) -- node[right,green!60!black] {$\bm{c}$} (intersection);
-% Points at the intersections
-\fill (intersection) circle (2pt);
-\fill (ab) circle (2pt);
-\fill (ac) circle (2pt);
-\fill (bc) circle (2pt);
-\end{tikzpicture}
-\end{center}
+עם ציוריים צבעוניים של מבחר משפטים כדי לעזור לזכור אותם. מה שקשה לזכור מניסוח מילולי מסורבל. נספח ב מכיל ציורים עבור חלק מהמשפטים המתקדמים יותר.
+%
+%קל לזכור מציור:
+%\begin{quote}
+%$45.$
+%שלושת התיכונים במשולש נחתכים בנקודה אחת.\\
+%$46.$
+%נקודת חיתוך התיכונים מחלקת כל תיכון ביחס 2:1.\\
+%)החלק הקרוב לקדקוד הוא פי 2 מהחלק האחר(.
+%\end{quote}
+%\begin{center}
+%\selectlanguage{english}
+%\begin{tikzpicture}[scale=1.1]
+%\coordinate (a) at (0,0);   % Points of the triangle
+%\coordinate (b) at (6,0);
+%\coordinate (c) at (4,3);
+%% Coordinates of bisectors
+%\coordinate (ab) at ($(a)!.5!(b)$);
+%\coordinate (bc) at ($(b)!.5!(c)$);
+%\coordinate (ac) at ($(a)!.5!(c)$);
+%% Draw the triangle and bisectors
+%\draw[blue,very thick] (a) -- node[above] {$\bm{x}$} (ac) -- node[above] {$\bm{x}$} (c);
+%\draw[red,very thick] (b) -- node[right] {$\bm{y}$} (bc) -- node[right] {$\bm{y}$} (c);
+%\draw[green!60!black,very thick] (a) -- node[below] {$\bm{z}$} (ab) -- node[below] {$\bm{z}$} (b);
+%\draw[very thick,red,name path=da] (a) -- (bc);
+%\draw[very thick,blue,name path=db] (b) -- (ac);
+%\draw[very thick,green!60!black,name path=dc] (c) -- (ab);
+%% Get their intersection
+%\path [name intersections={of=da and db,by={intersection}}];
+%% Labels
+%\path (a) -- node[above,red] {$\bm{2a}$} (intersection);
+%\path (bc) -- node[above,red] {$\bm{a}$} (intersection);
+%\path (b) -- node[above,blue] {$\bm{2b}$} (intersection);
+%\path (ac) -- node[above,blue] {$\bm{b}$} (intersection);
+%\path (c) -- node[right,green!60!black] {$\bm{2c}$} (intersection);
+%\path (ab) -- node[right,green!60!black] {$\bm{c}$} (intersection);
+%% Points at the intersections
+%\fill (intersection) circle (2pt);
+%\fill (ab) circle (2pt);
+%\fill (ac) circle (2pt);
+%\fill (bc) circle (2pt);
+%\end{tikzpicture}
+%\end{center}
 
 \end{itemize}
 
+\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -3645,7 +3731,7 @@ $P$
 \end{tikzpicture}
 \end{minipage}
 
-%\end{comment}
+\end{comment}
 
 
 \end{document}
