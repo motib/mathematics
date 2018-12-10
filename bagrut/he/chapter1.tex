@@ -1,0 +1,42 @@
+\documentclass[12pt,a4paper,twoside]{report}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{float}
+
+\newcommand*{\p}[1]{\textsf{\small #1}}
+\newcommand*{\bover}[1]{\bm{\overline{#1}}}
+
+\graphicspath{{images/}}
+
+\usepackage{tikz}
+\usetikzlibrary{external,intersections}
+\tikzexternalize[prefix=tikz/]
+\tikzset{>=stealth} % Use stealth arrows
+
+\textwidth=155mm
+\textheight=235mm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=-5mm
+\evensidemargin=5mm
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+
+%\includeonly{front1,motion,series}
+
+\begin{document}
+
+\include{front1}
+\include{motion}
+\include{series}
+\include{probability}
+
+\end{document}
