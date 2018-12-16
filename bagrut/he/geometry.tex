@@ -37,7 +37,7 @@
 
 \selectlanguage{hebrew}
 
-\begin{comment}
+%\begin{comment}
 \thispagestyle{empty}
 
 \begin{center}
@@ -495,8 +495,8 @@ $\triangle BKC \sim \triangle MFC$.
 \frac{MF}{CF}&=&\frac{BK}{CK}\,.
 \end{equationarray*}
 
-\textbf{סעיף ג}
-$(2)$
+\textbf{סעיף ג
+$(2)$}
 
 מהנתון שהנקודה 
 $M$
@@ -2654,7 +2654,6 @@ $\triangle ABE, \triangle DFE$
 
 
 \newpage
-\end{comment}
 
 \section{קיץ תשע"ד מועד ב}
 
@@ -2736,8 +2735,8 @@ $O_1 E$
 \end{tikzpicture}
 \end{center}
 
-
-$(2)$
+\textbf{סעיף ב
+$(2)$}
 נראה שאפשר להשתמש באותה שיטה כדי להוכיח שהמשולשים 
 $\triangle E O_1 C \sim \triangle E O_2 D$
 דומים. אבל, כפי שמרמז סעיף ב, איננו יודעים שהנקודה
@@ -2875,7 +2874,6 @@ $\angle AEC$:
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{comment}
 
 \newpage
 \section{קיץ תשע"ד מועד א}
@@ -2885,29 +2883,52 @@ $\angle AEC$:
 \includegraphics[width=\textwidth]{summer-2014a-4}
 \end{center}
 
+\vspace{-3ex}
 
 \textbf{סעיף א}
-המשפטים שיכולים להיות שימושיים הם:
+
+משפטים רלוונטיים הם: 
 $(103)$
-כאשר יש משיק וקו שחותך את המעגל, 
+"אם מנקודה שמחוץ למעגל יוצאים חותך ומשיק, אז מכפלת החותך בחלקו החיצוני שווה לריבוע המשיק",
 $AB^2=AC\cdot AD$.
 $(77)$
-הרדיוס והמשיק מאונכים זה לזה
-$MB \perp PA$. 
+"המשיק למעגל מאונך לרדיוס בנקודת ההשקה",
+$MB \perp AB$. 
 $(68)$
-קטע ממרכז המעגל החוצה מיתר מאונך למיתר.
+"קטע ממרכז המעגל החוצה את המיתר מאונך למיתר",
+$ME\perp DC$.
 $(56)$
-ניתן לחסום מרובע במעגל רק אם סכום הזוויות הנגדיות שווה ל-%
-$180^\circ$.
-
+"ניתן לחסום מרובע במעגל רק אם סכום הזוויות הנגדיות שווה ל-%
+$180^\circ$",
+ב-%
+$AEMB$:
+\[
+\angle MEA+\angle MBA=\angle EMB+\angle EAB=180^\circ\,.
+\]
+מ-%
+$MB \perp AB$
+ו-%
+$ME\perp DC$,
+$\angle MEA + \angle MBA = 180^\circ$.
+לפי משפט
+$(106)$
+"סכום הזוויות הפנימיות של מצולע קמור הוא
+$180^\circ(n-2)$",
+סכום הזוויות הפנימיות של מרובע הוא 
+$360^\circ$,
+ולכן:
+\[
+\angle EMB + \angle EAB = 360^\circ -(\angle MEA + \angle MBA) = 180^\circ\,.
+\]
+\vspace{-4ex}
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.8]
 \coordinate [label=left:$M$] (M) at (0,0);
 \coordinate [label=below right:$B$] (B)  at (-45:3);
 \coordinate [label=right:$A$] (A) at (6,2);
 \node [draw,thick,circle through=(B),name path=circ] at (M) {};
-\draw[name path=tangents,thick] (A) -- ($ (A) ! 1.5 ! (B) $);
+\draw[name path=tangents,thick] (A) -- ($ (A) ! 1.3 ! (B) $);
 \path[name path=adc] (A) -- +(-9,0);
 \path[name intersections={of=adc and circ,by={[label=above right:$C$]C,[label=above left:$D$]D}}];
 \draw[thick] (A) -- (D);
@@ -2918,42 +2939,58 @@ $180^\circ$.
 \draw[thick,name path=eb] (E) -- (B);
 \draw[thick] (E) -- (M);
 \path[name intersections={of=eb and am,by={T}}];
-\node[above,xshift=4pt] at (T) {$T$};
+\fill (T) node[above,xshift=4pt] {$T$} circle(1.5pt);
 \fill (M) circle (1.5pt);
 \fill (A) circle (1.5pt);
 \fill (B) circle (1.5pt);
 \fill (C) circle (1.5pt);
 \fill (D) circle (1.5pt);
 \fill (E) circle (1.5pt);
+\draw[rotate=180] (E) rectangle +(7pt,7pt);
+\draw[rotate=140] (B) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
 
-משני המפשטים אנו יודעים ש-%
-$\angle MEA + \angle MBA = 90^\circ + 90^\circ = 180^\circ$.
-לפי משפט
-$(106)$,
-סכום הזוויות הפנימיות של מרובע הוא 
-$360^\circ$,
-ולכן:
-\[
-\angle EMB + \angle EAB = 360^\circ -(\angle MEA + \angle MBA) = 360^\circ - 180^\circ=180^\circ\,.
-\]
+
 
 \textbf{סעיף ב}
 
-נכין איור עם המידע הרלוונטי בלבד. המעגל החוסם את המרובע
-$AEMB$
+באיור למטה מופיע המידע הרלוונטי בלבד: המעגל החוסם את המרובע
+$AEMB$,
+האלכסונים שלו
+$AM,EB$
 והמשולש
-$BDC$:
-\vspace{-22mm}
+$BDC$.
+$AM,EB$
+הם מיתרים נחתכים של המעגל החוסם. לפי משפט
+$(101)$
+"אם במעגל שני מיתרים נחתכים, אז מכפלת קטעי מיתר אחד שווה למכפלת קטעי המיתר השני",
+$TB\cdot TE=MT\cdot TA$.
+אם נוכיח
+$TE=TB/2$,
+נקבל הוכחה להמשוואה בשאלה.
+נתון שהנקודה
+$T$
+היא מפגש התיכונים ב-%
+$\triangle BDC$
+ולפי משפט
+$(46)$
+"נקודת חיתוך התיכונים מחלקת כל תיכון ביחס
+$2:1$",
+כאן
+$TB/TE=2/1$
+או
+$TE=TB/2$.
+
+\vspace{-10ex}
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.8]
 \coordinate [label=left:$M$] (M) at (0,0);
 \coordinate [label=below right:$B$] (B)  at (-45:3);
 \coordinate [label=right:$A$] (A) at (6,2);
 \node [circle through=(B),name path=circ] at (M) {};
-\draw[name path=tangents,thick] (A) -- (B); %($ (A) ! 1.1 ! (B) $);
+\draw[name path=tangents,thick] (A) -- (B);
 \path[name path=adc] (A) -- +(-9,0);
 \path[name intersections={of=adc and circ,by={[label=above right:$C$]C,[label=above left:$D$]D}}];
 \draw[thick,name path=am] (A) -- (M);
@@ -2961,58 +2998,57 @@ $BDC$:
 \path[name path=mid] (M) -- +(0,3.5);
 \path[name intersections={of=mid and adc,by={[label=above left:$E$]E}}];
 \draw[thick,name path=eb] (E) -- (B);
-\draw[thick] (E) -- (M);
 \path[name intersections={of=eb and am,by={T}}];
-\node[above,xshift=4pt] at (T) {$T$};
+\fill (T) node[above,xshift=4pt] {$T$} circle(1.5pt);
+\draw[thick] (E) -- (M);
+\path (E) -- node[right] {$a$} (T) -- node[above,xshift=4pt,yshift=4pt] {$2a$} (B);
 \fill (M) circle (1.5pt);
 \fill (A) circle (1.5pt);
 \fill (B) circle (1.5pt);
 \fill (C) circle (1.5pt);
 \fill (D) circle (1.5pt);
 \fill (E) circle (1.5pt);
-\draw[thick,dashed] (C) -- (B) -- (D) -- cycle;
+\draw[very thick,dashed] (C) -- (B) -- (D) -- cycle;
 \tkzCircumCenter(M,E,A)\tkzGetPoint{O}
 \tkzDrawCircle[thick](O,A)
+\draw[rotate=180] (E) rectangle +(7pt,7pt);
+\draw[rotate=50] (B) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
-\vspace{-18mm}
-אפשר לראות שקטעי הקווים
-$MA,BE$
-הם מיתרים נחתכים של המעגל החוסם. לפי משפט
-$(101)$
-$TB\cdot TE=MT\cdot TA$.
-נתון שהנקודה
-$T$
-היא מפגש התיכונים, ולכן לפי משפט
-$(46)$,
-$TB/TE=2$.
-כעת החישוב פשוט:
-\begin{equationarray*}{rcl}
-TB\cdot TE &=& MT\cdot AT\\
-TB\cdot (TB/2) &=& MT\cdot AT\\
-TB^2 &=& 2MT\cdot AT\,.
-\end{equationarray*}
+\vspace{-10ex}
 
 \textbf{סעיף ג}
-$\angle MBA$
-היא זווית ישרה, ולכן לפי משפט
-$(74)$
+
+רדיוס המעגל החוסם הוא קו מהמרכז לאחת הקוקודים
+$A,E,M,B$.
+אין אנו יודעים את מרכז המעגל, אבל נראה ש-%
 $MA$
-הוא קוטר. עם הערכים הנתונים
-$MT=1, TE=\frac{\sqrt{10}}{2}$
-נחשב את הרדיוס:
+יכול להיות קוטר ואז נקבל את הרדיוס כמחצית הקוטר.
+
+מסעיף א
+$\angle MBA$
+היא זווית ישרה, ולפי משפט
+$(74)$
+"זווית היקפית בת
+$90^\circ$
+נשענת על קוטר",
+$MA$
+הוא קוטר. עם הערכים הנתונים נחשב את הרדיוס תוך שימוש בנוסחאות מסעיף ב:
+\erh{14pt}
 \begin{equationarray*}{rcl}
 R &=& \frac{1}{2}MA\\
 &=&\frac{1}{2}(MT+TA)\\
-%&=&\frac{1}{2}(1+TA)\\
-&=&\frac{1}{2}(1+\frac{TB^2}{2\cdot 1})\\
-&=&\frac{1}{2}(1+2TE^2)\\
-&=&\frac{1}{2}(1+2\frac{10}{4})\\
+&=&\frac{1}{2}\left(MT+\frac{TB^2}{2MT}\right)\\
+&=&\frac{1}{2}\left(MT+\frac{4TE}{2MT}\right)\\
+&=&\frac{1}{2}\left(1+\frac{1}{2\cdot 1}\cdot 4\left(\frac{\sqrt{10}}{2}\right)^2\right)\\
 &=&3\,.
 \end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\newpage
 
 \section{חורף תשע"ד}
 
@@ -3021,20 +3057,46 @@ R &=& \frac{1}{2}MA\\
 \includegraphics[width=\textwidth]{winter-2014-4}
 \end{center}
 
-\textbf{\R{סעיף א}}
-אין לנו מידע על מיתרים המגדירים את המרובע שאמור להיות מקבילית, ולכן ננסה להוכיח אל ידי אפיון המקבילית כמרובע עם זוויות נגדיות שוות )משפט 92( או עם צלעות נגדיות מקביליות )משפט 03(. נתון שזוג אחד של צלעות
-$CL,DE$
-מקבילי, אז ננסה להוכיח שהזוג
-$DC,EL$
-מקבילי.
+\vspace{-3ex}
 
-כאשר יש "מספר רב" של מיתרים, סביר שיש זוויות הנשענות על אותו מיתר או קשת ולכן הן שוות )משפטים 07,27(.
+\textbf{סעיף א}
 
-נסמן את הזוויות של המשלוש 
+אין לנו מידע על המיתרים המגדירים את המרובע, לכן ננסה להוכיח שהוא מקבילית לפי משפט
+$29$
+"מרובע שבו כל זוג זוויות נגדיות שוות הוא מקבילית". כאשר יש "מספר רב" של מיתרים, סביר שיש זוויות שוות לפי משפט
+$72$
+"במעגל, כל הזוויות ההיקפיות הנשענות על מיתר מאותו צד של המיתר שוות זו לזו". נסמן את הזוויות של המשולש שווה צלעות
+$\triangle ABC$
+ב-%
 $\alpha=60^\circ$.
+
+
+$\angle CLA=\angle CBA=\alpha$
+כי הן נשענות על המיתר
+$AC$.
+$\angle CDB=\angle CAB=\alpha$
+כי הן נשענות על המיתר
+$BC$.
+נתון ש-%
+$BD\|LC$,
+אז
+$\angle LEB = \angle CLA = \alpha$
+לפי זוויות מתחלפות.
+
+מה עם זוג הזוויות הנגדיות השני במרובע? 
+$\angle LED=180-\alpha$
+לפי זוויות משלימות בנקודה
+$E$.
+נתון ש-%
+$BD\|LC$
+ולכן
+$\angle LCD=180-\angle DCB=180-\alpha$
+לפי זוויות חד-צדדיות על 
+$CD$.
+\vspace{-3ex}
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.75]
+\begin{tikzpicture}[scale=.95]
 \coordinate (left) at (0,0);
 \coordinate (right) at (6,0);
 \coordinate (apath) at (0,-4);
@@ -3051,75 +3113,107 @@ $\alpha=60^\circ$.
 \fill (c) circle (2pt) node[above left] {$C$} node[xshift=6pt,yshift=-10pt] {$\alpha$};
 \path [name path=chord3] (b) -- +(-7,0);
 \path [name intersections={of=circ and chord3,by={d}}];
-\fill (d) circle (2pt) node[left] {$D$};
+\fill (d) circle (2pt) node[left] {$D$} node[above right,xshift=4pt,yshift=-2pt] {$\alpha?$};
 \path [name path=chord4] (c) -- +(4,0);
 \path [name intersections={of=circ and chord4,by={l}}];
-\fill (l) circle (2pt) node[above right] {$L$};
+\fill (l) circle (2pt) node[above right] {$L$} node[below left,xshift=-4pt] {$\alpha?$};
 %% Draw triangle
-\draw[thick] (a) -- (b) -- (c) -- cycle;
-\draw[thick] (b) -- (d) -- (c) -- (l);
 \draw[thick,name path=chord5] (l) -- (a);
 \draw [name intersections={of=chord5 and chord3,by={e}}];
-\fill (e) circle (2pt) node[below right] {$E$};
+\fill (e) circle (2pt) node[below right] {$E$} node[above right,xshift=4pt,yshift=-2pt] {$\alpha?$};
+\draw[thick] (a) -- (b) -- (c) -- cycle;
+\draw[thick] (b) -- (e);
+\draw[very thick] (e) -- (d) -- (c) -- (l) -- cycle;
 %% Angles
 \draw[thick] +($ (a)!.15!(b) $) arc [radius=18pt,start angle=20,delta angle=82];
 \draw[thick] ($ (c)!.15!(b) $) arc [radius=18pt,start angle=-20,delta angle=-75];
 \draw[thick] ($ (b)!.15!(c) $) arc [radius=18pt,start angle=140,delta angle=82];
 \end{tikzpicture}
 \end{center}
-$\angle CLA=\angle CBA$
-כי הן נשענות על המיתר
-$AC$.
-$\angle CDB=\angle CAB$
-כי הן נשענות על המיתר
-$BC$.
-נתון ש-%
-$CL\|DB$
-והזוויות המתחלפות שוות
-$\angle LEB = \angle CLA$.
-מכאן:
-\begin{equationarray*}{rcl}
-60^\circ=\angle CBA &=& \angle CLA =\angle LEB\\
-60^\circ=\angle CAB &=& \angle CDB\,.
-\end{equationarray*}
-$DC\|LE$
-כי
-$\angle LEB,\angle CDB$
-הן זוויות מתאימות שוות.
 
-\textbf{\R{סעיף ב}}
+\newpage
+
+\textbf{סעיף ב}
 $(1)$
-שוב, אין לנו מידע על אורכי הקווים לכן ננסה להוכיח שכל הזוויות של המשולש
+
+שוב אין לנו מידע על אורכי הצלעות, לכן ננסה להוכיח שכל הזוויות של המשולש
 $\triangle ADE$
-שוות ל-%
-$60^\circ$.
-כמובן, שמספיק להוכיח ששתי זוויות שוות ל-%
+שוות. מספיק להוכיח ששתי זוויות שוות ל-%
 $60^\circ$
 כי השלישית צריכה להשלים ל-%
-$180^\circ$,
-סכום הזוויות במשולש.
+$180^\circ$.
 
 בסעיף א הוכחנו ש-%
-$\angle LEB=60^\circ$
-ו-%
-$\angle DEA=60^\circ$
-כי הן זוויות קודקודיות. ננסה להוכיח ש-%
-$\angle DAE=60^\circ$
+$\angle LEB=\angle CLA=\angle CBA=60^\circ$.
+מכאן ש-%
+$\angle DEA=\angle LEB=60^\circ$
+לפי זוויות קודקודיות. כי הן זוויות קודקודיות. ננסה להוכיח ש-%
+$\angle DAE=\angle DAL=60^\circ$
 או
-$\angle ADE=60^\circ$
-על ידי חיפוש זוויות אחרת הנשענת על אותו מיתר. בדיקה קצרה מראה ש-%
-$\angle ACB=60^\circ, \angle ADE=\angle ADB$
+$\angle ADE=\angle ADB=60^\circ$
+על ידי חיפוש זוויות הנשענת על המיתר
+$DL$
+או
+$AB$.
+אכן,
+$\angle ADB=$
+ו-%
+$\angle ACB=60^\circ$
 נשענות על המיתר
 $AB$.
 
-$(2)$
-נקח רמז מהחלק הראשון של הסעיף. אם
+\vspace{-6ex}
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.95]
+\coordinate (left) at (0,0);
+\coordinate (right) at (6,0);
+\coordinate (apath) at (0,-4);
+\coordinate (bpath) at (7,1);
+\coordinate (cpath) at (1.5,4);
+\path [name path=chord1] (apath) -- (bpath);
+\path [name path=chord2] (apath) -- (cpath);
+\coordinate (center) at ($ (right)!.5!(left) $);
+\node [draw,thick,circle through=(left),name path=circ] at (center) {};
+\path [name intersections={of=circ and chord1,by={b,a}}];
+\path [name intersections={of=circ and chord2,by={c,dummy1}}];
+\fill (a) circle (2pt) node[below left] {$A$} node[xshift=9pt,yshift=40pt] {$60^\circ ?$};
+\fill (b) circle (2pt) node[right] {$B$};
+\fill (c) circle (2pt) node[above left] {$C$} node[xshift=16pt,yshift=-25pt] {$60^\circ$};
+\path [name path=chord3] (b) -- +(-7,0);
+\path [name intersections={of=circ and chord3,by={d}}];
+\fill (d) circle (2pt) node[left] {$D$} node[below right,xshift=8pt] {$60^\circ ?$};
+\path [name path=chord4] (c) -- +(4,0);
+\path [name intersections={of=circ and chord4,by={l}}];
+\fill (l) circle (2pt) node[above right] {$L$} ;
+%% Draw triangle
+\draw[thick,name path=chord5] (l) -- (a);
+\path [name intersections={of=chord5 and chord3,by={e}}];
+\draw[thick] (a) -- (c) -- (b) -- cycle;
+\draw[thick] (b) -- (e);
+\fill (e) circle (2pt) node[below right] {$E$} node[above right,xshift=4pt,yshift=-2pt] {$60^\circ$} node[below left,xshift=-4pt] {$60^\circ$};
+%% Angles
+\draw[thick] +($ (a)!.2!(e) $) arc [radius=12pt,start angle=20,delta angle=125];
+\draw[thick] ($ (c)!.15!(b) $) arc [radius=18pt,start angle=-20,delta angle=-75];
+\draw[very thick] (a) -- (d) -- (e) -- cycle;
+\draw[thick] (c) -- (l) -- (b);
+\draw[thick,dashed] (c) -- (d);
+\end{tikzpicture}
+\end{center}
+\vspace{-6ex}
+
+\textbf{סעיף ב
+$(2)$}
+
+מהחלק הראשון של הסעיף אנו יודעים ש-%
 $\triangle ADE$
-שווה צלעות, אז
-$AE=DE$
+שווה צלעות,
+$AE=DE$,
 ו-%
-$DE=CL$
-כי הן צלעות נגדיות של מקבילית. לכן:
+$LC=DE$
+כי הם צלעות נגדיים של המקבילית. לכן
+$AE=LC$
+ו:
 \[
 LA-LC=(LE+AE)-LC=(LE+LC)-LC=LE\,.
 \]
@@ -3127,130 +3221,87 @@ LA-LC=(LE+AE)-LC=(LE+LC)-LC=LE\,.
 $LE=LB$.
 הוכחנו ש-%
 $\angle LEB=60^\circ$,
-כך שאם נוכיח שזווית נוספת ב-%
-$\triangle LEB$
+כך שאם נוכיח שאחת מ-%
+$\angle EBL,\angle ELB$
 שווה ל-%
 $60^\circ$
-נקבל משלוש שווה צלעות ו-%
-$LE=LB$.
-שוב נחפש זוויות הנשענות על אותו מיתר ונקבל ש-%
-$\angle BLA=\angle BCA$
+נקבל משלוש שווה צלעות. שוב נחפש זוויות הנשענות על אותו מיתר ונקבל ש-%
+$\angle BLA=\angle BCA=60^\circ$
 כי שתיהן נשענות על המיתר
 $AB$.
 
-תוך כי נסיונות לפתור מצאתי הוכחה אחרת מעניינת. 
-$\angle LBE=\angle LBD, \angle DCL$
-נשענות או אותו קשה אבל
+תוך כי נסיונות לפתור את השאלה, מצאתי הוכחה אחרת מעניינת. 
+$\angle LBD, \angle DCL$
+נשענות על אותו קשת אבל
 \textbf{מצדדים נגדיים}.
-הזווית שנשענת על קשת שווה למחצית הקשת, ולכן אם סכום שתי הקשתות הוא כל המעגל, סכום הזוויות שווה 
+זווית היקפית שנשענת על קשת שווה למחצית הזווית המרכזית הנשענת על אותה קשת )משפט
+$69$(,
+ולכן אם סכום שתי הקשתות הוא כל המעגל, סכום הזוויות שווה 
 $180^\circ$.
-אנו יודעים ש-%
-$\angle DCL=120^\circ$
-כך ש-%
-$\angle LBE=\angle LBD=60^\circ$.
+במקבילית,
+$\angle DCL=120^\circ$,
+ולכן:
+\[
+\angle LBE=\angle LBD=180^\circ - \angle DCL= 180^\circ - 120^\circ =60^\circ\,.
+\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \newpage
+%\end{comment}
 
 \section{המלצות}
 
 \begin{itemize}
 \item
 חשוב לצייר ציורים 
-\textbf{וגדולים}.
-בתהליך הפתרון אנו מסמנים את המידע המצטבר על הזוויות והצלעות ויש לדאוג שיהיה מספיק מקום.
+\textbf{ברורים וגדולים},
+עדיף עם סרגל ומחוגה. בתהליך הפתרון אנו מסמנים את המידע המצטבר על הזוויות והצלעות ויש לדאוג שיהיה מספיק מקום.
 
 \item
-על הציורים להיות ברורים תוך שימוש בסרגל ומחוגה. אבל 
 \textbf{אין לסמוך על הציור}.
-לעתים, מה שנראה ברור בציור הוא בדיוק מה שעלינו להוכיח. בעמוד 
-\L{\pageref{}}
-הבאתי הוכחה שכל משולש הוא שווה שוקיים, כאשר ההוכחה מסתמכת על ציור שאינו נכון.
+לעתים, מה שנראה ברור בציור הוא בדיוק מה שעלינו להוכיח. בנספח א הבאתי הוכחה שכל משולש הוא שווה שוקיים, כאשר ההוכחה מסתמכת על ציור שאינו נכון. מטאת הציור היא לחפש קשרים בין זוויות, צלעות, משיקים, וכו', כדי להעלות השערות על דרכים אפשרויות להוכחת הטענות.
 
 \item
-אני מעדיף לסמן זוויות עם אות (יוונית)
+אני מעדיף לסמן זוויות עם אותיות יווניות כגון
+$\alpha$,
+כמקובל במתמטיקה, ולא על ידי ציון שלושת הנקודות המגדירות אותה
+$\angle ABC$.
+הסיבה היא שקשה יותר לעקוב אחר הנקודות השונות של הזוויות מלעקוב אחר סימן בודד לזוויות.
+
+\item
+כאשר לשאלה יש מספר סעיפים, כדאי לצייר ציורים נפרדים לכל סעיף, תוך העלמת מידע לא רלוונטי לאותו סעיף.
+
+\item
+רצוי לרשום את המשפטים שיכולים להיות רלוונטיים לפני שמנסים לפתור את השאלה, כי זה יכול לכוון לפתרון. כמובן שלא כל המשפטים נחוצים.
+
+\item
+יש משפטים שזוכרים בקלות כי הם די אינטואטיביים, למשל, שמשולשים חופפים לפי צ.צ.צ. ודומים לפי ז.ז. יש משפטים אחרים שקשה יותר לזכור אותם ושהוכחת נכונותם לא קלה. למשל, אני מתקשה לזכור איך להפעיל את המשפט על משיק ומיתר. בנספח ב הבאתי ציוריים צבעוניים של מבחר משפטים בתקווה שהציורים יקלו עליכם לזכור אותם, בוודאי יחסית לניסוחים מילוליים מסורבלים.
+
+\item
+כאשר שואלים על שטחים של משולשים, כדאי לחפש גבהים משותפים. אנו רגילים לראות גבהים שורדים מנקודה לקו אופקי, אבל גבהים יכולים להופיע מכל נקודה לקו ממול, ללא קשר למצג של המשולש על הנייר.
+
+\item
+כדי להוכיח חפיפה של משלושים ישר זווית, מספיק להוכיח שוויון של צלע אחד ושיוון של זווית חדה אחת מכל משולש. אם הצלע הוא בין זווית חדה לבין הזווית הישרה, החפיפה היא מיידית לפי ז.צ.ז. אם הצלע הוא בין שתי הזוויות החדות )היתר(, זווית שערכה 
 $\alpha$
-ולא על ידי ציון שלושת הנקודות המגדירות אותה
-$\angle ABC$,
-כי קשה לעקוב אחר הנקודות השונות.
-
-\item
-לשאלות מספר סעיפים. במקרים רבים כדאי לצייר ציורים נפרדים לכל סעיף תוך העלמת מידע לא רלוונטי. בבחינה של בבבבב קל לראות את דרך הפתרון רק כאשר מסלקים קווים לא רלוונטיים.
-
-\item
-רצוי לרשום את המשפטים שיכולים להיות רלוונטיים לפני שמנסים לפתור את השאלה. זה יכול לכוון לפתרון. עם זאת יש לזכור שלא כל המשפטים נחוצים. בבחינה של בבבב היחס בין משיק לקו החותך מעגל נראה רלוונטי אבל אין בו צורך.
-
-\item
-יש משפטים שזוכרים בקלות כי הם די אינטואטיביים, למשל, שמשולשים חופפים לפי צ.צ.צ. ודומים לפי ז.ז. יש משפטים אחרים שקשה יותר לזכור אותם ושהוכחת נכונותם לא קלה.
-\url{}
-עם ציוריים צבעוניים של מבחר משפטים כדי לעזור לזכור אותם. מה שקשה לזכור מניסוח מילולי מסורבל. נספח ב מכיל ציורים עבור חלק מהמשפטים המתקדמים יותר.
-
-\item
-כאשר שואלים על שטחים של משולשים, כדאי לחפש גבהים משותפים. אנו רגילים לראות גבהים מנקודה לקו אופקי, אבל קיימים גבהים מכל נקודה לקו ממול ללא קשר למצג שלו על הנייר.
-
-\item
-כדי להוכיח חפיפה של משלושים ישר זווית מספיק להוכיח שוויון של צלע אחד ושיוון של זווית חדה אחת. אם הצלע הוא בין זווית חדה לבין הזווית הישרה, החפיפה היא לפי ז.צ.ז. אם הצלע הוא בין שתי הזוויות החדות, הזווית שערכה 
-$\alpha$
-והזווית השניה 
+ושנייה שערכה
 $\beta$,
 אזי
 $\beta=90^\circ-\alpha$,
-ושוב יש ז.צ.ז. אני מניח שבבחינה צריך להזכיר עובדה זו, אבל כאשר מחפשים דרך להוכיח חפיפה, קיצור דרך זו יכול להועיל.
-%
-%קל לזכור מציור:
-%\begin{quote}
-%$45.$
-%שלושת התיכונים במשולש נחתכים בנקודה אחת.\\
-%$46.$
-%נקודת חיתוך התיכונים מחלקת כל תיכון ביחס 2:1.\\
-%)החלק הקרוב לקדקוד הוא פי 2 מהחלק האחר(.
-%\end{quote}
-%\begin{center}
-%\selectlanguage{english}
-%\begin{tikzpicture}[scale=1.1]
-%\coordinate (a) at (0,0);   % Points of the triangle
-%\coordinate (b) at (6,0);
-%\coordinate (c) at (4,3);
-%% Coordinates of bisectors
-%\coordinate (ab) at ($(a)!.5!(b)$);
-%\coordinate (bc) at ($(b)!.5!(c)$);
-%\coordinate (ac) at ($(a)!.5!(c)$);
-%% Draw the triangle and bisectors
-%\draw[blue,very thick] (a) -- node[above] {$\bm{x}$} (ac) -- node[above] {$\bm{x}$} (c);
-%\draw[red,very thick] (b) -- node[right] {$\bm{y}$} (bc) -- node[right] {$\bm{y}$} (c);
-%\draw[green!60!black,very thick] (a) -- node[below] {$\bm{z}$} (ab) -- node[below] {$\bm{z}$} (b);
-%\draw[very thick,red,name path=da] (a) -- (bc);
-%\draw[very thick,blue,name path=db] (b) -- (ac);
-%\draw[very thick,green!60!black,name path=dc] (c) -- (ab);
-%% Get their intersection
-%\path [name intersections={of=da and db,by={intersection}}];
-%% Labels
-%\path (a) -- node[above,red] {$\bm{2a}$} (intersection);
-%\path (bc) -- node[above,red] {$\bm{a}$} (intersection);
-%\path (b) -- node[above,blue] {$\bm{2b}$} (intersection);
-%\path (ac) -- node[above,blue] {$\bm{b}$} (intersection);
-%\path (c) -- node[right,green!60!black] {$\bm{2c}$} (intersection);
-%\path (ab) -- node[right,green!60!black] {$\bm{c}$} (intersection);
-%% Points at the intersections
-%\fill (intersection) circle (2pt);
-%\fill (ab) circle (2pt);
-%\fill (ac) circle (2pt);
-%\fill (bc) circle (2pt);
-%\end{tikzpicture}
-%\end{center}
+ושוב יש ז.צ.ז. אני מניח שבבחינה צריך לרשום איך מגיעים מזווית חדה וצלע לז.צ.ז., אבל כאשר מחפשים הוכחה לחפיפה קיצור דרך זה יכול להועיל.
 
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\begin{comment}
 
 \newpage
+\appendix
 
-\begin{center}
-\textbf{\large נספח א: אין לסמוך על איורים!}
-\end{center}
+\section{אין לסמוך על איורים}
 הנה הוכחה "נכונה"
 \textbf{\R{שכל}}
 משולש שווה שוקיים!
@@ -3352,12 +3403,7 @@ $P$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-
-\begin{center}
-\textbf{\large נספח ב: ייצוג גרפי של משפטים בגיאומטריה}
-\end{center}
-
-%\bigskip\bigskip
+\section{ייצוג גרפי של משפטים בגיאומטריה}
 
 %
 % Thale's theorems
@@ -4049,7 +4095,7 @@ $P$
 \end{tikzpicture}
 \end{minipage}
 
-\end{comment}
+%\end{comment}
 
 
 \end{document}
