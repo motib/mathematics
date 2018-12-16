@@ -17,11 +17,7 @@
 
 \usetikzlibrary{external}
 \tikzexternalize[prefix=tikz/]
-
-% Use stealth arrows
-\tikzset {
-  >=stealth
-}
+\tikzset {>=stealth} % Use stealth arrows
 
 \textwidth=155mm
 \textheight=235mm
@@ -38,9 +34,11 @@
 \newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
 
 \begin{document}
-\thispagestyle{empty}
 
 \selectlanguage{hebrew}
+
+\begin{comment}
+\thispagestyle{empty}
 
 \begin{center}
 \textbf{\Huge גיאומטריה}
@@ -116,7 +114,6 @@ $106$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{comment}
 
 \newpage
 
@@ -540,9 +537,11 @@ $29$
 
 \textbf{סעיף א}
 
-רואים הבציור ש-%
+נתון ש-%
+$AB=AG,CB=CG$
+כך ש-%
 $ABCG$
-הוא דלתון אבל לא ברור בשלב זה אם זה יעזור בפתרון. נתון שהמרובע 
+הוא דלתון, אבל לא ברור בשלב זה אם זה יעזור בפתרון. נתון שהמרובע 
 $ABCD$
 חסום במעגל, ולפי משפט
 $56$
@@ -585,39 +584,38 @@ $\alpha'=180-\alpha, \beta'=180-\beta$:
 \draw[dashed] (B) -- (G);
 \end{tikzpicture}
 \end{center}
-כדי להראות ש-%
+אם
 $AD=AG$
-נוכיח שהמשולש
+המשולש
 $\triangle GAD$
-שווה שוקיים על ידי הוכחה ש-%
-$\angle AGD=\beta$
-כי המשלים שלה
-$\angle CGA=\beta'$.
+שווה שוקיים, ולפי הסימונים של הזוויות ננסה להוכיח ש-%
+$\angle AGD=\angle ADG=\beta$.
 נזכור ש-%
 $ABCG$
-דלתון והזוויות הצדדיות שלו שוות. רשימת המשפטים לא כוללתת משפט זה אז נצטרך להוכיח אותו. דלתון הוא ריבוע עם שני זוגות של צלעות סמוכות שוות. במילים אחרות, דלתון מורכב משני משולשים שווה שוקיים המוצמדים בבסיסיהם: 
+דלתון והזוויות הצדדיות שלו שוות, כך ש:
+\[
+\angle AGC=\angle ABC=\beta'\,,\quad\quad \angle AGD=180-(180-\beta)=\beta\,.
+\]
+\vspace{-10mm}
+\begin{quote}
+רשימת המשפטים לבגרות לא כוללת משפט על שוויון זוויות בדלתון, אז נצטרך להוכיח אותו. דלתון מוגדר כמרובע עם שני זוגות של צלעות סמוכות שוות, כך שהוא מורכב משני משולשים שווה שוקיים המוצמדים בבסיסיהם )קו מקווקוו בציור(:
 \[
 \angle ABC = \angle ABG + \angle GBC = \angle AGB + \angle BGC = \angle AGC\,.
 \]
-מכאן, 
-\[
-\angle AGC = 180-AGC=180-\angle ABC=180-(180-\beta)=\beta\,.
-\]
+\end{quote}
 
 \textbf{סעיף ב %
 $(1)$}
 
-נדגיש בציור את
-$\triangle ABK,\triangle CDA$.
-הוכחנו ש-% 
-$\angle CGA=\angle CBA$,
-ולפי זוויות משלימות:
-\[
-\angle KBA=180-\angle CBA = 180-\angle CGA=\angle AGD=\angle GDA\,,
-\]
-כי
-$\triangle GAD$
-שווה שוקיים.
+נדגיש בציור את המשולשים
+$\triangle ABK,\triangle CDA$
+שיש להוכיח שהם דומים. הוספנו לציור את הסימון
+$\angle ABK=\beta$,
+המשלים של 
+$\angle ABC=\beta'$.
+אם נמצא עוד זוג של זוויות שוות נקבל שהמשולים דומים לפי ז.ז. ננסה להוכיח ש-%
+$\angle ACD=\angle BAK$.
+
 $\angle BAK$
 היא הזווית בין המשיק
 $KA$
@@ -626,11 +624,11 @@ $AB$.
 לפי משפט
 $79$
 "זווית בין משיק ומיתר שווה לזווית ההיקפית הנשענת על מיתר זה מצידו השני", 
-$\angle BAK=\angle BCA$.
+$\angle BAK=\angle BCA=\gamma$.
 לפי משפט
 $21$
 "האלכסון הראשי בדלתון חוצה את זוויות הראש ...",
-$\angle BAK=\angle BCA=\angle ACD$.
+$\angle BAK=\angle BCA=\angle ACD=\gamma$.
 מכאן ש-%
 $\triangle ABK \sim \triangle CDA$
 לפי ז.ז.
@@ -654,7 +652,7 @@ $\triangle ABK \sim \triangle CDA$
 \path[name intersections={of=cb and la,by={K}}];
 \fill (K) node[below left] {$K$} circle(1.5pt);
 \path[name intersections={of=abd and lc,by={dummy,G}}];
-\fill (G) node[above] {$G$} node[below right,xshift=-1pt,yshift=-6pt] {$\beta$} node[below left,xshift=1pt,yshift=0pt] {$\beta'$} circle(1.5pt);
+\fill (G) node[above] {$G$} circle(1.5pt);
 \draw (A) -- (G);
 \draw (C) -- (B);
 \draw[very thick] (A) -- (B);
@@ -663,75 +661,138 @@ $\triangle ABK \sim \triangle CDA$
 \draw[very thick] (C) -- (A);
 \draw[very thick] (A) -- (K);
 \draw[very thick] (D) -- (C);
-\node at ($(C)+(-8mm,-5mm)$) {$\alpha$};
-\draw[->] ($(C)+(-4mm,-4mm)$) -- +(14pt,0);
+\node at ($(C)+(-8.5mm,-5mm)$) {$\gamma$};
+\node at ($(C)+(-6mm,-5.2mm)$) {$?$};
+\draw[->] ($(C)+(-4mm,-4mm)$) -- +(13pt,0);
 \draw[->] ($(C)+(-4mm,-6mm)$) -- +(22pt,0);
-\node at ($(A)+(-8mm,-2mm)$) {$\alpha$};
-\draw[->] ($(A)+(-7mm,0mm)$) -- +(7pt,11pt);
+\node at ($(A)+(-8.5mm,-2mm)$) {$\gamma$};
+\node at ($(A)+(-6mm,-2.2mm)$) {$?$};
+\draw[->] ($(A)+(-7mm,0mm)$) -- +(8pt,12pt);
 \end{tikzpicture}
 \end{center}
 \vspace*{-25mm}
 דרך אחרת להוכיח ש-%
 $\angle BCA=\angle ACD$
 היא לשים לב ש-%
-$AB=AD$
-ולהשתמש במשפט
+$AB=AG=AD$.
+נשתמש במשפט
 $63$
-"במעגל, מיתרים שווים זה לזה אם ורק אם שתי הקשתות המתאימות להם שוות זו לזו", ומשפט
+"במעגל, מיתרים שווים זה לזה אם ורק אם שתי הקשתות המתאימות להם שוות זו לזו" ומשפט
 $71$
-"במעגל, מיתרים שווים זה לזה אם ורק אם שתי הקשתות המתאימות להם שוות זו לזו".
+"במעגל, לקשתות שוות מתאימות זוויות היקפיות שוות", ונקבל
+$\angle BCA=\angle ACD$.
 
 \textbf{סעיף ב %
 $(2)$}
 
-לפי דמיון המשלושים והחלק הראשון של הסעיף:
-\erh{12pt}
+לפי 
+$\triangle ABK \sim \triangle CDA$
+שהוכחנו בהחלק הראשון של הסעיף ולפי
+$AB=AD$:
+\erh{4pt}
 \begin{equationarray*}{rcl}
 \frac{AB}{CD}&=&\frac{BK}{AD}\\
 AB\cdot AD &=& BK\cdot CD\\
-AB&=&AD\\
 AD^2 &=& BK\cdot CD\,.
 \end{equationarray*}
 
-\vspace{-6mm}
+\newpage
 
 \textbf{סעיף ג}
 
-היחס בין השטחים של שני משולשים שווה ליחס בין הבסיסים אם הגבהים שווים. הוכחנו ש-%
-$AB=AD$
-כך שהגבהים יהיו שווים אם
-$\angle DAL = \angle BAK$.
-אבל 
-$\angle DAL=\angle DCA$
-כי 
+$LA,AK$
+הם הבסיסים של המשולשים
+$\triangle LDA, \triangle KAB$
+כך שנקבל את היחס המבוקש אם נוכיח שהגבהים שווים. הוכחנו שהיתרים ב-%
+$\triangle ADN,\triangle ABM$
+שווים
+$AB=AD=a$,
+כך שנשאר רק להוכיח שהזוויות שוות
+$\angle BAK=\angle DAL=\gamma$.
+הוכחנו ש-%
+$\angle BAK=\angle DCA=\gamma$,
+ו-%
 $\angle DAL$
 היא הזווית בין המשיק
 $LA$
 והמיתר 
-$AD$,
-והזווית
+$AD$.
+הזווית
 $\angle DCA$
-נשענת על מיתר זה. לפי דמיון המשולשים
-$\angle DCA=\angle BAK$.
+נשענת על מיתר זה, כך ש-%
+$\angle DCA=\angle DAL$
+לפי משפט
+$79$,
+ו-%
+$\angle BAK=\angle DCA=\angle DAL=\gamma$.
+כעת ניתן לחשב את השטחים:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\frac{S_{LDA}}{S_{KAB}}&=&\frac{(LA\cdot DN)/2}{(AK\cdot BM)/2}\\
+DN&=&AD\sin \angle DAL=a\sin\gamma\\
+BM&=&AB\sin \angle BAK=a\sin\gamma\\
+\frac{S_{LDA}}{S_{KAB}}&=&\frac{LA}{AK}\,.
+\end{equationarray*}
 
 
-\end{comment}
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\coordinate (L) at (60mm,-51mm);
+\fill (L) node[right] {$L$} circle(1.5pt);
+\node[circle,draw,thick,name path=circle] (O) at (0,0) [minimum size=50mm] {};
+\coordinate (A) at (tangent cs:node=O,point={(L)},solution=2);
+\fill (A) node[below] {$A$} circle(1.5pt);
+\path[name path=la] (L) -- ($(L)!1.4!(A)$);
+\node[circle,name path=abd] (c) at (A) [minimum size=55mm] {};
+\path[name intersections={of=circle and abd,by={B,D}}];
+\fill (D) node[right,xshift=4pt] {$D$} circle(1.5pt);
+\fill (B) node[left] {$B$} circle(1.5pt);
+\path[name path=ld] (L) -- ($(L)!2!(D)$);
+\path[name intersections={of=circle and ld,by={C}}];
+\fill (C) node[above left] {$C$} circle(1.5pt);
+\draw[thick,name path=lc] (L) -- (C);
+\path[name path=cb] (C) -- ($(C)!2.4!(B)$);
+\path[name intersections={of=cb and la,by={K}}];
+\fill (K) node[below,yshift=-2pt] {$K$} circle(1.5pt);
+\path[name intersections={of=abd and lc,by={dummy,G}}];
+\draw[thick] (A) -- node[right,near end] {$a$} (B);
+\draw[thick] (A) -- node[above] {$a$} (D);
+\draw[thick] (L) -- ($(L)!1.1!(K)$);
+\draw[thick] (B) -- (K);
+\draw[thick] (A) -- (C);
+\draw[thick,dashed] (D) -- ($(A)!(D)!(L)$) coordinate (N);
+\draw[thick,dashed] (B) -- ($(A)!(B)!(L)$) coordinate (M);
+\fill (N) node[below] {$N$} circle(1.5pt);
+\fill (M) node[below left] {$M$} circle(1.5pt);
+\draw[rotate=-22] (N) rectangle +(7pt,7pt);
+\draw[rotate=70] (M) rectangle +(7pt,7pt);
+\node at ($(C)+(-8.5mm,-5mm)$) {$\gamma$};
+\draw[->] ($(C)+(-4mm,-4mm)$) -- +(22pt,0);
+\node at ($(A)+(-8.5mm,-2mm)$) {$\gamma$};
+\draw[->] ($(A)+(-7mm,0mm)$) -- +(8pt,12pt);
+\node at ($(A)+(6mm,-8mm)$) {$\gamma$};
+\node at ($(A)+(9mm,-8mm)$) {$?$};
+\draw[->] ($(A)+(6.1mm,-5.8mm)$) -- +(12pt,18pt);
+\end{tikzpicture}
+\end{center}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \newpage
 
-\section*{קיץ תשע"ז מועד ב}
+\section{קיץ תשע"ז מועד ב}
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2017b-4}
+\includegraphics[width=.8\textwidth]{summer-2017b-4}
 \end{center}
 \vspace{-8mm}
 \textbf{סעיף א}
 
-תהי 
+כדי לחשב את שטח המקבילית באמצעות שטח של משולש נפרק את המקבילית למשולשים. יהי 
 $GF$
 מקביל ל-%
 $BC$
@@ -762,7 +823,7 @@ $S_{ABCD}=S_{BCFG}+S_{GFDA}=8S$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.8]
 \coordinate (B) at (0,0);
 \coordinate (E) at (4,0);
 \coordinate (C) at (8,0);
@@ -781,23 +842,23 @@ $S_{ABCD}=S_{BCFG}+S_{GFDA}=8S$.
 \draw[thick,dashed] (G) -- (F);
 \coordinate (H) at ($(G)!.5!(F)$);
 \fill (H) node[below] {$H$} circle(1.5pt);
-\draw[thick,dashed] (E) -- (H);
+\draw[thick,dashed] (E) -- (H) -- (B);
 \end{tikzpicture}
 \end{center}
-\textbf{הוכחה אחרת}
-לפי משפט
+\vspace{-3mm}
+הוכחה אחרת היא להשתמש במשפט
 $5$%
-א "שטח מקבילית שווה למכפלת צלע המקבילית בגובה לצלע זו". הגובה של המקבילית כפול מהגובה של המשולש לפי דמיון של משולשים 
-$\triangle FCK, \triangle DCJ$.
-חישוב השטחים נותן:
-\erh{12pt}
+א "שטח מקבילית שווה למכפלת צלע המקבילית בגובה לצלע זו". הגובה של המקבילית באורך כפול מהגובה של המשולש לפי דמיון המשולשים 
+$\triangle FCK, \triangle DCJ$:
+\vspace{-3mm}
+\erh{10pt}
 \begin{equationarray*}{rcl}
 S_{ECF}&=&\frac{1}{2}ah=S\\
 S_{ABCD}&=&2a\cdot 2h=4ah=8S\,.
 \end{equationarray*}
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.8]
 \coordinate (B) at (0,0);
 \coordinate (E) at (4,0);
 \coordinate (C) at (8,0);
@@ -821,21 +882,25 @@ S_{ABCD}&=&2a\cdot 2h=4ah=8S\,.
 \path (E) -- node[above] {$a$} (C);
 \path (A) -- node[below] {$2a$} (D);
 \draw[thick,dashed] (F) -- (K);
-\draw[<->] ($(C)+(.8,0)$) -- node[fill=white] {$h$} ($(K)+(.8,0)$);
-\draw[<->] ($(C)+(1.2,0)$) -- node[fill=white] {$2h$} ($(J)+(1.2,0)$);
+\draw[<->] ($(C)+(.9,0)$) -- node[fill=white] {$h$} ($(K)+(.9,0)$);
+\draw[<->] ($(C)+(1.4,0)$) -- node[fill=white] {$2h$} ($(J)+(1.4,0)$);
 \end{tikzpicture}
 \end{center}
 \textbf{סעיף ב}
-הדרך לחפש יחס בין קטעי קו היא למצוא משולשים דומים שקטעי הקו הם צלעות של המשולשים. קצת קשה לראות אותם אלא אם נפשט את הציור. קטע האמצעים במקבילית מקביל לבסיסים,
+נקבל יחס בין קטעי קו אם נמצא משולשים דומים שקטעי הקו הם צלעות שלהם. בציור להלן הדגשתי משולשים שיכולים להתאים. קטע האמצעים במקבילית מקביל לבסיסים
 $BC\|GF$,
-ומזוויות מתחלפות אנו מקבלים ש-%
+ומזוויות מתחלפות
+$\angle LBM=\angle MFK$
+וזוויות קודקודיות
+$\angle LMB=\angle KMF$,
+נקבלים
 $\triangle LMB \sim \triangle KMF$.
-מתכונות המקבילית רשמנו את אורכי הקטעים תוך שימוש בנעלמים
+בציור רשמנו את אורכי הקטעים תוך שימוש בנעלמים
 $a,b,c$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.8]
 \coordinate (B) at (0,0);
 \coordinate (E) at (4,0);
 \coordinate (C) at (8,0);
@@ -848,7 +913,7 @@ $a,b,c$.
 \fill (B) node[above left] {$B$} circle(1.5pt);
 \fill (C) node[above right] {$C$} circle(1.5pt);
 \fill (D) node[below right] {$D$} circle(1.5pt);
-\fill (E) node[above] {$E$} circle(1.5pt);
+%\fill (E) node[above] {$E$} circle(1.5pt);
 \fill (F) node[right] {$F$} circle(1.5pt);
 \coordinate (G) at ($(A)!.5!(B)$);
 \fill (G) node[left] {$G$} circle(1.5pt);
@@ -863,17 +928,18 @@ $a,b,c$.
 \fill (K) node[below left ] {$K$} circle(1.5pt);
 \draw[thick] (L) -- (K);
 \draw[thick] (K) -- (F);
-\path (B) -- node[above] {$a$} (L);
+\draw[ultra thick] (B) -- node[above] {$a$} (L);
 \path (B) -- node[left] {$b$} (G);
 \path (G) -- node[left] {$b$} (A);
 \path (K) -- node[left] {$b$} (N);
-\path (K) -- node[below] {$3a$} (F);
-\path (L) -- node[right] {$c$} (M);
-\path (M) -- node[left] {$b-c$} (K);
+\draw[ultra thick] (K) -- node[below] {$3a$} (F);
+\draw[ultra thick] (L) -- node[right] {$c$} (M);
+\draw[ultra thick] (M) -- node[left] {$b-c$} (K);
+\draw[ultra thick] (B) -- (F);
 \end{tikzpicture}
 \end{center}
 \vspace{-3ex}
-\erh{12pt}
+\erh{10pt}
 \begin{equationarray*}{rcl}
 \frac{c}{b-c}&=&\frac{a}{3a}=\frac{1}{3}\\
 b&=&4c\\
@@ -882,72 +948,76 @@ b&=&4c\\
 &=&\frac{1}{7}\,.
 \end{equationarray*}
 
+\newpage
+
 \textbf{סעיף ג}
-לפי משפט
-$72$
-"במעגל, כל הזוויות ההיקפיות הנשענות על מיתר מאותו צד של המיתר שוות זו לזו" ומשפט
-$73$
-"זווית היקפית הנשענת על קוטר היא זווית ישרה", 
-$\angle BFC=90^\circ$.
-נסמן
-$\angle CBF=\alpha$
-ונשלים את הסימונים בציור כאשר אנו יודעים ש-%
-$\triangle BEF,\triangle CEF$
-שווה שוקיים, והזוויות הנגדיות במקבילית שוות. לפי משפט
+
+כדי לחסום את המרובע
+$ABFD$,
+לפי משפט 
 $56$
 "ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
-$180^\circ$".
-אבל
-$(90-\alpha)+90=180-\alpha=180$,
-וזה לא ייתכן אלא אם
-$\alpha=0$.
-אבל לא ייתכן כי נתון ש-%
-$\alpha$
-היא זווית חדה. )בהגדרת זווית חדה יש לציין שהיא חייבת להיות גדול מאפס.(
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=1]
-\coordinate (B) at (0,0);
-\coordinate (E) at (4,0);
-\coordinate (C) at (8,0);
-\draw[thick] (B) -- (C);
-\draw[thick] (E) -- +(-30:4) coordinate (F);
-\draw[thick] (C) -- ($(C) ! 2 ! (F)$) coordinate (D);
-\draw[thick] (D) -- +(-8,0) coordinate (A) -- (B);
-\draw[thick,name path=bf] (B) -- (F);
-\fill (A) node[below left] {$A$} circle(1.5pt);
-\fill (B) node[above left] {$B$} circle(1.5pt);
-\fill (C) node[above right] {$C$} circle(1.5pt);
-\fill (D) node[below right] {$D$} circle(1.5pt);
-\fill (E) node[above] {$E$} circle(1.5pt);
-\fill (F) node[right] {$F$} circle(1.5pt);
-\path (B) -- node[above] {$a$} (E) -- node[above] {$a$} (C);
-\path (E) -- node[above] {$a$} (F);
-\draw[rotate=75] (F) rectangle +(7pt,7pt);
-\node[below right,xshift=28pt,yshift=2pt] at (B) {$\alpha$};
-\node[above left,xshift=-28pt,yshift=8pt] at (F) {$\alpha$};
-\node[below left,xshift=0pt,yshift=2pt] at (C) {$90-\alpha$};
-\node[above right,xshift=6pt,yshift=2pt] at (A) {$90-\alpha$};
-\node[below left,xshift=-6pt,yshift=2pt] at (F) {$90$};
-\end{tikzpicture}
-\end{center}
-יש לי בעיה עם השימוש כאן במשפט
-$72$,
-כי הוא לא מנוסח כ-"אם ורק אם". לא קשה להוכיח את הכיוון ההפוך כי כל הנקודות הנמצאות במרחק שווה מנקודה 
+$180^\circ$.
+
+בציור להלן הוספתי את הנתון 
+$BE=EF$.
+ראיתי פתרון שמשתמש במשפט
+$86$
+"במשולש ישר זווית התיכון ליתר שווה למחצית היתר" כדי להוכיח ש-%
+$\angle BFC=90^\circ$.
+הוכחה זו בעייתית כי משפט
+$86$
+לא מנוסח כ-"אם ורק אם". לא קשה להוכיח את הכיוון ההפוך כי כל הנקודות הנמצאות במרחק שווה מנקודה 
 $E$
 נמצאות על מעגל שמרכזו 
 $E$.
 
-אפשר להגיע לאותה משוואה
-$180-\alpha=180$,
-ללא שימוש במשפט
-$72$,
-אלא רק בעובדות ש: )א( המרובע
+אפשר לפתור את השאלה ללא שימוש במשפט
+$86$
+תוך שימוש בעובדות ש: )א( המרובע
 $ABCD$
 הוא מקבילית, )ב( המשולשים 
 $\triangle BEF,\triangle CEF$
 שווה שוקיים, )ג( זוויות משלימות ב-%
-$E,F$:
+$E$,
+נסמן את הזוויות של המשולש שווה שוקיים
+$\triangle BEF$
+ב-%
+$\alpha$.
+מכאן ש-%
+$\angle BEF=180-2\alpha$
+ולפי זוויות משלימות
+$\angle CEF=2\alpha$.
+גם משולש 
+$\triangle CEF$
+הוא שווה שוקיים כך ש-%
+$\angle ECF=\angle EFC=90-\alpha$.
+ניתן לחבר זוויות ולקבל
+$\angle BFC=\angle BFD=90$.
+
+לפי משפט
+$26$
+"במקבילית כל שתי זוויות נגדיות שוות זו לזו" 
+$\angle BAD=\angle BCD=90-\alpha$.
+כדי לחסום את המרובע
+$ABFD$
+חייב להתקיים:
+\[
+\angle BFD + \angle BAD = 90 + (90-\alpha) = 180-\alpha=180\,.
+\]
+נתון ש-%
+$\angle BAD$
+היא זווית חדה שהיא פחות מ-%
+$90^\circ$:
+\erh{0pt}
+\begin{equationarray*}{rcl}
+90-\alpha&<&90\\
+\alpha&>&0\\
+180-\alpha&<&180\,,
+\end{equationarray*}
+שסותר את הדרישה 
+$180-\alpha=180$,
+לכן אי אפשר לחסום את המרובע במעגל.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1]
@@ -967,12 +1037,12 @@ $E,F$:
 \fill (F) node[right] {$F$} circle(1.5pt);
 \path (B) -- node[above] {$a$} (E) -- node[above] {$a$} (C);
 \path (E) -- node[above] {$a$} (F);
-%\draw[rotate=75] (F) rectangle +(7pt,7pt);
+\draw[rotate=165] (F) rectangle +(7pt,7pt);
 \node[below right,xshift=28pt,yshift=2pt] at (B) {$\alpha$};
 \node[above left,xshift=-28pt,yshift=8pt] at (F) {$\alpha$};
 \node[below left,xshift=0pt,yshift=2pt] at (C) {$90-\alpha$};
 \node[above right,xshift=6pt,yshift=2pt] at (A) {$90-\alpha$};
-\node[below left,xshift=-6pt,yshift=2pt] at (F) {$90$};
+\node[below left,xshift=-10pt,yshift=-2pt] at (F) {$90$};
 \node[above,xshift=40pt,yshift=2pt] at (F) {$90-\alpha$};
 \node[below left,xshift=4pt,yshift=2pt] at (E) {$180-2\alpha$};
 \node[below right,xshift=16pt,yshift=2pt] at (E) {$2\alpha$};
@@ -982,63 +1052,68 @@ $E,F$:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{קיץ תשע"ז מועד א}
+\newpage
+
+\section{קיץ תשע"ז מועד א}
 
 \begin{center}
 \selectlanguage{english}
 \includegraphics[width=\textwidth]{summer-2017a-4}
 \end{center}
-\vspace{-8mm}
+\vspace{-6mm}
+
 \textbf{סעיף א}
-בנדיבותם מחברי השאלה סיפקו רמז מועיל, הקו המקווקוו 
+
+השאלה שואלת על זוויות ויש לנו קווים מקבילים, משיק, זווית ישרה. ננסה להסיק מסקנות על זזויות. מחברי השאלה סיפקו רמז: הקו 
 $EC$.
-השאלה שואלת על הזווית
 $\angle DEF$
-שהיא הזווית בין המשיק
+היא הזווית בין המשיק
 $ED$
 לבין במיתר 
-$EF$.
-המשפט המתאים הוא משפט 
+$EF$
+המסומן בציור. לפי משפט 
 $79$
-"זווית בין משיק ומיתר שווה לזווית ההיקפית הנשענת על מיתר זה מצידו השני", כאשר הזווית ההיקפית היא
+"זווית בין משיק ומיתר שווה לזווית ההיקפית הנשענת על מיתר זה מצידו השני",
+$\angle DEF$
+שווה להזווית ההיקפית
 $\angle ECF$.
-שתי הזוויות מסומנות ב-%
+סימנו את שתי הזוויות ב-%
 $\alpha$.
 
-הזווית השניה במשוואה היא
+נקבל את הערך של
 $\angle BCD$
-ונקבל את ערכה אם נידע את ערכה של
+אם נידע את ערכה של
 $\angle ECO$.
 נתון ש-%
-$AB\|DC,\angle ADC=90^\circ$,
-וכמובן שהמשיק מאונך לרדיוס
+$AB\|DC,\angle ADC=90^\circ$.
+המשיק מאונך לרדיוס
 $EO$,
 ולכן, 
 $EO\|DC,EO\perp AD$,
 ו-%
-$\angle OEC=\alpha$
-בגלל זוויות מתחלפות. המשולש
+$\angle OEC=\alpha=\angle ECB$
+לפי זווית מתחלפות. המשולש
 $\triangle ECO$
 שווה שוקיים ולכן
-$\angle ECO=\alpha$.
-מכאן ש-%
+$\angle ECO=\alpha$,
+ן-%
 $\angle BCD=2\alpha= 2\angle{DEF}$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.8]
+\begin{tikzpicture}[scale=.9]
 \coordinate (O) at (0,0);
 \fill (O) node[right] {$O$} circle(1.5pt);
 \draw[thick,name path=circle] (O) circle(3cm);
 \coordinate (E) at (-3,0);
-\fill (E) node[left] {$E$} node[below right,xshift=18pt] {$\alpha$} circle(1.5pt);
+\fill (E) node[left] {$E$} node[below right,xshift=22pt] {$\alpha?$} circle(1.5pt);
 \draw[thick] (E) -- +(0,2.5) coordinate (A);
 \fill (A) node[above left] {$A$} circle(1.5pt);
 \draw[thick] (E) -- +(0,-2.5) coordinate (D);
 \fill (D) node[below left] {$D$} circle(1.5pt);
 \path[name path=db] (D) -- +(6,0);
 \path[name intersections={of=db and circle,by={F,C}}];
-\fill (C) node[below right] {$C$} node[above left,xshift=-18pt] {$\alpha$} node[above left,xshift=-16pt,yshift=14pt] {$\alpha$} circle(1.5pt);
+\fill (C) node[below right] {$C$} node[above left,xshift=-18pt] {$\alpha$} node[above left,xshift=-16pt,yshift=16pt] {$\alpha?$} circle(1.5pt);
 \fill (F) node[below] {$F$} circle(1.5pt);
 \path[name path=ab] (A) -- +(2,0);
 \path[name intersections={of=ab and circle,by={B}}];
@@ -1053,10 +1128,11 @@ $\angle BCD=2\alpha= 2\angle{DEF}$.
 \draw[rotate=-90] (A) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
-אפשרות אחרת היא להשתמש במשפט
+הוכחה אחרת משתמשת במשפט
 $103$
 "אם מנקודה שמחוץ למעגל יוצאים חותך ומשיק, אז מכפלת החותך בחלקו החיצוני שווה לריבוע המשיק". לכן:
-\erh{12pt}
+\vspace{-3mm}
+\erh{10pt}
 \begin{equationarray*}{rcl}
 ED^2&=&DC\cdot DF\\
 \frac{ED}{DF}&=&\frac{DC}{ED}\\
@@ -1064,58 +1140,66 @@ ED^2&=&DC\cdot DF\\
 \end{equationarray*}
 נשתמש במשפט
 $69$
-"במעגל, זווית היקפית שווה למחצית הזווית המרכזית הנשענת על אותה הקשת" ובעובדה ש-%
-$\angle BOE=\angle BCD$,
-זוויות מתחלפות:
-\erh{12pt}
+"במעגל, זווית היקפית שווה למחצית הזווית המרכזית הנשענת על אותה הקשת", בזוויות המתחלפות 
+$\angle BOE=\angle BCD$
+ובדמיון המשולשים 
+$\triangle EDF \sim \triangle CDE$
+שכבר הוכחנו:
+\erh{6pt}
 \begin{equationarray*}{rcl}
 \angle BCD &=& \angle BOE\\
-&=& 2\cdot BCE\\
+&=& 2\cdot \angle BCE\\
 \angle ECD &=& \angle BCD-\angle BCE\\
-&=&\angle BCD/2\\
-\angle DEF &=& \angle BCD/2\,,
+&=&\angle BCD - \angle BCD/2\\
+\angle DEF &=& \angle BCD/2\,.
 \end{equationarray*}
-לפי הדמיון של המשולשים שכבר הוכחנו.
+\vspace{-6mm}
 
 \textbf{סעיף ב}
-שני המשולשים
-$\triangle ABE,\triangle DFE$
-הם ישר זווית כך שהם חופפים אם יש להם זוג זוויות שוות וזוג צלעות שווים. נתון ש-%
-$BC$
-הוא קוטר ולכן אפשר להפעיל את משפטש
-$44$
-"בטרפז , ישר החוצה שוק אחת ומקביל לבסיסים, חוצה את השוק השנייה" על הטרפז
-$ABCD$,
-ו-%
-$AE=DE$.
 
-אם נצייר את המיתר
+שני המשולשים
+$\triangle ABE\cong\triangle DFE$
+כי הם ישר זווית וצלע באחד המשולשים שווים לזווית וצלע מקבילים במשלוש השני, כי ביחד עם הזווית הישרה יש חפיפה לפי ז.צ.ז. 
+
+נתון ש-%
+$BC$
+הוא קוטר שמרכזו 
+$O$
+ולכן
+$BO=OC=r$.
+נפעיל את השפט
+$44$
+"בטרפז, ישר החוצה שוק אחת ומקביל לבסיסים, חוצה את השוק השנייה" על הטרפז
+$ABCD$,
+כדי לקבל
+$AE=DE=a$.
+נצייר את המיתר
 $BE$
-אפשר לקוות שהזווית 
+ונקווה שהזווית 
 $\angle AEB$
 בין המיתר ומשיק יהיה שווה לזווית
-$\angle DEF$
-במשלוש השני. שוב נראה מתאים משפט
+$\angle DEF=\alpha$
+במשלוש השני. לפי משפט
 $79$,
-כאשר הזווית ההיקפית היא
-$\angle ECO$.
+$\angle AEB=\angle ECO$,
+הזווית ההיקפית.
 אבל כבר הוכחנו שזווית זו שווה ל-%
-$\alpha=\angle DEF$.
+$\angle ECO=\angle DEF=\alpha$.
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.8]
+\begin{tikzpicture}[scale=.9]
 \coordinate (O) at (0,0);
-\fill (O) node[right] {$O$} circle(1.5pt);
+\fill (O) node[right] {$O$} node[above left,xshift=-4pt] {$2\alpha$} circle(1.5pt);
 \draw[thick,name path=circle] (O) circle(3cm);
 \coordinate (E) at (-3,0);
 \fill (E) node[left] {$E$} circle(1.5pt);
-\draw[thick] (E) -- node[left] {$x$} +(0,2.5) coordinate (A);
+\draw[thick] (E) -- node[left] {$a$} +(0,2.5) coordinate (A);
 \fill (A) node[above left] {$A$} circle(1.5pt);
-\draw[thick] (E) -- node[left] {$x$} +(0,-2.5) coordinate (D);
+\draw[thick] (E) -- node[left] {$a$} +(0,-2.5) coordinate (D);
 \fill (D) node[below left] {$D$} circle(1.5pt);
 \path[name path=db] (D) -- +(6,0);
 \path[name intersections={of=db and circle,by={F,C}}];
-\fill (C) node[below right] {$C$} node[above left,xshift=-16pt,yshift=14pt] {$\alpha$} circle(1.5pt);
+\fill (C) node[below right] {$C$} node[above left,xshift=-16pt,yshift=14pt] {$\alpha$} node[above left,xshift=-20pt,yshift=2pt] {$\alpha$} circle(1.5pt);
 \fill (F) node[below] {$F$} circle(1.5pt);
 \path[name path=ab] (A) -- +(2,0);
 \path[name intersections={of=ab and circle,by={B}}];
@@ -1124,9 +1208,9 @@ $\alpha=\angle DEF$.
 \draw[thick] (E) -- (O) -- node[right] {$r$} (C);
 \draw[thick,dashed] (C) -- (E) -- (F);
 \draw[thick,dashed] (B) -- (E);
-\node at (-40mm,-5mm) {$\alpha$};
+\node at (-43mm,-5mm) {$\alpha$};
 \draw[->] (-39mm,-5mm) -- +(11mm,0);
-\node at (-40mm,5mm) {$\alpha$};
+\node at (-43mm,5mm) {$\alpha?$};
 \draw[->] (-39mm,5mm) -- +(11mm,0);
 \draw (E) rectangle +(7pt,7pt);
 \draw (D) rectangle +(7pt,7pt);
@@ -1134,35 +1218,21 @@ $\alpha=\angle DEF$.
 \path (O) -- node[right] {$r$} (B);
 \end{tikzpicture}
 \end{center}
-אפשרות אחרת היא לחשב לפי משולשים שווה שוקיים
-$\triangle BOE, \triangle EOC$.
-אנו יודעים ש-%
-$\angle BOE=2\alpha$,
+הוכחה אחרת מחשבת זוויות מהשולש שווה שוקיים
+$\triangle BOE$.
+$\angle BOE=2\alpha$
 ולכן
 $\angle BEO = \angle OBE = 90-\alpha$
 ו-%
-$\angle AEB=90-(90-\alpha)=\alpha$.
-נסמן
-$\angle EOF=\beta$
-ונשים לב 
-$\triangle EOF,\triangle OFC$
-שווה שוקיים )רדיוסים(. בגלל ש-%
-$EO\perp ED$,
-זוויות הבסיס של
-$\triangle EOF$
-שוות ל-%
-$90-\alpha$,
-ונחשב
-\[
-\beta = 180-(90-\alpha)-(90-\alpha)=2\alpha=\angle BOE\,.
-\]
-לכן המיתרים
-$EF,EB$
-שווים, ויש לנו זוג צלעות שווים וזוג זוויות שווים במשלושים ישר זווית, כך 
+$\angle AEB=\alpha=\angle DEF$.
+ביחד עם 
+$AE,ED$,
 $\triangle ABE, \triangle DFE$
 חופפים.
+\newpage
 
 \textbf{סעיף ג}
+
 האורך של 
 $BC$
 הוא 
@@ -1172,21 +1242,28 @@ $DF+DC=2r$.
 אם נפשט את הציור נראה ש-%
 $EO$
 הוא קטע אמצעים של הטרפז
-$ABCD$.
-נפעיל את משפט
+$ABCD$,
+כי
+$BO=OC=r$
+ו-%
+$AE=ED$
+לפי הסעיף הקודם. לפי משפט
 $43$
-"קטע האמצעים בטרפז מקביל לבסיסים ושווה למחצית סכומם" ונקבל ש-%
-\[
-EO=\frac{1}{2}(AB+DC)=(DF+DC)=r\,,
-\]
+"קטע האמצעים בטרפז מקביל לבסיסים ושווה למחצית סכומם":
+\erh{10pt}
+\begin{equationarray*}{rcl}
+EO&=&\frac{1}{2}(AB+DC)\\
+&=&\frac{1}{2}(DF+DC)=r\,,
+\end{equationarray*}
 כי 
 $AB=DF$
 לפי משולשים חופפים שהוכחנו בסעיף הקודם, ו-%
 $EO$
-הוא רדיוס.
+הוא רדיוס. מכאן ש-%
+$BC=2r=DF+DC$.
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.8]
+\begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
 \fill (O) node[right] {$O$} circle(1.5pt);
 \draw[thick,name path=circle] (O) circle(3cm);
@@ -1211,10 +1288,10 @@ $EO$
 \path (O) -- node[right] {$r$} (B);
 \end{tikzpicture}
 \end{center}
-אפשרות אחרת היא להשתמש במשפט פיתגורס ומשפט 
+הוכחה אחרת משתמשת במשפט פיתגורס ומשפט 
 $103$
 על משיק וקו חותך. נסמן את אורכי הצלעות באיור ונקבל:
-\erh{6pt}
+\erh{4pt}
 \begin{equationarray*}{rcl}
 a^2&=&bc\\
 BC^2&=& (2a)^2 + (c-b)^2\\
@@ -1223,9 +1300,10 @@ BC^2&=& (2a)^2 + (c-b)^2\\
 &=&(c+b)^2\\
 BC&=&c+b=DC+DF\,.
 \end{equationarray*}
+\vspace{-2mm}
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.8]
+\begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
 \fill (O) node[right] {$O$} circle(1.5pt);
 \path[thick,name path=circle] (O) circle(3cm);
@@ -1258,7 +1336,8 @@ BC&=&c+b=DC+DF\,.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{חורף תשע"ז}
+
+\section{חורף תשע"ז}
 
 \begin{center}
 \selectlanguage{english}
@@ -1266,9 +1345,11 @@ BC&=&c+b=DC+DF\,.
 \end{center}
 \vspace{-8mm}
 \textbf{סעיף א}
-כאשר יש שני משיקים ברור שמשפט
+
+המשפט הרלוונטי ביותר הוא משפט
 $80$
-"שני משיקים למעגל היוצאים מאותה נקודה שווים זה לזה" עשוייה לעזור. נפעיל את המשפט על שני המעגלים ונקבל:
+"שני משיקים למעגל היוצאים מאותה נקודה שווים זה לזה". נפעיל אותו על
+$AC,AE$:
 \begin{equationarray*}{rcl}
 AD&=&AB=a\\
 AE&=&AC=a+b\\
@@ -1280,22 +1361,29 @@ $DB\|EC$,
 $BDEC$
 יהיה טרפז לפי ההגדרה והוכחנו שהוא שווה שוקיים.
 
-ממשפט
-$80$
-נובע גם שהמשולשים
+לפי הציור
+$\triangle ADB\sim \triangle AEC$
+וזה יכול לתרום לפתרון. המשולשים דומים כי יש להם זווית משותפת ב-%
+$A$
+והוכחנו ש-%
+$\frac{AD}{AE}=\frac{a}{a+b}=\frac{AB}{AC}$,
+כך שהמשולשים דומים לפי צ.ז.צ. המשולשים
 $\triangle ADB,\triangle AEC$
 שווה שוקיים, ולכן לפי משפט
 $6$
-"במשולש שווה שוקיים , חוצה זווית הראש, התיכון לבסיס והגובה לבסיס מתלכדים", הקו 
+"במשולש שווה שוקיים , חוצה זווית הראש, התיכון לבסיס והגובה לבסיס מתלכדים". הקו 
 $c$,
 חוצה הזווית 
 $\angle A$,
 הוא גם גובה. מכאן שבסיסי המשולשים
 $DB, EC$
-מאונכים שניהם לקו והם מקבילים.
+מאונכים שניהם לקו
+$c$
+ו-%
+$DB\perp EC$.
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.8]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=left:$A$] (A) at (0,0);
 \fill (A) circle(1.5pt);
 \node[circle,draw,thick] (o1) at (5.4,0) [minimum size=2.7cm] {};
@@ -1328,25 +1416,40 @@ $DB, EC$
 \end{tikzpicture}
 \end{center}
 
+\newpage
+
 \textbf{סעיף ב}
-לפי משפט 
+במבט ראשון נראה שכדאי לעבוד עם משפט 
 $43$
-"קטע האמצעים בטרפז מקביל לבסיסים ושווה למחצית סכומם", כאן:
+"קטע האמצעים בטרפז מקביל לבסיסים ושווה למחצית סכומם", כאן, 
 $GH=\frac{1}{2}(BD+CE)$.
-תחילה עלה בדעתי שאפשר להשתמש בנוסחה לשטח של טרפז שהיא
+תחילה עלה בדעתי שאפשר להשתמש בנוסחה לשטח של טרפז שהיא:
 \[
 S_{BDEC}=h\cdot\frac{1}{2}(BD+CE)\,,
 \]
 אבל זה לא הוביל לפתרון. אחר כך חשבתי לחפש משולשים כדי להשתמש במשפט
 $14$
-"קטע אמצעים במשולש מקביל לצלע השלישית ושווה למחציתה", אבל לא מצאתי משולש מתאים. לבסוף, לאחר פישוט של הציור, שמתי לב ש-%
+"קטע אמצעים במשולש מקביל לצלע השלישית ושווה למחציתה", אבל לא מצאתי משולש מתאים.
+
+לאחר פישוט של הציור שמתי לב ש-%
 $H,G$
 הן נקודות הניתן להפעיל עליהן את משפט 
 $80$
-שכבר השתמשתי בסעיף א:
+שכבר השתמשתי בסעיף א. 
+$DH=HF=x$
+ו-%
+$HE=HF=y$,
+ולכן
+$DH=HE$.
+אותה הוכחה מראה ש-%
+$BG=GC$,
+ו-%
+$GH$
+הוא קטע אמצעים של הטרפז.
+
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.8]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=left:$A$] (A) at (0,0);
 \fill (A) circle(1.5pt);
 \node[circle,draw,thick] (o1) at (5.4,0) [minimum size=2.7cm] {};
@@ -1377,38 +1480,31 @@ $80$
 \draw[<-] (6.75,9mm) -- +(8mm,0);
 \end{tikzpicture}
 \end{center}
-מכאן
-$DH=HF=x$
-ו-%
-$HE=HF=y$,
-ולכן
-$DH=HE$.
-אותה הוכחה מראה ש-%
-$BG=GC$,
-ו-%
-$GH$
-הוא קטע אמצעים של הטרפז.
 
 \textbf{סעיף ג}
 ניתן לכתוב את הטענה שיש להוכיח כיחס:
 \[
-\frac{BD}{CD}=\frac{r}{R}\,,
+\frac{BD}{CD}=\frac{r}{R}\,.
 \]
-ולכן כל מה שצירך לעשות הוא להוכיח ש-%
-$\triangle BO_1D\sim\triangle CO_2E$.
-המשולשים מורכבים משני משולשים חופפים
+נוכיח ש-%
+$\triangle BO_1D\sim\triangle CO_2E$,
+כאשר 
+$O_1,O_2$
+הן מרכזי המעגלים. המשולשים מורכבים משני משולשים חופפים
 $\triangle MO_1D, \triangle MO_1B$
 ו-%
-$\triangle NO_2E, \triangle NO_2C$'
-כך שמספיק להוכיח דמיון של המשולשים הקטנים. המשולשים הם ישר זווית ומספיק למצוא עוד זוויות שוות כדי להוכיח דימון על ידי ז.ז. כבר הוכיחנו ש-%
+$\triangle NO_2E, \triangle NO_2C$,
+כך שמספיק להוכיח דימיון של זוג משולשים קטנים. כבר הוכחנו ש-%
 $DB\|EC$
 והזווית בין רדיוס למשיק היא זוויות ישרה, ולכן:
 \[
-\angle MDO_1=\angle O_1DA-\angle MDA=\angle O_2EA-\angle O_2EA=\angle NEO_2\,.
+\angle MDO_1=90-\angle MDA=90-\angle NEA=\angle NEO_2\,.
 \]
+$\triangle BO_1D\sim\triangle CO_2E$
+לפי ז.ז.
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.8]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=left:$A$] (A) at (0,0);
 \fill (A) circle(1.5pt);
 \coordinate (center1) at (5.4,0);
@@ -1423,14 +1519,13 @@ $DB\|EC$
 \coordinate (E) at (tangent cs:node=o2,point={(A)},solution=2);
 \fill (B) node[below] {$B$} circle(1.5pt);
 \fill (D) node[above] {$D$} circle(1.5pt);
-%\fill (F) node[above right] {$F$} circle(1.5pt);
 \fill (C) node[below] {$C$} circle(1.5pt);
 \fill (E) node[above] {$E$} circle(1.5pt);
 \draw[thick,name path=ae] (A) -- ($(A) !1.2! (E)$);
 \draw[thick,name path=ac] (A) -- ($(A) !1.2! (C)$);
 \draw[thick,name path=db] (D) -- (B);
 \draw[thick,name path=ec] (E) -- (C);
-\draw[thick,dashed,name path=dot] (0,0) -- node[above,near end,xshift=15mm] {$c$} (12,0);
+\draw[thick,dashed,name path=dot] (0,0) -- (12,0);
 \fill (center1) node[above right] {$O_1$} circle(1.5pt);
 \fill (center2) node[above right] {$O_2$} circle(1.5pt);
 \draw[thick,dashed] (B) -- node[right] {$r$} (center1) -- node[right] {$r$} (D);
@@ -1439,43 +1534,54 @@ $DB\|EC$
 \fill (M) node[above left] {$M$} circle(1.5pt);
 \path[name intersections={of=dot and ec,by={N}}];
 \fill (N) node[above left] {$N$} circle(1.5pt);
+\draw[rotate=-74] (E) rectangle +(7pt,7pt);
+\draw[rotate=-74] (D) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{comment}
-
-\section*{קיץ תשע"ו מועד ב}
+\section{קיץ תשע"ו מועד ב}
 
 \begin{center}
 \selectlanguage{english}
 \includegraphics[width=\textwidth]{summer-2016b-4}
 \end{center}
-\vspace{-8mm}
+\vspace{-7mm}
 \textbf{סעיף א}
-ניעזר במשפט 
+
+שני מרובעים חסומים והמשפט המתאים הוא משפט
 $56$ 
 "ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
-$180^\circ$.
-נצייר את המעגלים ונבחר זוג זוויות נגדיות, למשל,
-$\angle LKA,\angle ABK$.
-נסמן זוויות אחת
-$\alpha$
+$180^\circ$".
+נצייר את שני המעגלים החוסמים את המרובעים, ונבחר זוג זוויות נגדיות, למשל,
+$\angle LKA,\angle ABL$,
+במרובע
+$ABLK$.
+נסמן
+$\angle LKA=\alpha$
 ונשתמש בקיצור
 $\alpha'=180^\circ-\alpha$
-עבור הזווית הנגדית. לפי זוויות משלימות
+עבור הזווית הנגדית
+$\angle ABL$.
+לפי זוויות משלימות בנקודה
+$B$,
 $\angle ABP=\alpha$,
-$\angle LKD=\alpha'$,
-ונפעיל שוב את משפט
+ובנקודה
+$K$,
+$\angle LKD=\alpha'$.
+נפעיל שוב את משפט
 $56$
 כדי להסיק ש-%
 $\angle LCD=\alpha$.
 מכאן ש-%
 $AB\|DC$
 לפי זוויות מתאימות.
+\vspace{-1mm}
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=1.2]
+\begin{tikzpicture}
+%\clip (-1,-1.7) rectangle +(5,7.2);
 \coordinate [label=left:$D$] (D) at (0,0);
 \coordinate [label=right:$C$] (C) at (4,0);
 \coordinate [label=above:$P$] (P) at (1.5,5);
@@ -1496,61 +1602,80 @@ $AB\|DC$
 \fill (P) circle(1.5pt);
 \fill (C) node[above left,xshift=-2pt] {$\alpha$} circle(1.5pt);
 \fill (D) node[above right,xshift=2pt] {$\beta$} circle(1.5pt);
-\fill (K) node[left,xshift=-6pt] {$K$} node[above right,xshift=6pt] {$\alpha$} node[below right,xshift=8pt,yshift=4pt] {$\alpha'$}  circle(1.5pt);
-\fill (L) node[right,xshift=6pt] {$L$} node[left,xshift=-4pt,yshift=4pt] {$\beta$} node[below left] {$\beta'$} circle(1.5pt);
+\fill (K) node[left,xshift=-6pt] {$K$} node[above right,xshift=2pt] {$\alpha$} node[below right,xshift=0pt,yshift=4pt] {$\alpha'$}  circle(1.5pt);
+\fill (L) node[right,xshift=6pt] {$L$} node[left,xshift=-4pt,yshift=4pt] {$\beta$} node[below left,xshift=2pt,yshift=-2pt] {$\beta'$} circle(1.5pt);
 \fill (A) node[left,xshift=-6pt] {$A$} node[below right,xshift=-4pt] {$\beta'$}  node[above right,xshift=0pt] {$\beta$} circle(1.5pt);
 \fill (B) node[below left,xshift=2pt] {$\alpha'$} node[above left,xshift=-3pt] {$\alpha$} node[right,xshift=6pt] {$B$} circle(1.5pt);
 \end{tikzpicture}
 \end{center}
 
 \textbf{סעיף ב}
-נסמן זווית
-$\beta=\angle PDC$.
-בגלל ש-%
-$AB\|DC$,
-לפי זוויות חד-צדדיות
-$\angle DAB=180-\beta$
-שנסמן
-$\beta'$.
-לפי משפט 
+
+כדי להפעיל שוב את משפט
 $56$
-המרובע 
+נצטרך להוכיח שהזוויות הנגדיות במרובע
 $ABCD$
-בר-חסימה אם:
-\begin{equationarray*}{rcl}
-\alpha + \beta' &=& 180\\
-\alpha' + \beta &=& 180\,.
-\end{equationarray*}
-כל אחת מהמשוואות נותן את התשובה
+מקיימות
+$\angle BAD+\angle BCD=180, \angle ADC+\angle ABC=180$.
+נסמן
+$\angle ADC=\beta$.
+
+הוכחנו ש-%
+$AB\|DC$,
+ולפי זוויות חד-מתאימות בנקודות
+$A,D$
+ו-%
+$B,C$,
+וזוויות משלימות בנקודות
+$A,B$,
+נקבל
+$\angle PAB=\angle ADC=\beta$,
+$\angle PBA=\angle BCD=\alpha$.
+
+אם המרובע 
+$ABCD$
+בר-חסימה,
+$\alpha'+\beta=180-\alpha+\beta=180$,
+כך ש-%
 $\alpha=\beta$,
-כלומר שהמשולש
-$\triangle PAB$
-שווה שוקיים, אבל נתון ש-%
+אבל נתון ש-%
 $PA\neq PB$.
 המסקנה היא שלא ניתן לחסום את המרובע
 $ABCD$.
 
 \textbf{סעיף ג}
+
 $\triangle PAB \sim \triangle PDC$
-כך שאם נידע את היחס ביניהם נוכל לחשב את אורכו של
-$PD$
-מאורכו של
-$PA$.
-ניתן לחשב את יחס השטחים של שני המשולשים:
-\[
-\frac{S_{ABP}}{S_{PDC}} = \frac{S_{ABP}}{S_{ABP} + S_{ABCD}}=\frac{S}{S+24S}=\frac{1}{25}\,.
-\]
-לפי משפט 
+לפי ז.ז. אולם, זה לא עוזר: אמנם נתון היחס בין
+$PA,PB$,
+אבל יש שני זוגות של נעלמים
+$PD,PC$
+ו-%
+$AB,DC$.
+מה שכן ניתן הוא שטחים של שני המושלים, ולפי משפט
 $100$
-יחס הצלעות הוא השורש של יחס השטחים, ולכן:
-\begin{equationarray*}{rcl}
-\frac{PA}{PD}&=&\frac{1}{5}\\
-\frac{3}{PD}&=&\frac{1}{5}\\
-PD&=&15\,.
-\end{equationarray*}
+ז "יחס הצלעות הוא השורש של יחס השטחים", נכול לחשב את יחס הצלעות:
+\[
+\frac{PA}{PD}=\sqrt{\frac{S_{ABP}}{S_{PDC}}} = \sqrt{\frac{S_{ABP}}{S_{ABP} + S_{ABCD}}}=\sqrt{\frac{S}{S+24S}}=\frac{1}{5}\,.
+\]
+האורך של 
+$PD$
+הוא
+$5\cdot PA=15$.
 
 \textbf{סעיף ד}
-היה לי קשה למצוא את המשולשים הדומים המוזכרים ברמז עד שציירתי את המשולש עם ערכי הצלעות שחישבנו וללא המעגלים:
+
+מהזוויות שחישבנו ורשמנו באיור,
+$\triangle PBA \sim \triangle PKL$
+לפי ז.ז. יחס השטחים מתקבל מיחס אורכי הצלעות הנתונים ושחישבנו:
+\[
+\renewcommand{\arraystretch}{1.8}
+\begin{array}{l}
+\displaystyle\frac{S_{PBA}}{S_{PKL}}=\left(\frac{PA}{PL}\right)^2=\left(\frac{3}{9}\right)^2=\frac{1}{9}\\
+S_{KLCD}=S_{PDC}-S_{PKL}=25S-9S=16S\,.
+\end{array}
+\]
+\vspace{-2mm}
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}%[scale=1.2]
@@ -1579,25 +1704,14 @@ PD&=&15\,.
 \path (A) -- node[left] {$3$} (P);
 \end{tikzpicture}
 \end{center}
-עכשיו אפשר לראות ש-%
-$\triangle PBA \sim \triangle PKL$,
-ולכן יחס השטחים הוא:
-\[
-\left(\frac{PA}{PL}\right)^2=\left(\frac{3}{9}\right)^2=\left(\frac{1}{3}\right)^2=\frac{1}{9}\,.
-\]
-מכאן:
-\begin{equationarray*}{rcl}
-\frac{S_{PBA}}{S_{PKL}}&=&\frac{1}{9}\\
-S_{PKL}&=&9S_{PBA}=9S\\
-S_{KLCD}&=&S_{PDC}-S_{PKL}=25S-9S=16S\,.
-\end{equationarray*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \newpage
 
-\section*{קיץ תשע"ו מועד א}
+\section{קיץ תשע"ו מועד א}
 
 \begin{center}
 \selectlanguage{english}
@@ -1606,24 +1720,28 @@ S_{KLCD}&=&S_{PDC}-S_{PKL}=25S-9S=16S\,.
 
 \textbf{סעיף א}
 
-לאחר שנסמן את הזוויות והאורכים, קופץ לעין משפט
+נסמן את הזוויות
+$\angle AEB=\angle CEB=\alpha$
+ונמסן את האורכים הנתונים. כעת קופץ לעין משפט
 $86$
-"במשולש ישר זווית התיכון ליתר שווה למחצית היתר". כמו כן, נתון ש-%
-$AB\|EC$,
-ולכן
-$\angle ABE=\alpha$
-כי היא הזווית המתחלפת של
-$\angle CEB$.
-$\triangle EDF$
-שווה שוקיים אז 
-$\angle DFA=\angle CEB=\alpha$
+"במשולש ישר זווית התיכון ליתר שווה למחצית היתר", ולכן
+$DF=CD=DE$,
 ו-%
-$\triangle EDF \sim \triangle EAB$
+$\triangle EDF$
+שווה שוקיים, 
+$\angle DFE=\alpha$.
+כמו כן, נתון ש-%
+$AB\|EC$,
+כך ש-%
+$\angle ABE=\alpha$
+לפי זוויות מתחלפות עם
+$\angle CEB$. 
 לפי ז.ז.
-\vspace{-20mm}
+$\triangle EDF \sim \triangle EAB$.
+\vspace{-10mm}
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=1]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=above right:$A$] (A) at (6.5,4.5);
 \coordinate [label=above left:$B$] (B) at (.5,4.5);
 \coordinate [label=below right:$E$] (E) at (10,0);
@@ -1635,7 +1753,7 @@ $\triangle EDF \sim \triangle EAB$
 \fill (C) circle(1.5pt);
 \fill (D) circle(1.5pt);
 \fill (E) node[above left,xshift=-18pt,yshift=-1pt] {$\alpha$} node[above left,xshift=-14pt,yshift=12pt] {$\alpha$} circle(1.5pt);
-\fill (F) circle(1.5pt);
+\fill (F) node[below right,xshift=14pt,yshift=-11pt] {$\alpha$} circle(1.5pt);
 \draw[thick] (A) -- (B) -- (C) -- (E) -- cycle;
 \draw[thick] (B) -- (E);
 \draw[thick] (C) -- (F) -- (D);
@@ -1667,49 +1785,61 @@ $F$
 $CE$.
 חדי עין ישימו לב גובה זה משותף לשני המשולשים
 $\triangle CFD,\triangle DFE$.
-בגלל ש-%
-$D$
-הוא אמצע הבסיס
-$CE$,
-השטחים של שני המשולים שווים.
+הבסיסים
+$CD=DE=3a$
+שווים, ולכן השטחים של שני המשולים שווים.
 
 בסעיף א הוכחנו ש-%
 $\triangle CEB\sim AEB$,
-כך שיחס השטחים הוא יחס הצלעות בריבוע:
+לפי משפט
+$100$%
+ז "יחס השטחים שווה לריבוע יחס הדמיון":
 \[
-\frac{S_{DFE}}{S_{EAB}}= \left(\frac{DE}{AE}\right)^2= \left(\frac{3a}{4a}\right)^2=\frac{9}{16}\,,
-\]
-ולכן
-$S_{DFE}=\frac{9}{16}\,S_{EAB}=\frac{9}{16}\, S$.
-מכאן:
-\[
-S_{CEF} = S_{CFD}+S_{DFE}=2 \, S_{DFE}= \frac{9}{8}\, S.
+\renewcommand*{\arraystretch}{1.5}
+\begin{array}{l}
+\displaystyle\frac{S_{DFE}}{S_{EAB}}= \left(\frac{DE}{AE}\right)^2= \left(\frac{3a}{4a}\right)^2=\frac{9}{16}\\
+S_{CEF} = S_{CFD}+S_{DFE}=2 \, S_{DFE}= \frac{9}{8}\, S\,.
+\end{array}
 \]
 
 \textbf{סעיף ג}
-כבר הראינו ש-%
-$\angle ABE = \angle BEC$
+
+אנחנו צריכים לחשב את האורך של צלע של
+$\triangle BFG$
+כדי לחשב את יחס השטחים. כבר הראינו ש-%
+$\angle ABE = \angle BEC=\alpha$
 ו-%
-$\angle BFG = \angle DFE$
-הן זוויות קודקודיות, לכן
+$\angle BFG = \angle DFE=\alpha$
+הן זוויות קודקודיות. לכן
 $\triangle BFG \sim \triangle DFE$
-לפי ז.ז. על ידי השלמת הזוויות המשלימות במשולשים, קל לראות ש-%
+לפי ז.ז. הזווית
+$\angle AGD=2\alpha$
+לפי משפט
+$13$
+"זווית חיצונית למשולש שווה לסכום שתי הזוויות הפנימיות שאינן צמודות לה". המרובע
 $AGDE$
-הוא מקבילית, ולכן:
+הוא מקבילית לפי משפט
+$29$
+"מרובע שבו כל זוג זוויות נגדיות שוות הוא מקבילית". 
+$GD=GF+FD$
+וכעת ניתן לחשב את
+$GF$:
 \[
-GF=GD-DF=AE-DF=4a-3a=a\,.
+GF=GD-DF=AE-DF=4a-3a=a\,,
 \]
-מכאן ש-%
+ולהשתמש שוב במשפט
+$101$%
+ז:
 \begin{equationarray*}{rcl}
 \frac{S_{BFG}}{S_{DFE}}&=&\left(\frac{a}{3a}\right)^2=\frac{1}{9}\\\\
 S_{BFG}&=&\frac{1}{9}S_{DFE}=\frac{1}{9}\cdot\frac{1}{2}S_{CEF}=\frac{1}{(9\cdot 2)}\frac{9}{8}S=\frac{1}{16}S\,.
 \end{equationarray*}
 
-\vspace{-25mm}
+\vspace{-15mm}
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=1]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=above right:$A$] (A) at (6.5,4.5);
 \coordinate [label=above left:$B$] (B) at (.5,4.5);
 \coordinate [label=below right:$E$] (E) at (10,0);
@@ -1723,15 +1853,15 @@ S_{BFG}&=&\frac{1}{9}S_{DFE}=\frac{1}{9}\cdot\frac{1}{2}S_{CEF}=\frac{1}{(9\cdot
 \fill (C) circle(1.5pt);
 \fill (D) node[above left,xshift=-4pt] {$2\alpha$} node[above right,xshift=-4pt] {$180-2\alpha$} circle(1.5pt);
 \fill (E) node[above left,xshift=-18pt,yshift=-1pt] {$\alpha$} node[above left,xshift=-14pt,yshift=12pt] {$\alpha$}  circle(1.5pt);
-\fill (F) node[above right,xshift=4pt,yshift=-4pt] {$F$}node[below right,xshift=16pt,yshift=-12pt] {$\alpha$} circle(1.5pt);
+\fill (F) node[below left,xshift=4pt,yshift=-4pt] {$F$} node[below right,xshift=16pt,yshift=-12pt] {$\alpha$} circle(1.5pt);
 \draw[thick] (A) -- (B) -- (C) -- (E) -- cycle;
 \draw[thick] (B) -- (E);
 \draw (D) -- (F);
-\draw[thick] (F) -- (C);
+%\draw[thick] (F) -- (C);
 \path[name path=df] (D) -- ($ (D) ! 1.8 ! (F) $);
 \path[name path=ab] (A) -- (B);
 \path [name intersections={of=df and ab,by={G}}];
-\fill (G) node[above] {$G$} circle(1.5pt);
+\fill (G) node[above] {$G$} node[below right,xshift=8pt] {$2\alpha$} circle(1.5pt);
 \draw[thick] (F) -- (G);
 %\draw[rotate=-114] (F) rectangle +(7pt,7pt);
 %\path (C) -- node[below,yshift=-2pt] {$3a$} (D);
@@ -1743,40 +1873,50 @@ S_{BFG}&=&\frac{1}{9}S_{DFE}=\frac{1}{9}\cdot\frac{1}{2}S_{CEF}=\frac{1}{(9\cdot
 \end{tikzpicture}
 \end{center}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage
 
-\section*{חורף תשע"ו}
+
+\section{חורף תשע"ו}
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{winter-2016-4}
+\includegraphics[width=.9\textwidth]{winter-2016-4}
 \end{center}
+
+\vspace{-2mm}
 
 \textbf{סעיף א}
 
-
+קשה להבין את השאלה אלא אם מציירים ציור חדש עם הנקודות 
+$M,N$
+והקו
+$EN$.
+המעגל מוגדר כך שהוא עובר דרך הנקודות
+$C,D,E$,
+ונתון גם שהנקודה
+$N$
+נמצאת על המעגל. מכאן ש-%
+$ENDC$
+הוא מרובע הסום במעגל. נשתמש במשפט 
+$56$
+"ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
+$180^\circ$".
 $ABCD$
-הוא ריבוע עם זוויות ישרות בפינות. כאשר יש גם מעגל וגם זוויות ישרות מייד חושבים על משפטים
-$73,74$
-שזווית היקפית נשענת על קוטר אם ורק אם היא זוויות ישרה. 
-$\angle CDE$
-היא זוויות ישרה ולכן 
-$EC$
-הוא קוטר ולכן 
-$\angle ENC$
-היא זוויות ישרה. לפי משפט 
-$24$
-$CD\|EN$
-כי
-$\angle NCD+\angle CNE=180^\circ$.
-
+הוא ריבוע כך ש-%
+$\angle ADC=\angle EDC=90^\circ$,
+$\angle BCD=\angle NCD=90^\circ$.
+לפי המשפט:
+\[
+\angle ENC=180-\angle EDC=90,\quad \angle NED=180-\angle NCD=90\,.
+\]
+מרובע שכל הזוויות שלו ישרות הוא מלבן ו-%
+$CD=EN$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=1]
+\begin{tikzpicture}[scale=.85]
 \coordinate [label=above left:$A$] (A) at (0,5);
 \coordinate [label=above right:$B$] (B) at (5,5);
 \coordinate [label=below right:$C$] (C) at (5,0);
@@ -1793,7 +1933,7 @@ $\angle NCD+\angle CNE=180^\circ$.
 \tkzCircumCenter(C,D,E)\tkzGetPoint{O}
 \tkzDrawCircle[thick,name path=circ](O,C)
 \path [name intersections={of=db and ce,by={F}}];
-\fill (F) node[above,yshift=4pt] {$F$} circle(1.5pt);
+%\fill (F) node[above,yshift=4pt] {$F$} circle(1.5pt);
 \path [name intersections={of=circ and db,by={M}}];
 \fill (M) node[left,xshift=-4pt] {$M$} circle(1.5pt);
 \path[name path=bc] (B) -- (C);
@@ -1804,26 +1944,85 @@ $\angle NCD+\angle CNE=180^\circ$.
 \draw[rotate=90] (C) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
+הוכחה אחרת משתמשת במשפט
+$74$
+"זווית היקפית בת 
+$90^\circ$
+נשענת על קוטר". הנקודות
+$C,D,E,N$
+נמצאות על מעגל, 
+$\angle EDC=90^\circ$,
+כך ש-%
+$EC$
+הוא קוטר לפי משפט
+$74$
+"זווית היקפית בת
+$90^\circ$
+נשענת על קוטר". לפי המשפט ההפוך
+$(73)$
+$\angle ENC=90^\circ$.
+כדי להשלים את סכום הזוויות במרובע ל-%
+$360^\circ$,
+$\angle NED$
+חייב להיות 
+$90^\circ$
+ו-%
+$ENDC$
+הוא מלבן.
 
-\vspace{-30mm}
+
 \textbf{סעיף ב}
 
-לקח לי די הרבה זמן לפתור סעיף זה, כי חשבתי להשוות אורכים לפי משולשים דומים או משפט פיתגורס. לבסוף נזכרתי במשפט
-$(66)$:
-"במעגל, אם מרחקו של מיתר ממרכז המעגל קטן יותר ממרחקו של מיתר אחר, אז מיתר זה ארוך יותר מהמיתר האחר". 
-\vspace{-12mm}
+בזבזתי הרבה זמן בנסיונות לפתור סעיף זה כי חשבתי להשוות אורכים לפי משולשים דומים או משפט פיתגורס. לבסוף נזכרתי במשפט
+$66$
+"במעגל, אם מרחקו של מיתר ממרכז המעגל קטן יותר ממרחקו של מיתר אחר, אז מיתר זה ארוך יותר מהמיתר האחר". בהוכחה השנייה לסעיף א ראינו ש-%
+$EC$
+הוא קוטר, וקוטר הוא מיתר הקרוב ביותר למרכז המעקל )עובר דרכו( ולכן הוא ארוך יותר מכל מיתר שאינו קוטר. מה שנשאר לעשות הוא להוכיח ש-%
+$DM$
+אינו קוטר.
+
+נתון שהנקודה
+$M$
+נמצאת בין 
+$B$
+לבין נקודת החיתוך המסומן ב-%
+$F$.
+נתון גם ש-%
+$E$
+נמצאת על
+$AD$
+ונניח שהכוונה היא ש-%
+$E$
+שונה מנקודות הקצה
+$A,D$.
+הוכחנו ש-%
+$EN\|AB$
+ולכן אם 
+$E$
+שונה מ-%
+$A$
+גם
+$N$
+שונה מ-%
+$B$,
+ו-%
+$M$
+אינה מתלכדת עם
+$N$.
+\vspace{-4mm}
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=1]
+\begin{tikzpicture}[scale=.85]
 \coordinate (A) at (0,5);
 \coordinate (B) at (5,5);
 \coordinate [label=below right:$C$] (C) at (5,0);
 \coordinate [label=below left:$D$] (D) at (0,0);
 \coordinate [label=left:$E$] (E) at (0,3.5);
-\path[thick,name path=db] (D) -- (B);
+\draw[thick,name path=db] (D) -- (B);
 \draw[thick,name path=ce] (C) -- (E);
-%\fill (B) circle(1.5pt);
+\fill (A) node[above left] {$A$} circle(1.5pt);
+\fill (B) node[above right] {$B$} circle(1.5pt);
 \fill (C) circle(1.5pt);
 \fill (D) circle(1.5pt);
 \fill (E) circle(1.5pt);
@@ -1840,83 +2039,45 @@ $(66)$:
 \draw[rotate=0] (D) rectangle +(7pt,7pt);
 \draw[rotate=90] (C) rectangle +(7pt,7pt);
 \fill (O) node[below,yshift=-4pt] {$O$} circle(1.5pt);
-\draw[thick] (E) -- (D) -- (C) -- (N);
-\draw[thick] (D) -- (M);
+\draw[thick] (B) -- (A) -- (D) -- (C) -- (N) -- (B) -- (D);
+\draw[thick,dashed] (E) -- (N);
 \end{tikzpicture}
 \end{center}
 
-הזוויות בריבוע 
-$\angle NCE, \angle EDC$
-ישרות ולכן הן נשענות על קוטרים, וכמובן שהמרחק של הקוטר 
-$CE$
-קטן יותר ממרכז המעגל (שווה 0) מהמרחק של המיתר 
-$DM$
-שאינו עובר דרך המרכז. מכאן שהקוטר 
-$CE$
-ארוך יותר מהמיתר
-$DM$.
+%\newpage
 
+\vspace{-30mm}
 
 \textbf{סעיף ג}
 
-מצורת המשוואה שיש להוכיח חשבתי תחילה על משפט תלס וחפשתי משולשים דומים, עד ששמתי לב שבמשפט תלס היחסים הם בין חילוק שהאורכים של קטעים וכאן יש לנו מכפלות. אז נזכרתי במשפט
+הנטייה הראשונה היא להשתמש במשפט תאלס, אבל משפט זה מנוסח כחילוק ולא ככפל על קטעים של אותו קן. המשפט שמנוסח בכפל הוא משפט
 $102$
-"אם מנקודה מחוץ למעגל יוצאים שני חותכים, אז מכפלת חותך אחד בחלקו החיצוני שווה
-למכפלת החותך השני בחלקו החיצוני", שמגדיר יחסים בין מכפלות. נשתמש במשפט זה עבור הנקודה
+"אם מנקודה מחוץ למעגל יוצאים שני חותכים, אז מכפלת חותך אחד בחלקו החיצוני שווה למכפלת החותך השני בחלקו החיצוני". נשתמש במשפט זה עבור החותכים
+$BC,BD$
+היוצאים מנקודה
 $B$
 ונקבל
-\[
-BM\cdot BD = BN \cdot BC\,.
-\]
+$BM\cdot BD = BN \cdot BC$.
+
 $AD=BC$
 כי הם צלעות בריבוע 
 $ABCD$,
 ו-%
 $ED=NC$
-כי הם צעלות במלבן
-$ENCD$.
-מכאן:
+כי הם צעלות של
+$ENCD$
+שהוכחנו בסעיף א שהוא מלבן. מכאן:
 \[
 BM\cdot BD =  BN \cdot BC = (BC-NC)\cdot BD = (AD-ED) \cdot AD = AE\cdot AD\,.
 \]
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}%[scale=1]
-\coordinate [label=above left:$A$] (A) at (0,5);
-\coordinate [label=above right:$B$] (B) at (5,5);
-\coordinate [label=below right:$C$] (C) at (5,0);
-\coordinate [label=below left:$D$] (D) at (0,0);
-\coordinate [label=left:$E$] (E) at (0,3.5);
-\draw[thick] (B) -- (C) -- (D) -- (A);
-\draw[thick,name path=db] (D) -- (B);
-\path[name path=ce] (C) -- (E);
-%\draw[thick,dashed,name path=ac] (A) -- (C);
-\fill (A) circle(1.5pt);
-\fill (B) circle(1.5pt);
-\fill (C) circle(1.5pt);
-\fill (D) circle(1.5pt);
-\fill (E) circle(1.5pt);
-\tkzCircumCenter(C,D,E)\tkzGetPoint{O}
-\tkzDrawCircle[thick,name path=circ](O,C)
-\path [name intersections={of=db and ce,by={F}}];
-%\fill (F) node[above,yshift=4pt] {$F$} circle(1.5pt);
-\path [name intersections={of=circ and db,by={M}}];
-\fill (M) node[left,xshift=-4pt] {$M$} circle(1.5pt);
-\path[name path=bc] (B) -- (C);
-\path [name intersections={of=circ and bc,by={N}}];
-\fill (N) node[right] {$N$} circle(1.5pt);
-%\path [name intersections={of=circ and ac,by={G}}];
-%\fill (G) node[above,yshift=4pt] {$G$} circle(1.5pt);
-\draw[thick,dashed] (E) -- (N);
-\draw[rotate=0] (D) rectangle +(7pt,7pt);
-\draw[rotate=90] (C) rectangle +(7pt,7pt);
-\end{tikzpicture}
-\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{קיץ תשע"ה מועד ב}
+\newpage
+
+
+\section{קיץ תשע"ה מועד ב}
 
 \begin{center}
 \selectlanguage{english}
@@ -1924,27 +2085,39 @@ BM\cdot BD =  BN \cdot BC = (BC-NC)\cdot BD = (AD-ED) \cdot AD = AE\cdot AD\,.
 \end{center}
 
 \textbf{סעיף א}
+
+מרובע חסום במעגל מכוון למשפט
+$56$
+"ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
+$180^\circ$". 
+נתון גם שצלע שלו הוא קוטר והמשפט ררלוונטי הוא
+$73$
+"זווית היקפית הנשענת על קוטר היא זווית ישרה 
+$(90^\circ)$".
+כדי לקבל את המשלוש
+$\triangle ABC$,
+נצייר את הקו
+$AC$
+
+ו-%
 $\angle ACB=90^\circ$
 כי הוא נשען על קוטר. 
-לפי משפט
-$(56)$
-ניתן לחסום מרובע במעגל רק אם סכום הזוויות הנגדיות שווה ל-%
-$180^\circ$,
-ולכן
-$\angle ADC+\angle ABC=180^\circ$,
-אבל
-\[
-\angle CDE=180-(180-\alpha)=\alpha=\angle ABC\,,
-\]
-בגלל זוויות משלימות. 
-$\triangle ABC \sim \triangle CDE$
-לפי ז.ז. )משפט
-$98$(.
+
+נסמן זוויות לפי משפט
+$(56)$:
+$\angle ABC=\alpha$,
+$\angle BAC=180-\alpha=\alpha'$.
+לפי זוויות משלימות בנקודה
+$D$,
+$\angle CDE=180-\alpha'=\alpha=\angle ABC$,
+ו-%
+$\triangle CDE \sim \triangle ABC$
+לפי ז.ז.
 
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=1]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=above:$O$] (O) at (0,0);
 \coordinate [label=below left:$A$] (A) at (-2,-2);
 \fill (O) circle(1.5pt);
@@ -1956,7 +2129,7 @@ $98$(.
 \draw[thick] (A) -- (B);
 \draw [thick,name path=ad] (A) -- +(-15:5);
 \path [name intersections={of=circ and ad,by={dummy1,D}}];
-\fill (D) node[below] {$D$} node[right,xshift=10pt,yshift=1pt] {$\alpha$} node[above,xshift=-8pt,yshift=8pt] {$180\!-\!\alpha$} circle(1.5pt);
+\fill (D) node[below] {$D$} node[right,xshift=10pt,yshift=1pt] {$\alpha?$} node[above,xshift=0pt,yshift=0pt] {$\alpha'$} circle(1.5pt);
 \path [thick,name path=dc] (D) -- +(45:4);
 \path [name intersections={of=circ and dc,by={dummy2,C}}];
 \fill (C) node[right] {$C$} circle(1.5pt);
@@ -1971,40 +2144,63 @@ $98$(.
 \end{center}
 
 \textbf{סעיף ב}
-היחס בין הצלעות של משולשים דומים שווה לשורש שורש יחס השטחים הנתון )משפט
-$100$(.
-נחפש צלעות שהיחס ביניהם הוא 
-$\frac{1}{2}$.
-היתר
-$AB=2r$
-כך שהצלע המתאים לה במשולש הדומה
-$CD$
-יהיה באורך
-$r$.
 
-המשולש
+בציור נראה שהמרובע
+$AODC$
+הוא מקבילית, ואם כן, 
+$OC\|AD$.
+נתון גם ש-%
+$OD\perp AC$,
+כך שאם המרובע הוא מקבילית, הוא גם מעוין לפי משפט
+$36$
+"מקבילית שבה האלכסונים מאונכים זה לזה היא מעוין". למעשה לא צריך להשתמש במשפט
+$36$
+כדי להוכיח שהמקבילית היא מעוין כי 
+$OA=OC=r$.
+מכאן שסביר יותר שהנתון
+$OD\perp AC$
+יעזור להוכיח ש-%
+$AODC$
+הוא מקבילית.
+
+כעת נפנה לנתון על יחס השטחים של המשולשים. לפי משפט
+$100$%
+ז "יחס השטחים שווה לריבוע יחס הדמיון", היחס הצלעות במשולשים הדומים הוא
+$\sqrt{\frac{1}{4}}=\frac{1}{2}$.
+מכאן ש-%
+$CD=\frac{1}{2}AB=\frac{1}{2}\cdot 2r=r$.
+אם נוכיח ש-%
+$AD=r$
+יהיה לנו את המקבילית )מעוין( שנחוץ כדי להוכיח ש-%
+$OC\|AD$.
+
+נחזור לנתון
+$OD\perp AC$.
+הוכחנו ש-%
 $\triangle OCD$
-שווה שוקיים )אפילו שווה צלעות(, ולכן לפי משפט
+הוא שווה שוקיים )למעשה הוא שווה צלעות(, כך ש-%
+$CA$
+הוא גובה ל-%
+$OD$,
+ולפי משפט
 $6$
-הגובה הנתון
-$CF$
-הוא גם תיכון. לפי משפט 
-$20$\footnote{%
-בספרי גיאומטריה משתמשים במשפט זה כדי להוכיח שמשלושים ישר זווית עם צלעות ויתרים שווים חופפים.}
-המשולשים
-$\triangle OCF,\triangle OAF,\triangle DCF$
-חופפים, ו-%
-$\triangle ACF$
-חופף ל-%
-$\triangle OAF$
-לפי צ.ז.צ. מכאן ש-%
-$OC\|AD$
-לפי זוויות מתחלפות
-$\angle OCA,\angle CAD$.
-
+"במשולש שווה שוקיים , חוצה זווית הראש, התיכון לבסיס והגובה לבסיס מתלכדים", ולכן
+$OF=FD=\frac{r}{2}$
+ו-%
+$\triangle OCF\cong\triangle DCF$.\footnote{%
+החפיפה נובעת ממשפט 
+$20$
+"משפט חפיפה שתי צלעות והזווית שמול הצלע הגדולה מבין השתיים" לאחר שנטען שהזווית הישרה גדולה יותר מהזוויות האחרות. בספרי גיאומטריה משתמשים במשפט זה כך: שני משלושים ישר זווית חופפים עם היתר וצלע אחר שווים.%
+}
+אותה הוכחה מראה ש-%
+$\triangle OAF\cong \triangle OCF$
+ו-%
+$\triangle DAF\cong \triangle OAF$.
+מכאן ש-%
+$AD=OA=r$.
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=1]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=above:$O$] (O) at (0,0);
 \coordinate [label=below left:$A$] (A) at (-2,-2);
 \fill (O) circle(1.5pt);
@@ -2012,11 +2208,11 @@ $\angle OCA,\angle CAD$.
 \node [draw,thick,circle through=(A),name path=circ] (circle) at (O) {};
 \path [name path=diam] (A) -- +(45:6);
 \path [name intersections={of=circ and diam,by={B}}];
-\fill (B) node[above right] {$B$} node[below,xshift=-3pt,yshift=-6pt] {$\alpha$} circle(1.5pt);
+\fill (B) node[above right] {$B$} circle(1.5pt);
 \draw[thick] (A) -- (B);
 \draw [thick,name path=ad] (A) -- +(-15:5);
 \path [name intersections={of=circ and ad,by={dummy1,D}}];
-\fill (D) node[below] {$D$} node[right,xshift=10pt,yshift=1pt] {$\alpha$} circle(1.5pt);
+\fill (D) node[below] {$D$} circle(1.5pt);
 \path [thick,name path=dc] (D) -- +(45:4);
 \path [name intersections={of=circ and dc,by={dummy2,C}}];
 \fill (C) node[right] {$C$} circle(1.5pt);
@@ -2032,31 +2228,28 @@ $\angle OCA,\angle CAD$.
 \fill (F) node[above right] {$F$} circle(1.5pt);
 \draw[rotate=107] (F) rectangle +(5pt,5pt);
 \path (A) -- node[above] {$r$} (O) -- node[above] {$r$} (B);
+\path (A) -- node[below,yshift=-14pt] {$r?$} (D);
+\draw[<-] ($(A) !.5 ! (D) $) -- +(0,-16pt);
 \end{tikzpicture}
 \end{center}
 בפתרונות אחרים שראיתי, משתמשים בעובדה ש-%
 $\triangle OCD$
-הוא שווה צלעות ולכן הזוויות שלו הן
+הוא שווה צלעות שהזוויות שלו הן
 $60^\circ$.
 לא מצאתי שערך זה נחוץ כדי להוכיח את הטענה.
 
 \textbf{סעיף ג}
-כדי להוכיח ש-%
-$CF$
-משיק למעגל, נשמתמש במשפט )
-$78$(
-ונוכיח שהזווית 
-$\angle ECO$
-בינו לבין הרדיוס
-$CO$
-היא זווית ישרה. כאן כן נשתמש בעובדה ש-%
-$\triangle OCD$
-הוא שווה צלעות ולכן הזווית
-$\angle OCD$
-הוא
-$60^\circ$.
+
+המשפט היחיד שהמסקנה שלו היא שקו הוא משיק הוא משפט
+$78$
+"ישר המאונך לרדיוס בקצהו הוא משיק למעגל", כאן
+$CE\perp OC$.
+כאן כן נשתמש בעובדה ש-%
+$\triangle OCD,\triangle OAD$
+הם שווה צלעות ו-%
+$\angle OCD=\angle OAD=60^\circ$.
 בסעיף א הוכחנו ש-%
-$ABC\sim CDE$
+$\triangle ABC\sim \triangle CDE$,
 כך ש-%
 $\angle CAB = \angle ECD$.
 בסעיף ב הוכחנו ש-%
@@ -2065,13 +2258,15 @@ $AC$
 $\angle OAD$.
 מכאן ש-%
 \[
-\angle ECO = \angle ECD + \angle OCD = 30^\circ + 60^\circ = 90^\circ\,.
+\angle ECO = \angle ECD + \angle OCD = \angle CAB + 60^\circ = \frac{1}{2}\angle OAD + 60^\circ=\frac{1}{2}\cdot 60^\circ + 60^\circ = 90^\circ\,.
 \]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 
-\section*{קיץ תשע"ה מועד א}
+
+\section{קיץ תשע"ה מועד א}
 
 \begin{center}
 \selectlanguage{english}
@@ -2079,66 +2274,72 @@ $\angle OAD$.
 \end{center}
 
 \textbf{סעיף א}
-כאשר יש שני משיקים וקו מהנקודת החיתוך של המשיקים למרכז המעגל, עולה מיד שני משפטים: משפט
+כאשר יש שני משיקים וקו מהנקודת החיתוך של המשיקים למרכז המעגל המשפטים האלה עשויים להיות קלוונטיים: משפט
 $(77)$
-שהמשיקים האונכים לרדיוסים ומשפט
+"המשיק למעגל מאונך לרדיוס בנקודת ההשקה", משפט
+$(80)$
+"שני משיקים למעגל היוצאים מאותה נקודה שווים זה לזה", ומשפט
 $(81)$
-שהקו מנקודת החיתוך למרכז חוצה את הזווית. באיור, סימנו את חצאי הזווית ב-%
-$\alpha$.
-ניתן להשלים את שאר הזוויות )כאשר קיצרנו
-$\beta = 90-\alpha$(
-תוך שימוש בעובדות שסכום הזוויות במשולש וסכום הזוויות המשלימות לזווית שטוחה הם 
-$180$.
-בנוסף השתמשנו שוויון של רדיוסים כדי לקבל ש-%
+"קטע המחבר את מרכז המעגל לנקודה ממנה יוצאים שני משיקים למעגל, חוצה את הזווית שבין המשיקים". באיור, הוספנו סימנים המציגים את המשפטים האלה. 
+
+ניתן להשלים את שאר הזוויות, כאשר השתמשנו בקיצור
+$\alpha' = 90^\circ-\alpha$,
+תוך שימוש בעובדות שסכום הזוויות במשולש הוא
+$180^\circ$,
+וסכום הזוויות המשלימות לזווית שטוחה הוא
+$180^\circ$.
+משוויון הרדיוסים נקבל ש-%
 $\triangle AOD$
 הוא שווה שוקיים, ולכן
-$\angle ADO=\angle DOA$.
-כפי שניתן לראות,
-$\angle ADO=\angle POB$
-ולכן הן זוויות המאימות ו-%
-$AD\perp PO$.
+$\angle ADO=\angle DAO=\alpha'$.
+מכאן ש-%
+$\angle ADO=\angle POB=\alpha'$
+ו-%
+$PD\|AD$
+לפי זוויות מתאימות.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=below:$O$] (O) at (0,0);
 \coordinate [label=right:$B$] (B)  at (2.5,0);
 \coordinate [label=above right:$P$] (P) at (2.5,4.5);
 \node [draw,thick,circle through=(B),name path=circ] (circle) at (O) {};
-\draw[thick,name path=tan1] (P) -- (B);
+\draw[thick,name path=tan1] (P) --  node[right] {$a$} (B);
 \path[name path=bd] (B) -- +(-5.2,0);
 \path [name intersections={of=circ and bd,by={dummy,D}}];
-\draw[thick] (B)--(O);
+\draw[thick] (B)--node[below] {$r$} (O);
 \draw[thick] (O) -- node[below] {$r$} (D);
 \coordinate (A) at (tangent cs:node=circle,point={(P)},solution=1);
-\draw[thick] (P) -- (A) -- (D);
-\fill (O) node[above right,yshift=-2pt,xshift=2pt] {$\beta$} node[above,yshift=4pt,xshift=-1pt] {$\beta$} node[above left,yshift=-2pt,xshift=-4pt] {$2\alpha$} circle(1.5pt);
+\draw[thick] (P) -- node[above] {$a$} (A) -- (D);
+\fill (O) node[above right,yshift=-2pt,xshift=2pt] {$\alpha'$} node[above,yshift=6pt,xshift=1pt] {$\alpha'$} node[above left,yshift=-2pt,xshift=-4pt] {$2\alpha$} circle(1.5pt);
 \fill (B) circle(1.5pt);
-\fill (P) node[below left,yshift=-16pt,xshift=-14pt] {$\alpha$} node[below,yshift=-16pt,xshift=-5pt] {$\alpha$} circle(1.5pt);
-\fill (D) node[left] {$D$} node[above right,yshift=-2pt,xshift=2pt] {$\beta$} circle(1.5pt);
-\fill (A) node[above left] {$A$} node[below,yshift=-4pt] {$\beta$} circle(1.5pt);
+\fill (P) node[below left,yshift=-16pt,xshift=-14pt] {$\alpha$} node[below,yshift=-17pt,xshift=-5pt] {$\alpha$} circle(1.5pt);
+\fill (D) node[left] {$D$} node[above right,yshift=-2pt,xshift=2pt] {$\alpha'$} circle(1.5pt);
+\fill (A) node[above left] {$A$} node[below,yshift=-6pt] {$\alpha'$} circle(1.5pt);
 \draw[thick] (P) -- (O);
 \draw[thick,dashed] (O) -- node[above right,xshift=-2pt] {$r$} (A);
 \draw[rotate=-60] (A) rectangle +(5pt,5pt);
 \draw[rotate=90] (B) rectangle +(5pt,5pt);
-\node at (-2.5,3.5) {$\beta = 90-\alpha$};
 \end{tikzpicture}
 \end{center}
 
+\newpage
+
 \textbf{סעיף ב}
 
-$AC\perp DB$
-ו-%
-$\angle ADC = \angle POB = \beta$,
-ולכן
-$\triangle ADC \sim \triangle POB$
-לפי משפט
-$(98)$
-דמיון ז.ז.
+הצעד הראשון הוא להוסיף לציור את הנקודה
+$C$
+ולסמן את הנתון ש-%
+$AC\perp DB$.
+הרבה זוויות מופיעות בציור ולכן ננסה להוכיח דמיון לפי ז.ז. מסעיף א אנו יודעים ש-%
+$\angle ADC = \angle POB = \alpha'$,
+ולכן עבור המשולשים ישר הזווית
+$\triangle ADC \sim \triangle POB$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=.9]
 \coordinate [label=below:$O$] (O) at (0,0);
 \coordinate [label=right:$B$] (B)  at (2.5,0);
 \coordinate [label=above right:$P$] (P) at (2.5,4.5);
@@ -2150,42 +2351,68 @@ $(98)$
 \draw[thick] (O) -- (D);
 \coordinate (A) at (tangent cs:node=circle,point={(P)},solution=1);
 \draw[thick] (P) -- (A) -- (D);
-\fill (O)  node[above right,yshift=-2pt,xshift=4pt] {$\beta$} circle(1.5pt);
+\fill (O)  node[above right,yshift=-2pt,xshift=4pt] {$\alpha'$} circle(1.5pt);
 \fill (B) circle(1.5pt);
-\fill (P) node[below left,yshift=-16pt,xshift=-14pt] {$\alpha$} node[below,yshift=-16pt,xshift=-5pt] {$\alpha$} circle(1.5pt);
-\fill (D) node[left] {$D$} node[above right,yshift=-2pt,xshift=14pt] {$\beta$} circle(1.5pt);
+\fill (P) node[below left,yshift=-18pt,xshift=-12pt] {$\alpha$} node[below,yshift=-18pt,xshift=-5pt] {$\alpha$} circle(1.5pt);
+\fill (D) node[left] {$D$} node[above right,yshift=-2pt,xshift=12pt] {$\alpha'$} circle(1.5pt);
 \fill (A) node[above left] {$A$} circle(1.5pt);
 \draw[thick] (P) -- (O);
 \draw[thick] (O) -- (A);
 \draw[rotate=-60] (A) rectangle +(5pt,5pt);
 \draw[rotate=90] (B) rectangle +(5pt,5pt);
-\node at (-2.5,3.5) {$\beta = 90-\alpha$};
 \draw[thick,dashed,name path=ac] (A) -- ($(D)!(A)!(B)$) node[below] {$C$} coordinate (C);
 \draw[rotate=90] (C) rectangle +(5pt,5pt);
 \draw[thick,dashed,name path=pd] (P) -- (D);
 \draw[thick] (-2,0) arc[start angle=0,end angle=72,radius=4mm];
 \path [name intersections={of=pd and ac,by={E}}];
-\fill (E) node[right] {$E$} circle(1.5pt);=;
+\fill (E) node[right,yshift=-2pt] {$E$} circle(1.5pt);=;
 \end{tikzpicture}
 \end{center}
 
 \textbf{סעיף ג}
-הזווית בנקדוה
-$D$
-משותפת ל-%
-$\angle EDC$
-ול-%
-$\angle PDB$.
-שני המשולשים הם ישר זווית ו-%
+נוסיף את הנקודה 
+$E$
+לציור. הזווית
+$EDC$
+של המשולש
+$\triangle DEC$
+היא למעשה אותה זווית
+$PDB$
+של המשולש
+$\triangle DPB$,
+ולכן
 $\triangle DEC\sim \triangle DPB$
-לפי דמיון ז.ז.
+לפי ז.ז. במשולשים ישר זווית.
 
 \textbf{סעיף ד}
 
-מה יש לנו בצורה שערך אחד כפול לערך אחר. כמובן, שמדובר בקוטר ורדיוס. בסעיפים הקודמים הוכחנו ששני זוגות של משולשים דומים. נפשט את האיור ונראה אם אפשר למצוא את התשובה תוך שימוש במשולשים.
+עלינו לחפש ערך אחד שהוא כפול מערך אחר. כמובן הקוטר
+$DB$
+כפול מהרדיוסים
+$DO,OB$.
+בסעיפים הקודמים הוכחנו ששני זוגות של משולשים דומים. נפשט את האיור וננסה להוכיח את המשוואה תוך שימוש במשולשים. עבור 
+$AC$,
+מסעיף ב
+$\triangle ADC \sim \triangle POB$,
+ולכן:
+\[
+\frac{AC}{PB} = \frac{DC}{OB} = \frac{DC}{r}\,.
+\]
+מסעיף ג
+$\triangle DEC \sim \triangle DPB$,
+ולכן:
+\[
+\frac{EC}{PB} = \frac{DC}{DB} = \frac{DC}{2r}\,.
+\]
+נציב את
+$PB\cdot DC$
+ממשוואה אחת בשנייה ונקבל
+$AC=2EC$.
+
+
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.8]
 \coordinate [label=below:$O$] (O) at (0,0);
 \coordinate [label=right:$B$] (B)  at (2.5,0);
 \coordinate [label=above right:$P$] (P) at (2.5,4.5);
@@ -2207,39 +2434,62 @@ $\triangle DEC\sim \triangle DPB$
 \draw[thick,name path=ac] (A) -- ($(D)!(A)!(B)$) node[below] {$C$} coordinate (C);
 \draw[rotate=90] (C) rectangle +(5pt,5pt);
 \path [name intersections={of=bd and ac,by={E}}];
-\fill (E) node[right,yshift=4pt] {$E$} circle(1.5pt);
+\fill (E) node[right,yshift=6pt] {$E$} circle(1.5pt);
 \draw[thick] (E) -- (D) -- (P);
 \end{tikzpicture}
 \end{center}
-\vspace{-25mm}
-מסעיף ב
-$\triangle ADC \sim \triangle POB$,
-ולכן:
-\[
-\frac{AC}{PB} = \frac{DC}{OB} = \frac{DC}{r}\,.
-\]
-מסעיף ג
-$\triangle DEC \sim \triangle DPB$,
-ולכן:
-\[
-\frac{EC}{PB} = \frac{DC}{DB} = \frac{DC}{2r}\,.
-\]
-נצרף את שתי המשוואות:
-\[
-\frac{AC}{EC} = \frac{(PB\cdot DC)/r}{(PB\cdot DC)/2r}= 2\,.
-\]
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{חורף תשע"ה}
+\newpage
+
+
+\section{חורף תשע"ה}
 
 \begin{center}
 \selectlanguage{english}
 \includegraphics[width=\textwidth]{winter-2015-4}
 \end{center}
 
+\vspace{-5mm}
+
 \textbf{סעיף א}
+
+יש שתי דרכים לחשב את השטח של 
+$\triangle BED$.
+הראשונה היא לחשב את השטח של
+$\triangle ABD$
+ולהחסיר את השטח של
+$\triangle ABE$.
+לפי הסימונים בציור:
+\[
+S_{ABD}=\frac{1}{2}x(h_1+h_2)\,,\quad\quad S_{AEB}=\frac{1}{2}xh_1\,.
+\]
+אם נוכל לבטא את
+$h_2$
+במונחים של
+$h_1$,
+נוכל להחשב את
+$S_{BED}=S_{ABD}-S_{AEB}$.
+
+$\triangle ABE\sim \triangle DFE$
+לפי ז.ז. בגלל הזוויות המתחלפות ב-%
+$A,D$
+ו-%
+$B,F$.
+לפי משפט
+$100$%
+ז "יחס השטחים שווה לריבוע יחס הדמיון":
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\frac{h_2}{h_1} &=& \sqrt{\frac{S_{DEF}}{S_{ABE}}} = \sqrt{\frac{48}{27}} = \frac{4}{3}\\
+S_{BED} &=& S_{ABD}-S_{AEB}\\
+&=& \frac{1}{2}x\left(h_1+\frac{4}{3}h_1\right)-\frac{1}{2}xh_1\\
+%&=& \frac{1}{2}x\cdot \frac{4}{3}h_1\\
+&=& \frac{4}{3}\left(\frac{1}{2}xh_1\right)=\frac{4}{3}\left(S_{ABE}\right)= \frac{4}{3}\cdot 27 = 36\,.
+\end{equationarray*}
+
+\vspace{-2mm}
 
 \begin{center}
 \selectlanguage{english}
@@ -2272,52 +2522,31 @@ $\triangle DEC \sim \triangle DPB$,
 \end{tikzpicture}
 \end{center}
 
-ברור שהמשלושים
-$\triangle ABE, \triangle DFE$
-דומים בגלל הזוויות המתחלפות ב-%
-$A,D$
-ו-%
-$B,F$.
-לפי משפט
-$100$
-היחס בין הגבהים שווה לשורש היחס בין השטחים:
-\[
-\frac{h_1}{h_2} = \sqrt{\frac{S_{ABE}}{S_{DEF}}} = \sqrt{\frac{27}{48}} = \sqrt{\frac{9}{16}}=\frac{3}{4}\,.
-\]
-יש שתי שיטות לחשב את השטח של 
-$\triangle BED$.
-אפשר לראות שהשטח של המשולש שווה לnחצית שטח המקבילית פחות השטח של המשולש
-$\triangle ABE$. 
-)%
-$DB$
-הוא אלכסון ולכן השטח של המשולש
-$\triangle ABD$
-הוא מחצית שטח המקבילית.( סימנו את אורך הצלעות 
-$AB, DC$
-ב-%
-$x$,
-והשטח הוא:
-\begin{equationarray*}{rcl}
-S_{BDC} &=& \frac{1}{2}x(h_1+h_2) - \frac{1}{2}xh_1\\
-&=& \frac{1}{2}x\left(h_1+\frac{4}{3}h_1-h_1\right)\\
-&=& \frac{1}{2}x\cdot \frac{4}{3}h_1\\
-&=& \frac{4}{3}\left(\frac{1}{2}xh_1\right)=\frac{4}{3}\left(S_{ABE}\right)= \frac{4}{3}\cdot 27 = 36\,.
-\end{equationarray*}
 
-הדרך השנייה קשה לראות אבל החישוב מאוד פשוט. למשולשים 
+הדרך השנייה לחשב את השטח של
+$\triangle BED$
+קשה לראות אבל החישוב מאוד פשוט. למשולשים 
 $\triangle AEB,\triangle BED$
 גובה זהה 
 $h$
 מהנקודה
-$B$,
-ולכן יחס השטחים הוא שורש יחס הצלעות
+$B$
+ועד
+$AD$.
+יחס השטחים הוא הריבוע של יחס הצלעות
 $AE,ED$
 במשולשים 
-$\triangle AEB,\triangle DFE$.
+$\triangle ABE,\triangle DFE$
+שחישבנו לעיל:
+\[
+S_{BED} = \frac{4}{3}S_{AEB}=\frac{4}{3}\cdot 27 = 36\,.
+\]
+\vspace{-6mm}
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
-\coordinate [label=below right:$D$] (D)  at (0,0);
+\coordinate [label=below:$D$] (D)  at (0,0);
 \coordinate (C)  at (4,0);
 \coordinate [label=above right:$B$] (B)  at (3,3);
 \coordinate [label=above left:$A$] (A)  at (-1,3);
@@ -2325,33 +2554,75 @@ $\triangle AEB,\triangle DFE$.
 \path[name path=bf] (B) -- (-4,-.3);
 \path[name path=df] (D) -- (-4,0);
 \path[name intersections={of=bf and para,by={dummy,E}}];
-\node[above left,xshift=-4pt] at (E) {$E$};
+\node[left,xshift=-4pt] at (E) {$E$};
 \draw[thick] (A) -- (B) -- (E) -- cycle;
 \draw[thick] (E) -- (D) -- (B);
 \fill (A) circle (1.5pt);
 \fill (B) circle (1.5pt);
 \fill (D) circle (1.5pt);
 \fill (E) circle (1.5pt);
-\draw[thick,dashed] (B) -- node[above left] {$h$} ($(A)!(B)!(D)$);
+\coordinate (H) at ($(A)!(B)!(D)$);
+\draw[thick,dashed] (B) -- node[above left] {$h$} (H);
+\fill (H) circle (1.5pt);
+\draw[rotate=20] (H) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
-\vspace{-12mm}
-\begin{equationarray*}{rcl}
-\frac{S_{BED}}{S_{AEB}} &=& \frac{4}{3}\\
-S_{BED} &=& \frac{4}{3}S_{AEB}=\frac{4}{3}\cdot 27 = 36\,.
-\end{equationarray*}
 
-\vspace{-8mm}
+\vspace{-4mm}
 
 \textbf{סעיף ב}
 
+לכאורה, לא צריך את הנתון על המרובע כי
+$\triangle ABE\sim \triangle DFE$.
+אבל עיון מדוקדק יגלה שהיחס שחישבנו הוא 
+$\displaystyle\frac{AB}{FD}$
+ולא
+$\displaystyle\frac{AB}{EF}$.
+
 הנתון שהמרובע 
 $BCDE$
-בר חסימה במעגל מרמז למשפט
-$(56)$
-האומר שסכום הזוויות הנגדיות הוא 
-$180^\circ$,
-לכן קודם נסמן זוויות ואז נראה אם יוצא מזה משהו מועיל.
+בר חסימה במעגל מכוון למשפט
+$56$
+"ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
+$180^\circ$".
+נסמן זוויות ונראה אם יוצא מזה משהו מועיל. נסמן ב-%
+$\alpha$
+את הזוויות הנגדיות של המקבילית
+$A,C$
+ואת הזוויות המתאימות בנקודות
+$C,D$.
+נסמן ב-%
+$\beta$
+את הזוויות המתחלפות ב-%
+$B,F$.
+
+סכום הזוויות במשולש הוא
+$180$
+ולכן הזוויות הקודקודיות ב-%
+$E$
+שוות ל-%
+$180-(\alpha+\beta)$.
+לפי זוויות משלימות
+$\angle BED=\alpha+\beta$.
+נפעיל את משפט
+$56$
+ונקבל:
+\erh{2pt}
+\begin{equationarray*}{rcl}
+\angle BCD + \angle BED&=&180\\
+\alpha+\alpha+\beta&=&180\\
+\alpha&=&180-(\alpha+\beta)\\
+\angle ABE&=&\angle EBA\\
+\angle 	DFE&=&\angle EFD\,. 
+\end{equationarray*}
+המשולשים
+$\triangle ABE, \triangle DFE$ 
+שווה שוקיים! נשתמש ביחס שחישבנו בסעיף א:
+\[
+\frac{AB}{EF} = \frac{AB}{FD} = \frac{3}{4}\,.
+\]
+
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.1]
@@ -2363,148 +2634,113 @@ $180^\circ$,
 \path[name path=bf] (B) -- (-4,-.3);
 \path[name path=df] (D) -- (-4,0);
 \path[name intersections={of=bf and para,by={dummy,E}}];
-\node[above left,xshift=-4pt] at (E) {$E$};
+\node[above left,xshift=-4pt,yshift=2pt] at (E) {$E$};
 \path[name intersections={of=df and bf,by={F}}];
-\node[below left] at (F) {$F$};
 \draw[thick] (D) -- (F) -- (B);
 \fill (A) node[below right,xshift=2pt] {$\alpha$} circle (1.5pt);
 \fill (B) node[below left,xshift=-22pt,yshift=1pt] {$\beta$} circle (1.5pt);
 \fill (C) node[above left,xshift=-2pt] {$\alpha$} circle (1.5pt);
 \fill (D) node[above left,xshift=-2pt] {$\alpha$} circle (1.5pt);
-\fill (E) node[above,xshift=5pt,yshift=3pt] {$(\alpha)$} node[below,xshift=-5pt,yshift=-5pt] {$(\alpha)$} node[right,xshift=3pt,yshift=-5pt] {$(\alpha+\beta)$} circle (1.5pt);
-\fill (F) circle (1.5pt);
+\fill (E) node[right,xshift=3pt,yshift=-5pt] {$\alpha+\beta$} circle (1.5pt);
+\fill (F) node[below left] {$F$} node[above right,xshift=28pt,yshift=-2pt] {$\beta$} circle (1.5pt);
+\node at ($(E)+(-55pt,0)$) {$180-(\alpha+\beta)$};
+\draw[->] ($(E)+(-20pt,2pt)$) -- +(24pt,3pt);
+\draw[->] ($(E)+(-20pt,-2pt)$) -- +(19pt,-3pt);
 \end{tikzpicture}
 \end{center}
-\vspace{-2mm}
-הזוויות המוסמנות ב-%
-$\alpha$
-שוות בגלל זוויות מתחלפות ומתאימות במקבילית. נחשב את הזוויות המסומנות בסוגריים כך: 
-$\angle AEB = 180 -(\alpha+\beta)$
-כדי להשלים את זוויות המשולש ל-%
-$180$,
-ולכן הזווית המשלימה 
-$\angle BED$
-שווה ל-%
-$180 - (180-(\alpha+\beta))=\alpha+\beta$\,.
-לפי משפט
-$(56)$:
-\begin{equationarray*}{rcl}
-\angle BCD + \angle BED &=& 180\\
-\alpha + (\alpha + \beta) &=& 180\\
-180-(\alpha+\beta) &=& \alpha\\
-\angle AEB &=& \alpha\,,
-\end{equationarray*}
-וגם 
-$\angle FED=\alpha$
-בגלל זוויות קודקודיות.
-
-הפתעה נעימה: המשולשים
-$\triangle AED, \triangle FED$ 
-שווי שוקיים! זה מאפשר לנו להשתמש ביחס הנובע מהדמיון בין המשולשים שחישבנו בסעיף א.
-$AB=EB$
-ולכן
-\[
-\frac{AB}{EF} = \frac{EB}{EF} = \frac{3}{4}\,.
-\]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{קיץ תשע"ד מועד ב}
+
+\newpage
+\end{comment}
+
+\section{קיץ תשע"ד מועד ב}
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2014b-4}
+\includegraphics[width=.9\textwidth]{summer-2014b-4}
 \end{center}
 
 \vspace{-4ex}
 
 \textbf{סעיף א}
 
+$(1)$
+כדי לסבך מעט את השאלה ביקשו את היחס בין
+$O_1E$
+ל-%
+$O_1C$,
+אבל 
+$O_1A=O_1C$
+כי הם רדיוסים. אם נוכיח ש-%
+$\triangle O_1 A E\sim \triangle O_2 B E$,
+נוכל להחשב את היחס המבוקש.
+
+$AB$
+משיק לשני המעגלים ולכן 
+$\angle O_1 A E= \angle O_2 B E=90^\circ$
+לפי משפט
+$77$
+"המשיק למעגל מאונך לרדיוס בנקודת ההשקה".
+$\angle A E O_1=\angle B E O_2$
+כי הן זוויות קודקודיות. מכאן ש-%
+$\triangle O_1 A E\sim \triangle O_2 B E$
+לפי ז.ז. נסמן ב-%
+$x$
+את אורכו של
+$O_1 E$
+ונקבל:
+\erh{14pt}
+\[
+\begin{array}{l}
+\displaystyle\frac{O_1 E}{O_2 E}= \frac{x}{90-x} = \frac{O_1A}{O_2B} = \frac{30}{20}\\
+%2700-30x&=&20x\\
+%x=54\\
+\displaystyle\frac{O_1 E}{O_1 C} =\frac{O_1E}{O_1A} = \frac{54}{30}=\frac{9}{5}\,.
+\end{array}
+\]
+\vspace{-2ex}
+
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.1]
-\coordinate [label=left:$O_1$] (o1) at (0,0);
-\coordinate [label=above:$A$] (A)  at (50:2);
+\begin{tikzpicture}[scale=1.2]
+\coordinate (o1) at (0,0);
+\coordinate (A)  at (50:2);
 \draw[rotate=-130] (A) rectangle +(4pt,4pt);
-\coordinate [label=below:$C$] (C) at (-130:2);
+\coordinate (C) at (-130:2);
 \node [draw,circle through=(C)] at (o1) {};
 \draw (A) -- (C);
-\coordinate [label=right:$O_2$] (o2) at (5,0);
-\coordinate [label=above:$D$] (D)  at ($(o2) + (50:1)$);
-\coordinate [label=below:$B$] (B)  at ($(o2) + (-130:1)$);
+\coordinate (o2) at (5,0);
+\coordinate (D)  at ($(o2) + (50:1)$);
+\coordinate (B)  at ($(o2) + (-130:1)$);
 \draw[rotate=50] (B) rectangle +(4pt,4pt);
 \node [draw,circle through=(B)] at (o2) {};
 \draw (B) -- (D);
-\draw[name path=diameters] (o1) -- node[below,xshift=4mm] {\textsf{\small 90}} (o2);
+\draw[name path=diameters] (o1) -- node[below,xshift=4mm] {$90$} (o2);
 \draw[name path=tangents] ($ (A) ! -.5 ! (B) $) -- ($ (A) ! 1.5 ! (B) $);
-\path [name intersections={of=diameters and tangents,by={[label=above:$E$]E}}];
-\path (A)  -- node[left] {\textsf{\small 30}} (o1);
-\path (o1) -- node[left] {\textsf{\small 30}} (C);
-\path (D)  -- node[right] {\textsf{\small 20}} (o2);
-\path (o2) -- node[right] {\textsf{\small 20}} (B);
+\path [name intersections={of=diameters and tangents,by={E}}];
+\fill (A) node[above,xshift=2pt] {$A$} circle(1pt);
+\fill (B) node[below,xshift=-4pt] {$B$} circle(1pt);
+\fill (C) node[below,xshift=-2pt] {$C$} circle(1pt);
+\fill (D) node[above,xshift=4pt] {$D$} circle(1pt);
+\fill (E) node[above,xshift=2pt] {$E$} circle(1pt);
+\fill (o1) node[left,xshift=-2pt] {$O_1$} circle(1pt);
+\fill (o2) node[right,xshift=2pt] {$O_2$} circle(1pt);
+\path (A)  -- node[left,xshift=-2pt] {$30$} (o1);
+\path (o1) -- node[left,xshift=-2pt] {$30$} (C);
+\path (D)  -- node[right,xshift=1pt] {$20$} (o2);
+\path (o2) -- node[right,xshift=1pt] {$20$} (B);
 \path (o1) -- node[above] {$x$} (E);
-%\draw[dashed] (C) -- (D);
 \end{tikzpicture}
 \end{center}
 
-\medskip
-
-$(1)$
-משיק מאונך לרדיוס בנדוקת ההשקה שלו )משפט 77( ולכן המשולשים באיור הם ישר זווית. כדי לחשב את היחס
-$\frac{O_1 E}{O_1 C}$
-ננסה להוכיח שהמשולשים דומים.
-
-הקו $AB$ משיק לשני המעגלים ולכן הזוויות
-$\angle O_1 A E, \angle O_2 B E$
-ישרות. הזוויות הקודקודיות
-$\angle A E O_1, \angle B E O_2$
-גם הן שוות. מכאן שהמשולשים
-$\triangle O_1 A E, \triangle O_2 B E$
-דומים )משפט 98, דמיון ז.ז.(. נסמן ב-%
-$x$
-את הקטע
-$O_1 E$
-ומהיחסים בין המשולשים הדומים נחשב את היחס המבוקש בשאלה:
-\[
- \frac{O_1 E}{O_1 A}= \frac{x}{30} = \frac{O_2 E}{O_2B} = \frac{90-x}{20}\,, \quad\quad \frac{O_1 E}{O_1 C} = \frac{9}{5}\,.
-\]
 
 $(2)$
 נראה שאפשר להשתמש באותה שיטה כדי להוכיח שהמשולשים 
 $\triangle E O_1 C \sim \triangle E O_2 D$
-דומים.
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=1.1]
-\coordinate [label=left:$O_1$] (o1) at (0,0);
-\coordinate [label=above:$A$] (A)  at (50:2);
-\draw[rotate=-130] (A) rectangle +(4pt,4pt);
-\coordinate [label=below:$C$] (C) at (-130:2);
-\node [draw,circle through=(C)] at (o1) {};
-\draw (A) -- (o1);
-\draw[dashed,very thick] (o1) -- (C);
-\coordinate [label=right:$O_2$] (o2) at (5,0);
-\coordinate [label=above:$D$] (D)  at ($(o2) + (50:1)$);
-\coordinate [label=below:$B$] (B)  at ($(o2) + (-130:1)$);
-\node[below right] at (o1) {$\alpha$};
-\node[above left,xshift=1mm] at (o2) {$\alpha$};
-\draw[rotate=50] (B) rectangle +(4pt,4pt);
-\node [draw,circle through=(B)] at (o2) {};
-\draw (B) -- (o2);
-\draw[dashed,very thick] (o2) -- (D);
-\draw[name path=diameters,dashed,very thick] (o1) -- node[below,xshift=6mm,yshift=-2mm] {\textsf{\small 90}} (o2);
-\draw[name path=tangents] ($ (A) ! -.5 ! (B) $) -- ($ (A) ! 1.5 ! (B) $);
-\path [name intersections={of=diameters and tangents,by={[label=above:$E$]E}}];
-\path (A)  -- node[left,xshift=-1mm] {\textsf{\small 30}} (o1);
-\path[dashed,very thick] (o1) -- node[left,xshift=-1mm] {\textsf{\small 30}} (C);
-\path (D)  -- node[right,xshift=1mm] {\textsf{\small 20}} (o2);
-\path (o2) -- node[right,xshift=1mm] {\textsf{\small 20}} (B);
-\path[dashed,very thick] (o1) -- node[above] {$x$} (E);
-\draw[dashed,very thick] (C) -- (D);
-\end{tikzpicture}
-\end{center}
-אבל, כפי שמרמז סעיף ב, איננו יודעים שהנקודה
+דומים. אבל, כפי שמרמז סעיף ב, איננו יודעים שהנקודה
 $E$
 נמצאת על הקו הישר
 $CD$,
@@ -2512,23 +2748,103 @@ $CD$,
 $\angle O_1 E C, \angle O_2 E D$
 הן זוויות הקודקודיות )שוות(. במקום זה, נשתמש בעובדה שהקוטרים מקביליים ולהוכיח בצורה ישירה שהמשולשים דומים.
 
-הקווים 
-$AC,DB$
-מקבילים אחד לשני כי שניהם ניצבים לאותו קו
-$O_1,O_2$,
+$AC\|DB$
+כי שניהם ניצבים לקו
+$O_1O_2$,
 ולכן 
-$\angle C O_1 E, \angle D O_2 E$
-הן זוויות מתחלפות ושוות. כל הרדיוסים של מעגל שווים, כך ש-%
+$\angle C O_1 E=\angle D O_2 E=\alpha$
+כי הן זוויות מתחלפות. כל הרדיוסים של מעגל שווים, כך ש-%
 $O_1C=O_1A, O_2B=O_2D$.
-מכאן שאפשר להשתמש בעובדה שהוכחנו ש-%
-$\triangle E O_1 A \sim \triangle E O_2 B$
-הם משולשים דומים כדי לראות שגם המשולשים
-$\triangle E O_1 C \sim \triangle E O_2 D$
-דומים.
+הוכחנו ש-%
+$\triangle E O_1 A \sim \triangle E O_2 B$,
+ולכן
+\[
+\frac{O_1E}{O_2E}=\frac{O_1C}{O_2D}\,,
+\]
+ו-%
+$\triangle E O_1 C \sim \triangle E O_2 D$.
+
+\vspace{-4mm}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.2]
+\coordinate (o1) at (0,0);
+\coordinate (A)  at (50:2);
+\draw[rotate=-130] (A) rectangle +(4pt,4pt);
+\coordinate (C) at (-130:2);
+\node [draw,circle through=(C)] at (o1) {};
+\draw (A) -- (o1);
+\draw[dashed,very thick] (o1) -- (C);
+\coordinate (o2) at (5,0);
+\coordinate (D)  at ($(o2) + (50:1)$);
+\coordinate (B)  at ($(o2) + (-130:1)$);
+\node[below right] at (o1) {$\alpha$};
+\node[above left,xshift=1mm] at (o2) {$\alpha$};
+\draw[rotate=50] (B) rectangle +(4pt,4pt);
+\node [draw,circle through=(B)] at (o2) {};
+\draw (B) -- (o2);
+\draw[dashed,very thick] (o2) -- (D);
+\draw[name path=diameters,dashed,very thick] (o1) -- node[below,xshift=6mm,yshift=-2mm] {$90$} (o2);
+\draw[name path=tangents] ($ (A) ! -.5 ! (B) $) -- ($ (A) ! 1.5 ! (B) $);
+\path [name intersections={of=diameters and tangents,by={E}}];
+%\path (A)  -- node[left,xshift=-1mm] {\textsf{\small 30}} (o1);
+%\path[dashed,very thick] (o1) -- node[left,xshift=-1mm] {\textsf{\small 30}} (C);
+%\path (D)  -- node[right,xshift=1mm] {\textsf{\small 20}} (o2);
+%\path (o2) -- node[right,xshift=1mm] {\textsf{\small 20}} (B);
+\path[dashed,very thick] (o1) -- node[above] {$x$} (E);
+\draw[dashed,very thick] (C) -- (D);
+\fill (A) node[above,xshift=2pt] {$A$} circle(1pt);
+\fill (B) node[below,xshift=-4pt] {$B$} circle(1pt);
+\fill (C) node[below,xshift=-2pt] {$C$} circle(1pt);
+\fill (D) node[above,xshift=4pt] {$D$} circle(1pt);
+\fill (E) node[above,xshift=2pt] {$E$} circle(1pt);
+\fill (o1) node[left,xshift=-2pt] {$O_1$} circle(1pt);
+\fill (o2) node[right,xshift=2pt] {$O_2$} circle(1pt);
+\path (A)  -- node[left,xshift=-2pt] {$30$} (o1);
+\path (o1) -- node[left,xshift=-2pt] {$30$} (C);
+\path (D)  -- node[right,xshift=1pt] {$20$} (o2);
+\path (o2) -- node[right,xshift=1pt] {$20$} (B);
+\path (o1) -- node[above] {$x$} (E);
+\end{tikzpicture}
+\end{center}
+
+\vspace{-4mm}
 
 \textbf{סעיף ב}
+
 נתבונן בזוויות סביב הנקודה
-$E$:
+$E$
+שנמצאת על 
+$CD$
+אם הזווית 
+$\angle AED$
+משלימה לזווית
+$\angle AEC$.
+הוכחנו
+$\triangle O_1 E C\sim \triangle O_2 E D$
+ו-%
+$\triangle O_1 A E \sim \triangle O_2 B E$,
+ונסמן את הזוויות השוות
+$\alpha,\beta$.
+נתון ש-%
+$AB$
+הוא קו ישר ו-% 
+$\angle AED$
+משלימה ל-%
+$\angle DEB$,
+כך ש-%
+$\angle AED = 180^\circ - (\alpha + \beta)$.
+נבדוק עם 
+$\angle AED$
+משלימה ל-%
+$\angle AEC$:
+\[
+\angle AED + \angle AEC = (180^\circ - (\alpha + \beta)) + (\alpha + \beta) = 180^\circ\,.
+\]
+
+
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.1]
@@ -2557,41 +2873,12 @@ $E$:
 \draw (C) -- (D);
 \end{tikzpicture}
 \end{center}
-הנקודה
-$E$
-נמצאת על 
-$CD$
-אם הזווית 
-$\angle AED$
-צמודה לזווית
-$AEC$
-)משפט 1(.
-
-
-לאחר שהוכחנו את דמיון המשולשים
-$\triangle O_1 E C\sim \triangle O_2 E D$
-ו-%
-$\triangle O_1 A E \sim \triangle O_2 B E$,
-אפשר לסמן את הזוויות השוות
-$\alpha$
-ו-%
-$\beta$.
-נתון ש-%
-$AB$
-הוא קו ישר, ולכן 
-$\angle AED$
-צמודה ל-%
-$\angle DEB$,
-כך ש-%
-$\angle AED = 180^\circ - \alpha - \beta$.
-מכאן ש-%
-$CD$
-הוא קו ישר כי
-$\angle CED = (180^\circ - \alpha - \beta) + \alpha + \beta = 180^\circ$.
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{קיץ תשע"ד מועד א}
+
+\begin{comment}
+
+\newpage
+\section{קיץ תשע"ד מועד א}
 
 \begin{center}
 \selectlanguage{english}
@@ -2727,7 +3014,7 @@ R &=& \frac{1}{2}MA\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section*{חורף תשע"ד}
+\section{חורף תשע"ד}
 
 \begin{center}
 \selectlanguage{english}
@@ -2862,8 +3149,6 @@ $\angle DCL=120^\circ$
 כך ש-%
 $\angle LBE=\angle LBD=60^\circ$.
 
-\end{comment}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
@@ -2900,6 +3185,18 @@ $\angle ABC$,
 יש משפטים שזוכרים בקלות כי הם די אינטואטיביים, למשל, שמשולשים חופפים לפי צ.צ.צ. ודומים לפי ז.ז. יש משפטים אחרים שקשה יותר לזכור אותם ושהוכחת נכונותם לא קלה.
 \url{}
 עם ציוריים צבעוניים של מבחר משפטים כדי לעזור לזכור אותם. מה שקשה לזכור מניסוח מילולי מסורבל. נספח ב מכיל ציורים עבור חלק מהמשפטים המתקדמים יותר.
+
+\item
+כאשר שואלים על שטחים של משולשים, כדאי לחפש גבהים משותפים. אנו רגילים לראות גבהים מנקודה לקו אופקי, אבל קיימים גבהים מכל נקודה לקו ממול ללא קשר למצג שלו על הנייר.
+
+\item
+כדי להוכיח חפיפה של משלושים ישר זווית מספיק להוכיח שוויון של צלע אחד ושיוון של זווית חדה אחת. אם הצלע הוא בין זווית חדה לבין הזווית הישרה, החפיפה היא לפי ז.צ.ז. אם הצלע הוא בין שתי הזוויות החדות, הזווית שערכה 
+$\alpha$
+והזווית השניה 
+$\beta$,
+אזי
+$\beta=90^\circ-\alpha$,
+ושוב יש ז.צ.ז. אני מניח שבבחינה צריך להזכיר עובדה זו, אבל כאשר מחפשים דרך להוכיח חפיפה, קיצור דרך זו יכול להועיל.
 %
 %קל לזכור מציור:
 %\begin{quote}
@@ -2945,9 +3242,10 @@ $\angle ABC$,
 
 \end{itemize}
 
-\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \newpage
 
 \begin{center}
@@ -2962,35 +3260,47 @@ $ABC$,
 תהי
 $P$
 נקודת החיתוך בין חוצה הזווית של
-$\angle A$
+$\angle BAC$
 לבין האנך האמצעי של 
 $BC$.
 סמן ב-%
-$E,F$
+$D,E,F$
 את נקודות החיתוך של האנחים מ-%
 $P$
 לצלעות
-$AB,AC$.
+$BC,AB,AC$.
 
-המשולשים
-$\triangle APE, \triangle APF$
-חופפים כי הם משולשים ישר זווית עם זוויות שוות
+$\triangle APE\cong \triangle APF$
+כי הם משולשים ישר זווית עם זוויות שוות
 $\alpha$
 וצלע $AP$ משותף.
+
+$\triangle DPB\cong \triangle DPC$
+לפי צ.ז.צ. כי 
+$PD$
+הוא צלע משותף, ו-%
 $BD=DC=a$
-ולכן המשולשים
-$\triangle DPB, \triangle DPC$
-חופפים. מכאן ש-%
+כי 
+$PD$
+הוא האנך האמצעי ל-%
+$BC$.
+
+$\triangle EPB\cong \triangle FPC$,
+כי
+$EP=PF$
+לפי החפיפה הראשונה, ו-%
 $PB=PC$
-וגם המשלושים
-$\triangle EPB, \triangle FPC$
-חופפים ו-%
-$AE+EB=AF+FC$,
+לפי החפיפה השנייה.
+
+נחבר את השוויונות ונקבל:
+\[
+AB=AE+EB=AF+FC=AC\,.
+\]
 $\triangle ABC$
-שווה שוקיים.
+שווה שוקיים!
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \coordinate (P) at (0,0);
 \node[xshift=4mm,yshift=1mm] at (P) {$P$};
 \coordinate [label=left:$B$] (B)  at (-2,-2);
@@ -3019,6 +3329,13 @@ $\triangle ABC$
 \node[below] at ($ (C) ! .5 ! (D) $) {$a$};
 \node[right,xshift=2pt] at ($ (A) ! .5 ! (F) $) {};
 \node[right,xshift=2pt] at ($ (C) ! .5 ! (F) $) {};
+\fill (A) circle(1pt);
+\fill (B) circle(1pt);
+\fill (C) circle(1pt);
+\fill (D) circle(1pt);
+\fill (E) circle(1pt);
+\fill (F) circle(1pt);
+\fill (P) circle(1pt);
 \end{tikzpicture}
 \end{center}
 הבעיה בהוכחה היא שהאיור אינו נכון כי הנקודה
@@ -3028,12 +3345,13 @@ $P$
 למשולש:
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=.4\textwidth]{isoceles}
+\includegraphics[width=.5\textwidth]{isoceles}
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+
 
 \begin{center}
 \textbf{\large נספח ב: ייצוג גרפי של משפטים בגיאומטריה}
