@@ -8,16 +8,14 @@
 \usepackage{url}
 \usepackage{bm}
 \usepackage{float}
-
-\newcommand*{\p}[1]{\textsf{\small #1}}
-\newcommand*{\bover}[1]{\bm{\overline{#1}}}
-
-\graphicspath{{images/}}
+\usepackage{eqnarray}
 
 \usepackage{tikz}
-\usetikzlibrary{external,intersections}
+\usepackage{tkz-euclide}
+\usetikzlibrary{positioning,through,calc,intersections,arrows.meta,external}
 \tikzexternalize[prefix=tikz/]
 \tikzset{>=stealth} % Use stealth arrows
+\usetkzobj{all}
 
 \textwidth=155mm
 \textheight=235mm
@@ -27,13 +25,29 @@
 \evensidemargin=5mm
 \headsep=0pt
 \parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
 
-%\includeonly{front1,motion,series}
+\graphicspath{{images/}}
+
+\newcommand*{\p}[1]{\textsf{\small #1}}
+\newcommand*{\bover}[1]{\bm{\overline{#1}}}
+\newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
+\newcommand*{\np}{\selectlanguage{english}\newpage\selectlanguage{hebrew}}
+
+\selectlanguage{hebrew}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\includeonly{}
 
 \begin{document}
 
 \include{front2}
+
+\setcounter{chapter}{3}
 \include{geometry}
+
 \include{trigonometry}
 
 \end{document}

@@ -1,4 +1,4 @@
-x# Learning Materials for Secondary School Mathematics
+# Learning Materials for Secondary School Mathematics
 
 **Mordechai (Moti) Ben-Ari**
 
@@ -21,6 +21,12 @@ Copyright 2018 by Moti Ben-Ari under the Creative Commons Attribution-ShareAlike
 - series: The challenge of series (he)
 - geometry: Visualization of theorems of Euclidean geometry (language-independents)
 - trigonometry: How to do trigonometry without memorizing (almost) anything (en,he)
+- bagrut: The above documents are being refactored
+as a three-volume report,
+one volume for each chapter of the bagrut exam.
+Currently, chapter one for questions 1-3 and
+chapter two for question 4.
+
 
 ### Enrichment
 

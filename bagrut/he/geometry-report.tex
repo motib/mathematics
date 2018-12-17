@@ -1,6 +1,96 @@
-% !TeX root = chapter2.tex
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{eqnarray}
 
-\chapter{גיאומטריה}
+\graphicspath{{images/}}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,through,calc,intersections,arrows.meta}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/]
+\tikzset {>=stealth} % Use stealth arrows
+
+\textwidth=155mm
+\textheight=235mm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=-5mm
+\evensidemargin=5mm
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+
+\newcommand*{\bover}[1]{\bm{\overline{#1}}}
+\newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
+\newcommand*{\np}{\selectlanguage{english}\newpage\selectlanguage{hebrew}}
+
+\begin{document}
+
+\selectlanguage{hebrew}
+
+%\begin{comment}
+\thispagestyle{empty}
+
+\begin{center}
+\textbf{\Huge גיאומטריה}
+
+\bigskip
+\bigskip
+\bigskip
+
+\textbf{\Large מוטי בן-ארי}
+
+\bigskip
+
+\textbf{\Large מכון ויצמן למדע}
+
+\bigskip
+
+\url{http://www.weizmann.ac.il/sci-tea/benari/}
+
+\bigskip
+
+\end{center}
+
+\selectlanguage{english}
+
+\vfill
+
+\begin{center}
+\sffamily\copyright{}\  2018 by Moti Ben-Ari.
+\end{center}
+
+\begin{footnotesize}
+\sffamily
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+\end{footnotesize}
+
+\begin{center}
+\includegraphics[width=.2\textwidth]{../../by-sa.png}
+\end{center}
+
+\np
+\thispagestyle{empty}
+\mbox{}
+\np
+\thispagestyle{empty}
+\selectlanguage{hebrew}
+
+\tableofcontents
+
+\np
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{מבוא}
 
@@ -3287,7 +3377,7 @@ $\beta=90^\circ-\alpha$,
 \np
 \appendix
 
-\chapter{אין לסמוך על איורים}
+\section{אין לסמוך על איורים}
 הנה הוכחה "נכונה"
 \textbf{\R{שכל}}
 משולש שווה שוקיים!
@@ -3389,7 +3479,7 @@ $P$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \np
 
-\chapter{ייצוג גרפי של משפטים בגיאומטריה}
+\section{ייצוג גרפי של משפטים בגיאומטריה}
 
 %
 % Thale's theorems
@@ -4080,3 +4170,8 @@ $P$
 \fill (mid2) circle (2pt);
 \end{tikzpicture}
 \end{minipage}
+
+%\end{comment}
+
+
+\end{document}
