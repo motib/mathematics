@@ -35,6 +35,19 @@
 \newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
 \newcommand*{\np}{\selectlanguage{english}\newpage\selectlanguage{hebrew}}
 
+%  Less space above chapter title
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \centering\huge\bfseries \@chapapp\space \thechapter
+        \hspace{.3em}
+    \fi
+    \Huge \bfseries #1\par\nobreak
+    \vskip 20\p@
+  }}
+\makeatother
+
 \selectlanguage{hebrew}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,9 +56,10 @@
 
 \begin{document}
 
-\include{front2}
-
 \setcounter{chapter}{3}
+
+\include{front-4-5}
+
 \include{geometry}
 
 \include{trigonometry}
