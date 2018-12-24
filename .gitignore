@@ -20,6 +20,7 @@ tikz-examples.tex
 *.auxlock
 *.bbl
 *.blg
+*.cot
 *.synctex.gz
 five-unit.docx
 *.mp4
