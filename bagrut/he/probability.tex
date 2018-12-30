@@ -11,9 +11,11 @@
 \begin{center}
 \selectlanguage{english}
 %\includegraphics[width=\textwidth]{summer-2018b-3}
-\includegraphics[width=.85\textwidth]{summer-2018b-3-1}
-\includegraphics[width=\textwidth]{summer-2018b-3-2}
+\hspace*{8em}\includegraphics[width=.7\textwidth]{summer-2018b-3-1}
+\hspace*{-2.2em}\includegraphics[width=\textwidth]{summer-2018b-3-2}
 \end{center}
+
+שאלה זו ארוכה במיוחד, אבל לא קשה במיוחד, כי ניתן לפתור את כל הסעיפים באמצעות נוסחת ברנולי בלבד.
 
 \textbf{סעיף א}
 $(1)$
@@ -31,29 +33,39 @@ $(2)$
 
 כדי לעבור את המבחן עליו לצבור
 \textbf{לפחות}
-שלוש תשובות נכונות. יש להוסיף את ההסבתרויות של ארבע וחמש תשובות נכונות:
+שלוש תשובות נכונות. להסתברות מהסעיף הקודם יש להוסיף את ההסבתרויות של ארבע וחמש תשובות נכונות:
 \[
 \frac{27}{64}+{3 \choose 2}\left(\frac{1}{4}\right)^2\left(\frac{3}{4}\right)^1+{3 \choose 3}\left(\frac{1}{4}\right)^3\left(\frac{3}{4}\right)^0=\frac{37}{64}\,.
 \]
+
+\np
+
 \textbf{סעיף ב}
 
-דניאל צירך לענות נכון על שאלה אחת 
+דניאל צריך לענות נכון על שאלה אחת 
 \textbf{בדיוק}
-מתוך שלושת השאלות הנותרות. דניאל ידע שתשובה אחת מתוך ארבע לא נכונה, לכן ההסתברות שהוא ענה נכון על השאלה היא
-$\frac{1}{3}$:
+מתוך שלושת השאלות הנותרות. דניאל ידע שתשובה אחת לא נכונה, לכן ההסתברות שהוא ענה נכון על השאלה היא
+$\displaystyle\frac{1}{3}$
+ולא 
+$\displaystyle\frac{1}{4}$
+כמו בסעיף הקודם:
 \[
 {3 \choose 1}\left(\frac{1}{3}\right)\left(\frac{2}{3}\right)^2=\frac{4}{9}\,.
 \]
 \textbf{סעיף ג}
+
+השאלה בסעיף זה דומה לשאלות בסעיפים הקודמים, רק במקום מספר קבוע של תשובות נכונות / לא נכונות ידועות, המספר ניתן על ידי פרמטר.
 
 אם הדס ידעה ש-%
 $k$
 מתוך 
 $4$
 תשובות לא נכונות, ההסתברות שהיא ענתה תשובה נכונה היא
-$\frac{1}{4-k}$,
-וההסתברות שהיא תענה תשובה לא נכונה היא
-$\frac{4-k-1}{4-k}$.
+$\displaystyle\frac{1}{4-k}$,
+וההסתברות ענתה תשובה לא נכונה היא
+$\displaystyle\frac{4-k-1}{4-k}$,
+כי 
+$\displaystyle\frac{1}{4-k}+\frac{4-k-1}{4-k}=1$.
 כדי לקבל ציון 
 \textbf{בדיוק}
 $100$
@@ -62,21 +74,27 @@ $100$
 $60$
 עליה לבחר תשובות לא נכונות לשתי השאלות הנותרות.
 
-אין צורך להשתמש בנוסחת ברנולי במלואו, כי כאשר מחשבים את ההסתברות של "כל" או "אף אחד", 
+אין צורך להשתמש בנוסחת ברנולי במלואו, כי כאשר מחשבים את ההסתברות של "הכל" או "אף אחד", 
 ${n\choose k}=1$,
 וגם
 $(1-p)^0=1$
 או
-$p^0=1$.
-לכן, מספיק לחשב את ההסתברות של האירוע לחזקת מספר השאלות:
-\begin{eqnarray*}
-\left(\frac{1}{4-k}\right)^2 &=&\left(\frac{4-k-1}{4-k}\right)^2\\
-(3-k)^2&=&1\\
-k^2-6k+8&=& 0\,.
-\end{eqnarray*}
-הפתרונות הם 
-$k=2,4$
-אבל נתון ש-"אחת ]מהתשובות[ נכונה", לכן הפתרון היחיד הוא
+$p^0=1$,
+ולכן, מספיק לחשב את ההסתברות של האירוע לחזקת מספר השאלות:
+\[
+\left(\frac{1}{4-k}\right)^2 =\left(\frac{4-k-1}{4-k}\right)^2\,.
+\]
+נפשט ונקבל משוואה ריבועית
+$k^2-6k+8=0$
+שהפתרונות שלה הם 
+$k=2,k=4$.
+הפרמטר
+$k$
+מוגדר כמספר התשובות שהדס יודעת שהן 
+\textbf{אינן}
+נכונות, ונתון )בשורה השנייה של השאלה( שתשובה אחת נכונה, כך שיש לפסול את הפתרון
+$k=4$
+ולבחור
 $k=2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,21 +105,36 @@ $k=2$.
 \selectlanguage{english}
 \includegraphics[width=	\textwidth]{summer-2018a-3}
 \end{center}
+
+\vspace{-2ex}
+
+לפני שניגש לפתור את השאולות בסעיפים, נמלא את טבלת ההסתברויות לפי המידע הנתון.
+
 נסמן ב-%
 $N$
 את התלמידים שנעזרו בחבריהם, וב-%
 $A$
-את התלמידים שעברו את המבחן. נתון ש-%
+את התלמידים שעברו את המבחן.
+
+די ברור שאם 
+$37\%$
+נעזרו בחבריהם ו-%
+$35$
+מהם עבור אז
+$P(N\cap A)=0.35$,
+אבל בכל זאת נחשב בצורה פרומלית. נתון ש-%
 $P(N)=0.37$.
 \textbf{מהם}
 עברו את הבחינה 
 $\displaystyle\frac{35}{37}$,
-ההסתברות המותנית
+כך שערך זה הוא ההסתברות המותנית
 $P(A/N)$.
 נחשב:
-\[
-P(A/N) = \frac{P(N\cap A)}{P(N)} = \frac{P(N\cap A)}{0.37}=\frac{35}{37},\quad\quad\quad P(N\cap A)=0.35\,.
-\]
+\erh{12pt}
+\begin{equationarray*}{rcl}
+P(A/N) &=& \frac{P(N\cap A)}{P(N)} = \frac{P(N\cap A)}{0.37}=\frac{35}{37}\\
+P(N\cap A)&=&0.35\,.
+\end{equationarray*}
 עד כאן טבלת ההסתברויות היא:
 \begin{center}
 \selectlanguage{english}
@@ -118,11 +151,17 @@ P(A/N) = \frac{P(N\cap A)}{P(N)} = \frac{P(N\cap A)}{0.37}=\frac{35}{37},\quad\q
 \node at (0.5,0.5) {$1.0$};
 \end{tikzpicture}
 \end{center}
-בהמשך נתון ש-%
+
+\np
+
+בהמשך נתון ש:
 \[
 P(\overline{N}\cap\overline{A})=\frac{P(N\cap A)}{5}=\frac{0.35}{5}=0.07\,,
 \]
 וניתן להשלים את הטבלה:
+
+\vspace{-2ex}
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.25]
@@ -142,26 +181,39 @@ P(\overline{N}\cap\overline{A})=\frac{P(N\cap A)}{5}=\frac{0.35}{5}=0.07\,,
 \node at (2.5,1.5) {$0.56$};
 \end{tikzpicture}
 \end{center}
+
+\smallskip
+
 \textbf{סעיף א}
+
+נקרא את השאלה בעיון: "בחרו 
+$\ldots$
+תלמיד 
+$\ldots$
+שלא עבר את המבחן. מה ההסתברות שהוא נעזר בחבריו?" הניסוח שני שלבים מכוון להסתברות מותנית:
 \[
 P(N/\overline{A})=\frac{P(N\cap \overline{A})}{P(\overline{A})}=\frac{0.02}{0.09}=\frac{2}{9}\,.
 \]
 \textbf{סעיף ב}
 
-עבור יעל:
+"ידוע ש" מכוון להסתברות מותנית, כי השאלה אם התלמידה עברה את המבחן או לא, תלוי בעובדה שאנו יודעים שהיא נעזרה או לא נעזרה בחברים.
+
+עבור יעל ההסתברות המותנית היא:
 \[
 P(A/N)=\frac{P(A \cap N)}{P(N)}=\frac{0.35}{0.37}=0.9459\,,
 \]
-ועבור הדס:
+ועבור הדס ההסתברות המותנית היא:
 \[
 P(A/\overline{N})=\frac{P(A\cap \overline{N})}{P(\overline{N})}=\frac{0.56}{0.63}=0.8889\,.
 \]
 ליעל הסתברות גבוהה יותר לעבור את המבחן.
 
+\smallskip
+
 \textbf{סעיף ג}
 
-שליש של שש הוא שניים. )שימו לב שלא לקרוא "שלושה" במקום "שליש"!( החישוב הוא לפי נוסחת ברנולי כאשר הערך של
-$P(\overline{N}\cap A)$
+שליש של שש הוא שניים. )שימו לב שלא לקרוא "שלושה" במקום "שליש"!( החישוב הוא לפי נוסחת ברנולי כאשר הערך
+$P(\overline{N}\cap A)=0.56$
 נמצא בטבלה:
 \[
 {6 \choose 2}(0.56)^2 (1-0.56)^4=0.1763\,.
@@ -169,15 +221,13 @@ $P(\overline{N}\cap A)$
 \textbf{סעיף ד}
 
 הניסוח "%
-\textbf{לפחות אחת}
-משתי הטענות
-$I, II$"
-אומר שהאירוע קורה אם קורה אחד מהאירועים
-$I, II$
+\textbf{לפחות אחת}"
+משתי הטענות I, II אומר שהאירוע קורה אם קורה אחד מהאירועים I, II 
 \textbf{או שניהם}.
-באיור להלן שני עגולים המייצגים את שני האירועים
-$I, II$.
-האירוע "לפחות אחד משניהם" מיוצג על ידי כל השטח המקווקו.
+בתרשים להלן שני העגולים המייצגים את שני האירועים I, II, והאירוע "לפחות אחת" מיוצג על ידי כל השטח המקווקו:
+
+\np
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
@@ -203,10 +253,9 @@ $I, II$.
 \draw[->] (4.5,2.2) -- +(-.6,-.6);
 \end{tikzpicture}
 \end{center}
-יש שתי דרכים לחשב את ההסתברות. בדרך הראשונה אנו לוקחים את סכום ההסתברויות של שני האירועים, וחסירים את ההסתברות של האירוע המשותף כי ספרנו אותו פעמיים, פעם כחלק מהאירוע 
-$I$
-ופעם כחלק מהאירוע
-$II$:
+
+
+יש שתי דרכים לחשב את ההסתברות. בדרך הראשונה אנו לוקחים את סכום ההסתברויות של שני האירועים, ומחסירים את ההסתברות של האירוע המשותף כי ספרנו אותו פעמיים, פעם כחלק מהאירוע I ופעם כחלק מהאירוע II:
 \[
 P(I \cup II) = P(I) + P(II) - P(I \cap II)\,.
 \]
@@ -264,13 +313,10 @@ P(I \cup II) = P(I-II) + P(II-I) + P(I \cap II)\,.
 \end{tikzpicture}
 \end{center}
 בשתי הדרכים מקבלים אותה תוצאה:
-\[
-\renewcommand{\arraystretch}{1.5}
-\begin{array}{l}
-P(N\cup\overline{A})=P(N) + P(\overline{A}) - P(N\cap\overline{A}) = 0.37+0.09-0.02=0.44\\
-P(N\cup\overline{A})=P(N-\overline{A}) + P(\overline{A}-N) + P(N\cap\overline{A}) = 0.35+0.07+0.02=0.44\,.
-\end{array}
-\]
+\begin{equationarray*}{rcl}
+P(N\cup\overline{A})&=&P(N) + P(\overline{A}) - P(N\cap\overline{A}) = 0.37+0.09-0.02=0.44\\
+P(N\cup\overline{A})&=&P(N-\overline{A}) + P(\overline{A}-N) + P(N\cap\overline{A}) = 0.35+0.07+0.02=0.44\,.
+\end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -284,21 +330,25 @@ P(N\cup\overline{A})=P(N-\overline{A}) + P(\overline{A}-N) + P(N\cap\overline{A}
 
 \textbf{סעיף א}
 
-מיכל תנצח אם )א( היא מטילה 
-$4$
-לא משנה מה גלית מטילה, אירוע שההסתברות שלה היא 
-$1$,
-או )ב( מיכל מטילה 
-$2$
-וגלית מטילה
-$1$,
-אירוע שההסתברות שלה היא
-$\frac{n}{6}$,
-כאשר נסמן ב-%
+נסמן ב-%
 $n$
 את המספר הפאות של הקוביה של גלית שכתוב עליהן
 $1$.
-המשוואה לניצחון של מיכל היא:
+
+מיכל תנצח אם היא מטילה 
+$4$
+)הסתברות
+$\frac{3}{6}$(,
+לא משנה מה גלית מטילה )הסתברות  
+$1$(,
+או אם היא מטילה 
+$2$
+)הסתברות
+$\frac{3}{6}$(,
+וגלית מטילה
+$1$
+)הסתברות
+$\frac{n}{6}$(:
 \[
 \frac{3}{6}\cdot 1 + \frac{3}{6}\cdot \frac{n}{6}=\frac{7}{12}\,,
 \]
@@ -307,9 +357,10 @@ $n=1$.
 
 \textbf{סעיף ב}
 
-גלית תנצח במשחק אם היא תנצח ב-%
+גלית תנצח אם היא תנצח ב-%
 $3,4,5$
-סיבובים:
+סיבובים. ההסתברות לניצחון בכל סיבוב היא
+$1-\frac{7}{12}=\frac{5}{12}$:
 \[
 {5\choose 3}\left(\frac{5}{12}\right)^3\left(\frac{7}{12}\right)^2+{5\choose 4}\left(\frac{5}{12}\right)^4\left(\frac{7}{12}\right)^1+{5\choose 5}\left(\frac{5}{12}\right)^5\left(\frac{7}{12}\right)^0=0.3466\,.
 \]
@@ -318,13 +369,9 @@ $3,4,5$
 המילים 
 \textbf{אם ידוע}
 מכוונות להסתברות מותנית:
-\vspace{-4ex}
 \[
-\renewcommand{\arraystretch}{2.4}
-\begin{array}{c}
-P(\textrm{\R{גלית תנצח}}/\textrm{\R{גלית ניצחה בסיבוב הראשון}}) =\\
+P(\textrm{\R{גלית תנצח}}/\textrm{\R{גלית ניצחה בסיבוב הראשון}}) =
 \displaystyle\frac{P(\textrm{\R{גלית תנצח}}\cap\textrm{\R{גלית ניצחה בסיבוב הראשון}})}{P(\textrm{\R{גלית ניצחה בסיבוב הראשון}})}\,.
-\end{array}
 \]
 ההסתברות במנה: כדי שגלית תנצח במשחק וגם בסיבוב הראשון, היא חייבת לנצח בסיבוב הראשון וגם ב-%
 $2,3,4$
@@ -335,8 +382,8 @@ $2,3,4$
 {4 \choose 2}\left(\frac{5}{12}\right)^2 \left(\frac{7}{12}\right)^2\right]
 =\frac{5}{12}\cdot 0.5534\,.
 \]
-ההסתברות במכנה היא כמובן 
-$\frac{5}{12}$,
+ההסתברות במכנה היא
+$\frac{5}{12}$
 ולכן התשובה היא
 $0.5534$.
 
@@ -350,27 +397,9 @@ $0.5534$.
 \includegraphics[width=.95\textwidth]{summer-2017b-3}
 \end{center}
 
-\vspace{-2ex}
+\vspace{-4ex}
 
-המילים "מוציאים באקראי
-$\ldots$
-\textbf{ולאחר מכן}
-שוב מוציאים באקראי" מכוונות לשימוש בעץ. נסמן ב-%
-\textsf{b}
-את מספר הכדורים הכחולים בקופסה 
-$I$.
-באיור~%
-\L{\ref{fig.summer-2017b.1}},
-בכל צומת רשום שני זוגות של מספרים: מספר הכדורים האדומים ומספר הכדורים הכחולים בקופסה
-$I$,
-ומתחתיו מספר הכדורים האדומים ומספר הכדורים הכחולים בקופסה
-$II$.
-
-\textbf{סעיף א}.
-
-הכוכביות מסמנות את שתי האפשרויות בהן הוצאנו כדור אדום אחד בדיוק מקופסה
-\textsf{I}.
-\begin{figure}
+%\begin{figure}
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
@@ -408,12 +437,30 @@ child {
       node[below,xshift=8mm,yshift=0mm] {$\frac{10-b}{10}$}
 };
 \end{tikzpicture}
-\selectlanguage{hebrew}
-\setlength{\belowcaptionskip}{-4ex}
-\caption{עץ ההסתברויות של הוצאת הכדורים מקופסה $I$}\label{fig.summer-2017b.1}
+%\selectlanguage{hebrew}
+%\setlength{\belowcaptionskip}{-4ex}
+%\caption{עץ ההסתברויות של הוצאת הכדורים מקופסה $I$}\label{fig.summer-2017b.1}
 \end{center}
-\end{figure}
-נשווה את הסתברות הנתונה לסכום ההסתברויות של שני המסלולים:
+%\end{figure}
+
+\vspace{-3ex}
+
+
+המילים "מוציאים באקראי
+$\ldots$
+\textbf{ולאחר מכן}
+שוב מוציאים באקראי" מכוונות לשימוש בעץ. נסמן ב-%
+\textsf{b}
+את מספר הכדורים הכחולים בקופסה I. בתרשים
+%\L{\ref{fig.summer-2017b.1}},
+בכל צומת רשום שני זוגות של מספרים: מספר הכדורים האדומים ומספר הכדורים הכחולים בקופסה I,
+ומתחתיו מספר הכדורים האדומים ומספר הכדורים הכחולים בקופסה II.
+
+\np
+
+\textbf{סעיף א}
+
+הכוכביות מסמנות את שתי האפשרויות בהן הוצאנו כדור אדום אחד בדיוק מקופסה I. נשווה את הסתברות הנתונה לסכום ההסתברויות של שני המסלולים:
 \[
 \frac{10-b}{10}\cdot\frac{b}{9} + \frac{b}{10}\cdot\frac{10-b}{10} = \frac{19}{36}\,.
 \]
@@ -422,22 +469,24 @@ $b^2-10b+25=0$
 שיש לה פתרון אחד
 $b=5$.
 
+\smallskip
+
 \textbf{סעיף ב}
 
-לאחר הצבת 
-$b=5$,
-נקבל עבור כל מצב את מספר הכדורים האדומים וכחולים בקופסה
-$II$,
-נוכל לחשב את ההסתברויות להוצאת כדור אדום מקופסה
-$II$,
-ונסכם את ההסתברויות לאחר הכפלתן בהסתברות להגיע לכל אחד מהמצבים:
+בתרשים רשום מספר הכדורים האדומים מתוך כל הכדורים בקופסה II. מלמעלה למטה:
 \[
-\renewcommand{\arraystretch}{2}
+\frac{5}{5+7}=\frac{5}{12},\; \frac{4}{4+7}=\frac{4}{11},\; \frac{4}{4+7}=\frac{4}{11},\; \frac{3}{3+7}=\frac{3}{10}\,.
+\]
+את ההסתברויות להגיע לכל אחד מהמצבים נקבל לאחר הצבת
+$b=5$.
+נסכם את ההסתברויות להוציא כדור אדום:
+\[
+\erh{18pt}
 \begin{array}{l}
-\displaystyle\left(\frac{5}{10}\cdot\frac{4}{9}\right)\left(\frac{5}{5+7}\right)+
-\left(\frac{5}{10}\cdot\frac{5}{9}\right)\left(\frac{4}{4+7}\right)+\\
-\displaystyle\left(\frac{5}{10}\cdot\frac{5}{10}\right)\left(\frac{4}{4+7}\right)+
-\left(\frac{5}{10}\cdot\frac{5}{10}\right)\left(\frac{3}{3+7}\right)
+\displaystyle\left(\frac{5}{10}\cdot\frac{4}{9}\right)\left(\frac{5}{12}\right)+
+\left(\frac{5}{10}\cdot\frac{5}{9}\right)\left(\frac{4}{11}\right)+\\
+\displaystyle\left(\frac{5}{10}\cdot\frac{5}{10}\right)\left(\frac{4}{11}\right)+
+\left(\frac{5}{10}\cdot\frac{5}{10}\right)\left(\frac{3}{10}\right)
 =0.3595\,.
 \end{array}
 \]
@@ -455,9 +504,13 @@ P(II\ \textrm{\R{נשארו שלושה אדומים בקופסה}}/II\ \textrm{\
 \displaystyle\frac{P(II\ \textrm{\R{נשארו שלושה אדומים בקופסה}} \cap II\ \textrm{\R{הוציאו כדור אדום מקופסה}})}{P(II\ \textrm{\R{הוציאו כדור אדום מקופסה}})}
 \end{array}
 \]
-ישארו שלושה כדורים אדומים רק אם היו אברעה כדורים אדומים לפני הבחירה. ההסתברות במנה היא ההסתברות )הנתונה!( שנגיע לאחד המצבים המסומנים בכוכבית כפול ההסתברות לבחור אדום מקופסה 
-$II$,
-וחישבנו את ההסתברות במכנה בסעיף ב. התשובה היא:
+ישארו שלושה כדורים אדומים רק אם היו אברעה כדורים אדומים לפני הבחירה. ההסתברות במנה היא 
+$\displaystyle \frac{19}{36}$,
+ההסתברות )הנתונה!( שנגיע לאחד המצבים המסומנים בכוכבית, כפול ההסתברות לבחור אדום מקופסה II, 
+$4$
+מתוך
+$11$
+כדורים. חישבנו את ההסתברות במכנה בסעיף ב:
 \[
 \frac{\displaystyle\frac{19}{36}\cdot\frac{4}{11}}{0.3595}=0.53385\,.
 \]
@@ -477,7 +530,7 @@ $II$,
 $D$
 את האירוע "לדייר יש קלנועית" ואת ההסתברות של האירוע ב-%
 $p$.
-נתון ש:
+לפי נוסחת ברנולי נתון ש:
 \[
 {9\choose 4} p^4 (1-p)^5=24 {9\choose 6} p^6 (1-p)^3\,.
 \]
@@ -485,10 +538,8 @@ $p$.
 \[
 15p^2+2p-1=0\,,
 \]
-עם שני פתרונות
-$p=\frac{1}{5},-\frac{1}{3}$.
-הסתברות חייבת להיות לא-שלילית ולכן התשובה היא 
-$p=\frac{1}{5}=0.2$.
+הפתרון החיובי היחיד הוא 
+$p=\displaystyle\frac{1}{5}=0.2$.
 
 \textbf{סעיף ב}
 
@@ -498,13 +549,14 @@ $p=\frac{1}{5}=0.2$.
 \[
 P(D=4/D\ge3) = \frac{P(D=4\cap D\ge 3)}{P(D\ge 3)}\,.
 \]
-כאשר יש חפיפה בין שני ביטויים בחיתוך אפשר לפשט אותו. ברור שאם ערך גדול או שווה
+כאשר יש חפיפה בין שני ביטויים בחיתוך אפשר לפשט אותו: ברור שאם ערך גדול או שווה
 $3$
 \textbf{וגם}
 שווה ל-%
 $4$
 אז הוא שווה ל-%
-$4$:
+$4$,
+וניתן לפשט את המשוואה להסתברות מותנית:
 \[
 P(D=4/D\ge3) =\frac{P(D=4)}{P(D\ge 3)}\,.
 \]
@@ -512,20 +564,30 @@ P(D=4/D\ge3) =\frac{P(D=4)}{P(D\ge 3)}\,.
 \[
 P(D=4)={6\choose 4} 0.2^4 (1-0.2)^2= 0.01536\,.
 \]
-את הערך של
+את המנה
 $P(D\ge 3)$
-אפשר לחשב בשתי דרכים, בצורה ישירה או כאחד פחות המשלים. נבחר את האפשרות השנייה כי יש פחות גורמים בביטוי:
+אפשר לחשב בשתי דרכים, בצורה ישירה: 
+\[
+{6\choose 3}0.2^3(1-0.2)^3+{6\choose 4}0.2^4(1-0.2)^2 + {6 \choose 5} 0.2^5(1-0.2)^1+ {6 \choose 6} 0.2^6(1-0.2)^0=0.099\,,
+\]
+\np
+ או כאחד פחות המשלים:
 \[
 1-0.2^0(1-0.2)^6-{6\choose 1}0.2^1(1-0.2)^5 - {6 \choose 2} 0.2^2(1-0.2)^4=0.099\,,
 \]
-והתשובה היא
-$\displaystyle\frac{0.01536}{0.099}=0.15534$.
+כמובן שכדאי לבחור את האפשרות השנייה כי יש פחות גורמים לחשב.
 
-\newpage
+התשובה לשאלה היא:
+\[
+P(D=4/D\ge3) =\displaystyle\frac{P(D=4)}{P(D\ge 3)}=\displaystyle\frac{0.01536}{0.099}=0.15534\,.
+\]
+
 
 \textbf{סעיף ג}
 
-הבחירה 
+המשמעות של
+"\textbf{עד ש}"
+היא שהבחירה 
 \textbf{האחרונה} 
 תהיה "הצלחה" ויהיו שתי "הצלחות" בחמשת הבחירות הקודמות:
 \[
@@ -550,36 +612,43 @@ $p$
 
 \textbf{סעיף א}
 
-לפי המידע הנתון:
+נכתוב משאווה עם נוסחת ברנולי לפי המידע הנתון:
 \[
 {5 \choose 4} p^4(1-p)^1 = 3{5\choose 5}p^5(1-p)^0\,.
 \]
-והפתרון הוא
-$p=\frac{5}{8}$.
+הגורם
+$p^4$
+מצטמצם והפתרון הוא
+$p=\displaystyle\frac{5}{8}$.
+
+\medskip
 
 \textbf{סעיף ב}
 
-ההסתברות ל-%
+אביגיל תנצח אם היא פוגעת ב-%
 $3,4,5$
-פגיעות היא:
+זריקות. ההסתברות היא:
 \[
-{5 \choose 3}p^3(1-p)^2 + {5 \choose 4}p^4(1-p)^1 + {5 \choose 5}p^5(1-p)^0
+{5 \choose 3}p^3(1-p)^2 + {5 \choose 4}p^4(1-p)^1 + {5 \choose 5}p^5(1-p)^0.
 \]
 נציב
-$p=\frac{5}{8}$
+$p=\displaystyle\frac{5}{8}$
 ונקבל
 $0.7248$.
+
+\np
 
 \textbf{סעיף ג} 
 $(1)$
 
-לדעתי, ניסוח השאלה לא ברור. אני פירשתי אותה: מה ההסתברות של
+לדעתי, ניסוח השאלה לא ברור. אני פירשתי אותה כך: מה ההסתברות של
 \textbf{האירוע}
 "אביגיל מחטיאה בזריקה השנייה ופוגעת בשלוש או ארבע מהזריקות האחרות"? כותב הבחינה התכוון להסתברות מותנית: "%
 \textbf{אם ידוע ש-}%
-אביגיל החטיאה בזריקה השנייה, מה ההסתברות שהיא פוגעת בשלוש או ארבע מהזריקות האחרות"?
+אביגיל החטיאה בזריקה השנייה, מה ההסתברות שהיא פוגעת בשלוש או ארבע מהזריקות האחרות"? הנוסחה היא:
+\vspace{-3ex}
 \[
-\renewcommand{\arraystretch}{2}
+\erh{16pt}
 \begin{array}{c}
 P(1,3,4,5\ \textrm{\R{אביגיל פגעה בשלוש או ארבע מהזריקות}}/\textrm{\R{אביגיל החטיאה בזריקה השניה}}) =\\
 \displaystyle\frac{P(1,3,4,5\ \textrm{\R{אביגיל פגעה בשלוש או ארבע מהזריקות}}\cap \textrm{\R{אביגיל החטיאה בזריקה השניה}})}{P(\textrm{\R{אביגיל החטיאה בזריקה השניה}})}\,.
@@ -587,13 +656,13 @@ P(1,3,4,5\ \textrm{\R{אביגיל פגעה בשלוש או ארבע מהזרי�
 \]
 אפשר לפתור את הבעיה בשתי דרכים. נתחיל עם הדרך הפשוטה יותר. נתון שהסיכוי לפגוע במטרה אינו תלוי בניסיונות הקודמים, ולכן ההסתברויות בלתי תלויות והחישוב מצטמצם:
 \[
-\renewcommand{\arraystretch}{2}
+\erh{16pt}
 \begin{array}{c}
 \displaystyle\frac{P(1,3,4,5\ \textrm{\R{אביגיל פגעה בשלוש או ארבע מהזריקות}}) \cdot P(\textrm{\R{אביגיל החטיאה בזריקה השניה}})}{P(\textrm{\R{אביגיל החטיאה בזריקה השניה}})}=\\
 P(1,3,4,5\ \textrm{\R{אביגיל פגעה בשלוש או ארבע מהזריקות}})\,.
 \end{array}
 \]
-החישוב הוא:
+לפי נוסחת ברנולי:
 \[
 {4\choose 4}\left(\frac{5}{8}\right)^4 \left(\frac{3}{6}\right)^0 +{4\choose 3}\left(\frac{5}{8}\right)^3\left(\frac{3}{8}\right)^1 = 0.5188\,.
 \]
@@ -603,9 +672,11 @@ P(1,3,4,5\ \textrm{\R{אביגיל פגעה בשלוש או ארבע מהזרי�
 \frac{5}{8}\cdot \frac{3}{8} \cdot \left[{3\choose 2}\left(\frac{5}{8}\right)^2\frac{3}{8}\right] = 0.1945\,.
 \]
 נחלק ב-%
-$\frac{3}{8}$,
+$\displaystyle\frac{3}{8}$,
 ההסתברות האביגיל החטיאה בזריקה השנייה, ונקבל 
 $0.5188$.
+
+\bigskip
 
 \textbf{סעיף ג} 
 $(2)$
@@ -624,13 +695,14 @@ $1,3,4,5$".
 \includegraphics[width=.86\textwidth]{summer-2016b-3}
 \end{center}
 
-\vspace{-2ex}
+\vspace{-1ex}
 
 נסמן:
 $=y$
 ההסתברות שיעל תנצח במשחק בודד, 
 $=a$
 ההסתברות שאנה תנצח במשחק בודד.
+
 
 \textbf{סעיף א}
 
@@ -640,17 +712,17 @@ $=a$
 \]
 נפשט ונקבל משוואה ריבועית
 $4y^2+4y-3=0$
-שהשורש החיובי היחיד שלה היא
-$y=\frac{1}{2}$.
+שהשורש החיובי שלה היא
+$y=\displaystyle\frac{1}{2}=0.5$.
 
 \textbf{סעיף ב}
 
-כדאי לצייר עץ של האירועים, אבל אוותר עליו בשאלה זו כי המצב פשוט. האפשרויות לקבל שוויון הן: )א( ניצחון אחד לאנה וליעל, או )ב( תיקן בשני המשחקים. ההסתברות לתיקו היא המשלים לסכום ההסתברויות שאחת מהן תנצח:
+האפשרויות לקבל שוויון הן: )א( ניצחון אחד לאנה וליעל, או )ב( תיקן בשני המשחקים. ההסתברות לתיקו היא המשלים לסכום ההסתברויות שאחת מהן תנצח:
 \[
 {2 \choose 1}ya + (1-(y+a))^2 = 0.34\,.
 \]
 נציב 
-$y=\frac{1}{2}$
+$y=0.5$
 ונקבל
 $a=0.3$.
 
@@ -661,7 +733,7 @@ $a=0.3$.
 מכוונות להסתברות מותנית:
 \vspace{-2ex}
 \[
-\renewcommand{\arraystretch}{2}
+\erh{16pt}
 \begin{array}{c}
 P(\textrm{\R{אנה תנצח במשחק השני}} / \textrm{\R{תוצאת הסבב השני היא שוויון}})=\\
 \displaystyle\frac{
@@ -673,7 +745,7 @@ P(\textrm{\R{אנה תנצח במשחק השני}} \cap \textrm{\R{תוצאת ה
 ההסתברות לשיוון בסבב השני נתונה. אם אנה תנצח במשחק השני, יהיה שוויון רק אם גם יעל תנצח במשחק הראשון:
 \vspace{-1ex}
 \[
-\frac{ya}{.34}=\frac{\displaystyle\frac{1}{2}\cdot 0.3}{.34}=0.4412\,.
+\frac{ya}{.34}=\frac{0.5\cdot 0.3}{.34}=0.4412\,.
 \]
 שימו לב שלא צריכים
 $2 \choose 1$
@@ -691,6 +763,10 @@ $2 \choose 1$
 \includegraphics[width=.95\textwidth]{summer-2016a-3}
 \end{center}
 
+\vspace{-2ex}
+
+לפני שניגש לפתרון השאלות, ננסה למלא את טבלת ההסתברויות.
+
 נסמן 
 $=S$
 נבחנים שהצליחו,
@@ -703,51 +779,53 @@ $=E$
 \[
 P(K)=0.20,\;P(M)=0.40,\;P(E)=0.40,\;P(S)=0.70\,.
 \]
-נחשב את שאר ההסתברויות. לפי הסתברות משלימה
-$P(\overline{S})=1-P(S)=0.30$.
 נתון:
 \[
 P(\overline{S}/M)=P(\overline{S}\cap M) / P(M)=\frac{1}{8}\,,
 \]
 ולכן:
 \[
-P(\overline{S}\cap M)=\frac{1}{8}P(M)=0.05\,.
+P(\overline{S}\cap M)=P(\overline{S}/M)\cdot P(M)=\frac{1}{8}\cdot 0.40=0.05\,.
 \]
-לפי ההגדרה:
-\[
-P(S)=P(K\cap S) + P(M\cap S) + P(E\cap S)\,.
-\]
-נסמן
-$P(K\cap S)=p$,
-ההסתברות שנבחנים מקיבוצים הצליחו. נתון:
-\[
-P(E\cap S)=2.5P(K\cap S)=2.5p\,,
-\]
+%וגם 
+%$P(M\cap S) = P(M)-P(M\cap \overline{S})=0.40-0.05=0.35$.
+סיכום ביניים:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.25]
+\draw (0,0) grid (4,3);
+\node at (3.5,3.3) {$\bm{K}$};
+\node at (2.5,3.3) {$\bm{M}$};
+\node at (1.5,3.3) {$\bm{E}$};
+\node at (4.3,2.5) {$\bm{S}$};
+\node at (4.3,1.5) {$\bover{S}$};
+
+\node at (0.5,2.5) {$0.70$};
+\node at (0.5,1.5) {$0.30$};
+\node at (0.5,0.5) {$1.0$};
+
+%\node at (1.5,2.5) {$0.25$};
+%\node at (1.5,1.5) {$0.15$};
+\node at (1.5,0.5) {$0.40$};
+
+\node at (2.5,2.5) {$0.35$};
+\node at (2.5,1.5) {$0.05$};
+\node at (2.5,0.5) {$0.40$};
+
+%\node at (3.5,2.5) {$0.10$};
+%\node at (3.5,1.5) {$0.10$};
+\node at (3.5,0.5) {$0.20$};
+\end{tikzpicture}
+\end{center}
+
+הנתון האחרון הוא:
+$P(E\cap S)=2.5P(K\cap S)$,
 ולכן:
 \[
-0.70=p+(0.40-0.05)+2.5p\,,
+P(S)=0.70=P(K\cap S)+0.35+2.5P(K\cap S)\,,
 \]
 ו-%
-$p=0.1$.
-
-שימו לב שהמילים 
-"$\frac{1}{8}$
-\textbf{מן}
-הנבחנים שהיו ממושבים נכשלו" מכוונות להסתברות מותנית, לעומת המילים "ההסתברות לבחור באקראי
-\textbf{מבין כל}
-הנבחנים נבחן שהיה מהעיר
-\textbf{וגם}
-הצליח במבחן" מכוונות לחיתוך הסתברויות. המילה "מבין" בדרך כלל מכוונת להסתברות מותנית, אבל כאשר "מבין" מתייחס ל-%
-"\textbf{כל}
-הנבחנים" אין הסתברות מותנית. לחילופין, ההסתברות לבחור אחד "מכל הנבחנים" היא 
-$1$,
-ולכן:
-\[
-P(E\cap S/\textrm{\R{כל הנבחנים}})=
-\frac{(P(E\cap S)\cap \textrm{\R{כל הנבחנים}})}
-{P(\textrm{\R{כל הנבחנים}})} = 
-\frac{P(E\cap S)}{1}=P(E\cap S)\,.
-\]
+$P(K\cap S)=0.1, P(E\cap S)=0.25$.
 נסכם את המידע בטבלה:
 \begin{center}
 \selectlanguage{english}
@@ -776,16 +854,34 @@ P(E\cap S/\textrm{\R{כל הנבחנים}})=
 \node at (3.5,0.5) {$0.20$};
 \end{tikzpicture}
 \end{center}
+\textbf{שימו לב}
+שהמילים 
+"$\frac{1}{8}$
+\textbf{מן}
+הנבחנים שהיו ממושבים נכשלו" מכוונות להסתברות מותנית, לעומת המילים "ההסתברות לבחור באקראי
+\textbf{מבין כל}
+הנבחנים נבחן שהיה מהעיר
+\textbf{וגם}
+הצליח במבחן" מכוונות לחיתוך הסתברויותף כי ההסתברות לבחור אחד "מכל הנבחנים" היא 
+$1$:
+\[
+P(E\cap S/\textrm{\R{כל הנבחנים}})=
+\frac{(P(E\cap S)\cap \textrm{\R{כל הנבחנים}})}
+{P(\textrm{\R{כל הנבחנים}})} = 
+\frac{P(E\cap S)}{1}=P(E\cap S)\,.
+\]
+
+
 \textbf{סעיף א}
 
-לפי הנוסחה להסתברות מותנית:
+לפי הנוסחה להסתברות מותנית וההנחה שאף נבחן לא בא גם מקיבוץ וגם ממושב:
 \[
 P(\overline{E}/\overline{S})=P((K\cup M)/\overline{S}) = \frac{P(K\cap \overline{S})+P(M\cap \overline{S})}{P(\overline{S})}=\frac{0.10+0.05}{0.30}=\frac{1}{2}\,.
 \]
 \textbf{סעיף ב}
 $(1)$
 
-לפי הנוסחה להסתברות מותנית:
+לפי הנוסחה להסתברות מותנית וההנחה שאף נבחן לא בא גם מקיבוץ וגם מעיר:
 \[
 P(\overline{M}/S)=P((K\cup E)/S) = \frac{P(K\cap S)+P(E\cap S)}{P(S)}=\frac{0.10+0.25}{0.70}=\frac{1}{2}\,.
 \]
@@ -810,9 +906,9 @@ $(2)$
 ההסתברות שדן לא יזכה באף אחד מחמישת המשחקים היא 
 $P(0)^5$.
 נתון שערך זה הוא 
-$\frac{1}{32}$,
+$\displaystyle\frac{1}{32}$,
 ולכן 
-$P(0)=\frac{1}{2}$.
+$P(0)=\displaystyle\frac{1}{2}$.
 לפי המידע הנתון:
 \begin{eqnarray*}
 {5\choose 2} P(50)^2 (1-P(50))^3 &=& {5\choose 1} P(50) (1-P(50))^4\\
@@ -823,14 +919,16 @@ P(50)&=&\frac{1}{3}\,.
 לפי ההסתברות המשלימה:
 $\displaystyle P(100) = 1 - P(0) - P(50) = 1-\frac{1}{2}-\frac{1}{3}=\frac{1}{6}$.
 
+\smallskip
+
 \textbf{סעיף ג}
 
 המילים
 "\textbf{ידוע כי}"
 מכוונות להסתברות מותנית:
-\vspace{-4ex}
+\vspace{-3ex}
 \[
-\renewcommand{\arraystretch}{2}
+\erh{16pt}
 \begin{array}{c}
 P(\textrm{\R{ באף משחק}}50\textrm{\R{לא זכה ב-}}
 /
@@ -847,20 +945,24 @@ P(\textrm{\R{ באף משחק}}50\textrm{\R{לא זכה ב-}}
 100\textrm{\R{זכה ב-}})}\,.
 \end{array}
 \]
-נתבונן בעץ המציג את תוצאות שני המשחקים )איור~%
-\L{\ref{fig.winter-2017.1}}(.
-סימנו את המסלולים שבהם דן זכה ב-%
+נתבונן בעץ המופיע בעמוד הבא שמציג את תוצאות שני המשחקים. סימנו את המסלולים שבהם דן זכה ב-%
 $100$
 והמסלולים בהם דן לא זכה ב-%
 $50$
-באף אחד משני המשחקים.
-\begin{figure}
+באף אחד משני המשחקים. חישוב ההסתברות המותנית:
+\[
+\frac{\displaystyle\frac{1}{2}\cdot\frac{1}{6} + \frac{1}{6}\cdot \frac{1}{2}}{\displaystyle\frac{1}{2}\cdot\frac{1}{6} + \frac{1}{3}\cdot \frac{1}{3}+ \frac{1}{6}\cdot \frac{1}{2}}  =  \frac{\displaystyle\frac{1}{6}}{\displaystyle\frac{5}{18}}=\frac{3}{5}\,.
+\]
+
+\np
+
+%\begin{figure}
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
 [grow=right,
-level 1/.append style={font=\sffamily,level distance=4cm,sibling distance=6em},
-level 2/.append style={font=\sffamily,level distance=5cm,sibling distance=2em}]
+level 1/.append style={font=\sffamily,level distance=4cm,sibling distance=12em},
+level 2/.append style={font=\sffamily,level distance=5cm,sibling distance=4em}]
 \node[left] {$0$} % root
 child {
   node[right] {$100$}
@@ -913,18 +1015,12 @@ child {
 ;
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\setlength{\belowcaptionskip}{-6ex}
-\caption{עץ ההסתברויות של המשחקים}\label{fig.winter-2017.1}
+%\setlength{\belowcaptionskip}{-6ex}
+%\caption{עץ ההסתברויות של המשחקים}\label{fig.winter-2017.1}
 \end{center}
-\end{figure}
-חישוב ההסתברות המותנית:
-\[
-\frac{\displaystyle\frac{1}{2}\cdot\frac{1}{6} + \frac{1}{6}\cdot \frac{1}{2}}{\displaystyle\frac{1}{2}\cdot\frac{1}{6} + \frac{1}{3}\cdot \frac{1}{3}+ \frac{1}{6}\cdot \frac{1}{2}}  =  \frac{\displaystyle\frac{1}{6}}{\displaystyle\frac{5}{18}}=\frac{3}{5}\,.
-\]
+%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\np
-\mbox{}
 \np
 
 \section{קיץ תשע"ה מועד ב}
@@ -933,8 +1029,6 @@ child {
 \selectlanguage{english}
 \includegraphics[width=.85\textwidth]{summer-2015b-3}
 \end{center}
-
-\vspace{-2ex}
 
 \textbf{סעיף א}
 $(1)$
@@ -946,7 +1040,9 @@ $=b$
 {4 \choose 2} b^2(1-b)^2 = 6\cdot {4 \choose 1} b (1-b)^3\,.
 \]
 פתרון המשוואה הוא 
-$b=\frac{4}{5}$.
+$b=\displaystyle\frac{4}{5}$.
+
+\smallskip
 
 \textbf{סעיף א}
 $(2)$
@@ -955,24 +1051,64 @@ $(2)$
 \[
 1-\left(\frac{1}{5}\right)^8-\left(\frac{4}{5}\right)^8=0.8322\,.
 \]
+
+\np
+
 \textbf{סעיף ב}
 $(1)$
 
-בעץ ההסתברויות באיור~%
-\L{\ref{fig.summer-2015b.1}}
-הכוכבית מראה את מהמסלול עבור "אוכל בקפטריה":
+\vspace{-3ex}
+%\begin{figure}[H]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+[grow=right,
+level 1/.append style={level distance=3cm,sibling distance=8em},
+level 2/.append style={text width=1cm,level distance=5cm,sibling distance=8em}]
+\node[text width=1cm] {} % root
+child {
+  node {}
+    edge from parent node[below,xshift=-5mm,yshift=-3mm] {\R{מביא מהבית}}
+      node[above,xshift=3mm,yshift=-4pt] {$\frac{4}{5}$}
+}
+child { 
+  node {}
+    child {
+      node {*}
+      edge from parent node[below,xshift=5mm,yshift=-3mm] {\R{אוכל בקפטריה}}
+        node[above,xshift=11mm,yshift=-2mm] {$\frac{4}{10}$}
+    }
+    child {
+      node {}
+      edge from parent node[above,xshift=5mm,yshift=3mm] {\R{לא אוכל}}
+        node[below,xshift=10mm,yshift=2mm] {$\frac{6}{10}$}
+    }
+    edge from parent node[above,xshift=-4mm,yshift=5mm] {\R{לא מביא מהבית}}
+      node[below,xshift=4mm,yshift=2mm] {$\frac{1}{5}$}
+};
+\end{tikzpicture}
+%\selectlanguage{hebrew}
+%\setlength{\belowcaptionskip}{-4ex}
+%\caption{עץ ההסתברויות של אפשרויות האכילה}\label{fig.summer-2015b.1}
+\end{center}
+%\end{figure}
+
+
+בעץ ההסתברויות הכוכבית מראה את מהמסלול עבור "אוכל בקפטריה":
 \[
 \frac{1}{5}\cdot \frac{4}{10} = \frac{2}{25}\,.
 \]
+
+
 \textbf{סעיף ב}
 $(2)$
 
 המילה
 "\textbf{מבין}"
-מכוונת להסתברות מותנית, כאשר קבוצת "מביא אוכל" היא תת-קבוצה של "אוכלים" והחישוב מצטמטם:
+מכוונת להסתברות מותנית וקבוצת "מביא אוכל" היא תת-קבוצה של "אוכלים": 
 \[
 %\vspace{-1ex}
-\renewcommand{\arraystretch}{2}
+\erh{20pt}
 \begin{array}{c}
 P(\textrm{\R{מביא אוכל}} / \textrm{\R{אוכלים}})=\\
 \displaystyle\frac{
@@ -987,43 +1123,9 @@ P(\textrm{\R{מביא אוכל}})
 \]
 החישוב הוא:
 \[
-\frac{4/5}{\displaystyle\frac{4}{5}+\frac{2}{25}}=\frac{10}{11}\,.
+\frac{\displaystyle\frac{4}{5}}{\displaystyle\frac{4}{5}+\frac{2}{25}}=\frac{10}{11}\,.
 \]
 
-\begin{figure}[H]
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}
-[grow=right,
-level 1/.append style={level distance=3cm,sibling distance=6em},
-level 2/.append style={text width=1cm,level distance=4cm,sibling distance=6em}]
-\node[text width=1cm] {} % root
-child {
-  node {}
-    edge from parent node[below,xshift=-5mm,yshift=-2mm] {\R{מביא מהבית}}
-      node[above] {$\frac{4}{5}$}
-}
-child { 
-  node {}
-    child {
-      node {*}
-      edge from parent node[below,xshift=5mm,yshift=-1mm] {\R{אוכל בקפטריה}}
-        node[above,xshift=8mm,yshift=-2mm] {$\frac{4}{10}$}
-    }
-    child {
-      node {}
-      edge from parent node[above,xshift=5mm,yshift=1mm] {\R{לא אוכל}}
-        node[below,xshift=8mm,yshift=2mm] {$\frac{6}{10}$}
-    }
-    edge from parent node[above,xshift=-4mm,yshift=3mm] {\R{לא מביא מהבית}}
-      node[below,xshift=4mm,yshift=2mm] {$\frac{1}{5}$}
-};
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\setlength{\belowcaptionskip}{-4ex}
-\caption{עץ ההסתברויות של אפשרויות האכילה}\label{fig.summer-2015b.1}
-\end{center}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \np
@@ -1031,7 +1133,7 @@ child {
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=.85\textwidth]{summer-2015a-3}
+\includegraphics[width=.9\textwidth]{summer-2015a-3}
 \end{center}
 
 נסמן 
@@ -1040,17 +1142,16 @@ $=n$
 $3=$,
 ומספר האי-זוגיים
 $n-3=$.
-השאלה מתארת בחירה של "הספרה הראשונה" ואחר כך "הספרה הראשונה", תיאור המכוון לעץ הסתברויות )איור~%
-\L{\ref{fig.summer-2015a.1}}(.
-כדי לפשט את האיור רשמתי בכל צומת את ההסתברויות ולא את מספר הספרות.
 
-\begin{figure}[H]
+בחירה של ספרת העשרות ואחר כך ספרת היחידות מכוונת לעץ הסתברויות. כדי לפשט את התרשים רשמתי בכל צומת את ההסתברויות ולא את מספר הספרות.
+
+%\begin{figure}[H]
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
 [grow=right,
-level 1/.append style={text width=2cm,level distance=3.5cm,sibling distance=8em},
-level 2/.append style={text width=2.5cm,level distance=4.5cm,sibling distance=4em}]
+level 1/.append style={text width=2cm,level distance=3.5cm,sibling distance=10em},
+level 2/.append style={text width=2.5cm,level distance=4.5cm,sibling distance=5em}]
 \node[text width=2cm] {$\left(\frac{3}{n},\frac{n-3}{n}\right)$} % root
 child {
   node {$\left(\frac{3}{n-1},\frac{n-4}{n-1}\right)$}
@@ -1077,27 +1178,31 @@ child {
     edge from parent node[above] {\R{זוגי}}
 };
 \end{tikzpicture}
-\selectlanguage{hebrew}
-\setlength{\belowcaptionskip}{-8ex}
-\caption{עץ ההסתברויות של בחירת הספרות}\label{fig.summer-2015a.1}
+%\selectlanguage{hebrew}
+%\setlength{\belowcaptionskip}{-8ex}
+%\caption{עץ ההסתברויות של בחירת הספרות}\label{fig.summer-2015a.1}
 \end{center}
-\end{figure}
+%\end{figure}
+
+\np
 
 \textbf{סעיף א}
 
-המספר יהיה אי-זוגי אם 
+המספר שיוני בחר יהיה אי-זוגי רק אם 
 \textbf{הבחירה השנייה}
-היא של ספרה אי-זוגית. המסלולים האלה מסומנים בכוכביות באיור. נשווה את סכום ההסתברויות של המסלולים לערך הנתון:
+היא ספרה אי-זוגית. המסלולים המתאימים מסומנים בתרשים בכוכביות. נשווה את סכום ההסתברויות של המסלולים לערך הנתון:
 \[
 \frac{3}{n}\cdot\frac{n-3}{n-1} \;+\; \frac{n-3}{n}\cdot\frac{n-4}{n-1} = \frac{4}{7}\,.
 \]
 נפשט ונקבל משוואה ריבועית
 $n^2-8n+7=0$
-שיש לה שני פתרונות לא-שליליים
+שיש לה שני פתרונות חיוביים
 $n=1,n=7$.
 נתון שיש לפחות שלוש ספרות, לכן מספר הספרות הוא
 $7$.
-שימו לב שהשאלה מבקשת את מספר הספרות 
+
+\textbf{שימו לב}
+שהשאלה מבקשת את מספר הספרות 
 \textbf{האי-זוגיות}
 ולכן התשובה היא
 $7-3=4$.
@@ -1107,9 +1212,9 @@ $7-3=4$.
 המילים 
 "\textbf{אם ידוע ש-}"
 מכוונות להסתברות מותנית. במספר זוגי הספרה האחרונה זוגית:
-\vspace{-3ex}
+\vspace{-6ex}
 \[
-\renewcommand{\arraystretch}{2}
+\erh{18pt}
 \begin{array}{c}
 P(\textrm{\R{שתי ספרות זוגיות}} / \textrm{\R{ספרה אחרונה זוגית}})=\\
 \displaystyle\frac{
@@ -1122,14 +1227,17 @@ P(\textrm{\R{שתי ספרות זוגיות}})
 {P(\textrm{\R{ספרה אחרונה זוגית}})}\,.
 \end{array}
 \]
-את החיתוך אפשר לפשט כי אם שתי הספרות זוגיות, הספרה האחרונה חייבת להיות זוגית.
+\vspace{-3ex}
 
-ניתן לחשב את ההסתברות "ספרה אחרונה זוגית" במכנה לפי המידע בעץ ההסתברויות או פשוט לשים לב שהיא המשלימה לערך הנתון בסעיף א של "הספרה האחרונה אי-זוגית". נחשב את ההסתברות במנה לפי המסלול הבודד בעץ ההסתברויות )איור~
-\L{\ref{fig.summer-2015a.2}}(
-של בחירה של שתי ספרות זוגיות:
+את החיתוך אפשר לפשט כי אם שתי הספרות זוגיות הספרה האחרונה חייבת להיות זוגית.
+
+ניתן לחשב את ההסתברות "ספרה אחרונה זוגית" במכנה לפי המידע בעץ או פשוט לשים לב שהיא המשלימה לערך הנתון בסעיף א של "הספרה האחרונה אי-זוגית". נחשב את ההסתברות במנה לפי המסלול העליון בעץ עבור בחירה של שתי ספרות זוגיות:
 \[
 \frac{\displaystyle\frac{3}{7}\cdot\frac{2}{6}}{1-\displaystyle\frac{4}{7}}=\frac{1}{3}\,.
 \]
+
+\vspace{-6ex}
+
 \textbf{סעיף ג}
 
 הסכום יהיה זוגי רק אם שתי הספרות האחרונת הן זוגיות או אי-זוגיות:
@@ -1139,8 +1247,9 @@ P(\textrm{\R{שתי ספרות זוגיות}})
 \end{eqnarray*}
 שני האירועים )בחירת הספרות( בלתי תלויים, ולכן אפשר לבטא את החיתוך כמכפלה:
 \vspace{-3ex}
+
 \[
-\renewcommand{\arraystretch}{2}
+\erh{14pt}
 \begin{array}{c}
 P(\textrm{\R{סכום זוגי}} / \textrm{\R{ספרה ראשונה זוגית}})=\\
 \displaystyle\frac{
@@ -1154,62 +1263,23 @@ P(\textrm{\R{סכום זוגי}}) \cdot P(\textrm{\R{ספרה ראשונה זו�
 P(\textrm{\R{סכום זוגי}})\,.
 \end{array}
 \]
-שימו לב שלאחר הבחירה הראשונה של אמילי מספר הספרות הוא שש. לפי עץ ההסתברויות החדש )איור~
-\L{\ref{fig.summer-2015a.3}}(
-ההסתברות היא:
-\[
-\frac{2}{6}\cdot\frac{1}{5}+\frac{4}{6}\cdot\frac{3}{5}=\frac{7}{15}\,.
-\]
 
-\begin{figure}[H]
+\np
+
+שימו לב שלאחר הבחירה הראשונה של אמילי מספר הספרות הוא שש. הנה עץ ההסתברויות לאחר בחירה הראשונה, כאשר הכוכביות מסמנות את המסלולים לסכום זוגי )שני מספרים זוגיים או שני מספרים אי-זוגיים(:
+
+%\begin{figure}[H]
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
 [grow=right,
-level 1/.append style={level distance=3cm,sibling distance=8em},
-level 2/.append style={level distance=4cm,sibling distance=4em}]
-\node {$\left(\frac{3}{7},\frac{4}{7}\right)$} % root
-child {
-  node {$\left(\frac{3}{6},\frac{3}{6}\right)$}
-    child {
-      node {$\left(\frac{3}{5},\frac{2}{5}\right)$}
-      edge from parent node[below,xshift=5mm,yshift=-3mm] {\R{אי-זוגי}}
-    }
-    child {
-      node {$\left(\frac{2}{5},\frac{3}{5}\right)$}
-      edge from parent node[above,xshift=5mm,yshift=1mm] {\R{זוגי}}
-    }
-    edge from parent node[below,yshift=-3mm] {\R{אי-זוגי}}
-}
-child { 
-  node {$\left(\frac{2}{6},\frac{4}{6}\right)$}
-    child {
-      node {$\left(\frac{2}{5},\frac{3}{5}\right)$}
-      edge from parent node[below,xshift=5mm,yshift=-3mm] {\R{אי-זוגי}}
-    }
-    child {
-      node {$\left(\frac{1}{5},\frac{4}{5}\right)\quad$ *}
-      edge from parent node[above,xshift=5mm,yshift=1mm] {\R{זוגי} }
-    }
-    edge from parent node[above,yshift=2mm] {\R{זוגי}}
-};
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\caption{עץ ההסתברויות של בחירת הספרות}\label{fig.summer-2015a.2}
-\end{center}
-\end{figure}
-\begin{figure}[H]
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}
-[grow=right,
-level 1/.append style={level distance=3cm,sibling distance=8em},
-level 2/.append style={level distance=4cm,sibling distance=4em}]
+level 1/.append style={level distance=3cm,sibling distance=10em},
+level 2/.append style={level distance=4cm,sibling distance=5em}]
 \node {$\left(\frac{2}{6},\frac{4}{6}\right)$} % root
 child {
   node {$\left(\frac{2}{5},\frac{3}{5}\right)$}
     child {
-      node {$\left(\frac{2}{4},\frac{2}{4}\right)$}
+      node {$\left(\frac{2}{4},\frac{2}{4}\right)\quad$ *}
       edge from parent node[below,xshift=5mm,yshift=-2mm] {\R{אי-זוגי}}
     }
     child {
@@ -1231,11 +1301,16 @@ child {
     edge from parent node[above,yshift=2mm] {\R{זוגי}}
 };
 \end{tikzpicture}
-\selectlanguage{hebrew}
-\caption{עצי ההסתברויות של בחירת הספרות}\label{fig.summer-2015a.3}
+%\selectlanguage{hebrew}
+%\caption{עצי ההסתברויות של בחירת הספרות}\label{fig.summer-2015a.3}
 \end{center}
-\end{figure}
-\clearpage
+%\end{figure}
+
+ההסתברות היא:
+\[
+\frac{2}{6}\cdot\frac{1}{5}+\frac{4}{6}\cdot\frac{3}{5}=\frac{7}{15}\,.
+\]
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \np
@@ -1250,11 +1325,11 @@ child {
 
 \textbf{סעיף א}
 
-כל קבוצה היא בחירה בלתי תלוייה:
+כל קבוצה היא בחירה בלתי תלוייה. לפי נוסחת ברנולי:
 \[
-{4 \choose 2}\left(\frac{2}{3}\right)^2\left(1-\frac{2}{3}\right)^2=\frac{8}{27}\,,
+{4 \choose 2}\left(\frac{2}{3}\right)^2\left(1-\frac{2}{3}\right)^2=\frac{8}{27}\,.
 \]
-וכדי לקבל את ההסתברות שלשתי הקבוצות יהיו בדיוק שני גברים, נעלה ערך זה בריבוע:
+כדי לקבל את ההסתברות שלשתי הקבוצות יהיו בדיוק שני גברים, נעלה ערך זה בריבוע:
 \[
 \left(\frac{8}{27}\right)^2=\frac{64}{729}\,.
 \]
@@ -1265,7 +1340,7 @@ child {
 מכוונות להסתברות מותנית:
 \vspace{-4ex}
 \[
-\renewcommand{\arraystretch}{2}
+\erh{16pt}
 \begin{array}{c}
 P(\textrm{\R{בדיוק שני גברים}} / \textrm{\R{לכל היותר שני גברים}})=\\
 \displaystyle\frac{
@@ -1282,7 +1357,7 @@ $0,1,2$
 \]
 והתשובה לשאלה היא:
 \[
-\frac{8/27}{11/27}=\frac{8}{11}\,.
+\frac{\displaystyle \frac{8}{27}}{\displaystyle \frac{11}{27}}=\frac{8}{11}\,.
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1295,21 +1370,20 @@ $0,1,2$
 \includegraphics[width=.95\textwidth]{summer-2014b-3}
 \end{center}
 
-נמלא את הטבלה ממידע הנתון. נתון ש-% 
+נתון ש-% 
 $0.4$
 מהתלמידים הן בנות. 
 $10\%$
-מהם בחרו במסלול ב, ולכן נרשום
-$0.1\times 0.4=.04$
-מעל לתא עם הנתון הראשון. הסתברות המשלימה היא
-$0.4-0.04=0.36$.
+מהם בחרו במסלול ב:
+$0.1\times 0.4=.04$.
 נתון ש-%
 $75\%$
 מהתלמידים שבחרו במסלול א הן בנות:
 $0.75 \cdot \aleph = 0.36$,
 ולכן 
-$0.48$
-מהתלמידים בחרו מסלול א. ניתן למלא את שאר התאים בטבלה לפי ההסתברויות המשלימות:
+$\aleph = 0.36/0.75=0.48$
+מהתלמידים בחרו מסלול א. נמלא את הטבלה לפי ההסתברויות המשלימות:
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=2.2]
@@ -1337,6 +1411,7 @@ $0.48$
 \node at (2.5,1.3) {$.04$};
 \end{tikzpicture}
 \end{center}
+
 בצורה יותר מפורשת תוך שימוש בהסתברות מותנית:
 \[
 0.1 = P(\textrm{\R{מסלול ב}} / \textrm{\R{בנות}})=
@@ -1349,15 +1424,13 @@ P(\textrm{\R{מסלול ב}} \cap \textrm{\R{בנות}})
 }
 {0.4}\,.
 \]
+
+\np
+
 מכאן ש:
 \[
 P(\textrm{\R{מסלול ב}} \cap \textrm{\R{בנות}})
 =0.4\cdot 0.1= 0.04\,.
-\]
-לפי הסתברות משלימה:
-\[
-P(\textrm{\R{מסלול א}} \cap \textrm{\R{בנות}}) 
-= 0.40-0.04=0.36\,.
 \]
 נמשיך עם הנתון הנוסף:
 \[
@@ -1370,15 +1443,15 @@ P(\textrm{\R{בנות}} \cap \textrm{\R{מסלול א}})
 \[
 P(\textrm{\R{מסלול א}})=\frac{0.36}{0.75}=0.48\,.
 \]
+
 \textbf{סעיף א}
 
 הסעיף מבקש
 $P(\textrm{\R{מסלול א}})$
 וחישבנו שערכו 
 $0.48$.
-לכאורה, נראה שמדובר בהסתברות מותנית, אבל מה שידוע הוא שבחרנו 
-\textbf{תלמיד כלשהו},
-וההסתברות היא אחת.
+
+\medskip
 
 \textbf{סעיף ב}
 \begin{eqnarray*}
@@ -1390,6 +1463,8 @@ P(\textrm{\R{התלמיד הוא בת}}) \cdot P(\textrm{\R{מסלול א}})
 האירועים
 \textbf{אינם}
 בלתי תלויים.
+
+\medskip
 
 \textbf{סעיף ג}
 
@@ -1424,66 +1499,15 @@ $n=2$.
 
 \textbf{סעיף א}
 
-איור~%
-\L{\ref{fig.winter-2014.2}}
-)למעלה( מראה את צבירת הנקודות של 
-\textbf{אבא}
-בשני הסיבובים. המצבים בהם אבא צובר
+עץ ההסתברות מראה את צבירת הנקודות של אבא בשני הסיבובים, כאשר המצבים בהם אבא צובר 
 \textbf{יותר}
 מנקודה אחת מסומנים בכוכבית. ההסתברות של האירוע היא:
 \[
 0.2\cdot 0.2 \,+\, 0.2\cdot 0.7 \,+\, 0.7\cdot 0.2 \,=\,0.32\,.
 \]
+
 \vspace{-4ex}
 
-\textbf{סעיף ב}
-
-איור~%
-\L{\ref{fig.winter-2014.2}}
-)למטה( מראה את צבירת הנקודות של
-\textbf{דני}
-בשני הסיבובים. המצבים בהם דני צובר 
-\textbf{לפחות}
-נקודה אחת מסומנים בכוכבית. ההסתברות של האירוע היא:
-\[
-0.2\cdot 0.1 \,+\,0.1\cdot 0.2 \,+\, 0.1\cdot 0.1 \,+\,0.1\cdot 0.7 \,+\, 0.7\cdot 0.1\,+\,0.7\cdot 0.7\,=\,0.68\,.
-\]
-\vspace{-4ex}
-
-\textbf{סעיף ג}
-
-המילים
-"\textbf{ידוע כי}"
-מכוונות להסתברות מותנית והחיתוך מצטמצם כי אם יש תיקו אחד וניצחון של דני אז דני צבר לפחות נקודה אחת:
-\vspace{-2ex}
-\[
-\renewcommand{\arraystretch}{2}
-\begin{array}{c}
-P(\textrm{\R{תיקו אחד, ניצחון אחד לדני}} / \textrm{\R{דני צבר לפחות נקודה אחת}})=\\
-\displaystyle\frac{
-P(\textrm{\R{תיקו אחד, ניצחון אחד לדני}} \cap \textrm{\R{דני צבר לפחות נקודה אחת}})
-}
-{P(\textrm{\R{דני צבר לפחות נקודה אחת}})}=\\
-\displaystyle\frac{
-P(\textrm{\R{תיקו אחד, ניצחון אחד לדני}})
-}
-{P(\textrm{\R{דני צבר לפחות נקודה אחת}})}\,.
-\end{array}
-\]
-נחשב את המנה על ידי חיבור ההסתברויות של שני מסלולים בעץ המסומנים ב-%
-$\#$:
-\[
-\frac{0.1\cdot 0.7 \,+\, 0.7\cdot 0.1}{0.68} = .2059\,.
-\]
-\textbf{סעיף ד}
-
-סעיף ב חישבנו את ההסתברות של האירוע בכל סיבוב, ונשאר רק לחשב:
-\vspace{-1ex}
-\[
-{4\choose 2}(0.68)^2 (0.32)^2= 0.2841\,.
-\]
-\vspace{-2ex}
-\begin{figure}[H]
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
@@ -1543,7 +1567,23 @@ child {
 $0.2$}
 };
 \end{tikzpicture}
-\smallskip
+\end{center}
+
+\np
+
+\textbf{סעיף ב}
+
+עץ ההסתברות מראה את צבירת הנקודות של דני בשני הסיבובים, כאשר המצבים בהם דני צובר 
+\textbf{לפחות}
+מנקודה אחת מסומנים בכוכבית. ההסתברות של האירוע היא:
+\[
+0.2\cdot 0.1 \,+\,0.1\cdot 0.2 \,+\, 0.1\cdot 0.1 \,+\,0.1\cdot 0.7 \,+\, 0.7\cdot 0.1\,+\,0.7\cdot 0.7\,=\,0.68\,.
+\]
+
+\vspace{-5ex}
+
+\begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}
 [grow=right,
 level 1/.append style={font=\sffamily,level distance=3cm,sibling distance=8em},
@@ -1601,12 +1641,44 @@ child {
 $0.2$}
 };
 \end{tikzpicture}
-\selectlanguage{hebrew}
-\setlength{\belowcaptionskip}{-4ex}
-\caption{עץ ההסתברויות של צבירת נקודות של אבא )למעלה( ודני )למטה(}\label{fig.winter-2014.2}
 \end{center}
-\end{figure}
 
+
+\vspace{-2ex}
+
+\textbf{סעיף ג}
+
+המילים
+"\textbf{ידוע כי}"
+מכוונות להסתברות מותנית והחיתוך מצטמצם כי אם יש תיקו אחד וניצחון של דני אז דני צבר לפחות נקודה אחת:
+\vspace{-2ex}
+\[
+\erh{18pt}
+\begin{array}{c}
+P(\textrm{\R{תיקו אחד, ניצחון אחד לדני}} / \textrm{\R{דני צבר לפחות נקודה אחת}})=\\
+\displaystyle\frac{
+P(\textrm{\R{תיקו אחד, ניצחון אחד לדני}} \cap \textrm{\R{דני צבר לפחות נקודה אחת}})
+}
+{P(\textrm{\R{דני צבר לפחות נקודה אחת}})}=\\
+\displaystyle\frac{
+P(\textrm{\R{תיקו אחד, ניצחון אחד לדני}})
+}
+{P(\textrm{\R{דני צבר לפחות נקודה אחת}})}\,.
+\end{array}
+\]
+
+נחשב את המנה על ידי חיבור ההסתברויות של שני מסלולים בעץ המסומנים ב-%
+$\#$:
+\[
+\frac{0.1\cdot 0.7 \,+\, 0.7\cdot 0.1}{0.68} = .2059\,.
+\]
+\textbf{סעיף ד}
+
+סעיף ב חישבנו את ההסתברות של האירוע בכל סיבוב, ונשאר רק לחשב:
+\vspace{-1ex}
+\[
+{4\choose 2}(0.68)^2 (0.32)^2= 0.2841\,.
+\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \np
@@ -1627,14 +1699,14 @@ $=R$
 $P(R/T)=0.6$
 וגם שהאירועים בלתי תלויים. נחשב:
 \[
-0.6=P(R/T)=\frac{P(R\cap T)}{P(T)}=\frac{P(R)\cdot P(T))}{P(T)}=P(R)\,.
+0.6=P(R/T)=\frac{P(R\cap T)}{P(T)}=\frac{P(R)\cdot P(T)}{P(T)}=P(R)\,.
 \]
 ביחד עם הנתון
 $P(R)=2P(T)$
 נתחיל למלא את הטבלה:
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.25]
+\begin{tikzpicture}[scale=1.4]
 \draw (0,0) grid (3,3);
 \node at (2.5,3.3) {$\bm{T}$};
 \node at (1.5,3.3) {$\bover{T}$};
@@ -1651,10 +1723,13 @@ $P(R)=2P(T)$
 \[
 P(R\cap T)=P(R)\cdot P(T)=0.6\cdot 0.3=0.18\,,
 \]
+
+\np
+
 ואז יש לנו מספיק נתונים למלא את הטבלה:
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.25]
+\begin{tikzpicture}[scale=1.4]
 \draw (0,0) grid (3,3);
 \node at (2.5,3.3) {$\bm{T}$};
 \node at (1.5,3.3) {$\bover{T}$};
@@ -1671,10 +1746,13 @@ P(R\cap T)=P(R)\cdot P(T)=0.6\cdot 0.3=0.18\,,
 \node at (2.5,1.5) {$0.12$};
 \end{tikzpicture}
 \end{center}
+
 \textbf{סעיף א}
 
 חישבנו ש-%
 $P(R\cap T)=0.18$.
+
+\medskip
 
 \textbf{סעיף ב}
 
@@ -1682,7 +1760,7 @@ $P(R\cap T)=0.18$.
 \textbf{ורק הם}"
 מכוונות להסתברות מותנית. אם ידוע שתושב משתתף בריקודי עם, ההסתברות שהוא משתתף גם בתאטרון היא:
 \[
-P(T/R) = \frac{P(T\cap R)}{P(R)}= \frac{0.18}{.060} = 0.3\,.
+P(T/R) = \frac{P(T\cap R)}{P(R)}= \frac{0.18}{.60} = 0.3\,.
 \]
 כדי לחשב "לפחות שניים" עדיף לחשב את המשלים ל-"אפס או אחד":
 \[
@@ -1721,7 +1799,7 @@ P(T/R) = \frac{P(T\cap R)}{P(R)}= \frac{0.18}{.060} = 0.3\,.
 לא לגמרי ברור שלמילה "אם" יש משמעות של "אם ידוע", אבל זאת הכוונה.
 
 \item
-לעתים קרובות )למשל, בבחינה של קיץ תשע"ה ב( כתוב "%
+לעתים קרובות )בחינה של קיץ תשע"ה ב( כתוב "%
 \textbf{מה ההסתברות לבחור} $\ldots$
 \textbf{מבין} $\ldots$".
 
@@ -1743,12 +1821,20 @@ P(X/\textrm{\R{כל הנבחנים}})=
 
 \item
 בבחינה של קיץ תשע"ח א הניסוח הוא: "%
-$\ldots X\%$
-נעזרו 
-$\ldots$.
+$n\%$
+נעזרו בחבריהם )נקרא לאירוע A( ו-%
 $\displaystyle\frac{k}{n}$
 \textbf{מהם}
-עברו את הבחינה".
+עברו את הבחינה" )נקרא לאירוע B(. ברור ש-%
+$P(B\cap A) = k$,
+אבל נבדוק לפי הנוסחה להסתברות מונתית:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+P(B/A) &=& \frac{P(B\cap A)}{P(A)} = \frac{P(B\cap A)}{n}=\frac{k}{n}\\
+P(B\cap A)&=&k\,.
+\end{equationarray*}
+
+\vspace{-4ex}
 
 \item
 בבחינה של חורף תשע"ד יש ניסוח אחר:
@@ -1774,35 +1860,14 @@ $P(D=4)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \item
-כאשר יש חיתוך בין שני אירועים בלתי תלויים, חישוב ההסתברות המותנית מצטמצם )בחינה של קיץ תשע"ה א(:
+אם שני אירועים בלתי תלויים, חישוב ההסתברות המותנית מצטמצם:
 \[
-\renewcommand{\arraystretch}{2.4}
-\begin{array}{l}
-\displaystyle\frac{
-P(\textrm{\R{סכום זוגי}} \cap \textrm{\R{ספרה ראשונה זוגית}})
-}{P(\textrm{\R{ספרה ראשונה זוגית}})}=\\
-\displaystyle\frac{
-P(\textrm{\R{סכום זוגי}}) \cdot P(\textrm{\R{ספרה ראשונה זוגית}})
-}
-{P(\textrm{\R{ספרה ראשונה זוגית}})}=\\
-P(\textrm{\R{סכום זוגי}})
-\,.
-\end{array}
+P(A/B) = \frac{P(A\cap B)}{P(B)} = \frac{P(B)\cdot P(A)}{P(A)}= P(B)\,.
 \]
-מצב דומה מופיע בבחינות של חורף תשע"ז וחורף משע"ח.
+מצב זמ מופיע בבחינות של חורף תשע"ז, חורף משע"ח, קיץ תשע"ה א, חורף תשע"ד.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item
-בבחינה של חורף תשע"ד נתון
-$P(T/R)$
-וגם נתון ששני אירועים הם
-\textbf{בלתי תלויים}.
-החיתוך שווה למכפלת ההסתברויות והחישוב מצטמצם:
-\[
-P(T/R) = \frac{P(T \cap R)}{P(R)} =\frac{P(T)\cdot P(R)}{P(R)} = P(T)\,.
-\]
-\vspace{-4ex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\np
 
 \item
 המילה 
@@ -1851,92 +1916,53 @@ $\ldots$"
 \item
 בבחינה של קיץ תשע"ח א, המשמעות של הניסוח "%
 \textbf{לפחות אחת}
-משתי הטענות 
-$I, II$"
-היא שהאירוע קורה אם קורה אחד מהאירועים
-$I, II$,
+משתי הטענות I, II היא שהאירוע קורה אם קורה אחד מהאירועים I, II,
 \textbf{או שניהם},
-המסומן 
-$I \cup II$.
-יש שתי דרכים לחשב את ההסתברות: על ידי חיבור ההסתברות של שני האירועים וחיסור האירוע המשותף כדי לקזז את הספירה הכפולה, או לחבר את האירוע המשותף עם האירועים של אחד ולא השני המסומן 
-$I-II, II-I$:
+המסומן I
+$\cup$
+II.
+יש שתי דרכים לחשב את ההסתברות: על ידי חיבור ההסתברות של שני האירועים וחיסור האירוע המשותף כדי לקזז את הספירה הכפולה, או לחבר את האירוע המשותף עם האירועים של אחד ולא השני המסומן %I
+$-$%
+II,
+II%
+$-$%
+I:
 \begin{eqnarray*}
 P(I \cup II) &=& P(I) + P(II) - P(I \cap II)\\
 P(I \cup II) &=& P(I-II) + P(II-I) + P(I \cap II)\,.
 \end{eqnarray*}
-הערכים לחישוב
-$P(I \cup II)$
-בשתי הדרכים מסומנים בטבלה להלן, כאשר התא המקווקו מופיע פעמיים, פעם כחלק מהאירוע
-$I$
-ופעם כחלק מהאירוע
-$II$:
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=1.4]
-\begin{scope}
-\draw (0,0) grid (3,3);
-\node at (2.5,3.3) {$\bm{I}$};
-\node at (1.5,3.3) {$\bover{I}$};
-\node at (3.3,2.5) {$\bm{II}$};
-\node at (3.3,1.5) {$\bover{II}$};
-\node at (2.5,2.5) {$I\cap II$};
-\node at (2.5,1.5) {$I-II$};
-\node at (1.5,2.5) {$II-I$};
-\draw[ultra thick] (2,2) rectangle +(1,1);
-\draw[ultra thick] (1,2) rectangle +(1,1);
-\draw[ultra thick] (2,1) rectangle +(1,1);
-\end{scope}
-\begin{scope}[xshift=5cm]
-\draw (0,0) grid (3,3);
-\node at (2.5,3.3) {$\bm{I}$};
-\node at (1.5,3.3) {$\bover{I}$};
-\node at (3.3,2.5) {$\bm{II}$};
-\node at (3.3,1.5) {$\bover{II}$};
-\node at (2.5,2.5) {$I\cap II$};
-\node at (2.5,0.5) {$I$};
-\node at (0.5,2.5) {$II$};
-\draw[ultra thick] (0,2) rectangle +(1,1);
-\draw[ultra thick] (2,0) rectangle +(1,1);
-\draw[ultra thick,dashed] (2,2) rectangle +(1,1);
-\end{scope}
-\end{tikzpicture}
-\end{center}
+
+\vspace{-5ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \item
-בבחינה של חורף תשע"ו נתון ההסתברות
-$p$
-ש-"לא יזכה
-\textbf{באף משחק}
-מתוך 
-$n$
-משחקים". גם בבחינה של  קיץ תשע"ח ב צריכים לחשב את ההסבתרות של תשובה נכונה 
+בבחינה של  קיץ תשע"ח ב יש לחשב את ההסבתרות של תשובה נכונה 
 \textbf{לכל}
+)$k=n$(
 השאלות או תשובה נכונה
 \textbf{לאף אחת}
-מהשאלות.  אין צורך להשתמש בנוסחת ברנולי במלואו:
+)$k=0$(
+מהשאלות, כאשר ההסתברות לתשובה נכונה אחת היא
+$p$.
+אין צורך להשתמש בנוסחת ברנולי הכללית:
 \[
 {n \choose k}p^k(1-p)^{n-k}\,.
 \]
 אם
-$k=0$
-או
+$k=0$,
+${n\choose 0}=1$,
+$p^0(1-p)^{n-0}=(1-p)^n$.
+
+אם
 $k=n$,
-${n\choose k}=1$.
-גם
-$p^n(1-p)^0=p^n\cdot 1$
-או
-$p^0(1-p)^n=1\cdot(1-p)^n$,
-ונשאר רק גורם אחד 
-$p^n$
-או
-$(1-p)^n$.
+${n\choose n}=1$,
+$p^n(1-p)^{n-n}=p^n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \item
-בבחינות של קיץ תשע"ו א, ב יש שלוש תוצאות אפשרויות במקום שתיים. סכום ההסתברויות חייב להיות אחד, ולכן כאשר מחשבים משלים להסתברות אחת, יש להחסיר את שתי ההסתברויות האחרות. בבחינה של מועד ב, ההסתברות לתיקו היא אחד פחות ההסתברות שיעל תנצח פחות ההסתברות אנה תנצח:
+בבחינות של קיץ תשע"ו א, ב יש שלוש תוצאות לפעולה במקום שתיים. סכום ההסתברויות חייב להיות אחד, ולכן כאשר מחשבים משלים להסתברות אחת, יש להחסיר את שתי ההסתברויות האחרות. בבחינה של מועד ב, ההסתברות לתיקו היא אחד פחות ההסתברות שיעל תנצח פחות ההסתברות אנה תנצח:
 \[
 P(\textrm{\R{תיקו}}) =
 1 - (P(\textrm{\R{יעל}})+
@@ -1946,6 +1972,7 @@ P(\textrm{\R{אנה}}) \,.
 \]
 \vspace{-4ex}
 \item 
-במספר בחינות )חורף תשע"ה, קיץ תשע"ד ב, קיץ תשע"ה ב( כתוב "ישוב גדול", "עיר גדולה", "אוניברסיטה גדולה". אני מניח שבמילה "גדול" מבטיחה שאפשר לבחור תושבים או סטודנטים כפי שדרוש  בשאלות. אין משמעות לבחור ארבעה סטודנטים אם יש רק שניים באוניברסיטה.
+במספר בחינות )חורף תשע"ה, קיץ תשע"ד ב, קיץ תשע"ה ב( כתוב "ישוב גדול", "עיר גדולה", "אוניברסיטה גדולה". אני מניח שבמילה "גדול" מבטיחה שאפשר לבחור תושבים או סטודנטים כפי שדרוש  בשאלות. אין משמעות לבחור ארבעה סטודנטים אם יש רק שניים.
 \end{itemize}
 
+\selectlanguage{english}
