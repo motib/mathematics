@@ -6,10 +6,6 @@ mohr-mascheroni/tikz
 compass/tikz
 steiner/tikz
 motion/tikz
-motion/images
-series/tikz
-geometry/tikz
-probability/tikz
 bagrut/he/tikz
 tikz-examples.tex
 *.bat
