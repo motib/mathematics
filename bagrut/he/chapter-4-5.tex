@@ -13,7 +13,7 @@
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 \usetikzlibrary{positioning,through,calc,intersections,arrows.meta,external}
-\tikzexternalize[prefix=tikz/]
+%\tikzexternalize[prefix=tikz/]
 \tikzset{>=stealth} % Use stealth arrows
 \usetkzobj{all}
 
@@ -52,7 +52,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\includeonly{}
+\includeonly{trigonometry}
 
 \begin{document}
 
@@ -64,7 +64,13 @@
 \tikzsetfigurename{trigonometry}
 \include{trigonometry}
 
-\tikzsetfigurename{appendices-4-5}
-\include{appendices-4-5}
+\appendix
+
+\tikzsetfigurename{isoceles}
+\include{isoceles}
+\tikzsetfigurename{geometry-theorems}
+\include{geometry-theorems}
+\tikzsetfigurename{unit-circle}
+\include{unit-circle}
 
 \end{document}
