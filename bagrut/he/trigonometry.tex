@@ -1,7 +1,7 @@
 % !TeX root = chapter-4-5.tex
 
 
-\begin{comment}
+%\begin{comment}
 
 \chapter{טריגונומטריה}
 
@@ -592,9 +592,9 @@ $\triangle AED$:
 \end{equationarray*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \np
+
+%\end{comment}
 
 \section{קיץ תשע"ו מועד ב}
 
@@ -603,10 +603,198 @@ $\triangle AED$:
 \includegraphics[width=\textwidth]{summer-2016b-5}
 \end{center}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-2ex}
+
+
+הסתבכתי בשאלה זו. מהתרשים נראה שהטרפז שווה-שוקיים, אבל אין לסמוך על תרשימים. השקעתי זמן רב עד שעלה בדעתי האפשרות שטרפז חסום במעגל חייב להיות שווה-שוקיים. המשפט לא מופיע ברשימת המשפטים שניתן לצטט בבחינת הבגרות ויש להוכיח אותו. )בספרי לימוד משפט לא מובלט ומופיע רק כדוגמה או תרגיל.( אני אביא שתי הוכחות: אחת שלי ואחת המופיעה בספרים.
+
+ההוכחה מהספרים:
+$\angle ACD = \angle CAB$
+לפי זוויות מתחלפות ולכן גם המיתרים שווים
+$CB=AD$.
+
+ההוכחה שלי: במרובע חוסם על ידי במעגל סכום זוג זוויות נגדיות שווה ל-%
+$180^\circ$:
+\erh{0pt}
+\begin{equationarray*}{rcl}
+\angle DCB&=&180\!-\!\angle DAB\\
+\angle DCF&=&180\!-\!(180\!-\!\angle DAB)=\angle DAB\\
+\angle ABC&=&\angle DAB\,.
+\end{equationarray*}
+
+\vspace{-6ex}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (2,1.5);
+\coordinate (B) at (0,.2);
+\coordinate (A) at (4,.2);
+\node[draw,thick,circle through=(A),name path=circle] at (O) {};
+\fill (B) node[left,xshift=-2pt] {$B$}  circle(1.5pt);
+\fill (A) node[right] {$A$} circle(1.5pt);
+\path[name path=bc] (B) -- +(75:4);
+\path[name path=ad] (A) -- +(105:4);
+\path[name intersections={of=bc and circle,by={C}}];
+\path[name intersections={of=ad and circle,by={D}}];
+\fill (C) node[above left] {$C$} circle(1.5pt);
+\fill (D) node[above right] {$D$} circle(1.5pt);
+\draw[thick] (B) -- (A) node[above left,xshift=-2pt] {$\theta$} -- (D) -- (C) node[below right,xshift=-2pt] {$180\!-\!\theta$} node[above right,xshift=2pt,yshift=2pt] {$\theta$} -- cycle;
+\draw[thick] (B) -- ($(B)!1.3!(C)$) coordinate (F);
+\fill (F) node[above right] {$F$} circle(1.5pt);
+\end{tikzpicture}
+\hspace{4em}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (2,1.5);
+\coordinate (B) at (0,.2);
+\coordinate (A) at (4,.2);
+\node[draw,thick,circle through=(A),name path=circle] at (O) {};
+\fill (B) node[left,xshift=-2pt] {$B$}  circle(1.5pt);
+\fill (A) node[right] {$A$} circle(1.5pt);
+\path[name path=bc] (B) -- +(75:4);
+\path[name path=ad] (A) -- +(105:4);
+\path[name intersections={of=bc and circle,by={C}}];
+\path[name intersections={of=ad and circle,by={D}}];
+\fill (C) node[above left] {$C$} circle(1.5pt);
+\fill (D) node[above right] {$D$} circle(1.5pt);
+\draw[thick] (B) -- (A) --(D) -- (C) -- cycle;
+\draw[thick] (C) node[below right,xshift=10pt] {$\theta$} -- (A) node[above left,xshift=-10pt] {$\theta$};
+\end{tikzpicture}
+\end{center}
+
+%\np
+
+\textbf{סעיף א}
+
+
+
+
+נסמן את הזוויות הנתונות
+$\angle BOA,\angle COD$,
+כל הצלעות המסומנות רדיוסים של המעגל החוסם ולכן הם שווים, והמשולשים שווה שוקיים. מכאן ניתן לחשב ולסמן את הזוויות של
+$\triangle COD, \triangle BOA$.
+סכום הזוויות סביב הנקודה 
+$O$
+הוא 
+$360$,
+וניתן להשלים את שאר הזוויות כי
+$\triangle COD\cong \triangle DOA$
+לפי צ.ז.צ. כי הטרפז שווה שוקיים. נחשב
+$\angle DAB=\beta+\delta$.
+
 \np
 
-\end{comment}
+%\begin{center}
+\selectlanguage{english}
+\hspace{1em}
+\begin{minipage}{.4\textwidth}
+\begin{tikzpicture}%[scale=.9]
+\coordinate (O) at (2,1.5);
+\coordinate (B) at (0,.2);
+\coordinate (A) at (4,.2);
+\node[draw,thick,circle through=(A),name path=circle] at (O) {};
+\fill (O) node[left,xshift=-4pt,yshift=2pt] {$O$} node[below,yshift=-6pt] {$3\alpha$} node[above,yshift=10pt] {$\alpha$} node[right,xshift=6pt] {$\gamma$} circle(1.5pt);
+\fill (B) node[left,xshift=-2pt] {$B$} node[above right,xshift=26pt] {$\beta$} circle(1.5pt);
+\fill (A) node[right] {$A$} node[above left,xshift=-22pt] {$\beta$} node[above left,xshift=-6pt,yshift=14pt] {$\delta$} circle(1.5pt);
+\path[name path=bc] (B) -- +(75:4);
+\path[name path=ad] (A) -- +(105:4);
+\path[name intersections={of=bc and circle,by={C}}];
+\path[name intersections={of=ad and circle,by={D}}];
+\fill (C) node[above left] {$C$} circle(1.5pt);
+\fill (D) node[above right] {$D$} node[below left,xshift=4pt,yshift=-12pt] {$\delta$}  circle(1.5pt);
+\draw[thick] (B) -- (A) --(D) -- (C) -- cycle;
+\draw[thick,dashed] (O) -- (A);
+\draw[thick,dashed] (O) -- (B);
+\draw[thick,dashed] (O) -- (C);
+\draw[thick,dashed] (O) -- (D);
+\draw[very thick,dotted] (C) -- node[right,yshift=4pt] {$h$} ($(B)!(C)!(A)$) node[below] {$E$};
+\draw[rotate=90] ($(B)!(C)!(A)$) rectangle +(6pt,6pt);
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.4\textwidth}
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\beta &=& \frac{180-3\alpha}{2}\\
+\gamma &=& \frac{360-(\alpha+3\alpha)}{2}=180-2\alpha\\
+\delta &=&\frac{180-\gamma}{2}= \frac{180-(180-2\alpha)}{2}=\alpha\\
+\beta+\delta&=&\frac{180-\alpha}{2}\,.
+\end{equationarray*}
+\end{minipage}
+\selectlanguage{hebrew}
+%\end{center}
+
+\textbf{סעיף ב}
+
+ב-%
+$\triangle DOA$
+אנו יודעים את כל הזוויות ושני צלעות שהם רדיוסים. לפי חוק הסינוסים:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\frac{DA}{\sin\gamma}&=&\frac{R}{\sin\delta}\\
+\frac{DA}{\sin(180\!-\!2\alpha)}&=&\frac{R}{\sin\alpha}\\
+DA&=&\frac{R\sin 2\alpha}{\sin\alpha}\\
+&=&\frac{R\cdot 2\sin \alpha\cos\alpha}{\sin\alpha} = 2R\cos\alpha\,.
+\end{equationarray*}
+
+\vspace{-4ex}
+
+\textbf{סעיף ג}
+
+נשתמש בהגדרה של סינוס במשולש 
+$\triangle CBE$:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\sin \angle CBE &=&\frac{h}{CB}\\
+\frac{h}{CB}&=&\sin \left(\frac{180\!-\!3\alpha}{2}+\alpha\right)\\
+&=&\sin \left(90-\frac{\alpha}{2}\right)=\cos\frac{\alpha}{2}\\
+CB&=&\frac{h}{\cos\frac{\alpha}{2}}\,.
+\end{equationarray*}
+
+\textbf{סעיף ד}
+
+בנוסחה הטריגונטמרית עבור
+$\triangle COD$
+יופיעו אורכי הצלעות
+$R$
+כאשר השטח נתון כנוסחה עם
+$h,\alpha$.
+נשתמש במשוואת עבור אורך השוק מהסעיפים הקודמים כדי "להיפטר" מ-%
+$R$:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+2R\cos\alpha&=&\frac{h}{\cos\frac{\alpha}{2}}\\
+R&=&\frac{h}{2\cos\alpha \cos\frac{\alpha}{2}}\,.
+\end{equationarray*}
+
+\np
+
+נציב בנוסחה לשטח, נשווה לנוסחה הנתונה לשטח ונצמצם:
+\erh{14pt}
+\begin{equationarray*}{rcl}
+S_{COD}&=&\frac{1}{2}\cdot OC \cdot OD \cdot \sin\alpha=\frac{1}{2}R^2\sin\alpha\\
+&=&\frac{1}{2}\cdot \frac{h^2}{4}\cdot \frac{1}{\left(\cos\alpha \cos\frac{\alpha}{2}\right)^2} \cdot \sin\alpha\\
+\frac{h^2}{12\cos^2 \frac{\alpha}{2}}&=&\frac{1}{2}\cdot \frac{h^2}{4}\cdot \frac{1}{\left(\cos\alpha \cos\frac{\alpha}{2}\right)^2} \cdot \sin\alpha\\
+\frac{1}{12}&=&\frac{1}{8}\cdot \frac{1}{\cos^2\alpha} \cdot \sin\alpha
+\end{equationarray*}
+כדי למצוא את
+$\alpha$
+נציב עבור
+$\cos^\alpha$
+ונקבל נוסחה רק עם סינוס:
+\erh{14pt}
+\begin{equationarray*}{rcl}
+\frac{1}{12}&=&\frac{1}{8}\cdot \frac{1}{1-\sin^2\alpha} \cdot \sin\alpha\\
+2\sin^2\alpha + 3\sin\alpha - 2&=&0\\
+(2\sin\alpha-1)(\sin\alpha+2)&=& 0\\
+\sin\alpha&=&\frac{1}{2}\\
+\alpha &=& 30^\circ\,.
+\end{equationarray*}
+כי הערך המוחלט של סינוס חייב להיות פחות או שווה לאחד.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{comment}
+
+\np
 
 \section{קיץ תשע"ו מועד א}
 
@@ -745,7 +933,7 @@ $(2)$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \np
 
-\begin{comment}
+%\begin{comment}
 
 \section{חורף תשע"ו}
 
@@ -1967,4 +2155,4 @@ S=\frac{1}{2}\cdot b \cdot c \cdot\sin \alpha\,.
 
 \selectlanguage{english}
 
-\end{comment}
+%\end{comment}
