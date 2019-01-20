@@ -1,0 +1,198 @@
+\documentclass[11pt]{article}
+\usepackage{url}
+\usepackage{mathpazo}
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.2}
+\begin{document}
+\newlength{\lng}               % Factor for sizing puzzle
+\setlength{\lng}{1pt}          % Modify here
+\unitlength=\lng               % See also \mine, below
+\newcommand{\lrg}[0]{\Large}   % Size/style of numbers in cells
+\newcommand{\mdm}[0]{\normalsize\sf}
+                               % Size/style of numbers labelling cells
+\input{mine-include}
+
+\begin{center}
+\Large
+\textbf{Examples for Minesweeper Consistency}\\
+\bigskip
+
+\large
+Mordechai (Moti) Ben-Ari\\
+Department of Science Teaching\\
+Weizmann Institute of Science\\
+Rehovot 76100 Israel\\
+\textsf{http://stwww.weizmann.ac.il/g-cs/benari}
+\end{center}
+
+\bigskip
+
+Copyright \copyright{} 2009 by Mordechai (Moti) Ben-Ari.
+This work is licensed under the Creative Commons Attribution-Noncommercial-ShareAlike 3.0
+License. To view a copy of this license, visit
+\url{http://creativecommons.org/licenses/by-nc-sa/3.0/}; or, (b) send a letter
+to Creative Commons, 543 Howard Street, 5th Floor, San Francisco,
+California, 94105, USA.
+
+\bigskip
+\bigskip
+
+
+\thispagestyle{empty}
+
+Richard Kaye (\textsf{http://www.mat.bham.ac.uk/R.W.Kaye/minesw/})
+posed the problem of finding a consistent assignment
+of mines in the following Minesweeper configuration.
+
+\begin{center}
+\begin{picture}(130,130)
+\put(10,10){\usebox{\puztwo}}
+\end{picture}
+\end{center}
+
+An assignment of mines is consistent
+if it assigns mines to (some of) the empty squares
+such that the number in a cell is the number
+of mines adjacent to the cell.
+We give a detailed solution and further show that
+if the two's are replaced by three's, there is no solution.
+
+The cells are numbered from the lower left-hand corner right and up.
+The following notation is used:
+\begin{center}
+\begin{tabular}{|c|l|}
+\hline
+\begin{picture}(20,22)\mine{}  \end{picture}& mine\\\hline
+\begin{picture}(20,22)\open{}  \end{picture}& no mine\\\hline
+\begin{picture}(20,22)\ques{}  \end{picture}& possible mine\\\hline
+\begin{picture}(20,22)
+  \put(0,0){\makebox(20,20){\Large\bf 2}}
+  \put(0,0){\incon}
+\end{picture}& inconsistent cell\\\hline
+\begin{picture}(20,22)
+  \put(0,0){\makebox(20,20){\Large\bf 2}}
+  \put(0,0){\fulfil}
+\end{picture}& fulfilled cell\\\hline
+\end{tabular}
+\end{center}
+where a cell is \emph{fulfilled} iff the number
+in the cell is the same as the number of adjacent mines,
+and \emph{inconsistent} iff it cannot be be fulfilled
+in a configuration.
+
+We first show that a mine cannot be placed in a corner cell.
+By symmetry, it is sufficient to show that a mine cannot
+be placed in cell $(6,6)$, the upper right-hand corner.
+The following figure shows that if a mine is placed in
+$(6,6)$, then the second mine needed to fulfil $(5,5)$
+cannot be placed in $(5,6)$ or in $(4,6)$.
+Cell $(5,5)$ is fulfilled, which implies that certain
+cells do not have a mine as indicated;
+therefore, $(5,4)$ is inconsistent.
+
+\begin{center}
+\begin{picture}(310,130)
+\put(10,10){\configa}
+\put(180,10){\configb}
+\end{picture}
+\end{center}
+
+Suppose now that there is a mine in some other
+cell of the top row in addition to the mine in $(6,6)$.
+If the mine is in $(3,6)$, there must be a mine
+in $(4,6)$ or $(5,6)$ to fulfill $(4,4)$,
+but we have just proved that such a configuation
+is inconsistent.
+
+\begin{center}
+\begin{picture}(130,130)
+\put(10,10){\configc}
+\end{picture}
+\end{center}
+
+If there is a mine in $(2,6)$,
+there must be another one to the right of it,
+which we have just proved impossible,
+and similarly for a mine in $(1,6)$.
+
+\begin{center}
+\begin{picture}(310,130)
+\put( 10,10){\configd}
+\put(180,10){\confige}
+\end{picture}
+\end{center}
+
+Next we show that there cannot be a mine in a cell
+adjacent to a corner cell.
+By symmetry we show this for cell $(5,6)$.
+If there is a mine in $(4,6)$,
+cells $(4,5)$ and $(5,5)$ are fulfilled,
+and clearly $(5,4)$ is inconsistent.
+
+\begin{center}
+\begin{picture}(130,130)
+\put(10,10){\configf}
+\end{picture}
+\end{center}
+
+If a mine is placed in cell $(3,6)$ to fulfil $(4,5)$,
+then to fulfil $(3,5)$
+a mine would have to be placed in $(2,6)$.
+But we have just proved that it is impossible to put
+a pair of mines adjacent to a corner cell (here $(1,6)$).
+Similarly, placing a second mine in cell $(2,6)$
+would require placing a third one in $(3,6)$ or $(4,6)$
+to fulfill $(3,5)$ and $(4,5)$, again leading
+to a pair of mines adjacent to a corner cell.
+
+\begin{center}
+\begin{picture}(310,130)
+\put( 10,10){\configg}
+\put(180,10){\configh}
+\end{picture}
+\end{center}
+
+Therefore, configurations can only contain
+mines which are not in a corner cell or adjacent to
+a corner cell,
+and the full solution is obtained by applying this
+rule to all cells.
+
+\begin{center}
+\begin{picture}(130,130)
+\put(10,10){\configi}
+\end{picture}
+\end{center}
+
+Suppose now that the two's are replaced by three's.
+
+\begin{center}
+\begin{picture}(130,130)
+\put(10,10){\usebox{\puzthree}}
+\end{picture}
+\end{center}
+
+Any Minesweeper player worth his/her salt
+immediately sees that cells containing $3$
+like $(4,5)$
+can only be fulfilled by assigning mines to
+all three of its open neighbors.
+
+\begin{center}
+\begin{picture}(130,130)
+\put(10,10){\configj}
+\end{picture}
+\end{center}
+
+All non-corner cells must be fulfilled this way:
+
+\begin{center}
+\begin{picture}(130,130)
+\put(10,10){\configk}
+\end{picture}
+\end{center}
+
+and we see that the four corner cells $(2,2)$,
+$(2,5)$, $(5,2)$ and $(5,5)$ are inconsistent.
+
+\end{document}
