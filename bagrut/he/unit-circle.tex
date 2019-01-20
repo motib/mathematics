@@ -4,7 +4,7 @@
 
 \selectlanguage{hebrew}
 
-\chapter{מעגל היחידה}
+\chapter{מעגל היחידה}\label{a.unit-circle}
 
 \section{רביעים של מעגל היחידה}
 
@@ -12,6 +12,8 @@
 $1$
 נקרא
 \textbf{מעגל היחידה}.
+
+\vspace{-2ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -38,7 +40,10 @@ $1$
 \fill (origin) circle [radius=1pt];
 \end{tikzpicture}
 \end{center}
-הצירים של המרחב הקרטזי מחלקים את מעגל היחידה באופן טבעי לארבעה
+
+\vspace{-2ex}
+
+הצירים את מעגל היחידה באופן טבעי לארבעה
 \textbf{רבעים}.
 זוויות נמדדות 
 \textbf{מעלות}
@@ -187,12 +192,13 @@ $180^\circ$.
 \end{tikzpicture}
 \end{center}
 ממשפט פיתגורס:
-\begin{eqnarray*}
+\erh{12pt}
+\begin{equationarray*}{rcl}
 \sin^2 45 + \cos^2 45 &=& 1\\
 2\sin^2 45 &=& 1\\
 \sin 45 &=& \frac{1}{\sqrt{2}} = \frac{1}{\sqrt{2}}\cdot \frac{2}{2} =\frac{\sqrt{2}}{2}\\
 \cos 45 &=& \sin 45 = \frac{\sqrt{2}}{2}\,.
-\end{eqnarray*}
+\end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -210,6 +216,9 @@ $\theta$
 ברביע הראשון. היטלי הקרניים על הצירים
 $x,y$
 שווים כך שיש רק לשנות את הסימנים. ברביע השני:
+
+\np
+
 \begin{center}
 \selectlanguage{english}
 % Functions of 180-\theta
@@ -241,15 +250,15 @@ $x,y$
 \end{tikzpicture}
 \end{center}
 
-\vspace{-4ex}
+\vspace{-16ex}
 
-\[
-\renewcommand{\arraystretch}{1.3}
-\begin{array}{l}
-\cos 135=\cos (180-45)= -\cos 45= \displaystyle -\frac{\sqrt{2}}{2}\\
-\sin 135=\sin (180-45)= \sin 45= \displaystyle \frac{\sqrt{2}}{2}\,.
-\end{array}
-\]
+\begin{equationarray*}{rcl}
+\cos 135&=&\cos (180-45)= -\cos 45= \displaystyle -\frac{\sqrt{2}}{2}\\
+\sin 135&=&\sin (180-45)= \sin 45= \displaystyle \frac{\sqrt{2}}{2}\,.
+\end{equationarray*}
+
+\vspace{-6ex}
+
 נסתכל על הרביע השלישי והרביע הרביעי:
 \begin{center}
 \selectlanguage{english}
@@ -306,29 +315,34 @@ $x,y$
 \end{tikzpicture}
 \end{center}
 
+
 \vspace{-4ex}
 
 עבור הרביע השליש:
-\[
-\renewcommand{\arraystretch}{1.4}
-\begin{array}{l}
-\cos 225 =\cos (180+45)= -\cos 45= \displaystyle -\frac{\sqrt{2}}{2}\\
-\sin 225 =\sin (180+45)= -\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\,.
-\end{array}
-\]
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\cos 225 &=&\cos (180+45)= -\cos 45= \displaystyle -\frac{\sqrt{2}}{2}\\
+\sin 225 &=&\sin (180+45)= -\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\,.
+\end{equationarray*}
+
+
+\vspace{-3ex}
+
 עבור הרבע הרביעי, נוח להשתמש בזווית השלילית
 $-\theta$
 במקום הזווית החיובית
 $360-\theta$:
-\[
-\begin{array}{l}
+\erh{12pt}
+\begin{equationarray*}{rcl}
 \cos 315=\cos (-45)= \cos 45= \displaystyle \frac{\sqrt{2}}{2}\\
 \sin 315=\sin (-45)= -\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\,.
-\end{array}
-\]
+\end{equationarray*}
+
+\np
+
 נסכם את הערכים בטבלה:
 \begin{displaymath}
-\renewcommand{\arraystretch}{1.3}
+%\renewcommand{\arraystretch}{1.1}
 \begin{array}{|c|c|c|c|}
 \hline
 \textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
@@ -342,12 +356,10 @@ $360-\theta$:
 \end{displaymath}
 
 
-\np
-
 ועבור
 $45^\circ$:
 \begin{displaymath}
-\renewcommand{\arraystretch}{1.3}
+%\renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|c|c|}
 \hline
 \textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
@@ -415,6 +427,9 @@ $30^\circ$:
 \fill (origin) circle [radius=1pt];
 \end{tikzpicture}
 \end{center}
+
+\np
+
 ברדיאנים:
 \begin{center}
 \selectlanguage{english}
@@ -478,8 +493,6 @@ $30^\circ$.
 \draw (lower-right) rectangle +(-1pt,1pt);
 \end{tikzpicture}
 \end{center}
-
-\np
 
 צייר קו מ-%
 $C$
@@ -545,6 +558,8 @@ $\sin^2\theta + \cos^2\theta = 1$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\np
+
 \section{סינוס וקוסינוס של
 $(90-\theta)$}
 
@@ -600,7 +615,7 @@ $\sin\theta$
 ו-
 $\cos \theta$:
 
-\np
+\vspace{-4ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -628,19 +643,21 @@ $\cos \theta$:
 \fill (origin) circle [radius=.5pt];
 \end{tikzpicture}
 \end{center}
+
+
 מכאן:
-\[
-\renewcommand{\arraystretch}{1.4}
-\begin{array}{l}
-\cos 60 = \cos (90-30) = \sin 30 = \displaystyle\frac{1}{2}\\
-\sin 60 = \sin (90-30) = \cos 30 = \displaystyle\frac{\sqrt{3}}{2}\,.
-\end{array}
-\]
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\cos 60 &=& \cos (90-30) = \sin 30 = \displaystyle\frac{1}{2}\\
+\sin 60 &=& \sin (90-30) = \cos 30 = \displaystyle\frac{\sqrt{3}}{2}\,.
+\end{equationarray*}
+
+\np
+
 ערכי הפונקציות הטריגונומטריות של כפולות של
 $30^\circ$, $60^\circ$
 מתקבלים ממעגל היחידה כפי שראינו:
 \begin{displaymath}
-\renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|c|c|}
 \hline
 \textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
