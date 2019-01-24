@@ -15,11 +15,11 @@ $B,C$
 ולאחר חישוב הזוויות האחרות לפי סכום של זוויות של משולש. כמו כן,
 $\angle EAC=\angle EBC=\beta$,
 $\angle AEB=\angle ACB=2\beta$,
-כי הם נשענים על אותן קשתות. התרשים נראה דחוס אבל זה בגלל שציירתי לפי הזוויות המחושבות במהלך הפתרון.
+כי הן נשענות על אותן קשתות. התרשים נראה דחוס, אבל ציירתי אותו לפי הזוויות המתקבלות במהלך הפתרון.
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.3]
-\clip(-8mm,-5mm) rectangle +(12,2.8);
+\begin{tikzpicture}[scale=1.4]
+\clip(-5mm,-5mm) rectangle +(11,2.8);
 \coordinate (B) at (0,0);
 \coordinate (C) at (10,0);
 \path[name path=ba] (B) -- +(20:6);
@@ -34,7 +34,7 @@ $\angle AEB=\angle ACB=2\beta$,
 \fill (A) node[above] {$A$} circle(1.5pt);
 \fill (B) node[left,xshift=-4pt] {$B$} node[above right,xshift=85pt,yshift=-1pt] {$\beta$} node[above right,xshift=85pt,yshift=16pt] {$\beta$} circle(1.5pt);
 \fill (C) node[right,xshift=4pt] {$C$} node[above left,xshift=-42pt,yshift=-1pt] {$2\beta$} circle(1.5pt);
-\fill (D) node[above,yshift=-2pt] {$D$} node[left,xshift=-18pt,yshift=1pt] {$3\beta$} node[below,yshift=-4pt] {$180\!-\!3\beta$} circle(1.5pt);
+\fill (D) node[above,yshift=-2pt] {$D$} node[left,xshift=-20pt,yshift=1pt] {$3\beta$} node[below,xshift=-3,yshift=-6pt] {$180\!-\!3\beta$} circle(1.5pt);
 \fill (E) node[above] {$E$} circle(1.5pt);
 \draw[thick] (B) -- (D) -- (E) -- (A);
 \node at ($(E)+(28pt,0pt)$) {$2\beta$};
@@ -48,54 +48,78 @@ $\angle AEB=\angle ACB=2\beta$,
 
 \textbf{סעיף א}
 
-שאלה זו היתה לי קשה כי אני רגיל לחישובים פשוטים ואיבדתי סבלות להשלים בזהירות את החישובים המייגעים!
 
 $\triangle ABC$
 משולש שוקיים ולכן מייד יש לנו:
 \[
 S_{\triangle ABC}=\frac{1}{2}\cdot a\cdot a \cdot \sin (180\!-\!4\beta)=\frac{a^2}{2}\sin 4\beta\,.
 \]
+כדי שהיחס יהיה ביטוי ב-%
+$\beta$
+בלבד, עלינו למצוא ביטוי ל-%
+$S_{\triangle ADE}$
+כדי ש-%
+$a^2$
+יצטמצם.
+
+\np
+
 נחפש משולשים כדי לבטא 
 $AE,AD$
 כביטויים ב-%
 $a,\beta$
 כדי ש-%
+$a^2$
+יצטמצם. ב-%
+$\triangle ABD,\triangle ADE$
+צלע אחד הוא באורך 
 $a$
-יצטמצם. מחוק הסינוסים:
+וצלע שני באורך
+$AD,AE$.
+לפי חוק הסינוסים:
 \erh{14pt}
 \begin{equationarray*}{rcl}
 \frac{AE}{\sin \beta}&=&\frac{a}{\sin 2\beta}\\
 AE&=&\frac{a\sin\beta}{\sin 2\beta}\\
 \frac{AD}{\sin \beta}&=&\frac{a}{\sin 3\beta}\\
 AD&=&\frac{a\sin\beta}{\sin 3\beta}\\
-S_{\triangle ADE}&=&\frac{1}{2}\cdot \frac{a\sin \beta}{\sin^2\beta}\cdot\frac{a\sin\beta}{\sin 3\beta}\cdot \sin \beta\\
+S_{\triangle ADE}&=&\frac{1}{2}\cdot \frac{a\sin \beta}{\sin 2\beta}\cdot\frac{a\sin\beta}{\sin 3\beta}\cdot \sin \beta\\
 &=&\frac{a^2}{2}\cdot \frac{\sin^3 \beta}{\sin 2\beta\sin 3\beta}\\
 \frac{S_{\triangle ABC}}{S_{\triangle ADE}}&=&\frac{\sin 4\beta\sin 2\beta\sin 3\beta}{\sin^3\beta}\,.
 \end{equationarray*}
 
-ניתן גם להשתמש בחוק הסינוסים ולהשוות שני ביטויים עבור הרדיוס של החעגל החוסם.
+פתרון אחר משתמש בחוק הסינוסים כדי להשוות שני ביטויים עבור הרדיוס של החעגל החוסם.
 
 
 \textbf{סעיף ב}
 
-נשתמש בחוק הסינוסים על משולש עם צלע 
-$BE$
-כדי לצמצם אורך של צלע או הרדיוס:
-\erh{2pt}
+נשתמש בחוק הסינוסים על 
+$\triangle ABE$
+עם צלע 
+$BE$,
+ומ-%
+$R=BE$
+הרדיוס יצטמצם:
+\erh{12pt}
 \begin{equationarray*}{rcl}
-2R&=&\frac{BE}{\sin(180\!-\!4\beta+\beta}=\frac{BE}{\sin 3\beta}=\frac{R}{\sin 3\beta}\\
+2R&=&\frac{BE}{\sin(180\!-\!4\beta+\beta(}=\frac{BE}{\sin 3\beta}=\frac{R}{\sin 3\beta}\\
 2\sin 3\beta&=&1\\
 3\beta&=&30^\circ\\
 \beta&=&10^\circ\,.
 \end{equationarray*}
-נכון ש-%
-$\sin 3\cdot 50 = \frac{1}{2}$
+נכון שגם
+$\sin 3\cdot 50 = \frac{1}{2}$,
 אבל לא ייתכן שלמשולש שתי זוויות של 
 $2\cdot 50=100$.
+
+עם ערכו של 
+$\beta$
+נוכל לחשב את יחס השטחים:
 \[
 \frac{S_{\triangle ABC}}{S_{\triangle ADE}}=\frac{\sin 4\beta\sin 2\beta\sin 3\beta}{\sin^3\beta}=\frac{\sin 40\sin 20\sin 30}{\sin^3 10}=20.99^\circ\,.
 \]
 
+\np
 
 \textbf{סעיף ג}
 
@@ -111,7 +135,7 @@ $F$.
 $49$
 "שלושת חוצי הזוויות של משולש נחתכים בנקודה אחת, שהיא מרכז המעגל החסום במשולש", הנקודה המסומנת 
 $M$
-בתרשים.
+בתרשים היא מרכז המעגל החסום.
 
 \begin{center}
 \selectlanguage{english}
@@ -141,19 +165,24 @@ $M$
 \node[draw,very thick,dotted,circle through=(F),name path=circle] (circle) at (M) {};
 \end{tikzpicture}
 \end{center}
+נשאר רק להשתמש בהגדרות של הפונקציות הטריגונומטריות. ב-%
+$\triangle ABF$:
+\erh{10pt}
+\begin{equationarray*}{rcl}
+\sin(90\!-\!2\beta)&=&\frac{b}{a}\\
+b&=&a\cos 2\beta\,.
+\end{equationarray*}
 
+\vspace{-4ex}
 ב-%
-$\triangle ABF$,
-$\sin(90\!-\!2\beta)=\frac{b}{a}$
-ולכן
-$b=a\cos 2\beta$.
-ב-%
-$\triangle BMF$,
-$\tan\beta=\frac{r}{b}$.
-נציב עבור
-$b$
-ונקבל
-$r=a\cos 2\beta\tan\beta=a\cos 20\tan 10=0.1657a$.
+$\triangle BMF$:
+\vspace{-4ex}
+\erh{10pt}
+\begin{equationarray*}{rcl}
+\tan\beta&=&\frac{r}{b}\\
+r&=&a\cos 2\beta\tan\beta\\
+&=&a\cos 20\tan 10=0.1657a\,.
+\end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -166,7 +195,7 @@ $r=a\cos 2\beta\tan\beta=a\cos 20\tan 10=0.1657a$.
 \includegraphics[width=\textwidth]{summer-2018a-5}
 \end{center}
 
-\vspace{-1ex}
+%\vspace{-1ex}
 
 נסמן
 $\angle BAM=\alpha, \angle BCM=90\!-\!\alpha$.
@@ -184,11 +213,12 @@ $\angle BAM=\alpha, \angle BCM=90\!-\!\alpha$.
 \draw[thick] (A) -- (B) -- (C) -- cycle;
 \coordinate (M) at ($(C)!{4/(sqrt(3)+4)}!(A)$);
 \fill (C) node[left] {$C$} node[above right,xshift=18pt] {$90\!-\!\alpha$}circle(1.5pt);
-\fill (B) node[right] {$B$} node[above left,xshift=-8pt] {$60$} node[above left,xshift=2pt,yshift=24pt] {$30$} circle(1.5pt);
+\fill (B) node[right] {$B$} node[above left,xshift=-10pt] {$60$} node[above left,xshift=2pt,yshift=24pt] {$30$} circle(1.5pt);
 \fill (A) node[right] {$A$} node[below left,xshift=2pt,yshift=-8pt] {$\alpha$} circle(1.5pt);
 \fill (M) node[above left] {$M$} circle(1.5pt);
 \draw[thick] (B) -- node[left,xshift=-3pt] {$8$} (M);
-\path (C) -- node[above,xshift=-2pt] {$4x$} (M) -- node[above,xshift=-2pt] {$\sqrt{3}$} (A);
+\path (C) -- node[above,xshift=-4pt] {$4x$} (M) -- node[above,xshift=-6pt] {$\sqrt{3}x$} (A);
+\draw[rotate=90] (B) rectangle +(8pt,8pt);
 \end{tikzpicture}
 \end{center}
 
@@ -197,41 +227,54 @@ $\angle BAM=\alpha, \angle BCM=90\!-\!\alpha$.
 \textbf{סעיף א}
 
 $(1)$
-נשתמש בחוק הסינוסים ונקבל שתי משוואות עם הנעלמים
-$x,\alpha$.
-נפתור את המשוואות כדי לקבל משוואה אחת עם הנעלם
-$\alpha$:
-\erh{12pt}
+לשני המשולשים 
+$\triangle ABM,\triangle CMB$
+צלע עם הנעלם
+$x$,
+זווית ידועה אחת, וזווית שנייה עם הנעלם 
+$\alpha$.
+מחוק הסינוסים נקבל שתי משוואות עם שני הנעלמים שאפשר לפתור אתכדי לקבל משוואה אחת עם הנעלם
+$\alpha$
+בלבד:
+\erh{14pt}
 \begin{equationarray*}{rcl}
 \frac{\sqrt{3}x}{\sin 30}&=&\frac{8}{\sin\alpha}\\
+x&=&\frac{8\sin 30}{\sqrt{3}x\sin\alpha}\\
 \frac{4x}{\sin 60}&=&\frac{8}{\sin (90\!-\!\alpha)}\\
-\frac{8\sin 30}{\sqrt{3}\sin\alpha}&=&\frac{8\sin 60}{4\sin (90\!-\!\alpha)}\\
-\frac{1}{2\sqrt{3}\sin\alpha}&=&\frac{\sqrt{3}}{4\cdot 2\cos \alpha}\,.\end{equationarray*}
-מכאן ש-%
-$\angle BAM=\alpha = 53.13$
-$\tan \alpha = \displaystyle\frac{4}{3},$.
-
-לא לשכוח לרשום גם את הערך של 
-$\angle BCM=90\!-\!\alpha=36.87$!
+x&=&\frac{8\sin 60}{4x\cos\alpha}
+\end{equationarray*}
 
 \np
 
+\erh{10pt}
+\begin{equationarray*}{rcl}
+%\frac{8\sin 30}{\sqrt{3}\sin\alpha}&=&\frac{8\sin 60}{4\sin (90\!-\!\alpha)}\\
+\frac{1}{2\sqrt{3}\sin\alpha}&=&\frac{\sqrt{3}}{4\cdot 2\cos \alpha}\\
+\tan \alpha&=&\frac{4}{3}\,.
+\end{equationarray*}
+לכן,
+$\angle BAC=\alpha = 53.13$,
+ולא נשכח לרשום גם 
+$\angle BCA=90\!-\!\alpha=36.87$.
+
+
 $(2)$
 לפי חוק הסינוסים עבור 
-$\triangle ABM$:
-\[
-2R_1=\frac{8}{\sin\alpha},\quad R_1=5\,.
-\]
-עובר
-$\triangle CMB$:
-\[
-2R_2=\frac{8}{\sin(90\!-\!\alpha)},\quad R_2=\frac{20}{3}\,.
-\]
+$\triangle ABM$, $\triangle CMB$:
+\erh{8pt}
+\begin{equationarray*}{rcl}
+2R_1&=&\frac{8}{\sin\alpha}\\
+R_1&=&5\\
+2R_2&=&\frac{8}{\sin(90\!-\!\alpha)}\\
+R_2&=&20/3\,.
+\end{equationarray*}
+
+\vspace{-3ex}
 
 \textbf{סעיף ב}
 
 $(1)$
-מהתרשים ניתן לראות ש-%
+נצייר התרשים חדש עם המעגלים החוסמים. ניתן לראות ש-%
 $O_1M=O_1B$
 כי הם רדיוסים של המעגל החוסם את
 $\triangle ABM$,
@@ -239,7 +282,7 @@ $\triangle ABM$,
 $O_2M=O_2B$
 כי הם רדיוסים של המעגל החוסם את
 $\triangle CBM$.
-לפי ההגדרה מרובע עם שני זוגות של צלעות שווים הוא דלתון.
+לפי ההגדרה מרובע עם שני זוגות של צלעות שכנים שהם שווים הוא דלתון.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}%[scale=1.1]
@@ -287,9 +330,6 @@ O_1O_2=O_1E+O_2E&=&\sqrt{R_1^2-16} + \sqrt{R_2^2-16}\\
 &=&3+\frac{16}{3}=\frac{25}{3}\,.
 \end{equationarray*}
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \np
@@ -319,7 +359,7 @@ $BAC,BCA$,
 $\angle BAC=\angle CAD$.
 כמובן שזה נכון רק עבור מעוין.
 
-סימנו את הזוויות ב-%
+נסמן את הזוויות בנקודה
 $A$
 עבור המשולשים ישר-זווית
 $\triangle AOE, \triangle AOF$
@@ -331,7 +371,7 @@ $\alpha=\angle OAE,\beta=\angle OAF$.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}%[scale=1.1]
-\clip (-8mm,-5.5mm) rectangle +(12,5);
+\clip (-12mm,-5.5mm) rectangle +(12.5,5);
 \coordinate (A) at (0,0);
 \coordinate (D) at (8,0);
 \coordinate (B) at (54:4.5);
@@ -353,11 +393,11 @@ $\alpha=\angle OAE,\beta=\angle OAF$.
 \draw[thick,dashed] (E) -- node[right,near end] {$3$} (O) -- node[right,near end] {$6$} (F);
 \draw[rotate=19] (E) rectangle +(7pt,7pt);
 \draw (F) rectangle +(7pt,7pt);
-\draw[thick] ($(A)+(12mm,0)$) arc[start angle=0,end angle=37,radius=12mm];
-\node[right,xshift=34pt,yshift=6pt] at (A) {$\beta\!-\!\alpha$};
+\draw[thick] ($(A)+(20mm,0)$) arc[start angle=0,end angle=37,radius=20mm];
+\node[right,xshift=54pt,yshift=12pt] at (A) {$\beta$};
 \node[above right,xshift=34pt,yshift=14pt] at (A) {$\alpha$};
 \node[above right,xshift=28pt,yshift=28pt] at (A) {$\alpha$};
-\node at (0,2) {$\angle OAF=\beta$};
+\node at (-2mm,2.5) {$\angle OAF=\beta$};
 \end{tikzpicture}
 \end{center}
 
@@ -389,7 +429,7 @@ $\alpha,\beta$
 $AC$
 הוא צלע של
 $\triangle ABC$
-והזוויות שלו ידועים, אבל אי-אפשר להשתמש בחוק הסינוסים כי לא אורכי הצלעות לא ידועים. מהתרשים רואים שהאלכסון מורכב משני קטעי קו
+והזוויות שלו ידועים, אבל אי-אפשר להשתמש בחוק הסינוסים כי אורכי הצלעות לא ידועים. מהתרשים רואים שהאלכסון מורכב משני קטעי קו
 $AE,EC$
 שהם צלעות של משולשים ישר-זווית
 $\triangle AOE, \triangle COE$.
@@ -400,17 +440,17 @@ AE = \sqrt{10^2-3^2}=9.54\,.
 \]
 נשתמש בחוק הסינוסים ב-%
 $\triangle COE$
-ונימנע מהפיתוי לקבוע ש-%
-$\angle OCE=\alpha$.
+)ונימנע מהפיתוי לקבוע ש-%
+$\angle OCE=\alpha$(.
 לפי זוויות מתחלפות במקבילית
-$\angle BCA=\beta-\alpha$
+$\angle BCA=\angle CAD=\beta-\alpha$
 ו:
 
 \vspace{-2ex}
 
 \erh{12pt}
 \begin{equationarray*}{rcl}
-\angle OCE&=&\frac{\beta-\alpha}{2}\\
+\angle OCE=\frac{\angle BCA}{2}&=&\frac{\beta-\alpha}{2}\\
 &=&\frac{36.87-17.46}{2}=9.71\\
 \angle COE &=& 180-90-\angle OCE=80.29\\
 \frac{EC}{\sin 80.29}&=& \frac{3}{\sin 9.71}\\
@@ -422,16 +462,16 @@ AC=AE+EC&=&9.54+17.54=27.08\,.
 
 \textbf{סעיף ג}
 
-שטח של מקבילית הוא אורך הבסיס כפול אורך הגובה.
+שטח של מקבילית הוא הבסיס כפול הגובה:
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
 \coordinate (B) at (54:4.5);
 \coordinate (D) at (8,0);
 \coordinate (C) at ($(D)+(54:4.5)$);
-\fill (A) node[below] {$A$} circle(1.5pt);
+\fill (A) node[below] {$A$} node[above right,xshift=46pt,yshift=0pt] {$\beta-\alpha$} node[above right,xshift=16pt,yshift=10pt] {$2\alpha$} circle(1.5pt);
 \fill (B) node[above] {$B$} circle(1.5pt);
 \fill (C) node[above] {$C$} circle(1.5pt);
 \fill (D) node[below] {$D$} circle(1.5pt);
@@ -439,9 +479,9 @@ AC=AE+EC&=&9.54+17.54=27.08\,.
 \draw[thick] (A) -- (B) -- (C);
 \coordinate (H) at ($(A)!(C)!(D)$);
 \fill (H) node[below] {$H$} circle(1.5pt);
-\draw[rotate=90] (H) rectangle +(7pt,7pt);
+\draw[rotate=90] (H) rectangle +(10pt,10pt);
 \draw[thick,dashed] (D) -- (H) -- node[right] {$h$} (C);
-\node[above right,xshift=46pt,yshift=0pt] at (A) {$\beta-\alpha$};
+%\node[above right,xshift=46pt,yshift=0pt] at (A) {$\beta-\alpha$};
 \node[above left,xshift=-2pt,yshift=2pt] at (D) {$125.67$};
 \node[below left,xshift=-16pt,yshift=-12pt] at (C) {$2\alpha$};
 \end{tikzpicture}
@@ -481,7 +521,6 @@ $S_{\triangle ABC}$
 \textbf{סעיף א}
 
 
-$\angle ACD=60$.
 לפי משפט
 $56$
 "ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
@@ -492,13 +531,16 @@ $\angle DAB=120$.
 $A,B$
 ל-%
 $CD$
-החותחכים את הקו ב-%
-$E,F$,
-ונקבל משולשים ישר-זווית
-$\triangle ADE,\triangle BCF$.
-נשלים את הזוויות במשולשים ל-%
-$180$
-ונקבל את הזוויות הרשומות בתרשים, כאשר הטרפז שווה שוקיים.
+החותחכים אותו ב-%
+$E,F$.
+$\triangle AED,\triangle BFC$
+הם משולשים ישר-זווית. בתרשים השלמנו את הזוויות במשולשים ל-%
+$180$.
+לפי משפט
+$40$
+"טרפז בו הזוויות שליד אותו בסיס שוות זו לזו הוא טרפז שווה שוקיים", 
+$ABCD$
+שווה שוקיים.
 
 %\vspace{-1ex}
 
@@ -530,7 +572,7 @@ $180$
 \fill (F) node[below] {$F$} circle(1.5pt);
 \draw[thick,dashed] (B) -- (F);
 \draw[rotate=90] (F) rectangle +(8pt,8pt);
-\draw[thick,dashed] (A) -- node[below,xshift=-4pt] {$c$} (C);
+\draw[dashed] (A) -- node[below,xshift=-4pt] {$c$} (C);
 \end{tikzpicture}
 \end{center}
 
@@ -538,7 +580,7 @@ $180$
 
 $AE=BF$
 כך ש-%
-$\triangle ADE\cong\triangle BCF$.
+$\triangle AED\cong\triangle BFC$.
 מכאן:
 
 \vspace{-2ex}
@@ -551,18 +593,28 @@ s&=&b-a\,.
 
 \vspace{-4ex}
 
-פתרון אחר )מסבוך יותר!( הוא משתמש בחוק הקוסינוסים על 
-$\triangle ACD,\triangle ACB$:
+פתרון אחר משתמש בחוק הקוסינוסים על 
+$\triangle ACD,\triangle ACB$.
+נסמן ב-%
+$c$
+את אורך האלכסון
+$AC$.
 
 \vspace{-2ex}
 
 \erh{2pt}
 \begin{equationarray*}{rcl}
-c^2 &=& s^2+b^2-sb\cos 60\\
+c^2 &=& s^2+b^2-2sb\cos 60\\
 &=& s^2-sb+b^2\\
-c^2 &=& s^2+a^2-sa\cos 120\\
+c^2 &=& s^2+a^2-2sa\cos 120\\
 &=& s^2+sa+a^2
 \end{equationarray*}
+\vspace{-3ex}
+
+נשווה את שתי הנוסחאות ל-%
+$c^2$
+ונפתור עבור 
+$s$:
 
 \np
 
@@ -576,14 +628,17 @@ s&=&b-a\,.
 
 \textbf{סעיף ב}
 
-המחשבה הראשונה שלי היתה להשתמש בחוק הסינוסים פעמיים: פעם אחת כדי לחשב 
+שקלתי להשתמש בחוק הסינוסים במשלוש
+$\triangle ADB$:
+פעם אחת לחשב 
 $\angle ADB$
 ופעם שנייה לחשב את
 $s$.
-אבל אפשר לקצר כי
-$s=b-a=b-4$
-ולהשתמש בחוק הקוסינוסים:
-\erh{2pt}
+עדיף להשתמש בחוק הקוסינוסים ב-%
+$\triangle ADB$
+כי אנו יודעים ש-%
+$s=b-a=b-4$:
+\erh{3pt}
 \begin{equationarray*}{rcl}
 (4\sqrt{7})^2&=&4^2+(b-4)^2-2\cdot 4\cdot (b-4)\cdot \cos 120\\
 b^2-4b-96&=&0\\
@@ -607,7 +662,7 @@ b&=&12\,.
 \path[name intersections={of=s2 and top,by={B}}];
 \fill (A) node[above left] {$A$} node[below right] {$120$} circle(1.5pt);
 \fill (B) node[above right] {$B$} circle(1.5pt);
-\draw[thick] (D) -- node[left] {$s$} (A) -- node[above] {$4$} (B) -- node[right] {$s$} (C);
+\draw[thick] (D) -- node[left,xshift=-14pt] {$b-4$} (A) -- node[above] {$4$} (B) -- node[right,xshift=14pt] {$b-4$} (C);
 \tkzCircumCenter(A,B,C)\tkzGetPoint{O}
 \tkzDrawCircle[thick,dotted,name path=circle](O,A)
 \fill (O) circle(3pt);
@@ -628,7 +683,8 @@ $(1)$
 $BD$
 הוא 
 \textbf{לא}
-הקוטר של המעגל החוסם, המסומן בנקודה הגדולה. לפי חוק הסינוסים:
+הקוטר של המעגל החוסם שמסומן בנקודה השחורה הגדולה. לפי חוק הסינוסים ב-%
+$\triangle ADB$:
 \[
 R = \frac{4\sqrt{7}}{2\sin 120} = \frac{4\sqrt{7}}{\sqrt{3}}=6.11\,.
 \]
@@ -642,15 +698,15 @@ $57$,
 
 \vspace{-4ex}
 
-\erh{2pt}
+\erh{3pt}
 \begin{equationarray*}{rcl}
-a+b&=&s+s\\
-&=&(b-a)+(b-a)\\
-3a&=&b\\
+a+b&\stackrel{?}{=}&s+s\\
+a+b&\stackrel{?}{=}&(b-a)+(b-a)\\
+3a&\stackrel{?}{=}&b\\
 3\cdot 4&=&12\,.
 \end{equationarray*}
 
-\vspace{-2ex}
+\vspace{-4ex}
 
 $(3)$
 $AB,CD$
@@ -658,7 +714,7 @@ $AB,CD$
 $BF=2r$:
 \erh{14pt}
 \begin{equationarray*}{rcl}
-\sin 60 &=& \frac{2r}{s}=\frac{r}{8}\\
+\sin 60 &=& \frac{2r}{s}=\frac{2r}{b-a}=\frac{2r}{8}\\
 r&=&\frac{1}{2}\cdot\frac{\sqrt{3}}{2}\cdot 8 = 2\sqrt{3}=3.464\,.
 \end{equationarray*}
 
@@ -679,7 +735,7 @@ r&=&\frac{1}{2}\cdot\frac{\sqrt{3}}{2}\cdot 8 = 2\sqrt{3}=3.464\,.
 
 \textbf{סעיף א}
 
-הסימונים בתרשים לפי: נתון ש-%
+נסמן בתרשים לפי: 
 $\triangle ABC$
 שווה שוקיים,
 $AF,BD,CF$
@@ -689,8 +745,10 @@ $46$
 $2\!:\!1$".
 $AF=CE$
 כי
-$\triangle AEC\cong \triangle CEA$
-לפי צ.ז.צ.
+$\triangle CAF\cong \triangle ACE$
+לפי צ.ז.צ. כי 
+$\triangle ABC$
+שווה-שוקיים.
 
 \vspace{-1ex}
 
@@ -732,14 +790,17 @@ $\triangle AEC\cong \triangle CEA$
 נשתמש במשפט
 $91$
 "משפט תאלס המורחב: ישר המקביל לאחת מצלעות המשולש חותך את שתי הצלעות האחרות או את המשכיהן בקטעים פרופורציוניים", כך ש-%
-$EF=\displaystyle\frac{AC}{2}=\frac{a}{2}$:
+$EF=\displaystyle\frac{AC}{2}=\frac{a}{2}$.
+$\triangle EBF$
+גם הוא שווה-שוקיים, ולכן,
+$EG=\displaystyle\frac{EF}{2}=\frac{a}{4}$.
 
 \vspace{-1ex}
 
-\erh{14pt}
+\erh{16pt}
 \begin{equationarray*}{rcl}
-S_{BOE}&=&\frac{1}{2}\cdot \frac{a}{4}\cdot BG+\frac{1}{2}\cdot \frac{a}{4}\cdot GO =\frac{1}{2}\cdot \frac{a}{4}\cdot 2r= \frac{1}{4}ar\\
-S_{COD} &=& \frac{1}{2}r\cdot \frac{a}{2} =\frac{1}{4}ar\,.
+S_{BOE}&=&\frac{1}{2}\cdot \frac{a}{4}\cdot BG+\frac{1}{2}\cdot \frac{a}{4}\cdot GO =\frac{a}{8}(BG+GO)=\frac{a}{8}\cdot 2r= \frac{ar}{4}\\
+S_{COD} &=& \frac{1}{2}\cdot r\cdot \frac{a}{2} =\frac{ar}{4}\,.
 \end{equationarray*}
 
 \np
@@ -751,8 +812,8 @@ $\alpha$:
 
 \erh{14pt}
 \begin{equationarray*}{rcl}
-S_{BOE}&=&\frac{1}{2}2r\cdot c\cdot \sin \alpha\\
-S_{COD}&=&\frac{1}{2}r\cdot 2c\cdot \sin \alpha\,.
+S_{BOE}&=&\frac{1}{2}\cdot 2r\cdot c\cdot \sin \alpha\\
+S_{COD}&=&\frac{1}{2}\cdot r\cdot 2c\cdot \sin \alpha\,.
 \end{equationarray*}
 
 \vspace{-3ex}
@@ -820,8 +881,10 @@ $\beta = \angle ACE$:
 
 בתרשים סימנו
 $OE=c$.
-שוב נחשוב פונקציה טריגונומטרית עבור הזווית
-$\beta$:
+נחשב פונקציה טריגונומטרית עבור הזווית
+$\beta$
+ב-%
+$\triangle COD$:
 
 \vspace{-2ex}
 
@@ -847,17 +910,47 @@ c &=& \frac{r}{2\sin \beta}\\
 
 \textbf{סעיף א}
 
-בתרשים סימנו 
-$OA=OB=OC=OD=R$
-כי הן כולם רדיוסים של חצי המעגל. מהנתון 
-$\angle EAD=\alpha$
-ניתן להסיק את הסימונים של שאר הזוויות )% 
-$\beta = 180\!-\!2\alpha,\, \gamma = 180\!-\!2\beta$(
-ממשולשים שווה-שוקיים, השלמת זוויות במעגל ל-%
-$180$
-וזוויות מתחלפות של 
-$AD\|BC$.
+להלן ההצדקה לסימונים של הזוויות בתרשים להלן. הרדיוסים של המעגל שווים
+$OA=OB=OC=OD=R$,
+לכן
+$\triangle ABO$
+שווה-שוקיים, ו-%
+$\angle BAO=\angle ABO=\alpha$.
+כדי להשלים זוויות של
+$\triangle ABO$
+ל-%
+$180$,
+$\angle AOB=180-2\alpha$
+שנסמן
+$\beta$.
+$\angle BCO=\angle AOB=\beta$
+לפי זוויות מתחלפות, ו-%
+$\angle BCO=\angle CBO=\beta$
+כי
+$\triangle BOC$
+שווה שוקיים. נשלים את הזוויות של
+$\triangle BOC$
+ונקבל
+$\angle BOC=180-2\beta$
+שנסמן 
+$\gamma$.
+לפי זוויות מתחלפות
+$\angle COD=\angle BCO=\beta$.
+$\triangle COD$
+שווה שוקיים, ולכן
+$\angle CDO=\angle OCD=(180-\beta)/2=\alpha$.
 
+אפשר גם להשתמש במשפט
+$56$
+"ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
+$180^\circ$.
+לאחר שהסקנו ש-%
+$\angle OAB=\angle ABO=\alpha$
+ו-%
+$\angle AOB=\angle CBO=180-2\alpha=\beta$,
+אפשר לחשב ש-%
+$\angle CDO=\alpha$
+ומשם את שאר הזוויות.
 \vspace{-1ex}
 
 \begin{center}
@@ -885,39 +978,42 @@ $AD\|BC$.
 \end{tikzpicture}
 \end{center}
 
-\vspace{-1ex}
+\np
 
-לפני שנמשיך בחישובים נרשום כמה זהויות טריגונומטריות שימושיות:
-\erh{0pt}
+לפני שנמשיך נרשום כמה זהויות טריגונומטריות שימושיות:
+\erh{2pt}
 \begin{equationarray*}{rcl}
 \cos (180-\theta) &=& -\cos \theta\\
 \sin (180-\theta) &=& \sin \theta\\
-\cos 2\theta &=& \cos\theta\cos\theta - \sin\theta\sin\theta\\
-&=&\cos^2\theta-\sin^2\theta\\
-\sin 2\theta &=& \sin\theta\cos\theta + \cos\theta\sin\theta\\
-&=&2\sin\theta\cos\theta\,.
+\cos 2\theta &=& \cos\theta\cos\theta - \sin\theta\sin\theta =\cos^2\theta-\sin^2\theta\\
+\sin 2\theta &=& \sin\theta\cos\theta + \cos\theta\sin\theta =2\sin\theta\cos\theta\,.
 \end{equationarray*}
 
-\np
+\vspace{-4ex}
 
 נחשב
-$a$
-לפי חוק הסינוסים ולפי חוק הקוסינוסים, ותחליטו בעצמכם איזו שיטה טובה יותר.
+$a=BC$
+לפי חוק הסינוסים ולפי חוק הקוסינוסים c-%
+$\triangle BOC$,
+ותחליטו איזו שיטה עדיפה.
 
 לפי חוק הסינוסים:
+
+\vspace{-5ex}
+
 \erh{12pt}
 \begin{equationarray*}{rcl}
 \frac{a}{\sin\gamma} &=& \frac{R}{\sin\beta}\\
-a &=& \frac{R\sin(180-2\beta)}{\sin\beta} =\frac{R(\sin 2\beta)}{\sin\beta}\\
+a &=& \frac{R\sin(180-2\beta)}{\sin\beta} =\frac{R\sin 2\beta}{\sin\beta}\\
 &=&\frac{R(2\sin \beta\cos\beta)}{\sin\beta}\\
 &=&2R\cos\beta = 2R\cos(180-2\alpha)\\
 &=&-2R\cos 2\alpha\,.
 \end{equationarray*}
 
-\vspace{-4ex}
+\vspace{-5ex}
 
 לפי חוק הקוסינוסים:
-\erh{2pt}
+\erh{4pt}
 \begin{equationarray*}{rcl}
 a^2 &=& R^2+R^2-2R\cdot R \cos \gamma\\
 &=&2R^2(1-\cos(180-2\beta)) =2R^2(1+\cos 2\beta)\\
@@ -927,31 +1023,47 @@ a&=&2R\cos \beta= 2R\cos(180-2\alpha)\\
 &=&-2R\cos 2\alpha\,.
 \end{equationarray*}
 
-\vspace{-4ex}
+\vspace{-6ex}
 
 \textbf{סעיף ב}
 
-האורך של קטע קו חייב להיות חיובי:
-$BD=-2R\cos 2\alpha>0$
-או
-$\cos 2\alpha<0$.
-לכן
-$2\alpha$
-נמצא ברביע השני,
-$90<2\alpha\leq 180$
+האורך של צלע חייב להיות חיובי
+$a\!=\!-2R\cos 2\alpha\!>\!0$,
+ולכן
+$\cos 2\alpha\!<\!0$
 ו-%
-$45<\alpha\leq 90$.
-לא ייתכן ש-%
-$\alpha = 90$
-כי נתון שהמשכי השוקיים
-$AB,DC$
-נפגשים.
+$2\alpha$
+נמצא ברביע השני:
+\begin{eqnarray*}
+90<2\alpha\leq 180\\
+45<\alpha\leq 90\,.
+\end{eqnarray*}
 
-\medskip
+\vspace{-5ex}
+
+$\alpha \neq 90$
+כי הזוויות הבסיס של משולש שווה-שוקיים חייבים להיות פחות מ-%
+$90$.
+
+
 
 \textbf{סעיף ג}
 
-\vspace{-3ex}
+
+נתון יחס של השטחים של שני משולשים. נחשב את השטחים של שני המשולשים ונראה מה יוצא.
+
+נחשב 
+$S_{\triangle AED}$
+לפי הנוסחה הגיאומטרית. הגובה של 
+$\triangle AED$
+הוא
+$h=R\tan\alpha$,
+ו:
+\[
+S_{\triangle AED}= \frac{1}{2}\cdot 2R \cdot h =R^2\tan\alpha\,.
+\]
+
+\np
 
 \begin{center}
 \selectlanguage{english}
@@ -983,41 +1095,39 @@ $AB,DC$
 \end{tikzpicture}
 \end{center}
 
-החישובים בסעיף זה מעט ארוכים, אבל מתבססים על הנוסחאות המופיעות בנוסחאון:
-\[
-S=\frac{1}{2}\cdot b \cdot c \cdot \sin \alpha,\quad 2R=\frac{a}{\sin\alpha}\,.
-\]
 
-\np
-
-תחילה נחשב את השטחים של שני המשולשים. עבור משולש אחד נשתמש בנוסחה הגיאומטרית ועבור המשלוש שני נשתמש בנוסחה עם סינוס:
+נחשב 
+$S_{\triangle COD}$
+לפי הנוסחה הטריגונומטרית:
 \erh{12pt}
 \begin{equationarray*}{rcl}
-\tan\alpha &=& \frac{h}{R}\\
-S_{AED}&=& \frac{1}{2}\cdot 2R \cdot h\\
-&=&R^2\tan\alpha\\
-S_{COD}&=&\frac{1}{2}R\cdot R \cdot \sin \beta\\
+S_{\triangle COD}&=&\frac{1}{2}R\cdot R \cdot \sin \beta\\
 &=&\frac{1}{2}R^2 \sin (180-2\alpha)=\frac{1}{2}R^2 \sin 2\alpha\,.
 \end{equationarray*}
-נתון היחס בין השטחים:
-\erh{14pt}
+לפי היחס נתון בין השטחים:
+\erh{12pt}
 \begin{equationarray*}{rcl}
-S_{AED}=R^2\tan\alpha &=& 9\cdot \frac{1}{2}R^2\sin 2\alpha=9S_{COD}\\
+tR^2\tan\alpha &=& 9\cdot \frac{1}{2}R^2\sin 2\alpha\\
 \frac{\sin\alpha}{\cos\alpha} &=& 9\cdot \frac{1}{2} \cdot 2\sin\alpha\cos\alpha\\
-\cos^2\alpha&=& \frac{1}{9}\\
+%\cos^2\alpha&=& \frac{1}{9}\\
 \cos\alpha &=& \frac{1}{3}\\
 \sin\alpha &=& \sqrt{1-\frac{1}{9}} = \sqrt{\frac{8}{9}}=\frac{2\sqrt{2}}{3}\,.
 \end{equationarray*}
 
 \vspace{-3ex}
-עכשיו נשתמש בחוק הסינוסים כדי לחשב 
+
+במשולש 
+$\triangle DOE$
+יש לנו
+$R=DE\cos\alpha$.
+נשתמש בחוק הסינוסים כדי לחשב 
 $r$,
 הרדיוס של המגעל שחוסם 
 $\triangle AED$:
 \erh{14pt}
 \begin{equationarray*}{rcl}
 2r&=&\frac{DE}{\sin \alpha}\\
-\cos \alpha &=& \frac{R}{DE}\\
+%\cos \alpha &=& \frac{R}{DE}\\
 %r&=&\frac{R}{2\sin\alpha\cos\alpha}\\%=\frac{R}{2\sin 2\alpha}\\
 \frac{r}{R}&=&\frac{1}{2\sin \alpha\cos\alpha}\\
 &=&\frac{1}{2(2\sqrt{2}/3)(1/3)}\\
@@ -1037,23 +1147,28 @@ $\triangle AED$:
 \vspace{-2ex}
 
 
-הסתבכתי בשאלה זו. מהתרשים נראה שהטרפז שווה-שוקיים, אבל אין לסמוך על תרשימים. השקעתי זמן רב עד שעלה בדעתי האפשרות שטרפז חסום במעגל חייב להיות שווה-שוקיים. המשפט לא מופיע ברשימת המשפטים שניתן לצטט בבחינת הבגרות ויש להוכיח אותו. )בספרי לימוד משפט לא מובלט ומופיע רק כדוגמה או תרגיל.( אני אביא שתי הוכחות: אחת שלי ואחת המופיעה בספרים.
+מהתרשים נראה שהטרפז שווה-שוקיים, אבל אין לסמוך על תרשימים. השקעתי זמן רב עד שעלה בדעתי האפשרות שטרפז חסום במעגל חייב להיות שווה-שוקיים. המשפט לא מופיע ברשימת המשפטים שניתן לצטט בבחינת הבגרות ויש להוכיח אותו. בספרי לימוד המשפט לא מובלט ומופיע רק כדוגמה או תרגיל. אני אביא שתי הוכחות: אחת שלי ואחת המופיעה בספרים.
 
-ההוכחה מהספרים:
+ההוכחה מהספרים )רשים ימני למטה(:
 $\angle ACD = \angle CAB$
-לפי זוויות מתחלפות ולכן גם המיתרים שווים
+לפי זוויות מתחלפות ולכן גם המיתרים הכלואים שווים
 $CB=AD$.
 
-ההוכחה שלי: במרובע חוסם על ידי במעגל סכום זוג זוויות נגדיות שווה ל-%
-$180^\circ$:
-\erh{0pt}
-\begin{equationarray*}{rcl}
-\angle DCB&=&180\!-\!\angle DAB\\
-\angle DCF&=&180\!-\!(180\!-\!\angle DAB)=\angle DAB\\
-\angle ABC&=&\angle DAB\,.
-\end{equationarray*}
+ההוכחה שלי )תרשים שמאלי למטה(: המשפט הראשון שחשבתי עליו כאשר קראתי את השאלה הוא משפט 
+$56$
+"ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
+$180^\circ$".
+נסמן
+$\angle DAB=\theta$,
+ולפי המשפט 
+$\angle DCB=180\!-\!\theta$.
+לפי זוויות משלימות ומתאימות
+$\angle DCF=\angle ABC=\theta$.
+לפי משפט
+$40$
+"טרפז בו הזוויות שליד אותו בסיס שוות זו לזו הוא טרפז שווה שוקיים", הטרפז שווה-שוקיים.
 
-\vspace{-6ex}
+\vspace{-4ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -1062,7 +1177,7 @@ $180^\circ$:
 \coordinate (B) at (0,.2);
 \coordinate (A) at (4,.2);
 \node[draw,thick,circle through=(A),name path=circle] at (O) {};
-\fill (B) node[left,xshift=-2pt] {$B$}  circle(1.5pt);
+\fill (B) node[left,xshift=-2pt] {$B$} node[above right] {$\theta$?}  circle(1.5pt);
 \fill (A) node[right] {$A$} circle(1.5pt);
 \path[name path=bc] (B) -- +(75:4);
 \path[name path=ad] (A) -- +(105:4);
@@ -1097,20 +1212,19 @@ $180^\circ$:
 
 \textbf{סעיף א}
 
-
-
-
-נסמן את הזוויות הנתונות
-$\angle BOA,\angle COD$,
-כל הצלעות המסומנות רדיוסים של המעגל החוסם ולכן הם שווים, והמשולשים שווה שוקיים. מכאן ניתן לחשב ולסמן את הזוויות של
-$\triangle COD, \triangle BOA$.
-סכום הזוויות סביב הנקודה 
-$O$
-הוא 
-$360$,
-וניתן להשלים את שאר הזוויות כי
-$\triangle COD\cong \triangle DOA$
-לפי צ.ז.צ. כי הטרפז שווה שוקיים. נחשב
+בארבעת המשולשים עם קודקוד
+$O$,
+הצלעות המקווקוות הם רדיוסים שאורכם
+$R$,
+והמשולשים שווה שוקיים.
+$\triangle COB\cong \triangle DOA$
+לפי צ.צ.צ. כי הטרפז שווה שוקיים. מכאן ש-%
+$\angle COB\cong \angle DOA$,
+וניתן לסמן את הזוויות לפי החישובים מימין לתרשים. החישוב של
+$\gamma$
+מוצדק כי סכום הזוויות סביב נקודה הוא 
+$360$.
+השורה האחרונה מציגה את התשובה לשאלה כי
 $\angle DAB=\beta+\delta$.
 
 \np
@@ -1156,9 +1270,10 @@ $\angle DAB=\beta+\delta$.
 
 \textbf{סעיף ב}
 
-ב-%
-$\triangle DOA$
-אנו יודעים את כל הזוויות ושני צלעות שהם רדיוסים. לפי חוק הסינוסים:
+כדי חשב אורך של שוק נחפש משולש שאחד מצלעותיו הוא
+$DA$.
+לפי חוק בסינוסים ב-%
+$\triangle DOA$:
 \erh{12pt}
 \begin{equationarray*}{rcl}
 \frac{DA}{\sin\gamma}&=&\frac{R}{\sin\delta}\\
@@ -1171,56 +1286,70 @@ DA&=&\frac{R\sin 2\alpha}{\sin\alpha}\\
 
 \textbf{סעיף ג}
 
-נשתמש בהגדרה של סינוס במשולש 
+בתרשים ציירנו את הגובה מהנקודה 
+$C$
+כדי לא להסתיר את הסימונים ב-%
+$\triangle DOA$.
+$CB=DA$
+הוא גם שוק. נשתמש בהגדרה של סינוס במשולש 
 $\triangle CBE$:
-\erh{12pt}
-\begin{equationarray*}{rcl}
-\sin \angle CBE &=&\frac{h}{CB}\\
-\frac{h}{CB}&=&\sin \left(\frac{180\!-\!3\alpha}{2}+\alpha\right)\\
-&=&\sin \left(90-\frac{\alpha}{2}\right)=\cos\frac{\alpha}{2}\\
-CB&=&\frac{h}{\cos\frac{\alpha}{2}}\,.
-\end{equationarray*}
+\[
+\frac{h}{CB}=\sin \angle CBE=\sin \left(\frac{180\!-\!3\alpha}{2}+\alpha\right)=\sin \left(90-\frac{\alpha}{2}\right)=\cos\frac{\alpha}{2}\,.
+\]
+כי
+$\angle CBE=\angle DAB=\beta+\delta$.
+התשובה היא
+$CB=\displaystyle\frac{h}{\cos (\alpha/2)}$.
 
 \textbf{סעיף ד}
 
 בנוסחה הטריגונטמרית עבור
-$\triangle COD$
+$S_{\triangle COD}$
 יופיעו אורכי הצלעות
 $R$
-כאשר השטח נתון כנוסחה עם
-$h,\alpha$.
-נשתמש במשוואת עבור אורך השוק מהסעיפים הקודמים כדי "להיפטר" מ-%
-$R$:
+והזווית
+$\alpha$.
+אנו רוצים נוסחה עם 
+$h$
+ו-%
+$\alpha$
+כדי להשוות לביטוי הנתון. נשווה את הביטויים עבור שוקי הטרפז מהסעיפים הקודמים:
 \erh{12pt}
 \begin{equationarray*}{rcl}
-2R\cos\alpha&=&\frac{h}{\cos\frac{\alpha}{2}}\\
-R&=&\frac{h}{2\cos\alpha \cos\frac{\alpha}{2}}\,.
+2R\cos\alpha&=&\frac{h}{\cos(\alpha/2)}\\
+R&=&\frac{h}{2\cos\alpha \cos(\alpha/2)}\,.
 \end{equationarray*}
 
 \np
 
 נציב בנוסחה לשטח, נשווה לנוסחה הנתונה לשטח ונצמצם:
-\erh{14pt}
+\erh{16pt}
 \begin{equationarray*}{rcl}
-S_{COD}&=&\frac{1}{2}\cdot OC \cdot OD \cdot \sin\alpha=\frac{1}{2}R^2\sin\alpha\\
-&=&\frac{1}{2}\cdot \frac{h^2}{4}\cdot \frac{1}{\left(\cos\alpha \cos\frac{\alpha}{2}\right)^2} \cdot \sin\alpha\\
-\frac{h^2}{12\cos^2 \frac{\alpha}{2}}&=&\frac{1}{2}\cdot \frac{h^2}{4}\cdot \frac{1}{\left(\cos\alpha \cos\frac{\alpha}{2}\right)^2} \cdot \sin\alpha\\
-\frac{1}{12}&=&\frac{1}{8}\cdot \frac{1}{\cos^2\alpha} \cdot \sin\alpha
+S_{\triangle COD}&=&\frac{1}{2}\cdot OC \cdot OD \cdot \sin\alpha=\frac{1}{2}R^2\sin\alpha\\
+&=&\frac{1}{2}\cdot \frac{h^2}{4}\cdot \frac{1}{\left(\cos\alpha \cos(\alpha/2)\right)^2} \cdot \sin\alpha\\
+\frac{h^2}{12\cos^2 (\alpha/2)}&=&\frac{1}{2}\cdot \frac{h^2}{4}\cdot \frac{1}{\left(\cos\alpha \cos(\alpha/2)\right)^2} \cdot \sin\alpha\\
+\frac{1}{12}&=&\frac{1}{8}\cdot \frac{1}{\cos^2\alpha} \cdot \sin\alpha\\
+\frac{1}{12}&=&\frac{1}{8}\cdot \frac{1}{1-\sin^2\alpha} \cdot \sin\alpha\,.
 \end{equationarray*}
-כדי למצוא את
-$\alpha$
-נציב עבור
-$\cos^\alpha$
-ונקבל נוסחה רק עם סינוס:
-\erh{14pt}
+נקבל משוואה ריבועית ב-%
+$\sin\alpha$,
+ונבחר את השורש 
+$\displaystyle\frac{1}{2}$
+כי הערך של סינוס לא יכול להיות
+$-2$:
+\erh{12pt}
 \begin{equationarray*}{rcl}
-\frac{1}{12}&=&\frac{1}{8}\cdot \frac{1}{1-\sin^2\alpha} \cdot \sin\alpha\\
 2\sin^2\alpha + 3\sin\alpha - 2&=&0\\
 (2\sin\alpha-1)(\sin\alpha+2)&=& 0\\
-\sin\alpha&=&\frac{1}{2}\\
-\alpha &=& 30^\circ\,.
+\sin\alpha&=&\frac{1}{2}\,.
 \end{equationarray*}
-כי הערך המוחלט של סינוס חייב להיות פחות או שווה לאחד.
+הערך היחיד ש-%
+$\alpha$
+יכול לקבל הוא
+$30^\circ$
+כי זוויות הבסיס של טרפז חייבים להיות פחות מ-%
+$90^\circ$.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -1233,10 +1362,11 @@ $\cos^\alpha$
 \includegraphics[width=\textwidth]{summer-2016a-5}
 \end{center}
 
+\vspace{-3ex}
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.9]
+\begin{tikzpicture}[scale=.85]
 \coordinate (B) at (0,0);
 \coordinate (C) at (5,0);
 \path[name path=ba] (B) -- +(66:7);
@@ -1252,32 +1382,35 @@ $\cos^\alpha$
 \draw[thick] (A) -- (E);
 \fill (E) node[below] {$E$} circle(1.5pt);
 \draw[rotate=90] (E) rectangle +(8pt,8pt);
-\draw[thick] (A) -- (B) -- node[below] {$k$} (E) -- node[below] {$k$} (C) -- node[right] {$a$} (T) -- node[right] {$a$} (A);
+\draw[thick] (A) -- node[left] {$2a$} (B) -- node[below] {$k$} (E) -- node[below] {$k$} (C) -- node[right] {$a$} (T) -- node[right] {$a$} (A);
 \node at ($(T)+(60pt,-10pt)$) {$180\!-\!(\alpha\!+\!\beta)$};
 \draw[->] ($(T)+(25pt,-9pt)$) -- +(-28pt,0);
 \end{tikzpicture}
 \end{center}
 
-\vspace{-3ex}
+\vspace{-1ex}
 
 $\bm{(1)}$
+לפי הגדרת קוסינוסים ב-%
+$\triangle AEC$:
 
-לפי הגדרת קוסינוס:
+\vspace{-3ex}
+
 \erh{12pt}
 \begin{equationarray*}{rcl}
 \cos \beta &=& \frac{k}{2a}\\
 TC = a &=& \frac{k}{2\cos\beta}\,.
 \end{equationarray*}
 
-\vspace{-3ex}
+\vspace{-2ex}
 
 $\bm{(2)}$
-
-תמיד כדאי לסמן זוויות לפי משפטים פשוטים כגון סכום זוויות במשולש וזוויות משלימות. במקרה זה קל לראות ש-%
-$\angle BTC=180\!-\!(\alpha\!+\!\beta)$.
-אנחנו כבר רגילים למשוואה
-$\sin(180-\theta)=\sin\theta$,
-כך שמתקבל מייד משוואה מועילה מחוק הסינוסים:
+נחפש משולש עבורו חוק הסינוסים ייתן משוואה בה יצטמצם
+$k$
+או
+$a$.
+$\triangle TBC$ 
+מתאים:
 
 \vspace{-5ex}
 
@@ -1290,14 +1423,16 @@ $\sin(180-\theta)=\sin\theta$,
 \end{equationarray*}
 \selectlanguage{hebrew}
 
-\vspace{-4ex}
+\np
 
 $\bm{(1)}$
-
-נוסיף סימונים לפי הנתונים, ונשתמש במשפט
+נוסיף את אורכי הצלעות הנתונים ונשתמש במשפט
 $86$
 "במשולש ישר זווית התיכון ליתר שווה למחצית היתר" כדי להסיק ש-%
-$TE=TA=TC=5$.
+$TE=TA=TC=5$
+ו-%
+$\triangle ETC$
+שווה-שוקיים:
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
@@ -1316,16 +1451,17 @@ $TE=TA=TC=5$.
 \draw[thick] (A) -- (E);
 \fill (E) node[below] {$E$} node[above right,xshift=2pt] {$\beta$}circle(1.5pt);
 \draw[rotate=90] (E) rectangle +(8pt,8pt);
-\draw[thick] (A) -- (B) -- node[below] {$4$} (E) -- node[below] {$4$} (C) -- node[right] {$5$} (T) -- node[right] {$5$} (A);
+\draw[thick] (A) -- (B) -- (C) -- node[right] {$5$} (T) -- node[right] {$5$} (A);
 \coordinate (F) at ($(E)!(T)!(C)$);
 \draw[thick,dashed] (E) -- node[above,xshift=-2pt] {$5$} (T) -- (F);
+\path (B) -- node[below] {$4$} (E) -- node[below] {$2$} (F) -- node[below] {$2$} (C);
 \draw (F) rectangle +(8pt,8pt);
 \end{tikzpicture}
 \end{center}
 
 נוריד גובה מ-%
 $T$
-במשלוש שווה-שוקיים
+שהוא אנך אמצעי במשלוש שווה-שוקיים
 $\triangle ETC$
 ונקבל:
 \erh{10pt}
@@ -1333,15 +1469,10 @@ $\triangle ETC$
 \cos\beta &=& \frac{2}{5}\\
 \beta &=&66.4^\circ\,.
 \end{equationarray*}
-)אם היינו בונים בנייה זו כבר בהתחלה היינו מקבלים 
-$\cos \beta = (k/2)/TC$
-בדרך אחרת.(
 
-
-\bigskip
+\vspace{-4ex}
 
 $\bm{(2)}$
-
 לפי סעיף 
 $(1)$
 וסעיף 
@@ -1355,7 +1486,7 @@ $(2)$
 \sin(\alpha+\beta)&=&4\sin\alpha\cos\beta\\
 \sin\alpha\cos\beta+\cos\alpha\sin\beta&=&4\sin\alpha\cos\beta\\
 \sin\alpha\cdot\frac{2}{5}+\cos\alpha\sqrt{1-\left(\frac{2}{5}\right)^2}&=&4\sin\alpha\cdot\frac{2}{5}\\
-6\sin\alpha&=&\sqrt{21}\cos\alpha\\
+\sqrt{21}\cos\alpha&=&6\sin\alpha\\
 \tan\alpha &=& \frac{\sqrt{21}}{6}\\
 \alpha&=&37.37^\circ\,.
 \end{equationarray*}
@@ -2607,21 +2738,23 @@ $57$
 $\alpha,\beta$,
  הזווית השלישית היא
 $180-(\alpha+\beta)$.
-ניתן להשמתמש בזהות
+ניתן להשמתמש בזהות )ראו נספח~%
+\ref{a.unit-circle}(:
 \[
 \sin (180-\theta) = \sin \theta\,.
 \]
-ראו נספח xxxx.
+\vspace{-5ex}
+
 \item
 במשולש ישר-זווית, אם יודעים את אחת הזוויות החדות 
 $\alpha$
 הזווית החדה שנייה היא
 $90-\alpha$.
-ניתן להשתמש בזהות
+ניתן להשתמש בזהות:
 \[
 \sin (90-\theta) = \cos \theta\,.
 \]
-ראו נספח xxxx. שימו לב לא להתבלבל ולכתוב
+שימו לב לא להתבלבל ולכתוב
 $\sin (90-\theta) = \sin\theta$
 כמו במשולש רגיל.
 \item
