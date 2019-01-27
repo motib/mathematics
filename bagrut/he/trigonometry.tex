@@ -1507,40 +1507,17 @@ $E$
 היא מפגש חוצי הזוויות. לפי משפט
 $6$
 "במשולש שווה שוקיים , חוצה זווית הראש, התיכון לבסיס והגובה לבסיס מתלכדים", ולכן חוצה הזווית
-$\angle A$
+$\angle BAC$
 עובר דרך
 $E$
 וחותך את
 $BC$
 בנקודה 
 $F$
-בזווית ישרה. נסמן כמה זוויות שאפשר תוך שימוש רק במשפטים פשוטים כגון סכום הזוויות במשולש הוא
+בזווית ישרה. לפני שניגש לשאלות, נסמן זוויות תוך שימוש רק במשפטים פשוטים כגון סכום הזוויות במשולש הוא
 $180$.
-$\triangle EFB\cong \triangle EFC$
-לפי צ.ז.צ. )%
-$F$
-היא נקודת האמצע של
-$BC$,
-זוויות ב-%
-$F$
-ישרות ושוות,
-$EF$
-צלע משותף(. לכן, הזוויות 
-$\angle BEF=\angle CEF=90\!-\!\alpha$
-שנסמן 
-$\beta$.
-בדרך דומה אפשר להסיק ש-%
-$\angle BAF=\angle CAF=90\!-\!2\alpha$
-שנסמן
-$\gamma$.
-$\angle AED=\beta$
-לפי זוויות קודקודיות, ו:
-\[
-\angle ADE=180-\beta-\gamma=180-(90\!-\!\alpha)-(90\!-\!2\alpha)=3\alpha\,.
-\]
-לבסוף 
-$\angle BDE=180\!-\!3\alpha$
-לפי זוויות משלימות.
+
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}%[scale=1.1]
@@ -1573,32 +1550,61 @@ $\angle BDE=180\!-\!3\alpha$
 \end{tikzpicture}
 \end{center}
 
+
+$\triangle EFB\cong \triangle EFC$
+לפי צלע-צלע במשולש ישר-זווית: 
+$F$
+היא נקודת האמצע של
+$BC$
+ו-%
+$EF$
+הוא צלע משותף. לכן
+$\angle BEF=\angle CEF=90\!-\!\alpha$
+שנסמן 
+$\beta$.
+
+בדרך דומה נראה ש-%
+$\angle BAF=\angle CAF=90\!-\!2\alpha$
+שנסמן
+$\gamma$.
+
+$\angle AED=\beta$
+לפי זוויות קודקודיות, ו-%
+$\angle ADE=180-\beta-\gamma=3\alpha$.
+
+לבסוף, 
+$\angle BDE=180\!-\!3\alpha$
+לפי זוויות משלימות.
+
 \np
 
 \textbf{סעיף א}
 
 נתון היחס 
-$\frac{EC}{DE}$
+$\displaystyle\frac{EC}{DE}$
 כתלות ב-%
 $\alpha$,
-ולכן נחפש מקרה של חוק הסינוסים שייתן אל היחס בדרך אחרת עם
-$\alpha$.
-אמנם 
+ולכן נחפש משלוש שעבורו חוק הסינוסים ייתן יחס אחר כתלות ב-%
+$\alpha$,
+ואז תהיה לנו משוואה ב-%
+$\alpha$
+בלבד. אמנם 
 $EC,DE$
 הם צלעות במשולשים שונים, אבל כבר הוכחנו ש-%
 $\triangle EFB\cong \triangle EFC$
 כך ש-%
 $EB=EC$.
-לפי חוק הסינוסים:
+לפי חוק הסינוסים ב-%
+$\triangle BDE$:
 \erh{14pt}
 \begin{equationarray*}{rcl}
 \frac{EB}{\sin(180\!-\!3\alpha)}&=&\frac{DE}{\sin\alpha}\\
-\frac{EB}{DE}&=&\frac{\sin(180\!-\!3\alpha)}{\sin\alpha}=\frac{\sin 3\alpha}{\sin\alpha}\\
-\frac{\sqrt{3}}{2\sin\alpha}&=&\frac{\sin3\alpha}{\sin\alpha}\\
-\sin 3\alpha&=&\frac{\sqrt{3}}{2}\,.
+\frac{EB}{DE}&=&\frac{\sin(180\!-\!3\alpha)}{\sin\alpha}=\frac{\sin 3\alpha}{\sin\alpha}= \frac{\sqrt{3}}{2\sin\alpha}\\
+\sin 3\alpha&=&\frac{\sqrt{3}}{2}\\
+\alpha&=&20^\circ\,.
 \end{equationarray*}
-מכאן ש-%
-$\alpha=20^\circ$.
+
+\vspace{-5ex}
 
 \textbf{סעיף ב}
 
@@ -1606,36 +1612,28 @@ $\alpha=20^\circ$.
 $49$
 "שלושת חוצי הזוויות של משולש נחתכים בנקודה אחת, שהיא מרכז המעגל החסום במשולש", הנקודה
 $E$
-היא מרכז המעגל החסום שמשיק לצלעות. נקודת ההשקה ניצב לרדיוס ולכן המעגל משיק למשולש בנקודה
+היא מרכז המעגל החסום שמשיק לצלע המשולש ב-%
 $F$.
-מכאן ש-%
-$EF$
-הוא הרדיוס של המעגל החסום וסימנו אותו
-$r$.
+$r=EF$
+הוא הרדיוס של המעגל החסום.
 
-כעת צריך להימנע מהפיתוי לקבוע ש-%
+כעת צריך להיזהר שלא לקבוע ש-%
 $E$
-היא גם מרכזו של המעגל החוסם. אמנם
-$AF$
-הוא האנך האמצעי ל-%
-$BC$,
-אבל אנחנו לא יודעים דבר על האנכים האמצעיים של הצלעות האחרים.
-
-במקום זה נשתמש בחוק הסינוסים על
-\textbf{המשלוש}
-$\bm{\triangle ABC}$.
+היא מרכז המעגל החוסם כי אין אנו יודעים שחוצי הזוויות האחרות הם גם אנכים אמצעיים. במקום זה נשתמש בחוק הסינוסים על המשלוש
+$\triangle ABC$.
 נבחר את הזווית
-$\angle BAC$
-והצלע
+$\angle BAC=180\!-\!4\alpha$,
+כי אפשר לחשב את אורך הצלע הנגדי
 $BC$
-כי אנו יודעים לחשב את אורך הצלע כתלות ב-%
+כתלות ב-%
 $r,\alpha$:
 
-\vspace{-6ex}
+\vspace{-4ex}
 \erh{14pt}
 \begin{equationarray*}{rcl}
-BC&=&2BF=\frac{2r}{\tan \alpha}\\
-2R&=&\frac{BC}{\sin (180\!-\!4\alpha)}=\frac{BC}{\sin 4\alpha}\\
+\tan\alpha &=& \frac{r}{BF}=\frac{r}{BC/2}\\ 
+%BC&=&2BF=\frac{2r}{\tan \alpha}\\
+2R&=&\frac{BC}{\sin (180\!-\!4\alpha)}=\frac{2r}{\sin 4\alpha\tan\alpha}\\
 \frac{R}{r}&=&\frac{1}{\sin 4\alpha\cdot\tan \alpha}=\frac{1}{\sin 80\cdot\tan 20}=2.79\,.
 \end{equationarray*}
 
@@ -1644,22 +1642,20 @@ BC&=&2BF=\frac{2r}{\tan \alpha}\\
 \textbf{סעיף ג}
 
 נתון
-$R-r=2$,
-ולכן
+$R-r=2$.
+נציב 
+$R=2.79r$
+שחישבנו בסעיף ב, ונקבל
 $r=2/(2.79-1)=1.117$.
-אין לנו הרבה מידע על המשולשים
+אין לנו מספיק מידע על המשולשים
 $\triangle AED,\triangle AEC$,
-כך שנראה שהדרך לחשב את
-$AE$
-היא לחשב את 
-$AF$
-ולהחסיר
-$EF=r$:
+ולכן נחשב
+$AF=AE+EF=AE+r$:
 \erh{14pt}
 \begin{equationarray*}{rcl}
-\tan 2\alpha&=&\frac{AE+r}{BC/2}=\frac{(AE+r)\tan\alpha}{r}\\
-AE&=&\frac{r(\tan 2\alpha - \tan \alpha)}{\tan \alpha}=1.117\cdot \frac{\tan 40-\tan 20}{\tan 20}\\
-&=&1.117\cdot \frac{0.839-0.3640}{0.3640}=1.458\,.
+\tan 2\alpha&=&\frac{AE+r}{BF}=\frac{AE+r}{r/\tan\alpha}\\
+AE&=&\frac{r(\tan 2\alpha - \tan \alpha)}{\tan \alpha}\\
+&=&\frac{1.117(\tan 40-\tan 20)}{\tan 20}=1.458\,.
 \end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1674,38 +1670,75 @@ AE&=&\frac{r(\tan 2\alpha - \tan \alpha)}{\tan \alpha}=1.117\cdot \frac{\tan 40-
 \includegraphics[width=\textwidth]{summer-2015b-5}
 \end{center}
 
-\vspace{-1ex}
+%\vspace{-1ex}
+%
+%נצדיק את הסימונים שהוספנו לתרשים. לפי משפט
+%$77$
+%"המשיק למעגל מאונך לרדיוס בנקודת ההשקה", הרדיוסים
+%$OE,OF$
+%מאונכים ל-%
+%$AB,DC$
+%שהם בעצמם מקבילים. לכן, 
+%$EF$
+%הוא קטע קו באורך
+%$2r$.
+%
+%
+%ולכן הקו 
+%$EF$
+%הניצב לצלעות המקיבלים 
+%$AB\|DC$
+%הוא באורך
+%$2r$.
 
-\textbf{סעיף א}
-
-הוספנו סימונים לתרשים ונצטרך להצדיק אותם. 
-משפט
-$77$
-"המשיק למעגל מאונך לרדיוס בנקודת ההשקה" ולכן הקו 
-$EF$
-הניצב לצלעות המקיבלים 
+נוריד אנך מ-%
+$A$
+שחתוך את
+$DC$
+ב-%
+$G$,
+ואנך מ-%
+$B$
+שחותך את 
+$DC$
+ב-%
+$H$.
+בטרפז
 $AB\|DC$
-הוא באורך
-$2r$.
-$AG, BH$
-אנכים מ-%
-$AB$ 
-ל-%
-$DC$,
-כך ש-%
-$AG=EF=BF=2r$,
-ו-%
+ולכן
+$ABHG$
+הוא מלבן. לפי משפט
+$77$
+"המשיק למעגל מאונך לרדיוס בנקודת ההשקה", האנך מנקודת ההשקה של מעגל עם
+$AB$
+עובר דרך מרכז המעגל והוא ניצב לנקודת ההשקה עם
+$DC$.
+מכאן ש-%
+$AG=EF=BF=2r$.
+
+נסמן
 $AB=GH=b_2$.
 הטרפז שווה-שוקיים ולפי משפט
 $39$
-"בטרפז שווה שוקיים הזוויות שליד אותו בסיס שוות זו לזו", 
-$\angle ADC=\angle BCD=70^\circ$.
+"בטרפז שווה שוקיים הזוויות שליד אותו בסיס שוות זו לזו",
+$\angle ADC=\angle BCD=70^\circ$,
+$\angle DAG=\angle CBH=20^\circ$.
+ביחד עם 
+$AD=BC$
+בטרפז שווה-שוקיים,
+$\triangle ADG \cong \triangle BCH$.
+נסמן
+$DG=HC=b_1$
+ונקבל ש-%
+$DC=2b_1+b_2$
+שנסמן
+$b$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.1]
-\node[circle,draw,thick] (In) at (0,0) [minimum size=5.45cm] {};
-\fill (In) circle(1.5pt);
+\begin{tikzpicture}[scale=1]
+\node[circle,draw,thick] (In) at (0,0) [minimum size=5cm] {};
+%\fill (In) node[right] {$O$} circle(1.5pt);
 \coordinate (D) at (-3.5,-2.5);
 \draw[thick] (D) -- +(7,0) coordinate (C) node[above left,xshift=-2pt] {$70$};
 \fill (C) node[below right] {$C$} circle(1.5pt);
@@ -1724,10 +1757,10 @@ $\angle ADC=\angle BCD=70^\circ$.
 \draw[thick] (D) -- node[left] {$s$} (A) -- (B) -- node[right] {$s$} (C);
 \draw[thick,dashed] (D) -- (B);
 \coordinate (AB) at (0,2.5);
-\fill (AB)  node[above] {$E$} circle (1.5pt);
+%\fill (AB)  node[above] {$E$} circle (1.5pt);
 \coordinate (DC) at (0,-2.5);
-\fill (DC)  node[below,yshift=-1pt] {$F$} circle (1.5pt);
-\draw[thick,dashed] (AB) -- node[left,yshift=-6pt] {$2r$} (DC);
+%\fill (DC)  node[below,yshift=-1pt] {$F$} circle (1.5pt);
+%\draw[thick,dashed] (AB) -- node[left,yshift=-6pt] {$2r$} (DC);
 \coordinate (ADC) at ($(D)!(A)!(C)$);
 \draw[thick,dashed] (A) -- node[right,yshift=8pt] {$2r$} (ADC);
 \fill (ADC) node[below,yshift=-1pt] {$G$} circle(1.5pt);
@@ -1736,7 +1769,7 @@ $\angle ADC=\angle BCD=70^\circ$.
 \fill (BDC) node[below,yshift=-1pt] {$H$} circle(1.5pt);
 \draw (ADC) rectangle +(8pt,8pt);
 \draw (BDC) rectangle +(8pt,8pt);
-\draw (DC) rectangle +(8pt,8pt);
+%\draw (DC) rectangle +(8pt,8pt);
 \draw[<->] ($(D)+(0,-8mm)$) -- node[fill=white] {$b_1$} ($(ADC)+(0,-8mm)$);
 \draw[<->] ($(ADC)+(0,-8mm)$) -- node[fill=white] {$b_2$} ($(BDC)+(0,-8mm)$);
 \draw[<->] ($(BDC)+(0,-8mm)$) -- node[fill=white] {$b_1$} ($(C)+(0,-8mm)$);
@@ -1747,31 +1780,30 @@ $\angle ADC=\angle BCD=70^\circ$.
 
 \np
 
-$\triangle ADG \cong \triangle BCH$
-לפי ז.צ.ז: מהשלמת הזוויות במשולשים,
-$\angle DAG=\angle CBH=180-90-70$.
-מכאן ש-%
-$DG=HC=b_1$,
-והבסיס הוא
-$b=2b_1+b_2$.
-
-כעת נוכל לגשת לחישוב הערכים המבוקשים בסעיף.
-
+\textbf{סעיף א}
 
 $(1)$
-לפי משפט
+נחפש משפט הקושר צלעות של מרובע עם הרדיוס של המעגל החוסם. משפט
 $57$
 "מרובע קמור חוסם מעגל אם ורק אם סכום שתי צלעות נגדיות שווה לסכום שתי הצלעות הנגדיות האחרות":
-\vspace{-6ex}
-
+\[
+2s=b+b_2=(b_1+b_2+b_1)+b_2=2(b_1+b_2)\,.
+\]
+ממשוואה זו נחשב משוואת נוספות שיעזרו לנו בהמשך:
+\[
+s=b_1+b_2,\quad b=2b_1+b_2=s+b_1\,.
+\]
+לפי ההגדרות של הפונקציות הטריגונומרטיות ב-%
+$\triangle ADC$,
+נוכל לקשר את 
+$r$
+לצלעות:
 \erh{12pt}
 \begin{equationarray*}{rcl}
-2s&=&b_2+(b_1+b_2+b_1)\\
-b_2 &=&s-b_1\\
 \tan 70 &=& \frac{2r}{b_1}\\
 \sin 70&=&\frac{2r}{s}\\
-b&=&2b_1+b_2=2b_1+(s-b_1)=b_1+s\\
-&=&2r\left(\frac{1}{\tan 70}+\frac{1}{\sin 70}\right)\\
+b&=&s+b_1\\
+&=&2r\left(\frac{1}{\sin 70}+\frac{1}{\tan 70}\right)\\
 &=&2.856r\,.
 \end{equationarray*}
 
@@ -1791,11 +1823,9 @@ $\triangle BDH$
 
 \erh{18pt}
 \begin{equationarray*}{rcl}
-DB^2&=& (b_1+b_2)^2 + (2r)^2\\
-&=&s^2 +(2r)^2\\
+DB^2&=& (b_1+b_2)^2 + (2r)^2=s^2 +(2r)^2\\
 &=& \left(\frac{2r}{\sin 70}\right)^2 + 4r^2\\
-DB&=&2r\sqrt{\left(\frac{1}{\sin 70}\right)^2+1}\\
-&=&2.921r\,.
+DB&=&2r\sqrt{\left(\frac{1}{\sin 70}\right)^2+1}=2.921r\,.
 \end{equationarray*}
 
 \vspace{-3ex}
@@ -1806,76 +1836,63 @@ DB&=&2r\sqrt{\left(\frac{1}{\sin 70}\right)^2+1}\\
 $56$
 "ניתן לחסום מרובע במעגל אם ורק אם סכום זוג זוויות נגדיות שווה ל-%
 $180^\circ$",
-אבל יש לנו כל כך הרבה מידע על הטרפז שאין בו צורך.
-
-
-\textbf{שימו לב!!}
-המרכז של המעגל החוסם
-$M_1$
-אינו בהכרח המרכז של המעגל החסום
-$M_2$.
-ניסיתי לחשב את 
-$R$
-לפי פיתגורס ב-%
-$\triangle FM_2C$
-אבל זה לא נכון.
-
-\np
-
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=1.1]
-\node[circle,draw,thick] (In) at (0,0) [minimum size=5.45cm] {};
-\fill (In) circle(1.5pt);
-\coordinate (D) at (-3.5,-2.5);
-\draw[thick] (D) -- +(7,0) coordinate (C) node[above left,xshift=-2pt] {$70$};
-\fill (C) node[below right] {$C$} circle(1.5pt);
-\fill (D) node[below left] {$D$} circle(1.5pt);
-\coordinate (DA) at (tangent cs:node=In,point={(D)},solution=2);
-\path[name path=da] (D) -- ($(D)!1.7!(DA)$);
-%\fill (DA) circle(1.5pt);
-\coordinate (CB) at (tangent cs:node=In,point={(C)},solution=1);
-\path[name path=cb] (C) -- ($(C)!1.7!(CB)$);
-%\fill (CB) circle(1.5pt);
-\path[name path=top] (-3,2.5) -- (3,2.5);
-\path[name intersections={of=da and top,by={A}}];
-\path[name intersections={of=cb and top,by={B}}];
-\fill (A) node[above left] {$A$} circle(1.5pt);
-\fill (B) node[above right] {$B$} circle(1.5pt);
-\draw[thick] (D) -- (A) -- (B) -- (C);
-\draw[ultra thick] (D) -- (B) -- (C) -- cycle;
-\coordinate (AB) at (0,2.5);
-\coordinate (DC) at (0,-2.5);
-\fill (DC)  node[below,yshift=-1pt] {$F$} circle (1.5pt);
-\coordinate (ADC) at ($(D)!(A)!(C)$);
-%\draw[thick,dashed] (A) -- node[right,yshift=8pt] {$2r$} (ADC);
-%\fill (ADC) node[below,yshift=-1pt] {$G$} circle(1.5pt);
-\coordinate (BDC) at ($(D)!(B)!(C)$);
-\draw[thick,dashed] (B) -- node[left,yshift=8pt] {$2r$} (BDC);
-\fill (BDC) node[below,yshift=-1pt] {$H$} circle(1.5pt);
-\draw (BDC) rectangle +(8pt,8pt);
-\draw[<->] ($(D)+(0,-8mm)$) -- node[fill=white] {$b_1$} ($(ADC)+(0,-8mm)$);
-\draw[<->] ($(ADC)+(0,-8mm)$) -- node[fill=white] {$b_2$} ($(BDC)+(0,-8mm)$);
-\tkzCircumCenter(B,D,C)\tkzGetPoint{Cir}
-\tkzDrawCircle[thick,dotted,name path=circle](Cir,D)
-\fill (Cir) node[right,xshift=2pt,yshift=2pt] {$M_{1}$} circle(1.5pt);
-\fill (In) node[above]  {$M_{2}$} circle(1.5pt);
-\draw[thick,dotted] (Cir) -- (A);
-\draw[thick,dotted] (Cir) -- (B);
-\draw[thick,dotted] (Cir) -- (C);
-\draw[thick,dotted] (Cir) -- (D);
-\end{tikzpicture}
-\end{center}
-במקום זה יש להשתמש בחוק הסינוסים במשולש
-$\triangle BCD$ 
-)מודגש(:
+אבל אין בו צורך. שימו לב שהמרכז של המעגל החוסם לא חופף את המרכז של המעגל החסום, כך שאי-אפשר לחשב 
+$R$,
+הרדיוס של המעגל החסום, כמרחק ממרכז המעגל החוסם לאחת מקודקודי הטרפז. במקום זה נשתמש בחוק הסינוסים ב-%
+$\triangle BCD$:
 \erh{16pt}
 \begin{equationarray*}{rcl}
 2R&=&\frac{DB}{\sin BCD}=\frac{2.921r}{\sin 70}\\
-\frac{r}{R}&=&\frac{2\cdot \sin 70}{2.921}\\
-&=&6.434\,.
+\frac{r}{R}&=&\frac{2\cdot \sin 70}{2.921}=6.434\,.
 \end{equationarray*}
 
+
+%\np
+%
+%\begin{center}
+%\selectlanguage{english}
+%\begin{tikzpicture}[scale=1.1]
+%\node[circle,draw,thick] (In) at (0,0) [minimum size=5.45cm] {};
+%\fill (In) circle(1.5pt);
+%\coordinate (D) at (-3.5,-2.5);
+%\draw[thick] (D) -- +(7,0) coordinate (C) node[above left,xshift=-2pt] {$70$};
+%\fill (C) node[below right] {$C$} circle(1.5pt);
+%\fill (D) node[below left] {$D$} circle(1.5pt);
+%\coordinate (DA) at (tangent cs:node=In,point={(D)},solution=2);
+%\path[name path=da] (D) -- ($(D)!1.7!(DA)$);
+%%\fill (DA) circle(1.5pt);
+%\coordinate (CB) at (tangent cs:node=In,point={(C)},solution=1);
+%\path[name path=cb] (C) -- ($(C)!1.7!(CB)$);
+%%\fill (CB) circle(1.5pt);
+%\path[name path=top] (-3,2.5) -- (3,2.5);
+%\path[name intersections={of=da and top,by={A}}];
+%\path[name intersections={of=cb and top,by={B}}];
+%\fill (A) node[above left] {$A$} circle(1.5pt);
+%\fill (B) node[above right] {$B$} circle(1.5pt);
+%\draw[thick] (D) -- (A) -- (B) -- (C);
+%\draw[ultra thick] (D) -- (B) -- (C) -- cycle;
+%\coordinate (AB) at (0,2.5);
+%\coordinate (DC) at (0,-2.5);
+%\fill (DC)  node[below,yshift=-1pt] {$F$} circle (1.5pt);
+%\coordinate (ADC) at ($(D)!(A)!(C)$);
+%%\draw[thick,dashed] (A) -- node[right,yshift=8pt] {$2r$} (ADC);
+%%\fill (ADC) node[below,yshift=-1pt] {$G$} circle(1.5pt);
+%\coordinate (BDC) at ($(D)!(B)!(C)$);
+%\draw[thick,dashed] (B) -- node[left,yshift=8pt] {$2r$} (BDC);
+%\fill (BDC) node[below,yshift=-1pt] {$H$} circle(1.5pt);
+%\draw (BDC) rectangle +(8pt,8pt);
+%\draw[<->] ($(D)+(0,-8mm)$) -- node[fill=white] {$b_1$} ($(ADC)+(0,-8mm)$);
+%\draw[<->] ($(ADC)+(0,-8mm)$) -- node[fill=white] {$b_2$} ($(BDC)+(0,-8mm)$);
+%\tkzCircumCenter(B,D,C)\tkzGetPoint{Cir}
+%\tkzDrawCircle[thick,dotted,name path=circle](Cir,D)
+%\fill (Cir) node[right,xshift=2pt,yshift=2pt] {$M_{1}$} circle(1.5pt);
+%\fill (In) node[above]  {$M_{2}$} circle(1.5pt);
+%\draw[thick,dotted] (Cir) -- (A);
+%\draw[thick,dotted] (Cir) -- (B);
+%\draw[thick,dotted] (Cir) -- (C);
+%\draw[thick,dotted] (Cir) -- (D);
+%\end{tikzpicture}
+%\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2732,6 +2749,9 @@ $180$"
 ו-%
 $57$
 "מרובע קמור חוסם מעגל אם ורק אם סכום שתי צלעות נגדיות שווה לסכום שתי הצלעות הנגדיות האחרות".
+
+\item
+שימו לב שהמרכז המעגל החוסם לא חופף את מרכז המעגל החסום אלא במקרים מיוחדים כגון משולש שווה-צלעות וריבוע.
 
 \item
 כאשר ידוע שתי זוויות של מעגל
