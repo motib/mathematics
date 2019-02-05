@@ -37,7 +37,9 @@
 \newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
 \newcommand*{\np}{\selectlanguage{english}\newpage\selectlanguage{hebrew}}
 \newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
-\newtheorem{exercise}{תרגיל}
+\renewcommand\labelenumi{\textbf{\L{.\arabic{enumi}}}}
+\newcounter{exercise}
+\newcommand*{\exer}{\textbf{\stepcounter{exercise}תרגיל \L{\ .\arabic{exercise}}}}
 \newcommand*{\qd}{קוודרטריקס}
 
 %  Less space above chapter title
@@ -54,7 +56,7 @@
 \makeatother
 
 
-%\includeonly{congruent-triangles,references}
+%\includeonly{}
 
 \begin{document}
 
@@ -63,17 +65,17 @@
 \tikzsetfigurename{collapse}
 \include{collapse}
 
+\tikzsetfigurename{trisect-an-angle}
+\include{trisect-an-angle}
+
+\tikzsetfigurename{square-a-circle}
+\include{square-a-circle}
+
 \tikzsetfigurename{compass-only}
 \include{compass-only}
 
 \tikzsetfigurename{straightedge-only}
 \include{straightedge-only}
-
-\tikzsetfigurename{square-a-circle}
-\include{square-a-circle}
-
-\tikzsetfigurename{trisect-an-angle}
-\include{trisect-an-angle}
 
 \tikzsetfigurename{congruent-triangles}
 \include{congruent-triangles}

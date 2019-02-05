@@ -8,9 +8,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{%
-מבוא
-}\label{s.intro}
 בשנת
 $1797$
 המתימטיקאי האיטלקי
@@ -19,7 +16,7 @@ $1797$
 $1672$
 על ידי המתימטיקאי הדני
 \L{Georg Mohr}.
-לכן, המשפט נקרא היום משפט
+המשפט נקרא היום משפט
 \L{Mohr-Mascheroni}.
 
 במסמך זה אביא את הוכחת המשפט המבוססת על הוכחה שמופיעה כבעייה
@@ -34,7 +31,12 @@ $33$
 הוכחות נוספות ניתן למוצא ב-%
 \L{\cite{mm}}, \L{\cite{stopel}}.
 
-מה המשמעות של בנייה גיאומטרית עם מחוגה בלבד ללא סרגל? האיור הימני מראה את הבנייה של משולש שווה צלעות עם סרגל ומחוגה.
+מה המשמעות של בנייה גיאומטרית עם מחוגה בלבד ללא סרגל? התרשים הימני מראה את הבנייה הרגילה של משולש שווה צלעות עם סרגל ומחוגה. איך אפשר לבנות משולש ללא קטעי הקווים
+$AB,AC,BC$?
+למעשה, אין כל צורך
+\textbf{לראות}
+את הקווים. קו מוגדר על ידי שתי נקודות, ומספיק שנבנה את נקודות כדי לקבל בנייה שקולה לבנייה עם סרגל )התרשים השמאלי(.
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=0.6]
@@ -63,15 +65,10 @@ $33$
 \end{tikzpicture}
 \selectlanguage{hebrew}
 \end{center}
-איך אפשר לבנות משולש ללא קטעי הקווים
-$AB,AC,BC$?
-למעשה, אין כל צורך
-\textbf{לראות}
-את הקווים. קו או קטע קו מוגדר על ידי שתי נקודות, ומספיק שנבנה את נקודות כדי לקבל בנייה שקולה בנייה עם סרגל. האיור השמאלי מראה בנייה של משולש שווה צלעות עם מחוגה ללא סרגל.
+בתרשימים נצייר בכל זאת קווים, אולם הקווים משמשים אך ורק להבנת הבנייה ולהוכחת נכונותה. חשוב שתשתכנעו שבבנייה עצמה משתמשים רק במחוגה.
 
-באיורים במסמך זה נצייר בכל זאת קווים, אולם הקווים משמשים אך ורק להבנת הבנייה ולהוכחת נכונותה. חשוב שתשתכנעו שבבנייה עצמה משתמשים רק במחוגה.
 
-עיון בבנייה גיאומטרית יגלה שכל צעד הוא אחת משלוש פעולות:
+בבנייה עם סרגל ומחוגה מבצעת אחת משלוש פעולות הבאות:
 \begin{itemize}
 \item
 מציאת נקודת החיתוך של שני קווים ישרים.
@@ -82,7 +79,6 @@ $AB,AC,BC$?
 \end{itemize}
 ברור שניתן לבצע את הפעולה השלישית רק עם מחוגה. עלינו להראות שעבור שתי הפעולות הראשונות ניתן למוצא בנייה שקולה המשתמשת רק במחוגה.
 
-\np
 
 סימונים:
 \begin{itemize}
@@ -106,14 +102,14 @@ $AB$.
 תחילה נביא ארבע בניות עזר נחוצות )סעיפים
 \L{\ref{s.reflection}--\ref{s.relative}}%
 (,
-ואחר כך נראה את הבעיות למציאת חיתוך של שני קווים )סעיף
+ואחר כך נראה את הבניות למציאת חיתוך של שני קווים )סעיף
 \L{\ref{s.two-lines}}%
 ( ושל קו ומעגל )סעיף
 \L{\ref{s.line-circle}}%
 (.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\np
 
 \section{%
 שיקוף נקודה%
@@ -131,10 +127,6 @@ $C'$
 $C$
 מסביב ל-%
 $AB$.
-}
-
-\textbf{%
-הגדרה:%
 }
 הנקודה
 $C'$
@@ -164,9 +156,11 @@ $C'$
 שהיא השיקוף של
 $C$.
 
+\vspace{-1ex}
+
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.65]
+\begin{tikzpicture}[scale=.75]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
 \coordinate (C) at (2.5,1.5);
@@ -185,16 +179,18 @@ $C$.
 \draw[thick,dashed] (B) -- (Cp);
 \end{tikzpicture}
 \selectlanguage{hebrew}
-
 \end{center}
-הוכחה:
+
+\vspace{-1ex}
+
+\textbf{הוכחה:}
 $\triangle ABC$
 ו-%
 $\triangle ABC'$
-חופפים לפי צלע-צלע-צלע, כי
+חופפים לפי צ.צ.צ., כי
 $AC,AC'$
 הם רדיוסים של אותו מעגל כמו גם
-$BC,BC'$
+$BC,BC'$,
 ו-%
 $AB$
 הוא צלע משותף. מכאן ש-%
@@ -216,6 +212,8 @@ $C$
 מסביב ל-%
 $AB$.
 
+\vspace{-2ex}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{%
@@ -223,35 +221,27 @@ $AB$.
 }\label{s.radius}
 
 \textbf{%
-נתונה שלוש נקודות
+נתונות הנקודות
 $A,B,C$.
 ניתן לבנות מעגל
 $c(A,BC)$
 שמרכזו 
 $A$
-עם רדיוס שווה לאורך קטע הקו 
+עם רדיוס שווה לאורך של 
 $BC$.
 }
 
-לכאורה, אין כאן שום בעייה. נציב את רגלי המחוגה כך שרגל אחת נמצאת על
+לכאורה הבנייה קלה. נציב את רגלי המחוגה על
 $B$
-והרגל השניה על
+ו-%
 $C$,
 ואז נציב את הרגל עם החוד על
 $A$,
-ולמעגל שיתקבל רדיוס שווה ל-%
+ונקבל מעגל עם רדיוס שווה ל-%
 $BC$.
-הסיבה לבנייה המסובכת להלן היא שהמחוגה של אוקלידס היא מחוגה "מתמוטטת"
-\L{(collapsing)},
-שלא שומרת על המרחק בין הרגליים כאשר מרימים את המחוגה מהנייר.
-
-\np
-
-אוקלידיס הוכיח במשפט הנקרא היום
-\L{Compass Equivalence Theorem}
-שכל בנייה עם מחוגה קבועה ניתנת לבנייה עם מחוגה מתמוטטת )ראו פרק~%
-\ref{c.collapse}(.
-סעיף זה למעשה מוכיח את המשפט כאשר משתמשים במחוגה בלבד. עבור ההוכחה של אוקלידס.
+הסיבה לבנייה המסובכת להלן היא שהמחוגה של אוקלידס היא מחוגה מתמוטטת )פרק~%
+\L{\ref{c.collapse}}(
+שלא שומרת על המרחק בין הרגליים כאשר מרימים את המחוגה.
 
 נבנה את המעגלים 
 $c(A,B)$, $c(B,A)$
@@ -259,9 +249,8 @@ $c(A,B)$, $c(B,A)$
 $X,Y$.
 
 \begin{center}
-
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
+\begin{tikzpicture}[scale=.65]
 \coordinate (A) at (0,1.5);
 \coordinate (B) at (0,-1.5);
 \coordinate (C) at (1.5,-3);
@@ -281,6 +270,9 @@ $X,Y$.
 
 \selectlanguage{hebrew}
 \end{center}
+
+\np
+
 
 נבנה את
 $C'$,
@@ -353,18 +345,18 @@ $c(A,C')$
 \draw[thick,dashed] (D) -- (Cp);
 \draw[thick,dashed] (D) -- (C);
 \end{tikzpicture}
-
 \selectlanguage{hebrew}
 \end{center}
-הוכחה: הנקודה
+
+\textbf{הוכחה:}
+הנקודה
 $A$
 היא השיקוף של 
 $B$
 סביב 
 $XY$
-)ניתן להוכיח בהסתמך על זה שהמשולשים
-$\triangle YAX, \triangle YBX$
-חופפים(, ו-%
+)כי
+$\triangle YAX\cong \triangle YBX$(, ו-%
 $C'$
 נבנה כשיקוף של 
 $C$
@@ -375,30 +367,24 @@ $XY$
 הוא האנך האמצעי לקטעי הקו 
 $AB$, $CC'$,
 ולכן
-$C'E=EC$
-)וגם
-$AD=DB$(,
+$C'E=EC$,
+$AD=DB$,
 ו-%
 $\angle DEC=\angle DEC'(=90^\circ)$.
-$\triangle DEC$
-חופף ל-%
-$\triangle DEC'$
-לפי צלע-זווית-צלע. מכאן, ש-%
+מכאן ש-%
+$\triangle DEC\cong\triangle DEC'$
+לפי צ.ז.צ. לכן
 $DC=DC'$
 ו-%
 $\angle ADC'=\angle BDC$
 )כי הן זוויות משלימות ל-%
-$\angle EDC, \angle EDC'$%
-(.
-המשולש
-$\triangle ADC'$
-חופף ל-%
-$\triangle BDC$
-לפי צלע-זווית-צלע,
+$\angle EDC, \angle EDC'$(.
+$\triangle ADC'\cong\triangle BDC$
+לפי צ.ז.צ.,
 כך ש-%
 $AC'=BC$.
 
-הוכחה זו מראה באופן כללי ששיקוף משמר מרחקים.
+ההוכחה מראה ששיקוף משמר מרחקים.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -431,8 +417,8 @@ $a+b$.
 
 \begin{center}
 \selectlanguage{english}
-\vspace*{-2ex}
-\begin{tikzpicture}[scale=.8]
+%\vspace*{-2ex}
+\begin{tikzpicture}[scale=.85]
 \draw (0,0) -- (5,0);
 \fill (0,0) node[above] {$P$} circle[radius=2pt];
 \fill (5,0) node[above left] {$Q$} circle[radius=2pt];
@@ -450,30 +436,22 @@ $a+b$.
 \end{tikzpicture}
 \selectlanguage{hebrew}
 \end{center}
-\vspace*{-2ex}
-שוב, לו היה לנו סרגל הבנייה היתה פשוטה ביותר: בנה מעגל שמרכזו
-$Q$
-עם רדיוס
-$b$,
-והנקודות
-$U,T$
-הן נקודות החיתוך של המעגל עם
-\textbf{%
-הקרן%
-}
-שממשיך את
-$PQ$.
+
+\np
+
+\subsection*{בניית טרפז שווה שוקיים}
 
 נבחר
 $H$,
-היא נקודה כלשהי על המעגל
+נקודה כלשהי על
 $c(Q,b)$,
-ונבנה את הנקודה
+ונבנה את
 $H'$,
 השיקוף שלה סביב
 $PQ$.
+נסמן
 $h$
-הוא האורך של
+האורך של
 $HH'$.
 \begin{center}
 \selectlanguage{english}
@@ -554,7 +532,6 @@ in
 \selectlanguage{hebrew}
 \end{center}
 
-\np
 
 $PQ$
 הוא האנך האמצעי ל-%
@@ -566,8 +543,7 @@ $KH = K'H' = b$
 כי
 $K$
 נמצאת על המגעל שמרכזו 
-$H$,
-ו-%
+$H$.
 $K',H'$
 הן שיקופים של
 $K,H$.
@@ -577,7 +553,7 @@ $KHH'K'$
 $KK' = 2h$, $HH'=h$.
 נסמן ב-%
 $d$
-את האלכסונים
+את אורך האלכסונים
 $K'H=KH'$.
 
 
@@ -623,33 +599,34 @@ in
 \end{tikzpicture}\label{p.ptolemy}
 \end{center}
 
-אנחנו רוצים להוכיח ש-
+\np
+
+\subsection*{חסימת הטרפז במעגל}
+אנו רוצים להוכיח שניתן לחסום את
 $KHH'K'$
-הוא
-\textbf{%
-מרובע ציקלי%
-}
-שניתן לבחסום במעגל. המשפט שאנחנו צריכים להוכחה הוא: אם  הזוויות הנגדיות של מרובע צמודות, אזי המרובע ציקלי. אם נוכיח שבטרפז שווה שוקיים הזוויות הנגדיות צמודות, נקבל שהטרפז הוא ציקלי. בספרי גיאומטריה ניתן למצוא הוכחה פשוטה לטיעון ההפוך: במרובע ציקלי, הזוויות הנגדיות הן צמודות, אבל קשה למצוא הוכחה של הטיעון עצמו. לכן, אביא כאן את שתי ההוכחות.
+במעגל. נוכיח שאם הזוויות הנגדיות של מרובע צמודות, אזי ניתן לחסום אותו במעגל, ונוכיח שבטרפז שווה שוקיים הזוויות הנגדיות צמודות. 
+
+בספרי גיאומטריה ניתן למצוא הוכחה פשוטה לטיעון ההפוך: במרובע שניתן לחסום במעגל, הזוויות הנגדיות הן צמודות, אבל קשה למצוא הוכחה של הטיעון עצמו. לכן, אביא כאן את שתי ההוכחות.
 
 \textbf{%
-הזוויות הנגדיות של מרובע ציקלי הן צמודות:%
+אם ניתן לחסום מרובע במעגל, הזוויות הנגדיות צמודות:%
 }
 ערכה של זווית היקפית הנשענת על קשת הוא מחצית ערכה של הקשת, לכן 
 $\angle DAB$
 היא מחצית מהקשת
 $DCB$
-והזווית
+ו-%
 $\angle DCB$
 היא מחצית מהקשת
 $DAB$.
-אבל שתי הקשתות נתמכות על כל היקף המעגל, ולכן הסכום שלהן הוא
+שתי הקשתות נשענות על כל היקף המעגל, ולכן הסכום שלהן הוא
 $360^\circ$.
 מכאן,
-$\angle DAB + \angle DCB = \frac{1}{2} \cdot 360^\circ =  180^\circ$.
+$\angle DAB + \angle DCB = \disfrac{1}{2} \cdot 360^\circ =  180^\circ$.
 באופן דומה,
 $\angle ADC + \angle ABC = 180^\circ$.
 
-\vspace{-2ex}
+\vspace{-3ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -672,9 +649,10 @@ $\angle ADC + \angle ABC = 180^\circ$.
 \selectlanguage{hebrew}
 \end{center}
 
+\vspace{-3ex}
 
 \textbf{%
-מרובע שהזוויות הנגדיות שלו צמודות הוא ציקלי:%
+מרובע שהזוויות הנגדיות שלו צמודות ניתן לחסום במעגל:%
 }
 ניתן לחסום כל משולש במעגל. נבנה מעגל החוסם את 
 $\triangle DAB$
@@ -689,7 +667,7 @@ $C'$
 $C'$
 נמצאת בתוך המעגל.
 
-\np
+\vspace{-3ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -714,12 +692,13 @@ $C'$
 \end{tikzpicture}
 \end{center}
 
+\vspace{-2ex}
 
 נבנה קרן היוצאת מ-%
-$DC$
+$DC'$
 כאשר
 $C$
-היא נקודת החיתוך שלה עם המעגל. לפי הטיעון שהוכחנו לעיל, המרובע 
+היא נקודת החיתוך עם המעגל.  
 $ABCD$
 חסום מעגל ולכן:
 \begin{eqnarray*}
@@ -733,12 +712,12 @@ $C$
 $C'$
 נמצאת בתוך המעגל.
 
-כדי להשלים את ההוכחה, נראה שהזוויות נגדיות של טרפז שווה שוקיים צמודות, ולכן הטרפז הוא ציקלי וניתן לחוסם אותו במעגל.
+כדי להשלים את ההוכחה, נראה שהזוויות נגדיות של טרפז שווה שוקיים צמודות.
+\np
 
 \begin{center}
-
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.55]
+\begin{tikzpicture}[scale=.6]
 \coordinate (origin) at (0,0);
 \coordinate (A) at (2.5,1.8);
 \node[circle through=(A),name path=circle] at (origin) {};
@@ -762,6 +741,9 @@ $C'$
 \end{tikzpicture}
 \selectlanguage{hebrew}
 \end{center}
+
+\vspace{-4ex}
+
 נבנה קטע קו
 $AB'$
 מקביל ל-%
@@ -771,10 +753,10 @@ $AB'CD$
 הוא מקבילית והמשולש
 $\triangle ABB'$
 שווה שוקיים, כך ש-%
-$\angle C= \angle AB'B = \angle B$.
+$\angle B= \angle ABB' = \angle AB'B=\angle C$.
 באופן דומה,
 $\angle A = \angle D$.
-אבל הסכום של הזוויות הפנימיות של מרובע כלשהו שווה ל-%
+אבל הסכום של הזוויות הפנימיות של מרובע שווה ל-%
 $360^\circ$:
 \begin{eqnarray*}
 \angle A + \angle B + \angle C + \angle D &=& 360^\circ\\
@@ -784,14 +766,16 @@ $360^\circ$:
 ובאופן דומה
 $\angle B +  \angle D = 180^\circ$.
 
-עכשיו נשתמש במשפט של תלמי
-\L{(Ptolemy)}.
-המשפט טוען שעבור כל מרובע החסום על ידי מעגל, מתקיים שוויון הקושר את אורכי האלכסונים ואורכי הצלעות: 
+\subsection*{משפט תלמי}
+
+נשתמש במשפט תלמי
+\L{(Ptolemy)}
+שהוא משוואה הקושרת את אורכי האלכסונים ואורכי הצלעות במרובע חסום על ידי מעגל:
 \[
 ef = ac + bd\,.
 \]
 
-\np
+\vspace{-2ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -816,18 +800,24 @@ ef = ac + bd\,.
 \selectlanguage{hebrew}
 
 \end{center}
+
+\vspace{-2ex}
+
 קיימת הוכחה גיאומטרית )ראו ויקיפדיה(, אבל אני אביא הוכחה טריגונומטרית פשוטה.
 
 
-מחוק הקוסינוסים עבור המשולשים
+מחוק הקוסינוסים עבור
 $\triangle ABC$, $\triangle ADC$, $\triangle DAB$, $\triangle DCB$,
-מקבלים את המשוואות:
+מקבלות המשוואות:
 \begin{eqnarray*}
 e^2 &=& a^2 + b^2 - 2ab \cos \angle B\\
 e^2 &=& c^2 + d^2 - 2cd \cos \angle D\\
 f^2 &=& a^2 + d^2 - 2ad \cos \angle A\\
 f^2 &=& b^2 + c^2 - 2bc \cos \angle C\,.
 \end{eqnarray*}
+
+\np
+
 הזוויות הנגדיות של מרובע חסום במעגל צמודות
 $\angle C = 180^\circ - \angle A$
 ו-%
@@ -837,7 +827,7 @@ $\angle D = 180^\circ - \angle B$,
 \cos \angle D &=& - \cos \angle B\\
 \cos \angle C &=& -\cos \angle A\,,
 \end{eqnarray*}
-וניתן להיפטר מהגורמים עם הקוסינוסים משתי המשוואות הראשונות ומשתי המשוואות האחרונות. לאחר חישובים מעיקים נקבל:
+וניתן להיפטר מהגורמים הטריגונומטריים. לאחר חישובים מעיקים נקבל:
 \begin{eqnarray*}
 e^2 &=& \frac{(ac+bd)(ad+bc)}{(ab+cd)}\\
 f^2 &=& \frac{(ab+cd)(ac+bd)}{(ad+bc)}\,.
@@ -847,6 +837,11 @@ f^2 &=& \frac{(ab+cd)(ac+bd)}{(ad+bc)}\,.
 e^2\cdot f^2 &=& (ac+bd)^2\\
 ef &=& (ac+bd)\,. 
 \end{eqnarray*}
+
+\vspace{-8ex}
+
+\subsection*{הפעלת משפט תלמי על הטרפז}
+
 עבור הבנייה בעמוד~%
 \L{\pageref{p.ptolemy}},
 אורך האלכסונים הוא
@@ -879,7 +874,6 @@ $\triangle QK'X$
 הוא משולש ישר זווית ולכן
 $x^2 = b^2 + h^2$:
 
-\np
 
 \begin{center}
 \selectlanguage{english}
@@ -939,11 +933,11 @@ d^2 &=& b^2 + 2h^2\\
 
 \vspace{-4ex}
 
-אל תחפשו משולש ישר זווית באיור. אנחנו רק קובעים 
+אל תחפשו משולש ישר זווית בתרשים. אנחנו טוענים 
 \textbf{%
 שניתן לבנות%
 }
-משולש ישר זווית עם צלעות
+את המשולש עם צלעות
 $x,h,d$.
 
 נבנה את הנקודה
@@ -1025,7 +1019,7 @@ $c(K,x)$
 ו-%
 $c(K',x)$:
 
-\np
+
 
 \begin{center}
 \selectlanguage{english}
@@ -1126,10 +1120,10 @@ $a-b$.
 }\label{s.relative}
 
 \textbf{%
-נתון שלושה קטע קו באורכים 
+נתונים שלושה קטעי קו באורכים 
 $n,m,s$.
 ניתן לבנות קטע קו שאורכו
-$x = \frac{n}{m}s$.%
+$x = \disfrac{n}{m}s$.%
 }
 
 בנה שני מעגלים משותפי מרכז:
@@ -1138,17 +1132,21 @@ $c_1 = c(Z,m)$
 $c_2 = c(Z,n)$.
 נבחר נקודה
 $A$
-כלשהי על המעגל ונבנה את המיתר
+כלשהי על המעגל 
+$c_1$
+ונבנה את המיתר
 $AB$
 שאורכו
 $s$
-במעגל
+ב-%
 $c_1$.
 )בניית המיתר עם מחוגה בלבד לפי בסעיף
 \L{\ref{s.radius}}.%
 (
-\begin{center}
 
+\np
+
+\begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.4]
 \coordinate (Z) at (0,0);
@@ -1181,26 +1179,21 @@ $c_1$.
 \fill (sp) circle[radius=4pt];
 \draw[thick,dashed] (m) -- node[above] {$m$} (mp);
 \draw[thick,dashed] (n) -- node[above] {$n$} (np);
-\draw[thick,dashed] (s) -- node[above] {$s$} (sp);
+\draw[thick] (s) -- node[above] {$s$} (sp);
 \end{scope}
 \end{tikzpicture}
-
 \selectlanguage{hebrew}
 \end{center}
-הנחות:
 
-\begin{itemize}
-\item
-$m>n$:
-אם לא, נחליף את הסימונים של
+נניח ש-%
+$m>n$,
+אחרת נחליף את הסימונים של
 $m,n$.
 
-\item
-המיתר 
+
+נניח גם שהמיתר 
 $s$
-נמצא בתוך
-$c_1$
-ואינו חותך את
+אינו חותך את
 $c_2$.
 אם לא, נשתמש בבנייה של סעיף
 \L{\ref{s.add-subtract}}
@@ -1209,8 +1202,7 @@ $m,n$
 במספר שלם
 $k$
 עד שהמיתר לא חותך. שימו לב שהכפלת הערכים אינה משנה את הערך שאנחנו בונים
-$x = \frac{kn}{km}s = \frac{n}{m}s$.
-\end{itemize}
+$x = \disfrac{kn}{km}s = \disfrac{n}{m}s$.
 
 
 נבחר נקודה כלשהי
@@ -1230,7 +1222,7 @@ $BK$
 גם הוא
 $w$.
 
-\np
+
 
 \begin{center}
 \selectlanguage{english}
@@ -1247,7 +1239,7 @@ $w$.
 \node at (2,2.5) {$c_2$};
 \draw[thick] (A) -- node[below,yshift=-6pt] {$s$} (B);
 \draw[thick] (A) -- node[above,xshift=-4pt,yshift=-2pt] {$w$} +(20:120pt) coordinate (H);
-\fill (H) node[above right,xshift=-2pt,yshift=4pt] {$H$} circle[radius=4pt];
+\fill (H) node[above right,xshift=-5pt,yshift=2pt] {$H$} circle[radius=4pt];
 \draw[thick] (B) -- node[right] {$w$} +(60:120pt) coordinate (K);
 \fill (K) node[right] {$K$} circle[radius=4pt];
 \begin{scope}[xshift=-14cm,yshift=3cm]
@@ -1269,17 +1261,16 @@ $w$.
 \fill (wp) circle[radius=4pt];
 \draw[thick,dashed] (m) -- node[above] {$m$} (mp);
 \draw[thick,dashed] (n) -- node[above] {$n$} (np);
-\draw[thick,dashed] (s) -- node[above] {$s$} (sp);
-\draw[thick,dashed] (w) -- node[above] {$w$} (wp);
+\draw[thick] (s) -- node[above] {$s$} (sp);
+\draw[thick] (w) -- node[above] {$w$} (wp);
 \end{scope}
 \end{tikzpicture}
 \end{center}
 
-\vspace{-2ex}
+%\vspace{-2ex}
 
-המשולשים
 $\triangle AHZ$, $\triangle BZK$
-חופפים לפי צלע-צלע-צלע: 
+חופפים לפי צ.צ.צ.: 
 $ZA=ZB=m$
 הרדיוס של מעגל
 $c_1$,
@@ -1290,7 +1281,7 @@ $c_2$,
 $AH=BK=w$
 לפי הבנייה.
 
-\vspace{-2ex}
+\vspace{-1ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -1307,7 +1298,7 @@ $AH=BK=w$
 \node at (2,2.5) {$c_2$};
 \draw[thick,dashed] (A) -- node[below,yshift=-6pt] {$s$} (B);
 \draw[thick] (A) -- node[above] {$w$} +(20:120pt) coordinate (H);
-\fill (H) node[above right,xshift=-2pt,yshift=4pt] {$H$} circle[radius=4pt];
+\fill (H) node[above right,xshift=-5pt,yshift=3pt] {$H$} circle[radius=4pt];
 \draw[thick] (B) -- node[right] {$w$} +(60:120pt) coordinate (K);
 \fill (K) node[right] {$K$} circle[radius=4pt];
 \draw[thick] (Z) -- node[left,xshift=-2pt,yshift=-2pt] {$m$} (A);
@@ -1321,17 +1312,19 @@ $AH=BK=w$
 
 \vspace{-3ex}
 
-מהחפיפה של המשולשים
-$\triangle AZH = \triangle BZK$,
+מ-%
+$\triangle AZH \cong \triangle BZK$,
 אנו מקבלים
 $\angle AZB = \angle HZK$.
-קצת קשה לראות את השוויונות האלה באיור, אבל האיור שלהלן מבהיר את היחסים בין הזוויות. נגדיר
+קצת קשה לראות את השוויונות האלה בתרשים, אבל התרשים שלהלן מבהיר את היחסים בין הזוויות. נגדיר
 $\alpha = \angle AZH = \angle BZK$
 ו-%
 $\beta = \angle BZH$,
 וקל לראות ש-%
 $\angle AZB = \angle HZK = \alpha - \beta$.
 \begin{center}
+
+\np
 
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.6]
@@ -1358,20 +1351,18 @@ $\angle AZB = \angle HZK = \alpha - \beta$.
 \node at (-40:5) {$\alpha - \beta$};
 \node at (-125:5) {$\alpha - \beta$};
 \end{tikzpicture}
-
 \selectlanguage{hebrew}
 \end{center}
-זווית הקודקוד של שני משולשים שווי שוקיים שוות, ולכן
-$\triangle AZB$
-ו-%
-$\triangle HZK$
-דומים. 
 
-\np
+\vspace{-1ex}
+
+זוויות הקודקוד של שני משולשים שווי שוקיים שוות, ולכן
+$\triangle AZB\sim\triangle HZK$.
+
+\vspace{-1ex}
 
 \begin{center}
 \selectlanguage{english}
-
 \begin{tikzpicture}[scale=.45]
 \coordinate (Z) at (0,0);
 \coordinate (A) at (-130:5cm);
@@ -1397,8 +1388,9 @@ $\triangle HZK$
 \draw[thick,dashed] (B) -- (K);
 \end{tikzpicture}
 \selectlanguage{hebrew}
-
 \end{center}
+
+\vspace{-2ex}
 נסמן את קטע הקו
 $HK$
 ב-%
@@ -1409,7 +1401,7 @@ $x$,
 x&=&\frac{n}{m}s\,.
 \end{eqnarray*}
 
-\vspace{-6ex}
+\vspace{-5ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1418,7 +1410,7 @@ x&=&\frac{n}{m}s\,.
 }\label{s.two-lines}
 
 \textbf{%
-נתון שני קווים המוגדרים על ידי קטעי הקו
+נתונים שני קווים המכילים את קטעי הקו
 $AB,CD$.
 ניתן לבנות את נקודת החיתוך שלהם עם מחוגה בלבד.%
 }
@@ -1441,19 +1433,18 @@ $S$
 נמצאת על הקו
 $AB$,
 כי
-$\triangle CZS, \triangle C'SZ$
-הם משולשים ישר זווית חופפים:
+$\triangle CZS\cong \triangle C'ZS$
+לפי צ.ז.צ., כי
 $CZ=C'Z$,
-ו-%
 $\angle CZS = \angle C'ZS = 90^\circ$
-כי לפי ההגדרה של שיקוף
-$AB$
-הוא האנך האמצעי של 
-$CC'$.
-מכאן ש-%
+ו-%
+$ZS$
+צלע משותף. מכאן ש-%
 $C'S=CS$,
 ובאופן דומה
 $D'S=DS$.
+
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.8]
@@ -1483,31 +1474,23 @@ $D'S=DS$.
 \end{tikzpicture}
 \selectlanguage{hebrew}
 \end{center}
-המשולשים
-$\triangle CSC'$
-ו-%
-$\triangle DSD'$
-דומים, ולכן
-$\displaystyle\frac{CS}{DS} = \frac{CC'}{DD'}$.
+
+\np
 
 נסמן
 $x = CS, c = CC', d = DD', e = CD$.
-מהיחסים במשולשים בדומים מתקבל
-$\displaystyle\frac{x}{e-x} = \frac{c}{d}$.
-נפתור עבור
+$\triangle CSC'\sim\triangle DSD'$
+ולכן
+$\disfrac{x}{e-x} = \disfrac{c}{d}$.
+נפתור את המשוואה עבור
 $x$
 ונקבל
-$\displaystyle x=\frac{c}{c+d}e$.
+$x=\disfrac{c}{c+d}e$.
 
 אם
-$D$
-נמצאת באותו צד של
-$AB$
-ש-%
-$C$
-נמצאת:
-
-\np
+$C,D$
+נמצאות באותו צד של
+$AB$:
 
 \begin{center}
 \selectlanguage{english}
@@ -1538,18 +1521,17 @@ $C$
 \node at (1,-2.5) {\mbox{\boldmath $CS=C'S=x$}};
 \end{tikzpicture}
 \selectlanguage{hebrew}
-
 \end{center}
- המשולשים
-$\triangle CSC'$
-ו-%
-$\triangle DSD'$
-דומים, ולכן
-$\displaystyle\frac{x}{x-e}=\frac{c}{d}$.
+
+$\triangle CSC'\sim\triangle DSD'$,
+ולכן
+$\disfrac{x}{x-e}=\disfrac{c}{d}$.
 נפתור עבור
 $x$
 ונקבל
-$\displaystyle x=\frac{c}{c-d}e$.
+$x=\disfrac{c}{c-d}e$.
+
+\smallskip
 
 נבנה את המעגלים
 $c(C',d)$
@@ -1624,9 +1606,8 @@ in
 מההגדרה של
 $H$
 כחיתוך של המעגלים
-$c(C',d)$
-,
-$c(D,e)$
+$c(C',d)$,
+$c(D,e)$,
 אנו מקבלים
 $C'H=d$
 ,
@@ -1635,7 +1616,7 @@ $DH=e$.
 $C'D'=e, DD'=e$,
 ולכן המרובע
 $C'D'DH$
-הוא מקבילית כי האורכים של זוגות הצלעות הנגדיות שוות. לפי הבנייה, קטע הקו
+הוא מקבילית, כי האורכים של זוגות הצלעות הנגדיות שוות. לפי הבנייה, קטע הקו
 $DD'$
 מקביל ל-%
 $CC'$,
@@ -1659,12 +1640,15 @@ $c+d$,
 ובסעיף
 \L{\ref{s.relative}}
 הוכחנו שניתן לבנות קטע באורך
-$\displaystyle x=\frac{c}{c+d}e$.
+$x=\disfrac{c}{c+d}e$.
 $S$
 היא נקודת החיתוך של המעגלים
 $c(C,x)$
 ו-%
 $c(C',x)$.
+
+\np
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.8]
@@ -1705,7 +1689,6 @@ in
 \end{tikzpicture}
 \end{center}
 
-\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1715,25 +1698,19 @@ in
 
 \textbf{%
 נתון מעגל
-$k$
+$k=C(M,r)$
 וקו
-$AB$,
+$AB$.
 ניתן לבנות את נקודות החיתוך שלהם עם מחוגה בלבד.%
 }
 
-נסמן את מרכז המעגל
-$k$
-ב-%
-$M$
-והרדיוס שלו ב-%
-$r$: $k = c(M,r)$,
-ונבנה את 
+נבנה את 
 $M'$,
 השיקוף של
 $M$
 מסביב ל-%
-$AB$.
-נבנה את המעגל
+$AB$,
+והמעגל
 $k'=c(M',r)$.
 נקודות החיתוך של המעגלים
 $k,k'$
