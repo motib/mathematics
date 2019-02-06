@@ -1,0 +1,86 @@
+\documentclass[11pt,a4paper,twoside]{report}
+
+\usepackage[utf8x]{inputenc}
+
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{eqnarray}
+\usepackage{titlesec}
+
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{positioning,through,calc,intersections,arrows.meta,external}
+\tikzexternalize[prefix=tikz/]
+\tikzset{>=stealth} % Use stealth arrows
+\usetkzobj{all}
+
+\textwidth=155mm
+\textheight=235mm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=-5mm
+\evensidemargin=5mm
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+\addtolength{\jot}{3pt}
+
+\graphicspath{{images/}}
+
+\newcommand*{\p}[1]{\textsf{\small #1}}
+\newcommand*{\bover}[1]{\bm{\overline{#1}}}
+\newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
+\newcommand*{\np}{\newpage}
+\newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
+\newcounter{exercise}
+\newcommand*{\exer}{\textbf{\stepcounter{exercise}Exercise\ \arabic{exercise}.}}
+
+%  Less space above chapter title
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \centering\Large\bfseries \@chapapp\space \thechapter\par
+        \hspace{.3em}
+    \fi
+    \Large \bfseries #1\par\nobreak
+    \vskip 20\p@
+  }}
+\makeatother
+
+\setcounter{tocdepth}{0}
+
+\includeonly{front}
+%\includeonly{front,collapse,trisect-an-angle,square-a-circle,compass-only,straightedge-only,congruent-triangles}
+
+\begin{document}
+
+\include{front}
+
+\tikzsetfigurename{collapse}
+\include{collapse}
+
+\tikzsetfigurename{trisect-an-angle}
+\include{trisect-an-angle}
+
+\tikzsetfigurename{square-a-circle}
+\include{square-a-circle}
+
+\tikzsetfigurename{compass-only}
+\include{compass-only}
+
+\tikzsetfigurename{straightedge-only}
+\include{straightedge-only}
+
+\tikzsetfigurename{congruent-triangles}
+\include{congruent-triangles}
+
+\include{references}
+
+\end{document}
