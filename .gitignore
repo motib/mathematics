@@ -9,7 +9,7 @@ motion/tikz
 bagrut/he/tikz
 construct/he/tikz
 construct/en/tikz
-tikz-examples.tex
+tikz-examples.*
 *.bat
 *.zip
 *~
