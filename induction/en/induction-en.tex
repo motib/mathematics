@@ -5,6 +5,7 @@
 \usepackage{titlesec}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{verbatim}
 
 \usepackage{tikz}
 \usetikzlibrary{external,shapes.geometric}
@@ -71,7 +72,7 @@ Weizmann Institute of Science\\
 
 
 \begin{Large}
-Version 1.4.1
+Version 1.5.0
 \end{Large}
 \end{center}
 
@@ -670,6 +671,20 @@ Every fifth Fibonacci number is divisible by $5$.
 \begin{exercise}
 $f_n < (\frac{7}{4})^n$.
 \end{exercise}
+
+\subsection*{Fermat numbers}
+
+Here are two interesting exercise on Fermat numbers.
+
+
+\begin{exercise}
+For $n\geq 2$, the last digit of $F_n$ is $7$.
+\end{exercise}
+
+\begin{exercise}\label{ex.fermat}
+For $n\geq 1$, $\displaystyle F_n = \prod_{k=0}^{n-1} F_k + 2$.
+\end{exercise}
+From Exercise~\ref{ex.fermat} it can be shown that every two Fermat numbers are relatively prime and thus there are an infinite number of prime numbers.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1815,6 +1830,36 @@ since:
 \left(\frac{7}{4}+1\right) = \frac{11}{4} = \frac{44}{16}<\frac{49}{16}=\left(\frac{7}{4}\right)^2.
 \]
 
+\item Base case ($n=2$): $F_2=2^{2^2}+1=17$.
+
+Inductive hypothesis: $F_n=10k_n+7$.
+
+Inductive step:
+\begin{eqnarray*}
+F_{n+1}&=&2^{2^{n+1}}+1=\left(2^{2^{n}}\right)^2+1\\
+&=&\left(\left(2^{2^{n}}+1\right)-1\right)^2+1\\
+&\ih&(10k_n+7-1)^2+1=(10k_n+6)^2+1\\
+&=&100k_n^2+120k_n+36+1\\
+&=&10(10k_n^2+12k_n+3)+6+1\\
+&=&10k_{n+1}+7\,.
+\end{eqnarray*}
+
+\item
+Base case ($n=1$):
+\[
+5=F_1=\prod_{k=0}^{0} F_k + 2=F_0+2=3+2\,.
+\]
+Inductive step:
+\begin{eqnarray*}
+\prod_{k=0}^{n}F_k&=&(\prod_{k=0}^{n-1}F_k) F_n \\
+&\ih& (F_n-2)F_n\\
+&=& (2^{2^n}+1-2)(2^{2^n}+1)\\
+&=& 2^{2^{n+1}}-1\\
+&=& (2^{2^{n+1}}+1)-2\\
+&=&F_{n+1}-2\\
+F_{n+1}&=&\prod_{k=0}^{n}F_k + 2\,.
+\end{eqnarray*}
+
 \item (a) Base cases: there are no parentheses within a variable or a constant. There are four inductive steps, one for each operator, but we can prove them together. For an expression $E=(E_1 \,\textit{op}\, E_2)$ with operator \textit{op}, by the inductive hypothesis, the number of left $n_1^l,n_2^l$ and right $n_1^r,n_2^r$ parentheses in $E_1,E_2$, respectively, are equal: $n_1^l=n_2^l$ and $n_1^r=n_2^r$. For $E$:
 \[
 n^l=n_1^l+n_2^l+1\ih{}n_1^r+n_2^r+1=n^r\,.
@@ -1839,8 +1884,6 @@ By the inductive hypotheses, $n_1^l \geq n_1^r$ and $n_2^l \geq n_2^r$, so $n^l\
 &=& \frac{1}{2^{n}\sin \theta} \cdot \frac{\sin 2\cdot 2^{n}\theta}{2}\\
 &=&\frac{\sin 2^{n+1}\theta}{2^{n+1}\sin \theta}\,.
 \end{eqnarray*}
-
-\newpage
 
 \item The base case $n=1$ is trivial. The inductive step is:
 \begin{eqnarray*}
@@ -1877,11 +1920,9 @@ Figure~\ref{fig.intersect} shows the construction for a hexagon with $\frac{1}{2
 
 \item Base case: The sum of the interior angles of a triangle is $180(3-2)=180$. For the inductive step, draw a line creating an $n$-gon and a triangle. Then: $	180(n-2) + 180 = 180((n+1)-2)$. 
 
-\newpage
-
 \item The base case, a line of length $\sqrt{1}=1$, is assumed to be given. The inductive step is shown in Figure~\ref{fig.pyth}. By the inductive hypothesis, lines of lengths $\sqrt{1}$ and $\sqrt{n}$ are constructible, and the lines can be constructed to be perpendicular. By Pythagoras's theorem, the length of the hypotenuse is $\sqrt{n+1}$.
 
-\begin{figure}[t]
+\begin{figure}[hb]
 \begin{center}
 \begin{tikzpicture}
 \draw (0,0) coordinate (A) -- node [above=2pt] {$\sqrt{n+1}$} (12:5) coordinate (B) -- node [right] {$\sqrt{1}$ } (B |- A) -- node [below] {$\sqrt{n}$} cycle;
@@ -1972,8 +2013,6 @@ If $\frac{1}{q}$ is the \emph{largest} unit fraction less than $\frac{a}{b}$, th
 \[\left( \frac{a}{b} - \frac{1}{q} \right) = \frac{aq-b}{bq} = (aq-b)\cdot \frac{1}{b}\cdot\frac{1}{q} < a\cdot\frac{1}{b}\cdot\frac{1}{q}<\frac{1}{q}\,,
 \]
 since $\frac{a}{b}$ is a proper fraction. Therefore, none of the unit fractions in the sum expressing $\left( \frac{a}{b} - \frac{1}{q} \right)$ can be greater than or equal to $\frac{1}{q}$.
-
-\newpage
 
 \item Let us first prove that $\phi^2=\phi+1$:
 \vspace*{-8pt}

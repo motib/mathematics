@@ -316,7 +316,7 @@ f_{5(n+1)} &=& f_{5n+5}\\
 &=& 3f_{5n+2}+2f_{5n+1}\\
 &=& 5f_{5n+1}+3f_{5n}\,.
 \end{eqnarray*}
-ברור שהגורם הראשון 
+הגורם הראשון 
 $5f_{5n+1}$
 מתחלק ב-%
 $5$
@@ -327,7 +327,7 @@ $3f_{5n}$
 $5$.
 
 \item 
-טענות הבסיס.
+טענות בסיס:
 $f_1=1<(\frac{7}{4})^1$
 ו-%
 $f_2=1<(\frac{7}{4})^2=\frac{49}{16}$.
@@ -344,6 +344,40 @@ f_{n+1}&=&f_n+f_{n-1}\\
 \[
 \left(\frac{7}{4}+1\right) = \frac{11}{4} = \frac{44}{16}<\frac{49}{16}=\left(\frac{7}{4}\right)^2.
 \]
+
+\item
+טענת בסיס
+)$n=2$(: $F_2=2^{2^2}+1=17$.
+
+הנחת האינדוקציה:
+$F_n=10k_n+7$.
+
+הצעד האינדוקטיבי:
+\begin{eqnarray*}
+F_{n+1}&=&2^{2^{n+1}}+1=\left(2^{2^{n}}\right)^2+1\\
+&=&\left(\left(2^{2^{n}}+1\right)-1\right)^2+1\\
+&\ih&(10k_n+7-1)^2+1=(10k_n+6)^2+1\\
+&=&100k_n^2+120k_n+36+1\\
+&=&10(10k_n^2+12k_n+3)+6+1\\
+&=&10k_{n+1}+7\,.
+\end{eqnarray*}
+
+\item
+טענת בסיס:
+\[
+5=F_1=\prod_{k=0}^{0} F_k + 2=F_0+2=3+2\,.
+\]
+הצעד האינדוקטיבי:
+\begin{eqnarray*}
+\prod_{k=0}^{n}F_k&=&(\prod_{k=0}^{n-1}F_k) F_n \\
+&\ih& (F_n-2)F_n\\
+&=& (2^{2^n}+1-2)(2^{2^n}+1)\\
+&=& 2^{2^{n+1}}-1\\
+&=& (2^{2^{n+1}}+1)-2\\
+&=&F_{n+1}-2\\
+F_{n+1}&=&\prod_{k=0}^{n}F_k + 2\,.
+\end{eqnarray*}
+
 
 \item
 )א( טענות בסיס: אין סוגריים בתוך משתנה או קבוע. יש ארבעה צעדי אינדוקציה, אחד לכל פעולה, אבל ניתן להוכיח אותם ביחד. עבור הביטוי
@@ -404,7 +438,6 @@ $\sin 2\theta = 2\cos\theta\sin\theta$.
 &=& \frac{1}{2^{n}\sin \theta} \cdot \frac{\sin 2\cdot 2^{n}\theta}{2}\\
 &=&\frac{\sin 2^{n+1}\theta}{2^{n+1}\sin \theta}\,.
 \end{eqnarray*}
-
 \item
 טענת הבסיס עבור
 $n=1$
@@ -419,6 +452,8 @@ $n=1$
 &&\;\;\;\;(\sin(1+n)\theta + \sin (1-n)\theta)]]\\
 &=& \cos (n+1)\theta + i\sin (n+1)\theta\,.
 \end{eqnarray*}
+
+\vspace*{-6ex}
 
 \item
 טענת בסיס: עבור מרובע 
@@ -446,7 +481,7 @@ $k$.
 מראה את הבנייה עבור משושה עם
 $\frac{1}{2}(6)(6-3)=9$
 אלכסונים.
-\begin{figure}[t]
+\begin{figure}[bht]
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
@@ -463,6 +498,8 @@ $\frac{1}{2}(6)(6-3)=9$
 }\label{fig.intersect}
 \end{center}
 \end{figure}
+
+\vspace{-8ex}
 
 \item 
 טענת בסיס: סכום הזוויות הפנימיות של משולש הוא
@@ -486,7 +523,7 @@ $\sqrt{n}$
 וניתן לבנות אותם ניצבים אחד לשני. לפי משפט פיתגורס, אורך היתר הוא
 $\sqrt{n+1}$.
 
-\begin{figure}[t]
+\begin{figure}[hbt]
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
