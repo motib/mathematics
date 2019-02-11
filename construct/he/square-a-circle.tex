@@ -122,7 +122,7 @@ $QT$.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
-%\clip(-6,-5.1) rectangle +(12,10.1);
+\clip (-5.5,-5.1) rectangle +(11,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -160,7 +160,7 @@ $PS$.
 
 \exer
 בנה את המיתר
-$QR$
+$RS$
 שאורכו שווה ל-%
 $QT$.
 
@@ -185,7 +185,7 @@ $RS$.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
-%\clip(-6,-5.1) rectangle +(12,10.1);
+\clip (-5.5,-5.1) rectangle +(11,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -250,7 +250,7 @@ $K,L,R$.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
-\clip(-6.1,-5.1) rectangle +(12,10.2);
+\clip (-5.5,-5.1) rectangle +(11,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -326,7 +326,7 @@ $LK$.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
-\clip(-6.1,-5.1) rectangle +(12,10.2);
+\clip (-5.5,-5.1) rectangle +(11,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -403,7 +403,7 @@ $RD^2$
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.2,align=left]
-\clip(-6.1,-5.1) rectangle +(12,10.2);
+\clip(-6,-5.1) rectangle +(11.5,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -418,7 +418,7 @@ $RD^2$
 \path[name intersections={of=tq and circle,by=q}];
 \path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
 \path[name intersections={of=rcirc and circle,by=s}];
-\draw (r) -- node[right] {$\sqrt{5}/3$} (s);
+\draw (r) -- node[left] {$\sqrt{5}/3$} (s);
 \fill (s) node[above right] {$S$} circle (1pt);
 \draw[name path=ps] (p) -- node[above right,yshift=16pt] {$\sqrt{31}/3$} (s);
 % Draw TN
@@ -436,7 +436,7 @@ $RD^2$
 % Draw chord PK
 \draw (p) -- node[right,xshift=-2pt,yshift=10pt] {$\sqrt{31}/6$} +(-62.3:4.64) coordinate (k) node[below left] {$K$};
 % Draw tangent PL
-\draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- node[left] {$\sqrt{31}/9$} (-5,-\n1) coordinate (l) node[left] {$L$};
+\draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- node[left] {$\disfrac{\sqrt{31}}{9}$} (-5,-\n1) coordinate (l) node[left] {$L$};
 % Connect L and K to R
 \draw (r) -- (l) -- (k) -- cycle;
 % Find point C on RK

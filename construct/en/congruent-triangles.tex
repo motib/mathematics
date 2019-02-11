@@ -1,25 +1,24 @@
 % !TeX root = construct.tex
 
-\chapter[Are Triangles with the Equal Area and Perimeter Congruent?]{Are Triangles with the Equal Area\\\bigskip and Perimeter Congruent?}\label{c.congruent}
-
+\chapter{Are Triangles with the Equal Area and Perimeter Congruent?}\label{c.congruent}
 
 Are triangles with the equal area and equal perimeter congruent? Not necessarily: the triangles with sides $(17,25,28)$ and $(20,21,27)$ both have perimeter $70$ and area $210$. Barabash [1] shows that given a equilateral triangle, there are non-congruent triangles with the same area and perimeter; however, her proof is not constructive. This document (based on [2]) shows that given a triangle with rational sides, it is possible to construct a non-congruent triangle with \emph{rational} sides and the same area and perimeter.
 
 As a bonus, an elegant proof of Heron's formula is obtained.
 
-[1] Barabash, Marita. A Non-Visual Counterexample in Elementary Geometry. \textit{The College Mathematics Journal} 36(5), 2005.
-
-[2] McCallum, William. \textit{A tale of two triangles: Heron triangles and elliptic curves}, 2012, \url{http://blog.kleinproject.org/?p=4}.
+\vspace{-2ex}
 
 \section{From triangles to elliptic curves}
 
-Figure~\ref{fig.incenter} shows $O$, the \emph{incenter} of an arbitrary triangle $\triangle ABC$, which is the intersection of the bisectors of the three angles. To prove that the bisectors intersect in a single point, note that an angle bisector is the locus of points equidistant from the sides and conversely the locus of points equidistant from the sides is an angle bisector. $O$ is equidistant from $AB$ and $AC$ and also equidistant from $AB$ and $BC$. Therefore, $O$ is equidistant from $AC$ and $BC$, so it is on the angle bisector of $\angle C$.
+The following diagram shows $O$, the \emph{incenter} of an arbitrary triangle $\triangle ABC$, which is the intersection of the bisectors of the three angles.  Drop altitudes from $O$ to the sides. The altitudes have length $r$, the raidus of the inscribed circle. The altitudes and angle bisectors create three pairs of congruent \emph{right} triangles:
+\[
+\triangle AOB'\cong \triangle AOC',\quad \triangle BOA'\cong \triangle BOC',\quad \triangle COA'\cong \triangle COB'\,.
+\]
 
 \vspace*{-6ex}
 
-\begin{figure}[H]
 \begin{center}
-\begin{tikzpicture}[baseline=-6mm,scale=2.2]
+\begin{tikzpicture}[baseline=-6mm,scale=1.8]
 % Draw base and path two lines at known angles
 \draw (0,0) coordinate (a) node[xshift=-6pt] {$A$} -- (0:6) coordinate (b) node[xshift=6pt] {$B$};
 \path[name path=ac] (a) -- +(50:4);
@@ -70,28 +69,17 @@ Figure~\ref{fig.incenter} shows $O$, the \emph{incenter} of an arbitrary triangl
 \draw (bp) -- ++(-40:4pt) -- ++(-130:4pt) -- ++(-220:4pt);
 \draw (cp) -- ++(-30:4pt) -- ++(-120:4pt) -- ++(-210:4pt);
 \end{tikzpicture}
-\caption{The incenter of a triangle}\label{fig.incenter}
 \end{center}
-\end{figure}
 
-\vspace*{-4ex}
+\vspace*{-3ex}
 
-Drop altitudes from $O$ to the sides. This results in pairs of congruent \emph{right} triangles $\{\triangle AOB', \triangle AOC'\},\{\triangle BOA', \triangle BOC'\},\{\triangle COA', \triangle COB'\},$ since each pair shares a joint hypotenuse and the bisected angles are equal. It follows that the lengths of the altitudes are equal which we denote by $r$. $O$ is the center of the inscribed circle with radius $r$.
 
-Figure~\ref{fig.altitudes} shows the sides $a,b,c$ divided into segments $u,v,w$, and the angles $\alpha/2,\beta/2,\gamma/2$ of the three pairs of triangles around the incenter $O$. The area of $\triangle ABC$ is the sum of the areas of $\triangle AOC, \triangle BOC, \triangle AOB$. $r$ is the height of all the triangles so the area is:
-\begin{equation}
-A = \frac{1}{2}(w+v)r + \frac{1}{2}(v+u)r + \frac{1}{2}(u+w)r = \frac{1}{2}\cdot 2(u+v+w)r = rs\,, \label{eq.area1}
-\end{equation}
-since the semi-perimeter is:
-\begin{equation}
-s=\frac{1}{2}\cdot 2 (u+v+w)=u+v+w\,.\label{eq.semi}
-\end{equation}
+The following diagram shows the sides $a,b,c$ divided into segments $u,v,w$, and the angles $\alpha/2,\beta/2,\gamma/2$:
 
-\vspace*{-8ex}
+\vspace*{-3ex}
 
-\begin{figure}[H]
 \begin{center}
-\begin{tikzpicture}[baseline=-6mm,scale=2.2]
+\begin{tikzpicture}[baseline=-6mm,scale=1.8]
 % Draw base and path two lines at known angles
 \draw (0,0) coordinate (a) node[xshift=-8pt] {$A$} -- (0:6) coordinate (b) node[xshift=6pt] {$B$};
 \path[name path=ac] (a) -- +(50:4);
@@ -110,12 +98,12 @@ s=\frac{1}{2}\cdot 2 (u+v+w)=u+v+w\,.\label{eq.semi}
 \draw (c) -- (center);
 \draw (b) -- (center);
 % Labels of angles
-\node[above,xshift=3pt,yshift=14pt] at (center) {$\displaystyle\frac{\gamma}{2}$};
-\node[above left,xshift=-4pt,yshift=14pt] at (center) {$\displaystyle\frac{\gamma}{2}$};
-\node[above right,xshift=8pt,yshift=-5pt] at (center) {$\displaystyle\frac{\beta}{2}$};
-\node[below right,yshift=-6pt] at (center) {$\displaystyle\frac{\beta}{2}$};
-\node[left,xshift=-12pt,yshift=3pt] at (center) {$\displaystyle\frac{\alpha}{2}$};
-\node[below left,xshift=2pt,yshift=-6pt] at (center) {$\displaystyle\frac{\alpha}{2}$};
+\node[above,xshift=5pt,yshift=21pt] at (center) {$\gamma/2$};
+\node[above left,xshift=-4pt,yshift=21pt] at (center) {$\gamma/2$};
+\node[above right,xshift=4pt,yshift=-5pt] at (center) {$\beta/2$};
+\node[below right,yshift=-6pt] at (center) {$\beta/2$};
+\node[left,xshift=-8pt,yshift=3pt] at (center) {$\alpha/2$};
+\node[below left,xshift=2pt,yshift=-6pt] at (center) {$\alpha/2$};
 % Draw radii
 \draw (center) -- node[near end,left] {$r$} ($(a)!(center)!(b)$) coordinate (cp) node[below,yshift=-2pt] {$C'$};
 \draw (center) -- node[left,near end,yshift=-4pt] {$r$} ($(a)!(center)!(c)$) coordinate (bp) node[above left] {$B'$};
@@ -136,18 +124,19 @@ s=\frac{1}{2}\cdot 2 (u+v+w)=u+v+w\,.\label{eq.semi}
 \path (c) -- node[above,xshift=-2pt] {$w$} (bp);
 \path (c) -- node[above,xshift=2pt] {$w$} (ap);
 \end{tikzpicture}
-\caption{Angles and line segments formed by the altitudes}\label{fig.altitudes}
 \end{center}
-\end{figure}
 
-\vspace*{-4ex}
-
-The lengths of $u,v,w$ can be computed from the angles and $r$:
-\begin{eqnarray}
+The area of $\triangle ABC$ is the sum of the areas of $\triangle AOC, \triangle BOC, \triangle AOB$:
+\begin{equation}
+A = \frac{1}{2}(w+v)r + \frac{1}{2}(v+u)r + \frac{1}{2}(u+w)r = \frac{1}{2}\cdot 2(u+v+w)r = rs\,, \label{eq.area1}
+\end{equation}
+where the semi-perimeter is: $s=u+v+w$. The lengths of $u,v,w$ can be computed from the angles and $r$:
+\erh{12pt}
+\begin{equationarray}{rlc}
 \tan \frac{\alpha}{2} &=& \frac{u}{r}\label{eq.alpha}\\
 \tan \frac{\beta}{2} &=& \frac{v}{r}\label{eq.beta}\\
 \tan \frac{\gamma}{2} &=& \frac{w}{r}\label{eq.gamma}\,.
-\end{eqnarray}
+\end{equationarray}
 $s$ can now be expressed in terms of the tangents:
 \[
 s = u+v+w = r\tan \frac{\alpha}{2}+r\tan \frac{\beta}{2}+r\tan \frac{\gamma}{2} = r\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\right)\,,
@@ -162,27 +151,33 @@ From $A=rs$ we have $r=A/s$, so Equation~\ref{eq.area2} can be written as:
 \end{equation}
 Since the sum of the angles $\alpha,\beta,\gamma$ is $2\pi$:
 \begin{eqnarray}
-\gamma &=& 2\pi - (\alpha + \beta)\\
+%\gamma &=& 2\pi - (\alpha + \beta)\\
 \gamma/2 &=& \pi - (\alpha/2 + \beta/2)\\
 \tan\gamma/2 &=& \tan(\pi - (\alpha/2 + \beta/2))\\
-\tan\gamma/2 &=& -\tan (\alpha/2 + \beta/2)\\
-\tan\gamma/2 &=& \frac{\tan\alpha/2 + \tan\beta/2}{\tan\alpha/2 \, \tan\beta/2-1}\,.\label{eq.tangent1}
+ &=& -\tan (\alpha/2 + \beta/2)\\
+&=& \frac{\tan\alpha/2 + \tan\beta/2}{\tan\alpha/2 \, \tan\beta/2-1}\,.\label{eq.tangent1}
 \end{eqnarray}
 Here is proof of the formula for the tangent of the sum of two angles:
 \begin{eqnarray}
 \tan (\theta+\phi) &=& \frac{\sin(\theta+\phi)}{\cos(\theta+\phi)}\\
-\tan (\theta+\phi) &=&\frac{\sin\theta\cos\phi+\cos\theta\sin\phi}{\cos\theta\cos\phi-\sin\theta\sin\phi}\\
-\tan (\theta+\phi) &=&\frac{\displaystyle\frac{\sin\theta}{\cos\theta}+\frac{\sin\phi}{\cos\phi}}{\displaystyle 1-\frac{\sin\theta\sin\phi}{\cos\theta\cos\phi}}\label{eq.tangent2}\\
-\tan (\theta+\phi) &=&\frac{\tan\theta + \tan \phi}{1-\tan\theta\tan\phi}\,,\label{eq.tangent3}
+&=&\frac{\sin\theta\cos\phi+\cos\theta\sin\phi}{\cos\theta\cos\phi-\sin\theta\sin\phi}\\
+%\tan (\theta+\phi) &=&\frac{\displaystyle\frac{\sin\theta}{\cos\theta}+\frac{\sin\phi}{\cos\phi}}{\displaystyle 1-\frac{\sin\theta\sin\phi}{\cos\theta\cos\phi}}\label{eq.tangent2}\\
+&=&\frac{\tan\theta + \tan \phi}{1-\tan\theta\tan\phi}\,,\label{eq.tangent3}
 \end{eqnarray}
-where Equation~\ref{eq.tangent2} is obtained by dividing by $\cos\theta\cos\phi$.
+where Equation~\ref{eq.tangent3} is obtained by dividing by $\cos\theta\cos\phi$.
+
+\newpage
 
 Let us simplify the notation by defining variables for the tangents:
-\begin{eqnarray*}
+
+\vspace{-4ex}
+
+\erh{12pt}
+\begin{equationarray*}{rcl}
 x&=&\tan \frac{\alpha}{2}\\
 y&=&\tan \frac{\beta}{2}\\
 z&=&\tan \frac{\gamma}{2}\,.
-\end{eqnarray*}
+\end{equationarray*}
 By Equation~\ref{eq.tangent1} we can replace $z=\tan\gamma/2$ by an expression in $x,y$:
 \begin{equation}
 z = \frac{x+y}{xy-1}\,.\label{eq.xy1}
@@ -197,12 +192,7 @@ For the right triangle $(3,4,5)$:
 \begin{equation}
 \frac{s^2}{A} = \frac{\left(\frac{1}{2}(3+4+5)\right)^2}{\frac{1}{2}\cdot 3\cdot 4} = \frac{6^2}{6}=6\,.
 \end{equation}
-If there is another solution to the equation:
-\begin{equation}
-x+y+\frac{x+y}{xy-1}=6\,,\label{eq.elliptic0}
-\end{equation}
-there is another triangle with area $6$ and semi-perimeter $6$.
-Equation~\ref{eq.elliptic0} can be written as:
+If there is another solution Equation~\ref{eq.xy2}, it can be written as:
 \begin{equation}
 x^2y + xy^2 -6xy + 6 = 0\,.\label{eq.elliptic}
 \end{equation}
@@ -210,16 +200,13 @@ This is an equation for an \emph{elliptic curve}. Elliptic curves were used by A
 
 \section{Solving the equation for the elliptic curve}
 
-A portion of the graph of Equation~\ref{eq.elliptic} is shown in the Figure~\ref{fig.elliptic}. Any point on the closed curve in the first quadrant is a solution to the equation. Only points in the first quadrant are of interest because we want positive values for the lengths of the sides of the triangle. The points $A,B,D$ correspond to the triangle $(3,4,5)$ as we shall show below. To find additional (\emph{rational}) solutions, the \emph{method of two secants} is used.\footnote{McCallum [2] notes that there are an infinite number of rational solutions.}
+A portion of the graph of Equation~\ref{eq.elliptic} is shown in the diagram below. Any point on the closed curve in the first quadrant is a solution to the equation because the lengths of the sides of the triangle must be positive. $A,B,D$ correspond to the triangle $(3,4,5)$ as we shall show below. To find additional (\emph{rational}) solutions, the \emph{method of two secants} is used.\footnote{McCallum [2] notes that there are an infinite number of rational solutions.}
 
-\begin{figure}[H]
+Draw a secant through the points $A=(2,3)$ and $B=(1,2)$. It intersects the curve at $C=(-1.5,-0.5)$, but this does not give a solution because the values are negative. If we draw a second secant from $C$ to $D=(3,2)$, the intersection with the curve at $E$ does give a new solution.\footnote{$(1.5,1.2)$ is an approximation displayed by GeoGebra. We will compute the exact coordinates of $E$ below.}
+
 \begin{center}
 \includegraphics[width=.7\textwidth]{elliptic1}
 \end{center}
-\caption{The graph of $x^2y + xy^2 -6xy + 6 = 0$ with two secants}\label{fig.elliptic}
-\end{figure}
-
-Draw a secant through the points $A=(2,3)$ and $B=(1,2)$. We will show that it intersects the curve at $C=(-1.5,-0.5)$, but this does not give a solution because the values are negative. If we draw a second secant from $C$ to $D=(3,2)$, the intersection with the curve at $E$ does give a new solution.\footnote{$(1.5,1.2)$ is an approximation displayed by GeoGebra. We will compute the exact coordinates of $E$ below.}
 
 The equation of the (red) line through $A,B$ is $y=x+1$. Substitute for $y$ in Equation~\ref{eq.elliptic}:
 \[
@@ -229,13 +216,13 @@ and simplify:
 \[
 2x^3 -3x^2 -5x +6 =0\,.
 \]
-From the points $A,B$, we know two roots $x=2,x=1$, so we can factor the cubic polynomial as:
+From $A,B$, we know two roots $x=2,x=1$, so we can factor the cubic polynomial as:
 \[
 (x-2)(x-1)(ax+b)=0\,,
 \]
-where only the third root is unknown. Multiply the factors and we immediately see that $a$, the coefficient of the cubic term $x^3$, must be $2$, and $2b$, the constant term, must be $6$. Therefore, the third factor is $2x+3$ which gives the third root $x=-\frac{3}{2}$ and $y=x+1=-\frac{1}{2}$. This is the point $C$ in the graph.
+where only the third root is unknown. Multiply the factors and we immediately see that $a$, the coefficient of the cubic term $x^3$, must be $2$, and $2b$, the constant term, must be $6$. Therefore, the third factor is $2x+3$ which gives the third root $x=-\frac{3}{2}$ and $y=x+1=-\disfrac{1}{2}$. This is the point $C=(-\disfrac{3}{2},-\disfrac{1}{2})$ in the graph.
 
-Let us now draw a second secant (the blue line) through $C=(-\frac{3}{2},-\frac{1}{2})$ and $D=(3,2)$. The equation of the line is:
+The equation of the second secant (blue) is:
 \begin{equation}
 y = \frac{5}{9}x + \frac{1}{3}\,.\label{eq.second-secant}
 \end{equation}
@@ -247,7 +234,7 @@ and simplify:
 \[
 \frac{70}{81}x^3 - \frac{71}{27}x^2 - \frac{17}{9}x +6 =0\,.
 \]
-Again, we have two roots $x=3,x=-\frac{3}{2}$, so we can factor the cubic polynomial as:
+Again, we have two roots $x=3,x=-\disfrac{3}{2}$, so we can factor the cubic polynomial as:
 \[
 (x-3)(x+\frac{3}{2})(ax+b)=0\,.
 \]
@@ -298,9 +285,8 @@ For $E$:
 \begin{eqnarray*}
 a &=& z+y = \frac{49}{15} + \frac{25}{21} = \frac{156}{35}\\
 b &=& x+z = \frac{54}{35} + \frac{49}{15} = \frac{101}{21}\\
-c &=& x+y = \frac{54}{35} + \frac{25}{21}  = \frac{41}{15}\,,
+c &=& x+y = \frac{54}{35} + \frac{25}{21}  = \frac{41}{15}\,.
 \end{eqnarray*}
-which I am sure that you found by trial and error!
 
 Let us check the result. The semi-perimeter is:
 \[
@@ -338,7 +324,7 @@ A &=& r^2\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\
 &=&\frac{s}{A}\,u\,v\,w\\
 A^2&=&s\,u\,v\,w\,.
 \end{eqnarray*}
-From Equation~\ref{eq.semi} and the definitions of $a,b,c,u,v,w$ in Figure~\ref{fig.altitudes}:
+$s=u+v+w$, so:
 \begin{eqnarray*}
 s - a &=& (u+v+w) - (w+v) = u\\
 s - b &=& (u+v+w) - (u+w) = v\\

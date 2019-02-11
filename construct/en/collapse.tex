@@ -4,9 +4,10 @@
 
 \section{Fixed compasses and collapsing compasses}
 
-In a modern compass used for geometric constructions the distance between the two legs can be fixed so that it is possible to copy a line segment or a circle from one position to another. I have seen geometry textbooks that present the  construction a perpendicular bisector to a line segment as follows: construct two circles centered at the ends of the line segment such that the radii are \emph{equal} and greater than half the length of the segment (Figure~\ref{fig.bisector} left). We will call such a compass a \emph{fixed compass}.
+In a modern compass used for geometric constructions the distance between the two legs can be fixed so that it is possible to copy a line segment or a circle from one position to another. We will call such a compass a \emph{fixed compass}. I have seen geometry textbooks that present the  construction a perpendicular bisector to a line segment as follows: construct two circles centered at the ends of the line segment such that the radii are equal and \emph{greater than half the length of the segment} (left diagram):
 
-\begin{figure}[H]
+\vspace{-3ex}
+
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \begin{scope}
@@ -36,20 +37,17 @@ In a modern compass used for geometric constructions the distance between the tw
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{scope}
 \end{tikzpicture}
-\caption{Perpendicular bisector.}\label{fig.bisector}
 \end{center}
-\end{figure}
-\vspace*{-3ex}
-Euclid used a \emph{collapsing compass} whose legs fold up when the compass is lifted off the paper. Teachers often use a collapsing compass consisting of a piece of chalk tied to a string. It is impossible to maintain a fixed radius when the chalk is removed from the blackboard. Figure~\ref{fig.bisector} (right) shows how to construct a perpendicular bisector with a collapsing compass: the length of the segment $AB$ is, of course, equal to the length of the segment $BA$, so the radii of the two circles are equal and there is no need to copy a line segment from one position to another.
 
-The proof that the line constructed is, in fact, the perpendicular bisector is not at all elementary because relatively advanced concepts like congruent triangles have to be used. However, the proof that the same construction results in an equilateral triangle is very simple (Figure~\ref{fig.equilateral} right).
+\vspace{-3ex}
 
-The length of $AC$ equals the length of $AB$ since they are radii of the same circle, and for the same reason the length of $BC$ is equal to the length of $BA$. We have:
+Euclid used a \emph{collapsing compass} whose legs fold up when the compass is lifted off the paper. Teachers often use a collapsing compass consisting of a piece of chalk tied to a string. It is impossible to maintain a fixed radius when the chalk is removed from the blackboard. The right diagram above shows how to construct a perpendicular bisector with a collapsing compass: the length of the segment $AB$ is, of course, equal to the length of the segment $BA$, so the radii of the two circles are equal.
+
+The proof that the line constructed is the perpendicular bisector is not at all elementary because relatively advanced concepts like congruent triangles have to be used. However, the proof that the same construction results in an equilateral triangle is very simple (right diagram below). The length of $AC$ equals the length of $AB$ since they are radii of the same circle, and for the same reason the length of $BC$ is equal to the length of $BA$. We have:
 \[
 AC=AB=BA=BC\,.
 \]
-Figure~\ref{fig.equilateral} (left) shows that for the construction with the fixed compass the triangle will be isosceles, but not necessarily equilateral.
-\begin{figure}[H]
+
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \begin{scope}
@@ -81,22 +79,20 @@ Figure~\ref{fig.equilateral} (left) shows that for the construction with the fix
 \draw (B) -- (t);
 \end{scope}
 \end{tikzpicture}
-\caption{Equilateral triangle.}\label{fig.equilateral}
 \end{center}
-\end{figure}
-\vspace*{-4ex}
-This construction of an equilateral triangle is the first proposition in Euclid's \emph{Elements}. The second proposition shows how to copy a given line segment $AB$ to a segment of the same length, one of whose end points is a given point $C$. Using this construction, we can also construct a circle centered at $C$ with radius $AB$. As we shall see, the construction in the second proposition can be done with a collapsing compass; therefore, any construction that uses a fixed compass can also be done using a collapsing compass.
 
-In a fascinating article, Godfried Toussaint \cite{toussaint} showed that many \emph{incorrect} constructions for this proposition have been given. In fact, it was Euclid who gave a correct construction! In this document, I give a step-by-step presentation of Euclid's construction and the proof of its correctness. Then I show an incorrect construction that can be found even in modern textbooks. Next I survey constructions using tools that are more restricted or more complex than a straightedge and compass. Finally, to show that diagrams cannot be trusted, I present a proof that \emph{all} triangles are isosceles.
+The left diagram above shows that for the construction with the fixed compass the triangle will be isosceles, but not necessarily equilateral.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This construction of an equilateral triangle is the first proposition in Euclid's \emph{Elements}. The second proposition shows how to copy a given line segment $AB$ to a segment of the same length, one of whose end points is a given point $C$. Therefore, a fixed compass adds no additional capability. Toussaint \cite{toussaint} showed that many incorrect constructions for this proposition have been given. In fact, it was Euclid who gave a correct construction! The following section presents Euclid's construction and the proof of its correctness. Then I show an incorrect construction that can be found even in modern textbooks.
 
 \section{Euclid's construction for copying a line segment}
 
-\textbf{Theorem (Compass Equivalency Theorem):} Given a line segment $AB$ and a point $C$ (Figure~\ref{fig.ce-1} left), a line segment whose length is equal to the length of $AB$ can be constructed (using a collapsing compass) at $C$.
-\begin{figure}[H]
+\textbf{Theorem:} Given a line segment $AB$ and a point $C$, a line segment can be constructed (using a collapsing compass) at $C$ whose length is equal to the length of $AB$:
+
+\vspace{-2ex}
+
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.4]
 \begin{scope}
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
@@ -123,24 +119,22 @@ In a fascinating article, Godfried Toussaint \cite{toussaint} showed that many \
 \draw (C) -- (D);
 \end{scope}
 \end{tikzpicture}
-\caption{Copy line $AB$ to the point $C$. Construct an equilateral triangle on $AC$.}\label{fig.ce-1}
 \end{center}
-\end{figure}
 
-\newpage
+\vspace{-2ex}
 
 \textbf{Construction:}
-\begin{itemize}
-\item Construct the line segment from $A$ to $C$.
-\item Construct an equilateral triangle whose base is $AC$. Label the third vertex $D$ (Figure~\ref{fig.ce-1} right). By Euclid's first proposition, the triangle can be constructed using a collapsing compass.
-\item Construct a ray from $D$ through $A$ and a ray from $D$ through $C$ (Figure~\ref{fig.ce-2} left).
-\item Construct a circle centered at $A$ with radius $AB$. Label the intersection of the circle and the ray $DA$ by $E$ (Figure~\ref{fig.ce-2} right).
-\item Construct a circle centered at $D$ with radius $DE$. Label the intersection of the circle and the ray $DC$ by $F$ (Figure~\ref{fig.ce-3}).
-\item The length of the line segment $CF$ is equal to the length of $AB$.
-\end{itemize}
-\begin{figure}[H]
+
+Construct the line segment from $A$ to $C$.
+
+Construct an equilateral triangle whose base is $AC$ (right diagram above). Label the third vertex $D$. By Euclid's first proposition, the triangle can be constructed using a collapsing compass.
+
+Construct a ray that is a continuation of $DA$ and a ray that is a continuation of $DC$ (left diagram below).
+
+Construct a circle centered at $A$ with radius $AB$. Label the intersection of the circle and the ray $DA$ by $E$ (right diagram below).
+
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.4]
 \begin{scope}
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
@@ -181,15 +175,12 @@ In a fascinating article, Godfried Toussaint \cite{toussaint} showed that many \
 \fill (E) node[right,xshift=2pt,yshift=-2pt] {$E$} circle[radius=3pt];
 \end{scope}
 \end{tikzpicture}
-\caption{Rays from $D$ through $A,C$. A circle centered at $A$} \label{fig.ce-2}
 \end{center}
-\end{figure}
+
+Construct a circle centered at $D$ with radius $DE$. Label the intersection of the circle and the ray $DC$ by $F$:
+
 \vspace*{-2ex}
-\textbf{Proof:} $DC=DA$ because they are edges of an equilateral triangle. $AE=AB$ because they are radii of the same circle centered at $A$. $DF=DE$ because they are radii of the same circle centered at $D$. Therefore, the length of the line segment $CF$ is:
-\[
-CF=DF-DC=DE-DC=DE-DA=AE=AB\,.
-\]
-\begin{figure}[H]
+
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
 \coordinate (C) at (0,0);
@@ -217,22 +208,33 @@ CF=DF-DC=DE-DC=DE-DA=AE=AB\,.
 \path (A) -- node[right] {$x$} (E);
 \path (C) -- node[left] {$x$} (F);
 \end{tikzpicture}
-\caption{A circle centered at $D$ with radius $DE$. $CF=AE=AB$.}\label{fig.ce-3}
 \end{center}
-\end{figure}
+
+\vspace*{-1ex}
+
+\textbf{Claim:} The length of the line segment $CF$ is equal to the length of $AB$.
+
+\textbf{Proof:} $DC=DA$ because $\triangle ACD$ is equilateral. $AE=AB$ because they are radii of the same circle centered at $A$. $DF=DE$ because they are radii of the same circle centered at $D$. Therefore, the length of the line segment $CF$ is:
+
+\vspace*{-1ex}
+
+\[
+CF=DF-DC=DE-DC=DE-DA=AE=AB\,.
+\]
+
+
+\vspace*{-1ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
 
-\section{An erroneous construction for copying a line segment}\label{s.erroneous}
+\section{An incorrect construction for copying a line segment}\label{s.erroneous}
 
-The following presentation is based on \cite{rusty}.
+\textbf{Construction(\cite{rusty}):}
 
-\textbf{Theorem (Compass Equivalency Theorem):} Given a line segment $AB$ and a point $C$ (Figure~\ref{fig.rusty-1} left), a line segment whose length is equal to the length of $AB$ can be constructed (using a collapsing compass) at $C$.
+Construct a circle centered at $A$ with radius $AB$:
 
-\begin{figure}[H]
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.4]
 \begin{scope}
 \coordinate (C) at (-2,0);
 \coordinate (A) at (2.5,0);
@@ -253,17 +255,10 @@ The following presentation is based on \cite{rusty}.
 \node[draw,circle through=(B),name path=c1] at (A) {};
 \end{scope}
 \end{tikzpicture}
-\caption{Copy $AB$ to point $C$. A circle centered at $A$ with radius $AB$.}\label{fig.rusty-1}
 \end{center}
-\end{figure}
 
-\vspace*{-4ex}
+Construct a circle centered at $A$ with radius $AC$ and a circle centered at $C$ with radius $AC=CA$. Label the intersections of the two circles $E,F$. Label the intersection of the circle centered at $C$ and the circle centered at $A$ with radius $AB$ by $D$:
 
-\textbf{Construction:}
-\begin{itemize}
-\item Construct a circle centered at $A$ with radius $AB$ (Figure~\ref{fig.rusty-1} right).
-\item Construct a circle centered at $A$ with radius $AC$ and a circle centered at $C$ with radius $AC=CA$. Label the intersections of the two circles $E,F$. Label the intersection of the circle centered at $C$ and the circle centered at $A$ by $D$ (Figure~\ref{fig.rusty-2}).
-\begin{figure}[H]	
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (-2,0);
@@ -282,17 +277,10 @@ The following presentation is based on \cite{rusty}.
 \fill (E) node[above,yshift=2pt] {$E$} circle[radius=3pt];
 \fill (F) node[below,yshift=-2pt] {$F$} circle[radius=3pt];
 \end{tikzpicture}
-\caption{Circles centered at $A,C$ with radii $AC=CA$.}\label{fig.rusty-2}
 \end{center}
-\end{figure}
-\vspace*{-5ex}
-\item Construct a circle centered at $E$ with radius $ED$. Label the intersection of this circle with the circle centered at $C$ by $G$ (Figure~\ref{fig.rusty-3}).
-\item The length of the line segment $GC$ is equal to the length of $AB$.
-\end{itemize}
-Convince yourself that the construction can be carried by using a collapsing compass.
 
-The proof that $AB=GC$ can be found in \cite{rusty}. This is done by showing that the two triangles denoted by dashed lines are congruent so $GC=DA=AB$. The proof is much longer than Euclid's and uses advanced concepts unlike Euclid's proof that depends only on: all radii of a circle are equal as are all sides of an equilateral triangle.
-\begin{figure}[H]
+Construct a circle centered at $E$ with radius $ED$. Label the intersection of this circle with the circle centered at $A$ with radius $AC$ by $G$:
+
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (-2,0);
@@ -317,40 +305,30 @@ The proof that $AB=GC$ can be found in \cite{rusty}. This is done by showing tha
 \draw[dashed] (G) -- (E) -- (C);
 \draw[dashed] (A) -- (D) -- (E) -- cycle;
 \end{tikzpicture}
-\caption{A circle centered at $E$ with radius $ED$. Equal line segments $GC=DA=AB$.}\label{fig.rusty-3}
 \end{center}
-\end{figure}
-\vspace*{-3ex}
-Look closely at the proof in \cite{rusty} that $AB=GC$ and find the error. The answer: there isn't any error in the proof! The problem arises from a different source: the equality $AB=GC$ holds only when the length of $AB$ is less that the length of $AC$. In contrast, Euclid's construction and proof are true independent of the relative lengths of  $AB$ and $AC$, and of the position of the point $C$ relative to the line segment $AB$ (\cite{toussaint}).
 
+\textbf{Claim:} The length of the line segment $GC$ is equal to the length of $AB$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Proof:} We shall show that $\triangle ADE\cong\triangle CGE$. If so, $CG=AD=AB$ because $AB,AD$ are radii of the smaller circle centered at $A$. The circle centered at $C$ has the same radius as the circle centered at $A$ that goes through $E$, so we can consider that they are the ``same'' circle.
 
-\section{Exploring the constructions with GeoGebra}
+$EG=ED$ because they are radii of the circle centered at $E$ and $EC=EA$ because they are radii of the ``same'' circle. $\angle GCE=\angle DAE$ because they are central angles that intercept the ``same'' chord and $\angle CGE=\angle ADE$ because they are inscribed angles intercepting the ``same'' chord. Therefore, $\angle GEC=\angle DEA$ and $\triangle GEC\cong \triangle DAE$ by SAS. 
 
-GeoGebra (\url{https://www.geogebra.org/}) is an interactive environment for studying mathematics. I have prepared GeoGebra files for the two constructions: 
-\begin{center}
-\texttt{compass-equivalency.ggb, rusty-compass.ggb}.
-\end{center}
-The points $A,B,C$ can be moved around on the screen to see how the diagram changes. You can use the measurement tool to check if the lengths of the line segments are equal.
+The answer: there isn't any error in the proof! The problem arises from a different source: the equality $AB=GC$ holds only when the length of $AB$ is less that the length of $AC$. In contrast, Euclid's construction and proof are true, independent of the relative lengths of  $AB$ and $AC$, and of the position of the point $C$ relative to the line segment $AB$ (\cite{toussaint}).
 
-\textbf{Note:} For Euclid's construction, if you start with $AB<AC$, move $C$ so that $AB>AC$ and then back, the display becomes corrupted. The reason is that whenever $AB<AC$, the ray $DA$ intersects the circle centered at $A$ in two points, but when returning back to $AB<AC$, one intersection point is lost. To work around this problem, I have prepared two version of the files for Euclid's construction.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{A ``simpler'' construction for copying a line segment}
 
-Given a line segment $AB$ and a point $C$, if we can build a parallelogram with these three points as its vertices, we obtain a line segment with $C$ at one end whose length is equal to the length of $AB$ (Figure~\ref{fig.parallel-1} left). This construction can be found in \cite[pp. 207--208]{roads}.
-\begin{figure}[H]
+Given a line segment $AB$ and a point $C$, if we can build a parallelogram with these three points as its vertices, we obtain a line segment with $C$ at one end whose length is equal to the length of $AB$ (left diagram left):
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
-\begin{scope}
+\begin{tikzpicture}[scale=0.7]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
 \coordinate (C) at (5,2);
 \draw (A) -- (B);
 \path (A) -- node[above] {$x$} (B);
-\fill (A) node[below] {$A$} circle[radius=3pt];
+\fill (A) node[below left] {$A$} circle[radius=3pt];
 \fill (B) node[below] {$B$} circle[radius=3pt];
 \fill (C) node[above] {$C$} circle[radius=3pt];
 \draw (B) -- node[right] {$y$} (C);
@@ -358,144 +336,79 @@ Given a line segment $AB$ and a point $C$, if we can build a parallelogram with 
 \draw (D) -- node[above] {$x$} (C);
 \draw (A) -- node[left] {$y$} (D);
 \fill (D) node[above] {$D$} circle[radius=3pt];
-\end{scope}
 \begin{scope}[xshift=12cm]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
 \coordinate (C) at (5,2);
 \draw ($ (B) ! 1.2 ! (A) $) -- ($ (A) ! 1.5 ! (B) $);
 \path (A) -- (B);
-\fill (A) node[below right] {$A$} circle[radius=3pt];
+\fill (A) node[below left,xshift=-4pt] {$A$} circle[radius=3pt];
 \fill (B) node[below] {$B$} circle[radius=3pt];
 \fill (C) node[above] {$C$} circle[radius=3pt];
 \draw (B) -- (C);
 \draw[name path=ray1] ($(C)+(-5cm,0cm)$) -- ($(C)+(1cm,0cm)$);
 \draw[name path=ray2] ($(A)+(-.25,-.65)$) -- ($(A)+(1,2.6)$);
-\path [name intersections={of=ray1 and ray2,by={E}}];
-\fill (E) node[above left] {$E$} circle[radius=3pt];
-\coordinate (D) at (C |- B);
-\draw (C) -- (D);
-\fill (D) node[below] {$D$} circle[radius=3pt];
+\path [name intersections={of=ray1 and ray2,by={D}}];
+\fill (D) node[above left] {$D$} circle[radius=3pt];
+\coordinate (E) at (C |- B);
+\draw[thick,dashed] (C) -- (E);
+\fill (E) node[below] {$E$} circle[radius=3pt];
+\draw[rotate=-90] (C) rectangle +(10pt,10pt);
+\draw (E) rectangle +(10pt,10pt);
+\coordinate (F) at ($(A)!(B)!(D)$);
+\fill (F) circle[radius=3pt];
+\draw[thick,dashed] (B) -- (F);
+\draw[rotate=-24] (F) rectangle +(10pt,10pt);
+\draw[rotate=67] (B) rectangle +(10pt,10pt);
 \end{scope}
 \end{tikzpicture}
-\caption{A parallelogram $DC=AB$. Constructing the parallelogram.}\label{fig.parallel-1}
 \end{center}
-\end{figure}
-\vspace*{-4ex}
-\textbf{Construction:} (Figure~\ref{fig.parallel-1}, right)
-\begin{itemize}
-\item Construct the line segment from $B$ to $C$.
-\item Construct a perpendicular from $C$ to the line containing the line segment $AB$. Label their intersection by $D$.
-\item Construct a perpendicular to the line segment $CD$ at $C$. This line is parallel to $AB$.
-\item Use a similar method to construct a line parallel to $BC$ through $A$. Label the intersection of the two lines that we constructed by $E$.
-\item The length of the line segment $EC$ is equal to the length of $AB$.
-\end{itemize}
-We have to check that it is possible to construct the parallelogram with a collapsing compass. The only construction needed is that of a perpendicular from an given point to a line that contains a given line segment (Figure~\ref{fig.perp-1}).
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}[scale=0.5]
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\coordinate (C) at (5,2);
-\draw ($ (B) ! 1.5 ! (A) $) -- ($ (A) ! 1.5 ! (B) $);
-\fill (A) node[below] {$A$} circle[radius=3pt];
-\fill (B) node[below] {$B$} circle[radius=3pt];
-\fill (C) node[right] {$C$} circle[radius=3pt];
-\end{tikzpicture}
-\caption{A perpendicular from $C$ to the line containing the segment $AB$.}\label{fig.perp-1}
-\end{center}
-\end{figure}
-\vspace*{-4ex}
-Construct a circle centered at $C$ with a radius that is greater than the distance of $C$ from the line (Figure~\ref{fig.perp-2}).
-\begin{figure}[H]
+This construction can be found in \cite[pp. 207--208]{roads}.
+
+\textbf{Construction (right diagram):}
+
+Construct the line segment from $B$ to $C$.
+
+Construct an altitude from $C$ to the line containing the line segment $AB$. Label the intersection by $D$.
+
+Construct an altitude to the line segment $CD$ at $C$. This line is parallel to $AB$.
+
+Use a similar method to construct a line parallel to $BC$ through $A$. Label the intersection of the two lines by $D$.
+
+$AD\|BC$, $AB\|DC$ and by definition $ABCD$ is a parallelogram, so $AB=CD$ as required.
+
+\textbf{Construction with a collapsing compass:} We will show that it is possible to construct an altitude through a given point with a collapsing compass. Construct a circle centered at $C$ with a radius that is greater than the distance of $C$ from the line. Label the intersections with the line by $D,E$. Construct circles centered at $D,E$ with radii $DC=EC$:
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
 \coordinate (C) at (5,2);
 \draw[name path=ray] ($ (B) ! 1.5 ! (A) $) -- ($ (A) ! 2.5 ! (B) $);
-\fill (A) node[below] {$A$} circle[radius=3pt];
-\fill (B) node[below] {$B$} circle[radius=3pt];
+%\fill (A) node[below] {$A$} circle[radius=3pt];
+%\fill (B) node[below] {$B$} circle[radius=3pt];
 \fill (C) node[right] {$C$} circle[radius=3pt];
 \draw[name path=arc] (C) ++(-160:3.5cm) arc (-160:-20:3.5cm);
-\path [name intersections={of=arc and ray,by={D,E}}];
-\fill (D) node[below left] {$D$} circle[radius=3pt];
-\fill (E) node[below right] {$E$} circle[radius=3pt];
-\end{tikzpicture}
-\caption{$D$ and $E$ are at equal distances from $C$.}\label{fig.perp-2}
-\end{center}
-\end{figure}
-\vspace*{-4ex}
-Construct the perpendicular bisector of $DE$ through $C$ (Figure~\ref{fig.perp-3}). $CD = CE$ because they are radii of the same circle and the construction can be done with a collapsing compass.
-
-Why didn't Euclid use this construction? As we mentioned earlier, the proof that the line constructed is a perpendicular bisector is not at all easy, while the proof of Euclid's proof is very easy and depends only on a one simple proposition.
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}[scale=0.5]
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\coordinate (C) at (5,2);
-\draw[name path=ray] ($ (B) ! 1.5 ! (A) $) -- ($ (A) ! 2.5 ! (B) $);
-\fill (A) node[below] {$A$} circle[radius=3pt];
-\fill (B) node[below] {$B$} circle[radius=3pt];
-\fill (C) node[right] {$C$} circle[radius=3pt];
-\path[name path=arc] (C) ++(-160:3.5cm) arc (-160:-20:3.5cm);
 \path [name intersections={of=arc and ray,by={D,E}}];
 \fill (D) node[below left] {$D$} circle[radius=3pt];
 \fill (E) node[below right] {$E$} circle[radius=3pt];
 \draw[name path=larc] (D) ++(-60:3.5cm) arc (-60:60:3.5cm);
 \draw[name path=rarc] (E) ++(-120:3.5cm) arc (-120:-240:3.5cm);
 \path [name intersections={of=larc and rarc,by={b,t}}];
-\fill (b) circle[radius=3pt];
+\fill (b) node[right] {$F$} circle[radius=3pt];
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
-\caption{A perpendicular to the line containing $AB$ through $C$.}\label{fig.perp-3}
 \end{center}
-\end{figure}
+The line connecting the intersections of the circles $C,F$ is an altitude through $C$.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Restrictions and extensions of the straightedge and compass}
-
-We have seen that whatever can be constructed with a straightedge and a fixed compass can be constructed with a straightedge and a collapsing compass. Mathematicians have studied additional restrictions on constructions:
-
-\begin{itemize}
-\item Any construction that can be done using a straightedge and compass can be carried out using only a compass! If a straightedge is not used, we won't see any lines, but two points define a line, so it is not really necessary to actually see it. For example, given two points $A,B$, a point $C$ can be constructed so that its distance from $A$ is the same as its distance from $B$ (Figure~\ref{fig.mm}). We have constructed an equilateral triangle with three sides, although we don't see the sides.  This theorem was proved by Georg Mohr in 1672 and independently by Lorenzo Mascheroni in 1797.
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}[scale=0.5]
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\path (A) node[below left] {$A$} -- (B) node[below right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\draw[name path=larc] (A) ++(-10:4cm) arc (-10:80:4cm);
-\draw[name path=rarc] (B) ++(-170:4cm) arc (-170:-260:4cm);
-\path [name intersections={of=larc and rarc,by={t}}];
-\fill (t) node[above] {$C$} circle[radius=3pt];
-\end{tikzpicture}
-\caption{Constructing an equilateral triange using only a compass.}\label{fig.mm}
-\end{center}
-\end{figure}
-\vspace*{-4ex}
-\item  A straightedge alone cannot construct everything that can be constructed with a straightedge and compass, but all such constructions can be done if in addition to the straightedge there is a single circle centered at an arbitrary position in the plane with an arbitrary radius. This theorem was proved by Jacob Steiner in 1833.
-\end{itemize}
-The proofs of these theorems are somewhat long but not very difficult. They can be found in the book by Heinrich D\"{o}rrie \cite{dorrie1}, which is more accessible in a new edition \cite{dorrie2}.
-
-In the other direction, Greek mathematicians investigated constructions using tools that are more complex that an (unmarked) straightedge and a compass. In the 19th century it was proved that an angle cannot be trisected (divided into three equal parts) using a straightedge and compass. However, trisecting an angle is possible using a \emph{neusis}, a straightedge with two marks on it, or a \emph{quadratix} which is built from two straightedges connected so that they can slide and rotate. I have written a document presenting these constructions: ``How to trisect an angle (if you are willing to cheat),'' which can be found on my website at \url{http://www.weizmann.ac.il/sci-tea/benari/mathematics}.
-
+The proof the correctness of this construction is much more difficult than Euclid's proof of his construction.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Don't trust a diagram}
 
-In Section~\ref{s.erroneous}, we saw that a diagram can lead us astray. To emphasize this point, I now present a proof that \emph{all} triangles are isosceles!
-
-Given an arbitrary triangle $\triangle ABC$, let $P$ be the intersection of the angle bisector of $\angle A$ and the perpendicular bisector $DP$ of $BC$ (Figure~\ref{fig.isosceles}). $E,F$ are the intersections of perpendiculars from $P$ to the other two sides $AB,AC$.
-\begin{figure}[H]
+In Section~\ref{s.erroneous}, we saw that a diagram can lead us astray. Here is a proof that \emph{all} triangles are isosceles!
 \begin{center}
-\begin{tikzpicture}[scale=1.3]
+\begin{tikzpicture}[scale=1.1]
 \coordinate (P) at (0,0);
 \node[xshift=4mm,yshift=1mm] at (P) {$P$};
 \coordinate [label=left:$B$] (B)  at (-2,-2);
@@ -529,17 +442,15 @@ Given an arbitrary triangle $\triangle ABC$, let $P$ be the intersection of the 
   \fill (\n) circle[radius=1pt];
 }
 \end{tikzpicture}
-\caption{All triangles are isosceles}\label{fig.isosceles}
 \end{center}
-\end{figure}
-\vspace*{-4ex}
-The triangles $\triangle APF, \triangle APE$ are right triangles with equal angle $\alpha$ and a common side $AP$. Therefore, they are congruent by angle-angle-side and $AE=AF$.
+Given an arbitrary triangle $\triangle ABC$, let $P$ be the intersection of the angle bisector of $\angle BAC$ and the perpendicular bisector $BC$. Label by $D,E,F$ the intersections of the altitudes from $P$ to the sides $BC, AB,AC$. $\triangle APF\cong \triangle APE$ because they are right triangles with equal angles $\alpha$ and a common side $AP$.
 
-$PD$ is perpendicular bisector so $DC=BD$; since $PD$ is a common side, the right triangles $\triangle DPC, \triangle DPB$ are congruent by side-angle-side and we conclude that $PB=PC$.
-
-We have already shown that $\triangle APF, \triangle APE$ are congruent so $EP=FP$; therefore, the triangles $\triangle EPB, \triangle EPC$ are congruent since they are both right triangles with two sides equal. (The third side can be calculated by Pythagoras' Theorem, so they are congruent by side-side-side.) It follows that $EB=FC$.
-
-We conclude that $AB= AE+EB=AF+FC =AC$ and the triangle $\triangle ABC$ is isosceles.
-
-The proof is \emph{correct} but the diagram is not. I have prepared a GeoGebra file \texttt{isosceles.ggb} which shows a triangle for which the point $P$ is \emph{outside} the triangle.
+$\triangle DPC\cong \triangle DPB$ SAS because $PD$ is a common side, $\angle PDB=\angle PDC=90$ and $BD=DC=a$ because $PD$ is the perpendicular bisector of $BC$. $\triangle EPB\cong \triangle EPC$ because $EP=PF$ by the first congruence and $PB=PC$ by the second congruence. By combining the equations we get that $\triangle ABC$ is isoceles:
+\[
+AB= AE+EB=AF+FC =AC\,.
+\]
+The problem with the proof is that the diagram is incorrect because point $P$ is \emph{outside} the triangle, as can be seen from the following diagram constructed using GeoGebra:
+\begin{center}
+\includegraphics[width=.5\textwidth]{isoceles}
+\end{center}
 

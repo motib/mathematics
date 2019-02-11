@@ -8,7 +8,7 @@ The Greeks first studied geometrical constructions that use a straightedge and c
 
 It can be shown algebraically that given a line segment defined to have length $1$, the constructible numbers (lengths) are those obtainable from that line segment using the operators $+,-,\times,\div,\surd$. Since cube roots cannot be constructed, it follows that it is impossible to duplicate an arbitrary cube, because to duplicate a cube of volume $1$ requires solving the equation $x^3-2=0$, that is, constructing the length $\sqrt[3]{2}$. For the same reason, it is impossible to trisect an arbitrary angle, because to trisect $60^\circ$ requires solving the cubic equation $8x^3-6x-1=0$.
 
-The case of squaring the circle is more difficult and was not solved until 1882. The area of the unit circle is $\pi r^2=\pi$, so it is required to construct a square whose side is $\sqrt{\pi}$. However, $\pi$ is \emph{transcendental}, meaning that it is not the solution of \emph{any} algebraic equation. The proof is extremely complex involving concepts from analysis and complex numbers.
+The case of squaring the circle is more difficult and was not solved until 1882. The area of the unit circle is $\pi 1^2=\pi$, so it is required to construct a square whose side is $\sqrt{\pi}$. However, $\pi$ is \emph{transcendental}, meaning that it is not the solution of any algebraic equation. The proof is extremely complex involving concepts from analysis and complex numbers.
 
 There are simple approximations to $\pi$, in particular:
 \[
@@ -16,9 +16,9 @@ There are simple approximations to $\pi$, in particular:
 \]
 which differs from $\pi\approx 3.14159265$ by only $2.67\times 10^{-7}$. Consider the radius of the earth at the equator which is $6,378.1$ km. Computing the circumference using $355/113$ gives $40,074.78761$ km, while using $\pi$ the result is $40,074.78421$ km, a difference of less than $4$ meters!
 
-The rational number $355/113$ could be constructed by extending the line segment of length one $113$ times, extending it again to obtain a line segment of length $355$, and constructing a segment whose length is the quotient of  the two. This note presents a short construction of $355/113$ published by Ramanujan in the \emph{Journal of the Indian Mathematical Society}, 1913, p. 138. We present the construction in incremental stages, asking you to perform the computations in each stage as exercises. Answers are given at the end of the note, followed by Ramanujan's article.
+Any rational number can be constructed. Copy the line segment of length one according to the numbers in the numerator and denominator, and construct a segment whose length is the quotient of  the two (based on Thales theorem). This note presents a short construction of $355/113$ published by Ramanujan in the \emph{Journal of the Indian Mathematical Society}, 1913, p. 138. We present the construction in incremental stages, asking you to perform the computations in each stage as exercises. Answers are given at the end of the note.
 
-Ramanujan (1887--1920) grew up in what is now the state of Tamil Nadu in India, but quickly advanced beyond the mathematical level of the local schools and colleges. He sent his work to the English mathematician G.H. Hardy who invited him to England. Ramanujan arrived in 1914 but could not return to India until after World War I. He suffered greatly from the cold climate and unfamiliar food and died at age $32$ shortly after returning to India. Ramanujan's mathematics is still the subject of research one hundred years later. A biography of Ramanujan is: Robert Kanigel. \emph{The Man Who Knew Infinity: A Life of the Genius Ramanujan}, 1991.
+Ramanujan (1887--1920) grew up in southern India. He quickly advanced beyond the mathematical level of the local schools and colleges. He sent his work to the English mathematician G.H. Hardy who invited him to England. Ramanujan arrived in 1914 but could not return to India until after World War I. He suffered greatly from the cold climate and unfamiliar food. He was a vegetarian as opposed to the English who ate numerous animal-based foods: meat, milk, eggs. Ramanujan died at age $32$ shortly after returning to India. His mathematics is still the subject of research one hundred years later \cite{kanigel}.
 
 \newpage
 
@@ -37,6 +37,7 @@ Ramanujan (1887--1920) grew up in what is now the state of Tamil Nadu in India, 
 
 \begin{center}
 \begin{tikzpicture}[scale=.9]
+\clip (-5.5,-5.1) rectangle +(11,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -90,6 +91,7 @@ Construct chord $RS=QT$.
 
 \begin{center}
 \begin{tikzpicture}[scale=.9]
+\clip (-5.5,-5.1) rectangle +(11,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -147,6 +149,7 @@ Compute the length of $MN$.
 
 \begin{center}
 \begin{tikzpicture}[scale=.9]
+\clip (-5.5,-5.1) rectangle +(11,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -209,6 +212,7 @@ What do you know about $\triangle LPR$? Compute the length of $RL$.
 
 \begin{center}
 \begin{tikzpicture}[scale=.9]
+\clip (-5.5,-5.1) rectangle +(11,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -281,6 +285,7 @@ Here is the complete construction with all lengths labeled.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2,align=left]
+\clip (-6,-5.1) rectangle +(11.5,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -295,7 +300,7 @@ Here is the complete construction with all lengths labeled.
 \path[name intersections={of=tq and circle,by=q}];
 \path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
 \path[name intersections={of=rcirc and circle,by=s}];
-\draw (r) -- node[right] {$\sqrt{5}/3$} (s);
+\draw (r) -- node[left] {$\sqrt{5}/3$} (s);
 \fill (s) node[above right] {$S$} circle (1pt);
 \draw[name path=ps] (p) -- node[above right,yshift=16pt] {$\sqrt{31}/3$} (s);
 % Draw TN
@@ -313,7 +318,7 @@ Here is the complete construction with all lengths labeled.
 % Draw chord PK
 \draw (p) -- node[right,xshift=-2pt,yshift=10pt] {$\sqrt{31}/6$} +(-62.3:4.64) coordinate (k) node[below left] {$K$};
 % Draw tangent PL
-\draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- node[left] {$\sqrt{31}/9$} (-5,-\n1) coordinate (l) node[left] {$L$};
+\draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- node[left] {$\disfrac{\sqrt{31}}{9}$} (-5,-\n1) coordinate (l) node[left] {$L$};
 % Connect L and K to R
 \draw (r) -- (l) -- (k) -- cycle;
 % Find point C on RK
@@ -366,7 +371,7 @@ QT = \sqrt{1^2-\left(\frac{2}{3}\right)^2}=\frac{\sqrt{5}}{3}\,.
 PS = \sqrt{2^2-\left(\frac{\sqrt{5}}{3}\right)^2}=\sqrt{4-\frac{5}{9}}=\frac{\sqrt{31}}{3}\,.
 \]
 
-\item Set the compass legs on $QT$ and draw a circle with this radius and with center $R$.
+\item Set the compass legs on $QT$ and draw a circle with this radius and with center $R$. In Chapter~\ref{c.collapse} we showed that a line segment can be copied using a collapsing compass.
 
 \item By similar triangles:
 \[
@@ -386,7 +391,7 @@ MN=PN-PM = \sqrt{31}\left(\frac{5}{18}-\frac{1}{6}\right) = \frac{\sqrt{31}}{9}\
 RK=\sqrt{2^2-\left(\frac{\sqrt{31}}{6}\right)^2} = \frac{\sqrt{113}}{6}\,.
 \]
 
-\item $\triangle LPR$ is a right triangle because it $PL$ is a tangent. By Pythagoras's theorem:
+\item $\triangle PLR$ is a right triangle because it $PL$ is a tangent. By Pythagoras's theorem:
 \[
 RL=\sqrt{2^2+\left(\frac{\sqrt{31}}{9}\right)^2} = \frac{\sqrt{355}}{9}\,.
 \]

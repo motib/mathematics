@@ -1,57 +1,63 @@
 % !TeX root = construct.tex
-\chapter{Mascheroni's Compass Problem}\label{c.compass-only}
+\chapter{A Compass is Sufficient}\label{c.compass-only}
 
+In 1797 the Italian mathematician Lorenzo Mascheroni proved that any construction carried out with a compass and straightedge can be carried out with the compass alone! In the twentieth century it was discovered that this theorem had been proved by the Danish mathematician Georg Mohr. The theorem is now called the Mohr-Mascheroni Theorem.
 
-\begin{quote}
-This document is Problem $33$ from the book by Heinrich D\"{o}rrie: \textit{100 Problems of Elementary Mathematics: Their History and Solution} (Dover, 1965), as reworked by Michael Woltermann.\footnote{\url{http://www2.washjeff.edu/users/mwoltermann/Dorrie/DorrieContents.htm}. I would like to thank him for giving me permission to use his work.} I have added explanations so that students and teachers can better understand the construction. The document has been written and formatted in \LaTeX{}, and I have redrawn the diagrams using Ti\textit{k}Z, adding auxiliary lines and  drawing diagrams incrementally for clarity.
+In this chapter I present a proof of the theorem based on a proof that appeared as problem 33 in \cite{dorrie1} and reworked by  Michael Woltermann \cite{dorrie2}.\footnote{I would like to thank him for giving me permission to use his work.} Additional proofs can be found in \cite{mm}, \cite{stopel}.
 
-Moti Ben-Ari\footnote{\url{http://www.weizmann.ac.il/sci-tea/benari/}.}\\
-Department of Science Teaching\\
-Weizmann Institute of Science
-\end{quote}
+What does it mean to perform a construction with only a compass? The right diagram below shows the construction of an equilateral triangle using a straightedge and compass. How can we construct a triangle without the line segments $AB, AC,BC$? In fact, there is no need to \emph{see} the lines. A line is defined by two points, so it is sufficient to construct the points in order to obtain a construction equivalent to the one with a straightedge (left diagram):
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\path (A) node[below left] {$A$} -- (B) node[below right] {$B$};
+\fill (A) circle[radius=3pt];
+\fill (B) circle[radius=3pt];
+\draw[name path=larc] (A) ++(-10:4cm) arc (-10:80:4cm);
+\draw[name path=rarc] (B) ++(-170:4cm) arc (-170:-260:4cm);
+\path [name intersections={of=larc and rarc,by={t}}];
+\fill (t) node[above right,xshift=-2pt,yshift=3pt] {$C$} circle[radius=3pt];
+\begin{scope}[xshift=10cm]
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\draw (A) node[below left] {$A$} -- (B) node[below right] {$B$};
+\fill (A) circle[radius=3pt];
+\fill (B) circle[radius=3pt];
+\draw[name path=larc] (A) ++(-10:4cm) arc (-10:80:4cm);
+\draw[name path=rarc] (B) ++(-170:4cm) arc (-170:-260:4cm);
+\path [name intersections={of=larc and rarc,by={t}}];
+\fill (t) node[above right,xshift=-2pt,yshift=3pt] {$C$} circle[radius=3pt];
+\draw (A) -- (t);
+\draw (B) -- (t);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+In the diagrams we will draw lines, but they are used only to understand the construction and the proof of its correctness. It is important that you convince yourself that the construction itself uses only a compass.
 
-\bigskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Prove that any construction that can be carried out with a compass and straight-edge can be carried out with the compass alone. The Italian L. Mascheroni (1750-1800) posed this problem to himself and solved it in a masterly fashion in his book \textit{La geometria del compasso}, published in Pavia in 1797.
-
-\begin{quote}
-The theorem is currently known as the Mohr-Mascheroni Theorem since it had been proved in 1672 by the Danish mathematician Georg Mohr, but his work was not widely known until the twentieth century.\footnote{A different proof can be found in: Norbert Hungerb\"{u}hler. A short elementary proof of the Mohr-Mascheroni theorem. \textit{American Mathematical Monthly} 101(8), 1994, 784--787.}
-\end{quote}
-
-When we examine the separate steps by which circle and straight-edge constructions are carried out, we see that every step consists of one of the following three basic constructions:
-
-I. Finding the point of intersection of two straight lines;
-
-II. finding the point of intersection of a straight line and a circle;
-
-III. finding the point(s) of intersection of two circles.
-
-Thus we need only show that the two basic constructions I. and II. can be done with a compass alone. (Mascheroni regarded a straight line as given if two of its points are known.)
-
-First we will solve four preliminary problems. (Dörrie talks about two, but the others are embedded in these.) In the following:
+Every step of a construction with straightedge and compass consists of one of the following three operations:
 \begin{itemize}
-\item $C(O,A)$ stands for the circle with center $O$ through point $A$,
-\item $C(O,AB)$ stands for the circle with center $O$ and radius $AB$.
+\item Finding the point of intersection of two straight lines.
+\item Finding the point of intersection of a straight line and a circle.
+\item Finding the point(s) of intersection of two circles.
+\end{itemize}
+It is clear that the third operation can be done with only a compass. We need to show that the first two operations can be done with a compass alone.
+
+Notation:
+\begin{itemize}
+\item $C(O,A)$: the circle with center $O$ through point $A$.
+\item $C(O,r)$: the circle with center $O$ and radius $r$.
+\item $C(O,AB)$: the circle with center $O$ and radius the length of line segment $AB$.
 \end{itemize}
 
+First we will solve four preliminary problems (Sections~\ref{s.reflection}--\ref{s.three}) and then we show the construction for finding the intersection of two lines (Section~\ref{s.two-lines}) and that of a line and a circle (Section~\ref{s.line-circle}).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\pagebreak[3]
+\section{Reflection of a point}\label{s.reflection}
 
-\textbf{Prelim 1.} Reflect a point $C$ about the line through $A$ and $B$.
+\textbf{Given a line $AB$ and a point $C$ not on $AB$, it is possible to build a point $C'$ which is a reflection of $C$ about $AB$.} $C'$ is a \emph{reflection} about a line segment $AB$ if $AB$ (or the line containing $AB$ is the perpendicular bisector of the line $CC'$.
 
-\begin{quote}
-Given a point $C$ and a line $AB$, a reflection of $C$ about $AB$ is a point $C'$ such that $AB$ is the perpendicular bisector of the line $CC'$.
-\end{quote}
-
-\textbf{Solution.} The reflection $C'=c(A,C) \cap c(B,C)$ (not $C$ in general):
-
-\begin{quote}
-The phrase ``not $C$ in general'' rules out the possibility that $C$ is on the line containing $AB$, in which case there is nothing to do.
-\end{quote}
-
+We build a circle centered on $A$ passing through $C$ and circle centered on $B$ passing through $C$. The intersection of the two circles is the point $C'$ which is the reflection of $C$.
 \begin{center}
 \begin{tikzpicture}[scale=.65]
 \coordinate (A) at (0,0);
@@ -71,26 +77,16 @@ The phrase ``not $C$ in general'' rules out the possibility that $C$ is on the l
 \draw[thick,dashed] (A) -- (Cp);
 \draw[thick,dashed] (B) -- (Cp);
 \end{tikzpicture}
-
-Line $AB$ is the perpendicular bisector of chord $CC'$ of both circles
 \end{center}
-
-Note: Dashed lines in figures are drawn to explain the arguments, but are not used in constructions.  
-\begin{quote}
-The lines drawn in the diagrams serve \emph{only} to illustrate the proofs. You must convince yourself that a compass alone is used in all the constructions.
-
-Proof that $C'$ is the reflection of $C$: $\triangle ABC$ and $\triangle ABC'$ are congruent by side-side-side since $AC,AC'$ are radii of the same circle as are $BC,BC'$, and $AB$ is a common side. Therefore, $\angle CAB = \angle C'AB$ so $AB$ is the angle bisector of $\angle CAC'$. Since $\triangle CAC'$ is an isosceles triangle, the angle bisector $AB$ is also the perpendicular bisector of the base of the triangle $CC'$, and by definition $C'$ is the reflection of $C$ around $AB$.
-\end{quote}
+\textbf{Proof:} $\triangle ABC \cong \triangle ABC'$ by SSS since $AC,AC'$ are radii of the same circle as are $BC,BC'$, and $AB$ is a common side. Therefore, $\angle CAB = \angle C'AB$ so $AB$ is the angle bisector of $\angle CAC'$. But $\triangle CAC'$ is an isosceles triangle and the angle bisector $AB$ is also the perpendicular bisector of the base of the triangle $CC'$. By definition $C'$ is the reflection of $C$ around $AB$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Prelim 2.} Construct $c(A,BC)$, given points $A,B,C$.
+\section{Construct a circle with a given radius}\label{s.circle}
 
-\begin{quote}
-You might ask yourself why this is a problem. Simply place the two legs of the compass on $B$ and $C$, and then move the compass so that one leg is on $A$ and draw the circle which will have radius $BC$. The reason is that the compass used by Euclid is a ``collapsing'' compass whose legs cannot maintain a distance when the compass is raised off the paper. Euclid proved what is now called the ``Compass Equivalence Theorem'': any construction with a fixed compass can be done with a collapsing compass. If effect, Prelim. 2 is a proof of this theorem that uses only a compass.
-\end{quote}
+\textbf{Given points $A,B,C$, construct$c(A,BC)$.}
 
-\textbf{Solution.} Let $X$ and $Y$ be the points of intersection of $c(A,B)$ and $c(B,A)$:
+Construct $c(A,B)$ and $c(B,A)$ and let $X$ and $Y$ be their points of intersection.
 
 \begin{center}
 \begin{tikzpicture}[scale=.55]
@@ -111,16 +107,9 @@ You might ask yourself why this is a problem. Simply place the two legs of the c
 \end{tikzpicture}
 \vspace*{-6pt}
 \end{center}
-
-Let $C'$ be the reflection of $C$ about line $XY$:
-
-\begin{quote}
-\vspace*{-6pt}
-By Prelim. 1, this construction can be done using only a compass.
-\end{quote}
+Construct $C'$, the reflection of $C$ about line $XY$ as described in Section~\ref{s.reflection}.
 
 \begin{center}
-\vspace*{-6pt}
 \begin{tikzpicture}[scale=.45]
 \coordinate (A) at (0,1.5);
 \coordinate (B) at (0,-1.5);
@@ -144,7 +133,7 @@ By Prelim. 1, this construction can be done using only a compass.
 \vspace*{-6pt}
 \end{center}
 
-$c(A,C')$ is the desired circle:
+$c(A,C')$ is the desired circle.
 
 \begin{center}
 \begin{tikzpicture}[scale=.5]
@@ -180,20 +169,14 @@ $c(A,C')$ is the desired circle:
 \vspace*{-4pt}
 \end{center}
 
-Since $A$ is the reflection of $B$ about $XY$, and reflection preserves distance, so $AC'=BC$.
-
-\begin{quote}
-$A$ is the reflection of $B$ around $XY$, and $C'$ is the reflection of $C$ around the $XY$. By definition $XY$ is the perpendicular bisector of $CC'$ and $AB$, so $C'E=EC$, $AD=DB$ and $\angle DEC=\angle DEC'(=90^\circ)$. $\triangle DEC$ is congruent to $\triangle DEC'$ by side-angle-side, so $DC=DC'$ and $\angle ADC'=\angle BDC$ (they are complementary to $\angle C'DE$, $\angle CDE$). Therefore, $\triangle ADC'$ is congruent to $\triangle BDC$, so $AC'=BC$.
-\end{quote}
+\textbf{Proof:} $A$ is the reflection of $B$ around $XY$ (since $\triangle YAX\cong \triangle YBX$) and $C'$ is the reflection of $C$ around the $XY$. By definition, $XY$ is the perpendicular bisector of $CC'$ and $AB$, so $C'E=EC$, $AD=DB$ and $\angle DEC=\angle DEC'(=90^\circ)$. $\triangle DEC\cong\triangle DEC'$ by SAS, so $DC=DC'$ and $\angle ADC'=\angle BDC$ (they are complementary to $\angle EDC'$, $\angle EDC$). Therefore, $\triangle ADC'\cong\triangle BDC$ by ASA, so $AC'=BC$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Prelim 3.} Construct the sum or difference of two given segments $a$ and $b$, i.e., lengthen or shorten a given segment $PQ = a$ by a segment $QX = b$. (See Prelim 2 if necessary to construct a segment of length $b$ at $Q$.)
+\section{Addition and subtraction of line segments}\label{s.add-subtract}
 
-\begin{quote}
-This would be trivial if we had a straight-edge. Simply extend the line segment $PQ$ of length $a$ with the straight-edge, copy line segment $RS$ of length $b$ so that $Q$ is one end point and construct a circle of radius $b$. The intersections of the circle with the ray give the required line segments $PU$ of length $a-b$ and $PT$ of length $a+b$:
+\textbf{Given line segment $PQ$ of length $a$ and line segment $RS$ of length $b$, it is possible to construct line segments $QT,QU$ such that $PUQT$ is a line segment, where the length of $PU$ is $a-b$ and the length of $PT$ is $a+b$.}
 \begin{center}
-\vspace*{-2ex}
 \begin{tikzpicture}[scale=.8]
 \draw (0,0) -- (5,0);
 \fill (0,0) node[above] {$P$} circle[radius=2pt];
@@ -211,12 +194,15 @@ This would be trivial if we had a straight-edge. Simply extend the line segment 
 \draw[<->] (0,-1.5) -- node[fill=white] {$a+b$} (7,-1.5);
 \end{tikzpicture}
 \end{center}
-\vspace*{-4ex}
-\end{quote}
 
-\textbf{Solution.}
+\newpage
 
-1. Let $H$ be any point on $c(Q,b)$, and $H'$ its reflection about line $PQ$. Let $h$ be the (length of) segment $HH'$:
+\subsection*{Constructing an isosceles trapezoid}
+
+Let $H$ be any point on $c(Q,b)$. Construct $H'$, its reflection about $PQ$. $h$ is the length of $HH'$:
+
+\vspace{-1ex}
+
 \begin{center}
 \begin{tikzpicture}[scale=.6]
 \coordinate (Q) at (0,0);
@@ -238,7 +224,9 @@ This would be trivial if we had a straight-edge. Simply extend the line segment 
 \end{tikzpicture}
 \end{center}
 
-2. Let $K = c(Q,h) \cap c(H,b)$ and $K'$ be the reflection of $K$ about line $PQ$:
+\vspace{-2ex}
+
+Construct the circles $C(H,b)$, $c(Q,h)$. $K$ is the intersection of the circles and $K'$ be the reflection of $K$ about line $PQ$:
 
 \begin{center}
 \begin{tikzpicture}[scale=.55]
@@ -285,11 +273,8 @@ in
 \vspace*{-8pt}
 \end{center}
 
-Then $KHH'K'$ is an isosceles trapezoid with legs $KH = K'H' = b$ and base $KK' = 2h$. Let $d = KH' = K'H$:
+$PQ$ is the perpendicular bisector of both $HH'$ and $KK'$, so these line segments are parallel. $KH=K'H'=b$ since both are radii of the circle centered on $H$. $K',H'$ are reflections of $K,H$. Therefore, $KHH'K'$ is an isosceles trapezoid whose bases are $HH'=h$, $KK'=2h$. Label $d$, the length of the diagonals $K'H=KH'$:
 
-\begin{quote}
-We also have $h=HH'$ since $H'$ is a reflection of $H$. Since $K'$ is a reflection of $K$ and reflections preserve distance, $KH=K'H'$, defined to be $d$.
-\end{quote}
 
 \begin{center}
 \vspace*{-8pt}
@@ -335,16 +320,17 @@ in
 \vspace*{-8pt}
 \end{center}
 
-Since opposite angles of $KHH'K'$ are supplemental, $KHH'K'$ is a cyclic quadrilateral, i.e., it can be inscribed in a circle. 
+\subsection*{Circumscribing the trapezoid by a circle}
 
-\begin{quote}
-Geometry textbooks give the simple proof that the opposite angles of a cyclic quadrilateral are supplementary (add up to $180^\circ$), but it is hard to find a proof of the converse, so I present both proofs here.
+We want to proof that it is possible to circumscribe $KHH'K'$ by a circle. We prove that is the opposite angles of a quadrilateral are supplementary, then the trapezoid can be circumscribed by a circle, and we proof that in an isosceles trapezoid the opposite angles are supplementary.
 
-\textbf{Opposite angles of a cyclic quadrilateral are supplementary:} An inscribed angle equals half the subtended arc, so $\angle DAB$ is half of the arc $DCB$ and $\angle DCB$ is half of the arc $DAB$. But the two arcs form the entire circumference of the circle so their sum is $360^\circ$ and $\angle DAB + \angle DCB = \frac{1}{2} \cdot 360^\circ =  180^\circ$, and similarly $\angle ADC + \angle AABC = 180^\circ$
+Geometry textbooks give the simple proof that the opposite angles of a quadrilateral circumscribed by a circle are supplementary, but it is hard to find a proof of the converse, so I present both proofs here.
 
+\textbf{If a quadrilateral can be circumscribed by a circle then the opposite angles are supplementary:} An inscribed angle equals half the subtended arc, so $\angle DAB$ is half of the arc $DCB$ and $\angle DCB$ is half of the arc $DAB$. The two arcs subtend the entire circumference of the circle, so their sum is $360^\circ$. Therefore, $\angle DAB + \angle DCB = \disfrac{1}{2} \cdot 360^\circ =  180^\circ$, and similarly $\angle ADC + \angle AABC = 180^\circ$
+
+\vspace*{-2ex}
 
 \begin{center}
-\vspace*{-6pt}
 \begin{tikzpicture}[scale=.55]
 \coordinate (origin) at (0,0);
 \coordinate (A) at (1,3);
@@ -361,10 +347,13 @@ Geometry textbooks give the simple proof that the opposite angles of a cyclic qu
 \fill (D) node[above left] {$D$} circle[radius=3pt];
 \draw (A) -- (B) -- (C) -- (D) -- cycle;
 \end{tikzpicture}
-\vspace*{-10pt}
 \end{center}
 
-\textbf{Quadrilateral whose opposite angles are supplementary is cyclic:} Inscribe the triangle $\triangle DAB$ in a circle (the is possible for any triangle) and suppose that $C'$ is a point such that $\angle DAB + \angle DC'B = 180^\circ$ but $C'$ is \emph{not} on the circumference of the circle. Without loss of generality, let $C'$ be within the circle:
+\vspace*{-2ex}
+
+\textbf{Quadrilateral whose opposite angles are supplementary can be circumscribed by a circle:} Any triangle can be circumscribed by a circle. Circumscribed $\triangle DAB$ by a circle and suppose that $C'$ is a point such that $\angle DAB + \angle DC'B = 180^\circ$, but $C'$ is \emph{not} on the circumference of the circle. Without loss of generality, let $C'$ be within the circle:
+
+\vspace*{-1ex}
 
 \begin{center}
 \begin{tikzpicture}[scale=.55]
@@ -388,7 +377,9 @@ Geometry textbooks give the simple proof that the opposite angles of a cyclic qu
 \end{tikzpicture}
 \end{center}
 
-Construct a ray that extends $DC'$ and let $C$ be its intersection with the circle. By the forward direction of the theorem:
+\vspace*{-1ex}
+
+Construct a ray that extends $DC'$ and let $C$ be its intersection with the circle. $ABCD$ is circumscribed by a circle so:
 \begin{eqnarray*}
 \angle DAB + \angle DCB &=& 180^\circ\\
 \angle DAB + \angle DCB &=& \angle DAB + \angle DC'B\\
@@ -396,10 +387,9 @@ Construct a ray that extends $DC'$ and let $C$ be its intersection with the circ
 \end{eqnarray*}
 which is impossible if $C$ is on the circle and $C'$ is inside the circle.
 
-Finally, we show that the opposite angles of an isosceles trapezoid are supplementary and therefore it is cyclic:
+Finally, we show that the opposite angles of an isosceles trapezoid are supplementary.
 
 \begin{center}
-\vspace*{-12pt}
 \begin{tikzpicture}[scale=.55]
 \coordinate (origin) at (0,0);
 \coordinate (A) at (2.5,1.8);
@@ -422,21 +412,21 @@ Finally, we show that the opposite angles of an isosceles trapezoid are suppleme
 \fill (Bp) node[below left] {$B'$} circle[radius=3pt];
 \draw[thick,dashed] (A) -- node[left,xshift=-2pt] {$x$} (Bp);
 \end{tikzpicture}
-\vspace*{-24pt}
 \end{center}
 
-Construct the line $AB'$ parallel to $CD$. $AB'CD$ is a parallelogram and $\triangle ABB'$ is an isosceles triangle, so $\angle C= \angle AB'B = \angle B$. Similarly, $\angle A = \angle D$. Since the sum of the internal angles of any quadrilateral is equal to $360^\circ$:
+\vspace{-4ex}
+
+Construct the line $AB'$ parallel to $CD$. $AB'CD$ is a parallelogram and $\triangle ABB'$ is an isosceles triangle, so $\angle C= \angle ABB' = \angle AB'B = \angle B$. Similarly, $\angle A = \angle D$. Since the sum of the internal angles of any quadrilateral is equal to $360^\circ$:
 \begin{eqnarray*}
 \angle A + \angle B + \angle C + \angle D &=& 360^\circ\\
 2\angle A + 2 \angle C &=& 360^\circ\\
-\angle A +  \angle C &=& 180^\circ\,,
+\angle A +  \angle C &=& 180^\circ\,.
 \end{eqnarray*}
 and similarly $\angle B +  \angle D = 180^\circ$.
-\end{quote}
 
-Then by Ptolemy’s theorem $d^2 = b^2 + 2h^2$.
-\begin{quote}
-Ptolemy's theorem states that for a quadrilateral inscribed in a circle, the following equality relates the lengths of the sides $a,b,c,d$ and the lengths of the diagonals $e,f$:
+\subsection*{Ptolemy's theorem}
+
+We will use Ptolemy's theorem, an equation which relates the lengths of the diagonals and the lengths of the sides of a quadrilateral that is circumscribed by a circle:
 \[
 ef = ac + bd\,.
 \]
@@ -467,7 +457,7 @@ e^2 &=& c^2 + d^2 - 2cd \cos \angle D\\
 f^2 &=& a^2 + d^2 - 2ad \cos \angle A\\
 f^2 &=& b^2 + c^2 - 2bc \cos \angle C\,.
 \end{eqnarray*}
-$\angle C = 180^\circ - \angle A$ and $\angle D = 180^\circ - \angle B$ because they are opposite angles of an inscribed quadrilateral, and
+$\angle C = 180^\circ - \angle A$ and $\angle D = 180^\circ - \angle B$ because they are opposite angles of a quadrilateral circumscribed by a circle, so:
 \begin{eqnarray*}
 \cos \angle D &=& - \cos \angle B\\
 \cos \angle C &=& -\cos \angle A\,.
@@ -482,12 +472,11 @@ Multiply the two equations and simplify to get Ptolemy's theorem:
 e^2\cdot f^2 &=& (ac+bd)^2\\
 ef &=& (ac+bd)\,. 
 \end{eqnarray*}
+\subsection*{Using Ptolemy's theorem}
+
 For the construction on page~\pageref{ptolemy}, the diagonals are of length $d$, the legs are of length $b$, and the bases are of lengths $h$ and $2h$, so Ptolemy's theorem gives $d\cdot d = b\cdot b + h\cdot 2h$ or $d^2=b^2+2h^2$.
-\end{quote}
 
-Let $X$ be the point on line $PQ$ that extends $PQ$ by $b$. (We will eventually construct $X$; now we're just imagining it.)
-
-Let $x = K'X$. Since $\triangle QK'X$ is a right triangle, $x^2 = b^2 + h^2$:
+Let $X$ be the point on line $PQ$ that extends $PQ$ by $b$. (We will eventually construct $X$; now we're just imagining it.) Define  $x = K'X$. Since $\triangle QK'X$ is a right triangle, $x^2 = b^2 + h^2$:
 \begin{center}
 \begin{tikzpicture}[scale=.6]
 \coordinate (Q) at (0,0);
@@ -533,15 +522,18 @@ in
 \end{tikzpicture}
 \vspace*{-8pt}
 \end{center}
-It follows then that $d^2 = x^2 + h^2$ so that $x$ is a leg of a right triangle with hypotenuse $d$, the other leg being $h$.
+By Ptolemy's theorem:
+\erh{0pt}
+\begin{equationarray*}{rcl}
+d^2&=&b^2 + 2h^2\\
+&=&(x^2-h^2)+2h^2\\
+&=&x^2+h^2\,.
+\end{equationarray*}
+Don't look for a right triangle in the diagram. We are claiming that \emph{it is possible to construct} the triangle with sides $x,h,d$. 
 
-\begin{quote}
-By Ptolemy's theorem, $d^2 = b^2 + 2h^2$, so $d^2=(x^2-h^2)+2h^2=x^2+h^2$. All the above sentence is saying is that it is \emph{possible} to build a right triangle with sides $x,h,d$; such a triangle does not appear in the above diagram.
-\end{quote}
-Now let $S = c(K,d) \cap c(K',d)$:
-
+Let us construct the point $S$ as the intersection of the circles 
+$c(K,d),c(K',d)$:
 \begin{center}
-\vspace*{-18pt}
 \begin{tikzpicture}[scale=.55]
 \coordinate (Q) at (0,0);
 \coordinate (P) at (-6.8,0);
@@ -594,13 +586,15 @@ in
 %\fill (B) circle[radius=3pt];
 %\draw[thick,dashed] (Q) -- node[left,xshift=-1pt,yshift=2pt] {$b$} (B);
 \end{tikzpicture}
-\vspace*{-10pt}
 \end{center}
-$QS^2 + h^2 = d^2$, so $QS = x$:
+We obtain a right triangle $\triangle QSK'$. By Pythagoras' theorem 
+$QS^2 + h^2 = d^2$, so:
+\[
+QS^2 = d^2-h^2=x^2\,,
+\]
+and $QS=x$.
 
-
-3. Then $X = c(K,x) \cap c(K',x)$:
-
+It is possible to construct the point $X$ as the intersection of the circles $c(K,x),$:
 \begin{center}
 \vspace*{-14pt}
 \begin{tikzpicture}[scale=.55]
@@ -672,27 +666,18 @@ in
 \end{tikzpicture}
 \vspace*{-10pt}
 \end{center}
-There are two $X$s, one for $a + b$ and one for $a - b$. 
-
-\begin{quote}
 Recall that we want to extend $PQ$ of length $a$ by a length $b$, or decrease its length by $b$. Since the length of $QX$ is $\sqrt{x^2-h^2}=b$, the length of $PX$ is $a+b$ and the length of $PX'$ is $a-b$.
-\end{quote}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Prelim 4.} Given segments of length $n,m,s$, construct a segment of length $x = \frac{n}{m}s$.
+\section{Construction of a line segment whose length is defined relative to three other line segments}\label{s.three}
 
-\textbf{Solution.} This solution by Mascheroni is remarkable for its brevity and simplicity. Draw two concentric circles $c_1 = c(Z,m)$ and $c_2 = c(Z,n)$ and chord $AB = s$ on $c_1$. (It is assumed that $s$ falls within $c_1$. If not, use Prelim 3 to replace $n$ and $m$ by sufficiently large integer multiples $kn = N$ and $km = M$.)
+\textbf{Given line segments of length $n,m,s$ it is possible to construct a line segment of length $x = \disfrac{n}{m}s$.}
 
-\begin{quote}
-There is an implicit assumption that $m>n$. If not, just exchange the notation.
+Construct two concentric circles $c_1 = c(Z,m)$ and $c_2 = c(Z,n)$, and chord $AB = s$ on $c_1$. (A chord can be constructed using only a compass as shown in Section~\ref{s.circle}.)
 
-The expression "it is assumed that $s$ falls within $c_1$" refers to the possibility that $s$ is within $c_1$ but also cuts through $c_2$. By using multiples this can be avoided.
-\end{quote}
-
+We assume that $m>n$. If not, exchange the notation.
 \begin{center}
-\vspace*{-6pt}
 \begin{tikzpicture}[scale=.4]
 \coordinate (Z) at (0,0);
 \coordinate (A) at (-130:5cm);
@@ -727,11 +712,13 @@ The expression "it is assumed that $s$ falls within $c_1$" refers to the possibi
 \draw[thick,dashed] (s) -- node[above] {$s$} (sp);
 \end{scope}
 \end{tikzpicture}
-\vspace*{-8pt}
 \end{center}
 
-Next lay off any length $w$ from $A$ and $B$ on $c_2$ with $H$ and $K$ on $c_2$ so that $AH = BK = w$:
+\vspace{-2ex}
 
+We also assume that $s$ does not intersect $c_2$. If not, use the construction in Section~\ref{s.add-subtract} to multiply $m,n$ by a number $k$ so that the chord does not intersect the circle. Note that this does not change the value that we are trying to construct since $x=\disfrac{kn}{km}s=\disfrac{n}{m}s$.
+
+Choose any point $H$ on circle $c_2$. Label the length of $AH$ by $w$. Construct point $K$ on $c_2$ such that the length of $BK$ is $w$.
 \begin{center}
 \begin{tikzpicture}[scale=.5]
 \coordinate (Z) at (0,0);
@@ -772,15 +759,11 @@ Next lay off any length $w$ from $A$ and $B$ on $c_2$ with $H$ and $K$ on $c_2$ 
 \draw[thick,dashed] (w) -- node[above] {$w$} (wp);
 \end{scope}
 \end{tikzpicture}
-\vspace*{-10pt}
 \end{center}
-$\triangle AHZ$ and $\triangle BZK$ are congruent by SSS, 
-\begin{quote}
-The sides are $ZA=ZB=m$ (radius of circle $c_1$), $ZH=ZK=n$ (radius of circle $c_2$), $AH=BK=w$ (by construction):
-\end{quote}
+
+$\triangle AHZ\cong\triangle BZK$ by SSS: $ZA=ZB=m$, the radius of $c_1$, $ZH=ZK=n$, the radius of $c_2$, and $AH=BK=w$ by construction.
 
 \begin{center}
-\vspace*{-10pt}
 \begin{tikzpicture}[scale=.5]
 \coordinate (Z) at (0,0);
 \coordinate (A) at (-130:5cm);
@@ -803,12 +786,8 @@ The sides are $ZA=ZB=m$ (radius of circle $c_1$), $ZH=ZK=n$ (radius of circle $c
 \draw[thick] (Z) -- node[above] {$n$} (K);
 \draw[thick,dashed] (H) -- (K);
 \end{tikzpicture}
-\vspace*{-12pt}
 \end{center}
-so $\angle AZH = \angle BZK$ and $\angle AZB = \angle HZK$.
-
-\begin{quote}
-This follows by subtraction of angles, but it is somewhat hard to see in the above diagram. The following diagram clarifies the relation among the angles. Let $\alpha = \angle AZH = \angle BZK$ and $\beta = \angle BZH$; then $\angle AZB = \angle HZK = \alpha - \beta$.
+From $\triangle AHZ\cong\triangle BZK$, we get $\angle AZB = \angle HZK$. It is difficult to see this equality from the diagram, but the following diagram clarifies the relation among the angles. Define $\alpha = \angle AZH = \angle BZK$ and $\beta = \angle BZH$. It is easy to see that $\angle AZB = \angle HZK = \alpha - \beta$.
 \begin{center}
 \vspace*{-10pt}
 \begin{tikzpicture}[scale=.7]
@@ -837,8 +816,10 @@ This follows by subtraction of angles, but it is somewhat hard to see in the abo
 \end{tikzpicture}
 \vspace*{-10pt}
 \end{center}
-\end{quote}
-and $\triangle ZAB$ and $\triangle ZHK$ are similar.
+
+$\triangle ZAB\sim\triangle ZHK$ by SAS, since both are isosceles triangles and we have shown that they have the same vertex angle.
+
+\vspace{-2ex}
 
 \begin{center}
 \begin{tikzpicture}[scale=.45]
@@ -865,22 +846,31 @@ and $\triangle ZAB$ and $\triangle ZHK$ are similar.
 \draw[thick,dashed] (A) -- (H);
 \draw[thick,dashed] (B) -- (K);
 \end{tikzpicture}
-\vspace*{-10pt}
 \end{center}
-Then $\frac{m}{s} = \frac{n}{x}$ and $x=\frac{n}{m}s$. 
+
+\vspace{-2ex}
+
+Label $HK$ by $x$. Then:
+
+\vspace{-2ex}
+
+\erh{10pt}
+\begin{equationarray*}{rcl}
+\frac{m}{s} &=& \frac{n}{x}\\
+x&=&\frac{n}{m}s\,.
+\end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Now for the solutions to I. and II. above.
+\vspace{-2ex}
 
-\textbf{I’.} Find the point of intersection $S$ of two straight lines $AB$ and $CD$, each of which is given by two points, with compass alone.
 
-\textbf{Solution.} Let $C'$ and $D'$ be reflections of $C$ and $D$ about line $AB$ respectively. The sought-for point of intersection $S$ then lies on line $C'D'$.
+\section{Finding the intersection of two lines}\label{s.two-lines}
 
-\begin{quote}
-\vspace*{-8pt}
-$CD$ and $C'D'$ intersect $AB$ at the same point $S$ because the reflection around $AB$ preserves distance: $C'S=CS$ and $D'S=DS$.
-\end{quote}
+\textbf{Given two lines containing the line segments $AB,CD$, it is possible to construct their intersection using only a compass.}
+
+$S$, the point of intersection of the two lines, lies on $AB$, because $\triangle CZS\cong \triangle C'ZS$ by SAS: $CZ=C'Z$, $\angle CZS=\angle C'ZS=90^\circ$ and $ZS$ is a common side. Therefore, $C'S=CS$ and similarly $D'S=DS$.
+
 
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -909,11 +899,9 @@ $CD$ and $C'D'$ intersect $AB$ at the same point $S$ because the reflection arou
 \end{tikzpicture}
 \end{center}
 
-$\triangle CSC'$ and $\triangle DSD'$ are similar so $\frac{CS}{DS} = \frac{CC'}{DD'}$. With $x = CS, c = CC', d = DD'$ and $e = CD$, we get $\frac{x}{e-x} = \frac{c}{d}$ or $x=\frac{c}{c+d}e$. (If $D$ is on the same side of $AB$ as $C$, then $x = \frac{c}{c-d}e$.)
+Label $x=CS, c=CC', d=DD',e=CD$. $\triangle CSC'\sim\triangle DSD'$ are similar so $\disfrac{x}{e-x} = \frac{c}{d}$. Solving the equation for $x$ gives $x=\disfrac{c}{c+d}e$.
 
-\begin{quote}
-\vspace*{-6pt}
-Here is the diagram for $D$ on the same side of $AB$ as $C$:
+If $C,D$ are on the same side of $AB$:
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (A) at (-4,0);
@@ -942,12 +930,13 @@ Here is the diagram for $D$ on the same side of $AB$ as $C$:
 \node at (1,-2.5) {\mbox{\boldmath $CS=C'S=x$}};
 \end{tikzpicture}
 \end{center}
- The similarity of the triangles $\triangle CSC'$ and $\triangle DSD'$ gives $\frac{x}{x-e}=\frac{c}{d}$ and we can solve for $x=\frac{c}{c-d}e$.
-\end{quote}
-$c + d = CH$ where $H$ is the intersection point of $c(C',d)$ and $c(D,e)$  on line $CC'$.
+$\triangle CSC'\sim\triangle DSD'$ gives $\disfrac{x}{x-e}=\disfrac{c}{d}$. Solving for $x$ gives $x=\disfrac{c}{c-d}e$.
+
+Construct the circles $c(C',d), c(D,e)$ and label their intersection by $H$. The sum of the line segments $CC',C'H$ is $c + d$. We have to show that $H$ is on the extension of $CC'$ so that $CH$ is a line segment of length $c+d$. ($CH = c - d$ in case $D$ is on the same side of $AB$ as $C$.) 
+
+\vspace{-3ex}
 
 \begin{center}
-\vspace*{-6pt}
 \begin{tikzpicture}[scale=.8]
 \coordinate (A) at (-4,0);
 \coordinate (B) at (2,0);
@@ -986,16 +975,13 @@ in
 \draw (H) -- node[right] {$d$} (Cp);
 \draw (D) -- node[right,xshift=14pt,yshift=8pt] {$e$} (H);
 \end{tikzpicture}
-\vspace*{-10pt}
 \end{center}
 
-\begin{quote}
-The circle $c(C',d)$ consists of the points at distance $d$ from $C'$. We claim that $H$, the intersection of $c(C',d)$ and $c(D,e)$, is on the extension of the line segment $CC'$, so that $CH$ is a line segment of length $CH=CC'+C'H=c+d$.
+\vspace{-3ex}
 
-We previously defined $C'D' = e$ and $D'D=d$. The definition of $H$ as the intersection of the circles $c(C',d)$ and $c(D,e)$ gives $HC'=d$, $DH=e$. Therefore, the quadrilateral $C'D'DH$ is a parallelogram, since the lengths of both pairs of opposite sides are equal. $DD'$ was constructed so that it is parallel to $CC'$, so $C'H$, which is parallel to $DD'$ is also parallel to $C'$. Since one of its end points is $C'$, it must be on the line containing $CC'$, and the length of $CH$ is $c+d)$.
-\end{quote}
+From the definition of $H$ as the intersection of $c(C',d)$,$c(D,e)$, we get $DH=e$, $C'H=d$, but $C'D' = e$, $D'D=d$, so the quadrilateral $C'D'DH$ is a parallelogram, since the lengths of both pairs of opposite sides are equal. By construction, the line segment $DD'$ is parallel to $CC'$, so $C'H$ is parallel to $DD'$ is also parallel to $CC'$. Since one of its end points is $C'$, it must be on the line containing $CC'$.
 
-($CH = c - d$ in case $D$ is on the same side of $AB$ as $C$.) Preliminary problem 4 then allows us to construct $x$, and from that $S$ as the intersection of arcs of the circles $c(C,x)$ and $c(C',x)$.
+The lengths $c,d,e$ are given and we proved in Section~\ref{s.add-subtract} that a line segment of length $c+d$ can be construction and in Section~\ref{s.three} that a line segment of length $x=\disfrac{c}{c+d}e$ can be constructed. $S$ is the intersection of $c(C',x)$ and $c(C,x)$.
 
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -1034,27 +1020,17 @@ in
   ++(100:\n2) arc (100:0:\n2);
 \draw[thick,dashed] (Cp) -- (C);
 \end{tikzpicture}
-\vspace*{-8pt}
 \end{center}
-
-
-\begin{quote}
-$x$ is the length of $CS$ which equals the length of $C'S$ because reflection preserves distances, so all we have to do is compute $x$, and then $S$ will be the intersection of the circles $c(C,x), c(C',x)$. By Preliminary problem 4, we can compute $x=\frac{c}{c+d}e$ given $c,e,d$, where the line segment of length $c+d$ is constructed above as $CH$.
-\end{quote}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{II’.} Determine the point of intersection $S$ of a given circle $k$ and a given straight line $AB$ with compass alone.
+\section{Finding the intersection of a line and a circle}\label{s.line-circle}
 
-\textbf{Solution.} Let $k = c(M,r)$, and $M'$ be the reflection of $M$ about line $AB$.
+\textbf{Given a circle $k=C(M,r)$ and a line $AB$, it is possible to construct their intersections using only a compass.}
 
-\begin{quote}
-\vspace*{-10pt}
-Recall from Prelim. problem 1 that a reflection can be constructed with compass alone given the points $A,B$ defining a line.
-\end{quote}
+Construct $M'$, be the reflection of $M$ about $AB$ and the circle $k'=c(M',r)$. The points of intersection of $k,k'$ are the points of intersection of the line $AB$ and the circle $k$.
 
 \begin{center}
-\vspace*{-10pt}
 \begin{tikzpicture}[scale=.5]
 \coordinate (A) at (-7,0);
 \coordinate (B) at (8,0);
@@ -1079,13 +1055,12 @@ Recall from Prelim. problem 1 that a reflection can be constructed with compass 
 \fill (R1) circle[radius=3pt];
 \fill (R2) circle[radius=3pt];
 \end{tikzpicture}
-\vspace*{-10pt}
 \end{center}
 
-The points of intersection are the points where $c(M,r)$ and $c(M',r)$ intersect. This construction cannot be done if $M$ is on line $AB$.
+This construction cannot be done if $M$ is on the line $AB$. In this case, extend and shorten $AM$ by length $r$ as described in Section~\ref{s.add-subtract}. The end points of the extended and shortened segments are the intersections of $k$ with $AB$.
+
 
 \begin{center}
-\vspace*{-10pt}
 \begin{tikzpicture}[scale=.5]
 \coordinate (A) at (-7,0);
 \coordinate (B) at (8,0);
@@ -1103,7 +1078,5 @@ The points of intersection are the points where $c(M,r)$ and $c(M',r)$ intersect
 \fill (S2) node[above left] {$AM-r$} circle[radius=3pt];
 \fill (R1) circle[radius=3pt];
 \end{tikzpicture}
-\vspace*{-10pt}
 \end{center}
-In this exceptional case, extend and shorten $AM$ by $r$ by Prelim 3; the end points of the extended and shortened segments are the desired points. 
 

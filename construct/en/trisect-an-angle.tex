@@ -1,9 +1,8 @@
 % !TeX root = construct.tex
 
-\chapter[How to Trisect an Angle (If You Are Willing to Cheat)]{How to Trisect an Angle\\\bigskip (If You Are Willing to Cheat)}\label{c.trisect}
+\chapter{How to Trisect an Angle (If You Are Willing to Cheat)}\label{c.trisect}
 
-
-\section{Introduction}
+\vspace{-1ex}
 
 It is well known that it is impossible to trisect an arbitrary angle using a compass and a straightedge. The reason is that trisection requires the construction of cube roots, but the compass and straightedge can only construct lengths that are expressions built from the four arithmetic operators and square roots.
 
@@ -14,13 +13,13 @@ References:\\
 \url{https://en.wikipedia.org/wiki/Quadratrix_of_Hippias}\\
 \url{https://en.wikipedia.org/wiki/Neusis_construction}
 
-\newpage
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{-1ex}
 
 \section{Trisection using the neusis}\label{s.neusis}
 
-The constructions we perform in high-school geometry typically use a ruler, so why have we used the word ``straightedge''? The reason is that a straightedge has no marks on it; the only operation it can perform is to construct a straight line between two points. A ruler can measure distances and this makes it a more powerful instrument. To trisect an angle all we need is a straightedge with two marks that are a fixed distance apart, which for convenience we define as $1$:
+In geometry textbooks, constructions are performed using a ``straightedge'' and a compass. The term straightedge is used instead of ``ruler'' because a straightedge has no marks on it. The only operation it can perform is to construct a straight line between two points, while a ruler can measure distances. To trisect an angle all we need is a straightedge with two marks that are a fixed distance apart, called a \emph{neusis}. We define the distance between the marks as $1$:
 \begin{center}
 \begin{tikzpicture}[scale=3.5]
 \draw (-1,1.05) rectangle +(3.2,.1);
@@ -29,12 +28,11 @@ The constructions we perform in high-school geometry typically use a ruler, so w
 \draw[<->] (.73,1.25) -- node[fill=white] {$1$} (1.89,1.25);
 \end{tikzpicture}
 \end{center}
-The Greek word \emph{neusis} is used to describe this instrument.
 
-Let $\alpha$ be an arbitrary angle $\angle ABE$ within a circle with center $B$ and radius $1$. The circle can be constructed by setting the compass to the distance between the marks on the neusis. Extend the radius $EB$ beyond the circle. Place an edge of the neusis on $A$ and move it until it intersects the extension of $EB$ at $D$ and the circle at $C$, using the marks so that the length of the line segment $CD$ is $1$. Draw the line $AD$.
+Let $\alpha$ be an arbitrary angle $\angle ABE$ within a circle with center $B$ and radius $1$. The circle can be constructed by setting the compass to the distance between the marks on the neusis. Extend the radius $EB$ beyond the circle. Place an edge of the neusis on $A$ and move it until it intersects the extension of $EB$ at $D$ and the circle at $C$, using the marks so that the length of the line segment $CD$ is $1$. Draw the line $AD$:
 
 \begin{center}
-\begin{tikzpicture}[scale=3]
+\begin{tikzpicture}[scale=2.5]
 \coordinate (origin) at (0,0) node[below] {$B$} ;
 \draw[name path=circle] (origin) circle [radius=1];
 \draw (origin) node[above left,xshift=-4pt] {$\alpha$} -- (120:1) coordinate (a) node[below,xshift=-2pt] {$A$} ;
@@ -58,7 +56,7 @@ Let $\alpha$ be an arbitrary angle $\angle ABE$ within a circle with center $B$ 
 Draw line $BC$ and label the angles and line segments as shown:
 
 \begin{center}
-\begin{tikzpicture}[scale=3]
+\begin{tikzpicture}[scale=2.5]
 \coordinate (origin) at (0,0) node[below] {$B$} ;
 \draw[name path=circle] (origin) circle [radius=1];
 \draw (origin) node[above left,xshift=-4pt] {$\alpha$} node[above,xshift=4pt,yshift=2pt] {$\delta$} node[above right,xshift=44pt,yshift=-2pt] {$\beta$} -- node[fill=white] {$1$} (120:1) coordinate (a) node[above left] {$A$} ;
@@ -81,37 +79,45 @@ Draw line $BC$ and label the angles and line segments as shown:
 \end{tikzpicture}
 \end{center}
 
-We have used the fact that $\triangle ABC$ and $\triangle BCD$ are isoceles: $AB=BC$ since both are radii and $BC=CD$ by construction using the neusis. A computation (using the facts that the angles of a triangle and supplemenary angles add up to $\pi$ radians) shows that $\beta$ trisects $\alpha$:
-\begin{eqnarray*}
+Both $\triangle ABC$ and $\triangle BCD$ are isoceles: $AB=BC$ since both are radii and $BC=CD$ by construction using the neusis. A computation (using the facts that the angles of a triangle and supplemenary angles add up to $180$ radians) shows that $\beta$ trisects $\alpha$:
+\erh{1pt}
+\begin{equationarray*}{rcl}
 \epsilon &=& \pi - 2\beta\\
 \gamma &=& \pi - \epsilon = 2\beta\\
 \delta &=& \pi - 2\gamma = \pi - 4\beta\\
 \alpha &=& \pi - \delta - \beta\\
 &=& 4\beta -\beta\\
 &=& 3\beta\,.
-\end{eqnarray*}
+\end{equationarray*}
+
+\vspace{-2ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Trisection using the quadratrix}\label{s.q}
 
-The following diagram shows a \emph{quadratrix compass}:
+The following diagram shows a \emph{quadratrix compass}: two (unmarked) straightedges connected by a joint that constrains them to move together. One straightedge moves parallel to the $x$-axis from $DC$ to $AB$, while the second straightedge is allowed to rotate around the origin at $A$ until it lies horizontally along $AB$. The curve traced by the joint of the two straightedges is called the \emph{quadratrix curve} or simply the \emph{quadratrix}.
+
 \begin{center}
-\begin{tikzpicture}[scale=.8,domain=.03:1.555,samples=100]
+\begin{tikzpicture}[scale=.7,domain=.03:1.555,samples=100]
 \draw (.1,.2) node[below left,xshift=-8pt] {$A$} -- (7.8,.2) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- (.1,7.8) node[above left,xshift=-8pt] {$D$} -- cycle;
 %\draw (.1,7.8) -- (.1,.2) -- (8,.1) -- (8,7.8);
 \draw[rounded corners,rotate=60] (0,-.2) rectangle (8.2,.2);
 \draw[rounded corners] (-.1,4.8) rectangle (8.2,5.2);
 \fill (2.9,5) circle [radius=3pt];
+\fill (.1,.2) circle [radius=3pt];
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
 \end{center}
-It consists of two straightedges connected by a joint that constrains them to move together. One straightedge is constrained to move parallel to the $x$-axis from $DC$ to $AB$, while the second straightedge is allowed to rotate around the origin at $A$. Its initial position is along the $y$-axis $AD$ and it rotates until it lies along the $x$-axis $AB$. The curve traced by the joint of the two straightedges is called the \emph{quadratrix curve} or simply the \emph{quadratrix}.
 
-As the horizontal straightedge is moved down at a constant velocity, the other straightedge is constrained to move at a constant angular velocity. In fact, that is the definition of the quadratrix curve. As the $y$-coordinate of the horizontal straightedge decreases from $1$ to $0$, the angle of the other straightedge relative to the $x$-axis decreases from $\pi/2$ to $0$. The following diagram shows how this can be used to trisect an arbitrary angle $\alpha$:
+\vspace{-2ex}
+
+As the horizontal straightedge is moved down at a constant velocity, the other straightedge is constrained to move at a constant angular velocity. In fact, that is the definition of the quadratrix curve. As the $y$-coordinate of the horizontal straightedge decreases from $1$ to $0$, the angle of the other straightedge relative to the $x$-axis decreases from $90^\circ$ to $0^\circ$. The following diagram shows how this can be used to trisect an arbitrary angle $\alpha$:
+
+\vspace{-2ex}
 
 \begin{center}
-\begin{tikzpicture}[scale=.8,domain=.03:1.562,samples=100]
+\begin{tikzpicture}[scale=.7,domain=.03:1.562,samples=100]
 \draw (.1,7.8) coordinate (start) node[above left] {$D$} node[below right,xshift=32pt] {$\theta$} -- (.1,.2) node[below left] {$A$} -- (8,.1) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- cycle;
 \draw[name path=curve,thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \path[name path=twenty] (start) -- +(-35:9);
@@ -139,23 +145,27 @@ As the horizontal straightedge is moved down at a constant velocity, the other s
 \end{tikzpicture}
 \end{center}
 
-Let the angle to be trisected $\alpha$ be $\angle CDP_1$, where $P_1$ is the intersection of the line defining the angle $\alpha$ with the quadratrix. This point has $y$-coordinate $1-t$, where $t$ is the distance that the horizontal straightedge has moved from $DC$. Now trisect the \emph{line segment} $DE$ to obtain point $F$. Let $P_2$ be the intersection of a line from $F$ parallel to $DC$ and the quadratrix. By the equality of the velocities, we have:
-\begin{eqnarray*}
+\vspace{-2ex}
+
+$P_1$ is the intersection of the line defining the angle $\alpha$ with the quadratrix. This point has $y$-coordinate $1-t$, where $t$ is the distance that the horizontal straightedge has moved from its initial position $DC$. Now trisect the \emph{line segment} $DE$ to obtain point $F$. (It is easy to trisect a line segment using Thales theorem.) Let $P_2$ be the intersection of a line from $F$ parallel to $DC$ and the quadratrix. By the equality of the velocities, we have:
+
+\vspace{-2ex}
+
+\erh{0pt}
+\begin{equationarray*}{rcl}
 \frac{\theta}{\alpha} &=& \frac{t/3}{t}\\
 &&\\
 \theta &=& \alpha/3\,.
-\end{eqnarray*}
+\end{equationarray*}
 
-\newpage
+\vspace{-3ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Squaring the circle using the quadratrix}\label{s.square}
 
-Let us now compute the equation of the quadratrix using the following diagram where the straightedges are shown as line segments:
-
 \begin{center}
-\begin{tikzpicture}[scale=.8,domain=.01:1.57,samples=100]
+\begin{tikzpicture}[scale=.7,domain=.01:1.57,samples=100]
 \draw (0,0) node[below left] {$A$} node [above right,xshift=10pt] {$\theta$} -- (8,0) node[below right] {$B$} -- (8,8) node[above right] {$C$} -- (0,8) node[above left] {$D$} -- cycle;
 \draw[name path=horiz] (0,5) -- (8,5);
 \draw[name path=slant] (0,0) -- (61:8);
@@ -173,11 +183,12 @@ Let us now compute the equation of the quadratrix using the following diagram wh
 \end{center}
 
 Suppose that the horizontal straightedge has moved $t$ down the $y$-axis to point $E$ and the rotating straightedge forms an angle of $\theta$ with the $x$-axis. $P$ is the intersection of the quadratrix with the horizontal straightedge, and $F$ is the projection of $P$ on the $x$-axis. What are the coordinates of quadratrix at $P$? Clearly, $y=PF=EA=1-t$. On the quadratrix, $\theta$ decreases at the same rate that $t$ increases:
-\begin{eqnarray*}
+\erh{0pt}
+\begin{equationarray*}{rcl}
 \frac{1-t}{1} &=& \frac{\theta}{\pi/2}\\
 &&\\
 \theta &=&\frac{\pi}{2}(1-t)\,.
-\end{eqnarray*}
+\end{equationarray*}
 Check if this makes sense: when $t=0$, $\theta=\pi/2$ and when $t=1$, $\theta=0$.
 
 The $x$-coordinate of $P$ follows from trigonometry:
@@ -188,21 +199,19 @@ which gives:
 \[
 x = \frac{y}{\tan\theta}=y\cot\theta=y\cot \frac{\pi}{2}(1-t)=y\cot \frac{\pi}{2}y\,.
 \]
-We usually express a function as $y=f(x)$ but it can also be expressed as $x=f(y)$.
-
-Let us compute the $x$-coordinate of the point $G$, the intersection of the quadratrix with the $x$-axis. We can't simply plug in $y=0$ because $\cot 0$ is not defined, but we might get lucky by computing the limit of $x$ as $y$ goes to $0$:
+We usually express a function as $y=f(x)$ but it can also be expressed as $x=f(y)$. Let us compute the $x$-coordinate of the point $G$, the intersection of the quadratrix with the $x$-axis. We can't simply plug in $y=0$ because $\cot 0$ is not defined, but we might get lucky by computing the limit of $x$ as $y$ goes to $0$:
 \[
 x = y\cot \frac{\pi}{2}y = \frac{2}{\pi}\cdot \frac{\pi}{2}y\cot \frac{\pi}{2}y\,.
 \]
-For convenience, perform a change of variable $z=\frac{\pi}{2}y$ and compute the limit:
+For convenience, perform a change of variable $z=\disfrac{\pi}{2}y$ and compute the limit:
 \[
-\lim_{z\rightarrow 0} z\cot z = \lim_{z\rightarrow 0} \frac{z\cos z}{\sin z} = \lim_{z\rightarrow 0} \frac{\cos z}{\frac{\sin z}{z}} = \frac{\cos 0}{1} = 1\,,
+\lim_{z\rightarrow 0} z\cot z = \lim_{z\rightarrow 0} \frac{z\cos z}{\sin z} = \lim_{z\rightarrow 0} \frac{\cos z}{\disfrac{\sin z}{z}} = \frac{\cos 0}{1} = 1\,,
 \]
 using the well-known fact that $\displaystyle\lim_{z\rightarrow 0} \frac{\sin z}{z}=1$.
 Therefore, as $y\rightarrow 0$:
 \[
 x \rightarrow \frac{2}{\pi}\cdot \lim_{y\rightarrow 0}\frac{\pi}{2}y\cot \frac{\pi}{2}y = \frac{2}{\pi}\cdot 1 = \frac{2}{\pi}\,.
 \]
-Using the quadratrix we have constructed a line segment $AG$ whose length is $x=\displaystyle\frac{2}{\pi}$. With an ordinary straightedge and compass it is easy to construct a line segment of length $\sqrt{\frac{2}{x}}=\sqrt{\pi}$ and then construct a square whose area is $\pi$.
+Using the quadratrix we have constructed a line segment $AG$ whose length is $x=\displaystyle\frac{2}{\pi}$. With an ordinary straightedge and compass it is easy to construct a line segment of length $\sqrt{\disfrac{2}{x}}=\sqrt{\pi}$ and then construct a square whose area is $\pi$.
 
 
