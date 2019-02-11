@@ -8,6 +8,7 @@ steiner/tikz
 motion/tikz
 bagrut/he/tikz
 construct/he/tikz
+construct/en/tikz
 tikz-examples.tex
 *.bat
 *.zip
