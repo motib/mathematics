@@ -12,8 +12,9 @@
 
 \usepackage{tikz}
 \usepackage{tkz-euclide}
+\usepackage{pgfplots}
 \usetikzlibrary{positioning,through,calc,intersections,arrows.meta,external}
-\tikzexternalize[prefix=tikz/]
+%\tikzexternalize[prefix=tikz/]
 \tikzset{>=stealth} % Use stealth arrows
 \usetkzobj{all}
 
@@ -22,7 +23,7 @@
 \topmargin=0pt
 \headheight=0pt
 \oddsidemargin=-5mm
-\evensidemargin=7mm
+\evensidemargin=5mm
 \headsep=0pt
 \parindent=0pt
 \renewcommand{\baselinestretch}{1.1}
@@ -52,26 +53,17 @@
 
 \selectlanguage{hebrew}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\includeonly{}
+\includeonly{rational}
 
 \begin{document}
 
-\setcounter{chapter}{3}
-\include{front-4-5}
-\tikzsetfigurename{geometry}
-\include{geometry}
-\tikzsetfigurename{trigonometry}
-\include{trigonometry}
-
-\appendix
-
-\tikzsetfigurename{isoceles}
-\include{isoceles}
-\tikzsetfigurename{geometry-theorems}
-\include{geometry-theorems}
-\tikzsetfigurename{unit-circle}
-\include{unit-circle}
+\include{front-6-7-8}
+\tikzsetfigurename{rational}
+\include{rational}
+\tikzsetfigurename{trig-functions}
+\include{trig-functions}
+\tikzsetfigurename{optimization}
+\include{optimization}
 
 \end{document}

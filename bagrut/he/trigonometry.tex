@@ -1231,9 +1231,9 @@ $\angle DAB=\beta+\delta$.
 
 %\begin{center}
 \selectlanguage{english}
-\hspace{1em}
+\hspace{2em}
 \begin{minipage}{.38\textwidth}
-\begin{tikzpicture}%[scale=.9]
+\begin{tikzpicture}%[scale=.95]
 \coordinate (O) at (2,1.5);
 \coordinate (B) at (0,.2);
 \coordinate (A) at (4,.2);
@@ -1256,13 +1256,13 @@ $\angle DAB=\beta+\delta$.
 \draw[rotate=90] ($(B)!(C)!(A)$) rectangle +(6pt,6pt);
 \end{tikzpicture}
 \end{minipage}
-\begin{minipage}{.38\textwidth}
+\begin{minipage}{.47\textwidth}
 \erh{12pt}
 \begin{equationarray*}{rcl}
-\beta &=& \frac{180-3\alpha}{2}\\
-\gamma &=& \frac{360-(\alpha+3\alpha)}{2}=180-2\alpha\\
-\delta &=&\frac{180-\gamma}{2}= \frac{180-(180-2\alpha)}{2}=\alpha\\
-\beta+\delta&=&\frac{180-\alpha}{2}\,.
+\beta &\!\!=\!\!& \frac{180\!-\!3\alpha}{2}\\
+\gamma &\!\!=\!\!& \frac{360\!-\!(\alpha\!+\!3\alpha)}{2}=180\!-\!2\alpha\\
+\delta &\!\!=\!\!&\frac{180\!-\!\gamma}{2}= \frac{180\!-\!(180\!-\!2\alpha)}{2}=\alpha\\
+\beta\!+\!\delta&\!\!=\!\!&\frac{180\!-\!\alpha}{2}\,.
 \end{equationarray*}
 \end{minipage}
 \selectlanguage{hebrew}
@@ -2707,6 +2707,171 @@ $r=x\sin 30 = 3.42$.
 \node[draw,very thick,dotted,circle through=(G)] at (F) {};
 \end{tikzpicture}
 \end{center}
+
+\section{חורף תשע"ד )שאלה
+$6$(}
+
+\textbf{בבחינה זו היו שלוש שאלות בפרק השני.}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=.95\textwidth]{winter-2014-6}
+\end{center}
+
+\vspace{-2ex}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.85]
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-4);
+\coordinate (F) at (0,4);
+\fill (A) circle(1.5pt) node[below] {$A$} node[above right,yshift=18pt,xshift=11pt] {$\alpha$} node[above,yshift=15pt,xshift=6pt] {$\beta$};
+\fill (F) circle(1.5pt) node[above] {$F$};
+\node[draw,thick,circle through=(A),name path=big-circle] (circle) at (O) {};
+\node[draw,thick,circle through=(A),name path=small-circle] (circle) at (0,-2.1) {};
+\draw[thick,name path=diameter] (A) -- (F);
+\path[name intersections={of=diameter and small-circle,by={E}}];
+\fill (E) circle(1.5pt) node[above left] {$E$};
+
+\path[name path=ab] (A) -- +(65:5);
+\path[name intersections={of=ab and small-circle,by={B}}];
+\draw[thick] (A) -- (B);
+\fill (B) circle(1.5pt) node[above right] {$B$};
+\coordinate (D) at (A|-B);
+\fill (D) circle(1.5pt) node[left] {$D$};
+\path[name path=dc] (D) -- ($(D)!3!(B)$);
+\path[name intersections={of=dc and big-circle,by={C}}];
+\draw[thick] (D) -- (C);
+\fill (C) circle(1.5pt) node[right] {$C$} node[below left,xshift=-12pt] {$\gamma$};
+\draw[thick] (A) -- (C);
+\draw[thick,rotate=-90] (D) rectangle +(7pt,7pt);
+\node at (1.8,1.5) {$\gamma = 90\!-\!(\alpha\!+\!\beta)$};
+\end{tikzpicture}
+\end{center}
+
+בפתרון השאלה נשתמש לעתים קורבות בקשר בין סינוס לקוסינוס במשולש ישר זווית:
+
+\np
+
+\begin{center}
+\selectlanguage{english}
+\begin{minipage}{.4\textwidth}
+\begin{tikzpicture}
+\draw[thick] (0,0) -- node[below] {$a$} (4,0) -- node[right] {$b$} (4,3) -- node[above] {$c$} cycle;
+\coordinate (B) at (4,0);
+\draw[thick,rotate=90] (B) rectangle +(7pt,7pt);
+\node[above right,xshift=16pt] at (0,0) {$90-\theta$};
+\node[below left,xshift=1pt,yshift=-6pt] at (4,3) {$\theta$};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.4\textwidth}
+\[
+\begin{array}{l}
+\sin\theta = \displaystyle\frac{a}{c} = \cos(90-\theta)\\
+\cos\theta = \displaystyle\frac{b}{c} = \sin(90-\theta)\\
+\mbox{}
+\end{array}
+\]
+\end{minipage}
+\end{center}
+
+\vspace{-4ex}
+
+\textbf{סעיף א}
+
+$(1)$
+$\triangle DCA$ 
+יישר זווית ולכן סכום הזזויות החדות שווה ל-%
+$90$. $\angle BCA=\gamma=90-(\alpha+\beta)$.
+
+$(2)$
+$AD$
+צלע של
+$\triangle DCA$
+וגם של
+$\triangle DBA$.
+נפעיל את חוק הסינוסים פעמיים:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\frac{AB}{\sin 90}&=&\frac{AD}{\sin (90-\beta)}\\
+AD&=&AB\cos \beta\\
+\frac{AC}{\sin 90}&=&\frac{AD}{\sin \gamma}\\
+AC&=&\frac{AB\cos\beta}{\sin(90-(\alpha+\beta))}\\
+\frac{AC}{AB}&=&\frac{\cos\beta}{\cos(\alpha+\beta)}\,.
+\end{equationarray*}
+פתרון אחר מתקבל מהפעלת חוק שסינוסים פעם אחת על
+$\triangle ABC$:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\frac{AC}{\sin(180-\alpha-\gamma)}&=&\frac{AB}{\sin\gamma}\\
+\frac{AC}{AB}&=&\frac{\sin(\alpha+\gamma)}{\cos(\alpha+\beta)}\\
+&=&\frac{\sin(\alpha+90-(\alpha+\beta))}{\cos(\alpha+\beta)}=\frac{\cos\beta}{\cos(\alpha+\beta)}
+\end{equationarray*}
+
+
+\textbf{סעיף ב}
+
+סביר שנצטרך להשתמש בתוצאה של הסעיף הקודם, לכן נחפש קשר בין הקווים 
+$AB,AC$
+לבין הרדיוסים. נחבר 
+$B$
+ל-%
+$E$
+ו-%
+$C$
+ל-%
+$F$.
+נקבל שני משולשים חסומים במעגלים וניתן להשתמש בנוסחה של חוק הסינוסים עם רדיוס. 
+
+\np
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-4);
+\coordinate (F) at (0,4);
+\fill (A) circle(2pt) node[below] {$A$} node[above right,yshift=18pt,xshift=11pt] {$\alpha$} node[above,yshift=15pt,xshift=6pt] {$\beta$};
+\fill (F) circle(2pt) node[above] {$F$};
+\node[draw,thick,circle through=(A),name path=big-circle] (circle) at (O) {};
+\node[draw,thick,circle through=(A),name path=small-circle] (circle) at (0,-2.1) {};
+\draw[thick,name path=diameter] (A) -- (F);
+\path[name intersections={of=diameter and small-circle,by={E}}];
+\fill (E) circle(2pt) node[above left] {$E$};
+
+\path[name path=ab] (A) -- +(65:5);
+\path[name intersections={of=ab and small-circle,by={B}}];
+\draw[thick] (A) -- (B);
+\fill (B) circle(2pt) node[above right] {$B$};
+\coordinate (D) at (A|-B);
+%\fill (D) circle(1.5pt) node[left] {$D$};
+\path[name path=dc] (D) -- ($(D)!3!(B)$);
+\path[name intersections={of=dc and big-circle,by={C}}];
+\fill (C) circle(2pt) node[right] {$C$};
+\draw[thick] (A) -- (C);
+\draw[thick,rotate=155] (B) rectangle +(7pt,7pt);
+\draw[thick,rotate=130] (C) rectangle +(7pt,7pt);
+\draw[thick,dashed] (C) -- (F);
+\draw[thick,dashed] (B) -- (E);
+\end{tikzpicture}
+\end{center}
+פתרון אחר: נתון ש-%
+$FA$
+הוא קוטר )"קטע המרכזים"( של המגעל הגדול, ולכן 
+$EA$
+הוא קוטר של המעגל הקטן. זווית הנשענת על קוטר היא זווית ישרה, כך ש-%
+$\triangle ACF,\triangle ABE$
+הם ישר זווית, וניתן פשוט להשמתמש בהגדרת הפונקציות הטריגונומטריות:
+\erh{14pt}
+\begin{equationarray*}{rcl}
+\cos \beta &=& \frac{AB}{2r}\\
+\cos (\alpha+\beta) &=& \frac{AC}{2R}\\
+\frac{R}{r}&=&\frac{AC}{2\cos(\alpha+\beta)}\cdot \frac{2\cos\beta}{AB}\\
+&=&\frac{\cos^2\beta}{\cos^2(\alpha+\beta)}\,.
+\end{equationarray*}
+
+
 
 
 \np
