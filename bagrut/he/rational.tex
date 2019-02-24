@@ -162,6 +162,8 @@ g(3)&=&|f(3)+k|=a=1\\
 k&=&\pm 1\,.
 \end{eqnarray*}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \section{קיץ תשע"ז מועד א}
 
@@ -428,7 +430,233 @@ $g$.
 
 \end{comment}
 
-\section{קיץ תשע"ז מועד ב}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{חורף תשע"ז}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{winter-2017-6}
+\end{center}
+
+\vspace{-3ex}
+
+\textbf{סעיף א}
+
+נקבל את ה%
+\asm{}
+אנכית
+$x=1$
+כאשר המכנה שווה לאפס עבור ערך זה:
+\erh{0pt}
+\begin{equationarray*}{rcl}
+x^2+3x+b&=&0\\
+1^2+3\cdot 1+b&=&0\\
+b&=&-4\,.
+\end{equationarray*}
+נחשב את ה%
+\asm{}
+האופקית
+$y=1$.
+כאשר 
+$x\rightarrow 1$:
+\[
+\frac{a+\frac{4}{x}}{1+\frac{3}{x}-\frac{4}{x^2}} \rightarrow 1\,,
+\]
+ו-%
+$a=1$.
+
+\textbf{סעיף ב}
+
+$(1)$
+נבדוק מתי המכנה מתאפס:
+\[
+x^2+3x-4=(x+4)(x-1)\,,
+\]
+ולכן הפונקציה מוגדרת עבור כל 
+$x$
+פרט ל-%
+$x=1,x=-4$.
+
+\np
+
+$(2)$
+נציב 
+$x=0$.
+המונה מתאפס והמכנה לא מתאפס ולכן נקודת החיתוך עם ציר ה-%
+$y$
+היא
+$(0,0)$.
+
+נציב 
+$y=0$
+ונקבל
+$x^2+4x=x(x+4)=0$.
+$(0,0)$
+היא נקודת חיתוך עם שני הצירים. ב-%
+$x=-4$
+הפונקציה לא מוגדרת, ולכן אין עוד נקודת חיתוך עם ציר ה-%
+$x$.
+
+
+$(3)$
+אין עוד 
+\asm{} 
+אופקיות כי לפי החישוב בסעיף א, ה-%
+\asm{}
+היא
+$\frac{a}{1}$ 
+שיש לה רק פתרון אחד כי 
+$a$
+הוא קבוע.
+
+\asm{}
+אנכית יש כאשר 
+$x^2+3x-4=(x+4)(x-1)=0$.
+אבל 
+$x=-4$
+גם מאפס את המונה. נצמצם את הפונקציה:
+\[
+\frac{x^2+4x}{x^2+3x-4}=\frac{x(x+4)}{(x+4)(x-1)}=\frac{x}{x-1}\,.
+\]
+כאשר 
+$x\rightarrow -4$
+)בשני הכיוונים(, ערך הפונקציה שואפת ל-%
+$\frac{4}{5}$,
+ולכן אין כאן
+\asm{} 
+אלא חור.
+
+$(4)$
+נחשב את הנגזרת, כאשר נתייחס רק למונה כי המכנה הוא ריבוע שתמיד חיובי פרט לנקודות של החור וה%
+\asm{}:
+\[
+(x^2+4x)'(x^2+3x-4)-(x^2+4x)(x^2+3x-4)'=-(x+4)^2\,.
+\]
+)לא רשמתי את כל החישובים הארוכים.( ערך זה לא מתאפס ותמיד שלילי, ולכן הפונקציה יורדת בכל תחום ההגדרה שלה.
+
+אפשר לקצר אם נצמצם את הפונקציה לפי נמחשב את הנגזרת. 
+$\left(\frac{x}{x-1}\right)'=-1$,
+שתמיד שלילי.
+
+\textbf{סעיף ג}
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+    axis lines=center,
+    xtick={-6,...,5},
+    ytick={-3,...,3},
+    xmin = -6,
+    xmax = 5,
+    ymin = -3,
+    ymax = 3,
+    every axis y label/.style={at={(ticklabel cs:0.8)},rotate=90,anchor=west,},
+    every axis x label/.style={at={(ticklabel cs:0.9)},anchor=north,},
+]
+\addplot [
+    domain=-6:-4.05, 
+    samples=40, 
+]
+{(x^2+4*x)/(x^2+3*x-4)};
+\addplot [
+    domain=-3.95:.9, 
+    samples=40, 
+]
+{(x^2+4*x)/(x^2+3*x-4)};
+\addplot [
+    domain=1.1:4, 
+    samples=40, 
+]
+{(x^2+4*x)/(x^2+3*x-4)};
+\draw[dashed,thick] ({axis cs:-6,1}-|{rel axis cs:0,0}) -- ({axis cs:-6,1}-|{rel axis cs:11,0});
+\draw[dashed,thick] ({axis cs:1,-3}|-{rel axis cs:0,0}) -- ({axis cs:1,-3}|-{rel axis cs:0,6});
+\fill (axis cs:0,0) circle(1.5pt);
+\draw (axis cs:-4,.8) circle(1.5pt);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ד}
+
+אם נתייחס לגרף, 
+$|f(x)|$
+מעביר ערכים מתחת לציר ה-%
+$x$
+לערכים מעל לציר, ו-%
+$-f(x)$
+מעביר את כל הערכים לצד השני של ציר ה-%
+$x$.
+$|f(x)|=-f(x)$
+רק עבור ערכים מתחת לציר ה-%
+$x$
+כי רק עבור ערכים אלה שניהם מבצעים אותה פעולה. עבור פונקציה זו הערכים הם
+$0\leq x < 1$.
+
+\textbf{סעיף ה}
+
+מסעיף ב 
+$f'(x)$
+תמיד שלילי ולכן
+$g(x)=f(x)^2\cdot f'(x)$
+תמיד שלילי או אפס. ראינו גם ש-%
+$f(0)=0$,
+ולכן השטח שיש לחשב נמצא מתחת לציר ה-%
+$x$
+ומימין לציר ה-%
+$y$.
+
+\np
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+\begin{axis}[
+    axis lines=center,
+    xtick={-.5,.5,1},
+    ytick={0},
+    xmin = -.5,
+    xmax = 1,
+    ymin = -1.1,
+    ymax = .5,
+]
+\addplot [
+    domain=0:.6, 
+    samples=40,
+]
+{(x^2+4*x)/(x^2+3*x-4)};
+\draw ({axis cs:.5,-1}|-{rel axis cs:0,0}) -- ({axis cs:.5,-1}|-{rel axis cs:0,1});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+)התרשים לא מדוייק.(
+
+נשים לב ש-%
+$(f^3(x))'=3f^2(x)\cdot f'(x)$,
+ונוכל לחשב את האינטגרל:
+\[
+\int_0^{0.5} 0-f^2(x)\cdot f'(x)=\left.-\frac{1}{3}f^3(x)\right|^{0.5}_0=-\frac{1}{3}f^3(0.5)\,.
+\]
+כי 
+$f(0)=0$.
+
+\[
+f(0.5)=\frac{0.25+2}{0.25+1.5-4}=-1\,,
+\]
+והשטח הוא:
+\[
+-\frac{1}{3}f^3(0.5)=-\frac{1}{3}\cdot (-1)^3=\frac{1}{3}\,.
+\]
+
+
+\begin{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{קיץ תשע"ה מועד ב}
 
 \begin{center}
 \selectlanguage{english}
@@ -591,13 +819,826 @@ $a=\pm 2$
 \fill (axis cs:-.785,0) circle(1.5pt);
 \end{axis}
 \end{tikzpicture}
-
 \end{center}
 
 
-\begin{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{קיץ תשע"ה מועד א}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2015a-6}
+\end{center}
+
+\vspace{-4ex}
+
+\textbf{סעיף א}
+
+$(1)$
+הפונקציה לא מוגדרת כאשר המכנה מתאפס.
+$\cos 2x=0$
+כאשר 
+$2x=\disfrac{\pi}{2}+k\pi$.
+בתרשים להלן רואים שזה קורה עבור
+$\disfrac{\pi}{4}, \disfrac{3\pi}{4}$.
+תחום ההגדרה הוא:
+\[
+0\leq x < \disfrac{\pi}{4}, \quad \disfrac{\pi}{4} < x < \disfrac{3\pi}{4}\,.
+\]
+
+\vspace{-4ex}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}
+\coordinate (O) at (0,0);
+\coordinate (A) at (2,0);
+\node[draw,circle through=(A)] at (O) {};
+\draw (-2,0) -- (2,0);
+\draw (0,-2) -- (0,2);
+\draw[ultra thick] (A) arc[start angle=0,end angle=135,radius=2];
+\node[right] at (2,0) {$0$};
+\fill ($(O)+(45:2)$) circle(3pt) node[above right] {$\disfrac{\pi}{4}$};
+\fill ($(O)+(90:2)$) circle(3pt) node[above,yshift=4pt] {$2\cdot\disfrac{\pi}{4}=\disfrac{\pi}{2}+0\cdot \pi$};
+\draw[fill] ($(O)+(135:2)$) rectangle +(6pt,6pt) node[left,xshift=-6pt] {$\disfrac{3\pi}{4}$};
+\draw[fill] ($(O)+(-90:2)+(-3pt,-3pt)$) rectangle +(6pt,6pt) node[below,yshift=-6pt] {$2\cdot\disfrac{3\pi}{4}=\disfrac{\pi}{2}+1\cdot \pi$};
+\end{tikzpicture}
+\end{center}
+
+$(2)$
+ה%
+\asms{} 
+הן בערכי ציר ה-%
+$x$
+בהם הפונקציה לא מוגדרת:
+$x=\disfrac{\pi}{4}$, $x=\disfrac{3\pi}{4}$.
+
+$(3)$
+יש נקודת קיצון בקצה התחום 
+$(0,0)$.
+נחשב את הנגזרת כדי לחפש נקודות קיצון פנימיות:
 
 \np
+
+\[
+\left(\frac{\sin x}{\cos 2x}\right)'=\frac{\cos x\cos 2x - \sin x (-2\sin 2x)}{\cos^2 2x}\,.
+\]
+בתחום ההגדרה המכנה חיובי כך הנגזרת תתאפס אם המונה יתאפס.
+\begin{equationarray*}{rcl}
+\cos x\cos 2x + 2\sin x \sin 2x &=& \cos x(\cos^2x - \sin^2x)+2\sin x\cdot 2\sin x\cos x\\
+&=&\cos x(\cos^2x - \sin^2x +4\sin^2 x)\\
+&=&\cos x((\cos^2x +\sin^2 x)+2\sin^2x)\\
+&=&\cos x(1+2\sin^2 x)\,.
+\end{equationarray*}
+)אין צורך לזכור את הביטויים עבוד
+$\sin 2x$, $\cos 2x$
+כי אפשר לשחזר אותם מיידית על ידי חישוב
+$\sin (x+x)$, $\cos (x+x)$
+לפי הוסחה המופיעה בנוסחאון.(
+
+בתחום ההגדרה
+$\cos x$
+מתאפס כאשר 
+$x=\disfrac{\pi}{2}$,
+ו-%
+$1+2\sin^2 x$
+אף פעם לא מתאפס. נקודת הקיצון היא
+$(\disfrac{\pi}{2},-1)$.
+לפי הציור מדובר במקסימום מקומי.
+
+\textbf{סעיף ב}
+\[
+f'(x)=\disfrac{\cos x(1+2\sin^2 x)}{\cos^2 2x}\,.
+\]
+קל לחשב ש-%
+$f'(0)=1$.
+בסעיף הקודם חישבנו ש-%
+$f'\left(\disfrac{\pi}{2}\right) = 0$.
+לפי המכנה
+$f'\left(\disfrac{\pi}{4}\right)$
+לא מוגדר. בתרשים הנתון ל-%
+$f(x)$
+רואים שהפונקציה עולה בין
+$0$
+ל-%
+$\disfrac{\pi}{4}$,
+ושהנגזרת יורדת בין
+$\disfrac{\pi}{4}$
+ל-%
+$\disfrac{3\pi}{4}$.
+התרשים ל-%
+$f'(x)$
+נראה כך:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+\begin{axis}[
+    trig format plots=rad,
+    axis lines=center,
+    xmin=0,
+    xmax=4.71,
+    xtick={0,.785,1.57,2.356},
+    xticklabels={0,$\disfrac{\pi}{4}$,$\disfrac{\pi}{2}$,$\disfrac{3\pi}{4}$},
+    ytick={-4,...,4},
+    ymin = -4,
+    ymax = 4,
+    xticklabel style={anchor=north east,},
+]
+\addplot [
+    domain=0:.72,
+    samples=40, 
+]
+{(cos(x)*(1+2*(sin(x))^2))/(cos(2*x))^2};
+\addplot [
+    domain=.9:2.1, 
+    samples=40, 
+]
+{(cos(x)*(1+2*(sin(x))^2))/(cos(2*x))^2};
+\draw[dashed,thick] ({axis cs:.785,-4}|-{rel axis cs:0,0}) -- ({axis cs:.785,-4}|-{rel axis cs:0,8});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ג}
+
+יש כאן מתנה שיכולה להיות גם מלכודת. המלכודת היא לנסות לחשב את האינטגרל על ידי חישוב הביטוי
+$2f(x)\cdot f'(x)$
+מהביטויים המפורשים שחישבנו. המתנה היא שאין כל צורך בחישוב כי האיטגרל של
+$2f(x)\cdot f'(x)$ 
+הוא
+$f^2(x)$.
+\[
+\int_0^{\pi/6} g(x) = f^2(x) \mid_0^{\pi/6}=\frac{\sin (\pi/6)}{\cos (2\pi/6)}-\frac{\sin 0}{\cos 0}=\frac{1/2}{1/2}-\frac{0}{1}=1\,.
+\]
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{חורף תשע"ה}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{winter-2015-6}
+\end{center}
+
+\vspace{-4ex}
+
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}%[scale=.9]
+\begin{axis}[
+    trig format plots=rad,
+    axis lines=center,
+    xmin=-0,
+    xmax=6.283,
+    xtick={0,1.57,3.14,4.71,6.283},
+    xticklabels={0,$\disfrac{\pi}{2}$,$\pi\:$,$\disfrac{3\pi}{2}\!\!$,$2\pi\;$},
+    ymin = -2,
+    ymax = 2,
+    xticklabel style={anchor=north east,},
+]
+\addplot [
+    name path=f,
+    domain=0:6.283, 
+    samples=50, 
+]
+{.5*sin(2*x)+cos(x))};
+\addplot [
+    name path=g,
+    style=very thick,
+    domain=0:6.283, 
+    samples=50, 
+]
+{sin(2*x)};
+\draw[dashed,thick,name path=mn] ({axis cs:3.67,-2}|-{rel axis cs:0,0}) -- ({axis cs:3.67,-2}|-{rel axis cs:0,4});
+\path[name intersections={of=mn and f,by={M}}];
+\path[name intersections={of=mn and g,by={N}}];
+\fill (M) circle(2pt)	 node[left] {$M$};
+\fill (N) circle(2pt) node[above left] {$N$};
+\draw[dashed,thick,name path=kl] ({axis cs:.3,-2}|-{rel axis cs:0,0}) -- ({axis cs:.3,-2}|-{rel axis cs:0,4});
+\path[name intersections={of=kl and f,by={K}}];
+\path[name intersections={of=kl and g,by={L}}];
+\fill (K) circle(2pt) node[above right] {$K$};
+\fill (L) circle(2pt) node[below right] {$L$};
+\fill (axis cs:1.57,0) circle(2pt) node[above right] {$A$};
+\fill (axis cs:4.71,0) circle(2pt) node[above right] {$B$};
+\node at (axis cs:6,-1) {$g$};
+\node at (axis cs:6,1) {$f$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-3ex}
+
+\textbf{סעיף א}
+
+די ברור שהגרף המודגש הוא 
+$g$
+בגלל המחזוריות, אבל אפשר לבדוק על ידי חישוב נקודות החיתוך של הגרף עם ציר ה-%
+$x$.
+$\sin 2x=0$
+כאשר 
+$x=0,\pi/2,\pi,3\pi/2,2\pi$
+ורק לגרף המודגש יש שלוש נקודות חיתוך.
+
+נחשב את הנגזרת של ההפרש בין הפונקציות:
+\erh{0pt}
+\begin{equationarray*}{rcl}
+g(x)-f(x) &=& \sin 2x - 0.5\sin 2x -\cos x = 0.5\sin 2x - \cos x\\
+(g(x)-f(x))' &=& \cos 2x + \sin x = (1-2\sin^2 x) + \sin x\,.
+\end{equationarray*}
+)את הנוסחה ל-%
+$\cos 2x$
+אין צורך לזכור כי אפשר לשחזר אותה בקלות מהנוסחה עבור
+$\cos (x+x)$
+המופיעה בנוסחאון.(
+
+\np
+נקודות החיתוך
+$A,B$
+הן נקודות החיתוך של
+$f$
+עם ציר ה-%
+$x$
+שלפי הגרף נראה הן בנקודות החיתוך 
+$\frac{\pi}{2},\frac{3\pi}{2}$
+של 
+$g$.
+נבדוק:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+f\left(\frac{\pi}{2}\right)&=&0.5\sin 2\cdot \frac{\pi}{2} + \cos \frac{\pi}{2} = 0+0=0\\
+f\left(\frac{3\pi}{2}\right)&=&0.5\sin 2\cdot \frac{3\pi}{2} + \cos \frac{3\pi}{2} = 0+0=0\,.
+\end{equationarray*}
+נחשב מתי הנגזרת מתאפסת בתחום
+$\frac{\pi}{2}\leq x \leq \frac{3\pi}{2}$:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+2\sin^2 x - \sin x-1&=&0\\
+(2\sin x +1)(\sin x -1) &=&0\\
+\sin x &=& 1, -\disfrac{1}{2}\\
+x&=& \disfrac{\pi}{2}, \disfrac{7\pi}{6}, \disfrac{11\pi}{6}\,.
+\end{equationarray*}
+$g(\frac{\pi}{2})-f(\frac{\pi}{2})=0-0=0$
+בוודאי אינו המקסימום. 
+$\frac{11\pi}{6}=\frac{9\pi}{6}+\frac{2\pi}{6}=\frac{3\pi}{2}+\frac{2\pi}{6}$
+מחוץ לתחום. נקודת הקיצון היא ב-%
+$x=\frac{7\pi}{6}$.
+הנגזרת השנייה של 
+$g-f$
+ב-%
+$x=\frac{7\pi}{6}$
+היא:
+\[
+(1-2\sin^2 x + \sin x)'=(-4\sin x +1)\cos x \mid_\frac{7\pi}{6}=-\left(4\cdot -\frac{1}{2}+1\right)\cdot -\frac{\sqrt{3}}{2}=-\frac{\sqrt{3}}{2}>0\,,
+\]
+ולכן 
+\[
+g\left(\frac{7\pi}{2}\right)-f\left(\frac{7\pi}{2}\right)=\frac{1}{2}\sin \frac{7\pi}{3}-\cos \frac{7\pi}{6}=\frac{1}{2}\cdot\frac{\sqrt{3}}{2}-\left( -\frac{\sqrt{3}}{2}\right)=\frac{3\sqrt{3}}{4}
+\]
+הוא האורך המקסימלי של
+$MN$.
+
+\textbf{סעיף ב}
+
+\[
+(f(x) - g(x))' = (-1\cdot (g(x) - f(x))' = - (g(x) - f(x))' = -2\sin^2 x + \sin x+1\,.\\
+\]
+אם נשווה לאפס נקבל אותם ערכים
+$\sin x = 1, -\frac{1}{2}$.
+לפי מה שראינו בסעיף א, אין פתרונות בתוך התחום כך שאין נקודות קיצון פנימיות. נשאר רק לבדוק את קצות תחום ההגדרה
+$x=0,\frac{\pi}{2}$:
+\erh{12pt}
+\begin{equationarray*}{l}
+f(0)-g(0)=0.5\sin 0 + \cos 0 -\sin 0 = 0+1-0 = 1\\
+f\left(\frac{\pi}{2}\right)-g\left(\frac{\pi}{2}\right)=0.5\sin \pi + \cos \frac{\pi}{2} -\sin \pi = 0+0-0 = 0\,,
+\end{equationarray*}
+והאורך המקסימלי של 
+$KL$
+הוא 
+$1$
+כאשר 
+$x=0$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{קיץ תשע"ד מועד ב}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2014b-6}
+\end{center}
+
+\vspace{-4ex}
+
+
+\textbf{סעיף א}
+
+$(1)$
+הפונקיות מוגדרת כאשר ביטוי בשורש לא שלילי. עבור 
+$f$
+אם 
+$8-x^2\ge 0$
+ותחום ההגדרה הוא
+$-\sqrt{8}\leq x \leq \sqrt{8}$.
+
+עבור 
+$g$
+אם
+$8^2-x^4\ge 0$
+ותחום ההגדרה מורכב מ-%
+$-\sqrt{8}\leq x \leq \sqrt{8}$
+ו-%
+$x=0$.
+אבל 
+$x=0$
+נמצא בתוך התחום הראשון כך שהוא לא מוסיף ערכים לתחום ההגדרה, ותחומי ההגדרה של 
+$f,g$
+זהים.
+
+$(2)$
+עבור 
+$f$:
+אם 
+$y=0$,
+$x=0$
+או
+$\sqrt{8-x^2}=0$,
+ונקודות החיתוך עם ציר ה-%
+$x$
+הן
+$(0,0)$, $(\pm\sqrt{8},0)$.
+אם 
+$x=0$,
+$y=0$
+ונקודת החיתוך עם ציר ה-%
+$y$
+היא
+$(0,0)$.
+
+עבור
+$g$:
+אם 
+$y=0$,
+$\sqrt{8x^2-x^4}=\sqrt{x^2}\cdot\sqrt{8-x^2}=0$
+עבור אותם ערכים
+$0,\pm\sqrt{8}$.
+ונקודות החיתוך הן אותן נקודות שקיבלנו עבור
+$f$.
+
+\np
+
+\textbf{סעיף ב}
+
+\vspace{-3ex}
+
+\erh{14pt}
+\begin{equationarray*}{rcl}
+f'(x) &=& \sqrt{8-x^2} + x \cdot \frac{1}{2} \cdot \frac{1}{\sqrt{8-x^2}} \cdot (-2x)\\
+&=&\frac{8-2x^2}{\sqrt{8-x^2}}\\
+g'(x)&=&\frac{1}{2\sqrt{8x^2-x^4}}\cdot (16x-4x^3)\\
+&=&\frac{8x-2x^3}{\sqrt{8x^2-x^4}}=\frac{x(8-2x^2)}{\sqrt{8x^2-x^4}}\,.
+\end{equationarray*}
+
+\vspace{-2ex}
+
+פרט לנקודות הקצה
+$\pm\sqrt{8}$
+המכנה חיובי, אז הנגזרות יתאפסו כאשר המונה יתאפס. עבור 
+$f$
+הנקודות הן
+$(-2,-4)$,$(2,4)$.
+בנקודות הקצה,
+$(\pm\sqrt{8},0)$,
+ולכן
+$(-2,-4)$
+היא מינימום אבסולוטי )כי
+$-4>0$(
+ו-%
+$(2,4)$
+היא מקסימום אבסולוטי )כי
+$4<0$(.
+עבור 
+$g$
+הנקודות הן
+$(0,0)$,$(-2,4)$,$(2,4)$.
+בנקודות הקצה,
+$(\pm\sqrt{8},0)$.
+$(0,0)$, $(\pm\sqrt{8},0)$
+הן מינימום אבסולוטי ו-%
+$(-2,4)$,$(2,4)$
+הן מקסימום אבסולוטי.
+
+
+\textbf{סעיף ג}
+
+נתבסס על תחומי ההגדרה ונקודות הקצה של הפונקציות כדי לציירן:
+
+\begin{center}
+\selectlanguage{english}
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}[scale=.9]
+\begin{axis}[
+    ylabel = {$f(x)$},
+    axis lines=center,
+    xtick={-3,...,3},
+    ytick={-4,...,4},
+    xmin = -3.5,
+    xmax = 3.5,
+    ymin = -4.1,
+    ymax = 4.1,
+    xticklabel style={
+    anchor=north east,
+    },
+    yticklabel style={
+    anchor=south east,
+    },
+    every axis y label/.style={at={(axis cs:.7,3.5)}},
+]
+\addplot [
+    domain=-2.828427:2.828427, 
+    samples=60, 
+]
+{x*sqrt(8-x^2)};
+\fill (axis cs:-2,-4) circle (1.5pt);
+\fill (axis cs:2,4) circle (1.5pt);
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}[scale=.9]
+\begin{axis}[
+    ylabel = {$g(x)$},
+    axis lines=center,
+    xtick={-3,...,3},
+    ytick={-4,...,4},
+    xmin = -3.5,
+    xmax = 3.5,
+    ymin = -4.1,
+    ymax = 4.1,
+    xticklabel style={
+    anchor=north east,
+    },
+    yticklabel style={
+    anchor=south east,
+    },
+    every axis y label/.style={at={(axis cs:.7,3.5)}},
+]
+\addplot [
+    domain=-2.828427:2.828427, 
+    samples=100, 
+    style=thick,
+]
+{sqrt(8*x^2-x^4)};
+\fill (axis cs:-2,4) circle (1.5pt);
+\fill (axis cs:2,4) circle (1.5pt);
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+
+\textbf{סעיף ד}
+\[
+g'(x)=\frac{x(8-2x^2)}{\sqrt{8x^2-x^4}}
+\]
+לא מוגדר באפס, ולכן אפשר לפסול 
+$III,IV$.
+נחשב מספר ערכים:
+\[
+\erh{0pt}
+\begin{array}{c|c|c|c|c}
+x & -2 & -2 & 1 & 2\\\hline
+g'(x) & 0 & -(6/7) & (6/7) & 0\\\hline
+\end{array}
+\]
+הפונקציה יורדת כאשר מתקרבים לציר ה-%
+$y$
+משמאל וגם יורדת כאשר מתרחקים מהציר מימין. לכן הגרף
+$I$
+מתאר את הפונקציה.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{קיץ תשע"ד מועד א}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2014a-6}
+\end{center}
+
+\vspace{-4ex}
+
+
+\textbf{סעיף א}
+
+$(1)$
+ברור שערכי הפונקציות שווים ב-%
+$x=0, x=\pi$
+כי 
+$\sin 0 = \sin \pi = 0$.
+נשווה את המשוואות ונחפש פתרונות אחרים, כאשר נניח ש-%
+$\sin x \neq 0$
+(ולכן החילוק ב-%
+$\sin x$
+מותר(:
+\erh{6pt}
+\begin{equationarray*}{rcl}
+2\sin^2 x &=& \sin 2x\\
+&=& 2\sin x \cos x\\
+\sin x &=& \cos x\\
+x&=& \frac{\pi}{4}\,.
+\end{equationarray*}
+
+$(2)$
+ראינו ששתי הפונקציות מקבלות ערך אפס ב-%
+$0,\pi$.
+נחפש ערכים אחרים בתוך התחום.
+
+עבור 
+$f$:$2\sin^2 x=0$
+רק כאשר
+$x=0,\pi$,
+ולכן נקודות החיתוך עם ציר ה%
+$x$
+הן
+$(0,0),(\pi,0)$.
+
+עבור 
+$g$:
+$\sin 2x=0$
+כאשר
+$2x=0+k\pi$,
+ולכן יש נקודות חיתוך גם ב-%
+$(\frac{\pi}{2},0)$.
+
+\textbf{סעיף ב}
+
+$(1)$
+\erh{12pt}
+\begin{equationarray*}{rcl}
+h(x)'=\left(x-\frac{\sin 2x}{2}\right)'&=& 1-\frac{2\cos 2x}{2}=1-\cos 2x\\
+&=&1- (\cos^2 x - \sin^2 x)=(1- \cos^2 x) + \sin^2 x\\
+&=&2\sin^2 x=f(x)\,.
+\end{equationarray*}
+
+\np
+
+$(2)$
+מהתרשים להלן אנו רואים שהשטח מורכב משני קטעים, מ-%
+$0$
+עד
+$\frac{\pi}{4}$,
+ומ-%
+$\frac{\pi}{4}$
+עד
+$\pi$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+\begin{axis}[
+    trig format plots=rad,
+    axis lines=center,
+    xmin=-.1,
+    xmax=3.141,
+    xtick={0,.7854,1.571,2.356,3.141},
+    xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$},
+    ymin = -2,
+    ymax = 2,
+    ytick={-2,...,2},
+%    xticklabel style={anchor=north east,},
+]
+\addplot [
+    domain=0:3.141, 
+    samples=40, 
+    name path=f,
+]
+{2*(sin(x))^2};
+\addplot [
+    domain=0:3.141, 
+    samples=40, 
+    name path=g,
+]
+{sin(2*x)};
+\path[name intersections={of=f and g,by={a,b}}];
+\draw[dashed,thick] (b) |- (axis cs:.7854,0);
+\fill (axis cs:0,0) circle(2pt);
+\fill (b) circle(2pt);
+\fill (axis cs:3.141,0) circle(2pt);
+\node at (axis cs:2.5,1.5) {$f(x)$};
+\node at (axis cs:1.6,.7) {$g(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+בסעיף זה יש מתנה: כדי לקבל האינטרגל של 
+$f(x)$
+נוכל להשתמש בפונקציה
+$h(x)$
+נתונה:
+\[
+h(x) = x-\frac{\sin 2x}{2} = \int h'(x) = \int f(x)\,.
+\]
+השטח הראשון הוא:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\int_0^\frac{\pi}{4}(\sin 2x - f(x)) dx &=&\left.\frac{-\cos 2x}{2} - x +\frac{\sin 2x}{2}\right|_0^\frac{\pi}{4}\\
+&=&\left(0-\frac{\pi}{4}+\frac{1}{2}\right)-\left(-\frac{1}{2}-0+0\right)=-\frac{\pi}{4}+1\,.
+\end{equationarray*}
+
+השטח השני הוא:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\int_\frac{\pi}{4}^\pi (f(x)-\sin 2x) dx &=&x -\left.\frac{\sin 2x}{2}-\frac{-\cos 2x}{2}\right|_\frac{\pi}{4}^\pi\\
+&=&\left(\pi-0+\frac{1}{2}\right)-\left(\frac{\pi}{4}-\frac{1}{2}+0\right)=\frac{3\pi}{4}+1\,.
+\end{equationarray*}
+
+השטח הכולל הוא:
+\[
+S=-\frac{\pi}{4}+1+\frac{3\pi}{4}+1=\frac{\pi}{2}+2\,.
+\]
+
+
+\section{חוקף תשע"ד}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{winter-2014-7}
+\end{center}
+
+\vspace{-4ex}
+
+\textbf{בבחינה זו היו שלוש שאלות בפרק השני לכן מספר השאלה הוא 
+$7$
+ולא 
+$6$.}
+
+נתון שהפונקיה מוגדרת לכל 
+$x$
+אבל מתחשק לי לוודא שזה נכון. אם נשווה את המכנה לאפס נקבל משוואה ריבועית שפתרונה היא:
+\[
+\frac{1\pm\sqrt{1-4a}}{2}\,.
+\]
+נתון ש-%
+$a>1$
+אז אין פתרונות ממשיים למשוואה.
+
+\textbf{סעיף א}
+
+$(1)$
+הפונקציה מוגדרת לכל 
+$x$
+אז אין 
+\asms{}
+אנכיות.
+
+נחלק את הפונקציה בחזקה הגדולה ביותר ונקבל:
+\[
+\frac{1+\frac{1}{x}-\frac{a}{x^2}}{1-\frac{1}{x}+\frac{a}{x^2}}
+\]
+ששואף ל
+$1$
+כאשר 
+$x\rightarrow \pm\infty$.
+ה%
+\asm{}
+האופקית היא
+$y=1$.
+
+
+$(2)$
+נחשב את הנגזרת הראשונה:
+\[
+f'(x) =\frac{(2x+1)(x^2-x+a)-(x^2+x-a)(2x-1)}{(x^2-x+a)^2}=\frac{-2x^2+4xa}{(x^2-x+a)^2}\,.
+\]
+מכנה חיובי ולכן הנגזרת תתאפס כאשר
+$2x^2=4ax$.
+נקודות הקיצון הן:
+\[
+(0,-1),\quad (2a,\frac{4a+1}{4a-1})\,.
+\]
+
+\np
+
+המכנה של הנגזרת הראשונה חיובית ולכן מספיק לחשב את הנגזרת של המונה ולבדוק את הנימנה:
+\[
+(-2x^2+4ax)'=-4x+4a
+\]
+ב-%
+$x=0$
+$-4x+4a$
+חיובי כי נתון ש-%
+$a>1$,
+ולכן נקודת הקיצון היא מינימום. ב-%
+$x=2a$
+$-8a+4a=-4a$
+שלילי כי נתון ש-%
+$a>1$,
+ולכן נקודת הקיצון היא מקסימום.
+
+
+
+$(3)$
+קיים מינימום ב-%
+$x=0$
+ו%
+\asm{}
+אופקית ב-%
+$y=1$.
+לפי הנתון שיש שתי נוקודות חיתוך עם ציר ה-%
+$x$,
+הגרף עולה מנקודת המינימום ושואף לאינסוף ב-%
+$y=1$.
+נשאר רק להחליט אם נקודת המקסימום היא מעל ל%
+\asm{}
+או מתחתיה. אבל עם
+$a>1$,
+$\frac{4a+1}{4a-1}>1$
+אז הנקודת המקסימום נמצאת מעל ל%
+\asm{}.
+
+
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+    axis lines=center,
+    xtick={-5,...,5},
+    ytick={-2,...,2},
+    xmin = -5,
+    xmax = 5,
+    ymin = -2,
+    ymax = 2,
+%    xticklabel style={
+%    anchor=north west,
+%    },
+%    yticklabel style={
+%    anchor=north,
+%    },
+    every axis y label/.style={at={(ticklabel cs:0.8)},rotate=90,anchor=west,},
+    every axis x label/.style={at={(ticklabel cs:0.8)},anchor=north,},
+]
+\addplot [
+    domain=-5:5, 
+    samples=50, 
+]
+{(x^2+x-2)/(x^2-x+2)};
+\draw[dashed,thick] ({axis cs:-4,1}-|{rel axis cs:0,0}) -- ({axis cs:-4,1}-|{rel axis cs:8,0});
+\fill (axis cs:0,-1) circle(1.5pt);
+\fill (axis cs:1,0) circle(1.5pt);
+\fill (axis cs:-2,0) circle(1.5pt);
+\fill (axis cs:4,1.286) circle(1.5pt);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\textbf{סעיף ב}
+
+האינטגרל של הנגזרת הראשונה הוא הפונקציה עצמה:
+\[
+\left|\int_{-1}^0 f'(x) dx\right| = \left.|\left.f(x)\right|_{-1}^0=f(0)-f(-1)\right|=\left|1-\frac{-a}{a+1}\right|=\left|\frac{-2}{a+2}\right|\,.
+\]
+נתון שהשטח שווה ל-%
+$\frac{1}{2}$
+ולכן 
+$a=2$.
+ערכי ה-%
+$x$
+של נקודות החיתוך הן הפתרונות של:
+\[
+x^2+x-2=0\,
+\]
+שהם
+$x=1,x=-2$.
+נקודות החיתוך הן
+$(1,0), (-2,0)$.
+
+\end{comment}
+
+\begin{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{קיץ תשע"ז מועד א}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{המלצות}
 
