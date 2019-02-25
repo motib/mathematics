@@ -7,7 +7,295 @@
 
 \chapter{חקר פונקציות רציונליות}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\section{קיץ תשע"ח מועד ב}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2018b-6}
+\end{center}
+
+\vspace{-4ex}
+
+\textbf{סעיף א}
+
+נקודות הקיצון של
+$f'(x)$
+יהיו הנקודות בהן 
+$f''(x)=0$.
+לגרפ
+$II$
+נקודות קיצון ב-%
+$\pm\sqrt{3},0$
+ובנקודות הללו הגרף
+$I$
+חותך את ציר ה-%
+$x$.
+לכן, 
+$II$
+הוא הגרף של
+$f'(x)$
+ו-%
+$I$
+הוא הגרף של
+$f''(x)$.
+
+\textbf{סעיף ב}
+
+$(1)$
+הגרף 
+$II$
+מתאפס ב-%
+$\pm\sqrt{6},0$,
+אבל ב-%
+$0$
+הוא לא מחליף סימן ולכן
+$0$
+הוא לא נקודת קיצון.
+
+$(2)$
+הנגזרת השנייה מתאפסת בשלוש נקודות
+$\pm\sqrt{6},0$.
+בכל שלושת הנקודות הנגזרת הראשונה לא מחליפה סימן, ולכן כולן נקודות פיתול ולא נקודות קיצון.
+
+\textbf{סעיף ג}
+
+הנגזרת השנייה היא שיפוע המשיק לנגזרת הראשונה. בתחום הניתן הערך המינימלי מתקבל ב-%
+$1$.
+
+\np
+
+\textbf{סעיף ד}
+
+נתון שהפוקציה אי-זוגית אז 
+$f(0)=0$.
+\begin{quote}
+$a=-a$
+אם ורק אם
+$a=0$.
+אם
+$f(x)$
+אי-זוגית,
+$f(0)=f(-0)=-f(0)=0$.
+\end{quote}
+בסעיף ב חישבנו שיש שתי נקודות פיתול נוספות
+$\pm\sqrt{6}\approx 2.45$,
+והגרף נראה כך:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+    axis lines=center,
+    xmin = -2.51,
+    xmax = 2.51,
+    ymin = -60,
+    ymax = 60,
+    every axis y label/.style={at={(ticklabel cs:0.7)},rotate=90,anchor=west,},
+    every axis x label/.style={at={(ticklabel cs:0.9)},anchor=north,},
+]
+\addplot [
+    domain=-2.5:2.5, 
+    samples=50, 
+]
+{x^5-10*x^3};
+\draw[dashed,thick] ({axis cs:2.45,0}|-{rel axis cs:0,0}) -- ({axis cs:2.45,0}|-{axis cs:0,0});
+\draw[dashed,thick] ({axis cs:-2.45,0}|-{rel axis cs:0,2}) -- ({axis cs:-2.45,0}|-{axis cs:0,0});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ה}
+
+לפי הנתון שהפונקציה א-זוגית
+$f(0)=0$,
+לכן יש לנו את גבולות האינטגרל:
+\[
+\int_{-\sqrt{6}}^0 0-f'(x) dx = - \left.f(x)\right|_{-\sqrt{6}}^{0}=-(-f(-\sqrt{6}))=t\,,
+\]
+כי נקודת המקסימום של 
+$f(x)$
+היא הנקודה בה הנגזרת הראשונה עוברת מחיובי לשלילי
+$-\sqrt{6}$.
+
+\textbf{סעיף ו}
+
+לפי
+$f(0)=0$,
+$c=0$.
+
+הנגזרצ הראשונה מתאפסת ב-%
+$\pm\sqrt{6}$:
+\erh{0pt}
+\begin{equationarray*}{rcl}
+f'(x) &=& 5ax^4 + 3bx^2\\
+&=& 5a(\sqrt{6})^4 + 3b(\sqrt{6})^2= 0\\
+5a(\sqrt{6})^2 + 3b&=& 0\\
+30a+3b&=&0\\
+\frac{a}{b}&=&-\frac{1}{10}\,.
+\end{equationarray*}
+
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{קיץ תשע"ח מועד א}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2018a-6}
+\end{center}
+
+\vspace{-4ex}
+
+\textbf{סעיף א}
+
+המכנה לא יכול להיות אפס. לפולינום הריבוע יהיו פתרונות אם
+$(-2)^2-4\cdot a \cdot 1 = 4-4a\geq 0$,
+ולכן 
+$a>1$.
+עלינו לוודא שהפולינום לא מקבל ערכים שליליים כדי שהשורש יהיה מוגדר. ללא קשר לערך של 
+$a$,
+הערך של הפולינום הוא
+$1$,
+כלומר, יש לו ערך חיובי אחד לפחות. אם אין פתרונות לפולינום, אז אין חיתוכים עם ציר ה-%
+$x$
+ולא יהיו ערכים שליליים.
+
+\textbf{סעיף ב}
+
+$(1)$
+$f(0)=\frac{-1}{\sqrt{1}}$
+ונקודת החיתוך עם ציר ה-%
+$y$
+היא
+$(0,-1)$.
+
+$(2)$
+המכנה חיובי כך שנקודת החיתוך עם ציר ה-%
+$x$
+מתקבל מ-%
+$ax-1=0$,
+והנקודה היא
+$(\frac{1}{a},0)$.
+
+$(3)$
+
+\vspace{-3ex}
+
+\erh{12pt}
+\begin{equationarray*}{rcl}
+f(x)&=&\frac{ax-1}{\sqrt{ax^2-2x+1}}\\
+&=&\frac{x(a-\frac{1}{x})}{\sqrt{x^2}\left(\sqrt{a-\frac{2}{x}+\frac{1}{x^2}}\right)}\\
+&\mathop{\longrightarrow}\limits_{\pm\infty}&\frac{xa}{\sqrt{x^2}\sqrt{a}}\,.
+\end{equationarray*}
+ה%
+\asms{}
+הן
+$f(x)\mathop{\longrightarrow}\limits_{+\infty}\sqrt{a}$,
+$f(x)\mathop{\longrightarrow}\limits_{-\infty}-\sqrt{a}$.
+
+\np
+
+$(4)$
+\erh{16pt}
+\begin{equationarray*}{rcl}
+f'(x)&=&\frac{a\sqrt{ax^2-2x+1}-\disfrac{(ax-1)(2ax-2)}{2\sqrt{ax^2-2x+1}}}{(\sqrt{ax^2-2x+1})^2}\\
+&=&\frac{a(ax^2-2x+1)-(ax-1)(ax-1)}{(\sqrt{ax^2-2x+1})^2\sqrt{ax^2-2x+1}}\,.
+\end{equationarray*}
+המכנה חיובי ולכן סימן הנגזרת תלוי בסימן המונה:
+\[
+a^2x^2-2ax+a-a^2x^2+2ax-1=a-1\,.
+\]
+הוכחנו ש-%
+$a>1$
+ולכן
+$a-1>0$
+והפונקציה תמיד עולה.
+
+$(4)$
+
+\vspace{-4ex}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+    axis lines=center,
+    xtick={-4,...,4},
+    ytick={-2,...,2},
+    xmin = -4,
+    xmax = 4,
+    ymin = -2,
+    ymax = 2,
+    yticklabel style={
+    anchor=east,
+    },
+    every axis y label/.style={at={(ticklabel cs:0.7)},rotate=90,anchor=west,},
+    every axis x label/.style={at={(ticklabel cs:0.9)},anchor=north,},
+]
+\addplot [
+    domain=-4:4, 
+    samples=50, 
+]
+{(3*x-1)/sqrt(3*x^2-2*x+1)};
+\draw[dashed,thick] ({axis cs:-4,-1.732}-|{rel axis cs:0,0}) -- ({axis cs:-4,-1.732}-|{rel axis cs:8,0});
+\draw[dashed,thick] ({axis cs:-4,1.732}-|{rel axis cs:0,0}) -- ({axis cs:-4,1.732}-|{rel axis cs:8,0});
+\fill (axis cs:0,-1) circle(1.5pt) node[right] {$(0,-1)$};
+\fill (axis cs:.333,0) circle(1.5pt) node[above right] {$(1/3,0)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ג}
+
+$\frac{1}{3}<\frac{2}{3}$
+ולכן גבולות האינטגרל בחלק החיובי של הפונקציה.
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\int_{2/3}^2 \frac{3x-1}{\sqrt{3x^2-2x+1}}&=& \int_{2/3}^2 \frac{2}{2}\left(\sqrt{3x^2-2x+1}\right)'\\
+&=&\left. \sqrt{3x^2-2x+1} \right|_{2/3}^2\\
+&=&{\sqrt{12-4+1}}-\sqrt{\frac{4}{3}-\frac{4}{3}+1}=3-1=2\,.
+\end{equationarray*}
+
+\vspace{-4ex}
+
+\textbf{סעיף ד}
+
+שתי האפשרויות הן ש-%
+$f(x)$
+מעל 
+$g(x)$
+וש-%
+$g(x)$
+מעל
+$f(x)$.
+\[
+\int (g-f) = \int g - \int f = \int g - S = 2S\,,
+\]
+ולכן
+$\int g = 3S$,
+$g=3f$.
+
+\[
+\int (f-g) = \int f - \int g = S-\int g= 2S\,,
+\]
+ולכן
+$-\int g = S$,
+$g=-f$.
+
+
+
+\begin{comment}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{קיץ תשע"ז מועד ב}
 
@@ -428,7 +716,6 @@ $g$.
 \int_a^b g(x) dx = \int_a^b f(x+5) dx = \int_{a+5}^{b+5} f(x) dx\,.
 \]
 
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -651,8 +938,6 @@ f(0.5)=\frac{0.25+2}{0.25+1.5-4}=-1\,,
 -\frac{1}{3}f^3(0.5)=-\frac{1}{3}\cdot (-1)^3=\frac{1}{3}\,.
 \]
 
-
-\begin{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1628,18 +1913,8 @@ $x=1,x=-2$.
 נקודות החיתוך הן
 $(1,0), (-2,0)$.
 
-\end{comment}
-
-\begin{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\section{קיץ תשע"ז מועד א}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{המלצות}
 
 \begin{itemize}
