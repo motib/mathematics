@@ -138,7 +138,6 @@ f'(x) &=& 5ax^4 + 3bx^2\\
 \frac{a}{b}&=&-\frac{1}{10}\,.
 \end{equationarray*}
 
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -290,6 +289,209 @@ $g=3f$.
 $-\int g = S$,
 $g=-f$.
 
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{חורף תשע"ח}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{winter-2018-6}
+\end{center}
+
+\vspace{-4ex}
+
+התרשים להלן יאפשר לנו לחשב תכונות של הפונקציות הטריגונומטריותת. הקשת העבה מראה את התחום בשאלה והקווים המקווקווים מראים איך מתקבל
+$x-\disfrac{\pi}{2}$
+)סעיף ב-%
+$2$(.
+
+\vspace{-2ex}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-2);
+\node[draw,circle through=(A)] at (O) {};
+\draw (-2,0) -- (2,0);
+\draw (0,-2) -- (0,2);
+\draw[ultra thick] (A) arc[start angle=-90,end angle=180,radius=2];
+\node[right] at (2,0) {$0$};
+\fill ($(O)+(-90:2)$) circle(2pt) node[below] {$-\pi/2$};
+\fill ($(O)+(90:2)$) circle(2pt) node[above] {$\pi/2$};
+\fill ($(O)+(180:2)$) circle(2pt) node[left] {$\pi$};
+\draw[thick,dashed] (O) -- (30:2) node[above right] {$\pi/6$};
+\draw[thick,dashed] (O) -- (-60:2) node[below right] {$-\pi/3$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2ex}
+
+\textbf{סעיף א}
+
+$(1)$
+הפונקציה מוגדרת אם
+$\cos x>0$:
+אם 
+$x$
+מימין לציר ה-%
+$y$.
+תחום ההגדרה הוא
+$-\frac{\pi}{2}<x<\frac{\pi}{2}$.
+
+$(2)$
+\[
+\frac{\sin x}{\sqrt{\cos x}} \mathop{\longrightarrow}\limits_{+\infty} \frac{+1}{0}\mathop{\longrightarrow}\limits_{+\infty} +\infty,\quad\quad \frac{\sin x}{\sqrt{\cos x}} \mathop{\longrightarrow}\limits_{-\infty} \frac{-1}{0}\mathop{\longrightarrow}\limits_{-\infty} -\infty
+\]
+
+\np
+
+$(3)$
+\erh{12pt}
+\begin{equationarray*}{rcl}
+f'(x) &=& \frac{\cos x\sqrt{\cos x} - \sin x \cdot\frac{-\sin x}{2\sqrt{\cos x}}}{\cos x}\\
+&=& \frac{2\cos^2 x + \sin^ x}{2\cos x\sqrt{\cos x}}\\
+&=& \frac{\cos^2 x + 1}{2\cos x\sqrt{\cos x}}\,.
+\end{equationarray*}
+
+\vspace{-3ex}
+
+בתחום ההגדרה
+$\cos x > 0$
+ולכן הנגזרת הראשונה תמיד חיובית והפונקציה עולה בכל התחום. )ברור שאם הנגזרת תמיד חיובית, היא לא מתאפסת בתחום כך שאין נקודות קיצון פנימיות.(
+
+$(4)$
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+\begin{axis}[
+    axis lines=center,
+    xtick={-90,0,90,180},
+    xticklabels={$-\disfrac{\pi}{2}$,$0$,$\disfrac{\pi}{2}$,$\pi$},
+    xticklabel style={
+    anchor=north east,
+    },
+    ymajorticks=false,
+    xmin = -90.1,
+    xmax = 180,
+    ymin = -2,
+    ymax = 2,
+]
+\addplot [
+    domain=-89:79, 
+    samples=40, 
+]
+{(sin(x)/(sqrt(cos(x))};
+\draw[dashed,thick] ({axis cs:-90,-2}|-{rel axis cs:0,0}) -- ({axis cs:-90,0}|-{rel axis cs:0,4});
+\draw[dashed,thick] ({axis cs:90,-2}|-{rel axis cs:0,0}) -- ({axis cs:90,0}|-{rel axis cs:0,4});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ב}
+
+$(1)$
+הפונקציה מוגדרת אם
+$\sin x>0$:
+אם 
+$y$
+מעל לציר ה-%
+$x$.
+תחום ההגדרה הוא
+$0<x<\pi$.
+
+$(2)$
+חיבור או חיסור של
+$\frac{\pi}{2}$
+משנה סינוס לקוסינוס ולהיפך. קל להשתכנע כי במשולש ישר זווית, הזוויות החדות הן
+$\theta$, $\frac{\pi}{2}-\theta$.
+צריך רק לקבוע את הסימנים, ובתרשים הראשון אנו רואים שסימן הקוסינוס נשאר חיובי והסימן של הסינוס משנה סימן:
+\[
+f\left(\frac{\pi}{2}-x\right)=\frac{-\cos x}{\sqrt{\sin x}}=-g(x)\,.
+\]
+אפשר גם לחשב לפי הנוסחה לחיסור של סינוס וקוסינוס:
+\erh{6pt}
+\begin{equationarray*}{rcl}
+\sin \left(x-\frac{\pi}{2}\right)&=&\sin x \cos \frac{\pi}{2}-\cos x\sin \frac{\pi}{2}=0\cdot \sin x-1\cdot \cos x=-\cos x\\
+\cos \left(x-\frac{\pi}{2}\right)&=&\cos x \cos \frac{\pi}{2}+\sin x\sin \frac{\pi}{2}=0\cdot \cos x+1\cdot \sin x=\sin x\,.
+\end{equationarray*}
+
+\np
+
+$(3)$
+הגרף של 
+$g(x)$
+מתקבל מהזזה ימינה של
+$\frac{\pi}{2}$
+והפיכת הסימן. למשל
+\[
+g\left(\frac{\pi}{2}\right)=-f\left(\frac{\pi}{2}-\frac{\pi}{2}\right)=-f(0)\,.
+\]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+\begin{axis}[
+    axis lines=center,
+    xtick={-90,0,90,180},
+    xticklabels={$-\disfrac{\pi}{2}$,$0$,$\disfrac{\pi}{2}$,$\pi$},
+    xticklabel style={
+    anchor=north east,
+    },
+    ymajorticks=false,
+    xmin = -90,
+    xmax = 182,
+    ymin = -2,
+    ymax = 2,
+]
+\addplot [
+    domain=1:179, 
+    samples=40, 
+]
+{(cos(x)/(sqrt(sin(x))};
+\draw[dashed,thick] ({axis cs:180,-2}|-{rel axis cs:0,0}) -- ({axis cs:180,0}|-{rel axis cs:0,4});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ג}
+
+התרומה של החלק שלילי של הפונקציה לאינטגרל שווה לתרומה של החלק החיובי שלו, ולכן האינטגרל מתאפס:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+\begin{axis}[
+    axis lines=center,
+    xtick={-90,0,90,180},
+    xticklabels={$-\disfrac{\pi}{2}$,$0$,$\disfrac{\pi}{2}$,$\pi$},
+    xticklabel style={
+    anchor=north east,
+    },
+    ymajorticks=false,
+    xmin = -90.1,
+    xmax = 180,
+    ymin = -2,
+    ymax = 2,
+]
+\addplot [
+    domain=-45:45, 
+    samples=40, 
+]
+{(sin(x)/(sqrt(cos(x))};
+\draw[dashed,thick] (axis cs:-45,-.845) -- (axis cs:-45,0);
+\draw[dashed,thick] (axis cs:45,.845) -- (axis cs:45,0);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+מי שלא משתכנע מהטיעון יכול לחשב.
+\[
+(\sqrt{\cos x})' = \frac{1}{2}\frac{)-\sin x(}{\sqrt{\cos x}}\,,
+\]
+ולכן:
+\[
+\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\sin x}{\sqrt{\cos x}}=\left.-\sqrt{\cos x}\right|_{-\frac{\pi}{4}}^{\frac{\pi}{4}}=\left(-\sqrt{\sqrt{2}/{2}}\right)-\left(-\sqrt{\sqrt{2}/{2}}\right)=0\,.
+\]
 
 
 \begin{comment}
