@@ -3,8 +3,6 @@
 \selectlanguage{hebrew}
 
 
-\begin{comment}
-
 \chapter{חקר פונקציות רציונליות}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1135,7 +1133,6 @@ f(0.5)=\frac{0.25+2}{0.25+1.5-4}=-1\,,
 -\frac{1}{3}f^3(0.5)=-\frac{1}{3}\cdot (-1)^3=\frac{1}{3}\,.
 \]
 
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1254,8 +1251,375 @@ $(\tan x)'=\frac{1}{\cos^2 x}$
 &=&\frac{\pi}{4}-0-\frac{1}{2}\tan \frac{\pi}{4} + \frac{1}{2}\tan 0=\frac{\pi}{4}-\frac{1}{2}\,.
 \end{equationarray*}
 
-\begin{comment}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{קיץ תשע"ו מועד א}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2016a-6}
+\end{center}
+
+\vspace{-2ex}
+
+אני לא ממש אוהב את השאלה כי היא מחייבת חישובים רבים עם מחשבון!
+
+\textbf{סעיף א}
+
+נתחיל עם חישוב הנגזרות:
+\erh{0pt}
+\begin{equationarray*}{rcl}
+f(x)&=& x^2 - \sin 2x\\
+f'(x)&=& 2x - 2\cos 2x\\
+f''(x)&=& 2 + 4\sin 2x\,.
+\end{equationarray*}
+השאלה מבקשת את נקודות הקיצון של הנגזרת הראשונה ונקבל אותם על ידי חישוב הנקודות בהן הנגזרת השנייה מתאפסת:
+
+\vspace{-3ex}
+
+\erh{10pt}
+\begin{equationarray*}{rcl}
+2+4\sin 2x&=& 0\\
+\sin 2x &=& -\frac{1}{2}\\
+2x&=&-\frac{\pi}{6}\\
+x&=&-\frac{\pi}{12}\,.
+\end{equationarray*}
+כאן יש להיזהר.
+$\sin )-\frac{5\pi}{6}(=-\frac{1}{2}$
+מאפס את הנגזרת השנייה, למרות ש-%
+$2x=-\frac{5\pi}{6}$
+לא נמצא בתחום כי
+$-\frac{5\pi}{6}<-\frac{\pi}{2}$,
+אבל
+$x=\frac{1}{2}\cdot -\frac{5\pi}{6}=-\frac{5\pi}{12}>-\frac{\pi}{2}$
+כן נמצא בתחום, ולכן היא נקודת קיצון של הנגזרת הראשון.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}%[scale=.9]
+\coordinate (O) at (0,0);
+\coordinate (A) at (2,0);
+\node[draw,circle through=(A)] at (O) {};
+\draw (-2,0) -- (2,0);
+\draw (0,-2) -- (0,2);
+\draw[ultra thick] (A) arc[start angle=0,end angle=-90,radius=2];
+\node[right] at (2,0) {$0$};
+\fill ($(O)+(-90:2)$) circle(2pt) node[below,xshift=-6pt] {$-\pi/2$};
+\fill ($(O)+(0:2)$) circle(2pt) node[right] {$0$};
+\draw[thick,dashed] (O) -- (-15:2) node[right] {$-\pi/12$};
+\draw[thick,dashed] (O) -- (-75:2) node[below right] {$-5\pi/12$};
+\draw[very thick,dotted] (O) -- (-30:2) node[below right] {$-\pi/6$};
+\draw[very thick,dotted] (O) -- (-150:2) node[below left] {$-5\pi/6$};
+\draw[very thick,dotted] (-4,-1) -- +(8,0) node[right] {$\sin 2x = -\disfrac{1}{2}$};
+\fill ($(O)+(-15:2)$) circle(2pt);
+\fill ($(O)+(-30:2)$) circle(2pt);
+\fill ($(O)+(-75:2)$) circle(2pt);
+\fill ($(O)+(-150:2)$) circle(2pt);
+\end{tikzpicture}
+\end{center}
+
+\np
+
+כדי לבדוק אם הנקודות הקיצון הן מינימום או מקסימום, נחשב את הנגזרת השנייה של 
+\textbf{הנגזרת הראשונה}
+שהיא הנגזרת השלישית של הפונקציה.
+\erh{12pt}
+\begin{equationarray*}{rcl}
+f''(x) &=& 2+4\sin 2x\\
+f'''(x) &=& 8\cos 2x\\
+f'''\left(-\frac{\pi}{12}\right) &=& 8\cos \left(-2\cdot\frac{\pi}{12}\right)=6.93>0\\
+f'''\left(-\frac{5\pi}{12}\right) &=& 8\cos \left(-2\cdot\frac{5\pi}{12}\right)=-6.93<0\,.
+\end{equationarray*}
+מכאן שהשיפוע הוא מקסימלי כאשר 
+$x=-\frac{5\pi}{12}$
+ומינימלי כאשר
+$x=-\frac{\pi}{12}$.
+
+חשוב לשים לב שהשאלה מבקשת את ערכי הקיצון של 
+\textbf{השיפועים} 
+ולא רק איפה הם נמצאים.
+\erh{12pt}
+\begin{equationarray*}{rcl}
+f'\left(-\frac{5\pi}{12}\right)&=&2\cdot -\frac{5\pi}{12} - 2\cos \left(-\frac{5\pi}{6}\right)=-2.62+1.73=-0.89\\
+f'\left(-\frac{\pi}{12}\right)&=&2\cdot -\frac{\pi}{12} - 2\cos \left(-\frac{\pi}{6}\right)=-0.52-1.73=-2.25\,.
+\end{equationarray*}
+
+
+\textbf{סעיף ב}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}%[scale=.9]
+\begin{axis}[
+    trig format plots=rad,
+    axis lines=center,
+    xmin=-1.65,
+    xmax=1.6,
+    xtick={-1.57,0},
+    xticklabels={$\quad\quad -\frac{\pi}{2}$,$0$},
+    ymin = -2.27,
+    ymax = .5,
+    ymajorticks=false,
+    xticklabel style={anchor=north east,},
+]
+\addplot [
+    domain=-1.57:0, 
+    samples=40, 
+]
+{2*x-2*cos(2*x)};
+\fill (axis cs:-1.31,.-.89) circle(1.5pt) node[above right] {$\left(-\disfrac{5\pi}{12},-0.89\right)$};
+\fill (axis cs:-.26,.-2.25) circle(1.5pt) node[above right,xshift=16pt] {$\left(-\disfrac{\pi}{12},-2.25\right)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\textbf{סעיף ג}
+
+$(1)$
+נקודות הפיתול הן הנקודות בהן הנגזרת השנייה מתאפסת
+$\left(-\disfrac{\pi}{12},0.569\right)$
+ו-%
+$\left(-\disfrac{5\pi}{12},1ץ21\right)$.
+
+עבור הערך
+$-\frac{5.5\pi}{12}$
+שהוא מעט קרוב יותר ל-%
+$\frac{\pi}{2}$
+הנגזרת השנייה היא:
+\[
+f''\left(-\frac{5.5\pi}{12}\right)= 2 + 4\sin \left(2\cdot -\frac{5.5\pi}{12}\right)=3.04>0\,,
+\]
+והפונקציה קעורה כפלי מעלה ב-%
+$-\frac{\pi}{2}<x<-\frac{5\pi}{12}$.
+
+עבור הערך
+$-\frac{\pi}{4}$
+שהוא בין שתי נקודות הפיתול, הנגזרת השנייה היא:
+\[
+f''\left(-\frac{\pi}{4}\right)= 2 + 4\sin \left(2\cdot -\frac{\pi}{4}\right)=-2<0\,,
+\]
+
+\np
+
+והפונקציה קעורה כפלי מטה ב-%
+$-\frac{5\pi}{2}<x<-\frac{\pi}{12}$.
+
+עבור הערך
+$-\frac{\pi}{24}$
+שהוא מעט קרוב יותר ל-%
+$0$
+הנגזרת השנייה היא:
+\[
+f''\left(-\frac{\pi}{24}\right)= 2 + 4\sin \left(2\cdot -\frac{\pi}{24}\right)=3.04>0\,,
+\]
+והפונקציה קעורה כפלי מעלה ב-%
+$-\frac{\pi}{12}<x<0$.
+
+\bigskip
+
+$(2)$
+נקודות הפיתול מסומנות.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}%[scale=.9]
+\begin{axis}[
+    trig format plots=rad,
+    axis lines=center,
+    xmin=-1.65,
+    xmax=1.6,
+    xtick={-1.57,0},
+    xticklabels={$\quad\quad -\frac{\pi}{2}$,$0$},
+    ymin = -1,
+    ymax = 3,
+    ymajorticks=false,
+    xticklabel style={anchor=north east,},
+]
+\addplot [
+    domain=-1.57:0, 
+    samples=40, 
+]
+{x^2-sin(2*x)};
+\fill (axis cs:-1.31,2.21) circle(1.5pt) node[above right] {$\left(-\disfrac{5\pi}{12},2.21\right)$};
+\fill (axis cs:-.26,.569) circle(1.5pt) node[right,xshift=16pt] {$\left(-\disfrac{\pi}{12},0.569\right)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{חורף תשע"ו}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=.95\textwidth]{winter-2016-6}
+\end{center}
+
+\vspace{-2ex}
+שאלה מאוד ארוכה. קצת מפחיד!
+
+\textbf{סעיף א}
+
+נקודות הקיצון הן הנקודות בהן הנגזרת הראשונה מתאפסת, ונתון ההיא מתאפסת ב-%
+$\frac{\pi}{3}$
+)לפחות(:
+
+\vspace{-4ex}
+
+\erh{12pt}
+\begin{equationarray*}{rcl}
+f'(x) &=& 2a\sin x\cos x - 4b\sin 4x\\
+f'\left(\frac{\pi}{3}\right) &=& 2a\sin \frac{\pi}{3}\cos \frac{\pi}{3} - 4\sin \frac{4\pi}{3}\\
+&=&2a\cdot\frac{\sqrt{3}}{2}\cdot \frac{1}{2}-4b\cdot \frac{-\sqrt{3}}{2}=0\\
+a&=&-4b\,.
+\end{equationarray*}
+
+\np
+
+השאלה מבקשת את נקודות הקיצון באמצעות 
+$b$
+ולכן נציב עבור 
+$a$:
+\[
+f'(x) = -8b\sin x\cos x - 4b\sin 4x=0\,.
+\]
+המשוואה נראית די מסובכת אלא אם נשים לב שמתנה: ניתן לפשט אותו על ידי שימוש בנוסחה עבור
+$\sin (\theta+\theta)$:
+\erh{12pt}
+\begin{equationarray*}{l}
+-8b\sin x\cos x - 4b\sin 4x=\\
+-4b(2\sin x \cos x + \sin (2x+2x))=\\
+-4b(\sin 2x + 2 \sin 2x \cos 2x)=\\
+-4b\sin 2x(1+\cos 2x)=0\,.
+\end{equationarray*}
+נבדוק כל אחד משני הגורמים כדי לחפש איפה הם מתאפסים בתחום.
+$\sin 2x = 0$
+כאשר 
+$2x=0, \pm \pi, \ldots$.
+בתחום האפשרויות הן
+$x=0,x=\frac{\pi}{2}$.
+מ-%
+$1+\cos 2x=0$
+יש לנו
+$\cos 2x =-\frac{1}{2}$
+ו-%
+$2x=\frac{2\pi}{3},\frac{4\pi}{3},\frac{8\pi}{3},\ldots$.
+בתחום האפשרויות הן:
+$x=\frac{\pi}{3},x=\frac{2\pi}{3}$.
+נחשב את נקודות הקיצון:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+f(0)&=&-4b\sin^2 0+b\cos 0=b\\
+f\left(\frac{\pi}{3}\right)&=&-4b\sin^2 \frac{\pi}{3}+b\cos \frac{4\pi}{3}=-4b\cdot \frac{3}{4}+b\cdot -\frac{1}{2}=-3.5b\\
+f\left(\frac{\pi}{2}\right)&=&-4b\sin^2 \frac{\pi}{2}+b\cos \frac{4\pi}{2}=-4b+b=-3b\\
+f\left(\frac{2\pi}{3}\right)&=&-4b\sin^2 \frac{2\pi}{3}+b\cos \frac{8\pi}{3}=-4b\cdot \frac{3}{4}+b\cdot -\frac{1}{2}=-3.5b\,.
+\end{equationarray*}
+אלה כל נקודות הקיצון כולל בקצות התחום והפונקציה מוגדרת בכל התחום. נתון 
+$b<0$,
+ולכן:
+\erh{12pt}
+\begin{equationarray*}{lr}
+\left(0,b\right)&\textrm{\R{מינימום}}\\
+\left(\frac{\pi}{3},-3.5b\right)&\textrm{\R{מקסימום}}\\
+\left(\frac{\pi}{2},-3b\right)&\textrm{\R{מינימום}}\\
+\left(\frac{2\pi}{3},-3.5b\right)&\textrm{\R{מקסימום}}
+\end{equationarray*}
+
+\textbf{סעיף ב}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}%[scale=.9]
+\begin{axis}[
+    trig format plots=rad,
+    axis lines=center,
+    xmin=-1,
+    xmax=4,
+    xtick={0,1.05,1.57,2.09},
+    xticklabels={$0$,$\frac{\pi}{3}$,$\frac{\pi}{2}$,$\frac{2\pi}{3}$,},
+    ymin = -2,
+    ymax = 5,
+]
+\addplot [
+    domain=0:2.09, 
+    samples=40, 
+]
+{4*(sin(x))^2-cos(4*x)};
+\fill (axis cs:0,-1) circle(1.5pt) node[left] {$(0,b)$};
+\fill (axis cs:1.05,3.5) circle(1.5pt) node[above] {$\left(\disfrac{\pi}{3},-3.5b\right)$};
+\fill (axis cs:1.57,3) circle(1.5pt) node[below] {$\left(\disfrac{\pi}{2},-3b\right)$};
+\fill (axis cs:2.09,3.5) circle(1.5pt) node[above right] {$\left(\disfrac{2\pi}{3},-3.5b\right)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{סעיף ג}
+
+בארבעת נקודות הקיצון הנגזרת הראשונה היא אפס. מעיון הגרף של
+$f(x)$,
+השיפוע מתחיל באפס, עולה ואז יורדת שוב לאפס, אח"כ יורדת עוד ועולה, ולבסוף עולה עוד ויורדת.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}%[scale=.9]
+\begin{axis}[
+    trig format plots=rad,
+    axis lines=center,
+    xmin=-1,
+    xmax=4,
+    xtick={0,1.05,1.57,2.09},
+    xticklabels={$0$,$\frac{\pi}{3}$,$\frac{\pi}{2}$,$\frac{2\pi}{3}$,},
+    ymin = -2,
+    ymax = 7,
+]
+\addplot [
+    domain=0:2.09, 
+    samples=40, 
+]
+{8*sin(x)*cos(x)+4*sin(4*x)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2ex}
+
+\textbf{סעיף ד}
+
+$(1)$
+
+\vspace{-4ex}
+
+\erh{12pt}
+\begin{equationarray*}{rcl}
+\int_{\frac{\pi}{2}}^{\frac{2\pi}{3}} f''(x) dx&=& \left. f'(x)\right|_{\frac{\pi}{2}}^{\frac{2\pi}{3}}\\
+&=&-8b\sin \frac{4\pi}{3}\left(1+2\cos \frac{4\pi}{3}\right)+8b\sin \frac{2\pi}{2}\left(1+2\cos \frac{2\pi}{2}\right)\\
+&=&-8b \cdot -\frac{\sqrt{3}}{2}\left(1+2\cdot-\frac{1}{2}\right)+8b\sin 0\left(1+2\cdot -1\right)\\
+&=&0+0=1\,.
+\end{equationarray*}
+
+\vspace{-2ex}
+
+$(2)$
+ב-%
+$(1)$
+חישבנו שהאיטגרל על כל התחום מ-%
+$\frac{\pi}{2}$
+ל-%
+$\frac{2\pi}{3}$
+הוא 
+$0$.
+השטח הראשון, האיטגרל מ-%
+$\frac{\pi}{2}$
+ל-%
+$k$,
+הוא
+$S$.
+לכן השטח השני, האינטגרל מ-%
+$k$
+ל-%
+$\frac{2\pi}{3}$,
+הוא
+$0-S=-S$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2233,6 +2597,8 @@ $x=1,x=-2$.
 $(1,0), (-2,0)$.
 
 
+\np
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{המלצות}
 
@@ -2240,9 +2606,26 @@ $(1,0), (-2,0)$.
 \item
 אי-אפשר להכין טבלה של עליות וירידות עד שלא מחשבים את תחום ההגדרה וכל נקודות הקיצון של הפנוקציה, כי רק ביניהם אפשר לסמוך על זה שאין שינוי בכיוון הפונקציה.
 
-\end{itemize}
+\item
+נניח שהתחום הנתון בשאלה הוא
+$0\leq x \leq \frac{\pi}{2}$,
+ונניח שמקבלים תוצאה כגון
+$2x=\frac{\pi}{3}$.
+ברור שתשובה אחת היא
+$x=\frac{\pi}{6}$,
+כאשר
+$0\leq \frac{\pi}{6} \leq \frac{\pi}{2}$.
+אבל לא לשכוח שגם:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+2x&=&\frac{\pi}{3}+2\pi=\frac{7\pi}{3}\\
+x&=&\frac{7\pi}{6}\,,
+\end{equationarray*}
+היא תשובה, למרות ש-%
+$x=\frac{7\pi}{6}>\frac{\pi}{2}$
+לא בתחום.
 
-\end{comment}
+\end{itemize}
 
 
 \selectlanguage{english}
