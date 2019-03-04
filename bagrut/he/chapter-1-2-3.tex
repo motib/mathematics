@@ -1,57 +1,8 @@
 \documentclass[12pt,a4paper,twoside]{report}
 
-\usepackage[utf8x]{inputenc}
-\usepackage[english,hebrew]{babel}
-
-\usepackage{graphicx}
-\usepackage{verbatim}
-\usepackage{url}
-\usepackage{bm}
-\usepackage{float}
-\usepackage{eqnarray}
-
-\usepackage{tikz}
-\usepackage{tkz-euclide}
-\usetikzlibrary{positioning,through,calc,intersections,arrows.meta,external}
-\tikzexternalize[prefix=tikz/]
-\tikzset{>=stealth} % Use stealth arrows
-\usetkzobj{all}
-
-\textwidth=155mm
-\textheight=235mm
-\topmargin=0pt
-\headheight=0pt
-\oddsidemargin=-5mm
-\evensidemargin=5mm
-\headsep=0pt
-\parindent=0pt
-\renewcommand{\baselinestretch}{1.1}
-\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
-
-\graphicspath{{images/}}
-
-\newcommand*{\p}[1]{\textsf{\small #1}}
-\newcommand*{\bover}[1]{\bm{\overline{#1}}}
-\newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
-\newcommand*{\np}{\selectlanguage{english}\newpage\selectlanguage{hebrew}}
-\newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
-
-
-%  Less space above chapter title
-\makeatletter
-\def\@makechapterhead#1{%
-  {\parindent \z@ \raggedright \normalfont
-    \ifnum \c@secnumdepth >\m@ne
-        \centering\huge\bfseries \@chapapp\space \thechapter
-        \hspace{.3em}
-    \fi
-    \Huge \bfseries #1\par\nobreak
-    \vskip 20\p@
-  }}
-\makeatother
+\usepackage{bagrut}
 
 \selectlanguage{hebrew}
-
 
 %\includeonly{}
 

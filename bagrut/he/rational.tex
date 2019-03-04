@@ -7,12 +7,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \section{קיץ תשע"ח מועד ב}
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2018b-6}
+%\includegraphics[width=\textwidth]{summer-2018b-6}
+\includegraphics[width=\textwidth]{summer-2018b-6a}
+\includegraphics[width=\textwidth]{summer-2018b-6b}
 \end{center}
 
 \vspace{-4ex}
@@ -21,9 +22,9 @@
 
 נקודות הקיצון של
 $f'(x)$
-יהיו הנקודות בהן 
+הן הנקודות בהן 
 $f''(x)=0$.
-לגרפ
+לגרף
 $II$
 נקודות קיצון ב-%
 $\pm\sqrt{3},0$
@@ -49,7 +50,7 @@ $II$
 $\pm\sqrt{6},0$,
 אבל ב-%
 $0$
-הוא לא מחליף סימן ולכן
+היא לא מחליף סימן ולכן
 $0$
 הוא לא נקודת קיצון.
 
@@ -58,12 +59,13 @@ $(2)$
 $\pm\sqrt{6},0$.
 בכל שלושת הנקודות הנגזרת הראשונה לא מחליפה סימן, ולכן כולן נקודות פיתול ולא נקודות קיצון.
 
+\np
+
 \textbf{סעיף ג}
 
 הנגזרת השנייה היא שיפוע המשיק לנגזרת הראשונה. בתחום הניתן הערך המינימלי מתקבל ב-%
 $1$.
 
-\np
 
 \textbf{סעיף ד}
 
@@ -78,9 +80,21 @@ $f(x)$
 אי-זוגית,
 $f(0)=f(-0)=-f(0)=0$.
 \end{quote}
-בסעיף ב חישבנו שיש שתי נקודות פיתול נוספות
-$\pm\sqrt{6}\approx 2.45$,
-והגרף נראה כך:
+בין 
+$0$
+ל-%
+$\sqrt{3}$
+הנגזרת הראשונה, השיפוע, שלילית )גרף
+$II$(,
+ולכן 
+$f(x)$
+יורדת מאפס לערכים שליליים. בסעיף ב חישבנו שיש שתי נקודות פיתול נוספות ב-%
+$\pm\sqrt{6}\approx 2.45$.
+נתון שהפונקציה אי-זוגיות כך שאפשר לקבל את הערכים עבור
+$x<0$
+על ידי סימטריה סביב ציר ה-%
+$y$.
+הגרף נראה כך:
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1]
@@ -108,16 +122,22 @@ $\pm\sqrt{6}\approx 2.45$,
 
 \textbf{סעיף ה}
 
-לפי הנתון שהפונקציה א-זוגית
+מהגרף רואים שהגבולות הם 
+$-\sqrt{6},0$,
+אבל כדי לנמק. מצאנו בסעיף ב ש-%
+$f'(-\sqrt{6})=0$,
+ובסעיף ד ראינו ש-%
 $f(0)=0$,
-לכן יש לנו את גבולות האינטגרל:
+כך שציר ה-%
+$x$
+תוחם את השטח. האינטגרל הוא:
 \[
 \int_{-\sqrt{6}}^0 0-f'(x) dx = - \left.f(x)\right|_{-\sqrt{6}}^{0}=-(-f(-\sqrt{6}))=t\,,
 \]
 כי נקודת המקסימום של 
 $f(x)$
-היא הנקודה בה הנגזרת הראשונה עוברת מחיובי לשלילי
-$-\sqrt{6}$.
+היא ב-%
+$x=-\sqrt{6}$.
 
 \textbf{סעיף ו}
 
@@ -125,17 +145,18 @@ $-\sqrt{6}$.
 $f(0)=0$,
 $c=0$.
 
-הנגזרצ הראשונה מתאפסת ב-%
+הנגזרת הראשונה מתאפסת ב-%
 $\pm\sqrt{6}$:
-\erh{0pt}
+\erh{10pt}
 \begin{equationarray*}{rcl}
 f'(x) &=& 5ax^4 + 3bx^2\\
-&=& 5a(\sqrt{6})^4 + 3b(\sqrt{6})^2= 0\\
-5a(\sqrt{6})^2 + 3b&=& 0\\
-30a+3b&=&0\\
+&=& 5a(\pm\sqrt{6})^4 + 3b(\pm\sqrt{6})^2\\
+&=&5a(\pm\sqrt{6})^2 + 3b= 0\\
+%30a+3b&=&0\\
 \frac{a}{b}&=&-\frac{1}{10}\,.
 \end{equationarray*}
 
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -144,22 +165,26 @@ f'(x) &=& 5ax^4 + 3bx^2\\
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2018a-6}
+%\includegraphics[width=\textwidth]{summer-2018a-6}
+\includegraphics[width=\textwidth]{summer-2018a-6a}
+\includegraphics[width=\textwidth]{summer-2018a-6b}
 \end{center}
 
 \vspace{-4ex}
 
 \textbf{סעיף א}
 
-המכנה לא יכול להיות אפס. לפולינום הריבוע יהיו פתרונות אם
-$(-2)^2-4\cdot a \cdot 1 = 4-4a\geq 0$,
+נתון שהפונקציה מוגדרת לכל 
+$x$,
+ולכן הפולינום במכנה לא יהיו שורשים, כלומר, ש-%
+$b^2-4ac< 0$.
+$(-2)^2-4\cdot a \cdot 1 = 4-4a< 0$,
 ולכן 
 $a>1$.
-עלינו לוודא שהפולינום לא מקבל ערכים שליליים כדי שהשורש יהיה מוגדר. ללא קשר לערך של 
-$a$,
-הערך של הפולינום הוא
-$1$,
-כלומר, יש לו ערך חיובי אחד לפחות. אם אין פתרונות לפולינום, אז אין חיתוכים עם ציר ה-%
+כמו כן, אסור שלפולינום יהיו ערכים שליליים כדי שהשורש יהיה מוגדר. לפולינום יש לפחות ערך חיובי אחד, למשל, 
+$x=\frac{1}{2}$,
+$a>1>0$.
+אם הפולינום לא יכול לקבל ערך אפס, אין נקודות חיתוך עם ציר ה-%
 $x$
 ולא יהיו ערכים שליליים.
 
@@ -171,8 +196,6 @@ $f(0)=\frac{-1}{\sqrt{1}}$
 $y$
 היא
 $(0,-1)$.
-
-$(2)$
 המכנה חיובי כך שנקודת החיתוך עם ציר ה-%
 $x$
 מתקבל מ-%
@@ -180,28 +203,26 @@ $ax-1=0$,
 והנקודה היא
 $(\frac{1}{a},0)$.
 
-$(3)$
-
-\vspace{-3ex}
-
-\erh{12pt}
-\begin{equationarray*}{rcl}
-f(x)&=&\frac{ax-1}{\sqrt{ax^2-2x+1}}\\
-&=&\frac{x(a-\frac{1}{x})}{\sqrt{x^2}\left(\sqrt{a-\frac{2}{x}+\frac{1}{x^2}}\right)}\\
-&\mathop{\longrightarrow}\limits_{\pm\infty}&\frac{xa}{\sqrt{x^2}\sqrt{a}}\,.
-\end{equationarray*}
-ה%
-\asms{}
-הן
-$f(x)\mathop{\longrightarrow}\limits_{+\infty}\sqrt{a}$,
-$f(x)\mathop{\longrightarrow}\limits_{-\infty}-\sqrt{a}$.
+$(2)$
+עבור
+$x\rightarrow +\infty$:
+\[
+\frac{\left(a-\frac{1}{x}\right)}{+\sqrt{a-\frac{2}{x}+\frac{1}{x^2}}}\mathop{\longrightarrow}\limits_{+\infty} =\frac{a}{\sqrt{a}}=\sqrt{a}\,.
+\]
+עבור
+$x\rightarrow -\infty$:
+\[
+\frac{\left(a-\frac{1}{x}\right)}{-\sqrt{a-\frac{2}{x}+\frac{1}{x^2}}}\mathop{\longrightarrow}\limits_{-\infty} =-\frac{a}{\sqrt{a}}=-\sqrt{a}\,.
+\]
 
 \np
 
-$(4)$
+$(3)$
+נחשב את הנגזרת הראשונה:
 \erh{16pt}
 \begin{equationarray*}{rcl}
-f'(x)&=&\frac{a\sqrt{ax^2-2x+1}-\disfrac{(ax-1)(2ax-2)}{2\sqrt{ax^2-2x+1}}}{(\sqrt{ax^2-2x+1})^2}\\
+f'(x)&=&\frac{a\sqrt{ax^2-2x+1}-(ax-1)\cdot\disfrac{1}{2}\cdot\left(\sqrt{ax^2-2x+1}\right)^{-\frac{1}{2}}(2ax-2)}
+{(\sqrt{ax^2-2x+1})^2}\\
 &=&\frac{a(ax^2-2x+1)-(ax-1)(ax-1)}{(\sqrt{ax^2-2x+1})^2\sqrt{ax^2-2x+1}}\,.
 \end{equationarray*}
 המכנה חיובי ולכן סימן הנגזרת תלוי בסימן המונה:
@@ -253,7 +274,7 @@ $(4)$
 \textbf{סעיף ג}
 
 $\frac{1}{3}<\frac{2}{3}$
-ולכן גבולות האינטגרל בחלק החיובי של הפונקציה.
+ולכן גבולות האינטגרל הם בחלק החיובי של הפונקציה.
 \erh{12pt}
 \begin{equationarray*}{rcl}
 \int_{2/3}^2 \frac{3x-1}{\sqrt{3x^2-2x+1}}&=& \int_{2/3}^2 \frac{2}{2}\left(\sqrt{3x^2-2x+1}\right)'\\
@@ -265,7 +286,9 @@ $\frac{1}{3}<\frac{2}{3}$
 
 \textbf{סעיף ד}
 
-שתי האפשרויות הן ש-%
+נתון ש-%
+$b>\frac{1}{3}$
+כך שגבולות האינטרגלים בתחום החיובי של הפונקציות. שתי האפשרויות הן ש-%
 $f(x)$
 מעל 
 $g(x)$
@@ -277,15 +300,19 @@ $f(x)$.
 \int (g-f) = \int g - \int f = \int g - S = 2S\,,
 \]
 ולכן
-$\int g = 3S$,
+$\int g = 3S$
+ו-%
 $g=3f$.
 
 \[
 \int (f-g) = \int f - \int g = S-\int g= 2S\,,
 \]
 ולכן
-$-\int g = S$,
+$-\int g = S$
+ו-%
 $g=-f$.
+
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -298,12 +325,16 @@ $g=-f$.
 
 \vspace{-4ex}
 
-התרשים להלן יאפשר לנו לחשב תכונות של הפונקציות הטריגונומטריותת. הקשת העבה מראה את התחום בשאלה והקווים המקווקווים מראים איך מתקבל
+הקשת העבה מראה את התחום והקווים מראים איך מתקבל
 $x-\disfrac{\pi}{2}$
-)סעיף ב-%
-$2$(.
+עבור
+$x=\frac{\pi}{6},\frac{5\pi}{6}$:
+\[
+\frac{\pi}{6}-\frac{\pi}{2}=\frac{\pi}{6}-\frac{3\pi}{6}=-\frac{2\pi}{6}=-\frac{\pi}{3},\quad\quad
+\frac{5\pi}{6}-\frac{\pi}{2}=\frac{5\pi}{6}-\frac{3\pi}{6}=\frac{2\pi}{6}=\frac{\pi}{3}\,.
+\]
 
-\vspace{-2ex}
+\vspace{-4ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -320,6 +351,8 @@ $2$(.
 \fill ($(O)+(180:2)$) circle(2pt) node[left] {$\pi$};
 \draw[thick,dashed] (O) -- (30:2) node[above right] {$\pi/6$};
 \draw[thick,dashed] (O) -- (-60:2) node[below right] {$-\pi/3$};
+\draw[thick,dotted] (O) -- (150:2) node[above left] {$5\pi/6$};
+\draw[thick,dotted] (O) -- (60:2) node[above right] {$\pi/3$};
 \end{tikzpicture}
 \end{center}
 
@@ -328,8 +361,9 @@ $2$(.
 \textbf{סעיף א}
 
 $(1)$
-הפונקציה מוגדרת אם
-$\cos x>0$:
+$f(x)$
+מוגדרת אם
+$\cos x>0$,
 אם 
 $x$
 מימין לציר ה-%
@@ -339,7 +373,7 @@ $-\frac{\pi}{2}<x<\frac{\pi}{2}$.
 
 $(2)$
 \[
-\frac{\sin x}{\sqrt{\cos x}} \mathop{\longrightarrow}\limits_{+\infty} \frac{+1}{0}\mathop{\longrightarrow}\limits_{+\infty} +\infty,\quad\quad \frac{\sin x}{\sqrt{\cos x}} \mathop{\longrightarrow}\limits_{-\infty} \frac{-1}{0}\mathop{\longrightarrow}\limits_{-\infty} -\infty
+\frac{\sin x}{\sqrt{\cos x}} \mathop{\longrightarrow}\limits_{+\frac{\pi}{2}} \frac{+1}{0}= +\infty,\quad\quad \frac{\sin x}{\sqrt{\cos x}} \mathop{\longrightarrow}\limits_{-\frac{\pi}{2}} \frac{-1}{0}= -\infty\,.
 \]
 
 \np
@@ -347,8 +381,9 @@ $(2)$
 $(3)$
 \erh{12pt}
 \begin{equationarray*}{rcl}
-f'(x) &=& \frac{\cos x\sqrt{\cos x} - \sin x \cdot\frac{-\sin x}{2\sqrt{\cos x}}}{\cos x}\\
-&=& \frac{2\cos^2 x + \sin^ x}{2\cos x\sqrt{\cos x}}\\
+f'(x) &=& \frac{\cos x\sqrt{\cos x} -
+ \sin x\cdot\frac{1}{2}(\sqrt{\cos x})^{-\frac{1}{2}}\cdot (-\sin x)}{\cos x}\\
+&=& \frac{2\cos^2 x + \sin^2 x}{2\cos x\sqrt{\cos x}}\\
 &=& \frac{\cos^2 x + 1}{2\cos x\sqrt{\cos x}}\,.
 \end{equationarray*}
 
@@ -356,16 +391,20 @@ f'(x) &=& \frac{\cos x\sqrt{\cos x} - \sin x \cdot\frac{-\sin x}{2\sqrt{\cos x}}
 
 בתחום ההגדרה
 $\cos x > 0$
-ולכן הנגזרת הראשונה תמיד חיובית והפונקציה עולה בכל התחום. )ברור שאם הנגזרת תמיד חיובית, היא לא מתאפסת בתחום כך שאין נקודות קיצון פנימיות.(
+ולכן הנגזרת הראשונה תמיד חיובית והפונקציה עולה בכל התחום. שימו לב שאם הנגזרת תמיד חיובית, היא לא מתאפסת בתחום כך שאין נקודות קיצון פנימיות.
 
 $(4)$
+$f(0)=\frac{\sin 0}{\cos 0} = \frac{0}{1}=0$.
+ביחד עם חישוב ה%
+\asms{},
+ניתן לצייר את גרף הפונקציה:
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
 \begin{axis}[
     axis lines=center,
-    xtick={-90,0,90,180},
-    xticklabels={$-\disfrac{\pi}{2}$,$0$,$\disfrac{\pi}{2}$,$\pi$},
+    xtick={-90,-45, 0,45,90,180},
+    xticklabels={$-\disfrac{\pi}{2}$,$-\disfrac{\pi}{4}$,$0$,$\disfrac{\pi}{4}$,$\disfrac{\pi}{2}$,$\pi$},
     xticklabel style={
     anchor=north east,
     },
@@ -382,9 +421,12 @@ $(4)$
 {(sin(x)/(sqrt(cos(x))};
 \draw[dashed,thick] ({axis cs:-90,-2}|-{rel axis cs:0,0}) -- ({axis cs:-90,0}|-{rel axis cs:0,4});
 \draw[dashed,thick] ({axis cs:90,-2}|-{rel axis cs:0,0}) -- ({axis cs:90,0}|-{rel axis cs:0,4});
+\draw[dotted,very thick] (axis cs:45,0) -- (axis cs:45,.84);
+\draw[dotted,very thick] (axis cs:-45,0) -- (axis cs:-45,-.84);
 \end{axis}
 \end{tikzpicture}
 \end{center}
+
 
 \textbf{סעיף ב}
 
@@ -401,17 +443,15 @@ $0<x<\pi$.
 $(2)$
 חיבור או חיסור של
 $\frac{\pi}{2}$
-משנה סינוס לקוסינוס ולהיפך. קל להשתכנע כי במשולש ישר זווית, הזוויות החדות הן
-$\theta$, $\frac{\pi}{2}-\theta$.
-צריך רק לקבוע את הסימנים, ובתרשים הראשון אנו רואים שסימן הקוסינוס נשאר חיובי והסימן של הסינוס משנה סימן:
+משנה סינוס לקוסינוס ולהיפך. צריך רק לקבוע את הסימנים )ראו תרשים לפני סעיף א(.
 \[
-f\left(\frac{\pi}{2}-x\right)=\frac{-\cos x}{\sqrt{\sin x}}=-g(x)\,.
+f\left(x-\frac{\pi}{2}\right)=\frac{\sin\left(x-\frac{\pi}{2}\right)}{\sqrt{\cos\left(x-\frac{\pi}{2}\right)}}=\frac{-\cos x}{\sqrt{\sin x}}=-g(x)\,.
 \]
 אפשר גם לחשב לפי הנוסחה לחיסור של סינוס וקוסינוס:
 \erh{6pt}
 \begin{equationarray*}{rcl}
-\sin \left(x-\frac{\pi}{2}\right)&=&\sin x \cos \frac{\pi}{2}-\cos x\sin \frac{\pi}{2}=0\cdot \sin x-1\cdot \cos x=-\cos x\\
-\cos \left(x-\frac{\pi}{2}\right)&=&\cos x \cos \frac{\pi}{2}+\sin x\sin \frac{\pi}{2}=0\cdot \cos x+1\cdot \sin x=\sin x\,.
+\sin \left(x-\frac{\pi}{2}\right)&=&\sin x \cos \frac{\pi}{2}-\cos x\sin \frac{\pi}{2}=-\cos x\\
+\cos \left(x-\frac{\pi}{2}\right)&=&\cos x \cos \frac{\pi}{2}+\sin x\sin \frac{\pi}{2}=\sin x\,.
 \end{equationarray*}
 
 \np
@@ -421,19 +461,19 @@ $(3)$
 $g(x)$
 מתקבל מהזזה ימינה של
 $\frac{\pi}{2}$
-והפיכת הסימן. למשל
+והפיכת הסימן. למשל:
 \[
-g\left(\frac{\pi}{2}\right)=-f\left(\frac{\pi}{2}-\frac{\pi}{2}\right)=-f(0)\,.
+g\left(\frac{\pi}{4}\right)=-f\left(\frac{\pi}{4}-\frac{\pi}{2}\right)=-f\left(-\frac{\pi}{4}\right)\,.
 \]
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
 \begin{axis}[
     axis lines=center,
-    xtick={-90,0,90,180},
-    xticklabels={$-\disfrac{\pi}{2}$,$0$,$\disfrac{\pi}{2}$,$\pi$},
+    xtick={0,45,90,135,180},
+    xticklabels={$0$,$\disfrac{\pi}{4}$,$\disfrac{\pi}{2}$,$\disfrac{3\pi}{4}$,$\pi$},
     xticklabel style={
-    anchor=north east,
+    anchor=south east,
     },
     ymajorticks=false,
     xmin = -90,
@@ -447,52 +487,31 @@ g\left(\frac{\pi}{2}\right)=-f\left(\frac{\pi}{2}-\frac{\pi}{2}\right)=-f(0)\,.
 ]
 {(cos(x)/(sqrt(sin(x))};
 \draw[dashed,thick] ({axis cs:180,-2}|-{rel axis cs:0,0}) -- ({axis cs:180,0}|-{rel axis cs:0,4});
+\draw[dotted,very thick] (axis cs:45,0) -- (axis cs:45,.84);
+\draw[dotted,very thick] (axis cs:135,0) -- (axis cs:135,-.84);
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
 \textbf{סעיף ג}
 
-התרומה של החלק שלילי של הפונקציה לאינטגרל שווה לתרומה של החלק החיובי שלו, ולכן האינטגרל מתאפס:
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.9]
-\begin{axis}[
-    axis lines=center,
-    xtick={-90,0,90,180},
-    xticklabels={$-\disfrac{\pi}{2}$,$0$,$\disfrac{\pi}{2}$,$\pi$},
-    xticklabel style={
-    anchor=north east,
-    },
-    ymajorticks=false,
-    xmin = -90.1,
-    xmax = 180,
-    ymin = -2,
-    ymax = 2,
-]
-\addplot [
-    domain=-45:45, 
-    samples=40, 
-]
-{(sin(x)/(sqrt(cos(x))};
-\draw[dashed,thick] (axis cs:-45,-.845) -- (axis cs:-45,0);
-\draw[dashed,thick] (axis cs:45,.845) -- (axis cs:45,0);
-\end{axis}
-\end{tikzpicture}
-\end{center}
+התרומה של החלק שלילי של הפונקציה לאינטגרל שווה לתרומה של החלק החיובי שלו, ולכן האינטגרל מתאפס.
+
 מי שלא משתכנע מהטיעון יכול לחשב.
 \[
-(\sqrt{\cos x})' = \frac{1}{2}\frac{)-\sin x(}{\sqrt{\cos x}}\,,
+(\sqrt{\cos x})' = \frac{1}{2}\cdot(\sqrt{\cos x})^{-\frac{1}{2}}\cdot (-\sin x)=-\frac{1}{2}\frac{\sin x}{\sqrt{\cos x}}\,,
 \]
 ולכן:
 \[
-\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\sin x}{\sqrt{\cos x}}=\left.-\sqrt{\cos x}\right|_{-\frac{\pi}{4}}^{\frac{\pi}{4}}=\left(-\sqrt{\sqrt{2}/{2}}\right)-\left(-\sqrt{\sqrt{2}/{2}}\right)=0\,.
+\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{\sin x}{\sqrt{\cos x}}=\left.-2\sqrt{\cos x}\right|_{-\frac{\pi}{4}}^{\frac{\pi}{4}}=-2\left(\sqrt{\sqrt{2}/{2}}\right)-(-2)\left(\sqrt{\sqrt{2}/{2}}\right)=0\,.
 \]
 
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{קיץ תשע"ז מועד ב}
+
 
 \begin{center}
 \selectlanguage{english}
@@ -551,7 +570,7 @@ $(x-2)$
 $(x-2)^2$
 הנגזרת הראשונה היא:
 \[
-f'(x) = \frac{2(x-2)^2-2(x-2)}{(x-2)^4}=\frac{2x^2-10x+12)}{(x-2)^4}\,.
+f'(x) = \frac{2(x-2)^2-2(x-2)}{(x-2)^4}=\frac{2x^2-10x+12}{(x-2)^4}\,.
 \]
 
 \np
@@ -566,7 +585,7 @@ $x=3$,
 \[
 \begin{array}{c|c|c|c|c|c}
 x & 0 & 2 & 2.5 & 3 & 4\\\hline
-f'(x) & 0.75 & \times & -0.5& 0 & 0.25\\\hline
+f'(x) & 0.75 & \times & -0.8& 0 & 0.25\\\hline
 f(x) & \nearrow & \times & \searrow & a-1 & \nearrow
 \end{array}
 \]
@@ -575,7 +594,7 @@ $(3,a-1)$
 היא מינימום.
 
 $(4)$
-ראו בסעיף הקודם.
+הפתרון מופיע בטבלה בתת-סעיף הקודם.
 
 \textbf{סעיף ב}
 
@@ -645,6 +664,8 @@ g(3)&=&|f(3)+k|=a=1\\
 k&=&\pm 1\,.
 \end{eqnarray*}
 
+\np
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -668,11 +689,11 @@ x^2-10x+24 &>& 0\\
 \end{equationarray*}
 המכפלה חיובית רק אם שני הגורמים גדולים מאפס או שניהם קטנים מאפס. אבל אם 
 $x>6$
-אז 
+אז גם
 $x>4$
 ואם
 $x<4$
-אז 
+אז גם
 $x<6$,
 ולכן הפונקציה מוגדרת כאשר:
 \[
@@ -688,7 +709,7 @@ $x-5=0$.
 $5$
 לא בתחום ההגדרה כך שאין נקודת חיתוך עם ציר ה-%
 $x$.
-חישוב נקודת החיתוך 
+נחשב את נקודת החיתוך 
 $(0,y)$
 עם ציר ה-%
 $y$:
@@ -699,8 +720,8 @@ $(3)$
 כאשר 
 $x\rightarrow 6^{+}$
 המונה שואף ל-%
-$1$.
-המכנה שורש חיובי שהולך וקטן, ולכן
+$+1$,
+ובמכנה שורש חיובי שהולך וקטן, ולכן
 $f(x)\rightarrow +\infty$.
 $x=6$
 היא
@@ -717,17 +738,13 @@ $x=4$
 כאשר 
 $x\rightarrow +\infty$
 המנה שואף ל-%
-$+\infty$.
-כאשר 
-$x\rightarrow +\infty$,
-במכנה
+$+\infty$,
+ובמכנה
 $x^2\gg -10x+24$,
-וערכו מתקרב ל-%
-$\sqrt{x^2}=x$
-שגם הוא שואף ל-%
+וערכו שואף ל-%
 $+\infty$.
 לכן
-$y\rightarrow 1$
+$y= 1$
 היא
 \asm{}
 אופקית אחת. באופן דומה, כאשר
@@ -742,7 +759,7 @@ $y=-1$
 \np
 
 $(4)$
-אי-אפשר פשוט להכין טבלה של עליות וירידות, כי אין אנו יודעים אם יש נקודות קיצון בתחום ההגדרה של הפונקציה. כצעד ראשון נבדוק את ערכו של
+אי-אפשר מייד להכין טבלה של עליות וירידות, כי אין אנו יודעים אם יש נקודות קיצון בתחום ההגדרה של הפונקציה. כצעד ראשון נבדוק את ערכו של
 $f(x)'$.
 לשם קיצור נסמן
 $u=x^2-10x+24$.
@@ -833,22 +850,23 @@ g(-x) &=& f(-x+5)=f(5-x)\\
 g(x) &=& f(x+5)\\
 &=& \frac{x+5-5}{\sqrt{(x+5)^2-10(x+5)+24}}\\
 &=&\frac{x}{\sqrt{x^2+10x+25-10x-50+24}}\\
-&=&\frac{x}{\sqrt{x^2-1}}\,.
+&=&\frac{x}{\sqrt{x^2-1}}=-\left(\frac{-x}{\sqrt{x^2-1}}\right)=-g(-x)\,.
 \end{equationarray*}
-
-\vspace{-3ex}
 
 \np
 
 פתרון מעט יותר מסובך הוא להראות
 $g(-x)=-g(x)$
 בצורה ישירה:
-\erh{12pt}
+
+\vspace{-5ex}
+
+\erh{16pt}
 \begin{equationarray*}{rcl}
 g(-x) &=& f(-x+5)=f(5-x)\\
 &=& \frac{5-x-5}{\sqrt{(5-x)^2-10(5-x)+24}}\\
 &=&\frac{-x}{\sqrt{25-10x+x^2-50+10x+24}}\\
-&=&\frac{-x}{\sqrt{x^2+10x+25-10x-50+24}}\\
+&=&\frac{-x}{\sqrt{(x^2+10x+25)-(10x+50)+24}}\\
 &=&\frac{-((x+5)-5)}{\sqrt{(x+5)^2-10(x+5)+24}}\\
 &=&-g(x)\,.
 \end{equationarray*}
@@ -858,12 +876,14 @@ g(-x) &=& f(-x+5)=f(5-x)\\
 $(2)$
 הגרף הוא אותו גרף מוזז שמאלה חמש יחידות:
 
+%\vspace{-14ex}
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
 \begin{axis}[
     xlabel = $x$,
-    ylabel = {$f(x)$},
+    ylabel = {$g(x)$},
     axis lines=center,
     xtick={-6,...,3},
     ytick={-3,...,3},
@@ -898,6 +918,8 @@ $(2)$
 \end{tikzpicture}
 \end{center}
 
+%\vspace{-20ex}
+
 \textbf{סעיף ג}
 
 נתון ש-%
@@ -907,10 +929,14 @@ $a,b$
 הם בתחום ההגדרה של 
 $g$.
 נחשב:
+
+%\vspace{-10ex}
+
 \[
 \int_a^b g(x) dx = \int_a^b f(x+5) dx = \int_{a+5}^{b+5} f(x) dx\,.
 \]
 
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -919,7 +945,7 @@ $g$.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{winter-2017-6}
+\includegraphics[width=.8\textwidth]{winter-2017-6}
 \end{center}
 
 \vspace{-3ex}
@@ -930,8 +956,8 @@ $g$.
 \asm{}
 אנכית
 $x=1$
-כאשר המכנה שווה לאפס עבור ערך זה:
-\erh{0pt}
+כאשר המכנה מתאפס:
+\erh{4pt}
 \begin{equationarray*}{rcl}
 x^2+3x+b&=&0\\
 1^2+3\cdot 1+b&=&0\\
@@ -942,26 +968,23 @@ b&=&-4\,.
 האופקית
 $y=1$.
 כאשר 
-$x\rightarrow 1$:
+$x\rightarrow \infty$,
+$a=1$.
 \[
 \frac{a+\frac{4}{x}}{1+\frac{3}{x}-\frac{4}{x^2}} \rightarrow 1\,,
 \]
-ו-%
-$a=1$.
-
 \textbf{סעיף ב}
 
 $(1)$
-נבדוק מתי המכנה מתאפס:
+המכנה מתאפס כאשר:
 \[
-x^2+3x-4=(x+4)(x-1)\,,
+x^2+3x-4=(x+4)(x-1)=0\,,
 \]
 ולכן הפונקציה מוגדרת עבור כל 
 $x$
 פרט ל-%
 $x=1,x=-4$.
 
-\np
 
 $(2)$
 נציב 
@@ -981,6 +1004,7 @@ $x=-4$
 הפונקציה לא מוגדרת, ולכן אין עוד נקודת חיתוך עם ציר ה-%
 $x$.
 
+\np
 
 $(3)$
 אין עוד 
@@ -1011,14 +1035,14 @@ $\frac{4}{5}$,
 אלא חור.
 
 $(4)$
-נחשב את הנגזרת, כאשר נתייחס רק למונה כי המכנה הוא ריבוע שתמיד חיובי פרט לנקודות של החור וה%
+נחשב את הנגזרת הראשונה, כאשר נתייחס רק למונה כי המכנה הוא ריבוע שתמיד חיובי פרט לנקודות של החור וה%
 \asm{}:
 \[
 (x^2+4x)'(x^2+3x-4)-(x^2+4x)(x^2+3x-4)'=-(x+4)^2\,.
 \]
 )לא רשמתי את כל החישובים הארוכים.( ערך זה לא מתאפס ותמיד שלילי, ולכן הפונקציה יורדת בכל תחום ההגדרה שלה.
 
-אפשר לקצר אם נצמצם את הפונקציה לפי נמחשב את הנגזרת. 
+אפשר לקצר אם נצמצם את הפונקציה לפי שנחשב את הנגזרת. 
 $\left(\frac{x}{x-1}\right)'=-1$,
 שתמיד שלילי.
 
@@ -1061,7 +1085,6 @@ $\left(\frac{x}{x-1}\right)'=-1$,
 \end{axis}
 \end{tikzpicture}
 \end{center}
-
 \textbf{סעיף ד}
 
 אם נתייחס לגרף, 
@@ -1075,7 +1098,7 @@ $x$.
 $|f(x)|=-f(x)$
 רק עבור ערכים מתחת לציר ה-%
 $x$
-כי רק עבור ערכים אלה שניהם מבצעים אותה פעולה. עבור פונקציה זו הערכים הם
+כי רק עבור ערכים אלה מתבצעת אותה פעולה. עבור פונקציה זו הערכים הם
 $0\leq x < 1$.
 
 \textbf{סעיף ה}
@@ -1090,50 +1113,14 @@ $f(0)=0$,
 $x$
 ומימין לציר ה-%
 $y$.
-
-\np
-
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.8]
-\begin{axis}[
-    axis lines=center,
-    xtick={-.5,.5,1},
-    ytick={0},
-    xmin = -.5,
-    xmax = 1,
-    ymin = -1.1,
-    ymax = .5,
-]
-\addplot [
-    domain=0:.6, 
-    samples=40,
-]
-{(x^2+4*x)/(x^2+3*x-4)};
-\draw ({axis cs:.5,-1}|-{rel axis cs:0,0}) -- ({axis cs:.5,-1}|-{rel axis cs:0,1});
-\end{axis}
-\end{tikzpicture}
-\end{center}
-)התרשים לא מדוייק.(
-
 נשים לב ש-%
 $(f^3(x))'=3f^2(x)\cdot f'(x)$,
 ונוכל לחשב את האינטגרל:
 \[
-\int_0^{0.5} 0-f^2(x)\cdot f'(x)=\left.-\frac{1}{3}f^3(x)\right|^{0.5}_0=-\frac{1}{3}f^3(0.5)\,.
-\]
-כי 
-$f(0)=0$.
-
-\[
-f(0.5)=\frac{0.25+2}{0.25+1.5-4}=-1\,,
-\]
-והשטח הוא:
-\[
--\frac{1}{3}f^3(0.5)=-\frac{1}{3}\cdot (-1)^3=\frac{1}{3}\,.
+\int_0^{0.5} 0-f^2(x)\cdot f'(x)=\left.-\frac{1}{3}f^3(x)\right|^{0.5}_0=-\frac{1}{3}f^3(0.5)=-\frac{1}{3}\cdot -1=\frac{1}{3}\,.
 \]
 
-
+\np
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{קיץ תשע"ו מועד ב}
@@ -1176,23 +1163,34 @@ $(\frac{\pi}{4},0)$.
 
 
 $(4)$
-בתחום ההגדרה המכנה לא מתאפס ולכן ניתון לצמצם את הפונקציה כדי להקל על חישוב הנגרת:
+בתחום ההגדרה 
+$\cos x>0$
+ולכן
+$f(x)=1-\frac{1}{2\cos^2 x}$.
+חישוב הנגזרת הוא:
 \[
-f'(x)=\left(-\frac{1}{\cos^2 x}\right)'=-\left(-2\cos x \cdot -\sin x\right)=-2\cos x \sin x = 0\,.
+f'(x)=\left(1-\frac{1}{\cos^2 x}\right)'=-\left(-2\cos x \cdot -\sin x\right)=-2\cos x \sin x = 0\,.
 \]
 $f'(x)$
 מתאפס בתחום ההגדרה כאשר 
-$\sin x = 0$,
-$x = 0$,
+$x = 0$
 ונקודת הקיצון היא
 $(0,\frac{1}{2})$.
-בתחום ההגדרה סינוס וקוסינוס חיוביים, הנגזרת שלילית, הפונקציה יורדת ונקודת הקיצון הוא מקסימום.
+סינוס וקוסינוס חיוביים בתחום, ולכן הנגזרת שלילית והפונקציה יורדת בכל התחום. נקודת הקיצון היא מקסימום.
+
+אפשרות אחרת היא לחשב את הנגזרת השנייה:
+\[
+f''(x)= (-2\cos x \sin x)'=-2(-\sin^2 x+ \cos^2x)\,.
+\]
+בנקודת הקיצון
+$x=0$,
+$f''(0)=-2\cdot (-0+1)=-2$
+ונקודת הקיצון היא מקסימום.
 \np
 
 \textbf{סעיף ב}
 
 $(1)$
-
 $\cos(-x)=\cos x$,
 $\cos^2(-x)=\cos^2 x$
 והפונקציה זוגית.
@@ -1201,7 +1199,9 @@ $\cos^2(-x)=\cos^2 x$
 $(2)$
 המקסימום הוא ב-%
 $(0,\frac{1}{2})$,
-הפונקציה יורדת בתחום ההגדרה, יש 
+הפונקציה יורדת בתחום ההגדרה
+$0\leq x < \frac{\pi}{2}$,
+יש 
 \asm{}
 אנכית ב-%
 $\frac{\pi}{2}$,
@@ -1251,6 +1251,7 @@ $(\tan x)'=\frac{1}{\cos^2 x}$
 &=&\frac{\pi}{4}-0-\frac{1}{2}\tan \frac{\pi}{4} + \frac{1}{2}\tan 0=\frac{\pi}{4}-\frac{1}{2}\,.
 \end{equationarray*}
 
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1294,6 +1295,8 @@ $-\frac{5\pi}{6}<-\frac{\pi}{2}$,
 אבל
 $x=\frac{1}{2}\cdot -\frac{5\pi}{6}=-\frac{5\pi}{12}>-\frac{\pi}{2}$
 כן נמצא בתחום, ולכן היא נקודת קיצון של הנגזרת הראשון.
+
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}%[scale=.9]
@@ -1380,7 +1383,7 @@ $(1)$
 נקודות הפיתול הן הנקודות בהן הנגזרת השנייה מתאפסת
 $\left(-\disfrac{\pi}{12},0.569\right)$
 ו-%
-$\left(-\disfrac{5\pi}{12},1ץ21\right)$.
+$\left(-\disfrac{5\pi}{12},1.21\right)$.
 
 עבור הערך
 $-\frac{5.5\pi}{12}$
@@ -1416,10 +1419,10 @@ f''\left(-\frac{\pi}{24}\right)= 2 + 4\sin \left(2\cdot -\frac{\pi}{24}\right)=3
 והפונקציה קעורה כפלי מעלה ב-%
 $-\frac{\pi}{12}<x<0$.
 
-\bigskip
 
 $(2)$
 נקודות הפיתול מסומנות.
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}%[scale=.9]
@@ -1446,6 +1449,7 @@ $(2)$
 \end{tikzpicture}
 \end{center}
 
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1621,6 +1625,7 @@ $\frac{2\pi}{3}$,
 הוא
 $0-S=-S$.
 
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1789,7 +1794,7 @@ $a=\pm 2$
 \end{tikzpicture}
 \end{center}
 
-
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1943,7 +1948,7 @@ $f^2(x)$.
 \]
 
 
-
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2096,7 +2101,7 @@ $1$
 $x=0$.
 
 
-
+\np
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -2296,7 +2301,7 @@ $y$
 $I$
 מתאר את הפונקציה.
 
-
+\np
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -2373,6 +2378,7 @@ $\frac{\pi}{4}$,
 $\frac{\pi}{4}$
 עד
 $\pi$.
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
@@ -2437,6 +2443,9 @@ h(x) = x-\frac{\sin 2x}{2} = \int h'(x) = \int f(x)\,.
 S=-\frac{\pi}{4}+1+\frac{3\pi}{4}+1=\frac{\pi}{2}+2\,.
 \]
 
+\np
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{חוקף תשע"ד}
 
@@ -2606,27 +2615,22 @@ $(1,0), (-2,0)$.
 \item
 אי-אפשר להכין טבלה של עליות וירידות עד שלא מחשבים את תחום ההגדרה וכל נקודות הקיצון של הפנוקציה, כי רק ביניהם אפשר לסמוך על זה שאין שינוי בכיוון הפונקציה.
 
+
 \item
-נניח שהתחום הנתון בשאלה הוא
-$0\leq x \leq \frac{\pi}{2}$,
-ונניח שמקבלים תוצאה כגון
-$2x=\frac{\pi}{3}$.
-ברור שתשובה אחת היא
-$x=\frac{\pi}{6}$,
-כאשר
-$0\leq \frac{\pi}{6} \leq \frac{\pi}{2}$.
-אבל לא לשכוח שגם:
-\erh{12pt}
-\begin{equationarray*}{rcl}
-2x&=&\frac{\pi}{3}+2\pi=\frac{7\pi}{3}\\
-x&=&\frac{7\pi}{6}\,,
-\end{equationarray*}
-היא תשובה, למרות ש-%
-$x=\frac{7\pi}{6}>\frac{\pi}{2}$
-לא בתחום.
+אני אוהב להשתמש בתנועות ידיים כדי "לראות שיפועים" ולקבוע אם פונקציה עולה או יורדת וכן אם נקודות קיצון היא מקסימום או מינימים. אני מזיז כף יד שטוחה לאורך הפונקציה בכיוון משליליים לחיוביים בציר ה-%
+$x$.
+אם היד מוטה למטה הפונקציה יורדת, והיא עולה אם היד מוטה למעלה. אם היד עוברת מכיוון למטה לכיוון למעלה, השיפוע, הנגזרת, יורדת ואז עולה, כך שנקודת הקיצון היא מינימים.
 
+\item
+אני מציע להתרחק מהמחשבון עד כמה שאפשר ולחשב עם סימנים אלגבריים. הסיבה היא שאי-אפשר למצוא בקלות שגיאה במחשבון, אבל אפשר לעבור שוב ושוב על חישוב אלגבראי כדי לוודא את נכונותו. 
+
+\item
+אל תקצרו בחישובים. קשה לספור את מספר הפעמים שטעיתי כי השמטתי סימן מינוס בטעות. לוקח מעט מאוד זמן לרשום שורה נוספת, לעומת הזמן הדרוש לחפש שגיאה בחישוב מקוצר.
+
+\item
+בבעיות עם פונקציות טריגונומטריות, ציירו תרשים של מעגל היחידה וסמנו עליו את תחום ההגדרה. מתרשים יעזור בקביעת סימני הפונקציות ובערכי הפונקציות כאשר מוסיפים או מחסירים כפולות רציונליות של 
+$\pi$.
 \end{itemize}
-
 
 \selectlanguage{english}
 
