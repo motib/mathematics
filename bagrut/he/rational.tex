@@ -11,7 +11,7 @@
 
 \begin{center}
 \selectlanguage{english}
-%\includegraphics[width=\textwidth]{summer-2018b-6}
+%\includegraphics[width=.95\textwidth]{summer-2018b-6}
 \includegraphics[width=\textwidth]{summer-2018b-6a}
 \includegraphics[width=\textwidth]{summer-2018b-6b}
 \end{center}
@@ -1264,7 +1264,7 @@ $(\tan x)'=\frac{1}{\cos^2 x}$
 
 \vspace{-2ex}
 
-אני לא ממש אוהב את השאלה כי היא מחייבת חישובים רבים עם מחשבון!
+אני ממש לא אוהב את השאלה כי היא מחייבת חישובים רבים עם מחשבון!
 
 \textbf{סעיף א}
 
@@ -1275,7 +1275,9 @@ f(x)&=& x^2 - \sin 2x\\
 f'(x)&=& 2x - 2\cos 2x\\
 f''(x)&=& 2 + 4\sin 2x\,.
 \end{equationarray*}
-השאלה מבקשת את נקודות הקיצון של הנגזרת הראשונה ונקבל אותם על ידי חישוב הנקודות בהן הנגזרת השנייה מתאפסת:
+השאלה מבקשת את נקודות הקיצון של הנגזרת הראשונה ונקבל אותם על ידי חישוב הנקודות בהן
+\textbf{הנגזרת השנייה}
+מתאפסת:
 
 \vspace{-3ex}
 
@@ -1286,16 +1288,8 @@ f''(x)&=& 2 + 4\sin 2x\,.
 2x&=&-\frac{\pi}{6}\\
 x&=&-\frac{\pi}{12}\,.
 \end{equationarray*}
-כאן יש להיזהר.
-$\sin )-\frac{5\pi}{6}(=-\frac{1}{2}$
-מאפס את הנגזרת השנייה, למרות ש-%
-$2x=-\frac{5\pi}{6}$
-לא נמצא בתחום כי
-$-\frac{5\pi}{6}<-\frac{\pi}{2}$,
-אבל
-$x=\frac{1}{2}\cdot -\frac{5\pi}{6}=-\frac{5\pi}{12}>-\frac{\pi}{2}$
-כן נמצא בתחום, ולכן היא נקודת קיצון של הנגזרת הראשון.
 
+\vspace{-2ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -1310,8 +1304,8 @@ $x=\frac{1}{2}\cdot -\frac{5\pi}{6}=-\frac{5\pi}{12}>-\frac{\pi}{2}$
 \fill ($(O)+(-90:2)$) circle(2pt) node[below,xshift=-6pt] {$-\pi/2$};
 \fill ($(O)+(0:2)$) circle(2pt) node[right] {$0$};
 \draw[thick,dashed] (O) -- (-15:2) node[right] {$-\pi/12$};
-\draw[thick,dashed] (O) -- (-75:2) node[below right] {$-5\pi/12$};
-\draw[very thick,dotted] (O) -- (-30:2) node[below right] {$-\pi/6$};
+\draw[very thick,dotted] (O) -- (-75:2) node[below right] {$-5\pi/12$};
+\draw[thick,dashed] (O) -- (-30:2) node[below right] {$-\pi/6$};
 \draw[very thick,dotted] (O) -- (-150:2) node[below left] {$-5\pi/6$};
 \draw[very thick,dotted] (-4,-1) -- +(8,0) node[right] {$\sin 2x = -\disfrac{1}{2}$};
 \fill ($(O)+(-15:2)$) circle(2pt);
@@ -1321,26 +1315,37 @@ $x=\frac{1}{2}\cdot -\frac{5\pi}{6}=-\frac{5\pi}{12}>-\frac{\pi}{2}$
 \end{tikzpicture}
 \end{center}
 
+כאן יש להיזהר.
+$\sin \left(-\frac{5\pi}{6}\right)=-\frac{1}{2}$
+מאפס את הנגזרת השנייה, למרות ש-%
+$2x=-\frac{5\pi}{6}$
+לא נמצא בתחום כי
+$-\frac{5\pi}{6}<-\frac{\pi}{2}$,
+אבל
+$x=\frac{1}{2}\cdot -\frac{5\pi}{6}=-\frac{5\pi}{12}>-\frac{\pi}{2}$
+כן נמצא בתחום, ולכן היא נקודת קיצון של הנגזרת הראשון.
+
+
 \np
 
-כדי לבדוק אם הנקודות הקיצון הן מינימום או מקסימום, נחשב את הנגזרת השנייה של 
-\textbf{הנגזרת הראשונה}
+כדי לבדוק אם הנקודות הקיצון הן מינימום או מקסימום, נחשב את 
+\textbf{הנגזרת השנייה של הנגזרת הראשונה}
 שהיא הנגזרת השלישית של הפונקציה.
-\erh{12pt}
+\erh{14pt}
 \begin{equationarray*}{rcl}
 f''(x) &=& 2+4\sin 2x\\
 f'''(x) &=& 8\cos 2x\\
 f'''\left(-\frac{\pi}{12}\right) &=& 8\cos \left(-2\cdot\frac{\pi}{12}\right)=6.93>0\\
 f'''\left(-\frac{5\pi}{12}\right) &=& 8\cos \left(-2\cdot\frac{5\pi}{12}\right)=-6.93<0\,.
 \end{equationarray*}
-מכאן שהשיפוע הוא מקסימלי כאשר 
-$x=-\frac{5\pi}{12}$
-ומינימלי כאשר
+מכאן שהשיפוע הגדול ביותר נמצא ב-%
+$x=-\frac{5\pi}{12}$,
+והשיפוע הקטן ביותר נמצא ב-%
 $x=-\frac{\pi}{12}$.
 
-חשוב לשים לב שהשאלה מבקשת את ערכי הקיצון של 
+שימו לב שהשאלה מבקשת את ערכי הקיצון של 
 \textbf{השיפועים} 
-ולא רק איפה הם נמצאים.
+ולא רק איפה הם נמצאים:
 \erh{12pt}
 \begin{equationarray*}{rcl}
 f'\left(-\frac{5\pi}{12}\right)&=&2\cdot -\frac{5\pi}{12} - 2\cos \left(-\frac{5\pi}{6}\right)=-2.62+1.73=-0.89\\
@@ -1383,7 +1388,7 @@ $(1)$
 נקודות הפיתול הן הנקודות בהן הנגזרת השנייה מתאפסת
 $\left(-\disfrac{\pi}{12},0.569\right)$
 ו-%
-$\left(-\disfrac{5\pi}{12},1.21\right)$.
+$\left(-\disfrac{5\pi}{12},2.21\right)$.
 
 עבור הערך
 $-\frac{5.5\pi}{12}$
@@ -1391,7 +1396,7 @@ $-\frac{5.5\pi}{12}$
 $\frac{\pi}{2}$
 הנגזרת השנייה היא:
 \[
-f''\left(-\frac{5.5\pi}{12}\right)= 2 + 4\sin \left(2\cdot -\frac{5.5\pi}{12}\right)=3.04>0\,,
+f''\left(-\frac{5.5\pi}{12}\right)= 2 + 4\sin \left(2\cdot -\frac{5.5\pi}{12}\right)=0.965>0\,,
 \]
 והפונקציה קעורה כפלי מעלה ב-%
 $-\frac{\pi}{2}<x<-\frac{5\pi}{12}$.
@@ -1414,7 +1419,7 @@ $-\frac{\pi}{24}$
 $0$
 הנגזרת השנייה היא:
 \[
-f''\left(-\frac{\pi}{24}\right)= 2 + 4\sin \left(2\cdot -\frac{\pi}{24}\right)=3.04>0\,,
+f''\left(-\frac{\pi}{24}\right)= 2 + 4\sin \left(2\cdot -\frac{\pi}{24}\right)=0.965>0\,,
 \]
 והפונקציה קעורה כפלי מעלה ב-%
 $-\frac{\pi}{12}<x<0$.
@@ -1425,7 +1430,7 @@ $(2)$
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.9]
+\begin{tikzpicture}
 \begin{axis}[
     trig format plots=rad,
     axis lines=center,
@@ -1461,13 +1466,13 @@ $(2)$
 \end{center}
 
 \vspace{-2ex}
-שאלה מאוד ארוכה. קצת מפחיד!
+שאלה מאוד ארוכה. קצת מפחידה!
 
 \textbf{סעיף א}
 
-נקודות הקיצון הן הנקודות בהן הנגזרת הראשונה מתאפסת, ונתון ההיא מתאפסת ב-%
-$\frac{\pi}{3}$
-)לפחות(:
+נחשב את הנגזרת הראשונה, נציב
+$x=\frac{\pi}{3}$,
+ונבדוק איפה היא מתאפסל?
 
 \vspace{-4ex}
 
@@ -1488,20 +1493,19 @@ $a$:
 \[
 f'(x) = -8b\sin x\cos x - 4b\sin 4x=0\,.
 \]
-המשוואה נראית די מסובכת אלא אם נשים לב שמתנה: ניתן לפשט אותו על ידי שימוש בנוסחה עבור
+המשוואה נראית די מסובכת אבל ניתן לפשט אותו על ידי שימוש בנוסחה עבור
 $\sin (\theta+\theta)$:
 \erh{12pt}
-\begin{equationarray*}{l}
--8b\sin x\cos x - 4b\sin 4x=\\
--4b(2\sin x \cos x + \sin (2x+2x))=\\
--4b(\sin 2x + 2 \sin 2x \cos 2x)=\\
--4b\sin 2x(1+\cos 2x)=0\,.
+\begin{equationarray*}{rcl}
+-8b\sin x\cos x - 4b\sin 4x&=&-4b(2\sin x \cos x + \sin (2x+2x))\\
+&=&-4b(\sin 2x + 2 \sin 2x \cos 2x)\\
+&=&-4b\sin 2x(1+\cos 2x)=0\,.
 \end{equationarray*}
 נבדוק כל אחד משני הגורמים כדי לחפש איפה הם מתאפסים בתחום.
 $\sin 2x = 0$
 כאשר 
 $2x=0, \pm \pi, \ldots$.
-בתחום האפשרויות הן
+בתחום, האפשרויות הן
 $x=0,x=\frac{\pi}{2}$.
 מ-%
 $1+\cos 2x=0$
@@ -1509,7 +1513,7 @@ $1+\cos 2x=0$
 $\cos 2x =-\frac{1}{2}$
 ו-%
 $2x=\frac{2\pi}{3},\frac{4\pi}{3},\frac{8\pi}{3},\ldots$.
-בתחום האפשרויות הן:
+בתחום, האפשרויות הן
 $x=\frac{\pi}{3},x=\frac{2\pi}{3}$.
 נחשב את נקודות הקיצון:
 \erh{12pt}
@@ -1529,6 +1533,8 @@ $b<0$,
 \left(\frac{\pi}{2},-3b\right)&\textrm{\R{מינימום}}\\
 \left(\frac{2\pi}{3},-3.5b\right)&\textrm{\R{מקסימום}}
 \end{equationarray*}
+
+\np
 
 \textbf{סעיף ב}
 
@@ -1558,6 +1564,8 @@ $b<0$,
 \end{tikzpicture}
 \end{center}
 
+\vspace{-4ex}
+
 \textbf{סעיף ג}
 
 בארבעת נקודות הקיצון הנגזרת הראשונה היא אפס. מעיון הגרף של
@@ -1585,7 +1593,7 @@ $f(x)$,
 \end{tikzpicture}
 \end{center}
 
-\vspace{-2ex}
+\vspace{-4ex}
 
 \textbf{סעיף ד}
 
@@ -1601,7 +1609,7 @@ $(1)$
 &=&0+0=1\,.
 \end{equationarray*}
 
-\vspace{-2ex}
+\vspace{-4ex}
 
 $(2)$
 ב-%
@@ -1639,9 +1647,11 @@ $0-S=-S$.
 \textbf{סעיף א}
 
 $(1)$
-ערך הוא מחוץ לתחום ההגדרה כאשר הוא מאפס את המכנה. 
-$\sin 0=0$, $\cos \frac{\pi}{2}= \cos -\frac{\pi}{2}=0$ 
-ותחום ההגדרה הוא:
+הערכים שמאפסים את המכנה הם:
+\[
+\sin 0=0,\quad\quad \cos \frac{\pi}{2}= 0,\quad\quad \cos -\frac{\pi}{2}=0\,.
+\]
+תחום ההגדרה הוא:
 \[
 -\frac{\pi}{2} < x < 0,\quad 0 < x < \frac{\pi}{2}\,.
 \]
@@ -1657,11 +1667,11 @@ $(3)$
 \[
 -(\sin x\cos x)'=-(\cos^2 x-\sin^2 x)=(\sin^2 x-\cos^2 x)=0\,.
 \]
-נקודות הקיצון הן בערכים שיש להם ערך מוחלט של סינוס שווה לערך מוחלט של קוסינוס, שהם כפולות של 
-$\frac{\pi}{4}$.
+נקודות הקיצון הן בערכים שיש להם ערך מוחלט של סינוס שווה לערך מוחלט של קוסינוס, שהם
+$\disfrac{\pi}{4}\pm k\cdot\disfrac{\pi}{2}$.
 בתחום ההגדרה:
 \[
-x=\pm\frac{\pi}{4},\quad y=\frac{2\cdot 2}{\pm\sqrt{2}\cdot\sqrt{2}}=\pm 2\,.
+x=\frac{\pi}{4},\; y=\frac{1}{(\sqrt{2}/2)\cdot(\sqrt{2}/2)}= 2,\quad\quad x=-\frac{\pi}{4},\; y=\frac{1}{(-\sqrt{2}/2)\cdot(\sqrt{2}/2)}= -2\,.
 \]
 
 \np
@@ -1673,12 +1683,12 @@ $(\sin x \cos x)^2$,
 (\sin^2 x-\cos^2 x)'=2\sin x \cos x -2 \cos x (-\sin x)=4\sin x\cos x\,.
 \]
 עבור
-$x=\frac{\pi}{4}$,
-$4\sin x\cos x=2<0$
+$x=\disfrac{\pi}{4}$,
+$4\sin x\cos x=2>0$
 והנקודה היא מינימום.
 
 עבור
-$x=-\frac{\pi}{4}$,
+$x=-\disfrac{\pi}{4}$,
 $4\sin x\cos x=-2<0$
 והנקודה היא מקסימום.
 
@@ -1723,9 +1733,11 @@ $(4)$
 $(1)$
 למשוואה פתרון אחד אם הגרף משיק לציר ה-%
 $x$
-או חותך את הציר במקום אחד בלבד. מצב זה מתקבל כאשר 
-$a=\pm 2$
+או חותך את הציר במקום אחד בלבד )לא קורה כאן(. הגרף משיק כאשר 
+$a=\pm 2$,
 שמעלה או מוריד את הגרף בשתי יחידות.
+
+$(2)$
 
 \begin{center}
 \selectlanguage{english}
@@ -1808,22 +1820,6 @@ $a=\pm 2$
 
 \vspace{-4ex}
 
-\textbf{סעיף א}
-
-$(1)$
-הפונקציה לא מוגדרת כאשר המכנה מתאפס.
-$\cos 2x=0$
-כאשר 
-$2x=\disfrac{\pi}{2}+k\pi$.
-בתרשים להלן רואים שזה קורה עבור
-$\disfrac{\pi}{4}, \disfrac{3\pi}{4}$.
-תחום ההגדרה הוא:
-\[
-0\leq x < \disfrac{\pi}{4}, \quad \disfrac{\pi}{4} < x < \disfrac{3\pi}{4}\,.
-\]
-
-\vspace{-4ex}
-
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
@@ -1835,11 +1831,27 @@ $\disfrac{\pi}{4}, \disfrac{3\pi}{4}$.
 \draw[ultra thick] (A) arc[start angle=0,end angle=135,radius=2];
 \node[right] at (2,0) {$0$};
 \fill ($(O)+(45:2)$) circle(3pt) node[above right] {$\disfrac{\pi}{4}$};
-\fill ($(O)+(90:2)$) circle(3pt) node[above,yshift=4pt] {$2\cdot\disfrac{\pi}{4}=\disfrac{\pi}{2}+0\cdot \pi$};
+\fill ($(O)+(90:2)$) circle(3pt) node[above,yshift=4pt] {$2\cdot\disfrac{2\pi}{4}=\disfrac{\pi}{2}$};
 \draw[fill] ($(O)+(135:2)$) rectangle +(6pt,6pt) node[left,xshift=-6pt] {$\disfrac{3\pi}{4}$};
-\draw[fill] ($(O)+(-90:2)+(-3pt,-3pt)$) rectangle +(6pt,6pt) node[below,yshift=-6pt] {$2\cdot\disfrac{3\pi}{4}=\disfrac{\pi}{2}+1\cdot \pi$};
+\draw[fill] ($(O)+(-90:2)+(-3pt,-3pt)$) rectangle +(6pt,6pt) node[below,yshift=-6pt] {$2\cdot\disfrac{3\pi}{4}=\disfrac{3\pi}{2}$};
 \end{tikzpicture}
 \end{center}
+
+\vspace{-2ex}
+
+\textbf{סעיף א}
+
+$(1)$
+הפונקציה לא מוגדרת כאשר
+$\cos 2x=0$.
+בתחום הנתון, רואים בתרשים שזה קורה עבור
+$\disfrac{\pi}{4}, \disfrac{3\pi}{4}$.
+תחום ההגדרה הוא:
+\[
+0\leq x < \disfrac{\pi}{4}, \quad \disfrac{\pi}{4} < x < \disfrac{3\pi}{4}\,.
+\]
+
+\vspace{-4ex}
 
 $(2)$
 ה%
@@ -1852,56 +1864,60 @@ $x=\disfrac{\pi}{4}$, $x=\disfrac{3\pi}{4}$.
 $(3)$
 יש נקודת קיצון בקצה התחום 
 $(0,0)$.
-נחשב את הנגזרת כדי לחפש נקודות קיצון פנימיות:
+נחשב את הנגזרת כדי לחפש את נקודת קיצון הפנימית המופיעה בתרשים:
 
 \np
 
 \[
 \left(\frac{\sin x}{\cos 2x}\right)'=\frac{\cos x\cos 2x - \sin x (-2\sin 2x)}{\cos^2 2x}\,.
 \]
-בתחום ההגדרה המכנה חיובי כך הנגזרת תתאפס אם המונה יתאפס.
+בתחום ההגדרה המכנה חיובי כך הנגזרת תתאפס אם המונה יתאפס:
+\erh{2pt}
 \begin{equationarray*}{rcl}
 \cos x\cos 2x + 2\sin x \sin 2x &=& \cos x(\cos^2x - \sin^2x)+2\sin x\cdot 2\sin x\cos x\\
 &=&\cos x(\cos^2x - \sin^2x +4\sin^2 x)\\
 &=&\cos x((\cos^2x +\sin^2 x)+2\sin^2x)\\
 &=&\cos x(1+2\sin^2 x)\,.
 \end{equationarray*}
-)אין צורך לזכור את הביטויים עבוד
-$\sin 2x$, $\cos 2x$
-כי אפשר לשחזר אותם מיידית על ידי חישוב
-$\sin (x+x)$, $\cos (x+x)$
-לפי הוסחה המופיעה בנוסחאון.(
-
 בתחום ההגדרה
 $\cos x$
 מתאפס כאשר 
-$x=\disfrac{\pi}{2}$,
+$x=\frac{\pi}{2}$,
 ו-%
 $1+2\sin^2 x$
 אף פעם לא מתאפס. נקודת הקיצון היא
-$(\disfrac{\pi}{2},-1)$.
+$\left(\frac{\pi}{2},-1\right)$.
 לפי הציור מדובר במקסימום מקומי.
+
+\medskip
 
 \textbf{סעיף ב}
 \[
 f'(x)=\disfrac{\cos x(1+2\sin^2 x)}{\cos^2 2x}\,.
 \]
-קל לחשב ש-%
-$f'(0)=1$.
-בסעיף הקודם חישבנו ש-%
-$f'\left(\disfrac{\pi}{2}\right) = 0$.
-לפי המכנה
-$f'\left(\disfrac{\pi}{4}\right)$
-לא מוגדר. בתרשים הנתון ל-%
+
+$f'(0)=1$
+ובסעיף הקודם חישבנו ש-%
+$f'\left(\frac{\pi}{2}\right) = 0$.
+
+המכנה של
+$f'\left(\frac{\pi}{4}\right)$
+שווה לאפס, והמונה שונה מאפס, לכן ב-%
+$\frac{\pi}{4}$
+יש
+\asm{}
+אנכית.
+
+בתרשים הנתון ל-%
 $f(x)$
-רואים שהפונקציה עולה בין
+רואים שהשיפוע )הנגזרת הראשונה של הפונקציה( עולה בין
 $0$
 ל-%
-$\disfrac{\pi}{4}$,
-ושהנגזרת יורדת בין
-$\disfrac{\pi}{4}$
+$\frac{\pi}{4}$,
+ושהיא יורדת בין
+$\frac{\pi}{4}$
 ל-%
-$\disfrac{3\pi}{4}$.
+$\frac{3\pi}{4}$.
 התרשים ל-%
 $f'(x)$
 נראה כך:
@@ -1937,14 +1953,11 @@ $f'(x)$
 
 \textbf{סעיף ג}
 
-יש כאן מתנה שיכולה להיות גם מלכודת. המלכודת היא לנסות לחשב את האינטגרל על ידי חישוב הביטוי
-$2f(x)\cdot f'(x)$
-מהביטויים המפורשים שחישבנו. המתנה היא שאין כל צורך בחישוב כי האיטגרל של
-$2f(x)\cdot f'(x)$ 
-הוא
-$f^2(x)$.
+
+$(f^2(x))'=2f(x)\cdot f'(x)$,
+ולכן:
 \[
-\int_0^{\pi/6} g(x) = f^2(x) \mid_0^{\pi/6}=\frac{\sin (\pi/6)}{\cos (2\pi/6)}-\frac{\sin 0}{\cos 0}=\frac{1/2}{1/2}-\frac{0}{1}=1\,.
+\int_0^{\pi/6} g(x) = \int_0^{\pi/6} 2f(x)\cdot f'(x) =f^2(x) \mid_0^{\pi/6}=\frac{\sin (\pi/6)}{\cos (2\pi/6)}-\frac{\sin 0}{\cos 0}=\frac{1/2}{1/2}-\frac{0}{1}=1\,.
 \]
 
 
@@ -1957,7 +1970,7 @@ $f^2(x)$.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{winter-2015-6}
+\includegraphics[width=.95\textwidth]{winter-2015-6}
 \end{center}
 
 \vspace{-4ex}
@@ -2012,14 +2025,14 @@ $f^2(x)$.
 
 \textbf{סעיף א}
 
-די ברור שהגרף המודגש הוא 
+הגרף המודגש הוא 
 $g$
-בגלל המחזוריות, אבל אפשר לבדוק על ידי חישוב נקודות החיתוך של הגרף עם ציר ה-%
+בגלל המחזוריות, אבל נבדוק על ידי חישוב נקודות החיתוך עם ציר ה-%
 $x$.
 $\sin 2x=0$
-כאשר 
+בתחום כאשר 
 $x=0,\pi/2,\pi,3\pi/2,2\pi$
-ורק לגרף המודגש יש שלוש נקודות חיתוך.
+ורק לגרף המודגש יש חמש נקודות חיתוך.
 
 נחשב את הנגזרת של ההפרש בין הפונקציות:
 \erh{0pt}
@@ -2027,31 +2040,28 @@ $x=0,\pi/2,\pi,3\pi/2,2\pi$
 g(x)-f(x) &=& \sin 2x - 0.5\sin 2x -\cos x = 0.5\sin 2x - \cos x\\
 (g(x)-f(x))' &=& \cos 2x + \sin x = (1-2\sin^2 x) + \sin x\,.
 \end{equationarray*}
-)את הנוסחה ל-%
-$\cos 2x$
-אין צורך לזכור כי אפשר לשחזר אותה בקלות מהנוסחה עבור
-$\cos (x+x)$
-המופיעה בנוסחאון.(
 
 \np
+
 נקודות החיתוך
 $A,B$
-הן נקודות החיתוך של
-$f$
+של
+$f,g$
 עם ציר ה-%
 $x$
-שלפי הגרף נראה הן בנקודות החיתוך 
-$\frac{\pi}{2},\frac{3\pi}{2}$
-של 
-$g$.
+הן נקודות השנייה והרבעית של
+$g$
+שהן
+$\frac{\pi}{2},\frac{3\pi}{2}$.
 נבדוק:
-\erh{12pt}
+\erh{14pt}
 \begin{equationarray*}{rcl}
 f\left(\frac{\pi}{2}\right)&=&0.5\sin 2\cdot \frac{\pi}{2} + \cos \frac{\pi}{2} = 0+0=0\\
 f\left(\frac{3\pi}{2}\right)&=&0.5\sin 2\cdot \frac{3\pi}{2} + \cos \frac{3\pi}{2} = 0+0=0\,.
 \end{equationarray*}
-נחשב מתי הנגזרת מתאפסת בתחום
-$\frac{\pi}{2}\leq x \leq \frac{3\pi}{2}$:
+נחשב מתי הנגזרת הראשונה של הפרש הפונקציות מתאפסת בתחום
+$A=\frac{\pi}{2}\leq x \leq \frac{3\pi}{2}=B$:
+
 \erh{12pt}
 \begin{equationarray*}{rcl}
 2\sin^2 x - \sin x-1&=&0\\
@@ -2059,20 +2069,25 @@ $\frac{\pi}{2}\leq x \leq \frac{3\pi}{2}$:
 \sin x &=& 1, -\disfrac{1}{2}\\
 x&=& \disfrac{\pi}{2}, \disfrac{7\pi}{6}, \disfrac{11\pi}{6}\,.
 \end{equationarray*}
-$g(\frac{\pi}{2})-f(\frac{\pi}{2})=0-0=0$
-בוודאי אינו המקסימום. 
-$\frac{11\pi}{6}=\frac{9\pi}{6}+\frac{2\pi}{6}=\frac{3\pi}{2}+\frac{2\pi}{6}$
-מחוץ לתחום. נקודת הקיצון היא ב-%
-$x=\frac{7\pi}{6}$.
-הנגזרת השנייה של 
-$g-f$
-ב-%
-$x=\frac{7\pi}{6}$
-היא:
-\[
-(1-2\sin^2 x + \sin x)'=(-4\sin x +1)\cos x \mid_\frac{7\pi}{6}=-\left(4\cdot -\frac{1}{2}+1\right)\cdot -\frac{\sqrt{3}}{2}=-\frac{\sqrt{3}}{2}>0\,,
-\]
+$g(\frac{\pi}{2})-f(\frac{\pi}{2})=0$,
 ולכן 
+$\frac{\pi}{2}$
+בוודאי אינו המקסימום. 
+$\frac{11\pi}{6}>\frac{3\pi}{2}$
+מחוץ לתחום ולא יכול להיות נקודת הקיצון המבוקשת. המסקנה היא שנקודת הקיצון של
+$g-f$
+בין 
+$A$
+ל-%
+$B$
+היא ב-%
+$x=\frac{7\pi}{6}$.
+
+נבדוק שנקודה זו היא באמת מקסימום על ידי חישוב הנגזרת השנייה:
+\[
+\left.(1-2\sin^2 x + \sin x)'\right|_\frac{7\pi}{6}=\left.(-4\sin x +1)\cos x \right|_\frac{7\pi}{6}=-\left(4\cdot -\frac{1}{2}+1\right)\cdot -\frac{\sqrt{3}}{2}=\frac{\sqrt{3}}{2}>0\,,		
+\]
+ולכן:
 \[
 g\left(\frac{7\pi}{2}\right)-f\left(\frac{7\pi}{2}\right)=\frac{1}{2}\sin \frac{7\pi}{3}-\cos \frac{7\pi}{6}=\frac{1}{2}\cdot\frac{\sqrt{3}}{2}-\left( -\frac{\sqrt{3}}{2}\right)=\frac{3\sqrt{3}}{4}
 \]
@@ -2081,17 +2096,23 @@ $MN$.
 
 \textbf{סעיף ב}
 
-\[
-(f(x) - g(x))' = (-1\cdot (g(x) - f(x))' = - (g(x) - f(x))' = -2\sin^2 x + \sin x+1\,.\\
-\]
-אם נשווה לאפס נקבל אותם ערכים
-$\sin x = 1, -\frac{1}{2}$.
-לפי מה שראינו בסעיף א, אין פתרונות בתוך התחום כך שאין נקודות קיצון פנימיות. נשאר רק לבדוק את קצות תחום ההגדרה
-$x=0,\frac{\pi}{2}$:
+נקודות חיתוך של שלילה של פונקציה על ציר ה-%
+$x$
+זהים לנקודות החיתוך של הפונקציה )ראו בנספח(. לכן נקודות האיפוס של
+$(f(x)-g(x))'$
+הן נקודות האיפוס של 
+$(g(x)-f(x))'$,
+שהן הערכים עבורם
+$\sin 2x=1,-\frac{1}{2}$.
+בתחום
+$0\leq x \leq \frac{\pi}{2}$,
+נקודות האיפוס הן ב-%
+$x=0,\frac{\pi}{2}$.
+נחשב:
 \erh{12pt}
 \begin{equationarray*}{l}
-f(0)-g(0)=0.5\sin 0 + \cos 0 -\sin 0 = 0+1-0 = 1\\
-f\left(\frac{\pi}{2}\right)-g\left(\frac{\pi}{2}\right)=0.5\sin \pi + \cos \frac{\pi}{2} -\sin \pi = 0+0-0 = 0\,,
+f(0)-g(0)=-(0.5\sin (2\cdot 0) - \cos 0) = -(0-1) = 1\\
+f\left(\frac{\pi}{2}\right)-g\left(\frac{\pi}{2}\right)=-\left(0.5\sin \left(2\cdot \frac{\pi}{2}\right) - \cos \frac{\pi}{2}\right) = -(0-0) = 0\,,
 \end{equationarray*}
 והאורך המקסימלי של 
 $KL$
