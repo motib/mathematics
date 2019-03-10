@@ -2,11 +2,180 @@
 
 \selectlanguage{hebrew}
 
-%\begin{comment}
+\begin{comment}
 
 \chapter{חשבון דיפרנציאלי ואינטגרלי}
 
-%\end{comment}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{קיץ תשע"ז מועד ב}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2017b-7a}
+\includegraphics[width=\textwidth]{summer-2017b-7b}
+\end{center}
+
+\vspace{-2ex}
+
+\textbf{סעיף א}
+
+הגרף
+$I$
+מתאפס בנקודה 
+$C$
+שם לגרף 
+$II$
+יש נקודה מקסימלית, ומתאפס בציר ה-%
+$y$
+שם לגרף יש נקודה מינימלית. לכן,
+$II$
+הוא הגרף של
+$f(x)$
+ו-%
+$I$
+הוא הגרף של
+$f'(x)$.
+
+\textbf{סעיף ב}
+
+בנקודת פיתול הנגזרת השנייה מתאפסת:
+\erh{2pt}
+\begin{equationarray*}{rcl}
+f''(x) &=& x\cdot 3(x+b)^2+1\cdot (x+b)^2=(x+b)^2(4x+b)\\
+f''(-1) &=& (b-1)^2 (b-4)=0\\
+b&=&4\,,
+\end{equationarray*}
+כי נתון ש-%
+$b>1$.
+
+\np
+
+\textbf{סעיף ג}
+
+הערך המקסימלי יתקבל כאשר הנגזרת של ההפרש מאפסת:
+\erh{2pt}
+\begin{equationarray*}{rcl}
+(f(x)-f'(x))'&=& f'(x) - (x(x+4))^3)'\\
+&=&x(x+4)^3 - x\cdot 3(x+4)^2 - 1\cdot (x+4)^3\\
+&=&(x+4)^2(x^2-4)=0\,.
+\end{equationarray*}
+הפתרונות הם
+$x=-4,x=\pm 2$.
+הערך היחיד בתחום בין
+$x_C=-4$
+ל-%
+$x_D=1-\sqrt{5}$
+הוא
+$-2$. 
+נבדוק:
+$-2<1-\sqrt{5}=-1.24$.
+
+\begin{comment}
+
+\np
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{קיץ תשע"ז מועד א}
+
+\begin{center}
+\selectlanguage{english}
+\includegraphics[width=\textwidth]{summer-2017a-7}
+\end{center}
+
+\vspace{-2ex}
+
+\textbf{סעיף א}
+
+$(1)$
+הפונקציה מוגדרת כאשר המכנה לא מתאפס, כאשר 
+$x \neq \frac{\pi}{2} \pm n\pi$.
+
+$(2)$
+נקודות החיתוך עם ציר ה-%
+$x$
+הן כל הנקודות עבורן
+$\sin x = 0, \cos x \neq 0$,
+שהן 
+$x=\pm n\pi$.
+כאשר 
+$x=0$,
+$y=0$
+והנקודה היא גם נקודת חיתוך עם ציר ה-%
+$x$.
+
+$(3)$
+כאשר
+$x=\frac{\pi}{2} \pm n\pi$,
+הפונקציה לא מוגדרת כי ערכה אינסופי, ולכן הן 
+\asms{}
+אנכיות. אין 
+\asm{}
+אופקיות כי ערך הפונקציה לא חסום כאשר 
+$x\longrightarrow\pm\infty$.
+
+
+$(4)$
+\[
+f'(x)=\frac{2\cos x\cdot\cos^3 x - 2\sin x \cdot 3\cos^2 x \cdot -\sin x}{\cos^6 x}=\frac{2\cos^2 x + 6\sin^2 x}{\cos^4 x}\,,
+\]
+כאשר צימצמנו 
+$\cos^2 x$
+בתחום ההגדרה. כל הגורמים בביטוי חיוביים ולכן הפונקציה עולה בכל תחום ההגדרה.
+
+\np
+
+\textbf{סעיף ב}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}%[scale=.8]
+\begin{axis}[
+    trig format plots=rad,
+    axis lines=center,
+    xmin = -2,
+    xmax = 5,
+    xtick={-1.57,0,1.57,3.14,4.71},
+    xticklabels={$-\frac{\pi}{2}$,$0$, $\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$},
+    ymin = -10,
+    ymax = 10,
+    ymajorticks=false,
+    xticklabel style={anchor=north west,},
+]
+\addplot [
+    domain=-1.4:1.4,
+    samples=50, 
+]
+{(2*sin(x))/(cos(x)^3)};
+\addplot [
+    domain=1.7:4.55,
+    samples=50, 
+]
+{(2*sin(x))/(cos(x)^3)};
+\draw[dashed,thick] (axis cs:-1.57,-10) -- (axis cs:-1.57,10);
+\draw[dashed,thick] (axis cs:1.57,-10) -- (axis cs:1.57,10);
+\draw[dashed,thick] (axis cs:4.71,-10) -- (axis cs:4.71,10);
+\fill (axis cs:0,0) circle(1.5pt);
+\fill (axis cs:3.14,0) circle(1.5pt);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\textbf{סעיף ג}
+\[
+\int_0^a \frac{2\sin x}{\cos^3 x}dx = \left. \cos^{-2} x \right|_0^a=\frac{1}{\cos^2 a}-\frac{1}{1^2}=1\,.
+\]
+מכאן ש-%
+$\cos a=\sqrt{\frac{1}{2}}=\frac{\sqrt{2}}{2}$,
+והפתרון היחיד בתחום
+$0<a<\frac{\pi}{2}$
+הוא
+$a=\frac{\pi}{4}$.
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -146,8 +315,6 @@ $k\geq 1$.
 
 אין פתרון לשתי המשוואות כאשר
 $1\leq k < 3$.
-
-%\begin{comment}
 
 \np
 
