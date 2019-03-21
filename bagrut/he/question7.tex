@@ -1,5 +1,5 @@
-% !TeX root = chapter-6-7-8.tex
-
+	% !TeX root = chapter-6-7-8.tex
+	
 \selectlanguage{hebrew}
 
 \chapter{חשבון דיפרנציאלי ואינטגרלי}
@@ -26,7 +26,7 @@ $x\neq 0$.
 \sin\left(\frac{\pi}{x}\right)=0,\quad\quad \frac{\pi}{x}=k\pi,\quad\quad x=\frac{1}{k}\,.
 \]
 נבדוק עבור כמה ערכים של
-$[k,n]$:
+$[k,x]$:
 \[
 [1,1],\;\left[2,\frac{1}{2}\right],\;\left[3,\frac{1}{3}\right],\;\left[4,\frac{1}{4}\right]\,.
 \]
@@ -63,16 +63,18 @@ $[k,x]$:
 $k\geq 4$
 הנקודות מחוץ לתחום.
 
-לפי הערכים אפשר לקבוע את סוג נקודות הקיצון:
+לפי הערכים של
+$f(x)$
+אפשר לקבוע את סוג נקודות הקיצון:
 \[
 \left(\frac{2}{7},-1\right)\;\textrm{\R{מינימום}}\quad
 \left(\frac{2}{5},1\right)\;\textrm{\R{מקסימום}}\quad
 \left(\frac{2}{3},-1\right)\;\textrm{\R{מינימום}}\quad
 (2,1)\;\textrm{\R{מקסימום}}
 \]
-אפשר לבדוק לפי נגזרת שלישית. המכנה
+אפשר לבדוק לפי נגזרת שנייה. המכנה של הנגזרת הראשונה
 $x^2$
-חיובית, ולכן מספיק לבדוק את הנגזרת של המונה:
+חיובית, ולכן מספיק לבדוק את הסימן של הנגזרת של המונה:
 \[
 -\left(\cos \left(\frac{\pi}{x}\right)\right)'=-\left(-\sin\left(\frac{\pi}{x}\right)\right)\cdot \left(-\frac{1}{x^2}\right)=-\frac{\sin\left(\frac{\pi}{x}\right)}{x^2}\,.
 \]
@@ -84,15 +86,17 @@ $-\sin\left(\frac{\pi}{x}\right)$.
 -\sin\left(\frac{5\pi}{2}\right)=-1,\quad
 -\sin\left(\frac{7\pi}{2}\right)=1\,.
 \]
-הסימנים תואמים את קביעת סוג נקודות נקיצון שרשמנו.
+הסימנים תואמים את קביעת סוג נקודות הקיצון שרשמנו.
 
 \textbf{סעיף ד}
 
-כאשר 
-$x\rightarrow +\infty$,
 $\frac{\pi}{x} \limit{+\infty} 0$
 ו-%
 $f(x)=\sin\left(\frac{\pi}{x}\right)\limit{+\infty} 0$.
+יש
+\asm{}
+אופקית ב-%
+$y=0$.
 
 \textbf{סעיף ה}
 
@@ -128,21 +132,22 @@ $f(x)=\sin\left(\frac{\pi}{x}\right)\limit{+\infty} 0$.
 
 \textbf{סעיף ו}
 
-$x=\frac{1}{k}$,
+$x=\frac{1}{k}$
 אז ככל שמתקרבים לאפס הערך של 
 $k$
-עולה. המרחק בין הנקודות החיתוך ב-%
+עולה. המרחק בין שתי נקודות חיתוך סמוכות
 $\frac{1}{k},\frac{1}{k+1}$
 הוא:
 \[
-d_k=\frac{1}{k}-\frac{1}{k+1}=\frac{1}{k(k+1)}\,.
+\frac{1}{k}-\frac{1}{k+1}=\frac{1}{k(k+1)}\,,
 \]
-עבור נקודות סמוכות קרובות יותר לאפס:
-\[
-d_{k+n}=\frac{1}{k+n}-\frac{1}{k+n+1}=\frac{1}{k(k+1)+n(2k+n+1)}\,,
-\]
-וברור ש-%
-$d_{k+n}<d_k$.
+וברור שערך זה קטן ככל ש-%
+$x$
+מתקרב לאפס ולכן 
+$k$
+עולה. המסקנה היא ש-%
+$(i)$
+נכון.
 
 \np
 
@@ -160,15 +165,15 @@ $d_{k+n}<d_k$.
 
 \textbf{סעיף א}
 
-לכאורה הטיעון ברור מאליו אבל כנראה צריך להוכיח באמצעות נגזרות.
+לכאורה הטיעון ברור מאליו אבל כנראה צריך להוכיח באמצעות נגזרות:
 \[
 \left(\frac{1}{f(x)}\right)'=-1\cdot f(x)^{-2} \cdot f'(x)\,.
 \]
 נתון ש-%
 $f(x)$
-מוגדרת לכל התחום, ו-%
+מוגדרת בכל התחום, ו-%
 $f(x)^{-2}$
-חיובי בכל התחום, לכן הסימן של
+חיובי בכל התחום. הסימן של
 $\left(\frac{1}{f(x)}\right)'$
 הפוך מהסימן של
 $f'(x)$,
@@ -220,7 +225,7 @@ $g(x)=g(x+2\pi)$.
 $(3)$
 נחשב את הנגזרת הראשונה:
 \[
-f'(x)=2\sin x \cos x - \sin x + 2=\sin x(2\cos x - 1) = 0\,.
+g'(x)=2\sin x \cos x - \sin x=\sin x(2\cos x - 1) = 0\,.
 \]
 בתחום
 $0\leq x \leq \pi$,
@@ -237,21 +242,21 @@ $(0,3),\left(\disfrac{\pi}{3},\disfrac{13}{4}\right),(\pi,1)$.
 נחשב את הנגזרת השנייה:
 \erh{2pt}
 \begin{equationarray*}{rcl}
-f''(x)&=&\cos x(2\cos x-1) + \sin x(-2\sin x)\\
+g''(x)&=&\cos x(2\cos x-1) + \sin x(-2\sin x)\\
 &=&2\cos^2 x -2\sin^2 x - \cos x\\
-&=& 4\cos^2 x -\cos x -1\,.
+&=& 4\cos^2 x -1 -\cos x\,.
 \end{equationarray*}
 בנקודות הקיצון:
-$f''(0)=2$
+$g''(0)=2$
 והנקודה היא מינימום.
-$f''\left(\frac{\pi}{3}\right)=-\frac{1}{2}$
+$g''\left(\frac{\pi}{3}\right)=-\frac{1}{2}$
 והנקודה היא מקסימום.
 
-$f''(\pi)=4$
+$g''(\pi)=4$
 והנקודה היא מינימום.
 
 $(4)$
-לפי נקודות הקיצון ניתן לצייר את הגרף עבור
+לפי נקודות הקיצון נצייר את הגרף עבור
 $0\leq x \leq \pi$.
 לפי
 $(1)$
@@ -259,7 +264,7 @@ $(1)$
 $-\pi\leq x \leq 0$
 זהה. לפי
 $(2)$
-הפונקציה מחזורית ולכן ניתן להעתיק את הגרף שיש לנו לתחום
+הפונקציה מחזורית וניתן להעתיק את הגרף לתחום
 $\pi\leq x \leq 3\pi$.
 
 
@@ -283,7 +288,7 @@ $\pi\leq x \leq 3\pi$.
 ]
 {(sin(x))^2 + cos(x)+ 2};
 \addplot [
-    domain=-3.141:9.424,
+    domain=-3.141:3.141,
     samples=50,
     thick,
     dashed,
@@ -314,13 +319,14 @@ $(1)$
 $x$,
 $f(x)>0$,
 ולכן עבור כל 
-$x$
-$h(x)=\frac{1}{f(x)}>0$.
+$x$,
+$h(x)=\frac{1}{f(x)}>0$
+והפונקציה מוגדרת.
 
 $(2)$
 ב-%
 $-\pi\leq x \leq \pi$
-נחשב את נקודות הקיצון ונהפוך את תחומי בעלייה והירידה לפי סעיף א.
+נחשב את נקודות הקיצון ונהפוך את תחומי העלייה והירידה לפי סעיף א.
 
 
 
@@ -338,21 +344,25 @@ $-\pi\leq x \leq \pi$
 
 סעיף ג של השאלה מופיע בהמשך.
 
+תחילה התעלמתי מהנתון על הסימן של 
+$a$
+וזה סיבך אותי.
+
 \textbf{סעיף א}
 
 $(1)$
-הפונקציה לא מוגדרת כאשר
-$a>0$
-ומהכנה מתאפסת
-$x=\pm\sqrt{a}$.
+כאשר
+$a>0$,
+הפונקציה לא מוגדרת עבור
+$x=\pm\sqrt{a}$,
+ערכים שמאפסים את המכנה.
+
 כאשר
 $a<0$,
 המכנה תמיד חיובי והפונקציה מוגדרת לכל
 $x$.
 
-אני לא התייחסתי חשיבות לנתון על הסימן של 
-$a$
-וזה סיבך אותי.
+
 
 $(2)$
 חישוב נקודת החיתוך עם ציר ה-%
@@ -386,10 +396,7 @@ f(x)=\frac{1-\frac{4x}{x^2}+\frac{4}{x^2}}{1-\frac{a}{x^2}}\limit{\pm\infty} = 1
 $y=1$
 היא
 \asm{}
-אופקית גם כאשר 
-$x\rightarrow +\infty$
-וגם כאשר
-$x\rightarrow -\infty$.
+אופקית.
 
 $(4)$
 \asms{}
@@ -426,18 +433,18 @@ $x=\sqrt{a}, x=-\sqrt{a}$.
 \erh{12pt}
 \begin{equationarray*}{rcl}
 f'(x)=\left(\frac{(x-2)^2}{x^2-a}\right)'&=&\frac{2(x-2)(x^2-a)-(x-2)^2\cdot 2x}{(x^2-a)^2}\\
-&=&\frac{2(x-2)\,((x^2-a)-x(x-2))}{(x^2-a)^2}\\
+%&=&\frac{2(x-2)\,((x^2-a)-x(x-2))}{(x^2-a)^2}\\
 &=&\frac{2(x-2)\,(2x-a)}{(x^2-a)^2}\,.
 \end{equationarray*}
-נקודות קיצון:
+נקודות הקיצון הן
 $(2,0)$,
 $\left(\disfrac{a}{2},\disfrac{a-4}{a}\right)$.
 
-עבור נקודות הקיצון נחשב את הסימן של הנגזרת של המונה:
+נחשב את הסימן של הנגזרת של המונה של הנגזרת הראשונה:
 \[
 (2(x-2)\,(2x-a))'=8x-2a-8\,.
 \]
-נשתמש בהערה בשאלה לבדוק בנפרד עבור ערכים חיוביים ושליליים של
+לפי ההנחיה בשאלה נבדוק בנפרד עבור ערכים חיוביים ושליליים של
 $a$.
 
 עבור 
@@ -472,25 +479,25 @@ $\left(\disfrac{a}{2},\disfrac{a-4}{a}\right)$
 $a>4$
 נקודות הקיצון ב-%
 $(2,0)$
-היא מקסימום כפי שמופיע הגרף
+היא מקסימום כפי שמופיע בגרף
 $I$.
 
 כאשר 
 $a<0$
 הפונקציה מוגדרת כל ל-%
 $x$
-כפי שמופיע הגרף
+כפי שמופיע בגרף
 $II$.
 
 כאשר 
 $0<a<4$
 נקודות הקיצון ב-%
 $(2,0)$
-היא מינימום, וגם יש
+היא מינימום, ויש
 \asms{}
 ב-%
 $x=\pm\sqrt{a}$
- כפי שמופיע הגרף
+ כפי שמופיע בגרף
 $III$.
 
 
@@ -516,9 +523,13 @@ $I$
 $C$
 שם לגרף 
 $II$
-יש נקודה מקסימלית, ומתאפס בציר ה-%
-$y$
-שם לגרף יש נקודה מינימלית. לכן,
+יש נקודה מקסימום. גרף
+$I$
+מתאפס ב-%
+$(0,0)$
+שם לגרף
+$II$
+יש נקודה מינימום. לכן,
 $II$
 הוא הגרף של
 $f(x)$
@@ -532,7 +543,7 @@ $f'(x)$.
 בנקודת פיתול הנגזרת השנייה מתאפסת:
 \erh{2pt}
 \begin{equationarray*}{rcl}
-f''(x) &=& x\cdot 3(x+b)^2+1\cdot (x+b)^2=(x+b)^2(4x+b)\\
+f''(x) &=& 1\cdot (x+b)^3+x\cdot 3(x+b)^2=(x+b)^2(4x+b)\\
 f''(-1) &=& (b-1)^2 (b-4)=0\\
 b&=&4\,,
 \end{equationarray*}
@@ -547,7 +558,7 @@ $b>1$.
 \erh{2pt}
 \begin{equationarray*}{rcl}
 (f(x)-f'(x))'&=& f'(x) - (x(x+4))^3)'\\
-&=&x(x+4)^3 - x\cdot 3(x+4)^2 - 1\cdot (x+4)^3\\
+&=&x(x+4)^3 - (1\cdot (x+4)^3)+x\cdot 3(x+4)^2)\\
 &=&(x+4)^2(x^2-4)=0\,.
 \end{equationarray*}
 
@@ -563,7 +574,9 @@ $x_D=1-\sqrt{5}$
 $-2$.
 
 נבדוק:
-$-2<1-\sqrt{5}=-1.24$.
+\[
+4<-2<1-\sqrt{5}=-1.24\,.
+\]
 
 
 \np
@@ -574,7 +587,7 @@ $-2<1-\sqrt{5}=-1.24$.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2017a-7}
+\includegraphics[width=.85\textwidth]{summer-2017a-7}
 \end{center}
 
 \vspace{-2ex}
@@ -589,29 +602,33 @@ $(2)$
 נקודות החיתוך עם ציר ה-%
 $x$
 הן כל הנקודות עבורן
-$\sin x = 0, \cos x \neq 0$,
+$\sin x = 0$
+ו-%
+$\cos x \neq 0$,
 שהן 
 $x=\pm n\pi$.
 כאשר 
 $x=0$,
 $y=0$
 והנקודה היא גם נקודת חיתוך עם ציר ה-%
-$x$.
+$y$.
 
 $(3)$
 כאשר
 $x=\frac{\pi}{2} \pm n\pi$,
-הפונקציה לא מוגדרת כי ערכה אינסופי, ולכן הן 
+הפונקציה לא מוגדרת כי המכנה מתאפס והמונה לא מתאפס, לכן הן 
 \asms{}
 אנכיות. אין 
 \asm{}
-אופקיות כי ערך הפונקציה לא חסום כאשר 
-$x\longrightarrow\pm\infty$.
-
+אופקיות: ככל ש-%
+$|x|$
+גדל, כל פעם שהוא מתקרב ל-%
+$\frac{\pi}{2} \pm n\pi$,
+הפונקציה לא חסומה.
 
 $(4)$
 \[
-f'(x)=\frac{2\cos x\cdot\cos^3 x - 2\sin x \cdot 3\cos^2 x \cdot -\sin x}{\cos^6 x}=\frac{2\cos^2 x + 6\sin^2 x}{\cos^4 x}\,,
+f'(x)=(\frac{2\cos x\cdot\cos^3 x) - (2\sin x \cdot 3\cos^2 x \cdot -\sin x)}{\cos^6 x}=\frac{2\cos^2 x + 6\sin^2 x}{\cos^4 x}\,,
 \]
 כאשר צימצמנו 
 $\cos^2 x$
@@ -631,8 +648,8 @@ $\cos^2 x$
     xmax = 5,
     xtick={-1.57,0,1.57,3.14,4.71},
     xticklabels={$-\frac{\pi}{2}$,$0$, $\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$},
-    ymin = -10,
-    ymax = 10,
+    ymin = -10.1,
+    ymax = 10.1,
     ymajorticks=false,
     xticklabel style={anchor=north west,},
 ]
@@ -675,8 +692,8 @@ $a=\frac{\pi}{4}$.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=.9\textwidth]{winter-2017-7a}
-\includegraphics[width=.9\textwidth]{winter-2017-7b}
+\includegraphics[width=.85\textwidth]{winter-2017-7a}
+\includegraphics[width=.85\textwidth]{winter-2017-7b}
 \end{center}
 
 \vspace{-2ex}
@@ -689,7 +706,7 @@ $x=\pm a$,
 $|x|\leq a$.
 תחום ההגדרה היא
 $|x|>a$
-או
+שהוא
 $x>a, x<-a$.
 
 \textbf{סעיף ב}
@@ -698,12 +715,12 @@ $x>a, x<-a$.
 $x$
 במונה גורם להסימן של ה%
 \asms{}
-האכניות להיות תלויות בכיוון ההתקרבות לנקודות שהן הפונקציה לא מוגדרת. כאשר 
+האכניות להיות תלויות בכיוון ההתקרבות לנקודות בהן הפונקציה לא מוגדרת. כאשר 
 $x\rightarrow +a$, $f(x)\rightarrow +\infty$,
 וכאשר
 $x\rightarrow -a$, $f(x)\rightarrow -\infty$.
 \[
-\frac{\frac{x}{\sqrt{x^2}}}{\sqrt{1-\frac{a^2}{x^2}}}=\frac{\frac{x}{|x|}}{\sqrt{1-\frac{a^2}{x^2}}}=\pm 1\,.
+\frac{\disfrac{x}{\sqrt{x^2}}}{\sqrt{1-\disfrac{a^2}{x^2}}}=\disfrac{\disfrac{x}{|x|}}{\sqrt{1-\frac{a^2}{x^2}}}=\pm 1\,.
 \]
 ה%
 \asm{}
@@ -712,7 +729,7 @@ $y=1$
 כאשר 
 $x>a$
 ו-%
-$y=1$
+$y=-1$
 כאשר 
 $x<-a$.
 
@@ -720,15 +737,19 @@ $x<-a$.
 
 נבדוק את הסימן של הנגזרת הראשונה:
 \[
-f'(x)=1\cdot(x^2-a^2)^{-\frac{1}{2}} + x\cdot (x^2-a^2)^{-\frac{3}{2}}\cdot 2x=\frac{-a^2}{(x^2-a^2)^{\frac{3}{2}}}\,.
+f'(x)=1\cdot(x^2-a^2)^{-\frac{1}{2}} + x\cdot \left(-\frac{1}{2}\right)(x^2-a^2)^{-\frac{3}{2}}\cdot 2x=\frac{-a^2}{(x^2-a^2)^{\frac{3}{2}}}\,.
 \]
-המנה חיובי והמונה תמיד שלילי, לכן הנגזרת שלילי והפונקציה יורדת בכל תחום ההגדרה שלה.
+המכנה חיובי והמונה שלילי, לכן הנגזרת שלילי והפונקציה יורדת בכל תחום ההגדרה שלה.
 
 \np
 
 \textbf{סעיף ד}
 
-\vspace{-3ex}
+יש לנו את ה%
+\asms{}
+מסעיף ב, ומסעיף ג אנו יודעים שהפונקציה תמיד יורדת. הגרף הוא:
+
+\vspace{-1ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -788,8 +809,13 @@ $+\infty$,
 $y=0$.
 
 $(2)$
+לפי סעיף ג הנגזרת תמיד שלילי ויש 
+\asms{}
+ב-%
+$\pm a$.
+הגרף הוא:
 
-\vspace{-3ex}
+\vspace{-1ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -839,7 +865,7 @@ $(1)$
 $f(x)=\disfrac{x}{\sqrt{x^2}}=\disfrac{x}{|x|}=\pm 1$
 עבור 
 $x\neq 0$.
-כאשר הסימן הוא כסימן ה-%
+כאשר הסימן הוא הסימן של
 $x$.
 
 $(2)$
@@ -873,8 +899,8 @@ $(2)$
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2016b-7a}
-\includegraphics[width=\textwidth]{summer-2016b-7b}
+\includegraphics[width=.95\textwidth]{summer-2016b-7a}
+\includegraphics[width=.95\textwidth]{summer-2016b-7b}
 \end{center}
 
 \vspace{-1ex}
@@ -954,8 +980,8 @@ $-\infty$.
 משמאל לימין עבור ערכים חיוביים של 
 $x$,
 השיפוע של פונקציה חיובי ויורדת תמיד ולכן הנגזרת חיובית. ערכה של הנגזרת מתחילה קרוב ל-%
-$-\infty$,
-יורדת מהר ואז עולה לאט ושואפת 
+$+\infty$,
+יורדת מהר ואז יורדת לאט ושואפת 
 $0$.
 
 
@@ -966,7 +992,7 @@ $x$,
 
 משמאל לימין עבור ערכים חיוביים של 
 $x$,
-השיפוע של פונקציה שלילי ועולה תמיד ולכן הנגזרת השנייה שלילית. ערכה של הנגזרת השנייה מתחילה קרוב ל-%
+השיפוע של הנגזרת הראשונה שלילי ועולה תמיד ולכן הנגזרת השנייה שלילית. ערכה של הנגזרת השנייה מתחילה קרוב ל-%
 $-\infty$,
 עולה מהר ואז עולה לאט ושואפת 
 $0$.
@@ -1057,7 +1083,7 @@ $(2)$
 \erh{12pt}
 \begin{equationarray*}{rcl}
 g'(1)-g'(2)&=&5.25\\
-\frac{a}{1^3}-\frac{a}{2^3}&=&5.25\\
+\frac{a}{1^3}-\frac{a}{2^3}&=&\frac{21}{4}\\
 a&=&\frac{8}{7}\cdot \frac{21}{4}=6\,.
 \end{equationarray*}
 
@@ -1069,7 +1095,7 @@ a&=&\frac{8}{7}\cdot \frac{21}{4}=6\,.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2016a-7}
+\includegraphics[width=.85\textwidth]{summer-2016a-7}
 \end{center}
 
 \vspace{-2ex}
@@ -1104,7 +1130,7 @@ $a(-x)=-(ax)$
 
 כאן צריך להיזהר.
 \textbf{האינטגרל}
-של פונצקיה אי-זוגית בתחום סימטרי בין
+של פונצקיה אי-זוגית בתחום הסימטרי בין
 $-k$
 ל-%
 $k$
@@ -1120,6 +1146,29 @@ S = 2\int_0^1 ax \,dx = \left.ax^2\right|_0^1=a=4\,.
 \]
 
 \np
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}%[scale=1.1]
+\begin{axis}[
+    axis lines=center,
+    xmin = -2,
+    xmax = 2,
+    ymin = -5,
+    ymax = 5,
+    xmajorticks=false,
+    ymajorticks=false,
+]
+\addplot [
+    domain=-3:3,
+    samples=50, 
+]
+{4*x};
+\draw[thick,dashed] (axis cs:-1,-5) -- (axis cs:-1,0);
+\draw[thick,dashed] (axis cs:1,0) -- (axis cs:1,5);
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{סעיף ד}
 
@@ -1190,17 +1239,20 @@ $g(x)$:
 כמו עבור 
 $f(x)$,
 $x<3$.
-אבל הגורם הנוסף בשורש לא יכול להיות אפס. כמו כן, עבור
+אבל
+$x$
+בשuרש לא יכול להיות אפס. כמו כן, עבור
 $x<0$,
-$3-x>0$,
-ו-%
-$x(3-x)<0$.
-תחום ההגדרה הוא
+בגלל ש-%
+$3-x>0$
+אנו מקבלים
+$x(3-x)<0$,
+והשורש לא מוגדר. תחום ההגדרה הוא
 $0<x<3$.
 
 $(2)$
 \asms{}
-אופקיות: 
+אנכיות: 
 $x=3$
 מאפס את המכנה של שתי הפונקציות, ו-%
 $x=0$
@@ -1214,10 +1266,10 @@ $g(x)$.
 $x>3$
 ולכן אין
 \asms{}
-כאפשר
-$x\limit{+\infty}$.
 כאשר
-$x\limit{-\infty}$,
+$x\rightarrow +\infty$.
+כאשר
+$x\rightarrow -\infty$,
 $f(x)\rightarrow 0$,
 ולכן יש ל-%
 $f(x)$
@@ -1231,17 +1283,17 @@ $x<0$
 ולכן אין 
 \asm{}
 כאשר 
-$x\limit{-\infty}$.
+$x\rightarrow -\infty$.
 
-\np
+
 
 \textbf{סעיף ב}
 
-שאלה זו ממש לא מוצא חן בעיני בגלל כמות חישובים רבה!
+שאלה זו ממש לא מוצאת חן בעיני בגלל כמות חישובים רבה!
 
 השטח התחום גם על ידי ציר ה-%
 $x$
-וגם על ידי גרף מעט קשה לדמיין, אבל תרשים עוזר. בתרשים גבולות השטח מסומנים בקו עבה מאוד, וברור שצריך להחשב בשני חלקים. אחד מ-%
+וגם על ידי גרף מעט קשה לדמיין, אבל תרשים עוזר. בתרשים גבולות השטח מסומנים בקו עבה, וברור שצריך להחשב בשני חלקים. אחד מ-%
 $x=1$
 ועד לנקודת החיתוך של
 $g(x)$
@@ -1251,7 +1303,7 @@ $x$,
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}%[scale=.8]
+\begin{tikzpicture}[scale=1.1]
 \begin{axis}[
     axis lines=center,
     xmin = -2,
@@ -1279,7 +1331,10 @@ $x$,
 \fill (axis cs:2.25,1.154) circle(1.5pt);
 \node at (axis cs:-1,1) {$f(x)$};
 \node at (axis cs:2.5,4) {$g(x)$};
-
+\draw[->] (axis cs:1.5,-2) -- (axis cs:1.5,-.2);
+\node at (axis cs:1.5,-2.2) {$x=\frac{3}{2}$};
+\draw[->] (axis cs:2.25,2.5) -- (axis cs:2.25,1.3);
+\node at (axis cs:2.2,2.7) {$x=\frac{9}{4}$};
 \addplot [
     domain=1:2.25,
     samples=30, 
@@ -1304,7 +1359,7 @@ $x$:
 המכנה חיובי בתחום ההגדרה והמונה מתאפס כאשר
 $x=\frac{3}{2}$.
 
-נקודת החיתוך של שתי הפונקציות:
+נחשב את נקודת החיתוך של שתי הפונקציות:
 \[
 \frac{1}{\sqrt{3-x}}=\frac{2x-3}{\sqrt{x(3-x)}}\,.
 \]
@@ -1319,8 +1374,8 @@ $x=\frac{9}{4}$.
 נקודת החיתוך היא
 $(\frac{9}{4},\frac{2}{\sqrt{3}})$.
 
-נחשב את שני חלקי השטח בנפרד )כאשר להבאתי את החישובים המייגעים(:
-\erh{12pt}
+נחשב את שני חלקי השטח בנפרד )לא הבאתי את החישובים המייגעים(:
+\erh{14pt}
 \begin{equationarray*}{l}
 S_1=\int_1^{\frac{3}{2}} \left(\frac{1}{\sqrt{3-x}}-0\right) \, dx =\left. -2\sqrt{3-x}\right|_1^{\frac{3}{2}}=-2\left(\sqrt{\frac{3}{2}} - \sqrt{2}\right)=0.379\\
 S_2=\int_\frac{3}{2}^\frac{9}{4} \left(\frac{1}{\sqrt{3-x}}-\frac{2x-3}{\sqrt{x(3-x)}}\right)\, dx  =-2\left.\left(\sqrt{3-x}-\sqrt{x(3-x)} \right)\right|_{\frac{3}{2}}^{\frac{9}{4}}=\\
@@ -1340,7 +1395,7 @@ S=0.379+0.315=0.694\,.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2015b-7}
+\includegraphics[width=.95\textwidth]{summer-2015b-7}
 \end{center}
 
 \vspace{-2ex}
@@ -1360,18 +1415,15 @@ $f(x) = \sqrt{x^2+9}$.
 \textbf{סעיף ב}
 
 $(1)$
-$f(x)$
-מוגדרת עבור כל
-$x$
-כי הערך של
 $x^2+9$
-חיובי. מאותה סיבה, המכנה של
+חיובי עבור כל 
+$x$
+לכן
+$f(x)$
+ו-%
 $f'(x)$
-תמיד חיובי ו-%
-$f'(x)$
-מוגדרת עבור כל 
+מוגדרות עבור כל
 $x$.
-
 
 $(2)$
 $f'(x)$
@@ -1379,26 +1431,38 @@ $f'(x)$
 $x$
 אז אין
 \asms{}
-אנכיות. ה%
-\asms{}
-האופקיות הן:
-\[
-\frac{\disfrac{x}{x}}{\sqrt{1+\disfrac{9}{x^2}}}\limit{+\infty}+1,\quad\quad
-\frac{\disfrac{x}{x}}{-\sqrt{1+\disfrac{9}{x^2}}}\limit{-\infty}-1\,.
-\]
+אנכיות.
 
-\np
+\[
+\frac{\disfrac{x}{|x|}}{\sqrt{1+\disfrac{9}{x^2}}}\limit{\pm\infty}\pm 1\,,
+\]
+לכן 
+$y=1$
+היא 
+\asm{}
+אופקית כאשר
+$x\rightarrow +\infty$,
+ו-%
+$y=-1$
+היא
+\asm{}
+אופקית כאשר
+$x\rightarrow -\infty$.
+
 
 $(3)$
 על ידי הצבה של
 $x=0$
 יש נקודת חיתוך ב-%
 $(0,0)$.
-המכה חיובי לכן 
+
+המכנה חיובי לכן 
 $y=0$
 רק אם 
 $x=0$
 וכבר קיבלנו נקודת חיתוך זו.
+
+\np
 
 $(4)$
 \[
@@ -1407,10 +1471,34 @@ f''(x)= \frac{1\cdot\sqrt{x^2+9}- x\cdot \disfrac{1}{2} \disfrac{1}{\sqrt{x^2+9}
 הנגזרת השנייה תמיד חיובי ולכן הנגזרת הראשונה עולה בכל התחום.
 
 $(5,6)$
+$f(x)$
+היא פרבולה עם נקודת מינימום ב-%
+$(0,3)$.
+
+לפי 
+$(3)$
+ל-%
+$f'(x)$
+יש נקודת חיתוך ב-%
+$(0,0)$.
+לפי 
+$(2)$
+יש 
+\asms{}
+ב-%
+$\pm 1$
+כאשר השאיפה היא ל-%
+$1$
+עבור 
+$x\rightarrow +\infty$,
+והשאיפה היא ל-%
+$-1$
+עבור 
+$x\rightarrow -\infty$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.8]
+\begin{tikzpicture}%[scale=.8]
 \begin{axis}[
     axis lines=center,
     xmin = -5,
@@ -1463,14 +1551,19 @@ $k\geq 1$.
 \erh{12pt}
 \begin{equationarray*}{rcl}
 \frac{x^2}{x^2+9}&=&k^2\\
-x^2&=&\frac{9k^2}{1-k^2}\,.
+x&=&\frac{3k}{\sqrt{1-k^2}}\,.
 \end{equationarray*}
-כדי שניתן להוציא שורש
+כדי שניתן להוציא שורש חייב להתקיים
 $k<1$,
 ולכן אין פתרון כאשר
 $k\geq 1$.
 
-אין פתרון לשתי המשוואות כאשר
+שימו לב שהשאלה ביקשה את התחום בו אין פתרון ל-%
+$I$
+\textbf{וגם}
+ל-%
+$II$.
+צירוף שתי התוצאות נותן שאין פתרון לשתי המשוואות כאשר
 $1\leq k < 3$.
 
 \np
@@ -1482,7 +1575,7 @@ $1\leq k < 3$.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2015a-7}
+\includegraphics[width=.9\textwidth]{summer-2015a-7}
 \end{center}
 
 \vspace{-2ex}
@@ -1504,11 +1597,10 @@ $x=1$
 \asm{}
 אנכית.
 
-אם נחלק את המונה והמכנה ב-%
-$x^3$
-נקבל ביטוי מהצורה:
 \[
-\disfrac{\disfrac{x^2}{x^3}+\cdots }{\disfrac{x^3}{x^3}}\limit{\pm\infty}0\,.
+\disfrac{\disfrac{x^2}{x^3}+\disfrac{4x}{x^3}+\disfrac{4}{x^3}}
+{\disfrac{x^3}{x^3}-\frac{3x^2}{x^3}+\frac{3x}{x^3}-\frac{1}{x^3}}
+\limit{\pm\infty}0\,.
 \]
 לכן יש
 \asm{}
@@ -1535,17 +1627,19 @@ $(4)$
 f'(x)=\frac{2(x+2)(x-1)^3-(x+2)^2\cdot 3(x-1)^2}{(x-1)^6}=-\frac{(x+2)(x+8)}{(x-1)^6}\,.
 \]
 המכנה לא מתאפס בתחום ההגדרה, לכן נקודות הקיצון הן
-$(-2,0), (-8,-\frac{4}{81})$.
+$(-2,0), \left(-8,-\disfrac{4}{81}\right)$.
 
-הנגזרת של המונה של הנגזרת השנייה היא
+המכנה חיובי ולכן סימן הנגזרת השנייה היא סימן הנגזרת של המונה
 $-2(x+5)$.
+
 $-2(-2+5)<0$
 ולכן
 $(-2,0)$
-היא מקסימום,
+היא מקסימום.
+
 $-2(-8+5)>0$
 ולכן
-$(-8,-\frac{4}{81})$
+$\left(-8,-\disfrac{4}{81}\right)$
 היא מינימום.
 
 \np
@@ -1560,15 +1654,16 @@ $y$
 המראה את נקודות הקיצון.
 
 \begin{center}
+\begin{minipage}{.48\textwidth}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.8]
 \begin{axis}[
     axis lines=center,
-    xmin = -5,
+    xmin = -1,
     xmax = 5,
     ymin = -800,
     ymax = 400,
-    xmajorticks=false,
+%    xmajorticks=false,
     ymajorticks=false,
 ]
 \addplot [
@@ -1584,29 +1679,35 @@ $y$
 \draw[dashed,thick] (axis cs:1,-800) -- (axis cs:1,400);
 \end{axis}
 \end{tikzpicture}
-\end{center}
-
-\begin{center}
+\end{minipage}
+\begin{minipage}{.48\textwidth}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.8]
 \begin{axis}[
     axis lines=center,
-    xmin = -30,
+    xmin = -9,
     xmax = 1,
-    ymin = -75,
+    ymin = -5.5,
     ymax = 2,
-    xmajorticks=false,
+%    xmajorticks=false,
+    xticklabel style={anchor=north west},
     ymajorticks=false,
 ]
 \addplot [
-    domain=-30:0,
-    samples=200, 
+    domain=-9:0,
+    samples=50, 
 ]
-{(1000*(x+2)^2)/((x-1)^3)};
+{(40*(x+2)^2)/((x-1)^3)};
 \fill (axis cs: -2,0) circle(1.5pt);
-\fill (axis cs: -8,-49.5) circle(1.5pt);
+\fill (axis cs: -8,-1.975) circle(1.5pt);
+\node at (axis cs: -2,.6) {$(2,0)$};
+\node at (axis cs: -8,-2.5) {$(-4,\frac{4}{81})$};
+\draw[thick,dashed] (axis cs:-2,0) -- (axis cs:0,-160);
+\fill (axis cs: -1,-5) circle(1.5pt);
+\node at (axis cs: -3.2,-5) {$(-1,-\frac{1}{8})$};
 \end{axis}
 \end{tikzpicture}
+\end{minipage}
 \end{center}
 
 \textbf{סעיף ב}
@@ -1628,11 +1729,11 @@ $(-2,0)$
 לבין
 $(0,-4)$
 תוחם משולש )ישר זווית( ששטחו
-$\frac{2\cdot 4}{2}=4$.
+$\frac{1}{2}\cdot 2 \cdot 4=4$.
 הגרף נמצאת מעל לקו לכן השטח שהוא תוחם פחות מ-%
 $4$.
 
-הטיעון על המקומות הייחסיים בין לקו לגרף ברור מהגרף, אבל נבדוק אותו. ב-%
+בגלל קנה המידה בתרשים קשה לראות שהגרף תמיד מעל לקו המקווקוו, אז נבדוק בחישוב. ב-%
 $x=-1$,
 $f(-1)=-\frac{1}{8}=-0.125$.
 לפי משולשים דומים, 
@@ -1662,33 +1763,26 @@ $-0.125>-2$.
 \textbf{סעיף א}
 
 $(1)$
-השורש לא יכול להיות שלילי. המכנה של שתי הפונקציות חיובי, ולכן 
+המכנה של שתי הפונקציות חיובי, ולכן 
 $g(x)$
 מוגדרת עבור כל
-$x$,
-ו-%
+$x$.
 $f(x)$
-מוגדרת עבור
+לא מוגדרת עבור
+$x<0$
+בגלל ה-%
+$x$
+במונה, כך שתחום ההגדרה הוא
 $x\geq 0$.
 
 $(2)$
 אין 
 \asms{}
 אנכיות כי כל אחת מהפונקציות מוגדרת בכל התחום שלה.
-
-$f(x)$
-מוגדרת רק עבור
-$x\geq 0$,
-ולכן יש לבדוק אם יש
-\asm{}
-אופקית כאשר 
-$x$
-שואף ל-%
-$+\infty$:
 \[
-\frac{x}{1+x^2}=\frac{\frac{1}{x}}{\frac{1}{x^2}+1}\limit{+\infty} 0\,,
+\sqrt{\frac{\disfrac{x}{x^2}}{\disfrac{1}{x^2}+1}}\limit{+\infty} 0\,,
 \]
-כי עברך המכנה קרוב לאחת והמונה שואף לאפס ו-%
+ולכן
 $y=0$
 היא
 \asm{}
@@ -1709,20 +1803,18 @@ $y=0$
 $(3)$
 \erh{12pt}
 \begin{equationarray*}{rcl}
-f'(x)&=& \frac{1}{2} \left(\frac{x}{1+x^2}\right)^{-\frac{1}{2}}\left( \frac{1+x^2-x\cdot 2x}{\frac{x}{1+x^2}}\right)\\
-&=&\frac{1}{2} \frac{1-x^2}{\left(\frac{x}{1+x^2}\right)^{\frac{3}{2}}}\,.
+f'(x)&=& \frac{1}{2} \left(\frac{x}{1+x^2}\right)^{-\frac{1}{2}}\left(\frac{1\cdot(1+x^2)-x\cdot (2x)}{\disfrac{x}{1+x^2}}\right)\\
+&=&\frac{1}{2} \frac{1-x^2}{\left(\disfrac{x}{1+x^2}\right)^{\frac{3}{2}}}\,.
 \end{equationarray*}
 המכנה חיובי לכן הנגזרת מתאפסת כאשר המונה מתאפס
 $x=\pm 1$.
-אבל 
 $f(x)$
 לא מוגדרת כאשר 
 $x<0$
 ולכן נקודת הקיצון היחיד היא
 $\left(1,\sqrt{\frac{1}{2}}\right)$.
-הנגזרת השל המונה של
-$f'(x)$
-היא
+הסימן של הנגזרת השנייה הוא הסימן של הנגזרת של המונה של
+$f'(x)$:
 $\frac{1}{2}\cdot -2x$
 שהיא שלילית עבור כל 
 $x$
@@ -1730,19 +1822,22 @@ $x$
 
 \np
 
-הנגזרת:
+הנגזרת הראשונה היא:
 \[
 g'(x)= -\frac{1}{2} \left(3x^2+2\right)^{-\frac{3}{2}}\cdot 6x\\
 \]
-מתאפסת כאשר 
+המכנה חיובי לכן הנגזרת מתאפסת כאשר 
 $x=0$.
 נקודת הקיצון היא
 $\left(1,\sqrt{\frac{1}{2}}\right)$.
-הנגזרת השנייה של המונה היא
+הנגזרת של המונה היא
 $-3<0$,
 ונקדות הקיצון היא מקסימום.
 
 \textbf{סעיף ב}
+
+\vspace{-2ex}
+
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1]
@@ -1778,10 +1873,13 @@ $-3<0$,
 \fill (axis cs: 0,0) circle(1.5pt);
 \node at (axis cs: -2,.5) {$g(x)$};
 \node at (axis cs: 2.5,.8) {$f(x)$};
-\node at (axis cs: 2,-.8) {$g(x)-\sqrt{\frac{1}{2}}$};
+\node at (axis cs: 1.6,-.8) {$h(x)=g(x)-\sqrt{\frac{1}{2}}$};
 \end{axis}
 \end{tikzpicture}
 \end{center}
+
+\vspace{-2ex}
+
 ההערה "אם ידוע כי הפונקציות תחתכות בנקודה אחת בלבד" היתה לי די מוזרה, אבל לאחר מחשבה הבנתי שההערה באה למנוע אפשר של חיתוך כאשר
 $x>1$
 ושואף לאינסוף.
@@ -1793,7 +1891,8 @@ $f(x)=g(x)$
 3x^3-x^2+2x-1=0\,.
 \]
 לא התחשק לי לחפש את הנוסחה )המסובכת( למציאת פתרונות למשוואות ממעלה שלישי, אבל לבסוף שמתי לב שאם
-$x>1$,
+$x>1$
+אז
 $3x^3-x^2>0$
 ו-%
 $2x-1>0$,
@@ -1813,6 +1912,7 @@ $\sqrt{\frac{1}{2}}$.
 $k>\sqrt{\frac{1}{2}}$
 לא יהיו נקודות חיתוך בין שתי הפונקציות.
 
+\np
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1820,7 +1920,7 @@ $k>\sqrt{\frac{1}{2}}$
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2014b-7}
+\includegraphics[width=.95\textwidth]{summer-2014b-7}
 \end{center}
 
 \vspace{-2ex}
@@ -1829,8 +1929,6 @@ $k>\sqrt{\frac{1}{2}}$
 
 $(1)$
 הפונקציה לא מוגדרת כאשר המכנה מתאפס 
-$x^2-1=0$,
-כאשר 
 $x=\pm 1$.
 
 $(2)$
@@ -1843,20 +1941,17 @@ $x=\pm 1$.
 \asm{}
 האופקית:
 \[
-\frac{1-\frac{4}{x}+\frac{4}{x^2}}{1-\frac{1}{x^2}}\limit{\pm\infty}\frac{1}{1}=1\,.
+\frac{1-\disfrac{4}{x}+\disfrac{4}{x^2}}{1-\disfrac{1}{x^2}}\limit{\pm\infty}\disfrac{1}{1}=1\,.
 \]
 
 $(3)$
 כאשר
 $x=0$,
-$y=\frac{(-2)^2}{-1}=-4$.
+$y=-4$.
 
 כאשר 
-$y=0$
-המכנה שונה מאפס, ולכן 
-$(x-2)^2=0$
-ו-%
-$x=2$.
+$x=2$
+המונה מתאפס והמכנה לא מתאפס.
 
 נקודות החיתוך הן
 $(2,0), (0,-4)$.
@@ -1864,30 +1959,30 @@ $(2,0), (0,-4)$.
 $(4)$
 חישוב הנגזרת הראשונה:
 \[
-f'(x)=\frac{2(x-2)(x^2-1)-(x-2)\cdot 2x}{(x^2-1)^2}=\frac{2(2x^2-5x+2)}{(x^2-1)^2}\,.
+f'(x)=\frac{2(x-2)(x^2-1)-(x-2)^2\cdot 2x}{(x^2-1)^2}=\frac{2(2x^2-5x+2)}{(x^2-1)^2}\,.
 \]
 המכנה חיובי בתחום ההגדרה ולכן נקודות הקיצון הן הפתרונות של:
 \[
 2x^2-5x+2=(2x-1)(x-2)=0\,.
 \]
-הנגזרת השנייה )של המונה( היא
-$2(4x-5)$
-שהיא חיובי עבור 
-$x=2$
+המכנה חיובי לכן סימן הנגזרת השנייה הוא הסימן של הנגזרת של המונה של הנגזרת הראשונה
+$2(4x-5)$.
+ביטוי זה חיובי עבור
+$x=2$,
 ושלילי עבור
 $x=\frac{1}{2}$.
 נקודות הקיצון הן:
 \[
-(2,0)\quad \textrm{\R{מינימום}},\quad\quad (\frac{1}{2},-3)\quad \textrm{\R{מקסימום}}\,.
+(2,0)\quad \textrm{\R{מינימום}},\quad\quad \left(\frac{1}{2},-3\right)\quad \textrm{\R{מקסימום}}\,.
 \]
 
 \np
 
 \textbf{סעיף ב}
 
-מה%
-\asms{}
-ונקודות הקיצון אפשר לצייר תרשים עבור 
+בסעיפים הקודמים חישבנו את ה%
+\asms{},
+נקודות החיתוך עם הצירים וונקודות הקיצון. מידע זה מספיק לצייר תרשים עבור 
 $x>-1$.
 עבור
 $x<-1$
@@ -1936,14 +2031,19 @@ $f(-2)=\frac{16}{3}>1$
 
 \textbf{סעיף ג}
 
-אם הנגזרת הראשונה שלילית, הפונקציה יורדת, ולכן
-$\frac{1}{2}< x < 1, 1<x<2$.
-אם הנגזרת השנייה חיובית, הנגזרת הראשונה עולה, ולכן
-$x<-1, -1<x<\frac{1}{2}, 1<x<x_1$
+כדי שהנגזרת הראשונה תהיה שלילית, הפונקציה צריכה לרדת: 
+\[
+\frac{1}{2}< x < 1, 1<x<2\,.
+\]
+כדי שהנגזרת השנייה תהיה חיובית, הנגזרת הראשונה חייב לעלות:
+\[
+x<-1, -1<x<\frac{1}{2}, 1<x<x_1\,,
+\]
 כאשר 
 $x_1$
 היא נקודת הפיתול אי-שם מימין ל-%
 $x=2$.
+
 החיתוך בין שני התחומים הוא
 $1<x<2$.
 
@@ -1956,7 +2056,7 @@ $1<x<2$.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2014a-7}
+\includegraphics[width=.9\textwidth]{summer-2014a-7}
 \end{center}
 
 \vspace{-2ex}
@@ -1979,9 +2079,11 @@ f'(x)&=&\frac{1}{2}(ax^2+9)^{-\frac{1}{2}}\cdot 2ax= \frac{ax}{\sqrt{ax^2+9}}\\
 &&\\
 f''(x)&=&\frac{a\sqrt{ax^2+9}-ax\cdot \disfrac{ax}{\sqrt{ax^2+9}}}{ax^2+9}\\
 &&\\
-&=&\frac{a(ax^2+9)-(ax)^2}{(ax^2+9)\sqrt{ax^2+9}}=\frac{9a}{(ax^2+9)\sqrt{ax^2+9}}\,.
+&=&\frac{9a}{(ax^2+9)\sqrt{ax^2+9}}\,.
 \end{equationarray*}
-גם המונה וגם המכנה חיוביים, ולכן הנגזרת השנייה לא מתאפסת ואין נקודות פיתול.
+)א( הנגזרת השנייה מוגדרת לכל 
+$x$,
+ו-)ב( גם המונה וגם המכנה חיוביים, ולכן הנגזרת השנייה לא מתאפסת. המסקנה היא שאין נקודות פיתול.
 
 \textbf{סעיף ב}
 
@@ -1999,14 +2101,10 @@ $(2)$
 נחלק את המונה והמכנה ב-%
 $\sqrt{x^2}$:
 \[
-f'(x)=\disfrac{\disfrac{ax}{\sqrt{x^2}}}{\sqrt{a+\disfrac{9}{x^2}}}\,.\]
+f'(x)=\disfrac{\disfrac{ax}{|x|}}{\sqrt{a+\disfrac{9}{x^2}}}\limit{\pm\infty} \pm\sqrt{a}\,.
+\]
 
 \np
-
-מכאן ש:
-\[
-f(x)\limit{+\infty} \frac{a}{\sqrt{a}}=+\sqrt{a},\quad\quad f(x)\limit{-\infty} \frac{-a}{\sqrt{a}}=-\sqrt{a}\,.
-\]
 
 $(3)$
 ראינו בסעיף א שהנגזרת השנייה תמיד חיובית ולכן הנגזרת הראשנוה תמיד עולה.
@@ -2022,6 +2120,7 @@ $(4)$
     xmax = 4,
     ymin = -2,
     ymax = 2,
+    yticklabel style = {anchor=north east},
 ]
 \addplot [
     domain=-4:4, 
@@ -2050,12 +2149,11 @@ $a$
 $f(-4)$
 בלי לחשב את הערך של
 $a$.
-החישוב אפילו קל יותר
-$f(-4)=2+3=5$/.
-בגלל ש-%
-$x$
-מופיע רק כ-%
-$x^2$,
+החישוב אפילו קל יותר:
+\[
+f(-4)=2+f(0)=2+3=5\,.
+\]
+הפונקציה זוגית, לכן
 $f(4)=f(-4)=5$.
 
 מי שמעוניין יכול לחשב את ערכו של 
@@ -2074,7 +2172,7 @@ a&=&1\,.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{winter-2014-8}
+\includegraphics[width=.9\textwidth]{winter-2014-8}
 \end{center}
 
 \vspace{-4ex}
@@ -2145,14 +2243,9 @@ e&=&(b\sin 2x)\sin x\\
 \np
 \erh{1pt}
 \begin{equationarray*}{rcl}
-e'&=&2b(2\sin x \cos x\cos x - \sin^2 x \sin x)\\
+e'&=&2b(2\sin x \cos x\cos x + \sin^2 x \cdot(-\sin x))\\
 &=&2b\sin x(2\cos^2 x-\sin^2 x)=0\,.
 \end{equationarray*}
-
-בגלל ש-%
-$x$
-זווית של משולש,
-$0<x<180$.
 הנגזרת מתאפסת אם 
 $\sin x = 0$
 שלא ייתכן, כי
@@ -2161,8 +2254,9 @@ $x=0,x=180$
 \erh{6pt}
 \begin{equationarray*}{rcl}
 2\cos^2 x-\sin^2 x&=&0\\
-\tan x &=& \frac{\sin x}{\cos x} = \pm \sqrt{2}\\
-x&=&54.74,\; 124.26\,.
+\left(\frac{\sin x}{\cos x}\right)^2 &=& 2\\
+\tan x &=& \pm \sqrt{2}\\
+x&=&54.74,\; 125.26\,.
 \end{equationarray*}
 אבל 
 $\angle BAC=2x$
