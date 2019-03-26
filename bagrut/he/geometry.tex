@@ -1,4 +1,4 @@
-% !TeX root = bagrut.tex
+% !TeX root = bagrut-806.tex
 
 \selectlanguage{hebrew}
 
@@ -833,7 +833,6 @@ $a,b,c$.
 \fill (B) node[above left] {$B$} circle(1.5pt);
 \fill (C) node[above right] {$C$} circle(1.5pt);
 \fill (D) node[below right] {$D$} circle(1.5pt);
-%\fill (E) node[above] {$E$} circle(1.5pt);
 \fill (F) node[right] {$F$} circle(1.5pt);
 \coordinate (G) at ($(A)!.5!(B)$);
 \fill (G) node[left] {$G$} circle(1.5pt);
@@ -1516,7 +1515,6 @@ $AB\|DC$
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}
-%\clip (-1,-1.7) rectangle +(5,7.2);
 \coordinate [label=left:$D$] (D) at (0,0);
 \coordinate [label=right:$C$] (C) at (4,0);
 \coordinate [label=above:$P$] (P) at (1.5,5);
@@ -1700,9 +1698,6 @@ $\triangle EDF \sim \triangle EAB$.
 \draw[thick] (C) -- (F) -- (D);
 \path[name path=cf] (C) -- ($ (C) ! 1.8 ! (F) $);
 \path[name path=ab] (A) -- (B);
-%\path [name intersections={of=cf and ab,by={G}}];
-%\fill (G) node[above] {$G$} circle(1.5pt);
-%\draw[thick] (F) -- (G);
 \draw[rotate=-114] (F) rectangle +(7pt,7pt);
 \path (C) -- node[below,yshift=-2pt] {$3a$} (D);
 \path (A) -- node[right,xshift=2pt] {$4a$} (E);
@@ -1802,19 +1797,14 @@ $101$%
 \draw[thick] (A) -- (B) -- (C) -- (E) -- cycle;
 \draw[thick] (B) -- (E);
 \draw (D) -- (F);
-%\draw[thick] (F) -- (C);
 \path[name path=df] (D) -- ($ (D) ! 1.8 ! (F) $);
 \path[name path=ab] (A) -- (B);
 \path [name intersections={of=df and ab,by={G}}];
 \fill (G) node[above] {$G$} node[below right,xshift=8pt] {$2\alpha$} circle(1.5pt);
 \draw[thick] (F) -- (G);
-%\draw[rotate=-114] (F) rectangle +(7pt,7pt);
-%\path (C) -- node[below,yshift=-2pt] {$3a$} (D);
 \path (A) -- node[right,xshift=2pt] {$4a$} (E);
 \path (D) -- node[below,yshift=-2pt] {$3a$} (E);
 \path (F) -- node[left,yshift=0pt] {$3a$} (D);
-%\draw[thick,dashed] (F) -- ($ (C)!(F)!(D) $) coordinate(H);
-%\draw (H) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
 
@@ -1878,7 +1868,6 @@ $CD=EN$.
 \tkzCircumCenter(C,D,E)\tkzGetPoint{O}
 \tkzDrawCircle[thick,name path=circ](O,C)
 \path [name intersections={of=db and ce,by={F}}];
-%\fill (F) node[above,yshift=4pt] {$F$} circle(1.5pt);
 \path [name intersections={of=circ and db,by={M}}];
 \fill (M) node[left,xshift=-4pt] {$M$} circle(1.5pt);
 \path[name path=bc] (B) -- (C);
@@ -1991,8 +1980,6 @@ $N$.
 \draw[thick,dashed] (E) -- (N);
 \end{tikzpicture}
 \end{center}
-
-%\np
 
 \vspace{-30mm}
 
@@ -2442,7 +2429,6 @@ $100$%
 \frac{h_2}{h_1} &=& \sqrt{\frac{S_{DEF}}{S_{ABE}}} = \sqrt{\frac{48}{27}} = \frac{4}{3}\\
 S_{BED} &=& S_{ABD}-S_{AEB}\\
 &=& \frac{1}{2}x\left(h_1+\frac{4}{3}h_1\right)-\frac{1}{2}xh_1\\
-%&=& \frac{1}{2}x\cdot \frac{4}{3}h_1\\
 &=& \frac{4}{3}\left(\frac{1}{2}xh_1\right)=\frac{4}{3}\left(S_{ABE}\right)= \frac{4}{3}\cdot 27 = 36\,.
 \end{equationarray*}
 
@@ -2653,8 +2639,6 @@ $O_1 E$
 \[
 \begin{array}{l}
 \displaystyle\frac{O_1 E}{O_2 E}= \frac{x}{90-x} = \frac{O_1A}{O_2B} = \frac{30}{20}\\
-%2700-30x&=&20x\\
-%x=54\\
 \displaystyle\frac{O_1 E}{O_1 C} =\frac{O_1E}{O_1A} = \frac{54}{30}=\frac{9}{5}\,.
 \end{array}
 \]
@@ -3249,4 +3233,4 @@ $\beta=90^\circ-\alpha$,
 ושוב יש ז.צ.ז. אני מניח שבבחינה צריך לרשום איך מגיעים מזווית חדה וצלע לז.צ.ז., אבל כאשר מחפשים הוכחה לחפיפה קיצור דרך זה יכול להועיל.
 
 \end{itemize}
-
+\selectlanguage{english}

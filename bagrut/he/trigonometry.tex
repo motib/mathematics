@@ -1,4 +1,6 @@
-% !TeX root = bagrut.tex
+% !TeX root = bagrut-806.tex
+
+\selectlanguage{hebrew}
 
 \chapter{טריגונומטריה}
 
@@ -200,9 +202,6 @@ r&=&a\cos 2\beta\tan\beta\\
 \selectlanguage{english}
 \includegraphics[width=\textwidth]{summer-2018a-5}
 \end{center}
-
-%\vspace{-1ex}
-
 נסמן
 $\angle BAM=\alpha, \angle BCM=90\!-\!\alpha$.
 
@@ -254,7 +253,6 @@ x&=&\frac{8\sin 60}{4x\cos\alpha}
 
 \erh{10pt}
 \begin{equationarray*}{rcl}
-%\frac{8\sin 30}{\sqrt{3}\sin\alpha}&=&\frac{8\sin 60}{4\sin (90\!-\!\alpha)}\\
 \frac{1}{2\sqrt{3}\sin\alpha}&=&\frac{\sqrt{3}}{4\cdot 2\cos \alpha}\\
 \tan \alpha&=&\frac{4}{3}\,.
 \end{equationarray*}
@@ -487,7 +485,6 @@ AC=AE+EC&=&9.54+17.54=27.08\,.
 \fill (H) node[below] {$H$} circle(1.5pt);
 \draw[rotate=90] (H) rectangle +(10pt,10pt);
 \draw[thick,dashed] (D) -- (H) -- node[right] {$h$} (C);
-%\node[above right,xshift=46pt,yshift=0pt] at (A) {$\beta-\alpha$};
 \node[above left,xshift=-2pt,yshift=2pt] at (D) {$125.67$};
 \node[below left,xshift=-16pt,yshift=-12pt] at (C) {$2\alpha$};
 \end{tikzpicture}
@@ -547,9 +544,6 @@ $40$
 "טרפז בו הזוויות שליד אותו בסיס שוות זו לזו הוא טרפז שווה שוקיים", 
 $ABCD$
 שווה שוקיים.
-
-%\vspace{-1ex}
-
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.1]
@@ -562,14 +556,11 @@ $ABCD$
 \path[name path=top] (1,3) -- (7,3);
 \path[name intersections={of=s1 and top,by={A}}];
 \path[name intersections={of=s2 and top,by={B}}];
-%\fill (A) node[above left] {$A$} node[below right] {$120$} circle(1.5pt);
 \fill (A) node[above left] {$A$} node[below right] {$90$} node[below,xshift=-8pt,yshift=-22pt] {$30$}  circle(1.5pt);
-%\fill (B) node[above right] {$B$} node[below left] {$120$} circle(1.5pt);
 \fill (B) node[above right] {$B$} node[below left] {$90$}  node[below,xshift=8pt,yshift=-22pt] {$30$} circle(1.5pt);
 \draw[thick] (D) -- node[left] {$s$} (A) -- node[above] {$a$} (B) -- node[right] {$s$} (C);
 \tkzCircumCenter(A,B,C)\tkzGetPoint{O}
 \tkzDrawCircle[thick,dotted,name path=circle](O,A)
-%\fill (O) circle(1.5pt);
 \coordinate (E) at (D-|A);
 \fill (E) node[below] {$E$} circle(1.5pt);
 \draw[thick,dashed] (A) -- (E);
@@ -581,9 +572,6 @@ $ABCD$
 \draw[dashed] (A) -- node[below,xshift=-4pt] {$c$} (C);
 \end{tikzpicture}
 \end{center}
-
-%\vspace{-1ex}
-
 $AE=BF$
 כך ש-%
 $\triangle AED\cong\triangle BFC$.
@@ -850,8 +838,6 @@ S_{COD}&=&\frac{1}{2}\cdot r\cdot 2c\cdot \sin \alpha\,.
 \path[name intersections={of=af and ce,by={O}}];
 \fill (O) node[above right,yshift=2pt] {$O$} circle(1.5pt);
 \path (A) -- node[below] {$a/2$} (D) -- node[below] {$a/2$} (C);
-%\path (A) -- node[left] {$b/2$} (E) -- node[left] {$b/2$} (B);
-%\path (C) -- node[right] {$b/2$} (F) -- node[right] {$b/2$} (B);
 \path (B) -- node[right,near start] {$2r$} (O) -- node[right] {$r$} (D);
 \path (A) -- node[above] {$2c$} (O) -- node[below] {$c$} (F);
 \path (C) -- node[above] {$2c$} (O) -- node[below] {$c$} (E);
@@ -986,17 +972,6 @@ $\angle CDO=\alpha$
 
 \np
 
-לפני שנמשיך נרשום כמה זהויות טריגונומטריות שימושיות:
-\erh{2pt}
-\begin{equationarray*}{rcl}
-\cos (180-\theta) &=& -\cos \theta\\
-\sin (180-\theta) &=& \sin \theta\\
-\cos 2\theta &=& \cos\theta\cos\theta - \sin\theta\sin\theta =\cos^2\theta-\sin^2\theta\\
-\sin 2\theta &=& \sin\theta\cos\theta + \cos\theta\sin\theta =2\sin\theta\cos\theta\,.
-\end{equationarray*}
-
-\vspace{-4ex}
-
 נחשב
 $a=BC$
 לפי חוק הסינוסים ולפי חוק הקוסינוסים c-%
@@ -1069,6 +1044,17 @@ $h=R\tan\alpha$,
 S_{\triangle AED}= \frac{1}{2}\cdot 2R \cdot h =R^2\tan\alpha\,.
 \]
 
+\vspace{-3ex}
+
+נחשב 
+$S_{\triangle COD}$
+לפי הנוסחה הטריגונומטרית:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+S_{\triangle COD}&=&\frac{1}{2}R\cdot R \cdot \sin \beta\\
+&=&\frac{1}{2}R^2 \sin (180-2\alpha)=\frac{1}{2}R^2 \sin 2\alpha\,.
+\end{equationarray*}
+
 \np
 
 \begin{center}
@@ -1101,21 +1087,11 @@ S_{\triangle AED}= \frac{1}{2}\cdot 2R \cdot h =R^2\tan\alpha\,.
 \end{tikzpicture}
 \end{center}
 
-
-נחשב 
-$S_{\triangle COD}$
-לפי הנוסחה הטריגונומטרית:
-\erh{12pt}
-\begin{equationarray*}{rcl}
-S_{\triangle COD}&=&\frac{1}{2}R\cdot R \cdot \sin \beta\\
-&=&\frac{1}{2}R^2 \sin (180-2\alpha)=\frac{1}{2}R^2 \sin 2\alpha\,.
-\end{equationarray*}
 לפי היחס נתון בין השטחים:
 \erh{12pt}
 \begin{equationarray*}{rcl}
 tR^2\tan\alpha &=& 9\cdot \frac{1}{2}R^2\sin 2\alpha\\
 \frac{\sin\alpha}{\cos\alpha} &=& 9\cdot \frac{1}{2} \cdot 2\sin\alpha\cos\alpha\\
-%\cos^2\alpha&=& \frac{1}{9}\\
 \cos\alpha &=& \frac{1}{3}\\
 \sin\alpha &=& \sqrt{1-\frac{1}{9}} = \sqrt{\frac{8}{9}}=\frac{2\sqrt{2}}{3}\,.
 \end{equationarray*}
@@ -1133,12 +1109,11 @@ $\triangle AED$:
 \erh{14pt}
 \begin{equationarray*}{rcl}
 2r&=&\frac{DE}{\sin \alpha}\\
-%\cos \alpha &=& \frac{R}{DE}\\
-%r&=&\frac{R}{2\sin\alpha\cos\alpha}\\%=\frac{R}{2\sin 2\alpha}\\
 \frac{r}{R}&=&\frac{1}{2\sin \alpha\cos\alpha}\\
 &=&\frac{1}{2(2\sqrt{2}/3)(1/3)}\\
 &=&\frac{9}{4\sqrt{2}}=1.591\,.
 \end{equationarray*}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \np
@@ -1214,8 +1189,6 @@ $40$
 \end{tikzpicture}
 \end{center}
 
-%\np
-
 \textbf{סעיף א}
 
 בארבעת המשולשים עם קודקוד
@@ -1235,7 +1208,6 @@ $\angle DAB=\beta+\delta$.
 
 \np
 
-%\begin{center}
 \selectlanguage{english}
 \hspace{2em}
 \begin{minipage}{.38\textwidth}
@@ -1272,7 +1244,6 @@ $\angle DAB=\beta+\delta$.
 \end{equationarray*}
 \end{minipage}
 \selectlanguage{hebrew}
-%\end{center}
 
 \textbf{סעיף ב}
 
@@ -1638,7 +1609,6 @@ $r,\alpha$:
 \erh{14pt}
 \begin{equationarray*}{rcl}
 \tan\alpha &=& \frac{r}{BF}=\frac{r}{BC/2}\\ 
-%BC&=&2BF=\frac{2r}{\tan \alpha}\\
 2R&=&\frac{BC}{\sin (180\!-\!4\alpha)}=\frac{2r}{\sin 4\alpha\tan\alpha}\\
 \frac{R}{r}&=&\frac{1}{\sin 4\alpha\cdot\tan \alpha}=\frac{1}{\sin 80\cdot\tan 20}=2.79\,.
 \end{equationarray*}
@@ -1675,28 +1645,6 @@ AE&=&\frac{r(\tan 2\alpha - \tan \alpha)}{\tan \alpha}\\
 \selectlanguage{english}
 \includegraphics[width=\textwidth]{summer-2015b-5}
 \end{center}
-
-%\vspace{-1ex}
-%
-%נצדיק את הסימונים שהוספנו לתרשים. לפי משפט
-%$77$
-%"המשיק למעגל מאונך לרדיוס בנקודת ההשקה", הרדיוסים
-%$OE,OF$
-%מאונכים ל-%
-%$AB,DC$
-%שהם בעצמם מקבילים. לכן, 
-%$EF$
-%הוא קטע קו באורך
-%$2r$.
-%
-%
-%ולכן הקו 
-%$EF$
-%הניצב לצלעות המקיבלים 
-%$AB\|DC$
-%הוא באורך
-%$2r$.
-
 נוריד אנך מ-%
 $A$
 שחתוך את
@@ -1744,7 +1692,6 @@ $b$.
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1]
 \node[circle,draw,thick] (In) at (0,0) [minimum size=5cm] {};
-%\fill (In) node[right] {$O$} circle(1.5pt);
 \coordinate (D) at (-3.5,-2.5);
 \draw[thick] (D) -- +(7,0) coordinate (C) node[above left,xshift=-2pt] {$70$};
 \fill (C) node[below right] {$C$} circle(1.5pt);
@@ -1763,10 +1710,7 @@ $b$.
 \draw[thick] (D) -- node[left] {$s$} (A) -- (B) -- node[right] {$s$} (C);
 \draw[thick,dashed] (D) -- (B);
 \coordinate (AB) at (0,2.5);
-%\fill (AB)  node[above] {$E$} circle (1.5pt);
 \coordinate (DC) at (0,-2.5);
-%\fill (DC)  node[below,yshift=-1pt] {$F$} circle (1.5pt);
-%\draw[thick,dashed] (AB) -- node[left,yshift=-6pt] {$2r$} (DC);
 \coordinate (ADC) at ($(D)!(A)!(C)$);
 \draw[thick,dashed] (A) -- node[right,yshift=8pt] {$2r$} (ADC);
 \fill (ADC) node[below,yshift=-1pt] {$G$} circle(1.5pt);
@@ -2121,9 +2065,6 @@ $M,M'$
 נמצאות על הצלעות
 $GB, AB$,
 אבל אנו חייבים להוכיח את הטענה אם רוצים להשתמש בה.
-
-%\vspace{-2ex}
-
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.75]
@@ -2193,9 +2134,7 @@ $CH=HB=\displaystyle\frac{a}{2}$.
 \fill (G) node[left] {$G$} circle(1.5pt);
 \fill (P) node[below,xshift=-2pt,yshift=-2pt] {$P$} circle(1.5pt);
 \tkzCircumCenter(A,B,C)\tkzGetPoint{M1}
-%\tkzDrawCircle[thick,dotted,name path=circle](M1,A)
 \tkzCircumCenter(C,G,B)\tkzGetPoint{M2}
-%\tkzDrawCircle[thick,dotted,name path=circle](M2,B)
 \fill (M1) node[right] {$M'$} circle(1.5pt);
 \fill (M2) node[left,xshift=-2pt,yshift=-2pt] {$M$} circle(1.5pt);
 \draw (C) rectangle +(8pt,8pt);
@@ -2256,8 +2195,6 @@ $\triangle CGB$:
 (4x)^2&=&a^2+a^2\\
 x&=&\frac{1}{\sqrt{8}}a=\frac{1}{\sqrt{8}}\cdot\sqrt{2}R=\frac{R}{2}\,.
 \end{equationarray*}
-
-%\np
 
 $\triangle MHB$
 הוא משלוש ישר-זווית, כך ש-%
@@ -2322,11 +2259,8 @@ $y=AM'=M'B$.
 \path (G) -- node[left,near end] {$x$} (P);
 \fill (P) node[below,yshift=-2pt] {$P$} circle(1.5pt);
 \tkzCircumCenter(A,B,C)\tkzGetPoint{M1}
-%\tkzDrawCircle[thick,dotted,name path=circle](M1,A)
 \tkzCircumCenter(C,G,B)\tkzGetPoint{M2}
-%\tkzDrawCircle[thick,dotted,name path=circle](M2,B)
 \fill (M1) node[right] {$M'$} circle(1.5pt);
-%\fill (M2) node[left] {$M$} circle(1.5pt);
 \draw (C) rectangle +(8pt,8pt);
 \draw (G) rectangle +(8pt,8pt);
 \draw[thick,dashed] (G) -- (M1);
@@ -2420,8 +2354,6 @@ $\angle ABM=180-50-\alpha=130-\alpha$.
 \coordinate (M) at ($(A)!.5!(C)$);
 \fill (M) node[below right,xshift=4pt,yshift=2pt] {$M$} node[left,yshift=2pt] {$\alpha$}  circle(1.5pt);
 \draw[thick] (B) -- (M);
-%\draw[thick] (B) -- ($(B)!1.5!(M)$) coordinate (D);
-%\fill (D) node[right] {$D$} circle(1.5pt);
 \path (A) -- node[right] {$a/2$} (M);
 \path (M) -- node[right] {$a/2$} (C);
 \node at ($(B)+(-25pt,25pt)$) {$130\!-\!\alpha$};
@@ -2466,13 +2398,7 @@ $\triangle ABM$.
 \end{equationarray*}
 בהמשך נעבוד עם קירובים למעלה שלמה.
 
-%\vspace{-4ex}
-
-
 \textbf{סעיף ב}
-
-
-%\vspace{-12ex}
 
 \begin{center}
 \selectlanguage{english}
@@ -2647,7 +2573,6 @@ $\beta=40$
 \fill (A) node[below left] {$A$} node[above right,xshift=10pt,yshift=10pt] {$40$} node[above,xshift=3pt,yshift=18pt] {$40$} circle(1.5pt);
 \fill (B) node[above] {$B$} node[below right,xshift=3pt,yshift=-18pt] {$40$} circle(1.5pt);
 \fill (C) node[right] {$C$} node[left,xshift=-14pt,yshift=2pt] {$30$} node[above left,xshift=-16pt,yshift=8pt] {$30$} circle(1.5pt);
-%\draw[->] ($(C)+(0pt,12pt)$) -- +(-14pt,-8pt);
 \fill (D) node[left] {$D$} circle(1.5pt);
 \path[name path=de] (D) -- +(10:4);
 \path[name intersections={of=bc and de,by={E}}];
@@ -2661,7 +2586,6 @@ $\beta=40$
 \path (E) -- node[right,xshift=4pt,yshift=10pt] {$b$} (A);
 \path (A) -- node[below] {$10$} (C);
 \draw[rotate=10] (D) rectangle +(7pt,7pt);
-%\draw[thick] ($(A)+(10:8mm)$) arc[start angle=25,end angle=101,radius=8mm];
 \path[name path=cf] (C) -- +(160:5);
 \path[name intersections={of=ae and cf,by={F}}];
 \fill (F) node[left] {$F$} node[below,xshift=8pt,yshift=-8pt] {$110$} circle(1.5pt);
@@ -2851,7 +2775,6 @@ $F$.
 \draw[thick] (A) -- (B);
 \fill (B) circle(2pt) node[above right] {$B$};
 \coordinate (D) at (A|-B);
-%\fill (D) circle(1.5pt) node[left] {$D$};
 \path[name path=dc] (D) -- ($(D)!3!(B)$);
 \path[name intersections={of=dc and big-circle,by={C}}];
 \fill (C) circle(2pt) node[right] {$C$};
@@ -2885,6 +2808,15 @@ $\triangle ACF,\triangle ABE$
 
 
 \begin{itemize}
+
+\item
+ראו נספח~%
+\ref{a.unit-circle}
+המסביר את החשיבות של מעגל היחידה בחישובים טריגונומטריים.
+
+הנספח מציג איך לשחזר בקלות את הנוסחאות ל-%
+$\sin 2\theta$, $\sin (180^\circ-\theta)$, $\sin (90^\circ-\theta)$,
+ונוסאות דומות עבור קיסינוס.
 
 \item
 חשוב לצייר תרשימים 
@@ -2944,13 +2876,6 @@ $57$
 \item
 שימו לב שהמרכז המעגל החוסם לא חופף את מרכז המעגל החסום אלא במקרים מיוחדים כגון משולש שווה-צלעות וריבוע.
 
-\item
-לעיתים קרובות נשתמש בזהויות
-$\sin (180-\theta) = \sin \theta$
-ו-%
-$\sin (90-\theta) = \cos \theta$.
-ראו נספח~%
-\ref{a.unit-circle}.
 
 \item
 לעתים קרובות התשובה לשאלה תהיה ערך ממשי לזווית או אורך. אני מעדיף להישאר עם נעלמים כל עוד הדבר אפשרי ורק בסוף להשתמש במחשבון כדי לחשב ערכים.
@@ -2959,4 +2884,3 @@ $\sin (90-\theta) = \cos \theta$.
 \end{itemize}
 
 \selectlanguage{english}
-

@@ -1,5 +1,4 @@
-% !TeX root = bagrut.tex
-
+% !TeX root = bagrut-806.tex
 
 \selectlanguage{hebrew}
 
@@ -398,7 +397,6 @@ $30^\circ$:
 \draw (origin) circle [radius=1];
 % Draw axes
 \draw (-1,0) node [left] {$180$} -- (1,0) node [right] {$0$};
-%\draw (0,-1) node [below] {$270$} -- (0,1) node [above] {$90$};
 % Draw other angles
 \draw[dashed] (origin) -- +(60:1) node[above right] {$60$};
 \draw[dashed] (origin) -- +(120:1) node[above left] {$120$};
@@ -646,41 +644,28 @@ $\cos \theta$:
 \end{tikzpicture}
 \end{center}
 
-\vspace{-2ex}
+\vspace{-4ex}
 
+\section{%
+סינוס וקוסינוס של
+$2\theta$%
+}
 
-מכאן:
-\erh{12pt}
+אין צורך לזכור את הנוסחאות המאפשרות לבטא את הפונקציות הללו עם
+$\theta$
+במקום
+$2\theta$,
+כי ניתן לשחזר אותן תוך מספר שניות מהנוסחאות הטריגונומטריות עבור חיבור של זוויות, נוסחאות הניתנות בנוסחאון:
+\erh{0pt}
 \begin{equationarray*}{rcl}
-\cos 60 &=& \cos (90-30) = \sin 30 = \displaystyle\frac{1}{2}\\
-\sin 60 &=& \sin (90-30) = \cos 30 = \displaystyle\frac{\sqrt{3}}{2}\,.
+\sin 2\theta &=& \sin (\theta+\theta)\\
+&=&\sin \theta \cos \theta + \sin \theta \cos \theta\\
+&=& 2\sin \theta \cos \theta\\
+\cos 2\theta &=& \cos (\theta+\theta)\\
+&=&\cos \theta \cos \theta - \sin \theta \sin \theta\\
+& =& \cos^2 \theta - \sin^2 \theta\\
+&=&(1-\sin^2 \theta) - \sin^2 \theta\\
+&=& 1 - 2\sin^2 \theta\,.
 \end{equationarray*}
-
-\np
-
-ערכי הפונקציות הטריגונומטריות של כפולות של
-$30^\circ$, $60^\circ$
-מתקבלים ממעגל היחידה כפי שראינו:
-\begin{displaymath}
-\renewcommand{\arraystretch}{.8}
-\begin{array}{|c|c|c|c|}
-\hline
-\textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
-\textrm{(\R{מעלות})} & \textrm{(\R{רדיאנים})} & & \\\hline
-0& 0& 0 & 1\\\hline
-30& \pi/6&  1/2 &  \sqrt{3}/2 \\\hline
-60& \pi/3&  \sqrt{3}/2 &  1/2 \\\hline
-90& \pi/2& 1 & 0\\\hline
-120& 2\pi/3&  \sqrt{3}/2 &  -1/2\\\hline
-150& 5\pi/6&  1/2 &  -\sqrt{3}/2\\\hline
-180& \pi& 0 & -1\\\hline
-210& 7\pi/6&  -1/2 &  -\sqrt{3}/2\\\hline
-240& 4\pi/3&  -\sqrt{3}/2 &  -1/2\\\hline
-270& 3\pi/2& -1 & 0\\\hline
-300& 5\pi/3&  -\sqrt{3}/2 &  1/2\\\hline
-330& 11\pi/6&  -1/2 &  \sqrt{3}/2\\
-\hline
-\end{array}
-\end{displaymath}
 
 \selectlanguage{english}
