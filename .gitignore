@@ -1,10 +1,9 @@
 bagrut/he/distributions
-adasha
-ahva
 bagrut/he/tikz
 construct/he/tikz
 construct/en/tikz
 construct/he/distributions
+geometry/tikz
 tikz-examples.*
 *.bat
 *.zip
