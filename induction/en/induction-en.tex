@@ -533,14 +533,15 @@ Hint: For any $k\geq 1$, what is the remainder of $10^k$ when divided by $3$.
 \section{Not just one inductive hypothesis}
 
 \begin{theorem}\label{t.prime}
-Let $n>1$. Then $n$ can be factored into a product of primes.
+Let $n>1$. There is a prime factorization of $n$, that is, $n$ is a product of primes.
 \end{theorem}
 
-\textbf{Proof} Base case: If $n$ is a prime there is nothing to prove. If $n$ is composite, then $n=n_1 n_2$ for $2 < n_1, n_2 < n$. The inductive hypothesis is that \emph{every} number $1<m<n$ can be factored into a product of primes. Inductive step: By the inductive hypothesis, $n_1=p_1' \cdots p_{k_1}'$ and $n_2=p_1'' \cdots p_{k_2}''$ so:
+\textbf{Proof} Base case: If $n$ is a prime there is nothing to prove. If $n$ is composite, then $n=n_1 n_2$ for $2 < n_1, n_2 < n$. The inductive hypothesis is that there is a prime factorization of \emph{every} number $1<m<n$. Inductive step: By the inductive hypothesis, $n_1=p_1' \cdots p_{k_1}'$ and $n_2=p_1'' \cdots p_{k_2}''$ so:
 \[
 n = n_1 n_2 = p_1' \cdots p_{k_1}' p_1'' \cdots p_{k_2}''.
 \]
-Therefore, $n$ has been factored into a product of primes.\qed
+
+\qedd{3}
 
 This induction is different from the previous ones in that the inductive step does not prove $P(n+1)$ from $P(n)$. Instead, $P(n)$ is proved from $P(n_1)$ and $P(n_2)$, where $n_1,n_2$ are both less than $n$, perhaps even much less than $n$. For example, $n=945$ can be factored into (composite) factors $21$ and $45$. The inductive hypothesis is that $m$ factors into primes for \emph{every} $m<945$, here, $21=3\cdot 7$ and $45=3\cdot 3\cdot 5$, so $945=3\cdot 3\cdot 3\cdot 5\cdot 7$.
 
@@ -563,7 +564,7 @@ Let $a_1=5, a_2=7, a_n=3a_{n-1} - 2a_{n-2}$. Then $a_n=3+2^n$.
 \section{Implicit induction}\label{s.unique}
 
 \begin{theorem}[Fundamental Theorem of Arithmetic]
-Let $n>1$. Then $n$ can be factored into a product of primes in only one way. (Re-ordering the factors does not count as a distinct factorization.)
+Let $n>1$. There is a \emph{unique} prime factorization of $n$. (Re-ordering the factors does not count as a distinct factorization.)
 \end{theorem}
 
 In Theorem~\ref{t.prime} we showed the existence of a prime factorization of an integer. In the proof of uniqueness, we will discover that induction is used three more times, often implicitly.
@@ -578,7 +579,7 @@ Let $n_1,n_2$ be integers and $p$ a prime. If $p \mid n_1 n_2$, then $p\mid n_1$
 Let $n_1, n_2$ be integers, not both zero. There exist integers $a,b$ such that $\gcd(n_1,n_2)=an_1+bn_2$. ($\gcd(a,b)$ is the greatest common denominator of $a$ and $b$.)
 \end{theorem}
 
-Bezout's Identify is used to prove Euclid's Lemma. Bezout's Identity is proved by defining a set of \emph{positive} integers and claiming that it has a smallest element. Few textbooks will explicitly justify this intuitively obvious claim by citing the well-ordering principle which is equivalent to induction (Chapter~\ref{s.well}). This use of induction is therefore implicit.
+Bezout's Identify is used to prove Euclid's Lemma. Bezout's Identity is proved by defining a set of \emph{positive} integers and claiming that it has a smallest element, which follows from the well-ordering principle that is equivalent to induction (Chapter~\ref{s.well}). This use of induction is therefore implicit.
 
 Since there can be many prime numbers in a factorization, we need a generalization of Euclid's Lemma which can be proved by (explicit) induction:
 
@@ -610,17 +611,17 @@ Hint: If $p\mid n_1n_2$ and $p$ does not divide $n_1$, then $\gcd(p,n_1)=1$. Now
 
 The proof of the fundamental theorem of arithmetic given above appears in most textbooks, but it is needlessly complicated, requiring Bezout's identity which is usually proved using well-ordering. A direct inductive proof attributed to Ernst Zermelo is much simpler.\footnote{\url{https://planetmath.org/FundamentalTheoremOfArithmetic}.} The existence of a prime factorization is proved as before, so we just prove uniqueness.
 
-Base case: $n=2$ has a unique factorization into prime numbers, namely, $n=2$. 
+Base case: $n=2$ has a unique prime factorization, namely, $n=2$. 
 
-Inductive hypothesis: For all $k<n$ there is a unique factorization into prime numbers.
+Inductive hypothesis: For all $k<n$ there is a unique prime factorization.
 
-Inductive step: If $n$ is a prime number, there is obviously a unique factorization into prime numbers. Suppose that $n=pa$ is composite where $p$ is the \emph{smallest prime} that divides $n$. Since $n$ is not prime, $1<a<n$. By the inductive hypothesis, $a$ has a unique prime factorization, so $n=pa$ is the unique prime factorization \emph{containing} $p$. (Remember that the order of the primes doesn't matter.)
+Inductive step: If $n$ is a prime number, there is obviously a unique prime factorization. Suppose that $n$ is composite, $n=pa$, where $p$ is the \emph{smallest prime} that divides $n$. Since $n$ is not prime, $1<a<n$. By the inductive hypothesis, $a$ has a unique prime factorization, so $n=pa$ is the unique prime factorization \emph{containing} $p$. (Remember that the order of the primes doesn't matter.)
 
-Suppose that there is a different prime factorization that \emph{does not contain} $p$. $n$ is composite so $n=qb$, where $q\neq p$ is the smallest prime in this factorization. In fact, $p<q$ since we assumed that $p$ is the smallest prime dividing $n$. Since $n$ is not prime, $1<b<n$. Now:
+Suppose that there is a different prime factorization that \emph{does not contain} $p$. $n$ is composite so $n=qb$, where $q\neq p$ is the smallest prime in this factorization. In fact, $p<q$ since we assumed that $p$ is the smallest prime dividing $n$. Now:
 \[
 n - pb = qb - pb = b(q-p)\,.
 \]
-But $p|(n-pb)$ so $p|b(q-p)$. By the inductive hypothesis, $b$ has a unique prime factorization, and by assumption, the factorization of $n$ and hence of $b$ does not contain $p$. (Note that we are avoiding the use of Euclid's Lemma because all we are asking is whether or not $p$ is an element of the prime factorization.) Therefore, $p|(q-p)$ so $p|q$. Since both $p$ and $q$ are primes, this implies that $p=q$, a contradiction to the assumption that $q\neq p$.\qed
+But $p\mid (n-pb)$ so $p\mid b(q-p)$.  Since $n$ is not prime, $1<b<n$, so by the inductive hypothesis, $b$ has a unique prime factorization, and by assumption, the factorization of $n$ and hence of $b$ does not contain $p$. (We are not using Euclid's Lemma, because all we are asking is whether or not $p$ is an element of the prime factorization.) Therefore, $p\mid(q-p)$ so $p\mid q$. Since both $p$ and $q$ are primes, this implies that $p=q$, a contradiction to the assumption that $q\neq p$.\qed
 
 
 \section{Definition by recursion}
