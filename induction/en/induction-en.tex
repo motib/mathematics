@@ -72,14 +72,14 @@ Weizmann Institute of Science\\
 
 
 \begin{Large}
-Version 1.5.0
+Version 1.6.0
 \end{Large}
 \end{center}
 
 \vfill
 
 \begin{center}
-\copyright{}\  2016--17 by Moti Ben-Ari.
+\copyright{}\  2016--19 by Moti Ben-Ari.
 \end{center}
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
@@ -510,9 +510,19 @@ The inductive step is now relatively easy. By the inductive hypothesis, a number
 \overbrace{kkk}^{n+1} = \overbrace{kkk}^{n}\cdot 1000 + kkk \ih{}
 3i\cdot 1000 + kkk.
 \]
-The first term is clearly divisible by $3$ and the second term is divisible by $3$ as shown in the base case.\qed
+The first term is divisible by $3$ as is the second term as shown in the base case.\qed
 
 This is an extreme example with ten base cases, but it is not at all unusual to encounter more than one base case.
+
+\begin{quote}
+A student pointed out to me that all the base cases can be treated together. Let $n$ be a three-digit number with identical digits. Then:
+\begin{eqnarray*}
+n &=& 100k + 10k +k\\
+&=& (99+1)k + (9+1)k + k\\
+&=& (99+9)k + 3k\,,
+\end{eqnarray*}
+and clearly $n$ is divisible by $3$.
+\end{quote}
 
 \begin{exercise}
 For $n\geq 1$, any number with $3^n$ identical digits is divisible by $3^n$.
@@ -550,8 +560,6 @@ Complete induction is not really an extension of the concept of induction. In ma
 Let $a_1=5, a_2=7, a_n=3a_{n-1} - 2a_{n-2}$. Then $a_n=3+2^n$.
 \end{exercise}
 
-\newpage
-
 \section{Implicit induction}\label{s.unique}
 
 \begin{theorem}[Fundamental Theorem of Arithmetic]
@@ -580,7 +588,7 @@ Let $n_1,\ldots,n_k$ be integers and $p$ a prime. If $p \mid n_1 \cdots n_k$, th
 
 There is a third use of induction in the proof but it is hidden even deeper. The proof of uniqueness starts as follows:
 
-Suppose that there are two factorizations $n=p_1 \cdots p_k = q_1 \cdots q_m$. Then $p_1\mid p_1 \cdots p_k$ so $p_1 \mid q_1 \cdots q_m$. By the Generalized Euclid's Lemma, $p_1 \mid q_i$, for some $1\leq i \leq m$, and \emph{without loss of generality}, $p_1 \mid q_1$. What does that routine phrase actually mean? It is the claim that for every $i$, we can switch the position of $q_1$ and $q_i$:
+Suppose that there are two prime factorizations $n=p_1 \cdots p_k = q_1 \cdots q_m$. Then $p_1\mid p_1 \cdots p_k$ so $p_1 \mid q_1 \cdots q_m$. By the Generalized Euclid's Lemma, $p_1 \mid q_i$, for some $1\leq i \leq m$, and \emph{without loss of generality}, $p_1 \mid q_1$. What does that routine phrase actually mean? It is the claim that for every $i$, we can switch the position of $q_1$ and $q_i$:
 \[
 q_1 \cdots q_i \cdots q_m = q_i \cdots q_1 \cdots q_m.
 \]
@@ -597,6 +605,22 @@ Hint: Let $S=\{x = an_1+bn_2: x>0\}$. To simplify the proof, assume that $n_1,n_
 Prove Euclid's Lemma.
 \end{exercise}
 Hint: If $p\mid n_1n_2$ and $p$ does not divide $n_1$, then $\gcd(p,n_1)=1$. Now use Bezout's Lemma.
+
+\subsection*{An inductive proof of the fundamental theorem of arithmetic}
+
+The proof of the fundamental theorem of arithmetic given above appears in most textbooks, but it is needlessly complicated, requiring Bezout's identity which is usually proved using well-ordering. A direct inductive proof attributed to Ernst Zermelo is much simpler.\footnote{\url{https://planetmath.org/FundamentalTheoremOfArithmetic}.} The existence of a prime factorization is proved as before, so we just prove uniqueness.
+
+Base case: $n=2$ has a unique factorization into prime numbers, namely, $n=2$. 
+
+Inductive hypothesis: For all $k<n$ there is a unique factorization into prime numbers.
+
+Inductive step: If $n$ is a prime number, there is obviously a unique factorization into prime numbers. Suppose that $n=pa$ is composite where $p$ is the \emph{smallest prime} that divides $n$. Since $n$ is not prime, $1<a<n$. By the inductive hypothesis, $a$ has a unique prime factorization, so $n=pa$ is the unique prime factorization \emph{containing} $p$. (Remember that the order of the primes doesn't matter.)
+
+Suppose that there is a different prime factorization that \emph{does not contain} $p$. $n$ is composite so $n=qb$, where $q\neq p$ is the smallest prime in this factorization. In fact, $p<q$ since we assumed that $p$ is the smallest prime dividing $n$. Since $n$ is not prime, $1<b<n$. Now:
+\[
+n - pb = qb - pb = b(q-p)\,.
+\]
+But $p|(n-pb)$ so $p|b(q-p)$. By the inductive hypothesis, $b$ has a unique prime factorization, and by assumption, the factorization of $n$ and hence of $b$ does not contain $p$. (Note that we are avoiding the use of Euclid's Lemma because all we are asking is whether or not $p$ is an element of the prime factorization.) Therefore, $p|(q-p)$ so $p|q$. Since both $p$ and $q$ are primes, this implies that $p=q$, a contradiction to the assumption that $q\neq p$.\qed
 
 
 \section{Definition by recursion}
@@ -631,8 +655,6 @@ For $n\geq 1$, $a_n = 2n$.
 \begin{exercise}
 For $n\geq 1$, $\sum_{i=1}^n a_i = n(n+1)$.
 \end{exercise}
-
-\newpage
 
 \subsection*{Fibonacci numbers}
 

@@ -1,3 +1,5 @@
+% !TeX root = bagrut-806.tex
+
 \usepackage[utf8x]{inputenc}
 \usepackage[english,hebrew]{babel}
 
@@ -7,6 +9,10 @@
 \usepackage{bm}
 \usepackage{float}
 \usepackage{eqnarray}
+
+\def\thepage{\bgroup\selectlanguage{english}\arabic{page}\egroup}
+\def\thesection{\bgroup\selectlanguage{english}\arabic{chapter}.\arabic{section}\egroup}
+\def\thechapter{\bgroup\selectlanguage{english}\arabic{chapter}\egroup}
 
 \usepackage{tikz}
 \usepackage{tkz-euclide}
