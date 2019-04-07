@@ -10,10 +10,6 @@
 \usepackage{float}
 \usepackage{eqnarray}
 
-\def\thepage{\bgroup\selectlanguage{english}\arabic{page}\egroup}
-\def\thesection{\bgroup\selectlanguage{english}\arabic{chapter}.\arabic{section}\egroup}
-\def\thechapter{\bgroup\selectlanguage{english}\arabic{chapter}\egroup}
-
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 \usepackage{pgfplots}
@@ -57,4 +53,8 @@
     \vskip 20\p@
   }}
 \makeatother
+
+\def\thepage{\bgroup\selectlanguage{english}\arabic{page}\egroup}
+\def\thesection{\bgroup\selectlanguage{english}\arabic{chapter}.\arabic{section}\egroup}
+\def\thechapter{\bgroup\R{\arabic{chapter}}\egroup}
 
