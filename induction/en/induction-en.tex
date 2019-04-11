@@ -72,7 +72,7 @@ Weizmann Institute of Science\\
 
 
 \begin{Large}
-Version 1.6.0
+Version 1.6.1
 \end{Large}
 \end{center}
 
@@ -1479,31 +1479,32 @@ The well-ordering principle is an intuitive alternative to mathematical inductio
 
 \section{Totally ordered sets and the well-ordering principle}
 
-\begin{definition} Let $S$ be a set.
+\begin{definition} Let $S$ be a set with a binary relational operator $\leq$.
 \begin{enumerate}
 \item $S$ is \emph{totally ordered} if for any $x,y\in S$, either $x\leq y$ or $y \leq x$ or $x=y$.
 \item A totally ordered set $S$ has a \emph{lower bound} if there is some $b$ such that $b\leq n$ for all $n\in S$.
-\item A totally ordered set $S$ has a \emph{smallest element} if there is some $b\in S$ such that $b\leq n$ for all $n\in S$.
+\item A totally ordered set $S$ has a \emph{least element} if there is some $b\in S$ such that $b\leq n$ for all $n\in S$.
 \end{enumerate}
 \end{definition}
 
-The difference between a lower bound and the smallest element is that the smallest element is \emph{in} the set.
+A least element is also a lower bound, but in addition it is an element of the set.
 
-Any subset of the integers is totally ordered; for example, $S_1=\{8,3,19,5,6,23\}$ and the set of all even integers $E=\{\ldots, -4, -2, 0, 2, 4, \ldots\}$. Some lower bounds for $S_1$ are $3, 0, -10$; in fact, \emph{any} $b\leq 3$ is a lower bound for $S_1$. The smallest element of $S_1$ is $3$. It is clear that the set $E$ does \emph{not} have a lower bound, and it certainly does not have a smallest element.
+Any subset of the integers is totally ordered: for example, $S_1=\{8,3,19,5,6,23\}$ and the set of all even integers $E=\{\ldots, -4, -2, 0, 2, 4, \ldots\}$. Some lower bounds for $S_1$ are $3, 0, -10$. The least element of $S_1$ is $3$. $E$ \emph{does not} have a lower bound and it certainly does not have a least element.
 
-The set of \emph{positive} rational numbers has an infinite number of lower bounds (zero and all negative rational numbers), but it has no smallest element because for any positive rational number $x$, $x/2$ is a smaller rational number.
+The set of \emph{positive} rational numbers has an infinite number of lower bounds (zero and all negative rational numbers), but it has no least element because for any positive rational number $x$, $x/2$ is a smaller rational number.
 
-\begin{definition} Let $S$ be a totally ordered set. $S$ is \emph{well-ordered} if \emph{every} nonempty subset $T\subseteq S$ has a smallest element.
+\begin{definition} Let $S$ be a totally ordered set. $S$ is \emph{well-ordered} if \emph{every} nonempty subset of $S$ has a least element.
 \end{definition}
 
-$S_1$ is well-ordered because every nonempty subset has a smallest element. The smallest element of $S_1$ itself is $3$, the smallest element of $\{8, 19, 5\}$ is $5$, and you can check that every one of the $2^6-1=63$ nonempty subsets of $S_1$ has a smallest element. $E$ is \emph{not} well-ordered because $E$ is a subset of itself and there is no smallest even number. However, $E_6=\{6,12,18,\ldots\}$, the set of \emph{positive} even numbers divisible by $6$ is well-ordered, because any subset has a smallest element.
+$S_1$ is well-ordered because every nonempty subset has a least element. The least element of $S_1$ itself is $3$, the least element of $\{8, 19, 5\}$ is $5$, and you can check that every one of the $63$ nonempty subsets of $S_1$ has a least element. $E$ is not well-ordered because $E$ is a subset of itself and there is no least even number. However, $\{6,12,18,\ldots\}$, the set of \emph{positive} even numbers divisible by $6$ is well-ordered, because any subset has a least element.
 
 \begin{axiom} \textbf{(The well-ordering principle)} Every nonempty subset of the integers that has a lower bound is well-ordered.
 \end{axiom}
 
-The set of rational numbers \emph{greater than or equal to} zero is \emph{not} well-ordered. Although this set has a smallest element, namely $0$, there is a \emph{subset}---the positive rational numbers---that does not have a smallest element.
+We will use a special case of the axiom:
+\begin{axiom} Every nonempty subset of the positive integers has a least element.
+\end{axiom}
 
-The well-ordering principle for the integers is very intuitive. Let $T$ be a non-empty subset of the integers and let $b$ be a lower bound for $T$ so that $b\leq n$ for all $n\in T$. If $b\not\in T$, then $b<n$ for all $n\in T$, so $b+1$ is also a lower bound for $T$. We can continue adding $1$ until we find a lower bound for $T$ that is an element of $T$, and therefore is its smallest element. For example, starting with the lower bound $-2$ for $S_1$, since $-2\not\in S_1$, then $-2+1=-1$ is a lower bound, $-1+1=0$ is a lower bound, \ldots, until we reach $3$ which is both a lower bound and a smallest element.
 
 \section{Equivalence of well-ordering and mathematical induction}
 
@@ -1511,27 +1512,31 @@ The well-ordering principle for the integers is very intuitive. Let $T$ be a non
 The principle of mathematical induction is implied by the well-ordering principle.
 \end{theorem}
 
-\textbf{Proof} For the principle of mathematical induction to be false, there must be some property $P(n)$, such that $P(1)$ is true, the inductive step is true (for every $m$, $P(m)$ implies $P(m+1)$), but for \emph{some} $n>1$, $P(n)$ is \emph{not} true. Let $S$ be the set of positive integers $k$ such that $P(k)$ is \emph{not} true. $S$ is nonempty, since $n\in S$. $S$ is a subset of the \emph{positive} integers, so $1$ is a lower bound. By the well-ordering principle, it has a smallest element $b\in S$. By definition of $S$, $P(b)$ is not true. But $b-1$ is less that $b$ so $b-1\not\in S$ and therefore $P(b-1)$ is true. By the inductive step, $P(b)$ is true, a contradiction.\qed
+\textbf{Proof} Suppose that the principle of mathematical induction is false. Then there is a property $P(n)$, such that $P(1)$ is true and for every $m$, $P(m)$ implies $P(m+1)$, but for \emph{some} $n>1$, $P(n)$ is \emph{not} true. Let $S$ be the set of positive integers $k$ such that $P(k)$ is \emph{not} true. $S$ is nonempty, since $n\in S$. By the well-ordering principle, there is a least element $b\in S$. By definition of $S$, $P(b)$ is not true. But $b-1$ is less that $b$ so $b-1\not\in S$ and therefore $P(b-1)$ is true. By the inductive step, $P(b)$ is true, a contradiction.\qed
 
-\medskip
-
-The converse of Theorem~\ref{th.wop} is also true. The details are somewhat hard to follow but the idea is contained in the paragraph before the theorem.
-
+Let us demonstrate the proof on an example. Let $P(n)$ be a property such that $P(1)$ is true (indicated by $+$), the inductive step holds, but for $n=244$, $P(244)$ is false. Let $S=\{244,57,102,\ldots\}$ be the set of positive integers $k$ for which $P(k)$ is false. $S$ is non-empty since $244\in S$. By the well-ordering principle, $S$ has a least element $57$. Then $56\not\in S$ so $P(56)$ is true. By the inductive step, $P(57)$ is true, a contradiction.
+\[
+\begin{array}{ccccccccc}
+P(1) & P(2) & \cdots & P(56) & P(57) & \cdots & P(102) & \cdots & P(244)\\
++ & + & + & + & - & + & -&+&-
+\end{array}
+\]
 \begin{theorem}
 The well-ordering principle is implied by the principle of mathematical induction.
 \end{theorem}
 
-\textbf{Proof} Let $S$ be a nonempty subset of the integers with a lower bound $b$ and suppose that there is a nonempty subset $T\subseteq S$ that \emph{does not} have a smallest element.
-
-Let $S'=\{a:a\geq b\}$. Clearly, $T\subseteq S \subseteq S'$. Consider the property $P(n)$:
+\textbf{Proof} Let $S$ be a nonempty subset of the positive integers and suppose that $S$ \emph{does not} have a least element. Consider the property $P(n)$:
 \begin{quote}
-$n$ is a lower bound of $T$ in $S'-T$.
+$P(n)$ is true if for all $k\leq n$, $k$ is a lower bound of $S$ but $k\not \in S$.
 \end{quote}
-Base case: Since $b$ is a lower bound for $S$, it is also a lower bound for $T$, and by the definition of $T$, $b$ is not a smallest element of $T$. Therefore $P(b)$ is true.
+We prove that $P(n)$ is true for \emph{all} positive integers $n$. It follows that all positive integers are not elements of $S$, a contradiction to the assumption that $S$ is non-empty.
 
-Inductive step: Suppose that $P(n)$ is true, so that $n$ is a lower bound for $T$, but $n\not\in T$, that is, $n<t$ for all $t\in T$. Then, $n+1\leq t$ for all $t \in T$. If $n+1\in T$, then $t+1$ is a smallest element in $T$, contrary to the definition of $T$. Therefore, $n+1\not\in T$, that is, $P(n+1)$ is true.
+Base case: $1$ is a lower bound for $S$ since it is the least positive integer. By definition of $S$, $1\not\in S$.
 
-By induction, $P(n)$ is true for all $n\in S'$, that is, all numbers greater than or equal to $b$ are lower bounds for $T$ and \emph{not} elements of $T$. This contradicts the assumption that $T$ is nonempty.\qed
+Inductive step: Suppose that $P(n)$ is true, so that $n$ is a lower bound for $S$, but $n\not\in S$, that is, for all $k\leq n$, $k<s$ for all $s\in S$. Then, $n+1\leq s$ for all $s \in S$, so $n+1$ is a lower bound of $S$. If $n+1\in S$, then $n+1$ is the least element in $S$ (because $k\not\in S$ for $k\leq n$), contrary to the definition of $S$. Therefore, $n+1\not\in S$, that is, $P(n+1)$ is true.\qed
+
+
+\newpage
 
 \section{A very strange induction}
 
@@ -1577,7 +1582,7 @@ This definition results in the following ordering:
 \[
 101 \prec 100 \prec 99 \prec 98 \prec 97 \prec \cdots\,.
 \]
-$S$ is well-ordered under the operator $\prec$ because any subset of $S$ has a smallest element.
+$S$ is well-ordered under the operator $\prec$ because any subset of $S$ has a least element.
 
 %\bigskip
 
