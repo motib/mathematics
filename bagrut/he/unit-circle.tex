@@ -41,26 +41,23 @@ $1$
 
 \vspace{-3ex}
 
-הצירים את מעגל היחידה באופן טבעי לארבעה
-\textbf{רבעים}.
+הצירים של מעגל היחידה מחלקים אותו באופן טבעי לארבעה
+\textbf{רביעים}.
 זוויות נמדדות 
-\textbf{מעלות}
+\textbf{במעלות}
 בין
 $0^\circ$
 ל-%
-$360^\circ$,
-כאשר הכיוון החיובי הוא נגד כיוון השעון. 
+$\pm 360^\circ$,
+כאשר הערכים חיוביים אם מודדים נגד כיוון השעון, ושליליים עם כיוון השוען.
+
 יחידה אחרת לזווית היא ה-%
 \textbf{רדיאן}.
-רדיאן אחד הוא הזווית כולאת קשת על היקף המעגל שאורכו שווה לרדיוס. במעגל היחידה הרדיוס הוא
+רדיאן אחד הוא הזווית הכולאת קשת שאורכו שווה לרדיוס. במעגל היחידה הרדיוס הוא
 $1$
 ולכן אורך ההיקף הוא
 $2\pi$.
-כאשר קרן מסתובבת לאורך כל ההיקף )נגד כיוון השעון( היא עוברת מזווית
-$0$
-רדיאנים לזווית
-$2\pi$
-רדיאנים. רדיאן אחד שווה בערך
+רדיאן אחד שווה בערך
 $57.3$	
 מעלות.
 \begin{center}
@@ -101,9 +98,9 @@ $57.3$
 \textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
 \textrm{(\R{מעלות})} & \textrm{(\R{רדיאנים})} & & \\\hline
 0 & 0 & 0 & 1\\\hline
-90 & \pi/2 & 1 & 0\\\hline
-180 & \pi & 0 & -1\\\hline
-270 & 3\pi/2 & -1 & 0\\
+90,-270 & \pi/2, -3\pi/2 & 1 & 0\\\hline
+180, -180 & \pi,-\pi & 0 & -1\\\hline
+270,-90 & 3\pi/2,-\pi/2 & -1 & 0\\
 \hline
 \end{array}
 \end{displaymath}
@@ -168,11 +165,11 @@ $\pi/4$
 $\triangle ABC$
 אם הזווית
 $\angle BAC$
-הוא
+היא
 $45^\circ$,
 הזווית הנגדית
 $\angle ABC$
-חייבת להיות גם היא
+גם היא
 $45^\circ$
 כדי שסכום הזוויות במשולש יהיה
 $180^\circ$.
@@ -186,7 +183,7 @@ $180^\circ$.
 \coordinate (lower-right) at (1,0);
 \coordinate (upper-right) at (1,1);
 % Draw triangle
-\draw (origin) node[left] {$A$} node[above right,xshift=10pt] {$45$} -- node[below] {$\cos 45$} (lower-right) node[right] {$C$} -- node[right] {$\sin 45$} (upper-right) node[right] {$B$} node[below left,xshift=2pt,yshift=-10pt] {$45$} -- node[left,xshift=-2pt,yshift=2pt] {$1$} cycle;
+\draw (origin) node[left] {$A$} node[above right,xshift=10pt] {$45$} -- node[below] {$\cos 45=\sin 45$} (lower-right) node[right] {$C$} -- node[right] {$\sin 45=\cos 45$} (upper-right) node[right] {$B$} node[below left,xshift=2pt,yshift=-10pt] {$45$} -- node[left,xshift=-2pt,yshift=2pt] {$1$} cycle;
 % Square for right angle
 \draw (lower-right) rectangle +(-2pt,2pt);
 \end{tikzpicture}
@@ -196,8 +193,7 @@ $180^\circ$.
 \begin{equationarray*}{rcl}
 \sin^2 45 + \cos^2 45 &=& 1\\
 2\sin^2 45 &=& 1\\
-\sin 45 &=& \frac{1}{\sqrt{2}} = \frac{1}{\sqrt{2}}\cdot \frac{2}{2} =\frac{\sqrt{2}}{2}\\
-\cos 45 &=& \sin 45 = \frac{\sqrt{2}}{2}\,.
+\sin 45 = \cos 45&=& \frac{1}{\sqrt{2}} = \frac{1}{\sqrt{2}}\cdot \frac{2}{2} =\frac{\sqrt{2}}{2}\,.
 \end{equationarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -208,17 +204,16 @@ $90^\circ$}
 עכשיו שאנו יודעים את ערכי הסינוס והקוסינוס של
 $45^\circ$,
 נוכל לשאול על הזוויות הסימטריות
-$135^\circ$, $225^\circ$, $315^\circ$.
-בעזרת חברינו מעגל היחידה, נמצא מיד את ערכי הסינוס והקוסינוס שלהן.
-
-תחילה נחשב את הערכים עבור זווית שרירותית
+$135^\circ=180^\circ\!-\!45^\circ$, $225^\circ=180^\circ\!+\!45^\circ$, $315^\circ=-45^\circ$.
+בתרשימים שלהלן סימנו את הזוויות הסימטריות עבור זווית שרירותית
 $\theta$
-ברביע הראשון. היטלי הקרניים על הצירים
+ברביע הראשון. ערכי ה-%
 $x,y$
-שווים כך שיש רק לשנות את הסימנים. ברביע השני:
+שווים פרט לסימנים.
 
 \np
 
+ברביע השני:
 \begin{center}
 \selectlanguage{english}
 % Functions of 180-\theta
@@ -250,17 +245,15 @@ $x,y$
 \end{tikzpicture}
 \end{center}
 
-\vspace{-8ex}
+\vspace{-2ex}
 
-\erh{12pt}
-\begin{equationarray*}{rcl}
-\cos 135&=&\cos (180-45)= -\cos 45= \displaystyle -\frac{\sqrt{2}}{2}\\
-\sin 135&=&\sin (180-45)= \sin 45= \displaystyle \frac{\sqrt{2}}{2}\,.
-\end{equationarray*}
+\[
+\cos 135=-\cos 45= \displaystyle -\frac{\sqrt{2}}{2},\quad\quad \sin 135=\sin 45= \displaystyle \frac{\sqrt{2}}{2}\,.
+\]
 
 \vspace{-4ex}
 
-נסתכל על הרביע השלישי והרביע הרביעי:
+ברביע השלישי והרביעי:
 \begin{center}
 \selectlanguage{english}
 % Functions of 180+\theta
@@ -315,32 +308,14 @@ $x,y$
 \draw (on-circle2 |- origin) rectangle +(-2pt,-2pt);
 \end{tikzpicture}
 \end{center}
-
-
 \vspace{-3ex}
 
-עבור הרביע השליש:
-\erh{14pt}
-\begin{equationarray*}{rcl}
-\cos 225 &=&\cos (180+45)= -\cos 45= \displaystyle -\frac{\sqrt{2}}{2}\\
-\sin 225 &=&\sin (180+45)= -\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\,.
-\end{equationarray*}
-
-
-\vspace{-2ex}
-
-עבור הרבע הרביעי, נוח להשתמש בזווית השלילית
-$-\theta$
-במקום הזווית החיובית
-$360-\theta$:
-\erh{12pt}
-\begin{equationarray*}{rcl}
-\cos 315=\cos (-45)= \cos 45= \displaystyle \frac{\sqrt{2}}{2}\\
-\sin 315=\sin (-45)= -\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\,.
-\end{equationarray*}
-
-\np
-
+\[
+\begin{array}{ll}
+\cos 225 = -\cos 45= \displaystyle -\frac{\sqrt{2}}{2},\quad\quad &\sin 225 = -\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\\
+\cos 315=\cos 45= \displaystyle \frac{\sqrt{2}}{2},\quad\quad &\sin 315=-\sin 45= \displaystyle -\frac{\sqrt{2}}{2}\,.
+\end{array}
+\]
 נסכם את הערכים בטבלה:
 \begin{displaymath}
 \renewcommand{\arraystretch}{.7}
@@ -349,14 +324,14 @@ $360-\theta$:
 \textrm{\R{זווית}} & \textrm{\R{זווית}} & \sin & \cos\\
 \textrm{(\R{מעלות})} & \textrm{(\R{רדיאנים})} & & \\\hline
 \theta& \theta&  \sin\theta &  \cos\theta \\\hline
-180-\theta& \pi - \theta&  \sin\theta &  -\cos\theta\\\hline
+180\!-\!\theta& \pi\!-\!\theta&  \sin\theta &  -\cos\theta\\\hline
 180+\theta& \pi+\theta&  -\sin\theta &  -\cos\theta\\\hline
 -\theta& \theta&  -\sin\theta &  \cos\theta\\
 \hline
 \end{array}
 \end{displaymath}
 
-
+\np
 ועבור
 $45^\circ$:
 \begin{displaymath}
@@ -428,8 +403,6 @@ $30^\circ$:
 \end{tikzpicture}
 \end{center}
 
-\np
-
 ברדיאנים:
 \begin{center}
 \selectlanguage{english}
@@ -471,35 +444,14 @@ $30^\circ$:
 \end{tikzpicture}
 \end{center}
 
-נחשב תחילה את הסינוס של 
-$30^\circ$.
-במשולש ישר-זווית:
-\begin{center}
-\selectlanguage{english}
-% Right triangle with 30 and 60 degree angles
-\begin{tikzpicture}[scale=6]
-% Coordinates
-\coordinate (origin) at (0,0);
-\coordinate (lower-right) at (1,0);
-\coordinate (upper-right) at (1,.5);
-% Draw triangle
-\draw (origin)
-  node[left] {$A$} node[above right,xshift=24pt] {$30$} --
-  node[below] {$b=\cos 30$} (lower-right) node[right] {$C$} --
-  node[right] {$a=\sin 30$} (upper-right)
-    node[right] {$B$} node[below left,yshift=-5pt] {$60$} --
-  node[left,yshift=5pt] {$1$} cycle;
-% Square for right angle
-\draw (lower-right) rectangle +(-1pt,1pt);
-\end{tikzpicture}
-\end{center}
+\np
 
-צייר קו מ-%
-$C$
-אל היתר כך שהזווית עם הצלע
-$AC$
-היא 
-$30^\circ$:
+נחשב את הסינוס של 
+$\angle BAC = 30^\circ$.
+במשולש ישר-זווית
+$\triangle ACB$
+עם יתר באורך 
+$1$:
 \begin{center}
 \selectlanguage{english}
 % Right triangle with 30 and 60 degree angles
@@ -535,92 +487,46 @@ $30^\circ$:
 \draw (lower-right) rectangle +(-1pt,1pt);
 \end{tikzpicture}
 \end{center}
-מעובדות על זוויות במשולש השלמנו בציור את שאר הזוויות. המשולש
+
+צייר קו
+$CD$
+אל היתר כך ש-%
+$\angle DCA=30^\circ$.
+כדי להשלים ל-%
+$180^\circ$
+במשלוש,
+$\angle ADC=120^\circ$,
+וניתן לחשב את שאר הזוויות.
 $\triangle BCD$
-שווי-צלעות ואורך כל צלע הוא
-$a=\sin 30$.
-בנוסף,
+שווי-צלעות ולכן
+$DC=a=\sin 30^\circ$.
 $\triangle ACD$
 שווי-שוקיים כך ש-%
 $a=1-a$
-)זכור שהמשלוש נמצא במעגל היחידה ואורך היתר הוא
-$1$(.
-מכאן:
+ו-%
+$\sin 30^\circ = a = \frac{1}{2}$.
+ערך הקוסינוס הוא:
 \[
-\sin a = a = 1-a = \frac{1}{2}\,.
-\]
-מהנוסחה
-$\sin^2\theta + \cos^2\theta = 1$
-מתקבל ערך הקוסינוס:
-\[
-\cos 30 = \sqrt{1-\sin^2 30} = \sqrt{1-\left(\frac{1}{2}\right)^2} = \sqrt{\frac{3}{4}} = \frac{\sqrt{3}}{2}\,.
+\cos 30^\circ = \sqrt{1-\sin^2 30^\circ} = \sqrt{1-\left(\frac{1}{2}\right)^2} = \sqrt{\frac{3}{4}} = \frac{\sqrt{3}}{2}\,.
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\np
+\vspace{-4ex}
 
 \section*{סינוס וקוסינוס של
-$(90-\theta)$}
-
-נפנה עכשיו לחישוב של סינוס וקוסינוס של
-$60^\circ$.
-מ-
-$60 = 90 - 30$,
-את הקשר בין
-$60^\circ$
-ו-
-$30^\circ$
-ניתן לראות מהזוויות של
-$90-\theta$
-במעגל היחידה:
-\begin{center}
-\selectlanguage{english}
-% Quadrant with angle 90 - theta
-\begin{tikzpicture}[scale=3.5]
-\coordinate (origin) at (0,0);
-% Draw arc
-\draw[name path=arc] (1,0) arc [start angle=0, end angle=90, radius=1];
-% Draw x-axis
-\draw[name path=x] (origin) -- (1,0);
-% Draw y-axis
-\draw (origin) -- (0,1);
-% Draw ray
-\draw[rotate=60,name path=ray] (origin) node [above right,xshift=2mm] {$90-\theta$} -- node [above,yshift=1pt,xshift=-1pt] {$1$} (1,0);
-% Get intersection of arc and ray
-\path [name intersections={of=ray and arc, by=on-circle}];
-% Draw altitude from intersection to x-axis
-\draw[name path=altitude] (on-circle) node[below,yshift=-8pt,xshift=-4pt] {$\theta$} -- node [right] {$\sin (90-\theta)$} (on-circle |- origin);
-% Get intersection of altitude and x-axis
-\path [name intersections={of=altitude and x, by=on-x}] (origin) -- node [below] {$\cos (90-\theta)$} (on-x);
-% Square for right angle at intersection
-\draw (on-x) rectangle +(-1pt,1pt);
-% Dot at origin
-\fill (origin) circle [radius=.5pt];
-\end{tikzpicture}
-\end{center}
-הזווית בנקודה שהמשולש נושק למעגל היחידה היא
-$\theta$,
-כך שהפונקציות הטריגונומטריות של
-$90-\theta$
-מתקבלות מאלו של 
-$\theta$
-על ידי החלפת הצלע הנגדי והצלע השכן בהגדרות:
-\begin{eqnarray*}
-\cos (90-\theta) &=& \sin \theta\\
-\sin (90-\theta) &=& \cos \theta\,.
-\end{eqnarray*}
-דרך אחרת לראות את הקשר היא לשים לב שהמשולש חופף את המשולש לחשב
-$\sin\theta$
-ו-
-$\cos \theta$:
+$(90\!-\!\theta)$}
+הצלע הנגדי לזווית מתחלף עם הצלע השכן של הזוויות ומכאן:
+\[
+\cos (90\!-\!\theta) = \sin \theta,\quad\quad \sin (90\!-\!\theta) = \cos \theta\,.
+\]
 
 \vspace{-2ex}
 
 \begin{center}
 \selectlanguage{english}
 % Quadrant with angles 90 and 90 - theta
-\begin{tikzpicture}[scale=3.5]
+\begin{tikzpicture}[scale=2.5]
 \coordinate (origin) at (0,0);
 % Draw arc
 \draw[name path=arc] (1,0) arc [start angle=0, end angle=90, radius=1];
@@ -633,29 +539,27 @@ $\cos \theta$:
 % Get intersection of arc and ray
 \path [name intersections={of=ray and arc, by=on-circle}];
 % Draw altitude from intersection to x-axis
-\draw[name path=altitude] (on-circle) node [above right] {$90-\theta$} -- node [right,xshift=4mm] {$\sin \theta = \cos (90-\theta)$} (on-circle |- origin);
+\draw[name path=altitude] (on-circle) node [above right] {$90-\theta$} -- node [right,xshift=4mm] {$\sin \theta = \cos (90\!-\!\theta)$} (on-circle |- origin);
 % Arrow from label
 \draw[->] (1,.5) -- +(-.2,-.1);
 % Get intersection of altitude and x-axis
-\path [name intersections={of=altitude and x, by=on-x}] (origin) -- node [below] {$\cos \theta = \sin (90-\theta)$} (on-x);
+\path [name intersections={of=altitude and x, by=on-x}] (origin) -- node [below] {$\cos \theta = \sin (90\!-\!\theta)$} (on-x);
 % Square for right angle at intersection
 \draw (on-x) rectangle +(-1pt,1pt);
 \fill (origin) circle [radius=.5pt];
 \end{tikzpicture}
 \end{center}
 
-\vspace{-4ex}
+\vspace{-3ex}
 
 \section*{%
 סינוס וקוסינוס של
 $2\theta$%
 }
 
-אין צורך לזכור את הנוסחאות המאפשרות לבטא את הפונקציות הללו עם
-$\theta$
-במקום
-$2\theta$,
-כי ניתן לשחזר אותן תוך מספר שניות מהנוסחאות הטריגונומטריות עבור חיבור של זוויות, נוסחאות הניתנות בנוסחאון:
+את הנוסחאות ל-%
+$\sin 2\theta,\cos 2\theta$
+ניתן לשחזר מהנוסחאות לחיבור של זוויות הניתנות בנוסחאון:
 \erh{0pt}
 \begin{equationarray*}{rcl}
 \sin 2\theta &=& \sin (\theta+\theta)\\
