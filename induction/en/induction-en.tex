@@ -1514,11 +1514,11 @@ The principle of mathematical induction is implied by the well-ordering principl
 
 \textbf{Proof} Suppose that the principle of mathematical induction is false. Then there is a property $P(n)$, such that $P(1)$ is true and for every $m$, $P(m)$ implies $P(m+1)$, but for \emph{some} $n>1$, $P(n)$ is \emph{not} true. Let $S$ be the set of positive integers $k$ such that $P(k)$ is \emph{not} true. $S$ is nonempty, since $n\in S$. By the well-ordering principle, there is a least element $b\in S$. By definition of $S$, $P(b)$ is not true. But $b-1$ is less that $b$ so $b-1\not\in S$ and therefore $P(b-1)$ is true. By the inductive step, $P(b)$ is true, a contradiction.\qed
 
-Let us demonstrate the proof on an example. Let $P(n)$ be a property such that $P(1)$ is true (indicated by $+$), the inductive step holds, but for $n=244$, $P(244)$ is false. Let $S=\{244,57,102,\ldots\}$ be the set of positive integers $k$ for which $P(k)$ is false. $S$ is non-empty since $244\in S$. By the well-ordering principle, $S$ has a least element $57$. Then $56\not\in S$ so $P(56)$ is true. By the inductive step, $P(57)$ is true, a contradiction.
+Let us demonstrate the proof on an example. Let $P(n)$ be a property such that $P(1)$ is true (indicated by $+$), the inductive step holds, but $P(244)$ is false (indicated by $-$). Let $S=\{244,57,102,\ldots\}$ be the set of positive integers $k$ for which $P(k)$ is false. $S$ is non-empty since $244\in S$. By the well-ordering principle, $S$ has a least element $57$. Then $56\not\in S$ so $P(56)$ is true. By the inductive step, $P(57)$ is true, a contradiction (indicated by $\mp$).
 \[
 \begin{array}{ccccccccc}
 P(1) & P(2) & \cdots & P(56) & P(57) & \cdots & P(102) & \cdots & P(244)\\
-+ & + & + & + & - & + & -&+&-
++ & + & + & + & \mp & + & -&+&-
 \end{array}
 \]
 \begin{theorem}
@@ -1531,9 +1531,9 @@ $P(n)$ is true if for all $k\leq n$, $k$ is a lower bound of $S$ but $k\not \in 
 \end{quote}
 We prove that $P(n)$ is true for \emph{all} positive integers $n$. It follows that all positive integers are not elements of $S$, a contradiction to the assumption that $S$ is non-empty.
 
-Base case: $1$ is a lower bound for $S$ since it is the least positive integer. By definition of $S$, $1\not\in S$.
+Base case: $1$ is a lower bound for $S$ since it is the least positive integer. By definition of $S$, $S$ does not have a least element, so $1\not\in S$ and $P(1)$ is true.
 
-Inductive step: Suppose that $P(n)$ is true, so that $n$ is a lower bound for $S$, but $n\not\in S$, that is, for all $k\leq n$, $k<s$ for all $s\in S$. Then, $n+1\leq s$ for all $s \in S$, so $n+1$ is a lower bound of $S$. If $n+1\in S$, then $n+1$ is the least element in $S$ (because $k\not\in S$ for $k\leq n$), contrary to the definition of $S$. Therefore, $n+1\not\in S$, that is, $P(n+1)$ is true.\qed
+Inductive step: Suppose that $P(n)$ is true, so that $n$ is a lower bound for $S$, but $n\not\in S$, that is, for all $k\leq n$, $k<s$ for all $s\in S$. Then, $n+1\leq s$ for all $s \in S$, so $n+1$ is a lower bound of $S$. If $n+1\in S$, then $n+1$ is a least element in $S$ (because $k\not\in S$ for $k\leq n$), contrary to the definition of $S$. Therefore, $n+1\not\in S$, that is, $P(n+1)$ is true.\qed
 
 
 \newpage
