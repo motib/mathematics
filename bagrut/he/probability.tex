@@ -244,11 +244,11 @@ $P(\overline{N}\cap A)=0.56$
 \foreach \x in {1,1.5,2,2.5,3,3.5,4}
   \draw (\x,-2) -- (\x,2);
 \end{scope}
-\node at (-2,2.5) {$I$};
-\node at (4.5,2.5) {$II$};
-\node at (1.25,2.5) {$I\cap II$};
-\node at (-3.5,.2) {$I-II$};
-\node at (6,.2) {$II-I$};
+\node at (-2,2.5) {\textrm{I}};
+\node at (4.5,2.5) {\textrm{II}};
+\node at (1.25,2.5) {\textrm{I}$\:\cap\:$\textrm{II}};
+\node at (-3.5,.2) {\textrm{I$-$II}};
+\node at (6,.2) {\textrm{II$-$I}};
 \draw[->] (1.25,2.2) -- ++(0,-1);
 \draw[->] (-3,.2) -- ++(1.7,0);
 \draw[->] (5.5,.2) -- ++(-1.7,0);
@@ -260,7 +260,7 @@ $P(\overline{N}\cap A)=0.56$
 
 יש שתי דרכים לחשב את ההסתברות. בדרך הראשונה אנו לוקחים את סכום ההסתברויות של שני האירועים, ומחסירים את ההסתברות של האירוע המשותף כי ספרנו אותו פעמיים, פעם כחלק מהאירוע I ופעם כחלק מהאירוע II:
 \[
-P(I \cup II) = P(I) + P(II) - P(I \cap II)\,.
+P(\textrm{I} \cup \textrm{II}) = P(\textrm{I}) + P(\textrm{II}) - P(\textrm{I} \cap \textrm{II})\,.
 \]
 בדרך השניה אנו סופרים כל חלק מהאירוע השותף בנפרד, כאשר הסימון
 $A-B$
@@ -269,7 +269,7 @@ $A$
 שאינם בקבוצה
 $B$:
 \[
-P(I \cup II) = P(I-II) + P(II-I) + P(I \cap II)\,.
+P(\textrm{I} \cup \textrm{II}) = P(\textrm{I}\:-\:\textrm{I}) + P(\textrm{II}\:-\:\textrm{I}) + P(\textrm{I} \cap \textrm{II})\,.
 \]
 את ההסתברויות לחישוב ניקח מהטבלה. הדרך הראשונה מופיעה מימין והדרך השניה משמאל:
 \begin{center}
@@ -498,8 +498,8 @@ $b=5$.
 \[
 \renewcommand{\arraystretch}{2}
 \begin{array}{c}
-P(II\ \textrm{\R{נשארו שלושה אדומים בקופסה}}/II\ \textrm{\R{הוציאו כדור אדום מקופסה}}) =\\
-\displaystyle\frac{P(II\ \textrm{\R{נשארו שלושה אדומים בקופסה}} \cap II\ \textrm{\R{הוציאו כדור אדום מקופסה}})}{P(II\ \textrm{\R{הוציאו כדור אדום מקופסה}})}
+P(\textrm{II}\ \textrm{\R{נשארו שלושה אדומים בקופסה}}/\textrm{II}\ \textrm{\R{הוציאו כדור אדום מקופסה}}) =\\
+\displaystyle\frac{P(\textrm{II}\ \textrm{\R{נשארו שלושה אדומים בקופסה}} \cap \textrm{II}\ \textrm{\R{הוציאו כדור אדום מקופסה}})}{P(\textrm{II}\ \textrm{\R{הוציאו כדור אדום מקופסה}})}
 \end{array}
 \]
 נשארו שלושה כדורים אדומים רק אם היו אברעה כדורים אדומים לפני הבחירה. ההסתברות במונה היא 
@@ -1940,8 +1940,8 @@ II.
 יש שתי דרכים לחשב את ההסתברות: על ידי חיבור ההסתברות של שני האירועים וחיסור האירוע המשותף כדי לקזז את הספירה הכפולה, או לחבר את האירוע המשותף עם האירועים של אחד ולא השני המסומן 
 I$-$II, II$-$I:
 \begin{eqnarray*}
-P(I \cup II) &=& P(I) + P(II) - P(I \cap II)\\
-P(I \cup II) &=& P(I-II) + P(II-I) + P(I \cap II)\,.
+P(\textrm{I} \cup \textrm{II}) &=& P(\textrm{I}) + P(\textrm{II}) - P(\textrm{I} \cap \textrm{II})\\
+P(\textrm{I} \cup \textrm{II}) &=& P(\textrm{I}-\textrm{II}) + P(\textrm{II}-\textrm{I}) + P(\textrm{I} \cap \textrm{II})\,.
 \end{eqnarray*}
 
 \vspace{-5ex}
