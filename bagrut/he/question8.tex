@@ -14,86 +14,109 @@ $8$}
 \includegraphics[width=\textwidth]{summer-2018b-8}
 \end{center}
 
+\medskip
+
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.2]
-\clip (0,0) rectangle +(5,4);
+\begin{tikzpicture}%[scale=1.2]
+\clip (-1,-1) rectangle +(7,5);
 \begin{axis}[
     axis lines=center,
-    xmin = -.5,
-    xmax = 8,
-    ymin = -.6,
-    ymax = 6,
+    xmin = -1,
+    xmax = 10,
+    ymin = -1,
+    ymax = 8,
     xmajorticks=false,
     ymajorticks=false,
 ]
 \addplot [
-    domain=.2:6,
+    domain=.2:9,
     samples=40,
+    thick,
 ]
-{4*(1/x^2)};
-\coordinate (A) at (axis cs:1.5,1.78);
-\fill (A) circle (1.5pt);
-\coordinate (B) at (axis cs:1.5,0);
-\fill (B) circle (1.5pt) node[below] {$X$};
-\draw (axis cs:0,1.78) -- (axis cs:4,1.78) -- (axis cs:4,0);
-\draw[thick,dashed] (A) -- (axis cs:1.5,0);
-\path (axis cs:0,0) -- node[left] {$\disfrac{4}{a}$} (axis cs:0,1.78);
-\path (axis cs:0,0) -- node[below right] {$a-a'$} (axis cs:4,0);
-\path (axis cs:0,0) -- node[below] {$a'$} (axis cs:1.5,0);
+{6*(1/x^2)};
+\coordinate (A) at (axis cs:1.8,1.85);
+\fill (A) circle (1.5pt) node[above right] {$A$};
+\coordinate (B) at (axis cs:1.8,0);
+\fill (B) circle (1.5pt) node[below] {$B$};
+\draw[thick] (axis cs:0,1.85) -- (axis cs:6,1.85) -- (axis cs:6,0);
+\draw[thick,dashed] (B) -- (A);
+\path (axis cs:0,0) -- node[left] {$\disfrac{4}{a}$} (axis cs:0,1.85);
+\path (axis cs:1.8,0) -- node[below right] {$a-a'$} (axis cs:4,0);
+\path (axis cs:0,0) -- node[below] {$a'$} (axis cs:1.8,0);
+\path (axis cs:0,1.85) -- node[above] {$a'$} (axis cs:1.8,1.85);
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
 
-\vspace{-2ex}
+\vspace{-6ex}
 
 \textbf{סעיף א}
 
-נתון שהשטח של המלבן הוא
-$4$
-ולכן הצלע האנכית שלו היא
-$\frac{4}{a}$.
+נתון שמרחק הצלע התחתונה של המלבן מציר ה-%
+$y$
+הוא
+$a$,
+ונתון שטח המלבן
+$4$,
+ולכן אורך הצלע האנכית של המלבן הוא
+$\disfrac{4}{a}$.
 נסמן ב-%
-$X$
+$A$
+את נקודת החיתוך של גרף הפונקציה עם הצלע העליונה של המלבן. נסמן ב-%
+$a'$
+את אורך הקטע בין 
+$A$
+לציר ה-%
+$y$,
+ונסמן ב-%
+$B$
 נקודה על ציר ה-%
 $x$,
-ונסמן את האורך בין
-$X$
-למרכז הצירים ב-% 
-$a'$.
-לפי ההגדרה של הפונקציה
-$f(a')=\frac{1}{(a')^2}=\frac{4}{a}$
-ו-%
-$a'=\frac{\sqrt{a}}{2}$.
-נחשב את השטח המבוקש כסכום השטח של המלבן עד הנקודה
-$X$
+הנמצאת במרחק
+$a'$
+מציר ה-%
+$y$.
+לפי הגדרת הפונקציה
+\erh{12pt}
+\begin{equationarray*}{rcl}
+f(a')&=&\disfrac{1}{(a')^2}=\disfrac{4}{a}\\
+a'&=&\disfrac{\sqrt{a}}{2}\,.
+\end{equationarray*}
+נחשב את השטח המבוקש כסכום השטח של מלבן מציר ה-%
+$y$
+ועד לצלע 
+$AB$,
 והשטח מתחת לפונקציה מ-%
-$X$
+$B$
 ועד ל-%
 $x=a$:
+
+\np
+
 \erh{14pt}
 \begin{equationarray*}{rcl}
 S&=&\frac{4}{a}\cdot \frac{\sqrt{a}}{2} + \int_{\frac{\sqrt{a}}{2}}^a \frac{1}{x^2} dx\\
-&=&\frac{2}{\sqrt{a}} + \left.(-1)\cdot x^{-1}\right|^a_{\frac{\sqrt{a}}{2}}\\
-&=&\frac{2}{\sqrt{a}} - \frac{1}{a} + \frac{1}{\frac{\sqrt{a}}{2}}=\frac{4\sqrt{a}-1}{a}\,.
+&=&\frac{2}{\sqrt{a}} + \left.(-1)\cdot x^{-1}\rule{0pt}{12pt}\right|^a_{\frac{\sqrt{a}}{2}}\\
+&=&\frac{2}{\sqrt{a}} - \frac{1}{a} + \frac{1}{\disfrac{\sqrt{a}}{2}}=\frac{4\sqrt{a}-1}{a}\,.
 \end{equationarray*}
 
-\np
 \textbf{סעיף ב}
 
 ברור ש-%
-$S=\frac{4\sqrt{a}-1}{a}$
+$S=\disfrac{4\sqrt{a}-1}{a}$
 יורדת בעיקביות ככל ש-%
 $a$
 עולה, לכן הערך המקסימלי צריך להיות בערך הקטן ביותר של התחום הנתון
-$a=\frac{1}{4}$.
-אם רוצים ניתן לחשב את הנגזרת הראשונה:
+$a=\disfrac{1}{4}$.
+
+אפשר גם לחשב את הנגזרת הראשונה:
 \[
 \left(\frac{4\sqrt{a}-1}{a}\right)'=\frac{\left(4\cdot\frac{1}{2}\cdot a^{-\frac{1}{2}}\cdot a\right) - ((4\sqrt{a}-1)\cdot 1)}{a^2}=\frac{-2\sqrt{a}+1}{a^2}\,,
 \]
 שמתאפסת ב-%
-$a=\frac{1}{4}$.
+$a=\disfrac{1}{4}$.
 
 \np
 
@@ -135,10 +158,10 @@ $a=\frac{1}{4}$.
 \coordinate (F) at ($(D)!(E)!(C)$);
 \draw[thick,dashed] (E) -- (F);
 \fill (F) circle(1.5pt) node[below] {$F$};
-\draw[rotate=90] (F) rectangle +(7pt,7pt);
+\draw[rotate=90] (F) rectangle +(8pt,8pt);
 \coordinate (M) at ($(A)!(E)!(B)$);
 \fill (M) circle(1.5pt) node[above right] {$M$};
-\draw[rotate=90] (M) rectangle +(7pt,7pt);
+\draw[rotate=90] (M) rectangle +(8pt,8pt);
 \path (E) -- node[right] {$h$} (M);
 \end{tikzpicture}
 \end{center}
@@ -147,15 +170,14 @@ $a=\frac{1}{4}$.
 
 \textbf{סעיף א}
 
-לאחר שנשלים סימונים בתרשים, אנו רואים ש-%
-$\triangle CDE \sim \triangle KLE$
-כי 
-$DC \| LK$.
-בנוסף, נשים לב שהגובה של
+$DC \| LK$
+ולכן
+$\triangle CDE \sim \triangle KLE$.
+נשים לב שהגובה של
 $\triangle CDE$
 הוא
-$h+6$.
-לכן:
+$h+6$,
+ולכן:
 \erh{12pt}
 \begin{equationarray*}{rcl}
 \frac{h}{x}&=&\frac{h+6}{6}\\
@@ -180,17 +202,18 @@ S_{\triangle BCK}&=&\frac{1}{2}\cdot BK \cdot 6\,.
 $AL,BK$
 לא ידועים ואין נתונים עליהם. אבל, נשים לב ש-%
 $AB$
-היא צלע של הריבוע ולכן
+היא צלע של הריבוע, ולכן
 $AL+BK=AB-LK=6-x$.
-לכן סכום השטחי המשולשים הוא:
+סכום השטחי המשולשים הוא:
 \erh{12pt}
 \begin{equationarray*}{rcl}
 S=S_{\triangle KLE}+S_{\triangle ADL}+S_{\triangle BCK}&=&
 \frac{1}{2}\cdot x \cdot \frac{6x}{6-x}+\frac{1}{2}\cdot (6-x) \cdot 6\\
-&=&6\cdot\frac{1}{2} \left(\frac{2(x^2-6x+18)}{6-x}\right)\,.
+&=&6\cdot\frac{1}{2} \left(\frac{2(x^2-6x+18)}{6-x}\right)\\
+&=&6\cdot\frac{x^2-6x+18)}{6-x}\,.
 \end{equationarray*}
-נחשב את נגזרת הראשונה )ללא הקבועים
-$2$, $\frac{1}{2}$, $6$(:
+נחשב את נגזרת הראשונה )ללא הקבוע
+$6$(:
 \erh{12pt}
 \begin{equationarray*}{rcl}
 S'&=&\frac{(2x-6)(6-x)-(x^2-6x+18)(-1)}{(6-x)^2}\\
@@ -211,9 +234,7 @@ $6-3\sqrt{2}$.
 
 המכנה של
 $S'$
-חיובי לכן הסימן של הנגזרת השנייה יהיה הסימן של הנגזרת של המונה של
-$S'$
-עבור נקודת הקיצון. הנגזרת היא
+חיובי לכן הסימן של הנגזרת השנייה שווה לסימן של הנגזרת של המונה: 
 $-2x+12$.
 עבור נקודת הקיצון:
 \[
@@ -230,12 +251,11 @@ $-2x+12$.
 \begin{center}
 \selectlanguage{english}
 \includegraphics[width=\textwidth]{winter-2018-8}
-
 \end{center}
 
-\vspace{-1ex}
 
-אני מודה שהסתבכתי כאן בגלל שלא תירגלי מזמן את המשוואה לקו ישר. נדמה לי שזו הפעם היחידה שהמשוואה נדרשת בכל הבחינות הללי.
+
+הסתבכתי כאן בגלל שלא תירגלתי מזמן את המשוואה לקו ישר. נדמה לי שזו הפעם היחידה שהמשוואה נדרשת בכל הבחינות הללו.
 
 \textbf{סעיף א}
 
@@ -277,22 +297,29 @@ $y$
 \end{center}
 
 הנגזרת של הפונקציה היא
-$f'(x)=\disfrac{-3}{x^4}$
+$f'(x)=\disfrac{-3}{x^4}$,
 לכן הקו המשיק לגרף הפונקציה הוא:
 \[
 y-\frac{1}{t^3} = \disfrac{-3}{t^4}(x-t)\,.
 \]
-נחשב את הנקודות על הצירים:
+נחשב את הנקודות על הצירים. עבור ציר ה-%
+$x$:
 \erh{12pt}
 \begin{equationarray*}{rcl}
 0-\frac{1}{t^3} &=& \disfrac{-3}{t^4}(x_A-t)\\
-x_A&=&\frac{t}{3}+t=\frac{4t}{3}\\
-y_B-\frac{1}{t^3} &=& \disfrac{-3}{t^4}(0-t)\\
-y_B&=&\frac{1}{t^3}+\frac{3}{t^3}=\frac{4}{t^3}\,.
+3x_A&=&t^4\left(\frac{3t}{t^4}+\frac{1}{t^3}\right)=3t+t\\
+x_A&=&\frac{4t}{3}\,.
 \end{equationarray*}
 
 \np
 
+עבור ציר ה-%
+$y$:
+\erh{12pt}
+\begin{equationarray*}{rcl}
+y_B-\frac{1}{t^3} &=& \disfrac{-3}{t^4}(0-t)\\
+y_B&=&\frac{3t}{t^4}+\frac{1}{t^3}=\frac{4}{t^3}\,.
+\end{equationarray*}
 השאלה מבקשת את נקודת הקיצון של:
 \[
 g(t)=x_A+x_B=\frac{4t}{3}+\frac{4}{t^3}\,.
@@ -311,7 +338,6 @@ g'(t)&=&\frac{4}{3}+\frac{-12}{t^4}=0\\
 t^4&=&\frac{3}{4}\cdot 12=9\\
 t&=&\pm \sqrt{3}\,.
 \end{equationarray*}
-
 נתון ש-%
 $t>0$
 ולכן נקודת הקיצון היא
@@ -322,13 +348,11 @@ $t>0$
 
 \textbf{סעיף ב}
 
-אם יש רק נקודת קיצון פנימית אחת שהיא מינימום, אז המקסימום חייב להיות בקצה התחום.
-
+אם יש רק נקודת קיצון פנימית אחת שהיא מינימום, אז המקסימום חייב להיות בקצה התחום:
 \begin{equationarray*}{rcl}
 g(1)&=&\frac{4\cdot 1}{3}+\frac{4}{1^3}=\frac{16}{3}\\
 g(5)&=&\frac{4\cdot 5}{3}+\frac{4}{5^3}=\frac{20}{3}+\frac{4}{125}\,.
 \end{equationarray*}
-
 ברור ש-%
 $g(1)<g(5)$
 ולכן המקסימום הוא ב-%
@@ -386,7 +410,7 @@ S_1=\pi^2+8\,.
 \textbf{סעיף ב}
 
 \[
--S_1=\int_0^{\frac{\pi}{2}} f(x) dx = \left. F\right|_0^{\frac{\pi}{2}}=F\left(\frac{\pi}{2}\right)- F(0)=F\left(\frac{\pi}{2}\right)=-(\pi^2+8)\,.
+-S_1=\int_0^{\frac{\pi}{2}} f(x) dx = \left. F\rule{0pt}{14pt}\right|_0^{\frac{\pi}{2}}=F\left(\frac{\pi}{2}\right)- F(0)=F\left(\frac{\pi}{2}\right)=-(\pi^2+8)\,.
 \]
 
 \textbf{סעיף ג}
@@ -445,7 +469,9 @@ $f(x)=-x^2+2x+8$.
 
 \textbf{סעיף ב}
 
-נקודת החיתוך של ציר הסימטריה של הפרבולה עם הפונקציה היא נקודת המקסימום של
+נקודת החיתוך של ציר הסימטריה של הפרבולה עם 
+$f(x)$
+היא נקודת המקסימום של
 $f(x)$.
 מהנגזרת הראשונה
 $f'(x)=-2x+2=0$
@@ -454,13 +480,20 @@ $x=1$.
 
 הקודקודים של 
 $\triangle KLM$
-הם:
+הם )כאשר 
+$x$
+היא הקואורדינטה של
+$K,L$
+על ציר ה-%
+$x$(:
 \erh{2pt}
 \begin{equationarray*}{rcl}
 M&=&(1,0)\\
 L&=&(x,0)\\
 K&=&(x,-x^2+2x+8)\,.
 \end{equationarray*}
+
+\np
 השטח של
 $\triangle KLM$
 הוא:
@@ -470,33 +503,34 @@ S(x)=\frac{1}{2}(x-1)(-x^2+2x+8)\,,
 והגזרת הראשונה היא:
 \erh{12pt}
 \begin{equationarray*}{rcl}
-S'(x)&=&\frac{1}{2}\cdot -3x^2+6x+6\\
+S'(x)&=&\frac{1}{2}(1\cdot(-x^2+2x+8)+(x-1)(-2x+2))\\
+&=&\frac{1}{2}\cdot (-3x^2+6x+6)\\
 &=&-\frac{3}{2}\cdot(x^2-2x-2)\,.
 \end{equationarray*}
 הנגזרת מתאפסת ב:
 \[
 x=\frac{2\pm\sqrt{4+4\cdot 2}}{2}=1\pm\sqrt{3}\,.
 \]
+הנגזרת השנייה היא
+$S''(x)=-3(x-1)$.
 
-השטחים מקסימליים כי חישוב הנגזרת השנייה נותן:
-\erh{12pt}
-\begin{equationarray*}{rcl}
-S''(x)&=&-3 (x-1)\\
-S''(1+\sqrt{3})&=&-\sqrt{3}<0\,.
-\end{equationarray*}
 הפתרון
 $1+\sqrt{3}$
-מתאים למשולש בתרשים.
+הוא מקסימום כי
+$S''(1+\sqrt{3})=-3\sqrt{3}<0$.
+
 
 הפתרון
 $1-\sqrt{3}$
-מתאים למשולש הסימטרי משמאל ל-%
+מתאים למשולש הסימטרי כאשר
+$K,L$
+משמאל ל-%
 $M$.
 אורך הבסיס יהיה
 $1-x$,
 הסימנים יתהפכו ונקבל שטח חיובי ומקסימלי.
 \begin{quote}
-פתרונות אחרים משתמשים במונח "קודקוד הפרבולה". לא נתקלתי בו בספרי לימוד או בבחינות אחרות. עבור פרבולה
+פתרון אחר משתמשים במונח "קודקוד הפרבולה". לא נתקלתי בו בספרי לימוד או בבחינות אחרות. עבור פרבולה
 $ax^2+bx+c$
 ערך ה-%
 $x$
@@ -507,7 +541,7 @@ $\disfrac{-b}{2a}$.
 \begin{equationarray*}{rcl}
 f(x)&=&ax^2+bx+c\\
 f'(x)&=&2ax+b=0\\
-x&=&\frac{-b}{2a}\,.
+x&=&\frac{-b}{2a}=\frac{-2}{2\cdot -1}=1\,.
 \end{equationarray*}
 \end{quote}
 
@@ -555,7 +589,7 @@ S_{\triangle APL}&=&\frac{1}{2}\cdot R\cos \alpha \cdot R\sin \alpha\,.
 S_{\textrm{\R{אפור}}} = \frac{R^2}{2}\left(\frac{\pi}{3} - \cos \alpha\sin\alpha\right)
 \]
 בלי הקבוע
-$\frac{R^2}{2}$
+$\disfrac{R^2}{2}$
 הנגזרת הראשונה היא:
 \[
 -((-\sin \alpha)\cdot \sin\alpha + \cos\alpha\cdot\cos \alpha)=\sin^2 \alpha - \cos^2\alpha\,.
@@ -563,9 +597,9 @@ $\frac{R^2}{2}$
 הנגזרת מתאפסת כאשר
 $\cos\alpha=\pm\sin\alpha$.
 בגזרה
-$0<\alpha<\frac{1}{6}\cdot 2\pi$,
+$0<\alpha<\disfrac{1}{6}\cdot 2\pi$,
 הפתרון היחיד הוא
-$\alpha=\frac{\pi}{4}$.
+$\alpha=\disfrac{\pi}{4}$.
 
 \np
 
@@ -578,8 +612,8 @@ $4\sin\alpha\cos\alpha$
 \erh{14pt}
 \begin{equationarray*}{rcl}
 \frac{R^2}{2}\left(\frac{\pi}{3} - \cos \frac{\pi}{4}\sin\frac{\pi}{4}\right)&=&24\pi-36=12(2\pi-3)\\
-R^2\left(\frac{\pi}{3} - \frac{\sqrt{2}}{2}\cdot \frac{\sqrt{2}}{2}\right)&=&24(2\pi-3)\\
-\frac{R^2}{6}\left(2\pi - 3\right)&=&24(2\pi-3)\\
+\frac{R^2}{2}\left(\frac{\pi}{3} - \frac{\sqrt{2}}{2}\cdot \frac{\sqrt{2}}{2}\right)&=&12(2\pi-3)\\
+\frac{R^2}{2}\cdot\frac{1}{6}\left(2\pi - 3\right)&=&12(2\pi-3)\\
 R&=&12\,.
 \end{equationarray*}
 
@@ -643,20 +677,24 @@ $\triangle ADB$
 \medskip
 
 \textbf{סעיף ב}
-\erh{16pt}
+\erh{20pt}
 \begin{equationarray*}{rcl}
 \left(BC\cdot AD^2\right)'&=& \left(\sqrt{k^2-x^2}\cdot \frac{x^2}{2}\right)'\\
 &=& \frac{-2x}{2\sqrt{k^2-x^2}}\cdot\frac{x^2}{2}+\sqrt{k^2-x^2}\cdot x\\
+&=& \frac{-x^3}{2\sqrt{k^2-x^2}}+\frac{2(k^2-x^2)x}{2\sqrt{k^2-x^2}}\\
 &=& \frac{2k^2x-3x^3}{2\sqrt{k^2-x^2}}\,.
 \end{equationarray*}
+
+\np
+
 נניח כמובן שהמשולש לא מנוון כך ש-%
-$x\neq 0$.
+$x\neq k$.
 הנגזרת מתאפסת כאשר:
 \[
 k=\sqrt{\frac{3}{2}}x,\quad\quad x=\sqrt{\frac{2}{3}}k\,.
 \]
 
-סימן הנגזרת השנייה הוא סימן הנגזרת של המונה של הנגזרת הראשונה:
+סימן הנגזרת השנייה שווה לסימן הנגזרת של המונה:
 \[
 (2k^2-3x^2)'=-6x<0\,,
 \]
@@ -684,7 +722,7 @@ x=\sqrt{\frac{2}{3}}k=\sqrt{6}\,.
 $\triangle ADB$
 הוא:
 \[
-\frac{1}{2}\cdot \frac{x}{\sqrt{2}} \cdot \frac{x}{\sqrt{2}} = \frac{x^2}{4} = \frac{(\sqrt{6})^2}{4}=1.5\,.
+\frac{1}{2}\cdot \frac{x}{\sqrt{2}} \cdot \frac{x}{\sqrt{2}} = \frac{x^2}{4} = \frac{(\sqrt{6})^2}{4}=\frac{3}{2}\,.
 \]
 
 
@@ -698,15 +736,7 @@ $\triangle ADB$
 \selectlanguage{english}
 \includegraphics[width=\textwidth]{summer-2016a-8a}
 \includegraphics[width=\textwidth]{summer-2016a-8b}
-
 \end{center}
-
-
-השאלה ארוכה מאוד אבל התשובות קצרות!
-
-אני הסתבכתי כי לא פעלתי לפי ההנחייה: "היעזר בגרפים ...".
-
-\np
 
 \textbf{סעיף א}
 
@@ -733,6 +763,8 @@ $n$
 $n$
 אי-זוגי.
 
+\np
+
 הפונקציה לא מוגדרת עבור
 $x=0$
 ולכן 
@@ -742,11 +774,10 @@ $x=0$
 אנכית.
 
 \textbf{סעיף ב}
-\erh{6pt}
-\begin{equationarray*}{rcl}
-f'(x)&=&\left(\left(1+x^{-1}\right)^n\right)'\\
-&=&n\left(1+x^{-1}\right)^{n-1}\cdot - x^{-2}\,.
-\end{equationarray*}
+\[
+f'(x)=\left(\left(1+x^{-1}\right)^n\right)'=n\left(1+x^{-1}\right)^{n-1}\cdot - x^{-2}\,.
+\]
+
 נתון ש-%
 $n$
 חיובית. אם 
@@ -757,11 +788,11 @@ $n-1$
 $\left(1+x^{-1}\right)^{n-1}$
 חיובית או אפס. כמובן ש-%
 $x^{-2}$
-חיובית )ולא אפס כי נתון ש-%
-$x\neq 0$.
+חיובית )לא אפס כי
+$x\neq 0$(.
 לכן סימן המינוס לפני
 $x^{-2}$
-גורם לכל הביטוי להיות שלילי.
+גורם לכל הביטוי להיות שלילי או אפס.
 
 מכאן שגרף I מתאים ל-%
 $n$
@@ -782,11 +813,11 @@ $x$,
 לכן אין נקודות קיצון.
 
 $(2)$
-בנקודת פיתול הנגזרת השנייה מתאפסת. זה קורה פעם אחת משמאל למינימום של
+בנקודת פיתול הנגזרת השנייה מתאפסת. זה קורה פעם אחת בנקודת המינימום של
 $f'(x)$
 ופעם אחת כאשר ל-%
 $f'(x)$
-יש נקודות מקסימום ללא שינוי בסימן. לכן יש שתי נקודות פיתול.
+יש נקודת מקסימום. לכן יש שתי נקודות פיתול.
 
 \textbf{סעיף ד}
 
@@ -810,8 +841,8 @@ $x<0$,
 השיפוע קרוב לאפס ב%
 \asm{}
 האופקית. השיפוע יורד משמאל עד לנקודת פיתול שם השיפוע עולה עד לנקודת מינימום של
-$f(x)$,
-ואז השיפוע עולה. עבור
+$f(x)$
+ואז ממשיך לעלות. עבור
 $x>0$
 השיפוע תמיד עולה מערך שלילי נמוך מאוד ועד קרוב לאפס בכיוון ה%
 \asm{}
@@ -933,7 +964,7 @@ $x$
 
 \np
 
-יש כאן מלכודת שניתן להימנע ממנו רק אם מציירים תרשים מדוייק. אמנם
+יש כאן מלכודת שניתן להימנע ממנו על ידי הכנת תרשים מדוייק. אמנם
 $t$
 מוגדר כערך ה-%
 $x$
@@ -1037,8 +1068,8 @@ $t=0$.
 
 \begin{center}
 \selectlanguage{english}
-\includegraphics[width=\textwidth]{summer-2015b-8a}
-\includegraphics[width=\textwidth]{summer-2015b-8b}
+\includegraphics[width=.95\textwidth]{summer-2015b-8a}
+\includegraphics[width=.95\textwidth]{summer-2015b-8b}
 
 \end{center}
 
@@ -1046,7 +1077,7 @@ $t=0$.
 
 \textbf{סעיף א}
 
-)בשאלה אין נוסחה לפנוקציה, גם לא לאחר פתרון השאלה, ולכן התרשים הוא ממש "סקיצה".(
+)בשאלה אין נוסחה לפנוקציה, גם לא לאחר פתרון השאלה, ולכן התרשימים הם ממש "סקיצות".(
 
 \begin{center}
 \selectlanguage{english}
@@ -1075,7 +1106,7 @@ $t=0$.
 
 קיימת נקודת קיצון ב-%
 $x=1$
-כי הנגזרת הראשונה מתאפסת ומחליפה סימן. הנקודה היא מינימום כי הנגזרת עולה.
+כי הנגזרת הראשונה מתאפסת ומחליפה סימן. הנקודה היא מינימום כי הנגזרת עולה (הנגזרת השנייה חיובית(.
 
 
 \textbf{סעיף ג}
@@ -1088,15 +1119,16 @@ $3<x$.
 $0<x<3$
 וקעורה כלפי מטה ב-%
 $3<x$.
-
+ב-%
+$x=3$
+הנגזרת השנייה מתאפסת ללא שינוי בסימן הנגזרת הראשונה,ולכן היא נקודת פיתול.
 
 \textbf{סעיף ד}
 
-אם הפונקציה מקבלת ערכים 
-$y\geq 4$
-אזי נקודות המינימום שמתקבלת ב-%
-$x=1$
-צריך לקבל את הערך
+אם הפונקציה מקבלת את כל ערכים 
+$y\geq 4$,
+בקודת המינימום 
+$x=1$,
 $y=4$.
 נשתמש בנתון שלפונקציה יש 
 \asm{}
@@ -1120,6 +1152,8 @@ $x=0$,
 {(.1,7) (.4,5) (.6,4.5) (1,4) (2,5.2) (3,6) (7,6.3)};
 \fill (axis cs:1,4) circle(1.5pt);
 \fill (axis cs:3,6) circle(1.5pt);
+\draw[thick,dashed] (axis cs:0,4) -- (axis cs:1,4);
+\draw[thick,dashed] (axis cs:1,4) -- (axis cs:1,0);
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -1227,7 +1261,9 @@ a&>&\frac{3}{2}\quad\quad\quad$x-$\textrm{\R{מתחת לציר ה}}\,.
 
 \textbf{סעיף ג}
 
-נקודות המינימום מסומנות.
+נקודות המינימום ב-%
+$x=a$
+מסומנות. 
 
 קו רציף: על הציר. קו מקווקוו: מעל לציר. קו מנוקד: מתחת לציר.
 
@@ -1273,10 +1309,12 @@ a&>&\frac{3}{2}\quad\quad\quad$x-$\textrm{\R{מתחת לציר ה}}\,.
 משוואה זו היא המשוואה הנתונה בשאלה כאשר
 $a=1$.
 אבל 
-$1<\frac{3}{2}$,
-ולכן לפי סעיף ב המינימום נמצא מעל לציר ה-%
+$1<\frac{3}{2}$.
+לפי סעיף ב המינימום נמצא מעל לציר ה-%
 $x$.
-מכאן שאין פתרון אחר פרט לנקודת החיתוך של הגרף לפני המקסימום.
+ יש רק פתרון אחד כאשר הפנוקציה חותכת את ציר ה-%
+$x$
+משמאל למקסימום.
 
 \np
 
@@ -1296,23 +1334,22 @@ $x$.
 
 לפי הנוסחה לנגזרת של חזקה של פונקציה,
 $(f(x)^{\frac{1}{2}})' = \frac{1}{2}f(x)^{-\frac{1}{2}}f'(x)$
-שהיא הפונקציה המופיעה באינטגרל. נחשב את ערך האינטגרל:
+שהיא הפונקציה המופיעה באינטגרל. נחשב את האינטגרל כדי לקבל
+$f(3)$:
 
 \vspace{-3ex}
 
 \erh{12pt}
 \begin{equationarray*}{rcl}
-\int_0^3 \frac{f'(x)}{2\sqrt{f(x)}}\, dx &=& \left. \sqrt{f(x)}\right|_0^3\\
+\int_0^3 \frac{f'(x)}{2\sqrt{f(x)}}\, dx &=& \left. \sqrt{f(x)}\rule{0pt}{16pt}\right|_0^3\\
 &=&\sqrt{f(3)}-\sqrt{f(0)} = \sqrt{f(3)}-1=3\\
-f(3)&=&4^2=16\,.
+f(3)&=&16\,.
 \end{equationarray*}
 
 \vspace{-3ex}
 
-הפונקציה
-$f(x)$
-מתקבלת מאינטגרציה של הנוסחה הנתונה לנגזרת ומחישוב הקבוע והפרמטר מהערכים הידועים של
-$f(0),f(3)$:
+מציאת הפונקציה
+$f(x)$:
 \erh{12pt}
 \begin{equationarray*}{rcl}
 f(x)&=&\int (kx+2)\,dx = \frac{1}{2}kx^2+2x+c\\
@@ -1331,18 +1368,12 @@ f(x)&=&x^2+2x+1\,.
 g(x)=\sqrt{f(x)}=\sqrt{x^2+2x+1}=\sqrt{(x+1)^2}=|x+1|\,.
 \]
 אם
-$x\geq -1$,
-$x+1$
-לא שלילי ו-%
-$g(x)=x+1$.
-
-אם 
-$x<-1$,
-$x+1$
-שלילי ו-%
+$x+1\geq 0$,
+$g(x)=x+1$,
+ו-אם
+$x+1<0$,
 $g(x)=-(x+1)$.
-
-ביחד יש לנו
+ביחד
 $g(x)=|x+1|$.
 
 
@@ -1350,6 +1381,18 @@ $g(x)=|x+1|$.
 
 \textbf{סעיף ג}
 
+הגרף של 
+$f(x)$
+הוא פרבולה קעורה כלפי מעלה עם נקודות מינימום ב-%
+$(-1,0)$
+ונקודת חיתוך עם ציר ה-%
+$y$
+ב-%
+$(0,1)$.
+הגרף של 
+$g(x)$
+מורכב משני קווים ישרים עם ערכים חיוביים אבל עם שיפועים עם סימנים הפוכים. נקודת המינימום היא גם כן
+$(-1,0)$.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}%[scale=.8]
@@ -1394,7 +1437,7 @@ $g(x)=|x+1|$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.85]
+\begin{tikzpicture}[scale=.8]
 \coordinate (M) at (0,0);
 \coordinate (D) at (-5,0);
 \coordinate (B) at (60:5);
@@ -1409,7 +1452,8 @@ $g(x)=|x+1|$.
 \fill (C) circle(1.5pt) node[below] {$C$};
 \fill (D) circle(1.5pt) node[below left] {$D$};
 \fill (M) circle(1.5pt) node[below] {$M$} node[above right,xshift=6pt] {$x$};
-\draw[thick,rotate=90] (C) rectangle +(7pt,7pt);
+\draw[thick,rotate=90] (C) rectangle +(8pt,8pt);
+\draw[thick] (D) rectangle +(8pt,8pt);
 \path (D) -- node[below] {$R$} (M);
 \path (M) -- node[below] {$b$} (C);
 \path (C) -- node[right] {$a$} (B);
@@ -1428,35 +1472,45 @@ S(x)=a(R+b)=R\sin x(R+R\cos x)=R^2\sin x (1+\cos x)\,.
 S'(x)&=&R^2 (\cos x(1+\cos x) + \sin x \cdot -\sin x)\\
 &=&R^2(\cos x + \cos^2 x -\sin^2 x)\\
 &=&R^2(\cos x + \cos^2 x -(1-\cos^2 x))\\
-&=&R^2(2\cos^2 x+\cos x -1 )=0\\
+&=&R^2(2\cos^2 x+\cos x -1 )\\
 &=&R^2(2\cos x -1)(\cos x + 1)=0\,.
 \end{equationarray*}
 
 \np
 
-אנחנו פוסלים את הפתרון
-$\cos x=-1$
-כי
-$x=180^\circ$
-לא יכול להיות זווית במשולש.
-
-לכן,
-$\cos x=\frac{1}{2}$, $x=60^\circ$.
+בהנחה שהמשולש 
+$\triangle BMC$
+אינו מנוון, 
+$0<x<180$.
+ניתן לפסול את הפתרון
+$\cos x=-1$, $x=180$
+והפתרון היחיד הוא
+$\cos x=\frac{1}{2}$, $x=60$.
 
 הנגזרת השנייה היא:
-$(2\cos^2 x+ \cos x -1)'=-\sin x(4\cos x+1)$.
-\[
--\sin 60(4\cos 60+1)=-\frac{\sqrt{3}}{2}\cdot (4\cdot\frac{1}{2}+1)=-\frac{3\sqrt{3}}{2}<0\,,
-\]
-ןלכן נקודת הקיצון היא מקסימום.
+
+\vspace{-4ex}
+
+\erh{14pt}
+\begin{equationarray*}{rcl}
+(2\cos^2 x+ \cos x -1)'&=&-\sin x(4\cos x+1)\\
+&=&-\sin 60(4\cos 60+1)\\
+&=&-\frac{\sqrt{3}}{2}\cdot (4\cdot\frac{1}{2}+1)=-\frac{3\sqrt{3}}{2}<0\,.
+\end{equationarray*}
+נקודת הקיצון היא מקסימום.
 
 \bigskip
 
 \textbf{סעיף ב}
 
-\[
-\int_0^{\frac{\pi}{2}} R^2\sin x (1+\cos x) dx = \left. R^2 \cdot -\frac{1}{2}(1+\cos x)^2\right|_0^{\frac{\pi}{2}}=-\frac{R^2}{2}(1^2-2^2)=\frac{3R^2}{2}\,.
-\]
+\vspace{-4ex}
+
+\erh{18pt}
+\begin{equationarray*}{rcl}
+\int_0^{\frac{\pi}{2}} R^2\sin x (1+\cos x) dx&=&\left. R^2 \cdot -\frac{1}{2}(1+\cos x)^2\right|_0^{\frac{\pi}{2}}\\
+&=&\frac{R^2}{2}(1^2-2^2)=\frac{3R^2}{2}\,.
+\end{equationarray*}
+
 
 \np
 
@@ -1476,25 +1530,37 @@ $(2\cos^2 x+ \cos x -1)'=-\sin x(4\cos x+1)$.
 
 כאשר 
 $x$
-עולה בערכים חיוביים, הנגזרת עולה בצורה תלולה מערכים שליליים ובצורה מתונה לערכים 
-חיוביים, ולכן הפונקציה יורדת בצורה תלולה ואח"כ עולה בצורה מתונה.
+עולה מאפס ל-%
+$\infty$,
+הנגזרת עולה בצורה תלולה בערכים השליליים ובצורה מתונה בערכים 
+החיוביים, ולכן הפונקציה יורדת בצורה תלולה ואח"כ עולה בצורה מתונה.
 
 כאשר 
 $x$
-עולה בערכים שליליים, הנגזרת יורדת בצורה מתונה מערכים חיוביים ובצורה תלולה לערכים שליליים, ולכן הפונקציה עולה בצורה מתונה ואח"כ יורדת בצורה תלולה.
+עולה מ-%
+$-\infty$
+לאפס, הנגזרת יורדת בצורה מתונה בערכים החיוביים ובצורה תלולה בערכים שליליים, ולכן הפונקציה עולה בצורה מתונה ואח"כ יורדת בצורה תלולה.
 
-לפי התרשים הנתון בנקודה 
+לפי התרשים הנתון ל-%
+$f'(x)$,
+בנקודה 
 $x=-1$
-יש נקודה קיצון שהיא מקסימום כי השיפוע יורד. בנקודה 
+יש נקודה קיצון שהיא מקסימום כי השיפוע יורד )הנגזרת השנייה שלילית(. בנקודה 
 $x=1$
-יש נקודת קיצון שהיא מינימום כי השיפוע עולה. לפי המידע הנתון על הפתרונות של
-$f(x)$,
-נקודת הקיצון שהיא המקסימום היא 
+יש נקודת קיצון שהיא מינימום כי השיפוע עולה )הנגזרת השנייה חיובית(. 
+
+לפי הנתון שיש לפונקציה פתרונות יחידים ל-%
+$f(x)=\pm 2$,
+הגרף של פונקציה חייב לגעת בקווים
+$y=\pm 2$
+אבל לא לחותך אותם. לפי ההסברים הקודמים,
 $(-1,-2)$
-ונקודת הקיצון שהיא מינימום היא
-$(1,2)$,
-כי אם יש רק פתרון אחד, גרף הפונצקיה לא יכול לחצות את הקווים
-$y=-2,y=2$.
+היא מינימום ו-%
+$(1,2)$
+היא מינימים, ולכן אנו יודעים שהגרף מעל ל-%
+$y=2$
+ומתחת ל-%
+$y=-2$.
 
 \begin{center}
 \selectlanguage{english}
@@ -1548,16 +1614,13 @@ f'(x)=\frac{a(x^2-1)}{ax^2}=\frac{x^2-1}{x^2}\,.
 \[
 f(x)=\int f'(x)\, dx = \int \left(1-\frac{1}{x^2}\right)dx = x+\frac{1}{x}+c\,.
 \]
-הנגזרת מתאפסת ב-%
-$\pm 1$,
-ולכן נקודות המינימום והמקסימום גם הן ב-%
-$\pm 1$:
-\erh{10pt}
-\begin{equationarray*}{rcl}
-1+\frac{1}{1}+c&=&2\\
--1+\frac{1}{-1}+c&=&-2\,,
-\end{equationarray*}
-ולכן
+נתון ערכי הפונקציה
+$f(\pm 1)=\pm 2$,
+ולכן:
+\[
+1+\frac{1}{1}+c=2
+\]
+ו-%
 $c=0$.
 
 הפונקציה היא
@@ -1601,11 +1664,11 @@ $x=1.3$.
 \[
 g'(x)=\frac{1}{2} f(x)^{-\frac{1}{2}} f'(x)\,.
 \]
-מסעיף א, גם 
+מהטבלה
 $f(x)$
-וגם
+חיובית בתחום ומסעיף א
 $f'(x)$
-חיוביים בתחום, ולכן 
+חיובית בתחום, ולכן 
 $g'(x)$
 חיובי, ו-%
 $g(x)$
@@ -1622,5 +1685,6 @@ f(x)&=&\frac{1}{4}\,.
 $f(x)$
 איננה פונקציה קבועה בכל התחום, לכן לא ייתכן ש-%
 $g'(x) = f'(x)$.
+
 
 \selectlanguage{english}
