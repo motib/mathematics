@@ -1,4 +1,4 @@
-bagrut/he/distributions
+﻿bagrut/he/distributions
 bagrut/he/tikz
 construct/he/tikz
 construct/en/tikz
@@ -17,3 +17,5 @@ tikz-examples.*
 *.synctex.gz
 five-unit.docx
 *.mp4
+*.out
+*.toc
