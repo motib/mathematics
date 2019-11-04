@@ -120,7 +120,9 @@ As the horizontal straightedge is moved down at a constant velocity, the other s
 \begin{tikzpicture}[scale=.7,domain=.03:1.562,samples=100]
 \draw (.1,7.8) coordinate (start) node[above left] {$D$} node[below right,xshift=32pt] {$\theta$} -- (.1,.2) node[below left] {$A$} -- (8,.1) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- cycle;
 \draw[name path=curve,thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
-\path[name path=twenty] (start) -- +(-35:9);
+% To ensure intersection at node D, path should extend to the upper left of D
+\coordinate (twenty-a) at ($(start)+(-35:9)$);
+\path[name path=twenty] ($(start)!-.1!(twenty-a)$) -- (twenty-a);
 \path[name path=sixty] (start) -- +(-50:9);
 \path[name path=xaxis] (.1,.2) -- (8,.1);
 \path[name intersections={of=twenty and curve,by={x1,tri}}];
