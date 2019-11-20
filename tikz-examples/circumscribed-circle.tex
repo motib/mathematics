@@ -1,0 +1,193 @@
+\documentclass[tikz, border = 10pt]{standalone}
+
+%%%<
+\usepackage{verbatim}
+\usetikzlibrary{intersections, through}
+%%%>
+
+\begin{comment}
+:Title: Construction of the circumscribed circle of an arbitrary triangle
+:Author: Moti Ben-Ari
+:Tags: Geometry;Intersections;Through;Straightedge and compass
+:Slug: Circumscribed circle of a triangle
+
+TikZ features: name path, name intersections, circle through
+
+  Construction
+    Given an arbitrary triangle, its circumscribed circle is
+    constructed by straightedge and compass.
+    The three perpendicular bisectors intersect in a single point
+    which is the center of the circumscribed circle.
+
+  Method:
+    1. Construct perpendicular bisectors of two sides. A bisector
+       is constructed by drawing two circles whose centers are
+       the vertices of the side and whose radius
+       is the length of the side.
+
+    2. "circle through" is used to draw the circles through the
+       two vertices of each side and "intersections" is used
+       to identify the intersections of the circles.
+       
+    3. The line joining the intersections of the circles is the
+       perpendicular bisector.
+
+    4. The intersection of two perpendicular bisectors is the
+       center of the circumscribed circle.
+       The circle is constructed using "circle through"
+       one of the vertices.
+       
+    5. To verify that all three bisectors meet at a single point,
+       the third perpendicular bisector is constructed.
+       A circumscribed circle is constructed using the intersection
+       of the third bisector and one of the previous ones.
+       If the intersection is the same the picture will not change.
+
+  Notes:
+    1. An example by Sam Britt first draws the circle and then
+       locates the vertices of the triangle on the circumference.
+       This example follows the method for constructing the
+       circumscribed circle starting from an arbitrary triangle.
+
+    2. Instead of using "circle through", it would be possible to
+       use "veclen" to obtain the raidus.
+       However, Euclid's compass did not use lengths and, in fact,
+       it was defined as a "collapsing" compass that lost its length
+       if lifted from the paper. See: 
+         Godfried Toussaint.
+         A New Look at Euclid's Second Proposition,
+         _The Mathematical Intelligencer_ 15(3), 1993, 12--23.
+       and
+         "Surprising constructions with straightedge and compass"
+         https://www.weizmann.ac.il/sci-tea/benari/mathematics.
+
+    3. The circles used to construct the bisectors are large.
+       A "\clip" command is used to obtain a smaller picture.
+
+    4. The final picture is cluttered and is simplified by not
+       drawing the circles used to obtain the perpendicular
+       bisectors. You can obtain the full picture by removing
+       the comment on the option "draw" as indicated below.
+\end{comment}
+
+\begin{document}
+
+\begin{tikzpicture}
+  
+  % Comment out the clip command to obtain the full picture.
+  \clip (-4, -9) rectangle (16, 11);
+  
+  % Define the coordinates of an arbitrary triangle,
+  %   label the vertices and draw dots at each vertex.
+
+  \coordinate[label = left:$A$]  (A) at ( 0, 0);
+  \coordinate[label = right:$B$] (B) at (10, 0);
+  \coordinate[label = above:$C$] (C) at ( 7 ,8);
+  \fill (A) circle (2pt);
+  \fill (B) circle (2pt);
+  \fill (C) circle (2pt);
+  
+  % Draw the triangle.
+
+  \draw[very thick] (A) -- (B) -- (C) -- cycle;
+  
+  % Construct the perpendicular bisector of side AB.
+  
+  % Assign path names to the circles.
+
+  \node[%draw,   % Uncomment to display the circle
+    red, thick, name path = ABcircle] at (A)
+    [circle through = (B)] {};
+  \node[%draw,   % Uncomment to display the circle
+    red, thick, name path = BAcircle] at (B)
+    [circle through = (A)] {};
+  
+  % Obtain the two intersections of the circles and assign names.
+
+  \path [name intersections = {% % The comment is necessary!
+    of = ABcircle and BAcircle,
+    by = {ab1, ab2}
+    }];
+  
+  % Draw the perpendicular bisector as a line whose end points are
+  %   the two intersections and draw dots are each point.
+
+  \draw[red, thick, name path = ABperp] (ab1) -- (ab2);
+  \fill[red] (ab1) circle (2pt);
+  \fill[red] (ab2) circle (2pt);
+
+  % Construct the perpendicular bisector of side AC.
+  % The method is the same as the method for side AB.
+
+  \node[%draw,   % Uncomment to display the circles
+    teal, thick, name path = ACcircle] at (A)
+    [circle through = (C)] {};
+  \node[%draw,   % Uncomment to display the circles
+    teal, thick, name path = CAcircle] at (C)
+    [circle through = (A)] {};
+  
+  \path [name intersections = {% % The comment is necessary!
+    of = ACcircle and CAcircle,
+    by = {ac1, ac2}
+    }];
+  
+  \draw[teal, thick, name path = ACperp] (ac1) -- (ac2);
+  \fill[teal] (ac1) circle (2pt);
+  \fill[teal] (ac2) circle (2pt);
+  
+  % Find the intersection of two perpendicular bisectors AB and AC.
+  %   The intersection is the center of the circumscribed circle.
+
+  \path [name intersections = {% % The comment is necessary!
+     of = ABperp and ACperp,
+     by = {center1}
+     }];
+  \fill (center1) circle(4pt);
+  
+  % Draw the circumscribed circle.
+
+  \node[draw, very thick] at (center1)
+    [circle through = (A)] {};
+  
+  % Construct the third perpendicular bisector to see if it
+  %   intersects the other bisectors at the same point.
+  
+  % Construct the perpendicular bisector of side BC.
+  % The method is the same as the method for side AB.
+  
+  \node[%draw,   % Uncomment to display the circles
+    blue, thick, name path = BCcircle]
+    at (B) [circle through = (C)] {};
+  \node[%draw,   % Uncomment to display the circles
+    blue, thick, name path = CBcircle]
+    at (C) [circle through = (B)] {};
+  
+  \path [name intersections = {% % The comment is necessary!
+    of = BCcircle and CBcircle,
+    by = {bc1, bc2}
+    }];
+  
+  \draw[blue, thick, name path = BCperp] (bc1) -- (bc2);
+  \fill[blue] (bc1) circle (2pt);
+  \fill[blue] (bc2) circle (2pt);
+  
+  % Locate the intersection of the perpendicular bisectors
+  %   AC and BC. 
+  %   This is also the center of the circumscribed circle.
+
+  \path [name intersections = {% % The comment is necessary!
+    of = BCperp and ACperp,
+    by = {center2}
+    }];
+  \fill (center2) circle(4pt);
+  
+  % Draw another circumscribed circle.
+
+  \node[draw, very thick] at (center2)
+    [circle through = (B)] {};
+  
+  % If you see two distinct circles with distinct centers 
+  %   something is wrong!!!
+  
+\end{tikzpicture}
+\end{document}

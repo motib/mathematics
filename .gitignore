@@ -1,9 +1,9 @@
-﻿bagrut/he/distributions
+﻿ahva/
+bagrut/he/distributions
 bagrut/he/tikz
 construct/he/tikz
 construct/en/tikz
 construct/he/distributions
-geometry/tikz
 tikz-examples.*
 *.bat
 *.zip
@@ -19,3 +19,4 @@ five-unit.docx
 *.mp4
 *.out
 *.toc
+*.sb3
