@@ -1,0 +1,72 @@
+\documentclass[11pt,a4paper,twoside]{report}
+
+\usepackage[utf8x]{inputenc}
+
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{intersections,through,calc}
+\tikzset {>=stealth}
+
+
+\textwidth=155mm
+\textheight=235mm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=-5mm
+\evensidemargin=5mm
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+\addtolength{\jot}{3pt}
+
+\graphicspath{{images/}}
+
+\newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
+
+\newcounter{project}
+
+\newcommand*{\geoproject}[1]{%
+  \refstepcounter{project}%
+  \label{#1}%
+  \hyperref[a.geogebra]{Geogebra Project~\theproject}%
+}
+
+%  Less space above chapter title
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \centering\Large\bfseries \@chapapp\space \thechapter\par
+        \hspace{.3em}
+    \fi
+    \Large \bfseries #1\par\nobreak
+    \vskip 20\p@
+  }}
+\makeatother
+
+%\includeonly{}
+
+\begin{document}
+
+\include{front}
+\include{review}
+\include{pedagogy}
+\include{translated}
+\include{analysis}
+\include{additional}
+\include{projects}
+
+\bibliographystyle{plain}
+\bibliography{trigonometric-functions}
+
+\end{document}
