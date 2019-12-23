@@ -2,19 +2,16 @@
 
 \chapter{Additional Topics}
 
-
-
 \section{The secant and cosecant functions}
 
-The functions secant and cosecant are usually defined on right triangles as the inverses $\sec x = \disfrac{1}{\cos x}$, $\csc x = \disfrac{1}{\sin x}$.
-Can these functions can be defined geometrically?
-In other words, from the construction of the trigonometric functions (Figure~\ref{fig.secant-and-cosecant}), can we find their lengths?
-We claim that $OT=|\sec x|$ and $OC=|\csc x|$. 
+The secant and cosecant are defined on right triangles as $\sec x = \rule[-10pt]{0pt}{28pt}\disfrac{1}{\cos x}$, $\csc x = \rule[-10pt]{0pt}{28pt}\disfrac{1}{\sin x}$.
+Can they be defined geometrically from a construction on the unit circle as we have done for the other trigonometric functions?
+In Figure~\ref{fig.secant-and-cosecant} we claim that $OT=|\sec x|$ and $OC=|\csc x|$. 
 
 \begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}[scale=.75]
-\draw[step=2cm,white!80!black,ultra thin] (-6.05,-6.05) grid (6,6);
+\draw[step=2cm,white!50!black,thin] (-6.05,-6.05) grid (6,6);
 \draw[thin] (-6,0) -- (6,0);
 \draw[thin] (0,-6) -- (0,6);
   \coordinate (A) at (-4,0);
@@ -29,13 +26,14 @@ We claim that $OT=|\sec x|$ and $OC=|\csc x|$.
   \draw[dashed,thick,name path=cotangent] (-6,4) -- (6,4);
   \path [name intersections = {of = circle and side, by = {P}}];
   \draw[thick,blue] (P) -- (P |- O) coordinate (Ps);
-  \path[blue] (P) --  node[left,xshift=-2pt] {$\sin x$}  (Ps);
+  \draw[blue,very thick] (P) -- 
+    node[left,xshift=-2pt] {$\sin x$}  (Ps);
   \draw[very thick,teal] (O) -- node[below] {$\cos x$} (Ps);
   \draw (Ps) rectangle +(8pt,8pt);
   \path [name intersections = {of = side and tangent, by = {T}}];
-  \draw[thick] (B) -- node[right] {$\tan x$} (T);
+  \draw[very thick] (B) -- node[right] {$\tan x$} (T);
   \path [name intersections = {of = side and cotangent, by = {C}}];
-  \draw[thick] (D) -- node[above] {$\cot x$} (C);
+  \draw[very thick] (D) -- node[above] {$\cot x$} (C);
   \draw[thick,red] (B)
     arc[start angle=0, end angle=140, radius=4cm];
   \node[red] at (3.2,3.2) {\textsf{arc}};
@@ -44,9 +42,9 @@ We claim that $OT=|\sec x|$ and $OC=|\csc x|$.
   \coordinate (O1) at ($(O)+(230:-1)$);
   \coordinate (T1) at ($(T)+(230:-1)$);
   \draw[very thick,blue,dotted,<->] (C1) -- 
-    node[above right] {$\csc x$} (O1);
+    node[above right,yshift=-4pt] {$\csc x$} (O1);
   \draw[very thick,teal,dotted,<->] (O1) -- 
-    node[above right] {$\sec x$} (T1);
+    node[above right,xshift=-4pt] {$\sec x$} (T1);
 
   \fill (B) circle (2pt) node[above right] {$B$};
   \fill[blue] (Ps) circle (2pt) node[below left,black] {$E$};
@@ -63,15 +61,17 @@ We claim that $OT=|\sec x|$ and $OC=|\csc x|$.
 \end{center}
 \end{figure}
 
+\vspace*{-3ex}
+
 Here is the proof that $OC=\csc x$:
 \begin{itemize}
-\item Radii of the unit circle: $OP = OD =1$.
-\item By construction: $PE = \sin x$.
-\item $CD \parallel EO$ so the alternate interior angles $\angle DCO, \angle EOC$ are equal.
-\item Therefore, $\triangle PEO \sim \triangle ODC$, so:
+\item $CD \parallel EO$ so by alternate interior angles $\angle DCO=\angle EOC$.
+\item In right triangles, if one pair of acute angles are equal, they are similar $\triangle PEO \sim \triangle ODC$.
+\item Radii of the unit circle $OP = OD =1$.
+\item By construction $PE = \sin x$.
+\item Therefore:
 \[
-\frac{OC}{OP} = \frac{OD}{PE}=\left|\frac{1}{\sin x}\right|\,,\;\;\;\;\;
-OC = 1\cdot\left|\disfrac{1}{\sin x}\right|=|\csc x|\,.
+\frac{OC}{OP} = \frac{OD}{PE}\,, \quad\quad OC = OP\cdot\frac{OD}{PE}=1\cdot\left|\disfrac{1}{\sin x}\right|=|\csc x|\,.
 \]
 \end{itemize}
 A similar proof shows that $\triangle PEO \sim \triangle TBO$, so $OT = \left|\disfrac{1}{\cos x}\right|=|\sec x|$.
@@ -81,7 +81,7 @@ A similar proof shows that $\triangle PEO \sim \triangle TBO$, so $OT = \left|\d
 \section{From functions to triangles}
 
 Even when beginning the study of trigonometry with the functional approach, at some point the transition to the functions on right triangles must be done.
-This is very easy since the the measure of an arc is the same as the measure (in radians) of the central angle it subtends.
+This is very easy since the measure of an arc is the same as the measure (in radians) of the central angle it subtends.
 
 \begin{wrapfigure}[14]{r}{.5\textwidth}
 \begin{center}
@@ -92,39 +92,40 @@ This is very easy since the the measure of an arc is the same as the measure (in
   \coordinate[label=below left:$A$] (A) at (-4,0);
   \coordinate[label=below right:$B$] (B) at (4,0);
   \coordinate (O) at (0,0);
-  \fill (A) circle (1.5pt);
-  \fill (B) circle (1.5pt);
-  \fill[purple] (O) circle (1.5pt) 
-    node[below left] {$O$}
-    node[above right,xshift=16pt] {$\alpha$};
   \node[draw, name path = circle] at (O)
     [circle through = (A)] {};
   \coordinate (D) at (30:9);
-  \draw[thick,violet,name path=side] (O) -- (D);
-  \fill[purple] (D) circle (1.5pt) node[above] {$D$};;
+  \draw[very thick,violet,name path=side] (O) -- (D);
   \path [name intersections = {of = circle and side, by = {P}}];
-  \fill[red] (P) circle (1pt) node[black,above,xshift=2pt,yshift=2pt] {$P$};
-  \draw[thick,teal] (P) -- (P |- O) coordinate (C);
-  \fill (C) circle (1.5pt) node[below] {$C$}; 
-  \draw[rotate=90] (C) rectangle +(8pt,8pt);
-  \draw[thick,violet] (D) -- (D |-  O) coordinate (E) -- (O);
-  \fill[purple] (E) circle (1.5pt) node[below] {$E$}; 
-  \draw[rotate=90] (E) rectangle +(8pt,8pt);
-  \draw[thick,red] (B) arc[start angle=0, end angle=30, radius=4cm];
+  \draw[very thick,teal] (P) -- (P |- O) coordinate (C);
+  \draw[rotate=90] (C) rectangle +(12pt,12pt);
+  \draw[very thick,violet] (D) -- (D |-  O) coordinate (E) -- (O);
+  \draw[rotate=90] (E) rectangle +(12pt,12pt);
+  \draw[very thick,red] (B)
+     arc[start angle=0, end angle=30, radius=4cm];
   \node[red] at (4.2,1.2) {$\alpha$};
+  \fill[red] (P) circle (2pt)
+    node[above,xshift=2pt,yshift=2pt] {$P$};
+  \fill[purple] (E) circle (2pt) node[below] {$E$}; 
+  \fill[teal] (C) circle (2pt) node[below] {$C$}; 
+  \fill[purple] (D) circle (2pt) node[above] {$D$};;
+  \fill (B) circle (2pt);
+  \fill[purple] (O) circle (2pt) 
+    node[below left] {$O$}
+    node[above right,xshift=16pt] {$\alpha$};
 \end{tikzpicture}
 \caption{From functions to right triangles}\label{fig.functions-to-triangles}
 \end{center}
 \end{wrapfigure}
-Any right triangle can be embedded in a coordinate system such that one side rests of the $x$-axis with the adjacent acute angle at the origin, as shown by $\triangle DEO$ in Figure~\ref{fig.functions-to-triangles}.
+Any right triangle can be embedded in a coordinate system such that one side rests of the $x$-axis with the adjacent acute angle at the origin: $\triangle DEO$ in Figure~\ref{fig.functions-to-triangles}.
 (Recall that in a right triangle two angles are acute.)
 Now construct a unit circle centered at the origin and drop a perpendicular from point $P$, the intersection of the circle and the hypotenuse $OD$, to side $OE$.
 
-Since $\angle DEO=\angle PCO=\pi$ and $\angle DOE=\angle POC=\alpha$,  $\triangle DEO\sim \triangle PCO$, so:
+For the right triangles, $\triangle DEO\sim \triangle PCO$, since $\angle DOE=\angle POC=\alpha$.
 \[
 \frac{PC}{OP}=\frac{DE}{OD}\,.
 \]
-$OP = 1$, the radius of the unit circle and$PC = \sin \alpha$ by definition, so $\rule[-10pt]{0pt}{28pt}\disfrac{DE}{OD}=\sin\alpha$.
+$OP = 1$, the radius of the unit circle, and $PC = \sin \alpha$ by definition, so $\rule[-10pt]{0pt}{28pt}\disfrac{DE}{OD}=\sin\alpha$.
 Therefore, the sine of $\alpha$ \emph{in the triangle} $\triangle DEO$ is equal to the opposite side divided by the hypotenuse, as expected.
 
 Similar arguments show that $\disfrac{OE}{OD}=\cos\alpha$ and $\disfrac{DE}{OE}=\tan \alpha$.

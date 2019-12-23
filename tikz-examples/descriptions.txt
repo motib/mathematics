@@ -1,0 +1,35 @@
+
+Construction of the circumscribed circle of an arbitrary triangle
+
+Moti Ben-Ari
+
+Given an arbitrary triangle, its circumscribed circle can be constructed using a straightedge and compass. The three perpendicular bisectors of its sides intersect in a single point which is the center of the circumscribed circle. The example uses the TikZ libraries "intersections" and "through" to closely imitate the geometric construction, starting from an arbitrary triangle.
+
+
+Intersection of the medians of an arbitrary triangle
+
+Moti Ben-Ari
+
+Given an arbitrary triangle, its three medians intersect in a single point. The intersection divides each median in the ratio 2:1. The construction uses "partway modifiers" to locate the midpoint of each side of the triangle and then the library "intersections". The lengths are computed and displayed using \pgfmathparse.
+
+
+Ramanujan's construction of 355/113, an approximation to pi
+
+Moti Ben-Ari
+
+With a straightedge and compass it is possible to construct any real number that can be obtained from the integers using the four arithmetic operators +, -, *, / and square roots, and only these numbers can be constructed. Therefore, the value of pi cannot be constructed because it is a transcendental number.
+
+355/113 = 3.14159292 is an excellent approximation which differs from pi only in the seventh decimal place. A naive construction of 355/113 would take hundreds of steps. Ramanujan found a clever construction, published in The Journal of the Indian Mathematical Society, 1913, p. 138.  https://en.wikisource.org/wiki/Squaring_the_circle.
+
+This example follows Ramanujan's construction using the TikZ libraries "intersections", "through", "calc". Each line segment is labeled with its length (calculated offline).
+
+
+Ptolemy's theorem on quadrilaterals circumscribed by a circle
+
+Moti Ben-Ari
+
+Theorem (Ptolemy): Let Q a quadrilateral circumscribed by a circle,  let its two pairs of opposite sides be (a, b) and (c, d), and let its diagnonals be (e, f). Then ef = ab + cd.
+
+The Mohr-Mascheroni Theorem shows that any construction that can be done with straightedge and compass can be done with a compass only! One proof of this theorem uses Ptolemy's theorem.
+
+TikZ features include name path, intersection, circle through, distance modifier, let...in, \pgfmathparse.
