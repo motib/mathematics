@@ -2,20 +2,19 @@
 
 \chapter{Overview and Previous Work}
 
-We will now explore the difficulties encountered when teaching and learning trigonometry, as described in the research literature.
-
 \section{The triangular approach}
 
-The first difficulty relates to the definition of trigonometric functions as ratios between the sides in a right-triangle (which we call the \textit{triangular approach}), see \cite{thompson}.
-When you calculate the sine of an angle as the ratio of the lengths of the opposite side and the hypotenuse, there is a conceptual gap between the calculation operation and the fact that the function argument is an angle.
-In general learning materials do not clarify the difference between the units of the lengths (say centimeters) and the units of the angles (say radians), and thus the transition from the domain of angles to the range of ratios of lengths.
-In other words, it not clear why the function takes an angle, when the student is required to compute ratios of lengths.
+The \textit{triangular approach} (\cite{thompson}) defines the trigonometric functions as ratios between the lengths of the sides in a right triangle.
+When you calculate the sine of an \emph{angle} as the ratio of the \emph{lengths} of the opposite side and the hypotenuse, there is a conceptual gap between the domain of the functions: angles measured in units such as radians, and the range of the functions which are are dimensionless real numbers obtained as ratios of lengths measured in units such as centimeters. This is usually not the case for functions studied in the calculus where the domain, the range and the calcutions are (dimensionless) real numbers.
+Learning materials may not clarify the three different characteristics of the trigonometric functions.
 
-\begin{wrapfigure}{r}{.5\textwidth}
+Furthermore, students must learn the fundamental property of trigonometric functions that in every right triangle with the same acute angles, the  relations between sides remain constant. This is not easy but it is essential if the students are to be able to tell a coherent story about the meaning of the trigonometric functions defined on the domain of angles.
+
+\begin{wrapfigure}[17]{r}{.45\textwidth}
 \begin{center}
-\vspace{-3em}
+\vspace{-4ex}
 %\includegraphics[width=.45\textwidth,keepaspectratio]{figure1}
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=.9]
   \coordinate[label = left:$A$]  (A) at (-3,-1);
   \coordinate[label = right:$B$] (B) at (3,1);
   \coordinate[label = above:$O$] (O) at (0,0);
@@ -32,36 +31,34 @@ In other words, it not clear why the function takes an angle, when the student i
   \draw[red] ($(A)+(15mm,14pt)$) arc[start angle=24,end angle=48,radius=15mm];
   \node at ($(A)+(30pt,18pt)$) {$\alpha$};
 \end{tikzpicture}
-\caption{Covariance of the angles and sides in a right triangle. As you move point $C$ around the circumference, both the acute angles and the sides change.}\label{fig.covariance}
+\caption{Covariance of the angles and the sides in a right triangle. As you move point $C$, the acute angles and the lengths of the sides change.}\label{fig.covariance}
 \end{center}
 \end{wrapfigure}
 
-Looking at angle as a continuous variable and the insight---that in every right-angled triangle with a given angle, the corresponding relations between sides of a triangle remain constant---will enable the student to tell a coherent story about the meaning of the trigonometric functions defined by angles at right angles. However, although the steps of this process are necessary, they can be complex.
+Another difficulty with the triangular approach is that the functions are defined on an open domain $0^\circ<\alpha<90^\circ$.
+It can difficult to understand the behavior of the sine and cosine functions in this context, for example: When are they ascending and when are they descending? Dynamic geometric constructions are required.
 
+Consider a circle: all triangles with one vertex on the circumference whose angle subtends the diameter are right triangles (Figure~\ref{fig.covariance}, \geoproject{g.covariance}). As the point $C$ is moved along the circumference, the hypotenuse (the diameter of the circle) is unchanged, while the lengths of the sides vary so that trigonometric functions of the two acute angles remain correct.
 
-Other difficulties that can arise in the triangular approach are caused by function being defined on an open domain: the angle, the independent variable, can take on values $0^\circ<\alpha<90^\circ$.
-It is difficult to understand the behavior of the sine and cosine functions, for example, when they are ascending and when they are descending; dynamic geometric constructions are required.
-To illustrate, look at a circle: all triangles with one vertex on the circumference whose angle subtends the diameter are right triangles (Figure~\ref{fig.covariance}). As the point $C$ is moved along the circumference, the hypotenuse (the diameter of the circle) is unchanged, while the lengths of the sides vary so that trigonometric functions of the two acute angles remain correct (see \geoproject{g.covariance}).
+Another potential difficulty with the triangular approach results from the default measurement of angles in units of degrees. We will expand on this  difficulty below.
 
-Another difficulty that can occur when teaching trigonometry initially with the triangular approach results from the default measurement of angles in units of degrees. We will expand on this  difficulty below.
-
-Regardless of these potential difficulties we do not wish to rule out beginning with the triangular approach.
-To the contrary, this approach should be part of every teacher's repertoire, but these difficulties should be kept in order to ensure that the students are presented with a coherent story.
+Despite these potential difficulties we do not rule out beginning with the triangular approach.
+To the contrary, this approach should be part of every teacher's repertoire, but these difficulties should be kept mind, so that students are presented with a coherent story.
 
 \section{The functional approach}
 
-Trigonometric functions can be defined on the unit circle (which we call the functional approach) by extending the concept of angle to rotations around the circumference.
-A rotation can be measured in degrees; where its value is positive  if the rotation is counterclockwise, and negative if the rotation is clockwise.
-The independent variable is now the value of a rotation obtained by the motion of a ray. The rotation is the number of degrees between a the ray and the ray that defines the positive $x$-axis.
-The values of the trigonometric functions sine and cosine are determined by the projections of the intersection point of the ray and the unit circle. The functions tangent and cotangent are determined by the intersections of the ray with tangents to the circle (Figure~\ref{fig.trig-functions}).
+In the \emph{functional approach}, trigonometric functions are defined on the unit circle where the independent variable is the amount of rotation around the circumference.
+A rotation can be measured in degrees or radians (positive if the rotation is counterclockwise, negative if the rotation is clockwise).
+The value of a rotation which is the number of degrees (or radians) between a ray from the origin and the ray that defines the positive $x$-axis.
+The values of the functions cosine and sine are the projections of the intersection point of the ray and the unit circle on the $x$- and $y$-axes. The functions tangent and cotangent are determined by the intersections of the ray with tangents to the circle (Figure~\ref{fig.trig-functions}, \geoproject{g.definition-of-trig-functions}). 
 
-\begin{wrapfigure}[17]{i}{.6\textwidth}
+\begin{wrapfigure}[20]{i}{.55\textwidth}
 %\begin{figure}[htbp]
 \begin{center}
-\vspace{-2em}
+\vspace{-2ex}
 %\includegraphics[width=.45\textwidth,keepaspectratio]{figure2}
-\begin{tikzpicture}[scale=.75]
-\draw[step=1cm,white!80!black,ultra thin] (-6,-6) grid (6,6);
+\begin{tikzpicture}[scale=.65]
+\draw[step=2cm,white!50!black,thin] (-6.05,-6.05) grid (6,6);
 \draw[thin] (-6,0) -- (6,0);
 \draw[thin] (0,-6) -- (0,6);
   \coordinate[label = above left:$A$]  (A) at (-4,0);
@@ -73,32 +70,31 @@ The values of the trigonometric functions sine and cosine are determined by the 
   \draw[red,very thick,name path=side,->] (O) -- (53:7.5);
   \draw[name path=tangent] (4,-6) -- (4,6);
   \path [name intersections = {of = circle and side, by = {C}}];
-  \draw[very thick,teal] (C) -- (C |- O) coordinate (CS);
+  \draw[very thick] (C) -- (C |- O) coordinate (CS);
   \draw[rotate=90] (CS) rectangle +(8pt,8pt);
   \path [name intersections = {of = side and tangent, by = {T}}];
-  \draw[red,thick] (O) -- (T);
+  \draw[red,very thick] (O) -- (T);
   \draw[very thick,->,red] (O) -- (6,0);
   \draw[rotate=90] (B) rectangle +(8pt,8pt);
   \draw[name path=cotangent] (-6,4) -- (6,4);
   \draw[red] ($(O)+(12mm,0pt)$) arc[start angle=0,end angle=53,radius=12mm];
   \node at ($(O)+(20pt,10pt)$) {$\alpha$};
   \path [name intersections = {of = side and cotangent, by = {CT}}];
-  \draw[very thick,teal] (O) -- (CS);
-  \draw[very thick,purple] (B) -- (T);
-  \draw[very thick,orange] (CT) -- (0,4);
+  \draw[very thick] (B) -- (T);
+  \draw[very thick] (CT) -- (0,4);
   \fill (A) circle (2pt) node[below left] {$(-1,0)$};
   \fill (B) circle (2pt) node[below right] {$(1,0)$};
   \fill[red] (O) circle (2pt);
   \fill (CT) circle (2pt) node[above left] {$(\cot \alpha,1)$};
   \fill (CS) circle (2pt);
   \fill (CT) circle (2pt) node[above left] {$(\cot \alpha,1)$};
-  \fill (C) circle (2pt) node[below left,xshift=-6pt,yshift=4pt]
-    {$(\cos \alpha,\sin \alpha)$};
+  \fill[blue] (C) circle (3pt) node[black,right,xshift=2pt,yshift=2pt] {$P$}
+    node[black,below left,xshift=-6pt,yshift=4pt] {$(\cos \alpha,\sin \alpha)$};
   \fill (T) circle (2pt) node[right]     {$(1,\tan \alpha)$};
   \fill (0,4) circle (2pt) node[above left] {$(0,1)$};
   \fill (0,-4) circle (2pt) node[below left] {$(0,-1)$};
 \end{tikzpicture}
-\caption{The defition of trigonometric functions on the unit circle}\label{fig.trig-functions}
+\caption{The definition of the trigonometric functions on the unit circle. Move point $P$ to explore their values.}\label{fig.trig-functions}
 \end{center}
 \end{wrapfigure}
 %\end{figure}
@@ -107,17 +103,12 @@ The main advantage of beginning the teaching of trigonometry with the functional
 From here it is easy to construct the graphical representation of the four functions.
 Once the students are familiar with the functions defined on the unit circle, it is possible to restrict the definition and discuss their use for calculations of geometric constructs in general and right triangles in particular.
 
-\newpage
-
-The disadvantage of the functional approach is that if the independent variable of the functions is measured in degrees, it difficult to compute their derivatives.
-To compute derivatives the independent variable must be measured in radians.
-Teachers are familiar with the transition from to defining the trigonometric functions on triangles in degrees to defining them on radians of the unit circle.
-It seems that students solve tasks and exercises using variables measured in degrees and only when the problem concerns the subject of analysis (derivatives) do they convert the final answers to radians.
-This conversion is performed automatically with much thought.
-This does not mean that the triangular approach must be jettisoned, it only means that these issues must  to be taken into account.
+A disadvantage of the functional approach is that if the independent variable of the functions is measured in degrees, it difficult to compute their derivatives, since the independent variable must be measured in radians.
+Teachers are familiar with the transition from defining the trigonometric functions on triangles in degrees to defining them on the unit circle in radians.
+It seems that students solve tasks and exercises using variables measured in degrees, and only when the problem concerns analysis (derivatives), do they convert the final answers to radians.
+This conversion is performed automatically without much thought.
+This does not mean that the triangular approach should not be used; it only means that these issues must  to be taken into account.
 
 This document is a tutorial on the functional approach, defining the trigonometric functions on the unit circle.
-The initial definition of the functions uses an independent variable that is equivalent to a variable measured in radians.
-The justifying for choosing the functional approach is not it is necessarily optimal pedagogically, but that it should be in the repertoire of every teacher.
+The justification for choosing the functional approach is not necessarily that it is optimal pedagogically, but that it should be in the repertoire of every teacher.
 Then the teacher can judge which approach is suited to the needs of her students.
-

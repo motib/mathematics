@@ -5,22 +5,19 @@
 
 Students learning functions also learn about (affine) transformations and their graphical representation.
 When they study trigonometric functions, they should be able to plot the graphs $f(x + a)$, $f(ax)$, $f(x)+a$, $af(x)$ for any function $f(x)$.
-One can ask: what is the added value of studying the graphical representation of transformations on trigonometric functions?
-Here are some reasons:
+Here are some reasons why they should study the graphical representation of transformations of trigonometric functions:
 \begin{itemize}
 \item Strengthening their understanding of the trigonometric identities, in particular, their periodic properties.
 \item Studying the graphs of the sine and cosine functions as horizontal transformations of each other.
-item Identifying the parameters of transformations that can change properties of functions, such as boundedness, period, extrema and zeros.
+\item Identifying the parameters of transformations that can change properties of functions, such as boundedness, period, extrema and zeros.
 \end{itemize}
 
-\geoproject{g.transformations} can be used to explore transformations of the unit circle.
-
 %\begin{figure}[hbt]
-\begin{wrapfigure}[20]{r}{.5\textwidth}
+\begin{wrapfigure}[19]{r}{.5\textwidth}
 \begin{center}
 \vspace{-4ex}
 \begin{tikzpicture}[scale=.6]
-\draw[step=20mm,white!80!black,ultra thin] (-6.05,-6.05) grid (6,6);
+\draw[step=20mm,white!50!black,thin] (-6.05,-6.05) grid (6,6);
 \draw (-6,0) -- (6,0);
 \draw (0,-6) -- (0,6);
 \foreach \x in {-3,-2,-1.,0,1,2,3}
@@ -46,14 +43,14 @@ item Identifying the parameters of transformations that can change properties of
 %\end{figure}
 \end{wrapfigure}
 
-The project displays two windows. The left window  (Figure~\ref{fig.transformations-of-the-unit-circle}) includes sliders (not shown in the Figure) that enable the user to translate the center of the circle $O$ (here to $(1,1)$), expand or contract the radius (here $2$) and to choose a point $B$ to start the winding (here $(1,3)$).
+Figure~\ref{fig.transformations-of-the-unit-circle} (\geoproject{g.transformations}) shows a circle centered at $(1,1)$) with a radius of $2$. $B$, the starting point of the arc, is $(1,3)$.\footnote{The Geogebra project includes sliders not shown in the Figure that enable the user to set the locations of $O$ and $B$ and the radius.}
 
-The right window (Figure~\ref{fig.trace-of-a-transformation-of-the-unit-circle}) shows a trace of the value of a function, as the point $X$ is moved along the $x$-axis. You can select either $F_x$ to show the $x$ value of $P$ or $F_y$ to show the $y$ value of $P$.
+Figure~\ref{fig.trace-of-a-transformation-of-the-unit-circle} shows a trace of the value of the function as the point $X$ is moved along the $x$-axis.\footnote{You can select either $F_x$ to show the $x$ value of $P$ or $F_y$ to show the $y$ value of $P$. To erase the trace and start over, move the right window with the mouse. To reset the parameters of the circle, click on the curved arrow symbol at the top right of the left window.}
 
 \begin{figure}[hbt]
 \begin{center}
-\begin{tikzpicture}
-\draw[xstep=1.57cm,ystep=1cm,white!80!black,ultra thin] (-7.9,-4) grid (7.85,4);
+\begin{tikzpicture}[scale=.8]
+\draw[xstep=1.57cm,ystep=1cm,white!50!black,thin] (-7.9,-4) grid (7.85,4);
 \draw (-7.85,0) -- (7.85,0);
 \draw (0,-4) -- (0,4);
 \foreach \x/\tick in {-6.28/{-2\pi},-4.71/{-3\pi/2},-3.14/{-\pi},-1.57/{-\pi/2},0/0,1.57/{\pi/2},3.14/{\pi},4.4/{3\pi/2},6.28/{2\pi}}
@@ -80,18 +77,18 @@ The right window (Figure~\ref{fig.trace-of-a-transformation-of-the-unit-circle})
 
 We recommend beginning the exploration with the unit circle centered at the origin with starting point $B$ at $(1,0)$ and then changing one parameter at a time.
 For example, changing either the $x$ or $y$ value of the center of the circle (but not both) and asking students to predict the change in the graph of the function.
-Next, return the center to the origin, changing the starting point $B$.
+Next, return the center to the origin and change the starting point $B$.
 
-Assuming that the students have experience in transformations of functions, you can ask them to predict the algebraic expression corresponding to the transformed function.
+If the students are familiar with transformations of functions, you can ask them to predict the algebraic expression corresponding to the transformed function.
 For example, if we only change the $x$ value of the center of the circle to $1$,  the function $F_y$ remains $\sin x$, since the $y$ value of a point $P$ depends only on the length of the arc from $B$ and not on the center.
-Similarly, if $B$ is moved to $(0,1)$ the function $F_x$ becomes $\cos\left(x + \disfrac{\pi}{2}\right)$.\footnote{To erase the trace and start over, move the right window with the mouse. To reset the parameters of the circle, click on the curved arrow symbol at the top right of the left window.}
+Similarly, if $B$ is moved to $(0,1)$ the function $F_x$ becomes $\cos\left(x + \disfrac{\pi}{2}\right)$.
 
-Changing the radius should be the last transformation explored, because it changes both the amplitude and the cycle of the resulting function.
-For changes shown in Figure~\ref{fig.transformations-of-the-unit-circle}, the function in Figure~\ref{fig.trace-of-a-transformation-of-the-unit-circle} is:
+Changing the radius should be the last transformation explored, because it changes both the amplitude and the period of the resulting function.
+For the changes shown in Figure~\ref{fig.transformations-of-the-unit-circle}, the function in Figure~\ref{fig.trace-of-a-transformation-of-the-unit-circle} is:
 \[
 3\cos\left(\frac{(x-1)+\pi/2}{3}\right)+1\,.
 \]
 
-An interesting research question is to ask if it possible to get all possible translations, expansions and contractions of the trigonometric functions only by changing these parameters.
+An interesting research question that can be posed to the students is to ask if it possible to obtain all possible translations, expansions and contractions of the trigonometric functions only by changing these parameters.
 
 
