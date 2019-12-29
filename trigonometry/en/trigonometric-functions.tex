@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,twoside]{report}
+\documentclass[11pt,a4paper]{report}
 
 \usepackage[utf8x]{inputenc}
 
@@ -10,6 +10,7 @@
 \usepackage{bm}
 \usepackage{wrapfig}
 \usepackage{float}
+\usepackage{tocloft}
 \usepackage{hyperref}
 
 \usepackage{tikz}
@@ -64,7 +65,9 @@
 \include{translated}
 \include{analysis}
 \include{additional}
+\appendix
 \include{projects}
+\include{simple}
 
 \bibliographystyle{plain}
 \bibliography{trigonometric-functions}

@@ -1,0 +1,156 @@
+% !TeX root = trigonometric-functions.tex
+
+\chapter{``Simple'' Proofs}\label{a.simple}
+
+Chapter~\ref{ch.analysis} presents a relatively complicated geometric proof that $\sin' x=\cos x$ with a relatively simple algebraic proof. However, the comparison is misleading, because the algebraic proof uses the formula for $\sin(x+h)$ which has a relatively complicated geometric proof. The formula for $\sin(x+h)$ is extremely useful as a ``lemma,'' here enabling the simple algebraic proof. This demonstrates the cumulative nature of mathematics, where proofs depend upon the corpus of existing theorems.
+
+Here we present an adaptation of the proof of the formula for $\sin(x+h)$ that is based on Figure~\ref{fig.geometric-computation} used in the geometric proof of $\sin' x=\cos x$. This shows that the proof of this formula is of similar complexity to that of the geometric proof that $\sin' x=\cos x$.
+
+Figure~\ref{fig.simple} is the same as Figure~\ref{fig.geometric-computation} in the sense that no points or lines have been removed or renamed. We have added three line segments. Thick lines are used for the new segments, as well as for several of the existing ones.
+
+Add the following three lines and points ($X,Y,Z$) to the construction:
+\begin{itemize}
+\item A perpendicular $P_{x+h}X$ from $P_{x+h}$ to $OP_x$. The blue right triangle $\triangle P_{x+h}XO$ is created.
+\item A perpendicular $XY$ from $X$ to $P_{x+h}H$. The red right triangle $\triangle P_{x+h}YX$ is created.
+\item A perpendicular $XZ$ from $X$ to $OB$. The olive right triangle $\triangle XZO$ is created.
+\end{itemize}
+The blue triangle is slightly offset so that the reader can see all three triangles.
+
+$\angle YXO=\angle XOB=x$ by alternate interior angles and $\angle YP_{x+h}X=\angle YXO=x$ by a simple computation. The construction is within the unit circle so $OP_{x+h}=1$.
+
+In the blue triangle $\triangle P_{x+h}XO$, $XP_{x+h}=\sin h, OX=\cos h$.
+
+In the red triangle $\triangle P_{x+h}YX$:
+\begin{eqnarray*}
+\cos x  &=& \frac{YP_{x+h}}{XP_{x+h}}
+              = \frac{YP_{x+h}}{\sin h}\\
+YP_{x+h}&=& \cos x\sin h\,.
+\end{eqnarray*}
+In the olive triangle $\triangle XZO$:
+\begin{eqnarray*}
+\sin x &=& \frac{ZX}{OX}
+             = \frac{ZX}{\cos h}\\
+ZX     &=& \sin x\cos h\,.
+\end{eqnarray*}
+$XYHZ$ is a rectangle so $HY=ZX=\sin x \cos y$. Then:
+\begin{eqnarray*}
+\sin(x+h) &=& \frac{HP_{x+h}}{OP_{x+h}}
+                = \frac{HP_{x+h}}{1}
+                = HY+YP_{x+h}\\
+          &=& \sin x \cos h+\cos x\sin h\,.
+\end{eqnarray*}
+
+\newpage
+\begin{center}
+\textbf{\large Print the Figure in color!}
+\end{center}
+
+\bigskip
+\bigskip
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[scale=1]
+% Coordinate axes, first quadrant
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,10);
+\coordinate (B) at (10,0);
+\draw[name path=axes] (B) -- (O) -- (A);
+
+% Arc x+h from 0 to 90
+\draw[name path=arc] (10,0)
+  arc[start angle=0, end angle=90, radius=10]
+  node[very near start,right] {$x$}
+  node[midway,right,yshift=4pt] {$h$};
+
+% Ray from origin intersects arc at P_x
+\path[name path=px] (O) -- (30:11);
+\path [name intersections={of=arc and px,by={Px}}];
+
+% Drop perpendicular from P_x to D
+\draw[name path=pxd] (Px) -- (Px |- O);
+\path[name intersections={of=pxd and axes,by={D}}];
+
+% Ray from origin intersects arc at P_{x+h}
+\path[name path=pxh] (O) -- (70:11);
+\path [name intersections={of=arc and pxh,by={Pxh}}];
+
+% Drop perpendicular from P_{x+h} to H
+\draw[name path=pxh] (Pxh) -- (Pxh |- O);
+\path [name intersections={of=pxh and axes,by={H}}];
+
+% Perpendicular from P_x to P_{x+h}H
+\draw[dashed,name path=pxpxh] (Px) -| (Pxh);
+\path [name intersections={of=pxh and pxpxh,by={G}}];
+
+% Right angle marks
+\draw (D) rectangle +(10pt,10pt);
+\draw[thick] (H) rectangle +(10pt,10pt);
+
+% Ray O to P_x, chord P_x to P_{x+h}
+\draw[dotted] (O) -- (Px);
+\draw[dashed] (Pxh) -- (Px);
+
+% New line segments for proving formula for sin(x+h)
+
+% Drop perpendicular P_{x+h}X  from P_{x+h} to OP_x
+%   and draw blue triangle
+\coordinate (X) at ($(O)!(Pxh)!(Px)$);
+\draw[ultra thick,blue]
+  ($(X)+(2mm,-.5mm)$) -- 
+    node[below right,xshift=6pt,yshift=8pt] {$\bm{\cos h}$} 
+  ($(O)+(2mm,-.5mm)$) --
+    node[above left] {$\bm{1}$}
+  ($(Pxh)+(2mm,-.5mm)$) --
+   node[right] {$\bm{\sin h}$} cycle;
+\draw[thick,blue,rotate=119] ($(X)+(-1.2mm,-1.1mm)$) rectangle +(10pt,10pt);
+
+% Drop perpendicular XY from X to P_{x+h}H
+%   and draw blue triangle
+\draw[ultra thick,red] (Pxh) -- 
+   (X) --
+      ($(H)!(X)!(Pxh)$) coordinate (Y) 
+       -- 
+        node[left,red,xshift=3pt,yshift=-13pt]
+        {$\bm{\cos x\;\sin h}$} 
+      (Pxh);
+\draw[thick,red] (Y) rectangle +(10pt,10pt);
+
+% Drop perpendicular from XZ from X to OB 
+\draw[ultra thick,olive] (X) -- 
+  node[right,yshift=10pt] {$\bm{\sin x \cos h}$} 
+    ($(O)!(X)!(B)$) coordinate (Z) --
+  (O) -- (X);
+\draw[rotate=90,thick,olive] (Z) rectangle +(10pt,10pt);
+
+% Label left side of rectangle
+\draw[ultra thick] (H) -- 
+  node[left,yshift=10pt] {$\bm{\sin x \cos h}$} (Y);
+
+% Draw intersections of lines
+\fill[olive] (O) circle (2pt)
+  node[black,below left] {$O$}
+  node[black,right,xshift=24pt,yshift=6pt] {$\bm{x}$}
+  node[black,above right,xshift=14pt,yshift=14pt] {$\bm{h}$};
+\fill (A) circle (1pt) node[left] {$A$};
+\fill (B) circle (1pt) node[below] {$B$};
+\fill (Px) circle (1pt) node[above right] {$P_x$};
+\fill[red] (Pxh) circle (2pt)
+  node[black,above right] {$P_{x+h}$}
+  node[below right,black,yshift=-18pt] {$\bm{x}$};
+\fill (D) circle (1pt) node[below] {$D$};
+\fill (H) circle (2pt) node[below] {$H$};
+\fill (G) circle (1pt) node[left] {$G$};
+\fill[olive] (Z) circle(2pt) node[below,black] {$Z$};
+\fill[red] (Y) circle(2pt) node[left,black] {$Y$};
+\fill[red] (X) circle(2pt);
+\fill[blue] ($(O)+(2mm,-.5mm)$) circle(2pt);
+\fill[blue] ($(X)+(2mm,-.5mm)$) circle(2pt)
+  node[black,right] {$X$}
+  node[below left,xshift=-25pt,yshift=0pt] {$\bm{x}$};
+\fill[blue] ($(Pxh)+(2mm,-.5mm)$) circle(2pt);
+\end{tikzpicture}
+\end{center}
+\caption{Proving the formula for $\sin(x+h)$}\label{fig.simple}
+\end{figure}
+
