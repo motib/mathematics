@@ -886,16 +886,9 @@ $180^\circ$".
 
 בתרשים להלן הוספתי את הנתון 
 $BE=EF$.
-ראיתי שאפשר למצוא פתרון שמשתמש במשפט
-$86$
-"במשולש ישר-זווית התיכון ליתר שווה למחצית היתר" כדי להוכיח ש-%
-$\angle BFC=90^\circ$.
-הוכחה זו בעייתית כי משפט
-$86$
-לא מנוסח כ-"אם ורק אם". לא קשה להוכיח את הכיוון ההפוך כי כל הנקודות הנמצאות במרחק שווה מנקודה 
-$E$
-נמצאות על מעגל שמרכזו 
-$E$.
+אפשר למצוא פתרון שמשתמש במשפט
+$87$
+"משולש בו התיכון שווה למחצית הצלע אותה הוא חוצה הוא משולש ישר זווית".
 
 \np
 
@@ -1155,7 +1148,7 @@ $\triangle ABE\cong DFE$
 $\triangle BOE$
 שהוא שווה-שוקיים כי 
 $BO=OC=r$.
-בסעיף א הוכחנו ש-E%
+בסעיף א הוכחנו ש-%
 $\angle BOE=2\alpha$,
 ולכן
 $\angle BEO = \angle OBE = 90-\alpha$.
@@ -1164,7 +1157,7 @@ $90$,
 $\angle AEB=\alpha$
 ו-%
 $\angle DEF=\alpha$.
-$AE=ED$
+$BE=EF$
 בגלל שהם נשענים על זוויות היקפיות שוות
 $\angle BCE=\angle ECF=\alpha$,
 ולכן
@@ -1882,8 +1875,8 @@ $CD=EN$.
 \fill (D) circle(1.5pt);
 \fill (E) circle(1.5pt);
 \tkzCircumCenter(C,D,E)\tkzGetPoint{O}
-\tkzDrawCircle[thick,name path=circ](O,C)
-\path [name intersections={of=db and ce,by={F}}];
+%\tkzDrawCircle[thick,name path=circ](O,C)
+\node[draw,thick,circle through=(C),name path=circ] (circle) at (O) {};
 \path [name intersections={of=circ and db,by={M}}];
 \fill (M) node[left,xshift=-4pt] {$M$} circle(1.5pt);
 \path[name path=bc] (B) -- (C);
@@ -1988,7 +1981,8 @@ $DM$
 \fill (D) circle(1.5pt);
 \fill (E) circle(1.5pt);
 \tkzCircumCenter(C,D,E)\tkzGetPoint{O}
-\tkzDrawCircle[thick,name path=circ](O,C)
+%\tkzDrawCircle[thick,name path=circ](O,C)
+\node[draw,thick,circle through=(C),name path=circ] (circle) at (O) {};
 \path [name intersections={of=db and ce,by={F}}];
 \fill (F) node[above,yshift=4pt] {$F$} circle(1.5pt);
 \path [name intersections={of=circ and db,by={M}}];

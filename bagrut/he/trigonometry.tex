@@ -358,7 +358,7 @@ $49$
 $AO,CO$
 הם חוצי הזוויות
 $BAC,BCA$,
-בהתאמה. ניסית לפתור את השאלה תוך הנחה שאלכסון של מקבילית חוצה את הזוויות
+בהתאמה. ניסיתי לפתור את השאלה תוך הנחה שאלכסון של מקבילית חוצה את הזוויות
 $\angle BAC=\angle BCD$.
 כמובן שזה נכון רק עבור מעוין.
 
@@ -490,9 +490,9 @@ AC=AE+EC&=&9.54+17.54=27.08\,.
 
 \erh{12pt}
 \begin{equationarray*}{rcl}
-\frac{b}{\sin 2\alpha}&=&\frac{27.08}{\sin 125.67}\\
+\frac{b}{\sin 2\alpha}=\frac{b}{\sin 34.92}&=&\frac{27.08}{\sin 125.67}\\
 b&=&19.08\\
-\sin (\beta-\alpha) &=& \frac{h}{27.08}\\
+\sin (\beta-\alpha)=\sin 19.41 &=& \frac{h}{27.08}\\
 h&=&9\\
 S_{ABCD}=bh&=&171.71\,.
 \end{equationarray*}
@@ -500,8 +500,10 @@ S_{ABCD}=bh&=&171.71\,.
 \vspace{-2ex}
 
 
-אפשרות אחרת היא להשתמש בנוסחה הטריגונומטרית כדי לחשב 
-$S_{\triangle ABC}$
+אפשרות אחרת היא לחשב את 
+$AB$
+לפי חוק הסינוסים, 
+$S_{\triangle ABC}=\frac{1}{2}AB\cdot AB\sin \angle BAC$,
 ולהכפיל בשניים.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2178,6 +2180,7 @@ $y=AM'=M'B$.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
+\clip (-1,-.5) rectangle (5,8.5);
 \draw[thick] (0,0) coordinate (C) -- node[below] {$a$} (4,0) coordinate (B) -- (0,8) coordinate (A) node[below,xshift=6pt,yshift=-20pt] {$\alpha$} -- cycle;
 \coordinate (G) at (0,4);
 \path (C) -- node[left] {$a$} (G) -- node[left] {$a$} (A);
@@ -2205,7 +2208,7 @@ $y=AM'=M'B$.
 \end{tikzpicture}
 \end{center}
 
-\vspace{-17ex}
+%\vspace{-17ex}
 
 ולפי פיתגורס ב-%
 $\triangle GCB$:
