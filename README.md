@@ -15,3 +15,4 @@ They can be downloaded from https://www.weizmann.ac.il/sci-tea/benari/mathematic
 * Minesweeper (English, Hebrew)
 * Pythagorean triples (English, Hebrew)
 * Three-dimensional rotations (English only)
+* Expanded appendix on set theory from logic textbook (English only)
