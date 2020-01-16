@@ -6,7 +6,10 @@ They can be downloaded from https://www.weizmann.ac.il/sci-tea/benari/mathematic
 
 * Bagrut exams 806 (Hebrew only)
 * The many guises of induction (English, Hebrew)
+* A functional approach for teaching trigonometry (English)
+* An alternate method for solving quadratic equations (English, Hebrew)
 * Surprising constructions with straightedge and compass (English, Hebrew)
+* Geometry without words (language independent)
 
 * Langford's problem (English, Hebrew)
 * Minesweeper (English, Hebrew)
