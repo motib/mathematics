@@ -3,13 +3,17 @@
 \usepackage{amssymb}
 \usepackage{url}
 \usepackage{mathptmx}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{balance}
+\makeindex
 
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows,calc}
 \tikzset{>=stealth}
 
 \textwidth=155mm
-\textheight=235mm
+\textheight=240mm
 \topmargin=0pt
 \headheight=0pt
 \oddsidemargin=-5mm
@@ -30,7 +34,6 @@
 \newcommand*{\ind}{\hspace*{2em}}
 \newenvironment{example}{\textbf{Example}}{}
 \newenvironment{proof}{\textbf{Proof}}{\qed}
-
 
 \begin{document}
 
@@ -61,13 +64,17 @@
 \begin{footnotesize}
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 \end{footnotesize}
+\bigskip
 
-\bigskip
-\bigskip
+\tableofcontents
+
+\newpage
 
 This document is based upon Appendix~A of [1] and used by permission of Springer.
 
-The presentation of mathematical logic in [1] is based upon an informal use of set theory whose definitions and theorems are summarized here. For an elementary, but detailed, development of set theory, see [3].
+The presentation of mathematical logic in [1] is based upon an informal use of set theory whose definitions and theorems are summarized here. For an elementary, but detailed, development of set theory, see [4].
+
+I would like to express my thanks to J\o{}rgen Villadsen for his helpful suggestions.	
 
 \section{Finite and infinite sets}
 
@@ -77,19 +84,18 @@ color or node of a graph. Sets are built from elements.
 
 \begin{definition}
 A \emph{set}\index{Set} is composed of
-\emph{elements}.\index{Set!element} $a\in S$ denotes
-that $a$ is an element of set $S$ and $a\not\in S$ denotes that $a$ is \emph{not} an element of $S$. The set with no
-elements is the \emph{empty set},\index{Set!empty} denoted
-$\emptyset$. Capital letters like $S$, $T$ and $U$
-are used for sets.
+\emph{elements}.\index{Element} $a\in S$\index{a01@$\in$} denotes
+that $a$ is an element of set $S$ and $a\not\in S$\index{a02@$\not\in$} denotes that $a$ is \emph{not} an element of $S$. $\emptyset$\index{a03@$\emptyset$},  the \emph{empty set},\index{Empty set} is the set with no
+elements. Capital letters like $S$, $T$ and $U$
+are used for sets. The elements of sets are written within braces $\{\;\}$\index{a03a@$\{\cdots\}$}.
 \end{definition}
 
 There are two ways to define a set: (a) We can explicitly write the
 elements comprising the set. If a set is large and if it is clearly
 understood what its elements are, an ellipsis `$\ldots$' is used to
-indicate the elements not explicitly listed. (b) A set may be defined by
-\emph{set comprehension}, where the set is specified to be composed of
-all elements that satisfy a condition. Elements of sets are written within braces $\{\;\}$.
+indicate the elements that are not listed. (b) A set may be defined by
+set comprehension, where the set is specified to be composed of
+all elements that satisfy a condition. 
 
 
 \begin{example}\mbox{}
@@ -98,33 +104,35 @@ all elements that satisfy a condition. Elements of sets are written within brace
 
 \item The set of atomic elements is $\{\textit{hydrogen}, \textit{helium}, \textit{lithium}, \ldots\}$.
 
-\item $\mathbb{Z}$, the set of
+\item $\mathbb{Z}$,\index{a04@$\mathbb{Z}$} the set of
 \emph{integers},\index{Integers} is $\{\ldots,-2,-1,0,1,2,\ldots\}$.
 
-\item $\mathbb{N}$\index{Natural numbers}, the set of \emph{natural numbers}, is $\{0,1,2,\ldots\}$. $\mathbb{N}$ can also be defined by set comprehension: $\mathbb{N}=\{n\in \mathbb{Z} \mid n\geq 0\}$. Read this as ``$\mathbb{N}$ is the set of all integers such that $n$ is greater or equal to zero.''
+\item $\mathbb{N}$\index{Natural numbers}\index{a05@$\mathbb{N}$}, the set of \emph{natural numbers}, is $\{0,1,2,\ldots\}$. $\mathbb{N}$ can also be defined by \emph{set comprehension}\index{Set comprehension}\index{a05a@$\{\cdots\mid\cdots \;\}$}: $\mathbb{N}=\{n\in \mathbb{Z} \mid n\geq 0\}$. Read this as ``$\mathbb{N}$ is the set of all integers $n$ such that $n$ is greater than or equal to zero.''
+
+\item $\mathbb{R}$\index{Real numbers}\index{a06@$\mathbb{R}$}, the set of \emph{real numbers}, can be informally defined as all numbers that can be expressed in decimal notation: $3.14159$ or $0.31459\times 10^1$.
 
 \item $E$, the set of even natural numbers, is $\{n\in \mathbb{N} \mid n \bmod 2 = 0\}$.
 
 \item $P$, the set of prime numbers, is:
 \[
-\{n\in \mathbb{N} \mid n\geq 2 \textrm{\ and\ } (n \bmod m = 0 \textrm{\ implies\ } (m=1 \mathrm{\ or\ } m=n))\}.
+\{n\in \mathbb{N} \mid n\geq 2 \textrm{\ and for all\ } m \:(n \bmod m = 0 \textrm{\ implies\ } (m=1 \mathrm{\ or\ } m=n))\}.
 \]
 \end{itemize}
 \end{example}
 
-There is no meaning to the order of the elements in a set or to
+There is no meaning to the order of the elements in a set nor to
 repetition of elements: $\{3,2,1,1,2,3\}=\{1,2,3\}=\{3,1,2\}$.
-A set containing a single element (a \emph{singleton set})
+A set containing a single element (a \emph{singleton set}\index{Singleton})
 and the element itself are not the same: $5\in \{5\}$.
 
 \section{Subset}
 
 \begin{definition}
-Let $S$ and $T$ be sets. $S$ is a \emph{subset}\index{Set!subset} of
-$T$, denoted $S\subseteq T$, iff every element of
+Let $S$ and $T$ be sets. $S$ is a \emph{subset}\index{Subset} of
+$T$, denoted $S\subseteq T$,\index{a07@$\subseteq$} iff every element of
 $S$ is an element of $T$, that is, $x\in S$ implies $x \in T$. $S$ is a
-\emph{proper subset}\index{Set!proper subset} of $T$, denoted $S\subset
-T$, iff $S\subseteq T$ and $S\neq T$.
+\emph{proper subset}\index{Proper} of $T$, denoted $S\subset
+T$\index{a08@$\subset$}, iff $S\subseteq T$ and $S\neq T$.
 \end{definition}
 
 \begin{example}
@@ -140,7 +148,7 @@ We have to show that $x \in T$ holds for all $x\in \emptyset$. But there are no 
 The relationships among sets can be shown graphically by the use
 of \emph{Venn diagrams}.\index{Venn diagram} These are closed curves
 drawn in the plane and labeled with the name of a set. A point is in the
-set if it is within the interior of the curve. In the following diagram, $S$ is a subset of $T$ since every point within $S$ is also within $T$.
+set iff it is within the interior of the curve. In the following diagram, $S$ is a subset of $T$ since every point within $S$ is also within $T$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -162,7 +170,7 @@ set if it is within the interior of the curve. In the following diagram, $S$ is 
 \end{theorem}
 
 \begin{proof}
-Let us prove (2). By the assumption $S\subset T$: if $x\in S$ then $x\in T$. By the assumption $T\subseteq U$ if $x\in T$ then $x\in U$. Therefore, $S\subseteq U$. We have to show that $S\neq U$. By assumption, $S \subset T$ so $S\neq T$ and there is an element $x\in S$ and $x\not \in T$. Therefore, $x\not \in U$ so $S\neq U$.
+Let us prove (2). By the assumption $S\subset T$: if $x\in S$ then $x\in T$. By the assumption $T\subseteq U$ if $x\in T$ then $x\in U$. Therefore, $S\subseteq U$. We have to show that $S\neq U$. By assumption, $S \subset T$ so $S\neq T$ and there is an element $x\in T$ and $x\not \in S$. Since $T\subseteq U$, $x\in U$ and by assumption $x\not \in S$, so $S\neq U$.
 \end{proof}
 
 \section{Proving inclusion and equality of sets}
@@ -173,11 +181,11 @@ and show $x\in T$.
 \begin{example}
 Prove that every prime number greater than $2$ is odd. Formally:
 \begin{eqnarray*}
-S&=&\{n \in \mathbb{N} \mid n>2 \textrm{\ and \ } x\in P\}\\ 
+S&=&\{n \in \mathbb{N} \mid n>2 \textrm{\ and \ } n\in P\}\\ 
 T&=& \{n\in \mathbb{N} \mid n=2k+1 \textrm{\ for some \ } k\in \mathbb{N}\}\\
 S&\stackrel{?}{\subseteq}& T\,.
 \end{eqnarray*}
-Let $n$ be an \emph{arbitrary} element of $S$. Suppose that $n\not\in T$. Then $n=2k$ for some $k\in \mathbb{N}$. If $k=0$ or $k=1$, $n=1$ or $n=2$, then $n\not>2$ and $n\not\in S$. Otherwise, $n>2$ has (at least) the factors $2,k$ that are different from $1$ and $n$, so $n\not \in S$. Since $n$ was an arbitrary element of $S$, $S\subseteq T$.
+Let $n$ be an \emph{arbitrary} element of $S$. Suppose that $n\not\in T$. Then $n=2k$ for some $k\in \mathbb{N}$. If $k=0$ or $k=1$ so that $n=1$ or $n=2$, then $n\not>2$ and $n\not\in S$. Otherwise, $n>2$ has (at least) the factors $2,k$ that are different from $1$ and $n$, so $n\not \in S$. Since $n$ was an arbitrary element of $S$, $S\subseteq T$.
 \end{example}
 
 To prove that two sets are equal, use the following theorem whose proof is left to the reader:
@@ -193,7 +201,7 @@ T&=&\{n\in \mathbb{N} \mid \textrm{\ for some\ } k\in \mathbb{N}, n=2k\}\\
 S&\stackrel{?}{=}&T\,.
 \end{eqnarray*}
 
-Let $m\in S$. Then $m\bmod 2 = 0$, which by definition means there is a $k\in \mathbb{N}$ such that $m=2k+0=2k$. Therefore, $m\in T$ and $S\subseteq T$. If $m\in T$, then there is a $k$ such that $m=2k=2k+0$ so $m\bmod 2=0$. Therefore, $T\subseteq S$. By the theorem $S=T$.
+Let $m\in S$. Then $m\bmod 2 = 0$, which by definition means there is a $k\in \mathbb{N}$ such that $m=2k+0=2k$. Therefore, $m\in T$ and $S\subseteq T$. If $m\in T$, then there is a $k$ such that $m=2k=2k+0$ so $m\bmod 2=0$. Therefore, $T\subseteq S$. By Theorem~\ref{thm.setsequal} $S=T$.
 \end{example}
 
 \section{Union, intersection and difference}
@@ -201,30 +209,32 @@ Let $m\in S$. Then $m\bmod 2 = 0$, which by definition means there is a $k\in \m
 
 \begin{definition}\mbox{}
 \begin{enumerate}
-\item $S\cup T=\{x\mid x\in S \textrm{\ or \ } x\in T\}$, the \emph{union}\index{Set!union} of
-$S$ and $T$, is the set consisting of those elements which are elements
-of \emph{either} $S$ \emph{or} $T$ or both.
+\item $S\cup T=\{x\mid x\in S \emph{\ or \ } x\in T\}$,\index{a09@$\cup$} the \emph{union}\index{Union} of $S$ and $T$, is the set consisting of those elements which are elements of \emph{either} $S$ \emph{or} $T$ or both.
 
-\item $S\cap T\{x\mid x\in S \textrm{\ and \ } x\in T\}$, the \emph{intersection}\index{Set!intersection} of $S$ and $T$, is the set consisting of those elements which are elements of \emph{both} $S$ \emph{and} $T$. If $S\cap T=\emptyset$ then $S$ and $T$ are \emph{disjoint}.\index{Set!disjoint}
+\item $S\cap T=\{x\mid x\in S \emph{\ and \ } x\in T\}$,\index{a10@$\cap$} the \emph{intersection}\index{Intersection} of $S$ and $T$, is the set consisting of those elements which are elements of \emph{both} $S$ \emph{and} $T$. If $S\cap T=\emptyset$ then $S$ and $T$ are \emph{disjoint}.\index{Disjoint}
 
-\item $S-T=\{x\mid x\in S \textrm{\ and \ } x\not\in T\}$, the \emph{difference}\index{Set!difference} of $S$ and $T$, is the set of elements of $S$ that are not elements of $T$.
+\item $S-T=\{x\mid x\in S \emph{\ and \ } x\not\in T\}$,\index{a11@$-$} the \emph{difference}\index{Difference} of $S$ and $T$, is the set of elements of $S$ that are not elements of $T$.
 
-\item Let $U$ be understood as a universal set; then $\overline{T}$, the
-\emph{complement}\index{Set!complement} of $T$, is $U-T$.
+\item Let $U$ be understood as a universal set; then $\overline{T}$\index{a12@$\overline{T}$}, the
+\emph{complement}\index{Complement} of $T$, is $U-T$.
 \end{enumerate}
 \end{definition}
 
 The following Venn diagram illustrates these concepts.
 
 \begin{center}
-\begin{tikzpicture}[scale=.8]
+\begin{tikzpicture}
 \draw[thick,rounded corners] (0,0) rectangle +(6,3);
-\draw[thick,rounded corners] (4,0) rectangle +(6,3);
-\node at (.5,2.5) {$S$};
-\node at (9.5,2.5) {$T$};
-\node at (2,1.5) {$S-T$};
-\node at (8,1.5) {$T-S$};
-\node at (5,1.5) {$S\cap T$};
+\foreach \y in {.5,1,1.5,2,2.5}
+  \draw[thin,white!50!black] (0,\y) -- (6,\y);
+\draw[thick,rounded corners] (4,.5) rectangle +(6,2);
+\foreach \x in {4.5,5,5.5,6,6.5,7,7.5,8,8.5,9,9.5}
+  \draw[thin,white!50!black] (\x,.5) -- (\x,2.5);
+\node at (.5,2.7) {$S$};
+\node at (9.2,2.7) {$T$};
+\node at (2.2,1.7) {$S-T$};
+\node at (8,1.7) {$T-S$};
+\node at (4.9,1.7) {$S\cap T$};
 \draw[thick,<->] (0,3.5) -- node[fill=white] {$S\cup T$} (10,3.5);
 \end{tikzpicture}
 \end{center}
@@ -237,12 +247,10 @@ The following Venn diagram illustrates these concepts.
 \{\mathit{red}, \mathit{yellow}\} - \{\mathit{red}, \mathit{green}\} &=& \{\mathit{yellow}\}, \\
 P \cap E &=& \{2\}.
 \end{array}
-\end{displaymath}\qed
+\end{displaymath}
 \end{example}
-
-The following theorem states some simple properties of the set
+The following theorem states some properties of the set
 operators.
-
 \begin{theorem}\label{thm.seteq}\mbox{}
 \begin{enumerate}
 \item $T = (T-S) \cup (S\cap T)$.
@@ -269,13 +277,13 @@ S - \emptyset = S$.
 \clip (0,0) rectangle +(5,4);
 \draw[very thick,rounded corners] (0,0) rectangle +(5,4);
 \foreach \y in {.5,1,1.5,2,2.5,3,3.5}
-  \draw[very thin,white!50!black] (0,\y) -- (5,\y);
+  \draw[thin,white!50!black] (0,\y) -- (5,\y);
 \end{scope}
 \begin{scope}
 \clip (1,1) rectangle +(3,2);
 \draw[very thick,rounded corners] (1,1) rectangle +(3,2);
 \foreach \x in {1.5,2,2.5,3,3.5}
-  \draw[very thin,white!50!black] (\x,0) -- (\x,4);
+  \draw[thin,white!50!black] (\x,0) -- (\x,4);
 \end{scope}
 \node at (-2,2.7) {$S=S\cap T$};
 \draw[->] (-1,2.7) -- +(2.3,0);
@@ -304,18 +312,18 @@ The operators $\cup$ and $\cap$ are commutative, associative and distributive.
 \item $S \cap (T\cup U) = (S \cap T) \cup (S \cap U).$
 \end{enumerate}
 \end{theorem}
-The reader is invited give informal proofs of these properties by drawing Venn diagrams.
+The reader is invited to give informal proofs of these properties by drawing Venn diagrams.
 
 
 \section{Sequences}
-\index{Sequences}
+\index{Sequence}
 
 \begin{definition}\label{def.sequences}
-Let $S$ be a set. A \emph{finite sequence of elements of $S$} is a mapping
+Let $S$ be a set. A \emph{finite sequence of elements of $S$} is a function:\footnote{\emph{Functions} and the symbol $\mapsto$ are formally defined in Section~\ref{s.function}.}
 \[
 f:\{0,\ldots,n-1\}\mapsto S\,.
 \]
-The \emph{length} of the sequence is $n$. An \emph{infinite sequence of elements of $S$} is a mapping
+The \emph{length} of the sequence is $n$. An \emph{infinite sequence of elements of $S$} is a function:
 \[
 f:\mathbb{N}\mapsto S\,.
 \]
@@ -323,11 +331,11 @@ f:\mathbb{N}\mapsto S\,.
 
 \begin{example}
 Let $S$ be the set of three colors $\{\mathit{red},
-\mathit{yellow}, \mathit{green}\}$. Suppose that you are a traffic light and see a green light, but before you can cross the street, the light changes and you have to wait until the light is green again. $L_1$, the finite sequence of colors that you will see until you cross is:
+\mathit{yellow}, \mathit{green}\}$. Suppose that you at are a traffic light and see a green light, but before you can cross the street, the light changes and you have to wait until the light is green again. $L_1$, the finite sequence of colors that you will see until you cross, is:
 \begin{displaymath}
 f_{L_1}(0)=\mathit{green},\; f(1)_{L_1}=\mathit{yellow},\; f(2)_{L_1}=\mathit{red},\; f(3)_{L_1}=\mathit{green}\,.
 \end{displaymath}
-$L_2$, the infinite sequence of colors that the light shows (assuming that it is always on) is:
+$L_2$, the infinite sequence of colors that the light shows (assuming that it is always on), is:
 \begin{displaymath}
 f_{L_2}(0)=\mathit{green},\; f_{L_2}(1)=\mathit{yellow},\; f_{L_2}(2)=\mathit{red},\; f_{L_2}(3)=\mathit{green},\; f_{L_2}(4)=\mathit{yellow},\; \ldots,
 \end{displaymath}
@@ -342,14 +350,11 @@ f_{L_2}(i)=\mathit{red}&\mathrm{if}\; i\bmod 3 = 2\,.
 \end{array}
 \end{displaymath}
 \end{example}
+The elements of a sequence are listed within parentheses $(\,)$\index{a12a@$(\cdots)$} to differentiate them from the elements of sets which are written within braces $\{\,\}$. In a sequence $(s_0, s_1, s_2, \ldots)$, $s_i=f(i)$:
 
-The elements of a sequence are listed within parentheses $(\,)$ to differentiate them from the elements of sets which are written within braces $\{\,\}$. In a sequence $(s_0, s_1, s_2, \ldots)$, $s_i=f(i)$.
-
-To continue the example:
 \[
 L_2=(\mathit{green},\; \mathit{yellow},\; \mathit{red},\; \mathit{green},\; \mathit{yellow},\; \mathit{red},\; \ldots)\,.
 \]
-
 \begin{definition}
 A finite sequence of length $n$ is called an \emph{n-tuple}. The
 following terms are also used: a $2$-tuple is a \emph{pair}, a $3$-tuple
@@ -363,7 +368,7 @@ is a \emph{triple}, a $4$-tuple is a \emph{quadruple}.
 \item A triple: $(\mathit{red}, \mathit{yellow}, \mathit{green})$.
 \item A different triple: $(\mathit{red}, \mathit{green}, \mathit{yellow})$.
 \item A triple with repeated elements: $(\mathit{red}, \mathit{green}, \mathit{green})$.
-\item An infinite sequence: $(1, 2, 2, 3, 3, 3, 4, 4, 4, 4, \ldots)$.\qed
+\item An infinite sequence: $(1, 2, 2, 3, 3, 3, 4, 4, 4, 4, \ldots)$.
 \end{itemize}
 \end{example}
 It is important to understand that a sequence can have multiple occurrences of the same element, whereas a set has only one occurrence of each element:
@@ -374,7 +379,7 @@ It is important to understand that a sequence can have multiple occurrences of t
 
 \section{Cartesian product}
 \begin{definition}
-Let $S_{1}, \ldots, S_{n}$ be sets. $S_{1}\times\cdots\times S_{n}$, their \emph{Cartesian product}\index{Cartesian product}, is the set of $n$-tuples $(s_1,\ldots,s_n)$, such that $s_i\in S_{i}$. If all the sets $S_{i}$ are the same set $S$, the notation $S^{n}$ is used for $S\times\cdots\times S$.
+Let $S_{1}, \ldots, S_{n}$ be sets. $S_{1}\times\cdots\times S_{n}$,\index{a12b@$\times$} their \emph{Cartesian product}\index{Cartesian product}, is the set of $n$-tuples $(s_1,\ldots,s_n)$, such that $s_i\in S_{i}$. If all the sets $S_{i}$ are the same set $S$, the notation $S^{n}$ is used for $S\times\cdots\times S$.
 \end{definition}
 The case $n=2$  is very common. Let $S$ and $T$ be sets. $S\times T$ is the set of all pairs $(s,t)$ such that $s\in S$ and $t\in T$.
 
@@ -384,7 +389,7 @@ The case $n=2$  is very common. Let $S$ and $T$ be sets. $S\times T$ is the set 
 all pairs of real numbers. This set can be used to represent coordinates in the plane. The term Cartesian plane or Cartesian coordinates is often used for this set.
 \item $\mathbb{N} \times \{\mathit{red}, \mathit{yellow},
 \mathit{green}\}$ is the set of all pairs whose first element is a
-number and whose second is a color. This could be used to represent the
+number and whose second element is a color. This set could be used to represent the
 color of a traffic light at different points of time: $(28,\mathit{red})$.
 \item $\mathbb{N}^3$ can be used to represent dates as (day,month,year): $(11,12,1948)$.
 \item $\mathbb{N}^3$ can also be used to represent times as (hours,minutes,seconds): $(16,38,52)$. Alternatively, $\mathbb{N}\times \mathbb{N} \times \mathbb{R}$ or $\mathbb{N}^2 \times \mathbb{R}$ can represent times with fractions of a second: $(16,38,52.83)$.
@@ -405,10 +410,10 @@ We leave it to the reader to prove the distributive laws for Cartesian products:
 \section{Relations}\label{s.relation}
 
 \begin{definition}
-Let $S_1, S_2, \ldots$ be a set of sets. An \emph{$n$-ary relation} $\mathbb{R}$ is a subset of $S_{1}\times \cdots \times S_{n}$. $\mathbb{R}$ is said to be a relation \emph{on} $S_{1}\times \cdots \times S_{n}$. \index{Relation}
+Let $S_1, S_2, \ldots$ be sets. An \emph{$n$-ary relation} $\mathbb{R}$ is a subset of $S_{1}\times \cdots \times S_{n}$. $\mathbb{R}$ is said to be a relation \emph{on} $S_{1}\times \cdots \times S_{n}$. \index{Relation}
 \end{definition}
 \vspace{-2ex}
-For $n=1$, a subset of $S_1$ is called a \emph{unary relation}. For $n=2$, a subset of $S_1\times S_2$ is called a \emph{binary relation}.\footnote{Velleman [3, Definition 4.2.1, p. 171] uses the term \emph{relation} for what we can a \emph{binary relation}. In mathematical logic, $n$-ary relations are used to define interpretations for $n$-ary predicates [2, Definition 7.16, p. 136], so we use the more general definition.}
+For $n=1$, a subset of $S_1$ is called a \emph{unary relation}. For $n=2$, a subset of $S_1\times S_2$ is called a \emph{binary relation}.\footnote{Velleman [3, Definition 4.2.1, p. 171] uses the term \emph{relation} for what we call a \emph{binary relation}. In mathematical logic, $n$-ary relations are used to define interpretations for $n$-ary predicates [2, Definition 7.16, p. 136], so we use the more general definition.}
 
 
 
@@ -423,9 +428,9 @@ $SQ = \{(n_1,n_2)\in \mathbb{N}^2\mid n_2=n_1^2\}$ is a relation on
 $\mathbb{N}^2$; it is the set of pairs of numbers and their squares:
 $(4,16)\in SQ\comma (7,49)\in SQ\comma (10,99)\not \in SQ$.
 
-\item $RP$ is the set of relatively prime numbers, that is, pairs of numbers that have no common divisor except for $1$:
-\[RP = \{(n,m)\in \mathbb{N}^2\mid n \bmod k = 0 \;\textrm{and}\;
-m \bmod k = 0 \;\textrm{implies}\; k = 1\}
+\item $RP$ is the set of relatively prime numbers, that is, pairs of natural numbers that have no common divisor except for $1$:
+\[
+RP = \{(n,m)\in \mathbb{N}^2\mid \textrm{\ for all\ }k\: (n \bmod k = 0 \;\textrm{and}\;m \bmod k = 0 \;\textrm{imply}\; k = 1)\}\,.
 \]
 Examples are:
 $(4,9)\in RP\comma (15,28) \in RP\comma (14,63)\not\in RP$.
@@ -434,7 +439,7 @@ $(4,9)\in RP\comma (15,28) \in RP\comma (14,63)\not\in RP$.
 \[
 \{(x,y,z) \in \mathbb{N}^3\mid x^{2}+y^{2}=z^{2}\}\,.
 \]
- Examples are $(3,4,5)\in PT\comma (8,15,17)\in PT\comma (6,8,9)\not\in PT$.
+Examples are: $(3,4,5)\in PT\comma (8,15,17)\in PT\comma (6,8,9)\not\in PT$.
  
 \item Let $F$ be the set of quadruples $\{(x,y,z,n)\in \mathbb{N}^4\mid x,y,z>0, n>2 \;\textrm{and}\; x^{n}+y^{n}=z^{n}\}$. Fermat's Last Theorem (which was recently proved) states that $F=\emptyset$, the empty set.
 \end{itemize}
@@ -452,8 +457,8 @@ imply $R(x_{1},x_{3})$.
 \end{definition}
 
 \begin{definition}
-$R^{*}$, the \emph{reflexive transitive closure of a binary relation $\mathbb{R}\subseteq S\times S$},
-\index{Closure!reflexive transitive} is the smallest relation that satisfies:
+$R^{*}$\index{a13@$R^{*}$}, the \emph{reflexive transitive closure of a binary relation $\mathbb{R}\subseteq S\times S$},
+\index{Reflexive transitive closure} is the smallest relation that satisfies:
 \begin{enumerate}
 \item $R\subseteq R^{*}$.
 \item $R^{*}(x,x)$ for any $x\in S$.
@@ -498,73 +503,75 @@ The relation $\rho$ is not reflexive: although the relation is reflexive at node
 
 $\rho^{*}$, the reflexive transitive closure of $\rho$, includes $\rho^{*}(n,n)$ for every $n\in G$, as well as $\rho^{*}(n_1,n_2)$ if there exists a \emph{path} $n_1,\ldots,n_2$ in the graph from $n_1$ to $n_2$.
 
-There are no elements in $\rho$ such that $\rho(x,y)$ for $x\in \{a,b,d\}$ and $y=\in\{c,e,f,g\}$, nor are there such elements in $\rho^{*}$. If you look again at (3) in the definition, we have to ensure $\rho^{*}(x_1,x_3)$ only if $R^{*}(x_{1},x_{2})$ and $R^{*}(x_{2},x_{3})$, but there are no such elements in the relation or its reflexive transitive closure, so the requirement is vacuous.
+There are no elements in $\rho$ such that $\rho(x,y)$ for $x\in \{a,b,d\}$ and $y\in\{c,e,f,g\}$, nor are there such elements in $\rho^{*}$. If you look again at (3) in the definition, we have to ensure $\rho^{*}(x_1,x_3)$ only if $R^{*}(x_{1},x_{2})$ and $R^{*}(x_{2},x_{3})$, but there are no such elements in the relation or its reflexive transitive closure, so the requirement is vacuous.
 \end{example}
 
-\section{Functions}
+\section{Functions}\label{s.function}
 
 \begin{definition}\label{def.relfunc}
-Let $F$ (function) be a relation on
-$S_{1}\times \cdots \times S_{n}$. $F$ is a \emph{function}
-\index{Function}
-iff for every $n\!\!-\!\!1$-tuple $(x_{1},\ldots,x_{n-1})\in S_{1}\times
-\cdots \times S_{n-1}$, there is at most one $x_{n}\in S_{n}$, such that
-$F(x_{1},\ldots,x_{n})$.
+A relation $F$ on $S_{1}\times \cdots \times S_{n}$ is a \emph{function} \index{Function} iff for every $n\!\!-\!\!1$-tuple $(x_{1},\ldots,x_{n-1})\in S_{1}\times \cdots \times S_{n-1}$, there is at most one $x_{n}\in S_{n}$, such that $F(x_{1},\ldots,x_{n})$.
 \end{definition}
 
 \smallskip
 
 \begin{example}
-The relation $SQ = \{(n_1,n_2),n_1,n_2\in \mathbb{Z}\mid  n_2=n_1^2\}$ is a function because for each integer, there is exactly one integer that is its square. The relation $SQRT = \{(n_1,n_2),n_1,n_2\in \mathbb{Z}\mid n_2^2=n_1\}$ is \emph{not} a function because there are integers that have two (integer) square roots, one positive and one negative, for example, $49=(7)^2$ and $49=(-7)^2$.
+The relation $SQ = \{(n_1,n_2),n_1,n_2\in \mathbb{Z}\mid  n_2=n_1^2\}$ is a function because for each integer, there is exactly one integer that is its square. The relation $SQRT = \{(n_1,n_2),n_1,n_2\in \mathbb{Z}\mid n_2^2=n_1\}$ is \emph{not} a function because there are integers that have two (integer) square roots, one positive and one negative, for example, $(7)^2=49$ and $(-7)^2=49$.
 \end{example}
 
 \begin{definition}
-Here are some terms used to with functions:
+Here are some terms used with functions:
 \begin{enumerate}
-\item The \emph{domain}\index{Function!domain} of $F$ is the
+\item The \emph{domain}\index{Domain} of $F$ is the
 set of all $(x_{1},\ldots,x_{n-1})\in S_{1}\times \cdots \times
 S_{n-1}$ for which (exactly one)
 \(x_{n}=F(x_{1},\ldots,x_{n-1})\) exists.
-\item The \emph{range}\index{Function!range} of $F$ is the set
+
+\item The \emph{range}\index{Range} of $F$ is the set
 of all $x_{n}\in S_{n}$ such that
 \(x_{n}=F(x_{1},\ldots,x_{n-1})\) for at least one
 $(x_{1},\ldots,x_{n-1})$.
+
 \item $F$ is \emph{total} if the domain of $F$ is
 all of $S_{1}\times \cdots \times S_{n-1}$; otherwise, $F$
-is \emph{partial}.\index{Function!total}\index{Function!partial}
+is \emph{partial}.\index{Total}\index{Partial}
+
 \item $F$ is \emph{injective} or \emph{one-to-one} iff
-\index{Function!injective}
+\index{Injective}
 $(x_{1},\ldots,x_{n-1}) \neq (y_{1},\ldots,y_{n-1})$ implies that
 \[F(x_{1},\ldots,x_{n-1}) \neq
 F(y_{1},\ldots,y_{n-1}).\]
+
 \item $F$ is \emph{surjective} or \emph{onto} iff its range is
-all of $S_{n}$.\index{Function!surjective}
+all of $S_{n}$.\index{Surjective}
+
 \item $F$ is \emph{bijective} (\emph{one-to-one and onto}) iff it
-is injective and surjective.\index{Function!bijective}
+is injective and surjective.\index{Bijective}
 \end{enumerate}
 \end{definition}
 
 \textbf{Notation}
 
-$F:S_1\times \cdots S_{n-1}\mapsto S$ is used instead of $(x_{1},\ldots,x_{n-1})\in S_{1}\times \cdots \times S_{n-1},\; F(x_{1},\ldots,x_{n})\in S_n$. to indicate the domain and range of a function.
+The notation $F:S_1\times \cdots S_{n-1}\mapsto S_n$\index{a14@$\mapsto$} is used instead of $F(x_{1},\ldots,x_{n})\in S_n$, where $(x_{1},\ldots,x_{n-1})\in S_{1}\times \cdots \times S_{n-1}$.
 
 Similarly, the value of the function for an element of the domain can use functional notation or an expression can be given. For the example above, $n_2=SQ(n_1)=n_1^2$ for $n_1,n_2\in \mathbb{Z}$.
 
 
 \begin{example}
-The left diagram below shows the function:
+Figure~\ref{fig.m2} shows the function:
 \[
-M2: \{0,1,2,3,4,5,6\} \mapsto \{0,1\}\,, \textrm{\ where \ } M2(n) = n \bmod 2\,.
+M2: \{0,1,2,3,4,5,6\} \mapsto \{0,1\}\,, \textrm{\ where \ } M2(n) = n \bmod 2\,,
 \]
-The function is surjective (onto) but not injective (one-to-one).
+which is surjective (onto) but not injective (one-to-one).
 
-The right diagram shows that the following function is neither surjective nor injective:
+Figure~\ref{fig.m2p} shows the function:
 \[
-M2': \{0,1,2,3,4,5,6\} \mapsto \{0,1,2,3,4,5,6\}\,, \textrm{\ where \ } M2(n) = n \bmod 2\,.
+M2': \{0,1,2,3,4,5,6\} \mapsto \{0,1,2,3,4,5,6\}\,, \textrm{\ where \ } M2'(n) = n \bmod 2\,,
 \]
+which is neither surjective nor injective:
 \end{example}
 
-\begin{center}
+\begin{figure}[H]
+\begin{minipage}{.45\textwidth}
 \begin{tikzpicture}
 \draw[rounded corners] (0,0) rectangle +(2,7);
 \fill (1,6.5) coordinate (zero) circle(2pt) node[left] {$0$};
@@ -585,8 +592,12 @@ M2': \{0,1,2,3,4,5,6\} \mapsto \{0,1,2,3,4,5,6\}\,, \textrm{\ where \ } M2(n) = 
 \foreach \y in {one,three,five}
   \draw[->] ($(\y)!.05!(one-r)$) -- ($(\y)!.95!(one-r)$);
 \end{scope}
-
-\begin{scope}[xshift=18em]
+\end{tikzpicture}
+\caption{Surjective but not injective}\label{fig.m2}
+\end{minipage}
+\hspace{3em}
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}
 \draw[rounded corners] (0,0) rectangle +(2,7);
 \fill (1,6.5) coordinate (zero) circle(2pt) node[left] {$0$};
 \fill (1,5.5) coordinate (one) circle(2pt) node[left] {$1$};
@@ -611,21 +622,13 @@ M2': \{0,1,2,3,4,5,6\} \mapsto \{0,1,2,3,4,5,6\}\,, \textrm{\ where \ } M2(n) = 
 \foreach \y in {one,three,five}
   \draw[->] ($(\y)!.05!(one-r)$) -- ($(\y)!.95!(one-r)$);
 \end{scope}
-\end{scope}
 \end{tikzpicture}
-\end{center}
-The left diagram below shows the function:
-\[
-M7: \{0,1,2,3,4,5,6\} \mapsto \{0,1,2,3,4,5,6\}\,, \textrm{\ where \ } M7(n) = n \bmod 7\,.
-\]
-The function is bijective (one-to-one and onto) because it is both surjective and injective.
+\caption{Neither surjective nor injective}\label{fig.m2p}
+\end{minipage}
+\end{figure}
 
-The right diagram shows the function:
-\[
-M2'': \{0,1,2,3,4,5,6\} \mapsto \{0,1\}\,, \textrm{\ where \ } M2''(n) = n \bmod 2
-\]
-The function is bijective but it is a partial function because the domain is not all of $\{0,1,2,3,4,5,6\}$:
-\begin{center}
+\begin{figure}[H]
+\begin{minipage}{.45\textwidth}
 \begin{tikzpicture}
 \draw[rounded corners] (0,0) rectangle +(2,7);
 \fill (1,6.5) coordinate (zero) circle(2pt) node[left] {$0$};
@@ -649,7 +652,12 @@ The function is bijective but it is a partial function because the domain is not
 \foreach \y/\z in {zero/zero-r,one/one-r,two/two-r,three/three-r,four/four-r,five/five-r,six/six-r}
   \draw[->] ($(\y)!.05!(\z)$) -- ($(\y)!.95!(\z)$);
 \end{scope}
-\begin{scope}[xshift=18em]
+\end{tikzpicture}
+\caption{Surjective and injective}\label{fig.m7}
+\end{minipage}
+\hspace{3em}
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}
 \draw[rounded corners] (0,0) rectangle +(2,7);
 \fill (1,6.5) coordinate (zero) circle(2pt) node[left] {$0$};
 \fill (1,5.5) coordinate (one) circle(2pt) node[left] {$1$};
@@ -669,49 +677,57 @@ The function is bijective but it is a partial function because the domain is not
 \foreach \y in {one}
   \draw[->] ($(\y)!.05!(one-r)$) -- ($(\y)!.95!(one-r)$);
 \end{scope}
-\end{scope}
 \end{tikzpicture}
-\end{center}
+\caption{Surjective and injective but not total}\label{fig.m2pp}
+\end{minipage}
+\end{figure}
+Figure~\ref{fig.m7} shows the function:
+\[
+M7: \{0,1,2,3,4,5,6\} \mapsto \{0,1,2,3,4,5,6\}\,, \textrm{\ where \ } M7(n) = n \bmod 7\,,
+\]
+which is bijective, because it is both surjective (onto) and injective (one-to-one).
 
+Figure~\ref{fig.m2pp} shows the function:
+\[
+M2'': \{0,1,2,3,4,5,6\} \mapsto \{0,1\}\,, \textrm{\ where \ } M2''(n) = n \bmod 2\,,
+\]
+which is bijective, but it is a partial function because the domain is not all of $\{0,1,2,3,4,5,6\}$.
 
 
 \begin{example}
-$SQ= \{(n_1,n_2)\mid n_1,n_2\in\mathbb{Z} \textrm{\ and\ }  n_2=n_1^2\}$ is a total function. Its domain is all of $\mathbb{Z}$, but its range is
+$SQ= \{(n_1,n_2),n_1,n_2\in\mathbb{Z}\mid n_2=n_1^2\}$ is a total function. Its domain is all of $\mathbb{Z}$, but its range is
 only the subset of $\mathbb{Z}$ consisting of all squares. Therefore
 $SQ$ is not surjective and thus not bijective. It is also not injective because it is possible that $n_1 \neq n_2$, but $n_1^2=n_2^2$, for example, $7\neq -7$ but $49=49$.
+\end{example}
 
-For each $n\in \mathbb{N}$ define the set:
+\begin{example}
+Let $\{a_0,\ldots,a_{n-1}\} \in \mathbb{N}$ and define the set:
 \[
-CY =(a_0,a_1,\ldots,a_{n-1}), \textrm{\ where\ } a_{(i+1)\bmod n}=a_i+1\,.
+CY_{\{a_0,\ldots,a_{n-1}\}} =\{(a_k,a_{k+1},\ldots,a_{(k+n-1)\bmod n}) \mid  k\in \{0,\ldots,n-1\}\}\,.\footnote{For $k=n-1$, we need to compute $(k+n-1) \bmod n =(2n-2) \bmod n$. But adding a multiple of $n$ does not change the modulus, so $(2n-2) \bmod n = (2n-2+(-n)) \bmod n = (n-2) \bmod n = n-2$ as expected. When $n=5$ as in the example, $(k+n-1)\bmod 5=(5-1+5-1)\bmod 5= (10-2+(-5))\bmod 5 = 3\bmod 5 = 3$, and the last element of $CY$ is $(a_4,a_0,a_1,a_2,a_3)$.}
 \]
-$CY$ is a sequence (which is also a set) such that elements are cyclic. For $n=5$, the elements of the set $CY$ are:
-\[
-(0,1,2,3,4)\,,\;(1,2,3,4,0)\,,\;(2,3,4,0,1)\,,\;(3,4,0,1,2)\,,\;(4,0,1,2,3)\,.
-\]
-Define the function $\textrm{rshift}$:
-\[
-\textrm{rshift}(a_0,a_1,a_2,a_3,a_4)\:=\:(a_4,a_0,a_1,a_2,a_3)\,.
-\]
-Clearly, the domain and the range of the function is all of $CY$. The function is bijective since for every $c_2\in CY$ there is one and only one $c_1\in CY$ such that $c_2=\textrm{rshift}\,(c_1)$.
+Each $CY$ is a set of sequences whose elements are cyclic. For example:
+\begin{eqnarray*}
+CY_{\{2,16,11,14,82\}}&=&\{(2,16,11,14,82),\;(16,11,14,82,2),\\
+&&(11,14,82,2,16),\;(14,82,2,16,11),\;(82,2,16,11,14)\}\,.
+\end{eqnarray*}
+We can define function for shifting left and right:
+\begin{eqnarray*}
+\textrm{left\_shift}(a_0,a_1,\ldots,a_{n-2},a_{n-1})&=&(a_1,\ldots,a_{n-2},a_{n-1},a_0)\\
+\textrm{right\_shift}(a_0,a_1,\ldots,a_{n-2},a_{n-1})&=&(a_{n-1},a_0,a_1,\ldots,a_{n-2})\,.
+\end{eqnarray*}
+Clearly, the domain and the range of these functions is all of $CY_{\{a_0,\ldots,a_{n-1}\}}$. The functions are bijective since for every $c\in CY$ there is exactly one $c_l$ and one $c_r$ such that $c_l=\textrm{left\_shift}\,(c)$ and $c_r=\textrm{right\_shift}\,(c)$.
 \end{example}
 
 
 \section{Cardinality}
 
 \begin{definition}
-The \emph{cardinality}\index{Set!cardinality} of a set is the number of
-elements in the set. The cardinality of a $S$ is \emph{finite} iff there
-is an integer $n$ such that the number of elements in $S$ is the same
-that the number of elements in the set \(\{1,2,\ldots,n\}\). Otherwise
-the cardinality is \emph{infinite}.
+The \emph{cardinality}\index{Cardinality} of a set $S$ is the number of elements in the set. The cardinality of a set $S$ is \emph{finite} iff there is an integer $n$ such that the number of elements in $S$ is the same as the number of elements in the set \(\{1,2,\ldots,n\}\). Otherwise the cardinality is \emph{infinite}.
 
-An infinite set $S$ is
-\emph{countable}\index{Set!countable} if its cardinality is the same as
-the cardinality of $\mathbb{N}$. Otherwise the set is
-\emph{uncountable}\index{Set!uncountable}.\qed
+A set $S$ is \emph{countable}\index{Countable} iff it is finite or its cardinality is the same as the cardinality of $\mathbb{N}$. Otherwise the set is \emph{uncountable}\index{Uncountable}.\qed
 \end{definition}
 
-To prove that the cardinality of a finite set $S$ is $n$, we need to find a bijective function $f: \{1,\ldots,n\}\mapsto S$. To show that an infinite set is countable, we need to find a bijective function $f:\mathbb{N}\mapsto S$.
+The cardinality of a finite set $S$ is $n$ if there is a bijective function $f: \{1,\ldots,n\}\mapsto S$. An infinite set is countable if there is a bijective function $f:\mathbb{N}\mapsto S$.
 
 \begin{example}
 The cardinality of $S=\{a,b,c,\ldots,x,y,z\}$, the set of lower-case English letters, is 26. The following function is bijective:
@@ -720,7 +736,7 @@ f(1) = a\,,\;f(2) = b\,,\;f(3) = c\,,\;\ldots,\; f(24) = x\,,\;f(25) = y\,,\;f(2
 \]
 \end{example}
 \begin{example}
-$E$, the set of even natural numbers, is countable. Let $f$ be:
+$E$, the set of even natural numbers, is countable and infinite. Let $f$ be:
 \[
 f(0) = 0\,,\;f(1) = 2\,,\;f(2) = 4\,,\;\ldots\,.
 \]
@@ -742,19 +758,20 @@ or in general:
 \[
 \begin{array}{l@{\hspace{3em}}l}
 f(1)=0\\
-f(k)=2k & \textrm{if\ } k>0\\
-f(k)=2|k|+1 & \textrm{if\ } k<0\,.
+f(k)=k / 2 & \textrm{if\ } k>0 \textrm{\ is even}\\
+f(k)=- (k-1)/2 & \textrm{if\ } k \textrm{\ is odd}\,.
 \end{array}
+\vspace{-3ex}
 \]
 \end{proof}
 
-It is worthwhile becoming familiar with the ``trick'' because it is used, for example, to prove that a Turing machine with a two-way tape, a tape that is infinite in two directions, can be simulated by a Turing machine with a one-way tape, a tape that is infinite in one direction. The two-way tape is ``folded over'' to become a one-way tape where each symbol on the tape encodes the symbol of the left-hand part of the tape and the right-hand part of the tape.
+It is worthwhile becoming familiar with this ``trick'' because it is used, for example, to prove that a Turing machine with a two-way tape, a tape that is infinite in two directions, can be simulated by a Turing machine with a one-way tape, a tape that is infinite in one direction. The two-way tape is ``folded over'' to become a one-way tape where each symbol on the tape encodes the symbol of the left-hand part of the tape and the right-hand part of the tape.
 
 \begin{theorem}
 The set of rational numbers $\mathbb{Q}$ is countable.
 \end{theorem}
 \begin{proof}
-This is more difficult than proving that $\mathtt{Z}$ is countable because rational numbers are infinite both in the numerator and the denominator. The trick is to order the rational numbers by the \emph{sum} of the numerator and the denominator. Within each sum the rational numbers are order by increasing demoninators:
+This is more difficult than proving that $\mathbb{Z}$ is countable because rational numbers are infinite both in the numerator and the denominator. The trick is to order the rational numbers by the \emph{sum} of the numerator and the denominator. Within each sum the rational numbers are ordered by increasing demoninators:
 \[
 \renewcommand{\arraystretch}{1.2}
 \begin{array}{l@{\hspace{2em}}l}
@@ -766,13 +783,13 @@ This is more difficult than proving that $\mathtt{Z}$ is countable because ratio
 4& 4, \frac{1}{3}\\
 5 & 5, \frac{3}{2},\frac{2}{3}, \frac{1}{4}\\
 6 & 6, \frac{1}{5}\\
-7 & 7, \frac{5}{2},\frac{4}{3},\frac{2}{3},\frac{2}{5},\frac{1}{6}
+7 & 7, \frac{5}{2},\frac{4}{3},\frac{3}{4},\frac{2}{5},\frac{1}{6}
 \end{array}
 \]
 We have assumed that the rational numbers are reduced so that there is no common factor in both the numerator and the denominator. The negative rational numbers can be included as we did for the negative integers.
 \end{proof}
 
-Georg Cantor\index{Cantor, G.} first proved the following theorem:
+Georg Cantor first proved the following theorem:
 
 \begin{theorem}
 The set of real numbers $\mathbb{R}$ is uncountable.
@@ -796,12 +813,14 @@ $r\neq r_i$ for all $i\in \mathbb{N}$, contradicting the assumption
 that $f$ was surjective. 
 \end{proof}
 
-This method of proof, called \emph{diagonalization}, is frequently used in computer science, for example, to prove that no Turing machine can decide whether an arbitrary Turing machine halts for a arbitrary input.
+This method of proof, called \emph{diagonalization},\index{Diagonalization} is frequently used in computer science, for example, to prove that no Turing machine can decide whether an arbitrary Turing machine halts for a arbitrary input.
+
+\newpage
 
 \section{Powersets}
 
 \begin{definition}
-Let $S$ be a set. The \emph{powerset} of $S$, denoted $2^S$, is the set of all subsets of $S$.\index{Set!powerset}
+Let $S$ be a set. The \emph{powerset} of $S$, denoted $2^S$\index{a15@$2^S$}, is the set of all subsets of $S$.\index{Powerset}
 \end{definition}
 
 \begin{example} Here is the powerset of the finite set
@@ -829,16 +848,17 @@ then the cardinality of its powerset is $2^{n}$.
 A subset $S'$ is constructed by choosing for each $s\in S$ whether $s\in S'$ or $s\not\in S'$. These choices are independent:  for any $s_i$, once we have chosen $s_i\in S'$ or $s_i\not\in S'$, for each $s_j\in S$, $j\neq i$ the choice $s_j\in S'$ or $s_j\not\in S'$ does not depend on our previous choice for $s_i$. Therefore, the number of subsets is:
 \[
 \overbrace{2\cdot 2\cdot 2 \cdots 2\cdot 2}^{n} = 2^n\,.
+\vspace{-3ex}
 \]
 \end{proof}
 
-A diagonalization argument can be used to show that $2^\mathbb{N}$ is not countable so its cardinality is larger than the cardinality of $\mathbb{N}$ which is denoted $\aleph_0$ (read ``aleph 0''). The cardinality of $2^\mathbb{N}$ is denoted $\aleph_1$ and $\aleph_1 >\aleph_0$. If we again take powersets, we find an infinite hierarchy of ever larger cardinalities. However, these are rarely encountered in computer science.
+A diagonalization argument can be used to show that $2^\mathbb{N}$ is not countable so its cardinality is larger than the cardinality of $\mathbb{N}$ which is denoted $\aleph_0$ (read ``aleph 0''). The cardinality of $2^\mathbb{N}$ is denoted $\aleph_1$ and $\aleph_1 >\aleph_0$. If we again take powersets, we find an infinite hierarchy of ever larger cardinalities.
 
 \section{Induction}
 
-To prove a property of a set mathematical induction can be used. We give an overview of induction; for more detail see [2].
+To prove a property of a set, mathematical induction can be used. We give an overview of induction; for more detail and many examples see [2, 3].
 
-\begin{axiom}[Mathematical induction]\label{ax.induction} Let $P(n)$ be a property, $n\in \mathbb{N}, n>0$. If you can:
+\begin{axiom}[Mathematical induction]\label{ax.induction}\index{Mathematical induction} Let $P(n)$ be a property, $n\in \mathbb{N}, n>0$. If you can:
 \begin{itemize}
 \item \emph{Base case}: Prove $P(1)$.
 \item \emph{Inductive step}: For arbitrary $m\in \mathbb{N}$, prove $P(m+1)$ under the assumption that $P(m)$ is true.
@@ -866,8 +886,7 @@ The inductive step is to prove the equation for $m+1$:
 \begin{eqnarray}
 \sum_{i=1}^{m+1} i &=& \sum_{i=1}^m i + (m+1)\label{l.sum1}\\
 &\ih{}&\frac{m(m+1)}{2} + (m+1)\label{l.sum2}\\
-&=&\frac{m(m+1) + 2(m+1)}{2}\label{l.sum3}\\
-&=&\frac{(m+1)(m+2)}{2}\,.\label{l.sum4}
+&=&\frac{m(m+1) + 2(m+1)}{2}=\frac{(m+1)(m+2)}{2}\,.\label{l.sum3}
 \end{eqnarray}
 
 By the axiom of mathematical induction:
@@ -875,7 +894,7 @@ By the axiom of mathematical induction:
 \sum_{i=1}^n i = \frac{n(n+1)}{2}
 \] is true for any $n\geq 1$.\qed
 
-Let us now justify the reasoning in the inductive step. In~(\ref{l.sum1}) the sum is rewritten as two terms: the first term is the sum of the numbers from $1$ to $m$ and the second term is the number $(m+1)$. In~(\ref{l.sum2}), the notation $\ih{}$ denotes that the \emph{inductive hypothesis} is used to substitute $\frac{m(m+1)}{2}$ for $\sum_{i=1}^m i$. The rest of the proof (\ref{l.sum3}--\ref{l.sum4}) uses elementary algebra.
+Let us justify the reasoning in the inductive step. In~(\ref{l.sum1}) the sum is rewritten as two terms: the first term is the sum of the numbers from $1$ to $m$ and the second term is the number $(m+1)$. In~(\ref{l.sum2}), the notation $\ih{}$ denotes that the \emph{inductive hypothesis} is used to substitute $\frac{m(m+1)}{2}$ for $\sum_{i=1}^m i$. Equations~(\ref{l.sum3}) use elementary algebra.
 
 Axiom~\ref{ax.induction} is the simplest form of induction. It can be generalized:
 \begin{itemize}
@@ -886,29 +905,9 @@ Axiom~\ref{ax.induction} is the simplest form of induction. It can be generalize
 \item The inductive hypothesis can assume $P(k)$ for \emph{all} $k\leq m$ and not just for $k=m$.
 \end{itemize}
 
-Induction is used in all fields of mathematics. Here is a nice example of the use of induction to prove a formula of trigonometry:
-\begin{theorem}
-For $n\geq 1$:
-\[
-\cos\theta \cdot \cos 2\theta \cdot \cos 4\theta \cdot \cdots \cdot \cos 2^{n-1}\theta = \frac{\sin 2^n\theta}{2^n \sin \theta}\,.
-\]
-\end{theorem}
-\begin{proof}
-Base case: $\cos \theta = \frac{\sin 2\theta}{2\sin \theta}$ because $\sin 2\theta = 2\cos\theta\sin\theta$.
+In computer science \emph{structural induction}\index{Structural induction} is commonly used. Instead of an inductive hypothesis $P(n)$ being used in the inductive step to prove $P(n+1)$, in structural induction the inductive hypothesis is that a property is true for ``simple'' structures and the inductive step proves that the property is true for ``complex'' structures that are built from the ``simple'' structures.
 
-Inductive step:
-\begin{eqnarray*}
-\cos\theta\cdots \cos 2^{n}\theta &=& (\cos\theta\cdots \cos 2^{n-1}\theta) \cdot \cos 2^{n}\theta\\
-&\ih{}&\frac{\sin 2^{n}\theta}{2^{n}\sin \theta}\cdot \cos 2^{n}\theta\\
-&=& \frac{1}{2^{n}\sin \theta} \cdot \cos 2^n\theta\sin 2^{n}\theta\\
-&=& \frac{1}{2^{n}\sin \theta} \cdot \frac{\sin 2\cdot 2^{n}\theta}{2}\\
-&=&\frac{\sin 2^{n+1}\theta}{2^{n+1}\sin \theta}\,.
-\end{eqnarray*}
-\end{proof}
-
-In computer science the form of induction most often used is \emph{structural induction}. Suppose that you want to prove a property of trees. The base case is the trivial tree consisting of a single leaf. The inductive hypothesis is that the property is true for trees of height less than or equal to $h$. The inductive step is to prove the property for trees of height $h+1$, where the subtrees are obviously of height less than or equal to $h$.
-
-Here is a rather complicated proof using induction in computer science. We knowledge of nondeterministic finite automata (NFA) and regular expressions (RE) is assumed.
+Here is an example of the use of structural induction in computer science. The proof is also interesting because there are several base cases and several inductive steps. Knowledge of nondeterministic finite automata (NFA) and regular expressions (RE) is assumed.
 
 \begin{theorem}
 Let $r$ be an RE. Then there is an NFA that accepts the language of $r$.
@@ -948,9 +947,7 @@ There are \emph{three} base cases:
 \end{tikzpicture}
 \end{center}
 \end{itemize}
-
 There are \emph{three} inductive steps:
-
 \begin{itemize}
 \item Concatenation $r_1r_2$: By the inductive hypothesis there are NFAs $\mathit{nfa}_1$ and $\mathit{nfa}_2$ that accept the languages of $r_1$ and $r_2$, respectively. Construct $\mathit{nfa}_{12}$ by adding a null transition from the final state of $\mathit{nfa}_1$ to the initial state of $\mathit{nfa}_2$. The initial state of $\mathit{nfa}_{12}$ is the initial state of $\mathit{nfa}_1$ and its final state is the final state of $\mathit{nfa}_2$.
 \begin{center}
@@ -1012,6 +1009,7 @@ There are \emph{three} inductive steps:
 \end{center}
 The null transition from the initial state to the final state is taken for strings generated by zero instances of $r$, and the internal transition from the final state of $\mathit{nfa}_r$ to its initial state is for more than one repetition of $r$.
 \end{itemize}
+\vspace*{-4ex}
 \end{proof}
 
 \section{The Well-ordering Principle}\label{s.well}
@@ -1020,9 +1018,9 @@ The well-ordering principle is an axiom that is more intuitive than mathematical
 
 \begin{definition} Let $S$ be a set with a binary relational operator $\leq$.
 \begin{enumerate}
-\item $S$ is \emph{totally ordered} iff for any $x,y\in S$, either $x\leq y$ or $y \leq x$ or $x=y$.
-\item A totally ordered set $S$ has a \emph{lower bound} iff there is some $b$ such that $b\leq n$ for all $n\in S$.
-\item A totally ordered set $S$ has a \emph{least element} iff there is some $b\in S$ such that $b\leq n$ for all $n\in S$. A least element is also a lower bound, but in addition it is an element of the set.
+\item $S$ is \emph{totally ordered}\index{Totally ordered} iff for any $x,y\in S$, either $x\leq y$ or $y \leq x$ or $x=y$.
+\item A totally ordered set $S$ has a \emph{lower bound}\index{Lower bound} iff there is some $b$ such that $b\leq n$ for all $n\in S$.
+\item A totally ordered set $S$ has a \emph{least element}\index{Least element} iff there is some $b\in S$ such that $b\leq n$ for all $n\in S$. A least element is also a lower bound, but in addition it is an element of the set.
 \end{enumerate}
 \end{definition}
 \begin{example}
@@ -1036,23 +1034,29 @@ where $E_Z$ is the set of all even \emph{integers}. Some lower bounds for $S$ ar
 \begin{example}
 The set of \emph{positive} rational numbers has an infinite number of lower bounds (zero and all negative rational numbers), but it has no least element because for any positive rational number $x$, $x/2$ is a smaller rational number.
 \end{example}
-\begin{definition} Let $S$ be a totally ordered set. $S$ is \emph{well-ordered} if \emph{every} nonempty subset of $S$ has a least element.
+\begin{definition} Let $S$ be a totally ordered set. $S$ is \emph{well-ordered} iff \emph{every} nonempty subset of $S$ has a least element.
 \end{definition}
 
-$S$ is well-ordered because every nonempty subset has a least element. The least element of $S$ itself is $3$, the least element of $\{8, 19, 5\}$ is $5$. $E_Z$ is not well-ordered because $E_Z\subseteq E_Z$ but it has not least element. The set of even numbers in $\mathbb{N}$ is well-ordered.
+$S=\{8,3,19,5,6,23\}$ is well-ordered because every nonempty subset has a least element. The least element of $S$ itself is $3$, the least element of $\{8, 19, 5\}$ is $5$.
 
-\begin{axiom}\label{ax.wop} \textbf{(The well-ordering principle)} Every nonempty subset of the integers that has a lower bound is well-ordered.
+$E_Z=\{\ldots,-4,-2,0,2,4,\ldots\}$ is not well-ordered because $E_Z\subseteq E_Z$ but it has no least element. The set of even numbers in $\mathbb{N}$ is well-ordered.
+
+\begin{axiom}\label{ax.wop} \textbf{(The well-ordering principle)}\index{Well-ordering principle} Every nonempty subset of the integers that has a lower bound is well-ordered.
 \end{axiom}
 
-If we assume Axiom~\ref{ax.induction} we can prove Axiom~\ref{ax.wop} and conversely (see [2]).
+The set of positive integers is non-empty and has many lower bounds---zero and all negative integers (and the set even has a least element, namely $1$), therefore by Axiom~\ref{ax.wop} it is well-ordered. If we assume Axiom~\ref{ax.induction} we can prove Axiom~\ref{ax.wop} and conversely [2, 3].
 
 
 \section{References}
 
 [1] M. Ben-Ari. \textit{Mathematical Logic for Computer Science (Third Edition)}, Springer, 2012, ISBN 978-1-4471-4128-0, \url{http://www.springer.com/978-1-4471-4128-0}.
 
-[2] M. Ben-Ari. \textit{The many guises of induction}, 2019, \url{https://www.weizmann.ac.il/sci-tea/benari/mathematics#induction}.
+[2] M. Ben-Ari. \textit{The Many Guises of Induction}, 2019, \url{https://www.weizmann.ac.il/sci-tea/benari/mathematics#induction}.
 
-[3] D.J. Velleman. \textit{How to Prove It: A Structured Approach (Second Edition)}. Cambridge University Press, 2006.
+[3] D.S. Gunderson. \textit{Handbook of Mathematical Induction: Theory and Applications}, Mathematical Association of America, 2010.
 
+[4] D.J. Velleman. \textit{How to Prove It: A Structured Approach (Second Edition)}, Cambridge University Press, 2006.
+
+\balance
+\printindex
 \end{document}
