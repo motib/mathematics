@@ -1,20 +1,21 @@
 # mathematics
 Learning materials for secondary school mathematics
 
-This repository contains learning materials for secondary school mathematics:
+This repository contains learning materials for secondary school mathematics, as well as enrichment and more advanced tutorials.
+
 They can be downloaded from https://www.weizmann.ac.il/sci-tea/benari/mathematics
 
-* Bagrut exams 806 (Hebrew only)
-* The many guises of induction (English, Hebrew)
-* A functional approach for teaching trigonometry (English)
-* An alternate method for solving quadratic equations (English, Hebrew)
-* Surprising constructions with straightedge and compass (English, Hebrew)
-* Geometry without words (language independent)
-
-* Langford's problem (English, Hebrew)
-* Minesweeper (English, Hebrew)
-* Pythagorean triples (English, Hebrew)
-* Three-dimensional rotations (English only)
-* Expanded appendix on set theory from logic textbook (English only)
-* TikZ examples
+* bagrut: Bagrut exams 806 (Hebrew only)
+* construct: Surprising constructions with straightedge and compass (English, Hebrew)
+* geometry: Geometry without words (language independent)
+* induction: The many guises of induction (English, Hebrew)
+* langford: Langford's problem (English, Hebrew)
+* minesweeper: Minesweeper is NP-complete (English, Hebrew)
+* origami: The mathematics of the origami axioms (English)
+* quadratic: Po-Shen Lo's method for solving quadratic equations (English, Hebrew)
+* quaternions: Quaternions for three-dimensional rotations (English only)
+* set: Expanded appendix on set theory from logic textbook (English only)
+* TikZ examples (language independent)
+* trigonometry: A functional approach for teaching trigonometry (English, Hebrew)
+* triples: Pythagorean triples (English, Hebrew)
 
