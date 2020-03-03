@@ -1,0 +1,54 @@
+% !TeX root = origami-math.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+
+%\usepackage[utf8x]{inputenc}
+
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{float}
+%\usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{intersections,calc,through}
+\tikzset {>=stealth}
+
+\textwidth=155mm
+\textheight=230mm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=0mm
+\evensidemargin=0mm
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+
+\setcounter{tocdepth}{1}
+
+\newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand*{\sm}[1]{$\scriptstyle #1$}
+
+\newenvironment{form}[1]{%
+\begin{displaymath}%
+\renewcommand{\arraystretch}{#1}%
+\begin{array}{lcl}}%
+{\end{array}%
+\end{displaymath}%
+}
+
+%\includeonly{}
+
+\begin{document}
+\include{front}
+\include{axioms}
+\include{trisection}
+\include{cube}
+\include{references}
+\include{appendices}
+\end{document}

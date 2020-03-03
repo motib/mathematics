@@ -11,7 +11,7 @@ They can be downloaded from https://www.weizmann.ac.il/sci-tea/benari/mathematic
 * induction: The many guises of induction (English, Hebrew)
 * langford: Langford's problem (English, Hebrew)
 * minesweeper: Minesweeper is NP-complete (English, Hebrew)
-* origami: The mathematics of the origami axioms (English)
+* origami: The mathematics of origami (English)
 * quadratic: Po-Shen Lo's method for solving quadratic equations (English, Hebrew)
 * quaternions: Quaternions for three-dimensional rotations (English only)
 * set: Expanded appendix on set theory from logic textbook (English only)

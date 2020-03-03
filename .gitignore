@@ -1,11 +1,16 @@
-﻿ahva/
+﻿literacy/
+origami/*.png
+ahva/
+alternate/
 bagrut/he/distributions
 bagrut/he/tikz
 construct/he/tikz
 construct/en/tikz
 construct/he/distributions
 trigonometry/en/images
+tikz-examples/tikz-examples-from-er.tex
 unused/
+origami/ggb/*.png
 *.bat
 *.zip
 *~
