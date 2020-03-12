@@ -10,7 +10,6 @@ They can be downloaded from https://www.weizmann.ac.il/sci-tea/benari/mathematic
 * geometry: Geometry without words (language independent)
 * induction: The many guises of induction (English, Hebrew)
 * langford: Langford's problem (English, Hebrew)
-* lill: Lill's method for finding roots of a cubic polynomial (English)
 * minesweeper: Minesweeper is NP-complete (English, Hebrew)
 * origami: The mathematics of origami (English)
 * quadratic: Po-Shen Lo's method for solving quadratic equations (English, Hebrew)

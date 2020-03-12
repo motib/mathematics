@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{report}
 
 %\usepackage[utf8x]{inputenc}
 
@@ -12,6 +12,7 @@
 \usepackage{verbatim}
 \usepackage{url}
 \usepackage{float}
+\usepackage{titlesec}
 %\usepackage{hyperref}
 
 \usepackage{tikz}
@@ -28,6 +29,10 @@
 \parindent=0pt
 \renewcommand{\baselinestretch}{1.15}
 \setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{10pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{8pt}{\Large}
 
 \setcounter{tocdepth}{1}
 
@@ -49,6 +54,8 @@
 \include{axioms}
 \include{trisection}
 \include{cube}
+\include{lill}
+\include{beloch}
 \include{references}
 \include{appendices}
 \end{document}

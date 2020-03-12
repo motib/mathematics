@@ -19,10 +19,10 @@
 \bigskip
 \bigskip
 
-Version 2.0
+Version 3.0
 \end{center}
 
-\bigskip
+\vfill
 
 \begin{small}
 \begin{center}
@@ -32,37 +32,26 @@ Version 2.0
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 \end{small}
 
-\newpage
-
 \tableofcontents
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+\chapter{Introduction}\label{c.introduction}
 
-\section{Introduction}
-%\addcontentsline{toc}{section}{Introduction}
+This document develops the mathematics of origami using secondary-school mathematics. Equations of lines are given in the slope-intercept form $y=mx+b$.
 
-This document develops the mathematics of origami using secondary-school mathematics \cite{geometry}. Equations of lines are given in the slope-intercept form $y=mx+b$.
+Chapter~\ref{c.axioms} develops the mathematical formulas for the seven axioms and together with numerical examples. In the diagrams, given lines are solid, folds are dashed, auxiliary lines are dotted, and dotted arrows indicate the direction of folding the paper.
 
-Sections~\ref{s.ax1}--\ref{s.ax7} develop the mathematical formulas for the seven axioms and together with numerical examples. In the diagrams, given lines are solid, folds are dashed, auxiliary lines are dotted, and dotted arrows indicate the direction of folding the paper.
+The fold operations can construct every length that can be constructed by straightedge and compass. Given $a,b$: $a+b, a-b, a\times b, a/b, \sqrt{a}$ can be constructed \cite[Chapter~4]{hwa}.
 
-The folding operations can construct every length that can be constructed by straightedge and compass: given lengths $a$, $b$, the lengths $a+b, a-b, a\times b, a/b, \sqrt{a}$ can be constructed \cite[Chapter~4]{hwa}.
+Folding is more powerful because it can construct cube roots. Chapter~\ref{c.trisection} presents two methods for trisecting an arbitrary angle and Chapter~ref{c.cube} presents two methods for doubling a cube by computing $\sqrt[3]{2}$.
 
-Folding is more powerful because it can construct cube roots. The proof is somewhat complex, so we limit ourselves to showing that folding can trisect an angle and double a cube. Sections~\ref{s.tri1}--\ref{s.tri2} present two methods for trisecting an arbitrary angle and  Sections~\ref{s.cube1}--\ref{s.cube2} present two methods for doubling a cube by computing $\sqrt[3]{2}$.
+Chapter~\ref{c.lill} explains Eduard Lill's geometric method for finding real roots of any polynomical; we will demonstrate the method for cubic polynomials. Chapter~\ref{c.beloch} presents Margharita P. Beloch's implementation of Lill' method using a fold.
 
-A guide to the literature used in preparing this document is given in Section~\ref{s.ref}.
+Appendix~\ref{a.geo} contains links to GeoGebra projects demonstrating the axioms. Appendix~\ref{a.tangent} derives trigonometric identities for tangents that may not be familiar. Appendix~\ref{a.parabola} explains the geometric definition of parabolas.
 
-Appendix~\ref{a.geo} contains links to GeoGebra projects demonstrating the axioms.
-%Be warned that there is a bug in GeoGebra that does not allow saving the coordinates of reflected points when using Axiom~6.
-Appendix~\ref{a.tangent} derives trigonometric identities for tangents that may not be familiar. Appendix~\ref{a.parabola} explains the geometric definition of parabolas.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Definitions}
-%\addcontentsline{toc}{section}{Definitions}
+\subsection*{Definitions}
 
 Each axiom states that a \emph{fold} exists that will place given points and lines onto points and lines, such that certain properties hold. The term fold comes from the origami operation of folding a piece of paper, but here it is used to refer the the line created by folding the paper.
 
