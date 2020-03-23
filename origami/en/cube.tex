@@ -1,4 +1,4 @@
-% !TeX root = origami-math.tex
+% !TeX root = origami-math-en.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Doubling a Cube}\label{c.cube}
@@ -9,9 +9,9 @@ A cube of volume $V$ has sides of length $\sqrt[3]{V}$. The volume of a cube wit
 
 \subsection{Dividing a length into thirds}
 
-Lang \cite{lang} shows efficient constructs for obtaining rational fractions of the length of the side of a square (piece of paper). Here, we need to divide the side of the square into thirds.
+Lang \cite{lang} shows efficient constructs for rational fractions of the length of the side of a square (piece of paper). Here, we need to divide the side of the square into thirds.
 
-First, fold in half to locate the point $J=(1,1/2)$. Next, draw the lines $\overline{AC}$ and $\overline{BJ}$.
+First, fold the square in half to locate the point $J=(1,1/2)$. Next, draw the lines $\overline{AC}$ and $\overline{BJ}$.
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 % Draw square
@@ -69,7 +69,7 @@ The result is $x=2/3, y=1/3$.
 
 Construct the line $\overline{EF}$ perpendicular to $\overline{AB}$ that goes $K$, and construct the reflection $\overline{GH}$ of $\overline{BC}$ around $\overline{EF}$. The side of the square has now been divided into thirds.
 
-\subsection{Computing $\sqrt[3]{2}$}
+\subsection{Building $\sqrt[3]{2}$}
 
 \begin{center}
 \begin{tikzpicture}[scale=.9]
@@ -107,7 +107,7 @@ Construct the line $\overline{EF}$ perpendicular to $\overline{AB}$ that goes $K
 \fill (CP) circle (2pt)
   node[left] {$C'$}
   node[above right,yshift=8pt] {$\alpha$}
-  node[below right,xshift=-2pt,yshift=-10pt] {$\alpha'$};
+  node[below right,xshift=-2pt,yshift=-12pt] {$\alpha'$};
 \fill (FP) circle (2pt)
   node[above] {$F'$}
   node[below left,xshift=-8pt] {$\alpha'$};
@@ -121,7 +121,7 @@ Construct the line $\overline{EF}$ perpendicular to $\overline{AB}$ that goes $K
 \fill (J) circle (2pt)
     node[below] {$J$}
     node[above left,xshift=-8pt] {$\alpha$};
-\draw [very thick,dashed,name path=jd] (J) -- node[very near end,left] {$l$} (D);
+\draw [very thick,dashed,name path=jd] (J) -- node[very near end,left] {$l$} (10,12);
 \draw[thick,dotted,bend right=40,->] (C) to ($(CP)+(4pt,0)$);
 \draw[thick,dotted,bend right=40,->] (F) to ($(FP)+(4pt,4pt)$);
 
@@ -148,17 +148,21 @@ Construct the line $\overline{EF}$ perpendicular to $\overline{AB}$ that goes $K
 \end{tikzpicture}
 \end{center}
 
-Label the side of the square by $a+1$. We will show that $a=\sqrt[3]{2}$.
+Label the side of the square by $a+1$. The construction will show that $a=\sqrt[3]{2}$.
 
 Using Axiom~6 place $C$ at $C'$ on $\overline{AB}$ and $F$ at $F'$ on $\overline{GH}$.  Denote by $J$ the point intersection of the fold with $\overline{BC}$ and denote by $b$ the length of $\overline{BJ}$. The length of $\overline{JC}$ is $(a+1)-b$.
 
-When the fold is performed, the line segment $\overline{JC}$ is reflected onto the line segment $\overline{C'J}$ of the same length, and $\overline{CF}$ is folded onto the line segment $\overline{C'F'}$ of the same length. A simple computation shows that the length of $\overline{GC'}$ is $a-\disfrac{a+1}{3}=\disfrac{2a-1}{3}$. Finally, since $\angle FCJ$ is a right angle, so is $\angle F'C'J$.
+When the fold is performed, the line segment $\overline{JC}$ is reflected onto the line segment $\overline{JC'}$ of the same length, and $\overline{CF}$ is folded onto the line segment $\overline{C'F'}$ of the same length. A simple computation shows that the length of $\overline{GC'}$ is:
+\begin{equation}
+a-\disfrac{a+1}{3}=\disfrac{2a-1}{3}\,.\label{eq.one-third}
+\end{equation}
+Finally, since $\angle FCJ$ is a right angle, so is $\angle F'C'J$.
 
 $\triangle C'BJ$ is a right triangle so by Pythagoras's theorem:
 \begin{form}{1.3}
 1^2 + b^2 &=& ((a+1)-b)^2\\
-&=& a^2+2a+1 - 2(a+1)b + b^2\\
-0&=&a^2+2a - 2(a+1)b\\
+%&=& a^2+2a+1 - 2(a+1)b + b^2\\
+a^2+2a - 2(a+1)b&=&0\\
 b&=&\disfrac{a^2+2a}{2(a+1)}\,.
 \end{form}
 
@@ -166,7 +170,7 @@ $\angle GC'F' + \angle F'C'J + \angle JC'B = 180^\circ$ since they form the stra
 \[
 \angle JC'B=180^\circ - \angle F'C'J - \angle GC'F'= 180^\circ - 90^\circ - \angle GC'F' = 90^\circ-\angle GC'F = 90^\circ -\alpha\,,
 \]
-which we denote by $\alpha'$. The triangles $\triangle C'BJ$, $\triangle F'GC'$ are right triangles, so $\angle C'JB=\alpha$ and $\angle C'F'G=\alpha'$. Therefore, the triangles are similar and we have:
+which we denote by $\alpha'$. The triangles $\triangle C'BJ$, $\triangle F'GC'$ are right triangles, so $\angle C'JB=\alpha$ and $\angle C'F'G=\alpha'$. Therefore, the triangles are similar and using Equation~\ref{eq.one-third} we have:
 \[
 \disfrac{b}{(a+1)-b}=\disfrac{\disfrac{2a-1}{3}}{\disfrac{a+1}{3}}\,.
 \]
@@ -174,11 +178,11 @@ Substituting for $b$:
 \begin{form}{2}
 \disfrac{\disfrac{a^2+2a}{2(a+1)}}{(a+1)-\disfrac{a^2+2a}{2(a+1)}}&=&\disfrac{2a-1}{a+1}\\
 %\disfrac{a^2+2a}{(a+1)\cdot 2(a+1)-(a^2+2a)}&=&\disfrac{2a-1}{a+1}\\
-\disfrac{a^2+2a}{a^2+2a +2}&=&\disfrac{2a-1}{a+1}\\
+\disfrac{a^2+2a}{a^2+2a +2}&=&\disfrac{2a-1}{a+1}\,.
 %a^3+3a^2+2a&=&(2a-1)(a^2+2a+2)\,.
 %&=&2a^3+3a^2+2a-2\,.
 \end{form}
-Simplifying results in $a^3=2$, $a=\sqrt[3]{2}$.
+Simplifying results in $a^3=2$ and $a=\sqrt[3]{2}$.
 
 
 
@@ -186,13 +190,11 @@ Simplifying results in $a^3=2$, $a=\sqrt[3]{2}$.
 
 \section{Beloch's doubling of a cube}\label{s.cube2}
 
-In 1936 Margharita P. Beloch was the first to formalize Axiom~6 (often called the \emph{Beloch fold}) and to show that it could be used to solve cubic equations. Here we give her construction for doubling the cube. The construction is treated in more detail in Chapters~\ref{c.lill}, \ref{c.beloch}.
+In 1936 Margharita P. Beloch formalized Axiom~6 (often called the \emph{Beloch fold}) and showed that it could be used to solve cubic equations. Here we give her construction for doubling the cube. The solution of cubic equations is discussed in Chapters~\ref{c.lill}, \ref{c.beloch}.
 
 \subsection{The construction}
 
-Place point $A$ at $(-1,0)$ and point $B$ at $(0,-2)$. Let $p$ be the line with equation $x=1$ and let $q$ be the line with equation $y=2$.
-
-Using Axiom~6 construct a fold $l$ that places $A$ at $A'$ on $p$ and $B$ at $B'$ on $q$. Denote the intersection of the fold and the $y$-axis by $X$ and the intersection of the fold and $x$-axis by $Y$.
+Place point $A$ at $(-1,0)$ and point $B$ at $(0,-2)$. Let $p$ be the line with equation $x=1$ and let $q$ be the line with equation $y=2$. Using Axiom~6 construct a fold $l$ that places $A$ at $A'$ on $p$ and $B$ at $B'$ on $q$. Denote the intersection of the fold and the $y$-axis by $Y$ and the intersection of the fold and $x$-axis by $X$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -224,10 +226,11 @@ Using Axiom~6 construct a fold $l$ that places $A$ at $A'$ on $p$ and $B$ at $B'
 
 % Tangent y = -0.8x + 1.26
 
+% Exchanged X and Y 
 \coordinate (X) at (0,2.52);
 \coordinate (Y) at (3.15,0);
-\fill (X) circle (2pt) node[right,xshift=4pt,yshift=2pt] {$X$};
-\fill (Y) circle (2pt) node[above right,xshift=10pt] {$Y$};
+\fill (X) circle (2pt) node[right,xshift=4pt,yshift=2pt] {$Y$};
+\fill (Y) circle (2pt) node[above right,xshift=10pt] {$X$};
 \draw [very thick,dashed] ($(X)!-1.1!(Y)$) -- node[very near end,right,xshift=8pt] {$l$} ($(X)!2!(Y)$);
 
 \draw [very thick,dotted] (A) -- (AP);
@@ -272,14 +275,15 @@ Let us extract a simplified diagram:
 
 % Tangent y = -0.8x + 1.26
 
+% Exchanged X and Y 
 \coordinate (X) at (0,2.52);
 \coordinate (Y) at (3.15,0);
 \fill (X) circle (2pt)
-  node[right,xshift=4pt,yshift=2pt] {$X$}
+  node[right,xshift=4pt,yshift=2pt] {$Y$}
   node[below right,yshift=-14pt] {$\alpha$}
   node[below left,xshift=2pt,yshift=-12pt] {$\alpha'$};
 \fill (Y) circle (2pt)
-  node[above right,xshift=10pt] {$Y$}
+  node[above right,xshift=10pt] {$X$}
   node[below left,xshift=-10pt] {$\alpha$}
   node[above left,xshift=-15pt] {$\alpha'$};
 \draw [very thick,dashed] ($(X)!-.4!(Y)$) -- ($(X)!1.2!(Y)$);
@@ -294,12 +298,12 @@ Let us extract a simplified diagram:
 \end{tikzpicture}
 \end{center}
 
-The fold is the perpendicular bisector of $\overline{AA'}$ and $\overline{BB'}$. Therefore, $\angle AXY$ and $\angle XYB$ are right angles and $\overline{AA'}$ is parallel to $\overline{BB'}$. By alternate interior angles $\angle XAO =\angle BYO=\alpha$. If an acute angle in a right triangle is $\alpha$, the other acute angle must be $90^\circ - \alpha$, which we denote $\alpha'$. The labeling of the angles in all the triangles in the diagram follows immediately.
+The fold is the perpendicular bisector of $\overline{AA'}$ and $\overline{BB'}$. Therefore, $\angle AYX$ and $\angle YXB$ are right angles and $\overline{AA'}$ is parallel to $\overline{BB'}$. By alternate interior angles $\angle YAO =\angle BXO=\alpha$. If an acute angle in a right triangle is $\alpha$, the other acute angle must be $90^\circ - \alpha$, which we denote $\alpha'$. The labeling of the angles in all the triangles in the diagram follows immediately.
 
-We have three similar triangles $\triangle AOX\sim \triangle XOY \sim \triangle YOB$. $\overline{OA}=1$, $\overline{OB}=2$ are given, so:
+We have three similar triangles $\triangle AOY\sim \triangle YOX \sim \triangle XOB$. $\overline{OA}=1$, $\overline{OB}=2$ are given, so:
 \begin{form}{2}
-\disfrac{\overline{OX}}{\overline{OA}}=\disfrac{\overline{OY}}{\overline{OX}}=\disfrac{\overline{OB}}{\overline{OY}}\\
-\disfrac{\overline{OX}}{1}=\disfrac{\overline{OY}}{\overline{OX}}=\disfrac{2}{\overline{OY}}\\
-\overline{OX}^2=\overline{OY}=\disfrac{2}{\overline{OX}}\;,
+\disfrac{\overline{OY}}{\overline{OA}}=\disfrac{\overline{OX}}{\overline{OY}}=\disfrac{\overline{OB}}{\overline{OX}}\\
+\disfrac{\overline{OY}}{1}=\disfrac{\overline{OX}}{\overline{OY}}=\disfrac{2}{\overline{OX}}\\
+\overline{OY}^2=\overline{OX}=\disfrac{2}{\overline{OY}}\;,
 \end{form}
-resulting in $\overline{OX}^3=2$ and $\overline{OX}=\sqrt[3]{2}$.
+resulting in $\overline{OY}^3=2$ and $\overline{OY}=\sqrt[3]{2}$.

@@ -1,31 +1,32 @@
-% !TeX root = origami-math.tex
+% !TeX root = origami-math-he.tex
 
+\selectlanguage{hebrew}
 \appendix
 
 
-\chapter{GeoGebra links}\label{a.geo}
+\chapter{קישוריות לגיאוגברה}\label{a.geo}
 
 \begin{center}
 \begin{tabular}{|l|l|}
 \hline
-Axiom 1& \url{https://www.geogebra.org/m/fq9d5hms}\\\hline
-Axiom 2& \url{https://www.geogebra.org/m/fgmfss27}\\\hline
-Axiom 3& \url{https://www.geogebra.org/m/ek3mqupw}\\\hline
-Axiom 4& \url{https://www.geogebra.org/m/renzzbdg}\\\hline
-Axiom 5& \url{https://www.geogebra.org/m/aszn9ywu}\\\hline
-Axiom 6& \url{https://www.geogebra.org/m/bxe5e5ku}\\\hline
-Axiom 7& \url{https://www.geogebra.org/m/yeq5gmeg}\\\hline
-Abe's trisection & \url{https://www.geogebra.org/m/dxrcvjam}\\\hline
-Martin's trisection & \url{https://www.geogebra.org/m/caky7edd}\\\hline
-Messer's doubling of the cube & \url{https://www.geogebra.org/m/mrcwjqh8}\\\hline
-Beloch's doubling of the cube & \url{https://www.geogebra.org/m/enzmmwua}\\\hline
+$1$ \R{אקסיומה}& \url{https://www.geogebra.org/m/fq9d5hms}\\\hline
+$2$ \R{אקסיומה}& \url{https://www.geogebra.org/m/fgmfss27}\\\hline
+$3$ \R{אקסיומה}& \url{https://www.geogebra.org/m/ek3mqupw}\\\hline
+$4$ \R{אקסיומה}& \url{https://www.geogebra.org/m/renzzbdg}\\\hline
+$5$ \R{אקסיומה}& \url{https://www.geogebra.org/m/aszn9ywu}\\\hline
+$6$ \R{אקסיומה}& \url{https://www.geogebra.org/m/bxe5e5ku}\\\hline
+$7$ \R{אקסיומה}& \url{https://www.geogebra.org/m/yeq5gmeg}\\\hline
+Abe \R{חקלוקת זווית לשלושה של} & \url{https://www.geogebra.org/m/dxrcvjam}\\\hline
+Martin \R{חקלוקת זווית לשלושה של}& \url{https://www.geogebra.org/m/caky7edd}\\\hline
+Messer \R{הכפלת קוביה של} & \url{https://www.geogebra.org/m/mrcwjqh8}\\\hline
+Beloch \R{הכפלת קוביה של}  & \url{https://www.geogebra.org/m/enzmmwua}\\\hline
 \end{tabular}
 \end{center}
-Due to a bug in Geogebra, in projects that use Axiom~6, points defined by reflection around the common tangent are not saved or are saved incorrectly.
+לאור תקלה בגיאוגברה, בפרוייקטים המשתמשים באקסיומה $6$, נקודות המוגדרות על ידי שיקוף מסביב למשיק המשותף אינן נשמרות או נשמרות בצורה שגוייה.
 
-\chapter{Derivation of trigonometric identities}\label{a.tangent}
+\chapter{פיתוח הזהיות הטריגונומטריות}\label{a.tangent}
 
-The trigonometric identifies for tangent used in the proof of Axiom 3 can be derived from identifies for the sine and cosine:
+ניתן לפתח את הזהויות הטריגונומטריות עבור טנגנס שהשתמשנו בהוכחה של אקסיומה~$3$ מזהויות עבור סינוס וקסינוס:
 
 \begin{form}{2.2}
 \tan (\theta_1+\theta_2) &=& \disfrac{\sin(\theta_1+\theta_2)}{\cos(\theta_1+\theta_2)}\\
@@ -33,31 +34,44 @@ The trigonometric identifies for tangent used in the proof of Axiom 3 can be der
 &=&\disfrac{\sin\theta_1+\cos\theta_1\tan\theta_2}{\cos\theta_1-\sin\theta_1\tan\theta_2}\\
 &=&\disfrac{\tan\theta_1+\tan\theta_2}{1-\tan\theta_1\tan\theta_2}\,.
 \end{form}
-
-We use this formula with $\theta=(\theta/2)+(\theta/2)$ to obtain a quadratic equation in $\tan(\theta/2)$:
+נשמתש משוואה זו עם
+$\theta=(\theta/2)+(\theta/2)$
+ונקבל משוואה ריבועית במשתנה
+$\tan(\theta/2)$:
 \begin{form}{2.2}
 \tan \theta=\disfrac{\tan(\theta/2)+\tan(\theta/2)}{1-\tan^2(\theta/2)}\\
 \tan\theta \,(\tan(\theta/2))^2 \;+\; 2\,(\tan (\theta/2)) \;-\;\tan \theta = 0\,.
 \end{form}
-Its solutions are:
+הפתרונות שלה הם:
 \[
 \tan(\theta/2) = \disfrac{-1\pm\sqrt{1+\tan^2\theta}}{\tan\theta}\,.
 \]
 
-\chapter{Parabolas}\label{a.parabola}
+\chapter{פרבולות}\label{a.parabola}
 
-
-Students are usually introduced to parabolas as the graphs of second degree equations:
+לראשנוה, תלמידים מכירים פרבולות כגרפים של פולינומים ריבועיים:
 \[
 y=ax^2+bx+c\,.
 \]
-However, parabolas can be defined geometrically: given a point, the \emph{focus}, and a line, the \emph{directrix}, the locus of points equidistant from the focus and the directrix defines a parabola.
+אולם, ניתן הגדיר פרבולות באמצעות גיאומטריה: נתונה נקודוה, 
+\textbf{המוקד} \L{(focus)},
+ונתון קו,
+\textbf{המדריך} \L{(directrix)},
+המקום הגיאומטרי של הנקודות הנמצאות במרחק שווה מהמוקד ומהמדריך מגדיר פרבולה.
 
-
-The following diagram shows the focus---the large point at $p=(0,f)$, and the directrix---the thick line whose equation is $y=-f$. The resulting parabola is shown as a dotted curve. Its vertex $p_2$ is at the origin of the axes.
+האיור שלהלן מראה את המוקד -- הנקודה הגדולה ב-%
+$p=(0,f)$, 
+והמדריך -- הקו העבה עם המשוואה
+$y=-f$. 
+הפרבולה המתקבלת מוצגת בקו מנוקד. 
+\textbf{הקודקוד} \L{(vertex)}
+שלה 
+$p_2$
+נמצא במרכז הצירים.
 
 %\begin{figure}[H]
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=1.1]
 \draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\textsf{axis}} (6,0);
 \draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\textsf{axis}} (0,4.5);
@@ -99,15 +113,38 @@ The following diagram shows the focus---the large point at $p=(0,f)$, and the di
 \end{tikzpicture}
 \end{center}
 %\end{figure}
-
-We have selected five points $p_i$, $i=1,\ldots,5$ on the parabola. Each point $p_i$ is at a distance of $a_i$ both from the focus and from the directrix.
-
-Consider the point $p'$ that is the intersection of the perpendicular from $p_1$ to the directrix. Since $p_1$ is on the parabola $\overline{p'p_1}=\overline{p_1p}=a_1$. We claim that the tangent $l$ to the parabola at $p_1$ (dashed line) is a fold that reflects $p$ onto $p'$.
+בחרנו חמש נקודות
+$p_i$, $i=1,\ldots,5$
+על הפרבולה. כל נקודה
+$p_i$
+הוא במרחק
+$a_i$
+גם מהמוקד וגם מהמדריך. נוריד ניצב למדריך מ-%
+$p_1$,
+ונמסן ב-%
+$p'$
+את נקודת החיתוך של הניצב עם המדריך.
+$p_1$
+נמצאת על הפרבולה, ולכן
+$\overline{p'p_1}=\overline{p_1p}=a_1$.
+אנו טוענים שהמשיק 
+$l$
+לפרבולה בנקודה 
+$p_1$
+)הקו המקווקוו( הוא קיפול המשקף את 
+$p$
+על
+$p'$.
 
 \newpage
 
-We have to prove the $l$ is the perpendicular bisector of $\overline{pp'}$. Let us extract a simplified diagram:
+נוכיח ש-%
+$l$
+הוא האנך האמצעי של
+$\overline{pp'}$. 
+נחלץ איור פשוט מהאיור הקודם:
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=1.1]
 \draw[thick] (-6.4,0) -- node[very near start,below,xshift=-20pt] {$x$-\textsf{axis}} (1,0);
 \draw[thick] (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\textsf{axis}} (0,3.5);
@@ -141,12 +178,67 @@ We have to prove the $l$ is the perpendicular bisector of $\overline{pp'}$. Let 
 \end{tikzpicture}
 \end{center}
 \begin{itemize}
-\item The directrix is parallel to the $x$-axis, the focus $p$ is on the $y$-axis and $\overline{p_1p'}$ is perpendicular to the directrix. Therefore, $\angle p'qr$ and $\angle pp_2r$ are right angles.
-\item $\overline{qp'}$ and $\overline{p_2s}$ are opposite sides of a rectangle, so $\overline{qp'}=\overline{p_2s}$, which in turn is equal to $\overline{pp_2}$ since $p_2$ is on the parabola and thus equidistant from $p$ and $s$.
-\item $\angle qrp'$ and $\angle p_2rp$ are equal vertical angles.
-\item The right triangles $\triangle qrp'$ and $\triangle p_2rp$ have one acute angle equal and one side equal so they are congruent. Therefore, $\overline{p'r}=\overline{rp}$ and $\overline{p_1r}$ is the median of $\triangle pp_1p'$.
-\item $p_1$ is on the parabola so $\overline{pp_1}=\overline{p_1p'}$. Therefore, $\triangle pp_1p'$ is an isoceles triangle.
-\item In the isoceles triangle $\triangle pp_1p'$, the median $\overline{p_1r}$ is also the perpendicular bisector of $\overline{pp'}$.
-\item Line $l$ contains the line segment $\overline{p_1r}$ and is the perpendicular bisector of $\overline{pp'}$.
+\item 
+המדריך מקביל לציר ה-%
+$x$,
+המוקד
+$p$
+נמצא על ציר ה-
+$y$, 
+ו-%
+$\overline{p_1p'}$ 
+ניצב למדריך. מכאן ש-%
+$\angle p'qr$
+ו-%
+$\angle pp_2r$ 
+הן זוויות ישרות.
+\item 
+$\overline{qp'}$ 
+ו-%
+ $\overline{p_2s}$
+הם צלעות נגדיים של מלבן, כך ש-%
+$\overline{qp'}=\overline{p_2s}$,
+ו-%
+$\overline{p_2s}$
+בעצמו שווה ל-%
+$\overline{pp_2}$
+כי
+$p_2$
+נמצאת על הפרבולה ובמרחק שווה מ-%
+$p$
+ו-%
+$s$.
+\item $\angle qrp'$
+ו-%
+$\angle p_2rp$ 
+הן זוויות קודקודיות.
+\item 
+למשולשים ישר-זווית
+$\triangle qrp'$
+ו-%
+$\triangle p_2rp$ 
+זווית חדה זהה וצלע שווה, לכן הם חופפים. מכאן ש-%
+$\overline{p'r}=\overline{rp}$ 
+ ו-%
+$\overline{p_1r}$
+הוא התיכון של
+$\triangle pp_1p'$.
+\item $p_1$
+נמצאת על הפרבולה כך ש-%
+$\overline{pp_1}=\overline{p_1p'}$.
+לכן
+$\triangle pp_1p'$
+הוא משולש שווה שוקיים.
+\item 
+במשולש שווה-השוקיים
+$\triangle pp_1p'$,
+התיכון
+$\overline{p_1r}$
+הוא גם האנך האמצעי של
+$\overline{pp'}$.
+\item
+$l$
+הוא קיפול המכיל את קטע הקו
+$\overline{p_1r}$.
 \end{itemize}
 

@@ -1,4 +1,4 @@
-% !TeX root = origami-math.tex
+% !TeX root = origami-math-en.tex
 
 %\hypersetup{pageanchor=false}
 \thispagestyle{empty}
@@ -19,7 +19,7 @@
 \bigskip
 \bigskip
 
-Version 3.0
+Version 3.3
 \end{center}
 
 \vfill
@@ -45,15 +45,15 @@ Chapter~\ref{c.axioms} develops the mathematical formulas for the seven axioms a
 
 The fold operations can construct every length that can be constructed by straightedge and compass. Given $a,b$: $a+b, a-b, a\times b, a/b, \sqrt{a}$ can be constructed \cite[Chapter~4]{hwa}.
 
-Folding is more powerful because it can construct cube roots. Chapter~\ref{c.trisection} presents two methods for trisecting an arbitrary angle and Chapter~ref{c.cube} presents two methods for doubling a cube by computing $\sqrt[3]{2}$.
+Folding is more powerful because it can construct cube roots. Chapter~\ref{c.trisection} presents two methods for trisecting an arbitrary angle and Chapter~\ref{c.cube} presents two methods for doubling a cube.
 
 Chapter~\ref{c.lill} explains Eduard Lill's geometric method for finding real roots of any polynomical; we will demonstrate the method for cubic polynomials. Chapter~\ref{c.beloch} presents Margharita P. Beloch's implementation of Lill' method using a fold.
 
-Appendix~\ref{a.geo} contains links to GeoGebra projects demonstrating the axioms. Appendix~\ref{a.tangent} derives trigonometric identities for tangents that may not be familiar. Appendix~\ref{a.parabola} explains the geometric definition of parabolas.
+Appendix~\ref{a.geo} contains links to GeoGebra projects that visualize the axioms. Appendix~\ref{a.tangent} derives trigonometric identities for tangents that may not be familiar. Appendix~\ref{a.parabola} explains the geometric definition of parabolas.
 
 \subsection*{Definitions}
 
-Each axiom states that a \emph{fold} exists that will place given points and lines onto points and lines, such that certain properties hold. The term fold comes from the origami operation of folding a piece of paper, but here it is used to refer the the line created by folding the paper.
+Each axiom states that a \emph{fold} exists that will place given points and lines onto points and lines, such that certain properties hold. The term fold comes from the origami operation of folding a piece of paper, but here it is used to refer the geometric line that would be created by folding the paper.
 
 Formal definitions are given in \cite[Chapter~10]{martin}. The reader should be aware that, \emph{by definition}, folds result in \emph{reflections}. Given a point $p$, its reflection around a fold $l$ results in a point $p'$, such that $l$ is the perpendicular bisector of the line segment $\overline{pp'}$:
 
@@ -75,7 +75,7 @@ Formal definitions are given in \cite[Chapter~10]{martin}. The reader should be 
 \draw[very thick,dashed] (4.7,1.6) -- node[very near end,right,yshift=4pt] {$l$} (3.5,4);
 \fill (P1) circle(2pt) node[above left] {$p$};
 \fill (P1P) circle(2pt) node[above left] {$p'$};
-\fill (mid) circle(2pt) node[below,xshift=-2pt,yshift=-8pt] {$p_i$};
+\fill (mid) circle(2pt);% node[below,xshift=-2pt,yshift=-8pt] {$p_i$};
 \draw[very thick,dotted,->,bend right=50] (2,1.8) to (6,3.8);
 \end{tikzpicture}
 \end{center}

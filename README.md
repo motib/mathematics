@@ -14,7 +14,6 @@ They can be downloaded from https://www.weizmann.ac.il/sci-tea/benari/mathematic
 * origami: The mathematics of origami (English)
 * quadratic: Po-Shen Lo's method for solving quadratic equations (English, Hebrew)
 * quaternions: Quaternions for three-dimensional rotations (English only)
-* set: Expanded appendix on set theory from logic textbook (English only)
 * TikZ examples (language independent)
 * trigonometry: A functional approach for teaching trigonometry (English, Hebrew)
 * triples: Pythagorean triples (English, Hebrew)

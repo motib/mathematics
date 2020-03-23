@@ -1,0 +1,150 @@
+% !TeX root = origami-math-en.tex
+
+\appendix
+
+
+\chapter{GeoGebra links}\label{a.geo}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Axiom 1& \url{https://www.geogebra.org/m/fq9d5hms}\\\hline
+Axiom 2& \url{https://www.geogebra.org/m/fgmfss27}\\\hline
+Axiom 3& \url{https://www.geogebra.org/m/ek3mqupw}\\\hline
+Axiom 4& \url{https://www.geogebra.org/m/renzzbdg}\\\hline
+Axiom 5& \url{https://www.geogebra.org/m/aszn9ywu}\\\hline
+Axiom 6& \url{https://www.geogebra.org/m/bxe5e5ku}\\\hline
+Axiom 7& \url{https://www.geogebra.org/m/yeq5gmeg}\\\hline
+Abe's trisection & \url{https://www.geogebra.org/m/dxrcvjam}\\\hline
+Martin's trisection & \url{https://www.geogebra.org/m/caky7edd}\\\hline
+Messer's doubling of the cube & \url{https://www.geogebra.org/m/mrcwjqh8}\\\hline
+Beloch's doubling of the cube & \url{https://www.geogebra.org/m/enzmmwua}\\\hline
+\end{tabular}
+\end{center}
+Due to a bug in Geogebra, in projects that use Axiom~6, points defined by reflection around the common tangent are not saved or are saved incorrectly.
+
+\chapter{Derivation of trigonometric identities}\label{a.tangent}
+
+The trigonometric identifies for tangent used in the proof of Axiom 3 can be derived from identities for the sine and cosine:
+
+\begin{form}{2.2}
+\tan (\theta_1+\theta_2) &=& \disfrac{\sin(\theta_1+\theta_2)}{\cos(\theta_1+\theta_2)}\\
+&=&\disfrac{\sin\theta_1\cos\theta_2+\cos\theta_1\sin\theta_2}{\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2}\\
+&=&\disfrac{\sin\theta_1+\cos\theta_1\tan\theta_2}{\cos\theta_1-\sin\theta_1\tan\theta_2}\\
+&=&\disfrac{\tan\theta_1+\tan\theta_2}{1-\tan\theta_1\tan\theta_2}\,.
+\end{form}
+
+We use this formula with $\theta=(\theta/2)+(\theta/2)$ to obtain a quadratic equation in $\tan(\theta/2)$:
+\begin{form}{2.2}
+\tan \theta=\disfrac{\tan(\theta/2)+\tan(\theta/2)}{1-\tan^2(\theta/2)}\\
+\tan\theta \,(\tan(\theta/2))^2 \;+\; 2\,(\tan (\theta/2)) \;-\;\tan \theta = 0\,.
+\end{form}
+Its solutions are:
+\[
+\tan(\theta/2) = \disfrac{-1\pm\sqrt{1+\tan^2\theta}}{\tan\theta}\,.
+\]
+
+\chapter{Parabolas}\label{a.parabola}
+
+
+Students are usually introduced to parabolas as the graphs of second degree equations:
+\[
+y=ax^2+bx+c\,.
+\]
+However, parabolas can be defined geometrically: given a point, the \emph{focus}, and a line, the \emph{directrix}, the locus of points equidistant from the focus and the directrix defines a parabola.
+
+
+The following diagram shows the focus---the large dot at $p=(0,f)$, and the directrix---the thick line whose equation is $y=-f$. The resulting parabola is shown as a dotted curve. Its vertex $p_2$ is at the origin of the axes.
+
+%\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\textsf{axis}} (6,0);
+\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\textsf{axis}} (0,4.5);
+\draw[ultra thick] (-6,-2) -- node[near start,below] {\textsf{directrix} $\quad y=-f$} (6,-2);
+\draw[domain=-6:6,samples=50,very thick,dotted] plot (\x,{\x*\x/8});
+\coordinate (F) at (0,2);
+\fill (F) circle (3pt) node[above left,xshift=-2pt,yshift=15pt] {$(0,f)$} node[above left,xshift=-2pt,yshift=30pt] {\textsf{focus}} node[above right] {$p$};
+\fill (0,0) circle (1.5pt) node[below right] {$p_2$};
+\fill (0,-2) circle (1.5pt);
+\fill (2,-2) circle (1.5pt);
+\fill (3,-2) circle (1.5pt);
+\fill (5,-2) circle (1.5pt);
+\coordinate (FP) at (-5,-2);
+\fill (FP) circle (1.5pt) node[below] {$p'$};
+\coordinate (F1) at (2,.5);
+\fill (F1) circle (1.5pt) node[below right] {$p_3$};
+\coordinate (F2) at (3,1.125);
+\fill (F2) circle (1.5pt) node[below right] {$p_4$};
+\coordinate (F3) at (5,3.125);
+\fill (F3) circle (1.5pt) node[below right] {$p_5$};
+\coordinate (F4) at (-5,3.125);
+\fill (F4) circle (1.5pt) node[above right] {$p_1$};
+\draw (F) -- node[left] {$a_2$} (0,0) -- node[left] {$a_2$} (0,-2);
+\draw (F) -- node[near end,left] {$a_3$} (F1) -- node[left] {$a_3$} (2,-2);
+\draw (F) -- node[near end,above] {$a_4$} (F2) -- node[left] {$a_4$} (3,-2);
+\draw (F) -- node[above] {$a_5$} (F3) -- node[left] {$a_5$} (5,-2);
+\draw (F) -- node[above] {$a_1$} (F4) -- node[left] {$a_1$} (FP);
+\draw[thick,dashed] ($(F4)!-.4!(-2.5,0)$) -- node[very near end,right,xshift=2pt] {$l$} ($(F4)!1.8!(-2.5,0)$);
+\draw[very thick,dotted] (F) -- (FP);
+\coordinate (H) at (-2.5,0);
+\node[above,xshift=1pt] at (H) {$?$};
+\draw[rotate=36] (H) rectangle +(10pt,10pt);
+\path (FP) -- node[above,yshift=2pt] {$b?$} (H) -- node[above,yshift=2pt] {$b?$} (F);
+\draw (0,-2) rectangle +(8pt,8pt);
+\draw (2,-2) rectangle +(8pt,8pt);
+\draw (3,-2) rectangle +(8pt,8pt);
+\draw (5,-2) rectangle +(8pt,8pt);
+\draw (-5,-2) rectangle +(8pt,8pt);
+\end{tikzpicture}
+\end{center}
+%\end{figure}
+
+We have selected five points $p_i$, $i=1,\ldots,5$ on the parabola. Each point $p_i$ is at a distance of $a_i$ from both the focus and from the directrix. Drop a perpendicular from $p_1$ to the directrix and let $p'$ be the intersection of the perpendicular and the directrix. Since $p_1$ is on the parabola, $\overline{p'p_1}=\overline{p_1p}=a_1$. We claim that the tangent $l$ to the parabola at $p_1$ (dashed line) is a fold that reflects $p$ onto $p'$.
+
+\newpage
+
+We have to prove the $l$ is the perpendicular bisector of $\overline{pp'}$. Let us extract a simplified diagram:
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+\draw[thick] (-6.4,0) -- node[very near start,below,xshift=-20pt] {$x$-\textsf{axis}} (1,0);
+\draw[thick] (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\textsf{axis}} (0,3.5);
+\draw[thick] (-6.4,-2) -- (1,-2);
+\coordinate (F) at (0,2);
+\fill (F) circle (1.5pt) node[right] {$p\;\;$ \textsf{focus}};
+\fill (0,0) circle (1.5pt) node[below right] {$p_2$};
+\coordinate (FP) at (-5,-2);
+\fill (FP) circle (1.5pt) node[below] {$p'$};
+\path (FP) -- node[below,yshift=-2pt] {\textsf{directrix}} (0,-2);
+\fill (0,-2) circle (1.5pt) node[below right] {$s$};
+\coordinate (F4) at (-5,3.125);
+\fill (F4) circle (1.5pt) node[above right] {$p_1$};
+\draw (F) -- node[right] {$a_2$} (0,0) -- node[right] {$a_2$} (0,-2);
+\draw (F) -- node[above] {$a_1$} (F4) -- (FP);
+\draw[<->] ($(F4)+(-.5,-.1)$) -- node[fill=white] {$a_1$}($(FP)+(-.5,.1)$);
+\draw[thick,dashed] ($(F4)!-.15!(-2.5,0)$) -- node[very near end,right,xshift=2pt] {$l$} ($(F4)!1.8!(-2.5,0)$);
+\draw[very thick,dotted] (F) -- (FP);
+\coordinate (H) at (-2.5,0);
+\node[above,xshift=1pt] at (H) {\textsf{\bfseries ?}};
+\draw[rotate=36] (H) rectangle +(10pt,10pt);
+\path (FP) -- node[above,yshift=2pt] {$b$ \textsf{\bfseries ?}} (H) -- node[above,yshift=2pt] {$b$ \textsf{\bfseries ?}} (F);
+\draw (0,0) rectangle +(8pt,8pt);
+\draw (0,-2) rectangle +(8pt,8pt);
+\draw (-5,0) rectangle +(8pt,8pt);
+\draw (-5,-2) rectangle +(8pt,8pt);
+\fill (-5,0) circle (1.5pt) node[below right] {$q$};
+\fill (-2.5,0) circle (1.5pt) node[below,yshift=-4pt] {$r$};
+\path (-5,0) -- node[right] {$a_2$} (-5,-2);
+\path (F4) -- node[left,xshift=-2pt] {$a$} (-2.5,0);
+\end{tikzpicture}
+\end{center}
+\begin{itemize}
+\item The directrix is parallel to the $x$-axis, the focus $p$ is on the $y$-axis and $\overline{p_1p'}$ is perpendicular to the directrix. Therefore, $\angle p'qr$ and $\angle pp_2r$ are right angles.
+\item $\overline{qp'}$ and $\overline{p_2s}$ are opposite sides of a rectangle, so $\overline{qp'}=\overline{p_2s}$, which in turn is equal to $\overline{pp_2}$ since $p_2$ is on the parabola and thus equidistant from $p$ and $s$.
+\item $\angle qrp'$ and $\angle p_2rp$ are equal vertical angles.
+\item The right triangles $\triangle qrp'$ and $\triangle p_2rp$ have one acute angle equal and one side equal so they are congruent. Therefore, $\overline{p'r}=\overline{rp}$ and $\overline{p_1r}$ is the median of $\triangle pp_1p'$.
+\item $p_1$ is on the parabola so $\overline{pp_1}=\overline{p_1p'}$. Therefore, $\triangle pp_1p'$ is an isoceles triangle.
+\item In the isoceles triangle $\triangle pp_1p'$, the median $\overline{p_1r}$ is also the perpendicular bisector of $\overline{pp'}$.
+\item $l$ is a fold that contains the line segment $\overline{p_1r}$.
+\end{itemize}
+

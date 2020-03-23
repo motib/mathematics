@@ -1,4 +1,4 @@
-% !TeX root = origami-math.tex
+% !TeX root = origami-math-en.tex
 
 \chapter{Axioms}\label{c.axioms}
 
@@ -85,7 +85,7 @@ Given two distinct points $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$, there is a unique fo
 
 \textbf{Derivation of the equation of the fold}
 
-The line $l$ is the perpendicular bisector of $\overline{p_1p_2}$. Its slope is the negative inverse of the slope of the line connecting $p_1$ and $p_2$. The line passes through the midpoint between the points:
+The fold $l$ is the perpendicular bisector of $\overline{p_1p_2}$. Its slope is the negative reciprocal of the slope of the line connecting $p_1$ and $p_2$. $l$ passes through the midpoint between the points:
 \begin{equation}
 y - \disfrac{y_1+y_2}{2} = -\disfrac{x_2-x_1}{y_2-y_1}\left(x-\disfrac{x_1+x_2}{2}\right)\,.\label{eq.midpoint1}
 \end{equation}
@@ -181,7 +181,7 @@ $\tan\theta_1=m_1$ and $\tan\theta_2=m_2$ are given and $m_b$, the slope of the 
 \[
 m_b=\tan\theta_b=\tan\disfrac{\theta_1+\theta_2}{2}\,.
 \]
-The derivation requires the use of the following trigonometric identities:\footnote{The derivation of these identities is given in Appendix~B, using the more familiar identities for $\sin$ and $\cos$.}
+The derivation requires the use of the following trigonometric identities:\footnote{The derivation of these identities is given in Appendix~B.}
 \begin{form}{2.2}
 \tan(\alpha_1+\alpha_2)&=& \disfrac{\tan\alpha_1+\tan\alpha_2}{1-\tan\alpha_1\tan\alpha_2}\\
 \tan \disfrac{\alpha}{2}&=& \disfrac{-1\pm\sqrt{1+\tan^2\alpha}}{\tan \alpha}\,.
@@ -311,7 +311,7 @@ For a given pair of points and a line, there may be zero, one or two folds.
 
 \textbf{Derivation of the equations of the reflections}
 
-Let $l$ be a fold through $p_2$ and $p_1'$ be the reflection of $p_1$ around $l$. The length of $\overline{p_1p_2}$ equals the length of $\overline{p_2p_1}'$. The locus of points at distance $p_1p_2$ \emph{from} $p_2$ is the circle centered at $p_2$ whose radius is the length of $\overline{p_1p_2}$. The intersections of this circle with the line $l_1$ give the possible points $p_1'$.
+Let $l$ be a fold through $p_2$ and $p_1'$ be the reflection of $p_1$ around $l$. The length of $\overline{p_1p_2}$ equals the length of $\overline{p_2p_1}'$. The locus of points at distance $\overline{p_1p_2}$ \emph{from} $p_2$ is the circle centered at $p_2$ whose radius is the length of $\overline{p_1p_2}$. The intersections of this circle with the line $l_1$ give the possible points $p_1'$.
 
 Let $l_1$ be $y=m_1x + b_1$ and let $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$. The equation of the circle centered at $p_2$ with radius the length of $\overline{p_1p_2}$ is:
 \begin{form}{1.5}
@@ -326,7 +326,7 @@ we obtain a quadratic equation for the $x$-coordinates of the possible intersect
 \begin{equation}
 x^2(1+m_1^2) \,+\, 2(-x_2+m_1b-m_1y_2)x \,+\, (x_2^2 + (b_1^2 - 2b_1y_2+y_2^2)-r^2)=0\,.\label{eq.intersections}
 \end{equation}
-There will be at most two solutions $p_1'=(x_1',y_1')$, $p_1''=(x_1'',y_1'')$, where $y_1',y_1''$ are obtained from $y=m_1x+b_1$ for $x=x_1',x=x_1''$.
+The quadratic equation has at most two solutions $x_1',x_1''$ and we can compute $y_1',y_1'')$ from $y=m_1x+b_1$. The reflected points are $p_1'=(x_1',y_1')$, $p_1''=(x_1'',y_1'')$.
 
 \textbf{Example}
 
@@ -338,9 +338,10 @@ Substitute the equation of the line into the equation of the circle and simplify
 \begin{form}{1.5}
 (x-4)^2 + \left(\left(-\disfrac{1}{2}x+3\right)-4\right)^2&=&20\\
 \disfrac{5}{4}x^2-7x-3 &=&0\\
-5x^2 -28x -12&=&0\,. 
+5x^2 -28x -12&=&0\\
+(5x+2)(x-6)&=&0\,.
 \end{form}
-This quadratic equation factors into $(5x+2)$ and $(x-6)$, giving two points of intersection:
+The two points of intersection are:
 \[
 p_1'=\left(-\disfrac{2}{5},\disfrac{16}{5}\right) = (-0.4,3.2)\,,\quad p_1''=(6,0)\,.
 \]
@@ -376,7 +377,7 @@ y&=&\disfrac{1}{2}x+2\,.
 \textbf{Axiom}                          
 Given two points $p_1$ and $p_2$ and two lines $l_1$ and $l_2$, there is a fold $l$ that places $p_1$ onto $l_1$ and $p_2$ onto $l_2$.
 
-\begin{figure}[H]
+%\begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}[scale=.9]
 \draw[step=10mm,white!50!black,thin] (-7,-7) grid (7,5);
@@ -420,7 +421,7 @@ Given two points $p_1$ and $p_2$ and two lines $l_1$ and $l_2$, there is a fold 
 \draw[very thick,dotted,->,bend right=50] (.3,-6.1) to (6.1,-2.2);
 \end{tikzpicture}
 \end{center}
-\end{figure}
+%\end{figure}
 
 For a given pair of points and pair of lines, there may be zero, one, two or three folds.
 
@@ -475,7 +476,7 @@ which simplifies to:
 m^2p^2+2pb-a=0\,.\label{eq.disc}
 \end{equation}
 
-This is the equation with variable $m$ for the slopes of tangents to the parabola. There are an infinite number of tangents because for each $m$, there is some $b$ that makes the line a tangent by moving it up or down.
+This is the equation with variable $m$ for the slopes of tangents to the parabola. There are an infinite number of tangents because for each $m$, there is some $b$ that makes the line a tangent by moving it up or down.\footnote{Except of course for a line parallel to the axis of symmetry.}
 
 To obtain the common tangents to both parabolas, the equations for the two parabolas have two unknowns and can be solved for $m$ and $b$.
 
@@ -565,7 +566,7 @@ we obtain a cubic equation with variable $m$:
 \begin{equation}
 m^3-3m^2-3m+1=0\,.\label{eq.cubic}
 \end{equation}
-Since a cubic equation has at most three (real) solutions, there can be zero, one, two or three common tangents.
+Since a cubic equation has at least one and at most three (real) solutions, there can be one, two or three common tangents. There can also be no common tangents if the two equations have no solution, for example, if one parabola is ``contained'' with another: $y=x^2$, $y=x^2+1$.
 
 The formula for solving cubic equations is quite complicated, so I used a calculator on the internet and obtained three solutions:
 \[
@@ -576,7 +577,7 @@ Choosing $m=0.27$, $b=3-m^2=2.93$, and the equation of the fold is:
 y=0.27x+2.93\,.
 \]
 
-From the form of Equation~\ref{eq.cubic}, we might guess that $1$ or $-1$ is a root:
+From the form of Equation~\ref{eq.cubic}, we might guess that $1$ or $-1$ is a solution:
 \begin{form}{1.4}
 1^3-3\cdot 1^2-3\cdot 1+1=-4\\
 (-1)^3-3\cdot (-1)^2-3\cdot(-1)+1=0\,.
@@ -588,7 +589,7 @@ Divide Equation~\ref{eq.cubic} by $m-(-1)=m+1$ to obtain the quadratic equation 
 
 \textbf{Derivation of the equations of the reflections}
 
-For clarity, we derive the position of the reflection $p_1'=(x_1',y_1')$ of $p_1=(x_1,y_1)$ around some tangent line $l_t$ whose equation is $y=m_tx+b_t$. The derivation is identical for any tangent and for $p_2$.
+We derive the position of the reflection $p_1'=(x_1',y_1')$ of $p_1=(x_1,y_1)$ around some tangent line $l_t$ whose equation is $y=m_tx+b_t$. The derivation is identical for any tangent and for $p_2$.
 
 To reflect $p_1$ around $l_t$, we find the line $l_p$ with equation $y=m_px+b_p$ that is perpendicular to $l_t$ and passes through $p_1$;
 \begin{form}{2}

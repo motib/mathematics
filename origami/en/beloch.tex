@@ -1,13 +1,13 @@
-% !TeX root = origami-math.tex
+% !TeX root = origami-math-en.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Beloch's Fold and Beloch's Square}\label{c.beloch}
 
 \section{The Beloch fold}\label{s.beloch-fold}
 
-Margharita P. Beloch discovered a remarkable connection between origami and Lill's method for solving cubic equations. She found that one application of the operation of origami Axiom~6 (Section~\ref{s.ax6}) applied to the first path of Lill's method can obtain a real root of any cubic polynomial. The operation is often called the \emph{Beloch fold}.
+Margharita P. Beloch discovered a remarkable connection between origami and Lill's method for finding roots of polynomials. She found that one application of the operation of origami Axiom~6 (Section~\ref{s.ax6}) applied to the first path of Lill's method can obtain a real root of any cubic polynomial. The operation is often called the \emph{Beloch fold}.
 
-Consider the polynomial $p(x)=x^3+6x^2+11x+6$ from Section~\ref{s.magic}. In the following diagram we have emphasized the second path and renamed some vertices. All we have to do to solve the equation is to locate the points $P',Q'$ on the line segments of lengths $a_2,a_1$, respectively. This looks like an easy application of the Beloch fold. Unfortunately, if you apply the axiom, the path does not solve the equation: $Q'$ is way off to the right, so the angle at $P'$ and $Q'$ are not right angles.
+Consider the polynomial $p(x)=x^3+6x^2+11x+6$ from Section~\ref{s.magic}. In the following diagram we have emphasized the second path and renamed some vertices. All we have to do to solve the equation is to perform a Beloch fold to simultaneously place the points $P',Q'$ on the line segments of lengths $a_2,a_1$, respectively. Unfortunately, if you perform the fold, the path does not solve the equation: $Q'$ is way off to the right, so the angles at $P'$ and $Q'$ are not right angles.
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 % Draw help lines and axes
@@ -56,9 +56,10 @@ Consider the polynomial $p(x)=x^3+6x^2+11x+6$ from Section~\ref{s.magic}. In the
 \end{tikzpicture}
 \end{center}
 
-Recall that a fold is the perpendicular bisector of the line segment between any point and its reflection around the fold. We want $\overline{P'Q'}$ to be a fold so that it will be perpendicular to $\overline{QQ'}$ and $\overline{PP'}$. If $\overline{P'Q'}$ is the perpendicular bisector of $\overline{QQ'}$ and $\overline{PP'}$, $P',Q'$ the reflections of $P,Q$ must be the same distance away from the fold as $P$ and $Q$. With some change of notation we have the following diagram.
-
 \newpage
+
+Recall that a fold is the perpendicular bisector of the line segment between any point and its reflection around the fold. We want $\overline{P'Q'}$ to be a fold so that it will be perpendicular to both $\overline{QQ'}$ and $\overline{PP'}$. If $\overline{P'Q'}$ is the perpendicular bisector of $\overline{QQ'}$ and $\overline{PP'}$, then $P',Q'$, the reflections of $P,Q$, must be the same distance away from the fold as $P$ and $Q$, respectively. With some change of notation we have the following diagram.
+
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 % Draw help lines and axes
@@ -127,7 +128,7 @@ A line $a_2'$ is drawn so that it is parallel to $a_2$ and the same distance fro
 
 \newpage
 
-Let us try the Beloch fold on the polynomial $x^3-3x^2-3x+1$ from Section~\ref{s.negative}. $a_2$ is the vertical line line of length $3$ and its parallel line $a_2'$ is $x=2$. $a_1$ is the horizontal line segment of length $3$ and its parallel line $a_1'$ is $y=-2$. The fold $RS$ is the perpendicular bisector of both $\overline{PP'}$ and $\overline{QQ'}$. The line $\overline{PRSQ}$ is the same as the second path in Section~\ref{s.negative}.
+Let us try the Beloch fold on the polynomial $x^3-3x^2-3x+1$ from Section~\ref{s.negative}. $a_2$ is the vertical line segment of length $3$ whose equation is $x=1$, and its parallel line is $a_2'$ whose equation is $x=2$, because $P$ is at a distance of $1$ from $a_2$. $a_1$ is the horizontal line segment of length $3$ whose equation is $y=-3$, and its parallel line is $a_1'$ whose equation is $y=-2$ because $Q$ is at a distance of $1$ from $a_1$. The fold $RS$ is the perpendicular bisector of both $\overline{PP'}$ and $\overline{QQ'}$. The line $\overline{PRSQ}$ is the same as the second path in Section~\ref{s.negative}.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -195,7 +196,7 @@ Let us try the Beloch fold on the polynomial $x^3-3x^2-3x+1$ from Section~\ref{s
 
 \section{The Beloch square}\label{s.beloch-square}
 
-This construction can be expressed in terms of a \emph{Beloch square}: Given two points $P,Q$ and two lines $a_2,a_1$, construct a square $\overline{ARSB}$, such that:
+This construction in the previous section can be expressed in terms of a \emph{Beloch square}: Given two points $P,Q$ and two lines $a_2,a_1$, construct a square $\overline{ARSB}$, such that:
 \begin{itemize}
 \item One side is $\overline{RS}$ where $R$ lies on $a_2$ and $S$ lies on $a_1$;
 \item $P$ lies on $\overline{RA}$ and $Q$ lies on $\overline{SB}$.

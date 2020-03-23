@@ -1,4 +1,4 @@
-% !TeX root = origami-math.tex
+% !TeX root = origami-math-en.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -10,7 +10,7 @@ Construct a path consisting of four line segments $\{a_3,a_2,a_1,a_0\}$ of lengt
 \[
 \{a_3=1,a_2=6,a_1=11,a_0=6\}\,,
 \]
-starting from the origin, first along the $x$-axis and turning $90^\circ$ counterclockwise between segments. Construct a second path as follows: draw a line from the origin at an angle of $63.4^\circ$ and mark its intersection with $a_2$ by $P$. Turn left $90^\circ$, draw a line and and mark its intersection with $a_1$ by $Q$. Turn left $90^\circ$ once again, draw a line and note that it intersects the end of the first path at $(-10,0)$. %See Figure~\ref{fig.magic}.
+starting from the origin, first along the positive direciton of the $x$-axis and turning $90^\circ$ counterclockwise between segments. Construct a second path as follows: draw a line from the origin at an angle of $63.4^\circ$ and mark its intersection with $a_2$ by $P$. Turn left $90^\circ$, draw a line and and mark its intersection with $a_1$ by $Q$. Turn left $90^\circ$ once again, draw a line and note that it intersects the end of the first path at $(-10,0)$. %See Figure~\ref{fig.magic}.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.15]
@@ -62,7 +62,7 @@ starting from the origin, first along the $x$-axis and turning $90^\circ$ counte
 \draw[very thick,dashed] (B2) -- (E);
 \end{tikzpicture}
 \end{center}
-Let $p(x)=a_3x^3+a_2x^2+a_1x+a_0=x^3+6x^2+11x+6$. Compute $\tan 63.4^\circ=2$, the tangent of the angle at the start of the first path. Then:
+Let $p(x)=a_3x^3+a_2x^2+a_1x+a_0=x^3+6x^2+11x+6$. Compute $\tan 63.4^\circ=2$, the tangent of the angle at the start of the second path. Then:
 \[
 p(-\tan 63.4^\circ)=(-2)^3+6(-2)^2+11(-2)+6=0\,.
 \]
@@ -77,7 +77,7 @@ Clearly, this is not an algebraic method of computing roots of cubic equations; 
 
 In Sections~\ref{s.multiple}--\ref{s.noroots} we continue the initial example to find additional roots and to show that if an angle $\alpha$ is such that $-\tan\alpha$ is \emph{not} a root, then the construction doesn't work.
 
-Section~\ref{s.method} presents the full specification of Lill's method. Some of the description may be difficult to understand, but will be clarified when demonstrated by additional examples in Sections~\ref{s.negative}, \ref{s.zero}, \ref{s.noninteger}. Since Lill's method can find a real root of any cubic polynomial, it can be used to trisect an angle. Since it can find $\sqrt[3]{2}$ as a root of $x^3-2$, it can double a cube as shown in Section~\ref{s.cube}.
+Section~\ref{s.method} presents the full specification of Lill's method. Some of the description may be difficult to understand, but will be clarified when demonstrated by additional examples in Sections~\ref{s.negative}--\ref{s.noninteger}. Since Lill's method can find a real root of any cubic polynomial, it can be used to trisect an angle. Since it can find $\sqrt[3]{2}$ as a root of $x^3-2$, it can double a cube as shown in Section~\ref{s.cube}.
 
 Section~\ref{s.proof} gives a proof that Lill's method can find the real roots of any cubic polynomial. The proof for arbitrary polynomials follows the same structure.
 
@@ -246,7 +246,7 @@ Perhaps the second path intersects the end of the first path for \emph{any} init
 
 \section{Specification of Lill's method}\label{s.method}
 
-This section gives the complete specification of Lill's method for finding real roots of cubic polynomials. Examining the examples below will help understand the details.
+Examining the examples below will help understand the details.
 \begin{itemize}
 \item Start with an arbitrary cubic polynomial: $p(x)=a_3x^3+a_2x^2+a_1x+a_0$.
 \item Construct the first path as follows:
@@ -264,11 +264,11 @@ This section gives the complete specification of Lill's method for finding real 
 \item Special cases:
 \begin{itemize}
 \item When drawing the line segments of the first path, if a coefficient is negative, draw the line segment \emph{backwards}.
-\item When drawing the line segments of the first path, if a coefficient is zero, do not draw a line segment but continue with the next $\pm90^\circ$ turn.
+\item When drawing the line segments of the first path, if a coefficient is zero, do not draw a line segment but continue with the next $\pm 90^\circ$ turn.
 \end{itemize}
 \item Notes:
 \begin{itemize}
-\item "Intersects $a_i$" includes ``intersects with the line that contains $a_i$''.
+\item ``Intersects $a_i$'' includes ``intersects the line segment $a_i$ or any extension of it'' or ``intersects the line that contains the line segment $a_i$''.
 \item When building the second path, choose to turn left or right by $90^\circ$ so that there is an intersection with the next segment of the first path.
 \end{itemize}
 \end{itemize}
@@ -285,7 +285,7 @@ We start the second path with a line angled $45^\circ$ with the $x$-axis. It int
 
 Since $-\tan 45^\circ=-1$, a real root of the polynomial is $-1$:
 \[
-p(-1)=(-1)^3-3(-1)^2-3(-1)+6=-1-3+3+1=0\,.
+p(-1)=(-1)^3-3(-1)^2-3(-1)+6=0\,.
 \]
 The loosely dashed lines in the Figure will be discussed  in Section~\ref{s.noninteger}.
 
@@ -309,7 +309,7 @@ The loosely dashed lines in the Figure will be discussed  in Section~\ref{s.noni
 \coordinate (E) at (4,-4);
 \foreach \x in {A,B,C,D,E}
   \fill (\x) circle(1pt);
-\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-] (A) --
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
   node[below,yshift=-5pt] {$1$} (B);
 \draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
   node[right,xshift=3pt] {$a_2=-3$} (C);
@@ -354,11 +354,11 @@ $a_2$, the coefficient of the $x^2$ term in the polynomial $x^3-7x-6=0$, is zero
 
 There are three second paths that intersect the end of the first path. They start with angles of:
 \[
-\alpha=45^\circ,\; \beta=63.4^\circ,\; \gamma=-71.6^\circ\,.
+\alpha=45^\circ,\quad \beta=63.4^\circ,\quad \gamma=-71.6^\circ\,.
 \]
 We conclude that there are three real roots:
 \[
--\tan 45^\circ=-1,\; -\tan 63.4^\circ =-2,\; -\tan -71.6^\circ=3\,.
+-\tan 45^\circ=-1,\quad -\tan 63.4^\circ =-2,\quad -\tan (-71.6^\circ)=3\,.
 \]
 Check:
 \[
@@ -384,9 +384,9 @@ Check:
 \node[below right] at (D) {$A$};
 \foreach \x in {A,B,C,D}
   \fill (\x) circle(1.5pt); 
-\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-] (A) --
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
   node[below,yshift=-5pt] {$1$} (B);
-\draw[{Stealth[scale=1.4,inset=2pt]}-,very thick] (B) --
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] (B) --
   ($(B)+(0,.1)$);
 \draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
   node[below,xshift=-6pt,yshift=-5pt] {$-7$} (C);
@@ -435,7 +435,7 @@ It is easy to see that $1$ is a root of $p(x)$. Since $-\tan^{-1} -45^\circ=-1$,
 \]
 Therefore, there are two additional second paths: one starting with an angle of $-31.8^\circ$ since $-\tan^{-1} 0.62=-31.8^\circ$, and one starting with $58.3^\circ$ since $-\tan^{-1}1.62=58.3^\circ$.
 
-Similarly, the polynomial in Section~\ref{s.negative} has roots $ 2\pm\sqrt{3}\approx 3.73, 0.27$. The corresponding angles are $-75^\circ$ and $-15^\circ$, because $(-\tan -75^\circ)\approx 3.73$ and $(-\tan -15^\circ)\approx 0.27$.
+Similarly, the polynomial in Section~\ref{s.negative} has roots $ 2\pm\sqrt{3}\approx 3.73, 0.27$. The corresponding angles are $-75^\circ$ and $-15^\circ$, because $-\tan (-75^\circ)\approx 3.73$ and $-\tan (-15^\circ)\approx 0.27$.
 \begin{center}
 \begin{tikzpicture}[scale=2]
 % Draw help lines and axes
@@ -519,7 +519,7 @@ Similarly, the polynomial in Section~\ref{s.negative} has roots $ 2\pm\sqrt{3}\a
 
 \section{The cube root of two}\label{s.cube}
 
-To double a cube we need to compute $\sqrt[3]{2}\approx 1.26$ which is a root of the cubic polynomial $x^3-2$. In the construction of the first path, we turn twice without drawing any line segments, because $a_2$ and $a_1$ are both zero. The first segment of the second path is drawn at an angle of $-51.6^\circ$ and $(-\tan -51.6^\circ)\approx 1.26\approx \sqrt[3]{2}$.
+To double a cube we need to compute $\sqrt[3]{2}\approx 1.26$ which is a root of the cubic polynomial $x^3-2$. In the construction of the first path, we turn left twice without drawing any line segments, because $a_2$ and $a_1$ are both zero. Then we turn left again (to face down) and draw backwards because $a_0=-2$ is negative. The first segment of the second path is drawn at an angle of $-51.6^\circ$ and $-\tan (-51.6^\circ)\approx 1.26\approx \sqrt[3]{2}$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.6]
@@ -574,20 +574,6 @@ To double a cube we need to compute $\sqrt[3]{2}\approx 1.26$ which is a root of
 \draw[very thick,dashed,->] (B1) -- (C);
 \end{tikzpicture}
 \end{center}
-\begin{comment}
-Once we have a real root of two, we can compute the two complex roots as follows. Since $\sqrt[3]{2}=\sqrt[3]{2\cdot 1}=\sqrt[3]{2}\cdot\sqrt[3]{1}$, it is sufficient to find the cube roots of one, that is, the roots of the polynomial $x^3-1$. One root is $1$ and dividing by $x-1$ gives a quadratic equation:
-\[
-x^3-1=(x-1)(x^2+x+1)\,.
-\]
-Now use the formula for finding the roots of a quadratic polynomial:
-\[
-r=\disfrac{-1\pm\sqrt{b^2-4ac}}{2}=\disfrac{-1\pm\sqrt{1-4}}{2}=\disfrac{-1\pm i\sqrt{3}}{2}\,.
-\]
-Check that:
-\[
-\left(\sqrt[3]{2}\cdot \disfrac{-1\pm i\sqrt{3}}{2}\right)^3=2\,.
-\]
-\end{comment}
 
 \newpage
 
@@ -595,7 +581,7 @@ Check that:
 
 We limit ourselves to monic cubic polynomials $p(x)=x^3+a_2x^2+a_1x+a_0$.\footnote{If the polynomial is not monic, divide it by $a_3$ and the resulting monic polynomial has the same roots.} In the diagram below, segments of the first path are labeled with coefficients and with $b_2,b_1,a_2-b_2,a_1-b_1$.
 
-Since the sum of the angles of a triangle is $180^\circ$, in a right triangle if one acute angle is $\theta$, the other is $90^\circ-\theta$. Therefore, the angles above $P$ and the angle to the left of $Q$ are equal to $\theta$. We now derive a sequence of formulas for $\tan \theta$:
+Since the sum of the angles of a triangle is $180^\circ$, in a right triangle if one acute angle is $\theta$, the other is $90^\circ-\theta$. Therefore, the angle above $P$ and the angle to the left of $Q$ are equal to $\theta$. We now derive a sequence of formulas for $\tan \theta$:
 \begin{form}{1.5}
 \tan \theta &=& \disfrac{b_2}{1}=b_2\\
 %a_2-b_2&=&a_2-\tan\theta\\
@@ -609,7 +595,7 @@ Simplifying the last equation gives:
 -(\tan\theta)^3+a_2(\tan\theta)^2-a_1(\tan\theta)+a_0&=&0\\
 (-\tan\theta)^3+a_2(-\tan\theta)^2+a_1(-\tan\theta)+a_0&=&0\,.
 \end{form}
-We conclude that $-\tan\theta$ is a real root of $x^3+a_2x^2+a_1x+a_0$.
+We conclude that $-\tan\theta$ is a real root of $p(x)=x^3+a_2x^2+a_1x+a_0$.
 
 
 \begin{center}

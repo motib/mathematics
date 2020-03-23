@@ -1,13 +1,17 @@
-% !TeX root = origami-math.tex
+% !TeX root = origami-math-he.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Trisecting an Angle}\label{c.trisection}
+\chapter{חלוקת זווית לשלושה חלקים}\label{c.trisection}
 
-\section{Abe's trisection of an angle}\label{s.tri1}
+\section{הבנייה של 
+\L{Abe}
+לחלוקת זווית לשלושה חלקים%
+}\label{s.tri1}
 
-\subsection{The construction}
+\subsection{הבנייה}
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=1]
 
 % Place points P, Q, R
@@ -61,16 +65,69 @@
 
 \end{tikzpicture}
 \end{center}
+נתונה זווית חדה
+$\angle PQR$,
+יהי הקו
+$p$
+ניצב ל-%
+$\overline{QR}$
+ב-%
+$Q$.
+יהי הקו
+$q$
+ניצב ל-%
+$p$
+ב-% 
+$A$
+שחותך את
+$\overline{PQ}$,
+ויהי הקו
+$r$
+ניצב ל-%
+$p$
+ב-%
+$B$
+במחצית הדרך בן
+$Q$
+ו-%
+$A$.
 
-Given the acute angle $\angle PQR$, let $p$ be the perpendicular to $\overline{QR}$ at $Q$. Let $q$ be a perpendicular to $p$ that intersects $\overline{PQ}$ and let $r$ be the perpendicular to $p$ that is halfway between $Q$ and $A$. $r$ intersects $p$ at point $B$.
+לפי אקסיומה 
+$6$
+בנה קיפול
+$l$
+המניח את 
+$A$
+על
+$\overline{PQ}$ 
+בנקודה
+$A'$,
+ומניח את
+$Q$
+על
+$r$
+בנקודה
+$Q'$.
+נסמן ב--%
+$B'$
+את השיקוף של 
+$B$
+מסביב ל-%
+$l$.
 
-Using Axiom~6, construct a fold $l$ that places $A$ at $A'$ on $\overline{PQ}$ and $Q$ at $Q'$ on $r$. Let $B'$ be the reflection of $B$ around $l$.
+בנה את הקווים
+$\overline{QB'}$
+ו-%
+$\overline{QQ'}$.
+טיעון: הזוויות
+$\angle PQB'$, $\angle B'QQ'$, $\angle Q'QR$
+מחלקות לשלושה חלקים את הזווית
+$\angle PQR$.
 
-Draw the lines $\overline{QB'}$ and $QQ'$. We claim that $\angle PQB'$, $\angle B'QQ'$ and $Q'QR$ are a trisection of $\angle PQR$.
-
-\subsection{First proof}
+\subsection{הוכחה ראשונה}
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=1]
 
 % Place points P, Q, R
@@ -136,21 +193,71 @@ Draw the lines $\overline{QB'}$ and $QQ'$. We claim that $\angle PQB'$, $\angle 
 \end{tikzpicture}
 \end{center}
 
+הנקודות
+$A', B', Q'$
+הן שיקופים סביב אותו קו 
+$l$
+של הנקודות
+$A,B,Q$
+הנמצאות על קו אחד
+$\overline{DQ}$,
+ולכן גם הן נמצאות על קטע קו אחד
+$\overline{DQ'}$.
+לפי הבנייה,
+$\overline{AB}=\overline{BQ}$, $\overline{BQ'}$
+ניצב ל-%
+$AQ$
+ו-%
+$\overline{BQ'}$
+הוא צלע משותף, ולכן
+$\triangle ABQ'\cong \triangle QBQ'$ 
+לפי צלע-זווית-צלע. מכאן ש:
+$\angle AQ'B=\angle QQ'B=\alpha$,
+כי
+$\overline{Q'B}$
+הוא האנך האמצעי של המשולש שווי-שוקיים
+$\triangle AQ'Q$.
 
-Since $A', B', Q'$ are all reflections around the same line $l$, they are all on one line $\overline{DQ'}$. By construction, $\overline{AB}=\overline{BQ}$, $\overline{BQ'}$ is perpendicular to $AQ$ and $\overline{BQ'}$ is a common side, so $\triangle ABQ'\cong QBQ'$ by side-angle-side. Therefore, $\angle AQ'B=\angle QQ'B=\alpha$, since $\overline{Q'B}$ is the perpendicular bisector of the isoceles triangle $\triangle AQ'Q$.
+לפי זוויות מתחלפות,
+$\angle Q'QR=\angle QQ'B=\alpha$.
 
-By alternating interior angles, $\angle Q'QR=\angle QQ'B=\alpha$.
-
-By reflection, $\triangle AQ'Q\cong \triangle A'QQ'$.\footnote{The two triangles have been emphasized using different patterns of dashes and dots, as well as using color.}
+לפי שיקוף,
+$\triangle AQ'Q\cong \triangle A'QQ'$.\footnote{%
+שני המשולשים מודגשים על ידי קווים שונים של מקפים ונקודות, וכן על ידי הצבעים אדום וכחול.%
+}
 \begin{quote}
-The fold $l$ is the perpendicular bisector of both $\overline{AA'}$ and $\overline{QQ'}$; drop perpendiculars from $A$ and $A'$ to $\overline{QQ'}$; then $\overline{AQ}=\overline{A'Q'}$ follows by congruent right triangles. $\overline{AA'Q'Q}$ is an isoceles trapezoid so its diagonals are equal $\overline{AQ'}=\overline{A'Q}$.
+הוכחה: הקיפול
+$l$
+הוא האנך האמצעי של 
+$\overline{AA'}$
+וגם של
+$\overline{QQ'}$;
+בנה ניצבים מ-%
+$A$
+ו-%
+$A'$
+ל-%
+$\overline{QQ'}$;
+אזי
+$\overline{AQ}=\overline{A'Q'}$
+לפי משולשים ישר זווית חופפים.
+$\overline{AA'Q'Q}$
+הוא טרפז שווי-שוקיים כך שהאלכסונים שווים
+$\overline{AQ'}=\overline{A'Q}$.
 \end{quote}
-Therefore, $\overline{QB'}$, the reflection of $\overline{Q'B}$, is the perpendicular bisector of an isoceles triangle and $\angle A'QB'=\angle Q'QB'=\angle QQ'B=\alpha$.
+מכאן ש-%
+$\overline{QB'}$,
+השיקוף של
+$\overline{Q'B}$,
+הוא האנך האמצעי של משולש שווי-שוקיים
+$\triangle A'QQ'$,
+ו-%
+$\angle A'QB'=\angle Q'QB'=\angle QQ'B=\alpha$.
 
-
-\subsection{Second proof}
+\subsection{הוכחה שנייה}
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=1]
 
 % Place points P, Q, R
@@ -217,19 +324,58 @@ Therefore, $\overline{QB'}$, the reflection of $\overline{Q'B}$, is the perpendi
 \end{tikzpicture}
 \end{center}
 
+הקו
+$l$
+הוא קיפול, ולכן הוא האנך האמצעי של
+$\overline{QQ'}$.
+סמן ב-%
+$U$
+את נקודת החיתוך של
+$l$
+עם
+$\overline{QQ'}$,
+וסמן ב-%
+$V$
+את נקודת החיתוך שלו עם
+$\overline{QB'}$.
+$\triangle VUQ\cong \triangle VUQ'$
+לפי צלע-זווית-צלע כי:
+$\overline{VU}$
+הוא צלע משותף, הזוויות ב-%
+$U$
+הן זוויות ישרות, ו-%
+$\overline{QU}=\overline{Q'U}=b$.
+מכאן ש-%
+$\angle VQU=\angle VQ'U=\alpha$
+ו-%
+$\angle Q'QR=\angle VQ'U=\alpha$
+לפי זוויות מתחלפות.
 
-Since $l$ is a fold, it is the perpendicular bisector of $\overline{QQ'}$. Denote the intersection of $t$ with $\overline{QQ'}$ by $U$, and its intersection with $\overline{QB'}$ by $V$. $\triangle VUQ\cong \triangle VUQ'$ by side-angle-side since $\overline{VU}$ is a common side. $\angle VQU=\angle VQ'U=\alpha$ and then $\angle Q'QR=\angle VQ'U=\alpha$ by alternating interior angles.
-
-As in Proof 1, $A', B', Q'$ are all reflections around $l$, so they are all on one line $\overline{DQ'}$, and $\overline{A'B'}=\overline{AB}=\overline{BQ}=\overline{B'Q'}=a$. Then $\triangle A'B'Q=\triangle Q'B'Q$ and $\angle A'QB'=\angle Q'QB'=\alpha$.
+כמו בהוכחה הראשונה, הנקודות
+$A', B', Q'$
+הן כולן שיקופים סביב
+$l$,
+לכן הן כולן נמצאות על קטע קו אחד
+$\overline{DQ'}$,
+ו-%
+$\overline{A'B'}=\overline{AB}=\overline{BQ}=\overline{B'Q'}=a$.
+מכאן ש-%
+$\triangle A'B'Q\cong\triangle Q'B'Q$
+ו-%
+$\angle A'QB'=\angle Q'QB'=\alpha$.
 
 
 \newpage
 
-\section{Martin's trisection of an angle}\label{s.tri2}
+\section{הבנייה של
+\L{Martin}
+לחלוקת זווית לשלושה חלקים%
+}\label{s.tri2}
 
-\subsection{The construction}
+\subsection{הבנייה}
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.9]
 
 % Place points P, Q, R
@@ -329,20 +475,122 @@ As in Proof 1, $A', B', Q'$ are all reflections around $l$, so they are all on o
 \end{tikzpicture}
 \end{center}
 
+נתונה זווית חדה
+$\angle PQR$,
+תהי
+$M$
+נקודת האמצע של
+$\overline{PQ}$.
+בנה
+$p$
+ניצב ל-%
+$\overline{QR}$
+העובר דרך
+$M$
+ובנה
+$q$
+ניצב ל-%
+$p$
+העובר דרך 
+$M$.
+$q$
+מקביל ל-%
+$\overline{QR}$.
 
-Given the acute angle $\angle PQR$, let $M$ be the midpoint of $\overline{PQ}$. Construct $p$ the perpendicular to $\overline{QR}$ through $M$ and construct $q$ perpendicular to $p$ through $M$. $q$ is parallel to $\overline{QR}$.
+לפי אקסיומה $6$, בנה קיפול
+$l$
+המניח את
+$P$
+ב-%
+$P'$
+על
+$p$,
+ומניח את
+$Q$
+ב-%
+$Q'$
+על
+$q$.
+ייתכן שקיים מספר קיפולים מתאימים; בחר את הקיפול החותך את
+$\overline{PM}$.
 
-Using Axiom 6, construct a fold $l$ that places $P$ at $P'$ on $p$ and $Q$ at $Q'$ on $q$. More than one fold may be possible; choose the one that intersects $\overline{PM}$.
+בנה את קטעי הקו
+$\overline{PP'}$
+ו-%
+$\overline{QQ'}$.
+סמן ב-%
+$U$
+את נקודת החיתוך של
+$\overline{QQ'}$
+עם
+$p$,
+וסמן ב-%
+$V$
+את נקודת החיתוך שלו עם
+$l$.
+סמן ב-%
+$W$
+את החיתוכים של 
+$\overline{PQ}$
+ו-%
+$\overline{P'Q'}$
+עם
+$l$.\footnote{%
+לא ברור מאליו ש-%
+$\overline{PQ}$
+ו-%
+$\overline{P'Q'}$
+חותכים את
+$l$
+באותה נקודה. 
+$\triangle PP'W\sim\triangle QQ'W$
+כך שהגבהים מחלקים את הזוויות 
+$\angle PWP', \angle QWQ'$
+בצורה דומה וחייבים להיות על אותו קו.%
+}
 
-Draw the lines $\overline{PP'}$ and $\overline{QQ'}$. They are bisected by the fold. Denote the intersection of $\overline{QQ'}$ with $p$ by $U$ and its intersection with $l$ by $V$. Draw $P'Q'$.
+\subsection{הוכחה}
 
-\subsection{Proof}
+$\triangle QMU\cong \triangle PMP'$
+לפי זווית-צלע-זווית:
+$\angle P'PM=\angle UQM=\beta$
+לפי זוויות מתחלפות;
+$\overline{QM}=\overline{MP}=a$
+כי 
+$M$
+היא נקודת האמצע של
+$\overline{PQ}$;
+$\angle QMU=\angle PMP'$
+הן זוויות קודקודיות. מכאן ש-%
+$\overline{P'M}=\overline{MU}=b$.
 
-By alternate interior angles $\angle Q'QR=\angle MQ'Q$. Since $l$ is the perpendicular bisector of both $PP'$ and $QQ'$, $PP'\parallel QQ'$, and by alternate interior angles $\angle P'PQ=\angle PQQ'=\beta$.
+$\triangle P'MQ'\cong\triangle UMQ'$
+לפי צלע-זוויות-צלע: הראנו ש-%
+$\overline{P'M}=\overline{MU}=b$;
+הזוויות ב-%
+$M$
+הן זוויות ישרות; 
+$\overline{MQ'}$
+הוא צלע משותף. הגובה של המשולש שווה-שוקיים 
+$\triangle P'Q'U$ 
+הוא חוצה הזווית
+$\angle P'Q'U$
+ולכן
+$\angle P'Q'M=\angle UQ'M=\alpha$.
 
-$\triangle QMU\cong \triangle PMP'$ by angle-side-angle: $M$ is the midpoint of $\overline{PQ}$ so $\overline{QM}=\overline{MP}=a$; we have shown that $\angle P'PM=\angle MQU=\beta$; $\angle QMU=\angle PMP'$ are vertical angles. Therefore, $\overline{P'M}=\overline{MU}=b$.
 
-$\triangle P'MQ'\cong \triangle UMQ'$ by side-angle-side: we have shown that $\overline{P'M}=\overline{MU}=b$; the angles at $M$ are right angles; $\overline{MQ'}$ is a common side. Since the altitude of the isoceles triangle $\triangle P'Q'U$ is the bisector of $\angle P'Q'U$, $\angle P'Q'M=\angle UQ'M=\alpha$.
-
-$\triangle QWV\cong\triangle SWV$ by side-angle-side: $\overline{QV}=\overline{VQ'}=c$; the angles at $V$ are right angles since $l$ is the perpendicular bisector of $\overline{QQ'}$; $\overline{VW}$ is a common side. Therefore, $\angle WQV=\beta=\angle WQ'V=2\alpha$. We have $\angle PQR = \beta + \alpha = 2\alpha+\alpha=3\alpha$ so $\overline{QQ'}$ trisects $\angle PQR$.
-
+$\triangle QWV\cong\triangle SWV$
+לפי צלע-זווית-צלע:
+$\overline{QV}=\overline{VQ'}=c$
+והזוויות ב-%
+$V$
+הן זוויות ישרות כי הקיפול הוא האנך אמצעי של
+$\overline{QQ'}$; $\overline{VW}$
+הוא צלע משותף. מכאן ש-%
+$\angle WQV=\beta=\angle WQ'V=2\alpha$.
+הראנו ש-%
+$\angle PQR = \beta + \alpha = 2\alpha+\alpha=3\alpha$
+ולכן
+$\angle Q'QR$
+היא שליש מ-%
+$\angle PQR$.

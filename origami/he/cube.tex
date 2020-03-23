@@ -1,0 +1,478 @@
+% !TeX root = origami-math-he.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{הכפלת קוביה}\label{c.cube}
+
+\section{%
+הבנייה של 
+\L{Messer}
+להכפלת קוביה}%
+\label{s.cube1}
+
+לקוביה בנפח 
+$V$
+צלעות באורך
+$\sqrt[3]{V}$.
+נפח קוביה שנפחה פי שניים הוא
+ $2\cdot V$,
+ כך שיש לבנות קטע קו באורך
+$\sqrt[3]{2\cdot V}=\sqrt[3]{2}\cdot \sqrt[3]{V}$.
+אם נוכל לבנות קטע קו באורך
+$\sqrt[3]{2}$,
+נוכל להכפיל באורך הנתון
+$\sqrt[3]{V}$
+כדי להכפיל את נפח הקוביה.
+
+\subsection{חלוקת קטע קו לשלוש}
+
+\L{Lang \cite{lang}}
+מביא בניות יעילות עבור שברים רציונליים של אורכו של צלע של )דף נייר שהוא( ריבוע. כאן עלינו לחלק צלע של ריבוע לשלושה חלקים.
+
+תחילה, קפל את הריבוע לחצי כדי למצוא את הנוקדה
+$J=(1,1/2)$.
+אחר כך, בנה את קטעי הקו
+$\overline{AC}$
+ו-%
+$\overline{BJ}$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+% Draw square
+\coordinate (A) at (0,12);
+\coordinate (B) at (0,0);
+\coordinate (C) at (12,0);
+\coordinate (D) at (12,12);
+
+\fill (A) circle (2pt) node[left]  {$A=(0,1)$};
+\fill (B) circle (2pt) node[left]  {$B=(0,0)$};
+\fill (C) circle (2pt) node[right] {$C=(1,0)$};
+\fill (D) circle (2pt) node[right] {$D=(1,1)$};
+
+\draw [thick] (A)  -- (B) -- (C) -- (D) -- cycle;
+
+% Divide a side in half
+
+\coordinate (M)  at (0,6);
+\coordinate (N) at (12,6);
+\fill (M) circle (2pt) node[left] {$I=(0,1/2)$};
+\fill (N) circle (2pt) node[right] {$J=(1,1/2)$};
+\draw [thick,dashed] (M) -- (N);
+
+
+\draw [thick,dotted,name path=ac] (A) -- 
+   node[near start,above,xshift=24pt] {$y=1-x$} (C);
+\draw [thick,dotted,name path=be2] (B) -- 
+   node[near start,above,xshift=-12pt,yshift=-2pt] {$y=\disfrac{1}{2}x$} (N);
+
+\path [name intersections = {of = ac and be2, by = {I}}];
+\fill (I) circle (2pt) 
+   node[below,xshift=-6pt,yshift=-8pt] {$K=$}
+   node[below,xshift=-6pt,yshift=-20pt] {$(2/3,1/3)$};
+
+\coordinate (E)  at (0,4);
+\coordinate (F) at (12,4);
+\fill (E) circle (2pt) node[left] {$E=(0,1/3)$};
+\fill (F) circle (2pt) node[right] {$F=(1,1/3)$};
+\draw [thick,dashed] (E) -- (F);
+
+\coordinate (G)  at (0,8);
+\coordinate (H) at (12,8);
+\fill (G) circle (2pt) node[left] {$G=(0,2/3)$};
+\fill (H) circle (2pt) node[right] {$H=(1,2/3)$};
+\draw [very thick,dotted] (G) -- (H);
+\end{tikzpicture}
+\end{center}
+אפשר לחשב את הקואורדינטות של נקודה החיתוך 
+$K$
+על ידי פתרון של שתי המשוואות הללו:
+\begin{form}{1.8}
+y&=&1-x\\
+y&=&\disfrac{1}{2}x\,.
+\end{form}
+הפתרון הוא:
+$x=2/3, y=1/3$.
+
+בנה את הקו
+$\overline{EF}$
+ניצב ל-%
+$\overline{AB}$
+כך שהוא עובר דרך 
+$K$,
+ובנה את 
+$\overline{GH}$,
+השיקוף של
+$\overline{BC}$
+סביב
+$\overline{EF}$.
+הצלע של הריבוע מחולק לשלושה חלקים.
+
+\subsection{בניית $\sqrt[3]{2}$}
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+% Draw and label square
+\coordinate (A) at (0,12);
+\coordinate (B) at (0,0);
+\coordinate (C) at (12,0);
+\coordinate (D) at (12,12);
+\fill (A) circle (2pt) node[left]  {$A$};
+\fill (B) circle (2pt) node[left]  {$B$};
+\fill (C) circle (2pt) node[right] {$C$};
+\fill (D) circle (2pt) node[right] {$D$};
+\draw (B) rectangle +(12pt,12pt);
+\draw[rotate=90] (C) rectangle +(12pt,12pt);
+\draw [thick] (A)  -- (B) -- (C) -- (D) -- cycle;
+
+% Draw line one-third from botton
+\coordinate (E)  at (0,4);
+\coordinate (F) at (12,4);
+\fill (E) circle (2pt) node[left] {$E$};
+\fill (F) circle (2pt) node[right] {$F$};
+\draw [very thick,dotted,name path=ef] (E) -- (F);
+
+% Draw line two-thirds from bottom
+\coordinate (G)  at (0,8);
+\coordinate (H) at (12,8);
+\fill (G) circle (2pt) node[left] {$G$};
+\fill (H) circle (2pt) node[right] {$H$};
+\draw[rotate=-90] (G) rectangle +(12pt,12pt);
+\draw [very thick,dotted] (G) -- (H);
+
+% Draw reflections of C and F
+\coordinate (CP) at (0,5.31);
+\coordinate (FP) at (2.96,8);
+\fill (CP) circle (2pt)
+  node[left] {$C'$}
+  node[above right,yshift=8pt] {$\alpha$}
+  node[below right,xshift=-2pt,yshift=-12pt] {$\alpha'$};
+\fill (FP) circle (2pt)
+  node[above] {$F'$}
+  node[below left,xshift=-8pt] {$\alpha'$};
+\draw[rotate=-50] (CP) rectangle +(12pt,12pt);
+\draw[very thick,dotted] (CP) -- (FP);
+
+% Draw fold and fold arrows
+% Tangent is y = 2.26x - 10.9
+% Crosses x axis at (4.83,0)
+\coordinate (J) at (4.83,0);
+\fill (J) circle (2pt)
+    node[below] {$J$}
+    node[above left,xshift=-8pt] {$\alpha$};
+\draw [very thick,dashed,name path=jd] (J) -- node[very near end,left] {$l$} (10,12);
+\draw[thick,dotted,bend right=40,->] (C) to ($(CP)+(4pt,0)$);
+\draw[thick,dotted,bend right=40,->] (F) to ($(FP)+(4pt,4pt)$);
+
+% Draw hypotenuses of right triangles
+\draw[very thick,dotted] (CP) -- (J);
+\path (J)  -- (C);
+
+% Labels on BC and hypotenuses
+\path (CP) -- node[right] {$(a+1)-b$} (J);
+\path (J)  -- node[below] {$(a+1)-b$} (C);
+\path (B)  -- node[below] {$b$} (J);
+\path (C)  -- node[right] {$\disfrac{a+1}{3}$} (F);
+\path (CP) -- node[right,xshift=10pt] {$\disfrac{a+1}{3}$} (FP);
+
+% Labels on AB
+\draw[<->] ($(A)+(-1,0)$)    --
+  node[fill=white] {$a$} ($(CP)+(-1,0)$);
+\draw[<->] ($(CP)+(-1,0)$)   --
+  node[fill=white] {$1$} ($(B)+(-1,0)$);
+\draw[<->] ($(CP)+(-2.5,0)$) --
+  node[fill=white] {$a-\disfrac{a+1}{3}$} ($(G)+(-2.5,0)$);
+\draw[<->] ($(A)+(-2.5,0)$) --
+  node[fill=white] {$\disfrac{a+1}{3}$} ($(G)+(-2.5,0)$);
+\end{tikzpicture}
+\end{center}
+
+נמסן צלע של הריבוע 
+$a+1$.
+הבנייה תראה ש-%
+$a=\sqrt[3]{2}$.
+
+נשמתש באקסיומה $6$ כדי להניח את 
+$C$
+ב-%
+$C'$
+על
+$\overline{AB}$,
+ולהניח את
+$F$
+ב-%
+$F'$
+על
+$\overline{GH}$.
+סמן את נקודת החיתוך של הקיפול עם
+$\overline{BC}$ 
+ב-%
+$J$,
+וסמן את אורכו של
+$\overline{BJ}$
+ב-%
+$b$.
+האורך של קטע הקו 
+$\overline{JC}$
+הוא
+$(a+1)-b$.
+
+לאחר ביצוע הקיפול, קטע הקו
+$\overline{JC}$
+הוא שיקוף של קטע הקו
+$\overline{JC'}$
+מאותו אורך, וקטע הקו
+
+$\overline{CF}$
+הוא שיקוף של קטע הקו
+$\overline{C'F'}$
+באותו אורך. חישוב פשוט מראה שאורכו של
+$\overline{GC'}$
+הוא:
+\begin{equation}
+\selectlanguage{english}
+a-\disfrac{a+1}{3}=\disfrac{2a-1}{3}\,.\label{eq.one-third}
+\end{equation}
+לבסוף,
+$\angle FCJ$
+היא זווית ישרה, לכן גם
+$\angle F'C'J$ 
+היא זווית ישרה.
+
+$\triangle C'BJ$
+הוא משולש ישר-זווית ולפי משפט פתגורוס:
+\begin{form}{1.3}
+1^2 + b^2 &=& ((a+1)-b)^2\\
+%&=& a^2+2a+1 - 2(a+1)b + b^2\\
+a^2+2a - 2(a+1)b&=&0\\
+b&=&\disfrac{a^2+2a}{2(a+1)}\,.
+\end{form}
+
+$\angle GC'F' + \angle F'C'J + \angle JC'B = 180^\circ$
+כי הם מרכיבים קו ישר
+$\overline{GB}$.
+נסמן
+$\alpha=\angle GC'F'$.
+אז:
+\[
+\angle JC'B=180^\circ - \angle F'C'J - \angle GC'F'= 180^\circ - 90^\circ - \angle GC'F' = 90^\circ-\angle GC'F = 90^\circ -\alpha\,.
+\]
+נסמן
+$\alpha'=90^\circ-\alpha$.
+המשולשים
+$\triangle C'BJ$, $\triangle F'GC'$
+הם משולשים ישר-זווית, ולכן 
+$\angle C'JB=\alpha$
+ו-%
+$\angle C'F'G=\alpha'$.
+מכאן שהמשולשים דומים וממשוואה%
+~\L{\ref{eq.one-third}}
+מתקבלת המשוואה:
+\[
+\disfrac{b}{(a+1)-b}=\disfrac{\disfrac{2a-1}{3}}{\disfrac{a+1}{3}}\,.
+\]
+נציב עבור
+$b$:
+\begin{form}{2}
+\disfrac{\disfrac{a^2+2a}{2(a+1)}}{(a+1)-\disfrac{a^2+2a}{2(a+1)}}&=&\disfrac{2a-1}{a+1}\\
+%\disfrac{a^2+2a}{(a+1)\cdot 2(a+1)-(a^2+2a)}&=&\disfrac{2a-1}{a+1}\\
+\disfrac{a^2+2a}{a^2+2a +2}&=&\disfrac{2a-1}{a+1}\,.
+%a^3+3a^2+2a&=&(2a-1)(a^2+2a+2)\,.
+%&=&2a^3+3a^2+2a-2\,.
+\end{form}
+נפשט ונקבל
+$a^3=2$
+ו-%
+$a=\sqrt[3]{2}$.
+
+
+
+\newpage
+
+\section{הבנייה של
+\L{Beloch}
+להכפלת קוביה%
+}\label{s.cube2}
+
+ב-%
+$1936$
+\L{Margharita P. Beloch}
+נתנה הגדרה פורמלית לאקסיומה~$6$ )הנקרא לעתים הקיפול של
+\L{Beloch}(.
+היא הראתה שניתן להשמתמש באקסיומה כדי לפתור משוואות ממעלה שלוש. כאן אנחנו נביא את השיטה שלה להכפלת קוביה. נדון בפתרון של משוואות ממעלה שלוש בפרקים%
+~\L{\ref{c.lill}, \ref{c.beloch}}.
+
+\subsection{הבנייה}
+
+נסמן את הנקודה
+$(-1,0)$
+ב-%
+$A$
+ואת הנקודה
+$(0,-2)$
+ב-%
+$B$.
+נסמן ב-%
+$p$ 
+את הקו 
+$x=1$
+וב-%
+$q$
+את הקו
+$y=2$.
+לפי אקסיומה $6$ ניתן לבנות קיפול 
+$l$
+המניח את
+$A$
+ב-%
+$A'$
+על 
+$p$,
+והמניח את
+$B$
+ב-%
+$B'$
+על
+$q$.
+נסמן ב-%
+$Y$
+את נקודת החיתוך של הקיפול עם ציר ה-%
+$y$,
+ונסמן ב-%
+$X$
+את נקודת החיתוך של הקיפול עם ציר ה-%
+$x$.
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+% Draw and label square
+\coordinate (O) at (0,0);
+\coordinate (A) at (-2,0);
+\coordinate (B) at (0,-4);
+\fill (O) circle (2pt)
+  node[below left,xshift=-7pt] {$O$}
+  node[below left,yshift=-12pt] {$(0,0)$};
+\fill (A) circle (2pt)
+  node[above left,xshift=-7pt] {$A$}
+  node[below left,xshift=2pt,yshift=0pt] {$(-1,0)$};
+\fill (B) circle (2pt)
+  node[left,xshift=-12pt] {$B$}
+  node[left,yshift=-12pt] {$(0,-2)$};
+
+\draw[thick] (0,-4.5) --  node[very near end,above left,yshift=12pt] {$y$-\textsf{axis}} +(0,10);
+\draw[thick] (-5,0)   -- node[very near start,above left] {$x$-\textsf{axis}} +(12,0);
+\draw[very thick] (2,-4.5) -- node[very near start, right,yshift=-10pt] {$p\!:x=1$} +(0,10);
+\draw[very thick] (-5,4) -- node[very near start, above,xshift=-16pt] {$q\!: y=2$} +(12,0);
+
+\coordinate (AP) at (2,5);
+\fill (AP) circle (2pt) node[above right] {$A'$};
+\coordinate (BP) at (6.34,4);
+\fill (BP) circle (2pt) node[above right] {$B'$};
+
+% Tangent y = -0.8x + 1.26
+
+% Exchanged X and Y 
+\coordinate (X) at (0,2.52);
+\coordinate (Y) at (3.15,0);
+\fill (X) circle (2pt) node[right,xshift=4pt,yshift=2pt] {$Y$};
+\fill (Y) circle (2pt) node[above right,xshift=10pt] {$X$};
+\draw [very thick,dashed] ($(X)!-1.1!(Y)$) -- node[very near end,right,xshift=8pt] {$l$} ($(X)!2!(Y)$);
+
+\draw [very thick,dotted] (A) -- (AP);
+\draw [very thick,dotted] (B) -- (BP);
+
+\draw[thick,dotted,bend left=40,->] (A) to ($(AP)+(-4pt,0)$);
+\draw[thick,dotted,bend left=40,->] (B) to ($(BP)+(-6pt,-3pt)$);
+
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\subsection{הוכחה}
+
+נחלץ איור פשוט יותר:
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+\coordinate (O) at (0,0);
+\coordinate (A) at (-2,0);
+\coordinate (B) at (0,-4);
+\fill (O) circle (2pt)
+  node[below left,xshift=-7pt] {$O$};
+\fill (A) circle (2pt)
+  node[above left,xshift=-7pt] {$A$}
+  node[above right,xshift=10pt] {$\alpha$};
+\fill (B) circle (2pt)
+  node[left,xshift=-12pt] {$B$}
+  node[above right,yshift=12pt] {$\alpha'$};
+
+\draw[thick] (0,-4.5) -- +(0,10);
+\draw[thick] (-3,0)   -- +(8,0);
+
+\coordinate (AP) at (2,5);
+\fill (AP) circle (2pt) node[above right] {$A'$};
+\coordinate (BP) at (6.34,4);
+\fill (BP) circle (2pt) node[above right] {$B'$};
+
+% Tangent y = -0.8x + 1.26
+
+% Exchanged X and Y 
+\coordinate (X) at (0,2.52);
+\coordinate (Y) at (3.15,0);
+\fill (X) circle (2pt)
+  node[right,xshift=4pt,yshift=2pt] {$Y$}
+  node[below right,yshift=-14pt] {$\alpha$}
+  node[below left,xshift=2pt,yshift=-12pt] {$\alpha'$};
+\fill (Y) circle (2pt)
+  node[above right,xshift=10pt] {$X$}
+  node[below left,xshift=-10pt] {$\alpha$}
+  node[above left,xshift=-15pt] {$\alpha'$};
+\draw [very thick,dashed] ($(X)!-.4!(Y)$) -- ($(X)!1.2!(Y)$);
+
+\draw [very thick,dotted] (A) -- (AP);
+\draw [very thick,dotted] (B) -- (BP);
+
+\draw (0,0) rectangle +(10pt,10pt);
+\draw[rotate=-130] (X) rectangle +(10pt,10pt);
+\draw[rotate=-130] (Y) rectangle +(10pt,10pt);
+
+\end{tikzpicture}
+\end{center}
+הקיפול הוא האנך האמצעי של
+$\overline{AA'}$
+ן-%
+$\overline{BB'}$.
+לכן
+$\angle AYX$
+ו-%
+$\angle YXB$
+הן זוויות ישר-זווית ו-%
+$\overline{AA'}$ 
+מקביל ל-%
+$\overline{BB'}$.
+לפי זוויות מתחלפות
+$\angle XAO =\angle BYO=\alpha$.
+אם זווית חדה אחת של משולש ישר-זווית היא
+$\alpha$,
+הזווית החדה השנייה היא
+$90^\circ - \alpha$
+שנסמן
+$\alpha'$.
+מכאן מתקבלים סימוני הזוויות האחרות באיור.
+
+יש לנו שלושה משולשים דומים:
+$\triangle AOY\sim \triangle YOX \sim \triangle XOB$.
+קטעי קו
+$\overline{OA}=1$, $\overline{OB}=2$
+נתונים ולכן:
+\begin{form}{2}
+\disfrac{\overline{OY}}{\overline{OA}}=\disfrac{\overline{OX}}{\overline{OY}}=\disfrac{\overline{OB}}{\overline{OX}}\\
+\disfrac{\overline{OY}}{1}=\disfrac{\overline{OX}}{\overline{OY}}=\disfrac{2}{\overline{OX}}\\
+\overline{OY}^2=\overline{OX}=\disfrac{2}{\overline{OY}}\;,
+\end{form}
+
+מכאן ש-%
+$\overline{OY}^3=2$
+ו-%
+$\overline{OY}=\sqrt[3]{2}$.
