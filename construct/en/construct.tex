@@ -38,6 +38,14 @@
 \newcounter{exercise}
 \newcommand*{\exer}{\medskip\textbf{\stepcounter{exercise}Exercise\ \arabic{exercise}.\ \ }}
 
+\newenvironment{form}[1]{%
+\begin{displaymath}%
+\renewcommand{\arraystretch}{#1}%
+\begin{array}{lcl}}%
+{\end{array}%
+\end{displaymath}%
+}
+
 %  Less space above chapter title
 \makeatletter
 \def\@makechapterhead#1{%
@@ -53,7 +61,7 @@
 
 \setcounter{tocdepth}{0}
 
-%\includeonly{}
+%\includeonly{square-a-circle,references}
 
 \begin{document}
 

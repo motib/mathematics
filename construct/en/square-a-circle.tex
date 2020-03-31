@@ -2,42 +2,255 @@
 
 \chapter{How to (Almost) Square a Circle}
 
-\section{Approximations to $\pi$}
+\section{Approximations to $\pi$}\label{s.square-intro}
 
-The Greeks first studied geometrical constructions that use a straightedge and compass. They were not able to solve three problems: trisecting an angle, duplicating a cube (given a cube, construct another cube with twice the volume) and squaring a circle (given a circle, construct a square with the same area). In the nineteenth century it was proved that these constructions are impossible.
+In the nineteenth century it was proved that three constructions are impossible with straightedge and compass: trisecting an angle, duplicating a cube and squaring a circle. Given a line segment defined to have length $1$, the constructible numbers (lengths) are those obtainable from that line segment using the operators $+,-,\times,/,\surd$.
 
-It can be shown algebraically that given a line segment defined to have length $1$, the constructible numbers (lengths) are those obtainable from that line segment using the operators $+,-,\times,\div,\surd$. Since cube roots cannot be constructed, it follows that it is impossible to duplicate an arbitrary cube, because to duplicate a cube of volume $1$ requires solving the equation $x^3-2=0$, that is, constructing the length $\sqrt[3]{2}$. For the same reason, it is impossible to trisect an arbitrary angle, because to trisect $60^\circ$ requires solving the cubic equation $8x^3-6x-1=0$.
+In the constructions in this chapter we need to divide a line segment into three parts; here we show how the division of two lengths can be constructed. Given a line segment of length $1$ and line segments of lengths $a,b$, by similar triangles $1/b=\overline{OD}/a$ so $\overline{OD}=a/b$.
 
-The case of squaring the circle is more difficult and was not solved until 1882. The area of the unit circle is $\pi 1^2=\pi$, so it is required to construct a square whose side is $\sqrt{\pi}$. However, $\pi$ is \emph{transcendental}, meaning that it is not the solution of any algebraic equation. The proof is extremely complex involving concepts from analysis and complex numbers.
+\begin{center}
+\begin{tikzpicture}
+%\clip (-.6,-1) rectangle (4,3);
+\draw[name path=horz] (0,0) coordinate (o) -- (7,0);
+\fill (o) circle(1.5pt) node[left] {$O$};
+\fill (6,0) circle(1.5pt) coordinate (a) node[below] {$A$};
+\draw (0,0) -- (30:5.5);
+\fill (30:3) circle(1.5pt) coordinate (c) node[above] {$C$};
+\fill (30:5) circle(1.5pt) coordinate (b) node[above] {$B$};
+\draw (a) -- (b);
+\path[name path=par] (c) -- +($(a)-(b)$);
+\path[name intersections={of=par and horz,by=d}];
+\fill (d) circle(1.5pt) node[below] {$D$};
+\draw (c) -- (d);
+\draw[<->] (-.4,.5) -- node[fill=white] {$b$} +(30:5.2);
+\path (o) -- node[above] {$1$} (c);
+\draw[<->] (0,-.8) -- node[fill=white] {$a$} +(6,0);
+\path (o) -- node[below] {$a/b$} (d);
+\end{tikzpicture}
+\end{center}
 
-There are simple approximations to $\pi$, in particular:
+To square a circle the length $\sqrt{\pi}$ must be constructed, however, $\pi$ is \emph{transcendental}, meaning that it is not the solution of any algebraic equation.
+
+This chapter brings three constructions of approximations to $\pi$. The following table shows the formulas of the lengths that are constructed, their approximate values, the difference between these values and the value of $\pi$, and the error in meters that results if the approximation is used to compute the circumference of the earth given that its radius is $6378$ km.
 \[
-\frac{355}{113}=3.14159292\,,
+\renewcommand{\arraystretch}{2.2}
+\begin{array}{|l|c|c|c|c|}
+\hline
+\textrm{Construction} & \textrm{Formula} &\textrm{Value} & \textrm{Difference} & \textrm{Error (m)}\\\hline
+\pi & & 3.14159265359 & - & -\\\hline
+\textrm{Kochansky} & \sqrt{\disfrac{40}{3}-2\sqrt{3}}&
+  3.14153338705 & 5.932 \times 10^{-5} & 756\\\hline
+\textrm{Ramanujan}\; 1 & \disfrac{355}{113} &
+  3.14159292035 &2.667  \times 10^{-7}&3.4\\\hline
+\textrm{Ramanujan}\; 2 &\left(9^2+\disfrac{19^2}{22}\right)^{1/4}&
+  3.14159265258 & 1.007 \times 10^{-9}& 0.013\\\hline
+\end{array}
 \]
-which differs from $\pi\approx 3.14159265$ by only $2.67\times 10^{-7}$. Consider the radius of the earth at the equator which is $6,378.1$ km. Computing the circumference using $355/113$ gives $40,074.78761$ km, while using $\pi$ the result is $40,074.78421$ km, a difference of less than $4$ meters!
+Kochansky's construction from $1685$ can be found in \cite{bold}.
 
-Any rational number can be constructed. Copy the line segment of length one according to the numbers in the numerator and denominator, and construct a segment whose length is the quotient of  the two (based on Thales theorem). This note presents a short construction of $355/113$ published by Ramanujan in the \emph{Journal of the Indian Mathematical Society}, 1913, p. 138. We present the construction in incremental stages, asking you to perform the computations in each stage as exercises. Answers are given at the end of the note.
-
-Ramanujan (1887--1920) grew up in southern India. He quickly advanced beyond the mathematical level of the local schools and colleges. He sent his work to the English mathematician G.H. Hardy who invited him to England. Ramanujan arrived in 1914 but could not return to India until after World War I. He suffered greatly from the cold climate and unfamiliar food. He was a vegetarian as opposed to the English who ate numerous animal-based foods: meat, milk, eggs. Ramanujan died at age $32$ shortly after returning to India. His mathematics is still the subject of research one hundred years later \cite{kanigel}.
+Ramanujan's constructions from $1913$ can be found in \cite{ramanujan1,ramanujan2}.
 
 \newpage
 
-%%%%%%%%%%%%%%%%%      First
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Kochansky's construction}
+
+Construct three circles:
+\begin{enumerate}
+\item Construct a unit circle centered at $O$, let $\overline{AB}$ be a diameter and construct a tangent to the circle at $A$.
+\item Construct a unit circle centered at $A$. Its intersection with the first circle is $C$.\footnote{For the second and third circles, the diagram only shows the arc that intersects the previous circle.}
+\item Construct a unit circle centered at $C$. Its intersection with the second circle is $D$. 
+\end{enumerate}
+Construct $\overline{OD}$ and denote its intersection with the tangent by $E$.
+
+From $E$ construct $F,G,H$, each at distance $1$ from the previous point; then $\overline{AH}=3-\overline{EA}$.
+
+Construct $\overline{BH}$.
+
+Claim: $\overline{BH}=\sqrt{\disfrac{40}{3}-2\sqrt{3}}\approx \pi$.
 \begin{center}
-\textbf{\Large Stage 1}
+\begin{tikzpicture}[scale=1]
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-4);
+\coordinate (B) at (0,4);
+\fill (O) circle(2pt) node[above right] {$O$};
+\fill (A) circle(2pt) node[below right] {$A$};
+\fill (B) circle(2pt) node[above right] {$B$};
+\draw (A) rectangle +(12pt,12pt);
+
+% Draw circle and diameter
+\node [thick,draw,circle through=(A),name path=circle] at (O) {};
+\draw [thick] (A) -- (B);
+
+% Draw tangent at A
+\draw[thick,name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
+
+% Draw arc centered at A which intersects circle at C
+\draw[thick,name path=Aarc] (O)
+   arc [start angle=90,end angle=220,radius=4];
+\path[name intersections={of=circle and Aarc,by=C}];
+\fill (C) circle(2pt) node[left,xshift=-4pt] {$C$};
+
+% Draw arc centered at C which intersects the first arc at D
+\draw[thick,name path=Carc] ($(C)+(260:4)$)
+   arc [start angle=260,end angle=280,radius=4];
+\path[name intersections={of=Carc and Aarc,by=D}];
+\fill (D) circle(2pt) node[below left] {$D$};
+
+% Draw O--D which intersects the tangent at E
+\draw[thick,name path=OD] (O) -- (D);
+\path[name intersections={of=tangent and OD,by=E}];
+\fill (E) circle(2pt) node[above left] {$E$};
+
+% Find point H at length 3 from E
+\coordinate (F) at ($(E)+(4,0)$);
+\fill (F) circle(2pt) node[above right,xshift=4pt] {$F$};
+\coordinate (G) at ($(F)+(4,0)$);
+\fill (G) circle(2pt) node[above] {$G$};
+\coordinate (H) at ($(G)+(4,0)$);
+\fill (H) circle(2pt) node[above] {$H$};
+
+% Draw BH of length approximately pi
+\draw[thick] (B) -- (H);
+\end{tikzpicture}
 \end{center}
 
-\begin{itemize}
-\item Construct a unit circle centered at $O$ and let $PR$ be a diameter.
-\item Mark point $H$ that bisects $PO$ and mark point $T$ that trisects $RO$.
-\item Construct a perpendicular at $T$. Its intersection with the circle is $Q$.
-\item Construct a chord $RS=QT$.
-\end{itemize}
+\newpage
+
+To prove the claim extract the following diagram from the first one. Dashed line segments have been added. Since all the circles are unit circles, it is easy to see that the length of each dashed line segment is $1$. It follows that  $\overline{AOCD}$ is a rhombus so its diagonals are perpendicular to and bisect each other at $K$, so $\overline{AK}=\frac{1}{2}$.
+\begin{center}
+\begin{tikzpicture}[scale=1.25]
+% Scale at 4
+
+\clip (-4.5,-6.5) rectangle +(5,7);
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-4);
+\coordinate (B) at (0,4);
+
+% Draw circle
+\node [circle through=(A),name path=circle] at (O) {};
+\draw ($(O)+(200:4)$) arc [start angle=200,end angle=280,radius=4];
+
+% Draw tangent at A
+\draw[thick,name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
+\draw (A) rectangle +(6pt,6pt);
+
+% Draw arc centered at O which intersects circle at C
+\draw[thin,name path=Aarc] (O)
+   arc [start angle=90,end angle=220,radius=4];
+\path[name intersections={of=circle and Aarc,by=C}];
+
+% Draw arc centered at C which intersects the first arc at D
+\draw[thin,name path=Carc] ($(C)+(260:4)$)
+   arc [start angle=260,end angle=280,radius=4];
+\path[name intersections={of=Carc and Aarc,by=D}];
+
+% Draw O--D which intersects the tangent at E
+\draw[thick,name path=OD] (O) -- (D);
+\path[name intersections={of=tangent and OD,by=E}];
+
+% Find point H at length 3 from E
+\coordinate (F) at ($(E)+(4,0)$);
+\coordinate (G) at ($(F)+(4,0)$);
+\coordinate (H) at ($(G)+(4,0)$);
+
+% Draw BH of length approximately pi
+\draw[thick] (B) -- (H);
+
+\draw[ultra thick,dashed] (A) -- (O) -- (C) -- (D) -- cycle;
+\draw[ultra thick,dashed,name path=AC] (A) -- (C);
+
+\node[above left,yshift=10pt,xshift=2pt] at (A) {$60^\circ$};
+\node[left,yshift=10pt,xshift=-20pt] at (A) {$30^\circ$};
+
+\path[name intersections={of=AC and OD,by=K}];
+\draw[thick,rotate=-30] (K) rectangle +(6pt,6pt);
+
+\path (A) -- node[above,xshift=2pt,yshift=2pt] {$1/2$} (K);
+\path (A) -- node[below,xshift=-4pt] {$1/\sqrt{3}$} (E);
+
+\fill (O) circle(1.25pt) node[above right] {$O$};
+\fill (A) circle(1.25pt) node[below right] {$A$};
+\fill (B) circle(1.25pt) node[above right] {$B$};
+\fill (C) circle(1.25pt) node[left,xshift=-4pt] {$C$};
+\fill (D) circle(1.25pt) node[below left] {$D$};
+\fill (E) circle(1.25pt) node[above left] {$E$};
+\fill (F) circle(1.25pt) node[above right,xshift=4pt] {$F$};
+\fill (G) circle(1.25pt) node[above] {$G$};
+\fill (H) circle(1.25pt) node[above] {$H$};
+\fill (K) circle(1.25pt) node[above,yshift=4pt] {$K$};
+\end{tikzpicture}
+\end{center}
+The diagonal $\overline{AC}$ forms two equilateral triangles $\triangle OAC, \triangle DAC$ so $\angle OAC=60^\circ$. Since tangent forms a right angle with the radius $\overline{OA}$, $\angle KAE=30^\circ$. Now:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{lcl}
+\disfrac{1/2}{\overline{EA}}&=&
+\cos 30^\circ=\disfrac{\sqrt{3}}{2}\\
+\overline{EA}&=&\disfrac{1}{\sqrt{3}}\\
+\overline{AH}&=&3-\overline{EA}=\left(3-\disfrac{1}{\sqrt{3}}\right)
+=\disfrac{3\sqrt{3}-1}{\sqrt{3}}\\
+\end{array}
+\end{displaymath}
+
+Returning to the first diagram, we see that $\triangle ABH$ is a right triangle:
+\begin{displaymath}
+\renewcommand{\arraystretch}{2}
+\begin{array}{lcl}
+\overline{BH}^2&=&\overline{OB}^2+\overline{AH}^2\\
+&=&4+\disfrac{9\cdot 3 -6\sqrt{3}+1}{3}=\disfrac{40}{3}-2\sqrt{3}\\
+\overline{BH}&=&\sqrt{\disfrac{40}{3}-2\sqrt{3}}\approx 3.141533387=\approx \pi\,.
+\end{array}
+\end{displaymath}
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Ramanujan's first construction}
+
+
+\subsection{The construction}
+
+Construct a unit circle centered at $O$ and let $\overline{PR}$ be a diameter. 
+
+$H$ bisects $\overline{PO}$ and $T$ trisects $\overline{RO}$. 
+
+Construct a perpendicular at $T$ that intersects the circle at $Q$.
+
+Construct a chord $\overline{RS}=\overline{QT}$.
+
+Construct $\overline{PS}$.
+
+Construct a line parallel to $RS$ from $T$ that intersects $\overline{PS}$ at $N$.
+
+Construct a line parallel to $\overline{RS}$ from $O$ that intersects $\overline{PS}$ at $M$.
+
+Construct the chord $\overline{PK}=\overline{PM}$.
+
+Construct the tangent at $P$ of length $\overline{PL}=\overline{MN}$.
+
+Connect the points $K,L,R$.
+
+Find point $C$ such that $\overline{RC}$ is equal to $\overline{RH}$.
+
+Construct $\overline{CD}$ parallel to $\overline{KL}$ that intersects $\overline{LR}$ at $D$. 
+
+Claim: $\overline{RD}^2=\disfrac{355}{113}\approx pi$.
+
 
 \begin{center}
-\begin{tikzpicture}[scale=.9]
-\clip (-5.5,-5.1) rectangle +(11,10.2);
+\begin{tikzpicture}[scale=1.1,align=left]
+\clip (-6,-5.1) rectangle +(11.5,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -45,246 +258,116 @@ Ramanujan (1887--1920) grew up in southern India. He quickly advanced beyond the
 \fill (p) circle (1pt);
 \fill (r) circle (1pt);
 \fill (-2.5,0) coordinate (h) node[below] {$H$} circle (1pt);
-\fill (10/3,0) coordinate (t) node[below] {$T$} circle (1pt);
-\path (p) -- node[above,xshift=12pt] {$1/2$} (h) -- node[above] {$1/2$} (o) -- node[above] {$2/3$} (t) -- node[above] {$1/3$} (r);
+\fill (10/3,0) coordinate (t) node[below left] {$T$} circle (1pt);
+\path (p) -- node[above,xshift=10pt] {$1/2$} (h) -- node[above] {$1/2$} (o) -- node[above] {$2/3$} (t) -- node[above] {$1/3$} (r);
+
 % Draw perpendicular TQ
 \path[name path=tq] (t) -- +(0,5);
 \path[name intersections={of=tq and circle,by=q}];
 \draw (t) -- node[left] {$a$} (q) node[above] {$Q$};
 \fill (q) circle (1pt);
-% Draw chord RS
-\path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=rcirc and circle,by=s}];
-\draw (r) -- node[left] {$a$} (s);
-\fill (s) node[above right] {$S$} circle (1pt);
-\draw (p) -- node[above] {$b$} (s);
-\end{tikzpicture}
-\end{center}
 
-\exer
-Construct the length $TR=\displaystyle\frac{1}{3}$.
-
-
-\exer{}
-Compute the length of $QT$.
-
-
-\exer{}
-Compute the length of $PS$.
-
-
-\exer{}
-Construct chord $RS=QT$.
-
-
-\newpage
-
-%%%%%%%%%%%%%%%%%      Second
-
-\begin{center}
-\textbf{\Large Stage 2}
-\end{center}
-
-\begin{itemize}
-\item Construct $NT$ and $OM$ parallel to $RS$.
-\end{itemize}
-
-\begin{center}
-\begin{tikzpicture}[scale=.9]
-\clip (-5.5,-5.1) rectangle +(11,10.2);
-% Draw circle and horizontal diameter
-\draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
-\draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
-\fill (o) circle (1pt);
-\fill (p) circle (1pt);
-\fill (r) circle (1pt);
-\fill (-2.5,0) coordinate (h) node[below] {$H$} circle (1pt);
-\fill (10/3,0) coordinate (t) node[below] {$T$} circle (1pt);
 % Draw chord RS and line PS
 \path[name path=tq] (t) -- +(0,5);
 \path[name intersections={of=tq and circle,by=q}];
 \path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
 \path[name intersections={of=rcirc and circle,by=s}];
-\draw (r) -- node[left] {$a$} (s);
-\fill (s) node[above right] {$S$} circle (1pt);
-\draw[name path=ps] (p) -- node[above right,xshift=8pt,yshift=8pt] {$b$} (s);
-% Draw TN
-\path[name path=tn] (t) -- +($(s)-(r)$);
-\path[name intersections={of=ps and tn,by=n}];
-\draw (t) -- (n);
-\fill (n) node[above] {$N$} circle (1pt);
-% Draw OM
-\path[name path=om] (o) -- +($(s)-(r)$);
-\path[name intersections={of=ps and om,by=m}];
-\draw (o) -- (m);
-\fill (m) node[above left] {$M$} circle (1pt);
-% Label PM and MN
-\path (p) -- node[below,xshift=12pt,yshift=4pt] {$c$} (m);
-\path (m) -- node[below,xshift=8pt,yshift=4pt] {$d$} (n);
-\end{tikzpicture}
-\end{center}
-
-\exer{}
-Compute the length of $PM$.
-
-
-\exer{}
-Compute the length of $MN$.
-
-
-\newpage
-
-%%%%%%%%%%%%%%%%%      Third
-
-\begin{center}
-\textbf{\Large Stage 3}
-\end{center}
-
-
-\begin{itemize}
-\item Construct the chord $PK=PM$.
-\item Construct the tangent $PL=MN$.
-\item Connect the points $K,L,R$.
-\end{itemize}
-
-\begin{center}
-\begin{tikzpicture}[scale=.9]
-\clip (-5.5,-5.1) rectangle +(11,10.2);
-% Draw circle and horizontal diameter
-\draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
-\draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
-\fill (o) circle (1pt);
-\fill (p) circle (1pt);
-\fill (r) circle (1pt);
-\fill (-2.5,0) coordinate (h) node[below] {$H$} circle (1pt);
-\fill (10/3,0) coordinate (t) node[below] {$T$} circle (1pt);
-% Draw chord RS and line PS
-\path[name path=tq] (t) -- +(0,5);
-\path[name intersections={of=tq and circle,by=q}];
-\path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=rcirc and circle,by=s}];
-\draw (r) -- (s);
+\draw (r) -- node[right] {$a$} (s);
 \fill (s) node[above right] {$S$} circle (1pt);
 \draw[name path=ps] (p) -- (s);
+
 % Draw TN
 \path[name path=tn] (t) -- +($(s)-(r)$);
 \path[name intersections={of=ps and tn,by=n}];
 \draw (t) -- (n);
 \fill (n) node[above] {$N$} circle (1pt);
+
 % Draw OM
 \path[name path=om] (o) -- +($(s)-(r)$);
 \path[name intersections={of=ps and om,by=m}];
 \draw (o) -- (m);
 \fill (m) node[above left] {$M$} circle (1pt);
-\path (p) -- node[below,xshift=12pt,yshift=4pt] {$c$} (m);
-\path (m) -- node[below,xshift=8pt,yshift=4pt] {$d$} (n);
+\path (p) -- (m);
+\path (m) -- (n);
+
 % Draw chord PK
-\path[name path=pkcirc] (p) let \p1 = ($ (p) - (m) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=pkcirc and circle,by={k1,k}}];
-\draw (p) -- node[right,xshift=-2pt,yshift=10pt] {$c$} (k) node[below left] {$K$};
-% Draw tangent PL
-\draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- node[left] {$d$} (-5,-\n1) coordinate (l) node[left] {$L$};
-% Connect L and K to R
-\draw (r) -- node[above] {$f$} (l) -- (k) -- node[below right] {$e$} cycle;
-\end{tikzpicture}
-\end{center}
+\draw (p) -- +(-62.3:4.64) coordinate (k) node[below left] {$K$};
 
-\exer{}
-What do you know about $\triangle PKR$? Compute the length of $RK$.
-
-
-\exer{}
-What do you know about $\triangle LPR$? Compute the length of $RL$.
-
-
-\newpage
-
-%%%%%%%%%%%%%%%%%      Fourth
-
-\begin{center}
-\textbf{\Large Stage 4}
-\end{center}
-
-\begin{itemize}
-\item Mark the point $C$ such that $RC=RH$.
-\item Construct $CD$ parallel to $KL$.
-\end{itemize}
-
-\begin{center}
-\begin{tikzpicture}[scale=.9]
-\clip (-5.5,-5.1) rectangle +(11,10.2);
-% Draw circle and horizontal diameter
-\draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
-\draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
-\fill (o) circle (1pt);
-\fill (p) circle (1pt);
-\fill (r) circle (1pt);
-\fill (-2.5,0) coordinate (h) node[below] {$H$} circle (1pt);
-% Get values of PM and MN but don't draw
-\coordinate (t) at (10/3,0);
-\path[name path=tq] (t) -- +(0,5);
-\path[name intersections={of=tq and circle,by=q}];
-\path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=rcirc and circle,by=s}];
-\path[name path=ps] (p) -- (s);
-\path[name path=tn] (t) -- +($(s)-(r)$);
-\path[name intersections={of=ps and tn,by=n}];
-\path[name path=om] (o) -- +($(s)-(r)$);
-\path[name intersections={of=ps and om,by=m}];
-% Draw chord PK
-\path[name path=pkcirc] (p) let \p1 = ($ (p) - (m) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=pkcirc and circle,by={k1,k}}];
-\draw (p) -- (k) node[below left] {$K$};
 % Draw tangent PL
 \draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- (-5,-\n1) coordinate (l) node[left] {$L$};
+
 % Connect L and K to R
-\draw (r) -- node[above] {$f$} (l) -- (k) -- node[below right] {$e$} cycle;
+\draw (r) -- (l) -- (k) -- cycle;
+
 % Find point C on RK
 \coordinate (c) at ($(r)!7.5cm!(k)$);
-\path (r) -- node[above, near end] {$g$} (c);
+\path (r) -- (c);
 \fill (c) node[below] {$C$} circle (1pt);
+
 % Draw CD
 \path[name path=cd] (c) -- +($(l)-(k)$);
 \path[name path=lr] (l) -- (r);
 \path[name intersections={of=cd and lr,by=d}];
 \draw (c) -- (d);
 \fill (d) node[above,xshift=2pt] {$D$} circle (1pt);
-\path (r) -- node[below,near end] {$h$} (d);
+\path (r) -- (d);
+
+\draw[rotate=90] (t) rectangle +(8pt,8pt);
+\draw[rotate=-160] (s) rectangle +(8pt,8pt);
 \end{tikzpicture}
 \end{center}
 
+\newpage
 
-\exer{}
-Compute the length of $RC$.
+\subsection{The computation}
 
+By Pythagoras' theorem on $\triangle QOT$:
+\[
+\overline{QT} = \sqrt{1^2-\left(\frac{2}{3}\right)^2}=\frac{\sqrt{5}}{3}\,.
+\]
+$\triangle PSR$ is a right triangle because it subtends a diameter. By Pythagoras theorem:
+\[
+\overline{PS} = \sqrt{2^2-\left(\frac{\sqrt{5}}{3}\right)^2}=\sqrt{4-\frac{5}{9}}=\frac{\sqrt{31}}{3}\,.
+\]
+$\triangle MPO\sim \triangle SPR$ so:
+\begin{form}{2.2}
+\disfrac{\overline{PM}}{\overline{PO}}&=&\disfrac{\overline{PS}}{\overline{PR}}\\
+\disfrac{\overline{PM}}{1}&=&\disfrac{\sqrt{31}/3}{2}\\
+\overline{PM}&=&\disfrac{\sqrt{31}}{6}\,.
+\end{form}
+$\triangle NPT\sim \triangle SPR$ so:
 
-\exer{}
-Compute the length of $RD$.
+\begin{form}{2.2}
+\disfrac{\overline{PN}}{\overline{PT}}&=&\disfrac{\overline{PS}}{\overline{PR}}\\
+\disfrac{\overline{PN}}{5/3}&=&\disfrac{\sqrt{31}/3}{2}\\
+\overline{PN}&=&\disfrac{5\sqrt{31}}{18}\\
+\overline{MN}&=&\overline{PN}-\overline{PM}\\
+&=&\sqrt{31}\left(\disfrac{5}{18}-\disfrac{1}{6}\right) = \disfrac{\sqrt{31}}{9}\,.
+\end{form}
 
+$\triangle PKR$ is a right triangle because it subtends a diameter. By Pythagoras's theorem:
+\[
+\overline{RK}=\sqrt{2^2-\left(\frac{\sqrt{31}}{6}\right)^2} = \frac{\sqrt{113}}{6}\,.
+\]
 
-
-\exer{}
-Construct a square whose side is of length $RD$.
-
-
-\exer{}
-Compute $RD^2$, the area of the square, both as a fraction and as a decimal number.
-
+$\triangle PLR$ is a right triangle because it $\overline{PL}$ is a tangent. By Pythagoras's theorem:
+\[
+\overline{RL}=\sqrt{2^2+\left(\frac{\sqrt{31}}{9}\right)^2} = \frac{\sqrt{355}}{9}\,.
+\]
 
 \newpage
 
-%%%%%%%%%%%%%%%%%      Fifth
+$\overline{RC}=\overline{RH}=\displaystyle\frac{1}{3}+\frac{2}{3}+\frac{1}{2}=\frac{3}{2}$. Since $\overline{CD}$ is parallel to $\overline{LK}$, by similar triangles:
+\begin{form}{2.2}
+\disfrac{\overline{RD}}{\overline{RC}}&=&\disfrac{\overline{RL}}{\overline{RK}}\\
+\disfrac{\overline{RD}}{3/2}&=&\disfrac{\sqrt{355}/9}{\sqrt{113}/6}\\
+\overline{RD}&=&\sqrt{\disfrac{355}{113}}\,.
+\end{form}
+
+Here is the construction with line segments labeled with their lengths:
 
 \begin{center}
-\textbf{\Large Summary}
-\end{center}
-
-Here is the complete construction with all lengths labeled.
-
-\bigskip
-
-\begin{center}
-\begin{tikzpicture}[scale=1.2,align=left]
+\begin{tikzpicture}[scale=1.1,align=left]
 \clip (-6,-5.1) rectangle +(11.5,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
@@ -323,7 +406,9 @@ Here is the complete construction with all lengths labeled.
 \draw (r) -- (l) -- (k) -- cycle;
 % Find point C on RK
 \coordinate (c) at ($(r)!7.5cm!(k)$);
-\path (r) -- node[below,yshift=-16pt] {$RC=3/2$\\$RK=\sqrt{113}/6$} (c);
+%\path (r) -- node[below,yshift=-16pt] {$RC=3/2$\\$RK=\sqrt{113}/6$} (c);
+\path (r) -- node[below,xshift=16pt,yshift=-2pt] {$\overline{RC}=3/2$} (c);
+\path (r) -- node[below,xshift=-4pt,yshift=-20pt] {$\overline{RK}=\sqrt{113}/6$} (k);
 \fill (c) node[below] {$C$} circle (1pt);
 % Draw CD
 \path[name path=cd] (c) -- +($(l)-(k)$);
@@ -331,102 +416,218 @@ Here is the complete construction with all lengths labeled.
 \path[name intersections={of=cd and lr,by=d}];
 \draw (c) -- (d);
 \fill (d) node[above,xshift=2pt] {$D$} circle (1pt);
-\path (r) -- node[above,xshift=-40pt,yshift=-8pt] {$RD=\sqrt{355/113}$\\$RL=\sqrt{355}/9$} (d);
+%\path (r) -- node[above,xshift=-40pt,yshift=-8pt] {$RD=\sqrt{355/113}$\\$RL=\sqrt{355}/9$} (d);
+\path (r) -- node[above,xshift=-40pt,yshift=-4pt] {$\overline{RD}=\sqrt{355/113}$} (d);
+\path (r) -- node[below,xshift=-28pt,yshift=-15pt] {$\overline{RL}=\sqrt{355}/9$} (l);
+\end{tikzpicture}
+\end{center}
+
+\bigskip
+
+The value $\disfrac{355}{113}$ could be constructed by constructing two line segments of length $355$ and $113$ and then using the division construction shown in Section~\ref{s.square-intro}, but that is rather tedious!
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ramanujan's second approximation}
+
+\subsection{The construction}
+
+Construct a unit circle centered at $O$ with diameter $\overline{AB}$, and let $C$ be the intersection of the perpendicular at $O$ with the circle.
+
+Trisect $\overline{AO}$ so that $\overline{AT}=1/3$ and $\overline{TO}=2/3$.
+
+Construct $\overline{BC}$ and find points $M,N$ such that $\overline{CM}=\overline{MN}=\overline{AT}=1/3$.
+
+Construct $\overline{AM}$ and $\overline{AN}$ and let $P$ be the point on $\overline{AN}$ such that $\overline{AP}=\overline{AM}$.
+
+From $P$ construct a line parallel to $\overline{MN}$ that intersects $\overline{AM}$ at $Q$.
+
+Construct $\overline{OQ}$ and then from $T$ construct a line parallel to $\overline{OQ}$ that intersects $\overline{AM}$ at $R$.
+
+Construct a line segment $\overline{AS}$ tangent to $A$ of length $\overline{AR}$.
+
+Construct $\overline{SO}$.
+
+Claim: $3\sqrt{\overline{SO}}=\left(9^2+\disfrac{19^2}{22}\right)^{\frac{1}{4}}\approx \pi$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.4]
+\clip (-4.4,-4.2) rectangle +(8.8,8.6);
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (-4,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (0,4);
+
+% Draw circle and diameter
+\node [thick,draw,circle through=(A),name path=circle] at (O) {};
+\draw [thick] (A) -- (B);
+\draw [thick,dashed] (C) -- (O);
+\draw (O) rectangle +(8pt,8pt);
+\draw[rotate=-90] (A) rectangle +(8pt,8pt);
+
+\coordinate (T) at (-2.667,0);
+\path (A) -- node[below] {$1/3$} (T);
+\path (T) -- node[below] {$2/3$} (O);
+\path (O) -- node[below] {$1$} (B);
+
+\draw (C) -- node[right] {$1/3$} +(-45:1.333) coordinate (M);
+\draw (M) -- node[right] {$1/3$} +(-45:1.333) coordinate (N);
+\draw (N) -- node[near start,right] {$\sqrt{2}\!-\!2/3$}(B);
+
+\draw[name path=AM] (A) -- (M);
+\draw[name path=AN] (A) -- (N);
+
+\node [circle through=(M),name path=AMcircle] at (A) {};
+
+\path[name intersections={of=AMcircle and AN,by=P}];
+
+\path[name path=PQ] (P) -- +(135:2);
+\path[name intersections={of=PQ and AM,by=Q}];
+\draw (P) -- (Q) -- (O);
+
+\path[name path=QT] (T) -- ($(Q)+(-2.667,0)$) -- (Q);
+\path[name intersections={of=QT and AM,by=R}];
+\draw (T) -- (R);
+
+\node [circle through=(R),name path=ARcircle] at (A) {};
+\path[name path=AS] (A) -- ($(A)+(0,-2.5)$);
+\path[name intersections={of=ARcircle and AS,by=S}];
+\draw (A) -- (S);
+
+\draw (S) -- (O);
+
+\fill (O) circle(1.2pt) node[below right] {$O$};
+\fill (A) circle(1.2pt) node[left] {$A$};
+\fill (B) circle(1.2pt) node[right] {$B$} node[above left,xshift=-8pt] {$45^\circ$};
+\fill (C) circle(1.2pt) node[above] {$C$};
+\fill (T) circle(1.2pt) node[below] {$T$};
+\fill (M) circle(1.2pt) node[right] {$M$};
+\fill (N) circle(1.2pt) node[right] {$N$};
+\fill (P) circle(1.2pt) node[below] {$P$};
+\fill (Q) circle(1.2pt) node[above left] {$Q$};
+\fill (R) circle(1.2pt) node[above left] {$R$};
+\fill (S) circle(1.2pt) node[above left] {$S$};
+
 \end{tikzpicture}
 \end{center}
 
 \newpage
 
-\begin{center}
-\textbf{\Large Answers to the Exercises}
-\end{center}
+\subsection{Proof}
 
-\begin{enumerate}
+$\triangle COB$ is a right triangle, $\overline{OB}=\overline{OC}=1$, 	so by Pythagoras' theorem $\overline{CB}=\sqrt{2}$ and $\overline{NB}=\sqrt{2}-2/3$. The triangle is isoceles so $\angle NBA =\angle MBA=45^\circ$.
 
-\item Construct $\triangle ABC$ with the lengths shown and then construct $DE$ parallel to $BC$. 
-\vspace*{-1ex}
+We use the law of cosines on $\triangle NBA$ to compute $\overline{AN}$:
+\begin{form}{2}
+\overline{AN}^2&=&\overline{BA}^2 + \overline{BN}^2-2\cdot\overline{BA}\cdot\overline{BN}\cdot\cos \angle NBA\\
+&=&2^2+\left(\sqrt{2}-\disfrac{2}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\disfrac{2}{3}\right)\cdot \disfrac{\sqrt{2}}{2}\\
+&=&\left(4+2+\disfrac{4}{9}-4\right) + \sqrt{2}\cdot \left(-\disfrac{4}{3}+\disfrac{4}{3}\right)=\disfrac{22}{9}\\
+\overline{AN}&=&\sqrt{\disfrac{22}{9}}\,.
+\end{form}
+
+Similarly, we use the law of cosines on $\triangle MBA$ to compute $\overline{AM}$:
+\begin{form}{2}
+\overline{AM}^2&=&\overline{BA}^2 + \overline{BM}^2-2\cdot\overline{BA}\cdot\overline{BM}\cdot\cos \angle MBA\\
+&=&2^2+\left(\sqrt{2}-\disfrac{1}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\disfrac{1}{3}\right)\cdot \disfrac{\sqrt{2}}{2}\\
+&=&\left(4+2+\disfrac{1}{9}-4\right) + \sqrt{2}\cdot \left(-\disfrac{2}{3}+\disfrac{2}{3}\right)=\disfrac{19}{9}\\
+\overline{AM}&=&\sqrt{\disfrac{19}{9}}\,.
+\end{form}
+
+By construction $\overline{QP}\parallel \overline{MN}$ so
+$\triangle MAN\sim \triangle QAP$, and by construction $\overline{AP}=\overline{AM}$ giving:
+\begin{form}{2.4}
+\disfrac{\overline{AQ}}{\overline{AM}}&=&\disfrac{\overline{AP}}{\overline{AN}}=\disfrac{\overline{AM}}{\overline{AN}}\\
+\overline{AQ}&=&\disfrac{\overline{AM}^2}{\overline{AN}}=\disfrac{19/9}{\sqrt{22/9}}=\disfrac{19}{3\sqrt{22}}\,.
+\end{form}
+
+By construction $\overline{TR}\parallel \overline{OQ}$ so
+$\triangle RAT\sim \triangle QAO$ giving:
+\begin{form}{2.4}
+\disfrac{\overline{AR}}{\overline{AQ}}&=&\disfrac{\overline{AT}}{\overline{AO}}\\
+\overline{AR}&=&\overline{AQ}\cdot\disfrac{\overline{AT}}{\overline{AO}}=\disfrac{19}{3\sqrt{22}}\cdot\disfrac{1/3}{1}=\disfrac{19}{9\sqrt{22}}\,.
+\end{form}
+
+\newpage
+
+By construction $\overline{AS}=\overline{AR}$ and $\triangle OAS$ is a right triangle. By Pythagoras' theorem:
+\begin{form}{3}
+\overline{SO}&=&\sqrt{1^2+\left(\disfrac{19}{9\sqrt{22}}\right)^2}\\
+3\sqrt{\overline{SO}}&=&3\left(1+\disfrac{19^2}{9^2\cdot 22}\right)^\frac{1}{4}\\
+&=&\left(3^4+\disfrac{3^4\cdot 19^2}{9^2\cdot 22}\right)^\frac{1}{4}\\
+&=&\left(9^2+\disfrac{19^2}{22}\right)^\frac{1}{4}\approx 3.14159265262\approx \pi\,.
+\end{form}
+
+Here is the construction with line segments labeled with their lengths:
+
+
 \begin{center}
-\begin{tikzpicture}
-\draw (0,0) node[left] {$A$} -- (6,0) node[right] {$B$};
-\path (0,0) -- node[below] {$1$} (2,0) coordinate (a1) node[below] {$D$} -- node[below] {$2$} (6,0);
-\draw (6,0) -- node[right] {$1$} ++(100:2) coordinate (a2) node[above] {$C$};
-\draw[name path=p1] (a2) -- (0,0);
-\path[name path=p2] (2,0) -- ++(100:1);
-\path[name intersections={of=p1 and p2,by=q}];
-\draw (a1) -- node[right] {$n$} (q) node[above] {$E$};
+\begin{tikzpicture}[scale=1.4]
+\clip (-5,-4.2) rectangle +(10,8.5);
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (-4,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (0,4);
+
+% Draw circle and diameter
+\node [thick,draw,circle through=(A),name path=circle] at (O) {};
+\draw [thick] (A) -- (B);
+\draw [thick,dashed] (C) -- (O);
+\draw (O) rectangle +(8pt,8pt);
+\draw[rotate=-90] (A) rectangle +(8pt,8pt);
+
+\coordinate (T) at (-2.667,0);
+\path (A) -- node[below] {$1/3$} (T);
+\path (T) -- node[below] {$2/3$} (O);
+\path (O) -- node[below] {$1$} (B);
+
+\draw (C) -- node[right] {$1/3$} +(-45:1.333) coordinate (M);
+\draw (M) -- node[right] {$1/3$} +(-45:1.333) coordinate (N);
+\draw (N) -- node[near start,right] {$\sqrt{2}\!-\!2/3$}(B);
+
+\draw[name path=AM] (A) -- node[above,xshift=15pt,yshift=24pt] {$\overline{AM}=\sqrt{19/9}$} (M);
+\draw[name path=AN] (A) -- node[below,yshift=-10pt] {$\overline{AN}=\sqrt{22/9}$} (N);
+
+\node [circle through=(M),name path=AMcircle] at (A) {};
+
+\path[name intersections={of=AMcircle and AN,by=P}];
+
+\path[name path=PQ] (P) -- +(135:2);
+\path[name intersections={of=PQ and AM,by=Q}];
+\draw (P) -- (Q) -- (O);
+\path (A) -- node[above,xshift=-14pt,yshift=10pt] {$\overline{AQ}=19/3\sqrt{22}$} (Q);
+
+\path[name path=QT] (T) -- ($(Q)+(-2.667,0)$) -- (Q);
+\path[name intersections={of=QT and AM,by=R}];
+\draw (T) -- (R);
+\path (A) -- node[above,xshift=-32pt,yshift=6pt] {$\overline{AR}=19/9\sqrt{22}$} (R);
+
+\node [circle through=(R),name path=ARcircle] at (A) {};
+\path[name path=AS] (A) -- ($(A)+(0,-2.5)$);
+\path[name intersections={of=ARcircle and AS,by=S}];
+\draw (A) -- node[xshift=10pt,yshift=6pt] {$\overline{AS}=\,19/9\sqrt{22}$} (S);
+
+\draw (S) -- node[right,xshift=-2pt,yshift=-10pt] {$\overline{SO}=\sqrt{1+
+  \left(\disfrac{19^2}{9^2\cdot 22}\right)}$} (O);
+
+\fill (O) circle(1.2pt) node[below right] {$O$};
+\fill (A) circle(1.2pt) node[left] {$A$};
+\fill (B) circle(1.2pt) node[right] {$B$} node[above left,xshift=-8pt] {$45^\circ$};
+\fill (C) circle(1.2pt) node[above] {$C$};
+\fill (T) circle(1.2pt) node[below] {$T$};
+\fill (M) circle(1.2pt) node[right] {$M$};
+\fill (N) circle(1.2pt) node[right] {$N$};
+\fill (P) circle(1.2pt) node[below] {$P$};
+\fill (Q) circle(1.2pt) node[above left] {$Q$};
+\fill (R) circle(1.2pt) node[above left] {$R$};
+\fill (S) circle(1.2pt) node[above left] {$S$};
+
 \end{tikzpicture}
 \end{center}
-By similar triangles:
-\[
-\frac{n}{1} = \frac{1}{3}\,.
-\]
-
-\item By Pythagoras's theorem on $\triangle QOT$:
-\[
-QT = \sqrt{1^2-\left(\frac{2}{3}\right)^2}=\frac{\sqrt{5}}{3}\,.
-\]
-
-\item $\triangle PSR$ is a right triangle because it subtends a diameter. By Pythagoras's theorem:
-\[
-PS = \sqrt{2^2-\left(\frac{\sqrt{5}}{3}\right)^2}=\sqrt{4-\frac{5}{9}}=\frac{\sqrt{31}}{3}\,.
-\]
-
-\item Set the compass legs on $QT$ and draw a circle with this radius and with center $R$. In Chapter~\ref{c.collapse} we showed that a line segment can be copied using a collapsing compass.
-
-\item By similar triangles:
-\[
-\frac{PM}{PO}=\frac{PS}{PR},\;\;\;\frac{PM}{1}=\frac{\sqrt{31}/3}{2},\;\;\;PM=\frac{\sqrt{31}}{6}.
-\]
-
-\item By similar triangles:
-\[
-\frac{PN}{PT}=\frac{PS}{PR},\;\;\;\frac{PN}{5/3}=\frac{\sqrt{31}/3}{2},\;\;\;PN=\frac{5\sqrt{31}}{18}\,.
-\]
-\[
-MN=PN-PM = \sqrt{31}\left(\frac{5}{18}-\frac{1}{6}\right) = \frac{\sqrt{31}}{9}\,.
-\]
-
-\item $\triangle PKR$ is a right triangle because it subtends a diameter. By Pythagoras's theorem:
-\[
-RK=\sqrt{2^2-\left(\frac{\sqrt{31}}{6}\right)^2} = \frac{\sqrt{113}}{6}\,.
-\]
-
-\item $\triangle PLR$ is a right triangle because it $PL$ is a tangent. By Pythagoras's theorem:
-\[
-RL=\sqrt{2^2+\left(\frac{\sqrt{31}}{9}\right)^2} = \frac{\sqrt{355}}{9}\,.
-\]
-
-\item $RC=RH=\displaystyle\frac{1}{3}+\frac{2}{3}+\frac{1}{2}=\frac{3}{2}$.
-
-\item Since $CD$ is parallel to $LK$, by similar triangles:
-\[
-\frac{RD}{RC}=\frac{RL}{RK}\,,\;\;\;\frac{RD}{3/2}=\frac{\sqrt{355}/9}{\sqrt{113}/6}\,,\;\;\;RD=\sqrt{\frac{355}{113}}\,.
-\]
-
-\item Given a line segment of length $RD$, extend it to a line segment of length $3RD$. Construct perpendiculars of length $RD$ on the points at the ends of the middle segment. Draw a line beteen the end points of these perpendiculars.
-
-\begin{center}
-\begin{tikzpicture}
-\draw (0,0) -- (6,0);
-\foreach \i in {0,2,4,6}
-  \fill (\i,0) circle (2pt);
-\fill (2,2) circle (2pt);
-\fill (4,2) circle (2pt);
-\draw (2,2) -- (4,2);
-\draw (2,0) -- (2,3);
-\draw (4,0) -- (4,3);
-\draw ([shift=(30:3.2cm)]0,0) arc (30:60:3.2cm);
-\draw ([shift=(150:3.2cm)]4,0) arc (150:120:3.2cm);
-\draw ([shift=(30:3.2cm)]2,0) arc (30:60:3.2cm);
-\draw ([shift=(150:3.2cm)]6,0) arc (150:120:3.2cm);
-\path (2,0) -- node[above] {$RD$} (4,0);
-\end{tikzpicture}
-\end{center}
-
-\item \mbox{}
-\[
-\frac{355}{113}=3.14159292\,.
-\]
-
-\end{enumerate}
-
