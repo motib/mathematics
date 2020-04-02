@@ -42,6 +42,14 @@
 \newcommand*{\exer}{\textbf{\stepcounter{exercise}תרגיל \L{\ .\arabic{exercise}}}}
 \newcommand*{\qd}{קוודרטריקס}
 
+\newenvironment{form}[1]{%
+\begin{displaymath}%
+\renewcommand{\arraystretch}{#1}%
+\begin{array}{lcl}}%
+{\end{array}%
+\end{displaymath}%
+}
+
 %  Less space above chapter title
 \makeatletter
 \def\@makechapterhead#1{%
@@ -59,6 +67,7 @@
 
 \begin{document}
 
+\tikzsetfigurename{front}
 \include{front}
 
 \tikzsetfigurename{collapse}

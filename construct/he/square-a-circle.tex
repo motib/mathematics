@@ -1,128 +1,391 @@
 % !TeX root = construct.tex
 
 \selectlanguage{hebrew}
+\chapter{%
+איך לרבע את המעגל )בערך(}
 
-\chapter{איך לרבע את המעגל )בערך(}\label{c.square-a-circle}
-
-
-\section{%
+\section{
 קירובים ל-%
-$\pi$}
+$\pi$}\label{s.square-intro}
 
-היוונים חקרו בנייה גיאומרטית עם סרגל ומחוגה. הם לא הצליחו לפתור שלוש בעיות: חלוקת זווית לשלושה חלקים שווים, הכפלת קוביה )נתונה קוביה, בנה קוביה בנפח פי-שניים(, וריבוע מעגל )נתון מעגל, בנה ריבוע עם אותו שטח(. במאה ה-%
-$19$
-הוכח שאין פתרונות לבעיות אלו.
-
-אם נתונה קטע קו שאורכו
+במאה התשע-עשרה הוכח שאין בניות עם סרגל ומחוגה לשלוש בעיות: חלוקת זווית לשלושה חלקים, הכפלת קוביה וריבוע מעגל. נתון קטע קו שאורכו מוגדר כ-%
 $1$,
-המספרים )אורכי הקטעים( שניתן לבנות מהקטע הזה הם התוצאות של חישובים עם פעולות החשבון
-$+,-,\times,\div,\surd$.
-לא ניתן להכפיל קוביה: הבנייה מחייבת לפתור את המשוואה
-$x^3-2=0$
-ולבנות את האורך
-$\sqrt[3]{2}$,
-אבל אי-אפשר לבנות קטע שהוא שורש שלישי של קטע נתון. מאותה סיבה לא ניתן לחלק זווית לשלושה, כי כדי לחלק 
-$60^\circ$
-לשלושה חלקים, חייבים לפתור את המשוואה 
-$8x^3-6x-1=0$.
+הערכים )אורכים( שניתנים לבנייה הם אלה שמתקבלים מקטע זו ומהפעולות 
+$+,-,\times,/,\surd$.
 
-רק בשנת
-$1882$
-הוכח שאי-אפשר לרבע מעגל. נתון מעגל יחידה ששטחו
-$\pi 1^2=\pi$,
-יש לבנות ריבוע שהצלע שלו באורך
-$\sqrt{\pi}$.
-אבל
-$\pi$
-הוא מספר
-\textbf{טרנסנדנטלי},
-מספר אינו פתרון של אף משוואה אלגבראית. ההוכחה מסובכת ביותר ומשתמשת במושגים מאנליזה.
-
-קיימים קירובים פשוטים ל-%
-$\pi$,
-למשל:
-\[
-\frac{355}{113}=3.14159292\,,
-\]
-שההפרש בינו לבין
-$\pi\approx 3.14159265$
-הוא רק 
-$2.67\times 10^{-7}$.
-רדיוס כדור הארץ הוא בערך
-$6,378.1$
-ק"מ. חישוב ההיקף עם
-$355/113$
-נותן תוצאה של
-$40,074.78421$
-ק"מ וחישוב עם
-$\pi$
-נותן תוצאה של
-$40,074.78761$
-ק"מ. ההפרש הוא פחות מ-%
-$4$
-מטר!
-
-ניתן לבנות כל מספר הרציונלי. העתיק את הקטע באורך 
+בבניות בפרק זה נצטרך לחלק קטע קו לשולשה חלקים; כאן נראה איך לבנות קו שאורכו הוא החילוק של האורכים של שני קטעי קוו נתונים. נתון קטע קו באורך 
 $1$
-לפי המספר במונה ולפי המספר במכנה, ובנה את הקטע באורך החילוק ביניהם )הבנייה מסתמכת על משפט תאלס(. כאן נביא בנייה קצרה של קטע קו באורך
-$355/113$
-מאת רמנוג'ן
-\L{Ramanujan}
-\L{\cite{ramanujan}}.
-נציג את הבנייה בשלבים כאשר חלק מהבנייה וההוכחה מוצג כתרגילים. את התשובות ניתן למצוא בסוף הפרק.
-
-רמנוג'ן
-\L{(1887--1920)}
-גדל בדרום הודו. מהר מאוד הוא התקדם מעבר לרמה של בתי הספר המקומיים. הוא שלח את עבודותיו למתמטיקאי האנגלי
-\L{G.H. Hardy}
-שהזמין אותו לאנגליה. רמנוג'ן הגיע בשנת
-$1914$,
-וחזרתו להודו לא התאפשרה עד לסיום מלחמת העולם הראשונה. הוא סבל רבות ממזג האוויר הקר ומהאוכל הלא מוכר. הוא היה צמחוני בניגוד לאנגלים באותה תקופה באכלו הרבה אוכל מהחי: בשר, חלב, ביצים. זמן קצר לאחר שובו להודו נפטר בגיל 
-$32$.
-המתמטיקה שהגה רמנוג'ן נחקרת עד היום. לפרטים על חייו של רמנוג'ן ראו
-\L{\cite{kanigel}}.
-
-
-
-\np
-
-%%%%%%%%%%%%%%%%%      First
-
-\begin{center}
-\textbf{\Large שלב 1}
-\end{center}
-
-\begin{itemize}
-\item
-בנה מעגל יחידה עם מרכז
-$O$
-וקוטר
-$PR$.
-\item 
-סמן
-$H$
-במחצית הקטע
-$PO$,
-וסמן
-$T$
-כשליש הקטע
-$RO$.
-\item
-בנה אנך מ-%
-$T$
-שחותך את המעגל ב-%
-$Q$.
-\item 
-בנה מיתר
-$RS$
-שאורכו שווה ל-%
-$QT$.
-\end{itemize}
+וקטעי קו באורכים 
+$a,b$,
+לפי משושלים דומים
+$1/b=\overline{OD}/a$
+ולכן
+$\overline{OD}=a/b$.
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=.9]
-\clip (-5.5,-5.1) rectangle +(11,10.2);
+\begin{tikzpicture}
+%\clip (-.6,-1) rectangle (4,3);
+\draw[name path=horz] (0,0) coordinate (o) -- (7,0);
+\fill (o) circle(1.5pt) node[left] {$O$};
+\fill (6,0) circle(1.5pt) coordinate (a) node[below] {$A$};
+\draw (0,0) -- (30:5.5);
+\fill (30:3) circle(1.5pt) coordinate (c) node[above] {$C$};
+\fill (30:5) circle(1.5pt) coordinate (b) node[above] {$B$};
+\draw (a) -- (b);
+\path[name path=par] (c) -- +($(a)-(b)$);
+\path[name intersections={of=par and horz,by=d}];
+\fill (d) circle(1.5pt) node[below] {$D$};
+\draw (c) -- (d);
+\draw[<->] (-.4,.5) -- node[fill=white] {$b$} +(30:5.2);
+\path (o) -- node[above] {$1$} (c);
+\draw[<->] (0,-.8) -- node[fill=white] {$a$} +(6,0);
+\path (o) -- node[below] {$a/b$} (d);
+\end{tikzpicture}
+\end{center}
+
+כדי לרבע מעגל יש לבנות את האורך 
+$\sqrt{\pi}$,
+אבל
+$\pi$
+הוא טרנסנדנטלי, כלומר, הוא אינו פתרון של אף משוואה אלגברית.
+
+פרק זה מביא שלוש בניות של קירובים ל-%
+$\pi$.
+הטבלה שלהן מביא את הנוסחאות של האורכים שנבנים, קירוב לערכן, ההפשרש בין ערכים אלה והערך של 
+$\pi$,
+והשגיאה במטרים אם משתמשים בקירוב כדי לחשב את היקף כדור הארץ כאשר נתול ש-%
+$6378$
+ק"מ.
+\[
+\selectlanguage{english}
+\renewcommand{\arraystretch}{1.2}
+\begin{array}{|l|c|c|c|c|}
+\hline
+\textrm{\R{הבנייה}} & \textrm{\R{הנוסחה}} &\textrm{\R{הערך}} & \textrm{\R{ההפרש}} & \textrm{\R{השגיאה )מ(}}\\\hline
+\pi & & 3.14159265359 & - & -\\\hline
+\textrm{Kochansky} & \sqrt{\disfrac{40}{3}-2\sqrt{3}}&
+  3.14153338705 & 5.932 \times 10^{-5} & 756\\\hline
+\textrm{Ramanujan}\; 1 & \disfrac{355}{113} &
+  3.14159292035 &2.667  \times 10^{-7}&3.4\\\hline
+\textrm{Ramanujan}\; 2 &\left(9^2+\disfrac{19^2}{22}\right)^{1/4}&
+  3.14159265258 & 1.007 \times 10^{-9}& 0.013\\\hline
+\end{array}
+\]
+הבנייה של 
+\L{Kochansky}
+מ-%
+$1685$
+נמצאת ב-%
+\L{\cite{bold}}.
+
+הבניות של
+\L{Ramanujan} 
+נמצאות מ-%
+$1913$
+נמצאות ב-%
+\L{\cite{ramanujan1,ramanujan2}}.
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{הבניה של
+\L{Kochansky}}
+
+\subsection{הבניה}
+
+בנה שלושה מעגלים:
+\begin{enumerate}
+\item
+בנה מעגל יחידה שמרכזו 
+$O$.
+סמן קוטר
+$\overline{AB}$
+ובנה משיק למעגל ב-%
+$A$.
+\item
+בנה מעגל יחידה שמרכזו
+$A$.
+סמן את החיתוך עם המעגל הראשון ב-%
+$C$.\footnote{%
+עבור שמעגל השני והשלישי, האיור מראה רק את הקשת החותך את המעגל הקודם.%
+}
+\item
+בנה מעגל יחידה שמרכזו 
+$C$.
+סמן את החיתוך שלו עם המעגל השני ב-%
+$D$. 
+\end{enumerate}
+בנה
+$\overline{OD}$
+וסמן את החיתוך שלו עם המשיק ב-%
+$E$.
+
+מ-%
+$E$
+בנה 
+$F,G,H$,
+כל אחת במרחק 
+$1$
+מהנקודה הקודמת, כך ש-%
+$\overline{AH}=3-\overline{EA}$.
+
+בנה
+$\overline{BH}$.
+
+טענה:
+$\overline{BH}=\sqrt{\disfrac{40}{3}-2\sqrt{3}}\approx \pi$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-4);
+\coordinate (B) at (0,4);
+\fill (O) circle(2pt) node[above right] {$O$};
+\fill (A) circle(2pt) node[below right] {$A$};
+\fill (B) circle(2pt) node[above right] {$B$};
+\draw (A) rectangle +(12pt,12pt);
+
+% Draw circle and diameter
+\node [thick,draw,circle through=(A),name path=circle] at (O) {};
+\draw [thick] (A) -- (B);
+
+% Draw tangent at A
+\draw[thick,name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
+
+% Draw arc centered at A which intersects circle at C
+\draw[thick,name path=Aarc] (O)
+   arc [start angle=90,end angle=220,radius=4];
+\path[name intersections={of=circle and Aarc,by=C}];
+\fill (C) circle(2pt) node[left,xshift=-4pt] {$C$};
+
+% Draw arc centered at C which intersects the first arc at D
+\draw[thick,name path=Carc] ($(C)+(260:4)$)
+   arc [start angle=260,end angle=280,radius=4];
+\path[name intersections={of=Carc and Aarc,by=D}];
+\fill (D) circle(2pt) node[below left] {$D$};
+
+% Draw O--D which intersects the tangent at E
+\draw[thick,name path=OD] (O) -- (D);
+\path[name intersections={of=tangent and OD,by=E}];
+\fill (E) circle(2pt) node[above left] {$E$};
+
+% Find point H at length 3 from E
+\coordinate (F) at ($(E)+(4,0)$);
+\fill (F) circle(2pt) node[above right,xshift=4pt] {$F$};
+\coordinate (G) at ($(F)+(4,0)$);
+\fill (G) circle(2pt) node[above] {$G$};
+\coordinate (H) at ($(G)+(4,0)$);
+\fill (H) circle(2pt) node[above] {$H$};
+
+% Draw BH of length approximately pi
+\draw[thick] (B) -- (H);
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\subsection{ההוכחה}
+
+האיור שלהלן מתמקד על חלק מהאיור למעלה. קטעי קו המקווקווים נוספו. בגלל שכל המעגלים הם מעגלי היחידה, קל לראות שאורך כל אחד מהקטעים המקווקווים הוא 
+$1$.
+מכאן ש-%
+$\overline{AOCD}$
+הוא מעויין, ולען האלכסונים שלו ניצבים אחד לשני וחוצים אחד את השני ב-%
+$K$.
+מכאן ש-%
+$\overline{AK}=\frac{1}{2}$.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.25]
+% Scale at 4
+
+\clip (-4.5,-6.5) rectangle +(5,7);
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-4);
+\coordinate (B) at (0,4);
+
+% Draw circle
+\node [circle through=(A),name path=circle] at (O) {};
+\draw ($(O)+(200:4)$) arc [start angle=200,end angle=280,radius=4];
+
+% Draw tangent at A
+\draw[thick,name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
+\draw (A) rectangle +(6pt,6pt);
+
+% Draw arc centered at O which intersects circle at C
+\draw[thin,name path=Aarc] (O)
+   arc [start angle=90,end angle=220,radius=4];
+\path[name intersections={of=circle and Aarc,by=C}];
+
+% Draw arc centered at C which intersects the first arc at D
+\draw[thin,name path=Carc] ($(C)+(260:4)$)
+   arc [start angle=260,end angle=280,radius=4];
+\path[name intersections={of=Carc and Aarc,by=D}];
+
+% Draw O--D which intersects the tangent at E
+\draw[thick,name path=OD] (O) -- (D);
+\path[name intersections={of=tangent and OD,by=E}];
+
+% Find point H at length 3 from E
+\coordinate (F) at ($(E)+(4,0)$);
+\coordinate (G) at ($(F)+(4,0)$);
+\coordinate (H) at ($(G)+(4,0)$);
+
+% Draw BH of length approximately pi
+\draw[thick] (B) -- (H);
+
+\draw[ultra thick,dashed] (A) -- (O) -- (C) -- (D) -- cycle;
+\draw[ultra thick,dashed,name path=AC] (A) -- (C);
+
+\node[above left,yshift=10pt,xshift=2pt] at (A) {$60^\circ$};
+\node[left,yshift=10pt,xshift=-20pt] at (A) {$30^\circ$};
+
+\path[name intersections={of=AC and OD,by=K}];
+\draw[thick,rotate=-30] (K) rectangle +(6pt,6pt);
+
+\path (A) -- node[above,xshift=2pt,yshift=2pt] {$1/2$} (K);
+\path (A) -- node[below,xshift=-4pt] {$1/\sqrt{3}$} (E);
+
+\fill (O) circle(1.25pt) node[above right] {$O$};
+\fill (A) circle(1.25pt) node[below right] {$A$};
+\fill (B) circle(1.25pt) node[above right] {$B$};
+\fill (C) circle(1.25pt) node[left,xshift=-4pt] {$C$};
+\fill (D) circle(1.25pt) node[below left] {$D$};
+\fill (E) circle(1.25pt) node[above left] {$E$};
+\fill (F) circle(1.25pt) node[above right,xshift=4pt] {$F$};
+\fill (G) circle(1.25pt) node[above] {$G$};
+\fill (H) circle(1.25pt) node[above] {$H$};
+\fill (K) circle(1.25pt) node[above,yshift=4pt] {$K$};
+\end{tikzpicture}
+\end{center}
+האלכסון
+$\overline{AC}$
+מייצר שני משולשים שווה-צלעות
+$\triangle OAC, \triangle DAC$
+כך ש-%
+$\angle OAC=60^\circ$.
+הזווית בין המשיק לרדיוס
+$\overline{OA}$
+היא זווית ישרה ולכן
+$\angle KAE=30^\circ$.
+נחשב:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{lcl}
+\disfrac{1/2}{\overline{EA}}&=&
+\cos 30^\circ=\disfrac{\sqrt{3}}{2}\\
+\overline{EA}&=&\disfrac{1}{\sqrt{3}}\\
+\overline{AH}&=&3-\overline{EA}=\left(3-\disfrac{1}{\sqrt{3}}\right)
+=\disfrac{3\sqrt{3}-1}{\sqrt{3}}\\
+\end{array}
+\end{displaymath}
+נחזור לאיור הראשון ונראה ש-%
+$\triangle ABH$
+הוא משולש ישר-זווית:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{lcl}
+\overline{BH}^2&=&\overline{OB}^2+\overline{AH}^2\\
+&=&4+\disfrac{9\cdot 3 -6\sqrt{3}+1}{3}=\disfrac{40}{3}-2\sqrt{3}\\
+\overline{BH}&=&\sqrt{\disfrac{40}{3}-2\sqrt{3}}\approx 3.141533387=\approx \pi\,.
+\end{array}
+\end{displaymath}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace*{-16ex}
+
+\section{הבנייה הראשונה של
+\L{Ramanujan}}
+
+
+\subsection{הבניה}
+
+בני מעגל יחידה שמרכזו 
+$O$
+וסמן קוטר
+$\overline{PR}$.
+
+$H$
+חוצה את
+$\overline{PO}$
+ו-%
+$T$
+מחלק את
+$\overline{RO}$
+לשלושה חלקים.
+
+בני ניצב ב-%
+$T$
+שחותך את המעגל ב-%
+$Q$.
+
+בנה את המיתר
+$\overline{RS}=\overline{QT}$.
+
+בנה את קטע הקו
+$\overline{PS}$.
+
+בנה קו העובר דרך
+$T$
+המקביל ל-%
+$RS$.
+סמן ב-%
+$N$
+את החיתוך של עם 
+$\overline{PS}$.
+
+בנה קו העובר דרך
+$O$
+המקביל ל-%
+$RS$.
+סמן ב-%
+$M$
+את החיתוך של עם 
+$\overline{PS}$.
+
+בנה את המיתר
+$\overline{PK}=\overline{PM}$.
+
+בנה משיק ב-%
+$P$
+שאורכו
+$\overline{PL}=\overline{MN}$.
+
+חבר את הנקודות
+$K,L,R$.
+
+מצא נקודה 
+$C$
+כך שאורכו של
+$\overline{RC}$
+שווה לאורכו של
+$\overline{RH}$.
+
+בנה קטע קו
+$\overline{CD}$
+המקביל ל-%
+$\overline{KL}$
+שחותך את
+$\overline{LR}$ 
+ב-%
+$D$. 
+
+טענה:
+$\overline{RD}^2=\disfrac{355}{113}\approx pi$.
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.1,align=left]
+\clip (-6,-5.1) rectangle +(11.5,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -130,280 +393,125 @@ $QT$.
 \fill (p) circle (1pt);
 \fill (r) circle (1pt);
 \fill (-2.5,0) coordinate (h) node[below] {$H$} circle (1pt);
-\fill (10/3,0) coordinate (t) node[below] {$T$} circle (1pt);
-\path (p) -- node[above,xshift=12pt] {$1/2$} (h) -- node[above] {$1/2$} (o) -- node[above] {$2/3$} (t) -- node[above] {$1/3$} (r);
+\fill (10/3,0) coordinate (t) node[below left] {$T$} circle (1pt);
+\path (p) -- node[above,xshift=10pt] {$1/2$} (h) -- node[above] {$1/2$} (o) -- node[above] {$2/3$} (t) -- node[above] {$1/3$} (r);
+
 % Draw perpendicular TQ
 \path[name path=tq] (t) -- +(0,5);
 \path[name intersections={of=tq and circle,by=q}];
 \draw (t) -- node[left] {$a$} (q) node[above] {$Q$};
 \fill (q) circle (1pt);
-% Draw chord RS
-\path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=rcirc and circle,by=s}];
-\draw (r) -- node[left] {$a$} (s);
-\fill (s) node[above right] {$S$} circle (1pt);
-\draw (p) -- node[above] {$b$} (s);
-\end{tikzpicture}
-\end{center}
 
-\exer{}
-בנה את האורך 
-$TR=\disfrac{1}{3}$.
-
-\exer
-חשב את אורכו של
-$QT$.
-
-\exer
-חשב את אורכו של
-$PS$.
-
-\exer
-בנה את המיתר
-$RS$
-שאורכו שווה ל-%
-$QT$.
-
-\np
-
-%%%%%%%%%%%%%%%%%      Second
-
-\begin{center}
-\textbf{\Large שלב 2}
-\end{center}
-
-\begin{itemize}
-\item 
-בנה קטעי קו
-$NT$
-ו-%
-$OM$
-מקביליים ל-%
-$RS$.
-\end{itemize}
-
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.9]
-\clip (-5.5,-5.1) rectangle +(11,10.2);
-% Draw circle and horizontal diameter
-\draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
-\draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
-\fill (o) circle (1pt);
-\fill (p) circle (1pt);
-\fill (r) circle (1pt);
-\fill (-2.5,0) coordinate (h) node[below] {$H$} circle (1pt);
-\fill (10/3,0) coordinate (t) node[below] {$T$} circle (1pt);
 % Draw chord RS and line PS
 \path[name path=tq] (t) -- +(0,5);
 \path[name intersections={of=tq and circle,by=q}];
 \path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
 \path[name intersections={of=rcirc and circle,by=s}];
-\draw (r) -- node[left] {$a$} (s);
-\fill (s) node[above right] {$S$} circle (1pt);
-\draw[name path=ps] (p) -- node[above right,xshift=8pt,yshift=8pt] {$b$} (s);
-% Draw TN
-\path[name path=tn] (t) -- +($(s)-(r)$);
-\path[name intersections={of=ps and tn,by=n}];
-\draw (t) -- (n);
-\fill (n) node[above] {$N$} circle (1pt);
-% Draw OM
-\path[name path=om] (o) -- +($(s)-(r)$);
-\path[name intersections={of=ps and om,by=m}];
-\draw (o) -- (m);
-\fill (m) node[above left] {$M$} circle (1pt);
-% Label PM and MN
-\path (p) -- node[below,xshift=12pt,yshift=4pt] {$c$} (m);
-\path (m) -- node[below,xshift=8pt,yshift=4pt] {$d$} (n);
-\end{tikzpicture}
-\end{center}
-
-\exer
-חשב את אורכו של
-$PM$.
-
-\exer
-חשב את אורכו של
-$MN$.
-
-\np
-
-%%%%%%%%%%%%%%%%%      Third
-
-\begin{center}
-\textbf{\Large שלב 3}
-\end{center}
-
-
-\begin{itemize}
-\item
-בנה את המיתר
-$PK=PM$.
-\item
-בנה את המשיק
-$PL=MN$.
-\item 
-חבר את הנקודות
-$K,L,R$.
-\end{itemize}
-
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.9]
-\clip (-5.5,-5.1) rectangle +(11,10.2);
-% Draw circle and horizontal diameter
-\draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
-\draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
-\fill (o) circle (1pt);
-\fill (p) circle (1pt);
-\fill (r) circle (1pt);
-\fill (-2.5,0) coordinate (h) node[below] {$H$} circle (1pt);
-\fill (10/3,0) coordinate (t) node[below] {$T$} circle (1pt);
-% Draw chord RS and line PS
-\path[name path=tq] (t) -- +(0,5);
-\path[name intersections={of=tq and circle,by=q}];
-\path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=rcirc and circle,by=s}];
-\draw (r) -- (s);
+\draw (r) -- node[right] {$a$} (s);
 \fill (s) node[above right] {$S$} circle (1pt);
 \draw[name path=ps] (p) -- (s);
+
 % Draw TN
 \path[name path=tn] (t) -- +($(s)-(r)$);
 \path[name intersections={of=ps and tn,by=n}];
 \draw (t) -- (n);
 \fill (n) node[above] {$N$} circle (1pt);
+
 % Draw OM
 \path[name path=om] (o) -- +($(s)-(r)$);
 \path[name intersections={of=ps and om,by=m}];
 \draw (o) -- (m);
 \fill (m) node[above left] {$M$} circle (1pt);
-\path (p) -- node[below,xshift=12pt,yshift=4pt] {$c$} (m);
-\path (m) -- node[below,xshift=8pt,yshift=4pt] {$d$} (n);
+\path (p) -- (m);
+\path (m) -- (n);
+
 % Draw chord PK
-\path[name path=pkcirc] (p) let \p1 = ($ (p) - (m) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=pkcirc and circle,by={k1,k}}];
-\draw (p) -- node[right,xshift=-2pt,yshift=10pt] {$c$} (k) node[below left] {$K$};
-% Draw tangent PL
-\draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- node[left] {$d$} (-5,-\n1) coordinate (l) node[left] {$L$};
-% Connect L and K to R
-\draw (r) -- node[above] {$f$} (l) -- (k) -- node[below right] {$e$} cycle;
-\end{tikzpicture}
-\end{center}
+\draw (p) -- +(-62.3:4.64) coordinate (k) node[below left] {$K$};
 
-\exer
-מה ידוע על 
-$\triangle PKR$?
-חשב את אורכו של
-$RK$.
-
-\exer
-מה ידוע על
-$\triangle PLR$?
-חשב את אורכו של
-$RL$.
-
-\np
-
-%%%%%%%%%%%%%%%%%      Fourth
-
-\begin{center}
-\textbf{\Large שלב 4}
-\end{center}
-
-\begin{itemize}
-\item
-סמן את הנקודה
-$C$
-כך ש-%
-$RC=RH$.
-\item 
-בנה
-$CD$
-מקביל ל-%
-$LK$.
-\end{itemize}
-
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.9]
-\clip (-5.5,-5.1) rectangle +(11,10.2);
-% Draw circle and horizontal diameter
-\draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
-\draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
-\fill (o) circle (1pt);
-\fill (p) circle (1pt);
-\fill (r) circle (1pt);
-\fill (-2.5,0) coordinate (h) node[below] {$H$} circle (1pt);
-% Get values of PM and MN but don't draw
-\coordinate (t) at (10/3,0);
-\path[name path=tq] (t) -- +(0,5);
-\path[name intersections={of=tq and circle,by=q}];
-\path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=rcirc and circle,by=s}];
-\path[name path=ps] (p) -- (s);
-\path[name path=tn] (t) -- +($(s)-(r)$);
-\path[name intersections={of=ps and tn,by=n}];
-\path[name path=om] (o) -- +($(s)-(r)$);
-\path[name intersections={of=ps and om,by=m}];
-% Draw chord PK
-\path[name path=pkcirc] (p) let \p1 = ($ (p) - (m) $) in circle ({veclen(\x1,\y1)});
-\path[name intersections={of=pkcirc and circle,by={k1,k}}];
-\draw (p) -- (k) node[below left] {$K$};
 % Draw tangent PL
 \draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- (-5,-\n1) coordinate (l) node[left] {$L$};
+
 % Connect L and K to R
-\draw (r) -- node[above] {$f$} (l) -- (k) -- node[below right] {$e$} cycle;
+\draw (r) -- (l) -- (k) -- cycle;
+
 % Find point C on RK
 \coordinate (c) at ($(r)!7.5cm!(k)$);
-\path (r) -- node[above, near end] {$g$} (c);
+\path (r) -- (c);
 \fill (c) node[below] {$C$} circle (1pt);
+
 % Draw CD
 \path[name path=cd] (c) -- +($(l)-(k)$);
 \path[name path=lr] (l) -- (r);
 \path[name intersections={of=cd and lr,by=d}];
 \draw (c) -- (d);
 \fill (d) node[above,xshift=2pt] {$D$} circle (1pt);
-\path (r) -- node[below,near end] {$h$} (d);
+\path (r) -- (d);
+
+\draw[rotate=90] (t) rectangle +(8pt,8pt);
+\draw[rotate=-160] (s) rectangle +(8pt,8pt);
 \end{tikzpicture}
 \end{center}
 
+\newpage
 
-\exer
-חשב את אורכו של
-$RC$.
+\subsection{ההוכחה}
 
-\exer
-חשב את אורכו של
-$RD$.
+לפי משפט פתגורס במשולש ישר-הזווית
+$\triangle QOT$:
+\[
+\overline{QT} = \sqrt{1^2-\left(\frac{2}{3}\right)^2}=\frac{\sqrt{5}}{3}\,.
+\]
+$\triangle PSR$
+הוא משולש ישר-זווית כי הוא כולא קוטר. לפי משפט פתגורס:
+\[
+\overline{PS} = \sqrt{2^2-\left(\frac{\sqrt{5}}{3}\right)^2}=\sqrt{4-\frac{5}{9}}=\frac{\sqrt{31}}{3}\,.
+\]
+$\triangle MPO\sim \triangle SPR$ so:
+\begin{form}{1.5}
+\disfrac{\overline{PM}}{\overline{PO}}&=&\disfrac{\overline{PS}}{\overline{PR}}\\
+\disfrac{\overline{PM}}{1}&=&\disfrac{\sqrt{31}/3}{2}\\
+\overline{PM}&=&\disfrac{\sqrt{31}}{6}\,.
+\end{form}
+$\triangle NPT\sim \triangle SPR$
+ולכן:
+\begin{form}{1.5}
+\disfrac{\overline{PN}}{\overline{PT}}&=&\disfrac{\overline{PS}}{\overline{PR}}\\
+\disfrac{\overline{PN}}{5/3}&=&\disfrac{\sqrt{31}/3}{2}\\
+\overline{PN}&=&\disfrac{5\sqrt{31}}{18}\\
+\overline{MN}&=&\overline{PN}-\overline{PM}\\
+&=&\sqrt{31}\left(\disfrac{5}{18}-\disfrac{1}{6}\right) = \disfrac{\sqrt{31}}{9}\,.
+\end{form}
+$\triangle PKR$
+הוא משולש ישר-זווית כי הוא כולא קוטר. לפי משפט פתגורס:
+\[
+\overline{RK}=\sqrt{2^2-\left(\frac{\sqrt{31}}{6}\right)^2} = \frac{\sqrt{113}}{6}\,.
+\]
+$\triangle PLR$
+הוא משולש ישר-זווית כי 
+$\overline{PL}$
+הוא משיק. לפי משפט פתגורס:
+\[
+\overline{RL}=\sqrt{2^2+\left(\frac{\sqrt{31}}{9}\right)^2} = \frac{\sqrt{355}}{9}\,.
+\]
 
-\exer
-בנה ריבוע שאורך הצלע שלו הוא
-$RD$.
+\newpage
 
-\exer
-חשב את
-$RD^2$
-שהוא שטח הריבוע. חשב גם כשבר וגם כמספר עשרוני.
+$\overline{RC}=\overline{RH}=\displaystyle\frac{1}{3}+\frac{2}{3}+\frac{1}{2}=\frac{3}{2}$.
+$\overline{CD}$
+מקביל ל-%
+$\overline{LK}$,
+ולכן לפי משולשים דומים:
+\begin{form}{1.5}
+\disfrac{\overline{RD}}{\overline{RC}}&=&\disfrac{\overline{RL}}{\overline{RK}}\\
+\disfrac{\overline{RD}}{3/2}&=&\disfrac{\sqrt{355}/9}{\sqrt{113}/6}\\
+\overline{RD}&=&\sqrt{\disfrac{355}{113}}\,.
+\end{form}
 
-\np
-
-%%%%%%%%%%%%%%%%%      Fifth
-
-\begin{center}
-\textbf{\Large סיכום}
-\end{center}
-
-להלן הבנייה בשלמותה כאשר כל האורכים מסומנים.
-
-\bigskip
-
-\bigskip
-\bigskip
-
+באיור להלן כל אורכי קטעי הקו מסומנים:
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.2,align=left]
-\clip(-6,-5.1) rectangle +(11.5,10.2);
+\begin{tikzpicture}[scale=1.1,align=left]
+\clip (-6,-5.1) rectangle +(11.5,10.2);
 % Draw circle and horizontal diameter
 \draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
 \draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
@@ -441,7 +549,9 @@ $RD^2$
 \draw (r) -- (l) -- (k) -- cycle;
 % Find point C on RK
 \coordinate (c) at ($(r)!7.5cm!(k)$);
-\path (r) -- node[below,yshift=-16pt] {$RC=3/2$\\$RK=\sqrt{113}/6$} (c);
+%\path (r) -- node[below,yshift=-16pt] {$RC=3/2$\\$RK=\sqrt{113}/6$} (c);
+\path (r) -- node[below,xshift=16pt,yshift=-2pt] {$\overline{RC}=3/2$} (c);
+\path (r) -- node[below,xshift=-4pt,yshift=-20pt] {$\overline{RK}=\sqrt{113}/6$} (k);
 \fill (c) node[below] {$C$} circle (1pt);
 % Draw CD
 \path[name path=cd] (c) -- +($(l)-(k)$);
@@ -449,140 +559,300 @@ $RD^2$
 \path[name intersections={of=cd and lr,by=d}];
 \draw (c) -- (d);
 \fill (d) node[above,xshift=2pt] {$D$} circle (1pt);
-\path (r) -- node[above,xshift=-40pt,yshift=-8pt] {$RD=\sqrt{355/113}$\\$RL=\sqrt{355}/9$} (d);
+%\path (r) -- node[above,xshift=-40pt,yshift=-8pt] {$RD=\sqrt{355/113}$\\$RL=\sqrt{355}/9$} (d);
+\path (r) -- node[above,xshift=-40pt,yshift=-4pt] {$\overline{RD}=\sqrt{355/113}$} (d);
+\path (r) -- node[below,xshift=-28pt,yshift=-15pt] {$\overline{RL}=\sqrt{355}/9$} (l);
 \end{tikzpicture}
 \end{center}
 
-\np
+\bigskip
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Answers
+ניתן לבנות את ערך
+$\disfrac{355}{113}$
+על ידי בניית שני קטעי קו באורכים
+$355$
+ו-%
+$113$,
+ואז להשתמש בבנייה לחילוק מסעיף%
+~\ref{s.square-intro},
+אבל זה די מעיק!
 
-\begin{center}
-\textbf{\Large תשובות לתרגילים}
-\end{center}
+\newpage
 
-\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item
+\section{הבנייה השנייה של
+\L{Ramanujan}}
+
+
+\subsection{הבניה}
+
+בנה מעגל יחידה שמרכזו
+$O$
+עם קוטר
+$\overline{AB}$,
+וסמן ב-%
+$C$
+את החיתוך של הניצב ב-%
+$O$
+עם המעגל.
+
+חלק את
+$\overline{AO}$
+לשלושה חלקים כך ש-%
+$\overline{AT}=1/3$ 
+ו-%
+$\overline{TO}=2/3$.
+
 בנה
-$\triangle ABC$
-עם האורכים הרשומים ובנה 
-$DE$
-מקביל ל-%
-$BC$. 
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}
-\draw (0,0) node[left] {$A$} -- (6,0) node[right] {$B$};
-\path (0,0) -- node[below] {$1$} (2,0) coordinate (a1) node[below] {$D$} -- node[below] {$2$} (6,0);
-\draw (6,0) -- node[right] {$1$} ++(100:2) coordinate (a2) node[above] {$C$};
-\draw[name path=p1] (a2) -- (0,0);
-\path[name path=p2] (2,0) -- ++(100:1);
-\path[name intersections={of=p1 and p2,by=q}];
-\draw (a1) -- node[right] {$n$} (q) node[above] {$E$};
-\end{tikzpicture}
-\end{center}
-לפי משולשים דומים:
-\[
-\frac{n}{1} = \frac{1}{3}\,.
-\]
-\item
-לפי משפרט פיתגורס:
-$\triangle QOT$:
-\[
-QT = \sqrt{1^2-\left(\frac{2}{3}\right)^2}=\frac{\sqrt{5}}{3}\,.
-\]
+$\overline{BC}$
+ןמצא נקודות
+$M,N$
+כך ש-%
+$\overline{CM}=\overline{MN}=\overline{AT}=1/3$.
 
-\item $\triangle PSR$
-הוא משולש ישר זווית כי הוא כולא קוטר. לפי משפט פיתגורס:
-\[
-PS = \sqrt{2^2-\left(\frac{\sqrt{5}}{3}\right)^2}=\sqrt{4-\frac{5}{9}}=\frac{\sqrt{31}}{3}\,.
-\]
+בנה 
+$\overline{AM}$
+ו-%
+$\overline{AN}$
+וסמן ב-%
+$P$
+את הנקודה על
+$\overline{AN}$
+כך ש-%
+$\overline{AP}=\overline{AM}$.
 
-\item
-הצב את רגלי מחוגה קבועה על 
-$QT$.
-בנה מעגל עם מרכז 
+בנה קו המקביל ל-%
+$\overline{MN}$
+שעור דרך
+$P$,
+וסמן ב-%
+$Q$
+את נקודת החיתוך שלו עם
+$\overline{AM}$.
+
+בנה 
+$\overline{OQ}$
+ובנה קו המקביל ל-%
+שעובר דרך 
+$T$ 
+וסמן ב-%
 $R$
-ורדיוס זה. בפרק~%
-\L{\ref{c.collapse}}
-הראנו שאפשר להעתיק קטע גם עם מחוגה מתמוטטת.
+את נקודת החיתוך שלו עם
+$\overline{AM}$.
 
-\item
-לפי המשולשים הדומים:
-\[
-\frac{PM}{PO}=\frac{PS}{PR}\,\,,\;\;\;\frac{PM}{1}=\frac{\sqrt{31}/3}{2}\,\,,\;\;\;PM=\frac{\sqrt{31}}{6}.
-\]
+בנה קטע קו 
+$\overline{AS}$
+שאורכו שווה לאורך של
+$\overline{AR}$
+והמשיק למעגל ב-%
+$A$.
 
-\item
-לפי המשולשים הדומים:
-\[
-\frac{PN}{PT}=\frac{PS}{PR}\,\,,\;\;\;\frac{PN}{5/3}=\frac{\sqrt{31}/3}{2}\,\,,\;\;\;PN=\frac{5\sqrt{31}}{18}\,.
-\]
-\[
-MN=PN-PM = \sqrt{31}\left(\frac{5}{18}-\frac{1}{6}\right) = \frac{\sqrt{31}}{9}\,.
-\]
+בנה
+$\overline{SO}$.
 
-\np
+טענה:
+$3\sqrt{\overline{SO}}=\left(9^2+\disfrac{19^2}{22}\right)^{\frac{1}{4}}\approx \pi$.
 
-\item $\triangle PKR$
-הוא משולש ישר זווית כי הוא כולא קוטר. לפי משפט פיתגורוס:
-\[
-RK=\sqrt{2^2-\left(\frac{\sqrt{31}}{6}\right)^2} = \frac{\sqrt{113}}{6}\,.
-\]
-
-\item $\triangle PLR$
-הוא משולש ישר זווית כי
-$PL$
-משיק. לפי משפט פיתגורס:
-\[
-RL=\sqrt{2^2+\left(\frac{\sqrt{31}}{9}\right)^2} = \frac{\sqrt{355}}{9}\,.
-\]
-
-\item $RC=RH=PR-PH=2-\disfrac{1}{2}=\frac{3}{2}$.
-
-\item 
-בגלל ש-%
-$CD$
-מקביל ל-%
-$LK$,
-לפי המשולשים הדומים:
-\[
-\frac{RD}{RC}=\frac{RL}{RK}\,,\;\;\;\frac{RD}{3/2}=\frac{\sqrt{355}/9}{\sqrt{113}/6}\,,\;\;\;RD=\sqrt{\frac{355}{113}}\,.
-\]
-\item
-נתון קטע קו באורך
-$RD$,
-הארך אותו לקטע קו באורך
-$3RD$.
-בנה אנכים באורך
-$RD$
-מנקודות הקצה של הקטע האמצעי. חבר את קצות האנכים.
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}
-\draw (0,0) -- (6,0);
-\foreach \i in {0,2,4,6}
-  \fill (\i,0) circle (2pt);
-\fill (2,2) circle (2pt);
-\fill (4,2) circle (2pt);
-\draw (2,2) -- (4,2);
-\draw (2,0) -- (2,3);
-\draw (4,0) -- (4,3);
-\draw ([shift=(30:3.2cm)]0,0) arc (30:60:3.2cm);
-\draw ([shift=(150:3.2cm)]4,0) arc (150:120:3.2cm);
-\draw ([shift=(30:3.2cm)]2,0) arc (30:60:3.2cm);
-\draw ([shift=(150:3.2cm)]6,0) arc (150:120:3.2cm);
-\path (2,0) -- node[above] {$RD$} (4,0);
+\begin{tikzpicture}[scale=1.4]
+\clip (-4.4,-4.2) rectangle +(8.8,8.6);
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (-4,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (0,4);
+
+% Draw circle and diameter
+\node [thick,draw,circle through=(A),name path=circle] at (O) {};
+\draw [thick] (A) -- (B);
+\draw [thick,dashed] (C) -- (O);
+\draw (O) rectangle +(8pt,8pt);
+\draw[rotate=-90] (A) rectangle +(8pt,8pt);
+
+\coordinate (T) at (-2.667,0);
+\path (A) -- node[below] {$1/3$} (T);
+\path (T) -- node[below] {$2/3$} (O);
+\path (O) -- node[below] {$1$} (B);
+
+\draw (C) -- node[right] {$1/3$} +(-45:1.333) coordinate (M);
+\draw (M) -- node[right] {$1/3$} +(-45:1.333) coordinate (N);
+\draw (N) -- node[near start,right] {$\sqrt{2}\!-\!2/3$}(B);
+
+\draw[name path=AM] (A) -- (M);
+\draw[name path=AN] (A) -- (N);
+
+\node [circle through=(M),name path=AMcircle] at (A) {};
+
+\path[name intersections={of=AMcircle and AN,by=P}];
+
+\path[name path=PQ] (P) -- +(135:2);
+\path[name intersections={of=PQ and AM,by=Q}];
+\draw (P) -- (Q) -- (O);
+
+\path[name path=QT] (T) -- ($(Q)+(-2.667,0)$) -- (Q);
+\path[name intersections={of=QT and AM,by=R}];
+\draw (T) -- (R);
+
+\node [circle through=(R),name path=ARcircle] at (A) {};
+\path[name path=AS] (A) -- ($(A)+(0,-2.5)$);
+\path[name intersections={of=ARcircle and AS,by=S}];
+\draw (A) -- (S);
+
+\draw (S) -- (O);
+
+\fill (O) circle(1.2pt) node[below right] {$O$};
+\fill (A) circle(1.2pt) node[left] {$A$};
+\fill (B) circle(1.2pt) node[right] {$B$} node[above left,xshift=-8pt] {$45^\circ$};
+\fill (C) circle(1.2pt) node[above] {$C$};
+\fill (T) circle(1.2pt) node[below] {$T$};
+\fill (M) circle(1.2pt) node[right] {$M$};
+\fill (N) circle(1.2pt) node[right] {$N$};
+\fill (P) circle(1.2pt) node[below] {$P$};
+\fill (Q) circle(1.2pt) node[above left] {$Q$};
+\fill (R) circle(1.2pt) node[above left] {$R$};
+\fill (S) circle(1.2pt) node[above left] {$S$};
+
 \end{tikzpicture}
 \end{center}
 
-\item \mbox{}
-\[
-\frac{355}{113}=3.14159292\,.
-\]
+\newpage
 
-\end{enumerate}
+\subsection{ההוכחה}
 
+$\triangle COB$
+הוא משולש ישר-זווית,
+$\overline{OB}=\overline{OC}=1$,
+ןלכן לפי משפט פתרגורס
+$\overline{CB}=\sqrt{2}$
+ו-%
+$\overline{NB}=\sqrt{2}-2/3$.
+המשולש שווה-שוקיים, כך ש-%
+$\angle NBA =\angle MBA=45^\circ$.
+
+נשתמש בחוק הקוסינוסים על 
+$\triangle NBA$
+כדי לחשב את
+$\overline{AN}$:
+\begin{form}{1}
+\overline{AN}^2&=&\overline{BA}^2 + \overline{BN}^2-2\cdot\overline{BA}\cdot\overline{BN}\cdot\cos \angle NBA\\
+&=&2^2+\left(\sqrt{2}-\disfrac{2}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\disfrac{2}{3}\right)\cdot \disfrac{\sqrt{2}}{2}\\
+&=&\left(4+2+\disfrac{4}{9}-4\right) + \sqrt{2}\cdot \left(-\disfrac{4}{3}+\disfrac{4}{3}\right)=\disfrac{22}{9}\\
+\overline{AN}&=&\sqrt{\disfrac{22}{9}}\,.
+\end{form}
+באופן דומה, נשתמש בחוק הקוסינוסים על
+$\triangle MBA$
+כדי לחשב את
+$\overline{AM}$:
+\begin{form}{1.2}
+\overline{AM}^2&=&\overline{BA}^2 + \overline{BM}^2-2\cdot\overline{BA}\cdot\overline{BM}\cdot\cos \angle MBA\\
+&=&2^2+\left(\sqrt{2}-\disfrac{1}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\disfrac{1}{3}\right)\cdot \disfrac{\sqrt{2}}{2}\\
+&=&\left(4+2+\disfrac{1}{9}-4\right) + \sqrt{2}\cdot \left(-\disfrac{2}{3}+\disfrac{2}{3}\right)=\disfrac{19}{9}\\
+\overline{AM}&=&\sqrt{\disfrac{19}{9}}\,.
+\end{form}
+לפי הבנייה
+$\overline{QP}\parallel \overline{MN}$
+ולכן
+$\triangle MAN\sim \triangle QAP$,
+ולפי הבנייה
+$\overline{AP}=\overline{AM}$,
+כך ש:
+\begin{form}{1.5}
+\disfrac{\overline{AQ}}{\overline{AM}}&=&\disfrac{\overline{AP}}{\overline{AN}}=\disfrac{\overline{AM}}{\overline{AN}}\\
+\overline{AQ}&=&\disfrac{\overline{AM}^2}{\overline{AN}}=\disfrac{19/9}{\sqrt{22/9}}=\disfrac{19}{3\sqrt{22}}\,.
+\end{form}
+
+לפי הבנייה
+$\overline{TR}\parallel \overline{OQ}$
+ולכן
+$\triangle RAT\sim \triangle QAO$
+כך ש:
+\begin{form}{1.2}
+\disfrac{\overline{AR}}{\overline{AQ}}&=&\disfrac{\overline{AT}}{\overline{AO}}\\
+\overline{AR}&=&\overline{AQ}\cdot\disfrac{\overline{AT}}{\overline{AO}}=\disfrac{19}{3\sqrt{22}}\cdot\disfrac{1/3}{1}=\disfrac{19}{9\sqrt{22}}\,.
+\end{form}
+
+\newpage
+לפי הבנייה
+$\overline{AS}=\overline{AR}$
+ו-%
+$\triangle OAS$ 
+הוא משולש ישר-זווית. לפי משפט פתגורס:
+\begin{form}{1.5}
+\overline{SO}&=&\sqrt{1^2+\left(\disfrac{19}{9\sqrt{22}}\right)^2}\\
+3\sqrt{\overline{SO}}&=&3\left(1+\disfrac{19^2}{9^2\cdot 22}\right)^\frac{1}{4}\\
+&=&\left(3^4+\disfrac{3^4\cdot 19^2}{9^2\cdot 22}\right)^\frac{1}{4}\\
+&=&\left(9^2+\disfrac{19^2}{22}\right)^\frac{1}{4}\approx 3.14159265262\approx \pi\,.
+\end{form}
+
+באיור להלן כל אורכי קטעי הקו מסומנים:
+\begin{center}
 \selectlanguage{english}
-%\hspace*{-5em}\includegraphics[width=1.2\textwidth]{ramanujan.png}
+\begin{tikzpicture}[scale=1.4]
+\clip (-5,-4.2) rectangle +(10,8.5);
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (-4,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (0,4);
+
+% Draw circle and diameter
+\node [thick,draw,circle through=(A),name path=circle] at (O) {};
+\draw [thick] (A) -- (B);
+\draw [thick,dashed] (C) -- (O);
+\draw (O) rectangle +(8pt,8pt);
+\draw[rotate=-90] (A) rectangle +(8pt,8pt);
+
+\coordinate (T) at (-2.667,0);
+\path (A) -- node[below] {$1/3$} (T);
+\path (T) -- node[below] {$2/3$} (O);
+\path (O) -- node[below] {$1$} (B);
+
+\draw (C) -- node[right] {$1/3$} +(-45:1.333) coordinate (M);
+\draw (M) -- node[right] {$1/3$} +(-45:1.333) coordinate (N);
+\draw (N) -- node[near start,right] {$\sqrt{2}\!-\!2/3$}(B);
+
+\draw[name path=AM] (A) -- node[above,xshift=15pt,yshift=24pt] {$\overline{AM}=\sqrt{19/9}$} (M);
+\draw[name path=AN] (A) -- node[below,yshift=-10pt] {$\overline{AN}=\sqrt{22/9}$} (N);
+
+\node [circle through=(M),name path=AMcircle] at (A) {};
+
+\path[name intersections={of=AMcircle and AN,by=P}];
+
+\path[name path=PQ] (P) -- +(135:2);
+\path[name intersections={of=PQ and AM,by=Q}];
+\draw (P) -- (Q) -- (O);
+\path (A) -- node[above,xshift=-14pt,yshift=10pt] {$\overline{AQ}=19/3\sqrt{22}$} (Q);
+
+\path[name path=QT] (T) -- ($(Q)+(-2.667,0)$) -- (Q);
+\path[name intersections={of=QT and AM,by=R}];
+\draw (T) -- (R);
+\path (A) -- node[above,xshift=-32pt,yshift=6pt] {$\overline{AR}=19/9\sqrt{22}$} (R);
+
+\node [circle through=(R),name path=ARcircle] at (A) {};
+\path[name path=AS] (A) -- ($(A)+(0,-2.5)$);
+\path[name intersections={of=ARcircle and AS,by=S}];
+\draw (A) -- node[xshift=10pt,yshift=6pt] {$\overline{AS}=\,19/9\sqrt{22}$} (S);
+
+\draw (S) -- node[right,xshift=-2pt,yshift=-10pt] {$\overline{SO}=\sqrt{1+
+  \left(\disfrac{19^2}{9^2\cdot 22}\right)}$} (O);
+
+\fill (O) circle(1.2pt) node[below right] {$O$};
+\fill (A) circle(1.2pt) node[left] {$A$};
+\fill (B) circle(1.2pt) node[right] {$B$} node[above left,xshift=-8pt] {$45^\circ$};
+\fill (C) circle(1.2pt) node[above] {$C$};
+\fill (T) circle(1.2pt) node[below] {$T$};
+\fill (M) circle(1.2pt) node[right] {$M$};
+\fill (N) circle(1.2pt) node[right] {$N$};
+\fill (P) circle(1.2pt) node[below] {$P$};
+\fill (Q) circle(1.2pt) node[above left] {$Q$};
+\fill (R) circle(1.2pt) node[above left] {$R$};
+\fill (S) circle(1.2pt) node[above left] {$S$};
+
+\end{tikzpicture}
+\end{center}
