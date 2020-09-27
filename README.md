@@ -12,9 +12,10 @@ They can be downloaded from https://www.weizmann.ac.il/sci-tea/benari/mathematic
 * langford: Langford's problem (English, Hebrew)
 * minesweeper: Minesweeper is NP-complete (English, Hebrew)
 * origami: The mathematics of origami (English)
+* probability: Two interesting problems from Frederick Mosteller's book (English, Hebrew)
 * quadratic: Po-Shen Lo's method for solving quadratic equations (English, Hebrew)
 * quaternions: Quaternions for three-dimensional rotations (English only)
-* TikZ examples (language independent)
+* tikz-examples: Demonstration of TikZ constructs (language independent)
 * trigonometry: A functional approach for teaching trigonometry (English, Hebrew)
 * triples: Pythagorean triples (English, Hebrew)
 
