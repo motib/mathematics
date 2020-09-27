@@ -1,0 +1,202 @@
+% !TeX root = two-problems-en.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{verbatim}
+\usepackage{url}
+
+\usepackage{tikz}
+\usetikzlibrary{intersections,calc,through,arrows.meta}
+\tikzset {>=Stealth}
+
+\textwidth=155mm
+\textheight=230mm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=0mm
+\evensidemargin=0mm
+\headsep=0pt
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
+
+\newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+\textbf{\Large Two Problems in Probability}
+
+\bigskip
+
+\textbf{\large Moti Ben-Ari}
+\bigskip
+
+\url{http://www.weizmann.ac.il/sci-tea/benari/}
+\end{center}
+
+\begin{footnotesize}
+\begin{center}
+\copyright{}\ 2020 by Moti Ben-Ari.
+\end{center}
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+\end{footnotesize}
+
+This document is based upon the first two problems in:
+
+$\quad\quad$ Frederick Mosteller. \textit{Fifty Challenging Problems in Probability with Solutions}, Dover, 1965.
+
+The problems are appropriate for secondary-school students. My solution of the first problem is different from Mosteller's, demonstrating that problems in mathematics can have multiple solutions. The second problem is interesting because the solution is counter-intuitive. Mosteller shows that the counter-intuitive solution is obvious once the problem is analyzed.
+
+\section{Drawing socks from a drawer}
+
+\begin{quote}
+A drawer contains both red socks and black socks. If two socks are drawn (without replacement) at random, the probability that both are red is $\frac{1}{2}$. 
+\begin{enumerate}
+\item How small can the number of black socks in the drawer be? What is the corresponding number of red socks?
+\item How small can the number of black socks in the drawer be if the number of black socks is \textbf{even}? What is the corresponding number of red socks?
+\end{enumerate}
+\end{quote}
+
+Let $r$ be the number of red socks in the drawer and $b$ the number of black socks.  Clearly, $r\geq 2, b\geq 1$.
+
+\subsection*{My solution}
+
+Multiplying the probabilities for the two selections (recall that the first sock is \emph{not} replaced in the drawer) gives the following equation:
+\[
+\frac{r}{r+b} \cdot \frac{(r-1)}{(r-1)+b} = \frac{1}{2}\,.
+\]
+Multiplying out and simplifying results in a quadratic equation in the variable $r$:
+\[
+r^2-r(2b+1)-(b^2-b)=0\,.
+\]
+Since $b,r$ are positive integers the discriminant of this quadratic equation:
+\[
+(2b+1)^2+4(b^2-b)=8b^2+1\,,
+\]
+must be the square of an integer.
+
+The discriminant is a square when $b=1$ (its smallest value). Then:
+\[
+r= \disfrac{(2\cdot 1 + 1)+ \sqrt{9}}{2}=3\,,
+\]
+where we reject the solution $r=0$ because $r\geq 2$.
+
+Check:
+\[
+\disfrac{3}{4}\cdot\disfrac{2}{3}=\disfrac{1}{2}\,.
+\]
+
+\bigskip
+
+For which even positive integer values of $b$ is the discriminant is a square?
+\begin{displaymath}
+\renewcommand{\arraystretch}{1}
+\begin{array}{r|r|r}
+b&8b^2+1&\sqrt{8b^2+1}\\
+\hline
+2&33&5.74\\
+4&129&11.36\\
+6&289&17
+\end{array}
+\end{displaymath}
+The corresponding value for $r$ is:
+\[
+r=\disfrac{(2\cdot 6+1)+\sqrt{289}}{2}=15\,.
+\]
+Check:
+\[
+\disfrac{15}{21}\cdot\disfrac{14}{20}=\disfrac{\not 3\cdot \not 5}{\not 3\cdot \not 7}\cdot\disfrac{2\cdot \not 7}{4\cdot \not 5}=\disfrac{1}{2}\,.
+\]
+
+\subsection*{Mosteller's solution}
+
+The following inequality is true:
+\[
+\frac{r}{r+b} > \frac{r-1}{(r-1)+b}\,.
+\]
+Since $r\geq 2, b\geq 1$, we can multiply out and simplify. The result is $0>-b$ which is true.
+
+Therefore:
+\[
+\left(\frac{r}{r+b}\right)^2 = \frac{r}{r+b} \cdot\frac{r}{r+b} > \frac{r}{r+b} \cdot \frac{r-1}{(r-1)+b} = \frac{1}{2}\,,
+\]
+and similarly:
+\[
+\left(\frac{r-1}{(r-1)+b}\right)^2  = \frac{r-1}{(r-1)+b}\cdot \frac{r-1}{(r-1)+b}<  \frac{r}{r+b} \cdot \frac{r-1}{(r-1)+b} = \frac{1}{2}\,.
+\]
+The denominators are non-zero so the squared values are finite and we can take square roots:
+\[
+\frac{r}{r+b}  > \sqrt{\frac{1}{2}} > \frac{r-1}{(r-1)+b}  \,.
+\]
+It is not hard to show that the first inequality is the same as:
+\[
+r>\frac{b}{\sqrt{2}-1}=(\sqrt{2}+1)b\,,
+\]
+and the second inequality is the same as:
+\[
+(\sqrt{2}+1)b>r-1\,,
+\]
+so
+\[
+r-1<(\sqrt{2}+1)b<r\,.
+\]
+
+For $b=1\!:\quad$ $2.141 < r< 3.141$ and we saw above that $b=1,r=3$ is a solution.
+
+\bigskip
+
+Trying even numbers for $b$, we get:
+\begin{displaymath}	
+\renewcommand{\arraystretch}{1}
+\begin{array}{r|c|c}
+b& <r< &r\\
+\hline
+2&4.8<r<5.8&5\\
+4&9.7<r<10.7&10\\
+6&14.5<r<15.5&15
+\end{array}
+\end{displaymath}
+and we can check, as before, that $b=6,r=15$ is a solution.
+
+Mosteller mentions a connection between this problem and advanced number theory, and gives another solution: $b=35,r=85$ (check!).
+
+\newpage
+
+\section{Playing tennis}
+
+\begin{quote}
+To encourage Adva's tennis career, she is offered a prize if she wins (at least) two tennis sets \emph{in a row} in a three-set series. The sets are played alternately with her father and with the club champion; Adva can choose whether to play father then champion then father or champion then father then champion. The champion is a \emph{better} player than Adva's father. Which series should Adva choose?
+\end{quote}
+
+Adva wins the prize if: (a) she wins the first two sets and loses the last set, (b) she wins the final two sets and loses the first set, (c) she wins all three sets.
+
+Let $f$ be the probability of winning a set against her father and let $c$ be the probability of winning a set against the champion. It is given that $c<f$.
+
+The probability that Adva wins the prize if she plays father-champion-father is:
+\[
+fc(1-f) + (1-f)cf + fcf\,.
+\]
+The probability that Adva wins the prize if she plays champion-father-champion is:
+\[
+cf(1-c)+(1-c)fc+cfc\,.
+\]
+
+Adva should choose father-champion-father if:
+\begin{eqnarray*}
+fc(1-f) + (1-f)cf + fcf & \stackrel{?}{>}& cf(1-c)+(1-c)fc+cfc\\
+-fcf & \stackrel{?}{>}& -cfc\\
+-f & \stackrel{?}{>}& -c\\
+f & \stackrel{?}{<}& c\,.
+\end{eqnarray*}
+Since it is given that $c<f$, Adva should choose to play champion-father-champion.
+
+The result is counter-intuitive. Intuitively, Adva should choose to play more games with her father and fewer games with the champion, because she is more likely to win playing her father. However, it is obvious that the only way that Adva can win the prize is by winning the \textbf{middle} set; therefore, she should play the middle set with the weaker player, her father.
+\end{document}
