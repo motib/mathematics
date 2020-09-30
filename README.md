@@ -2,7 +2,7 @@
 Learning Materials for Secondary School Mathematics
 ===================================================
 
-This repository contains learning materials for secondary school mathematics, as well as enrichment and more advanced tutorials. The PDFs can be also be downloaded from [https://www.weizmann.ac.il/sci-tea/benari/mathematics] (https://www.weizmann.ac.il/sci-tea/benari/mathematics). All documents are in English and Hebrew unless otherwise noted.
+This repository contains learning materials for secondary school mathematics, as well as enrichment and more advanced tutorials. The PDFs can be also be downloaded from [my mathematics web page](https://www.weizmann.ac.il/sci-tea/benari/mathematics). All documents are in English and Hebrew unless otherwise noted.
 
 bagrut
 ------
