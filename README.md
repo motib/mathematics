@@ -23,6 +23,11 @@ geometry
 **Geometry without words** (language independent)  
 An A2 sized poster with 15 theorems of secondary-school geometry displayed visually in color, but without words. It should be easier for students to see a color diagram than to understand textual theorems like "The intersection of the medians of a triangle divides the medians in the ration 2:1".
 
+heptadecagon
+------------
+**The construction of a heptadecagon**
+In 1796, when Carl Friedrich Gauss was 18 years old, he was able to show that a heptdecagon, a regular polygon with 17 sides, is constructible by straightedge and compass. This was the first new construction since the time of the ancient Greeks. This document presents Gauss's construction, together with the detailed computations that are invariably absent in other presentations.
+
 induction
 ---------
 **The many guises of induction**  
