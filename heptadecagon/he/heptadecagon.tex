@@ -51,10 +51,11 @@ $17$
 \bigskip
 
 \textbf{\Large מוטי בן-ארי\\\bigskip\url{http://www.weizmann.ac.il/sci-tea/benari/}}
+\smallskip
 
-\bigskip
+גרסה
+$1.0$
 \end{center}
-
 
 \begin{footnotesize}
 \begin{center}
@@ -83,8 +84,7 @@ $17$
 \section{בנייה של מצולעים משוכללים}
 
 \paragraph{היסטוריה}
-היוונים ידעו איך לבנות  עם סרגל ומחוגה מצולעים משוכללים מסויים: משולש, ריבוע, מחומש ומספר מצולעים שמספר הצלעות שלהם הוא מכפלה שלהם, כגון מצולע משוכלל עם $15$
-צלעות.
+היוונים ידעו לבנות מצולעים משוכללים מסויים  עם סרגל ומחוגה: משולש, ריבוע, מחומש ומצולע משוכלל עם $15$ צלעות.
 כמובן, בהינתן מצולע משוכלל עם
 $n$
 צלעות, קל לבנות מצולע עם 
@@ -111,23 +111,13 @@ $n$
 $2$
 ואפס או יותר מספרי 
 \L{Fermat}
-ראשון
+ראשונים
 \textbf{שונים}
 $2^{2^k}+1$. 
-מספרי 
+$F_0=3, F_1=5, F_2=17, F_3=257, F_4=65537$
+הם מספרי 
 \L{Fermat}
-ראשונים ידועים הם
-$F_0=3, F_1=5, F_2=17, F_3=257, F_4=65537$.
-היוונים ידעו לבנות מצולעים משוכללים עם
-$3$
-ו-%
-$5$
-צלעות.
-\L{Gauss}
-הראה שניתן לבנות מצולע עם
-$17$
-צלעות.
-מצולע משוכלל עם
+ראשונים ידועים. מצולע משוכלל עם
 $257$
 צלעות נבנה לראשונה על ידי
 \L{Magnus Georg Paucker}
@@ -152,32 +142,11 @@ $65537$
 $\cos \theta$,
 כאשר
 $\theta$ 
-הוא הזווית המרכזית במעגל היחידה 
-subtended by
-מיתר שהוא צלע של המצולע
-)איור
-~\ref{fig.cosine}(.
-נתון קטע הקו
-$\overline{OB}=\cos\theta$,
-בנו אנך ב-%
-$B$
-וסמן את החיתוך שלו עם מעגל היחידה ב-%
-$C$.
-אזי
-$\overline{OC}=1$
-ו-%
-$\cos \theta=\disfrac{\overline{OB}}{\overline{OC}}=\cos \theta$,
-כך שי-%
-$\theta = \cos^{-1} (\cos \theta)$.
-המיתר 
-$\overline{AC}$
-הוא צלע של המצולע.
-\begin{figure}
+היא הזווית המרכזית במעגל היחידה עליה נשען המיתר שהוא צלע של המצולע.
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.5]
 \coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$};
-% {$\cos^{-1} (\cos 21.12^\circ)$};
 \coordinate (A) at (4,0);
 \node[right] at (A) {$A$};
 \draw (O) -- (A);
@@ -188,104 +157,52 @@ $\overline{AC}$
 \draw (C) -- (C |- A) coordinate (B);
 \node[below] at (B) {$B$};
 \draw[rotate=90] (B) rectangle +(6pt,6pt);
-\draw[thick,dashed] (A) -- (C);
-\path (O) -- node[below] {$\cos \theta$} (B); % {$\cos 21.12^\circ$} (B);
+\draw[thick] (A) -- (C);
+\path (O) -- node[below] {$\cos \theta$} (B); 
 \end{tikzpicture}
-\selectlanguage{hebrew}
-\caption{%
-בניית צלע מהקוסינו של הזווית מרכזית שהוא שכולא אותו}
-\label{fig.cosine}
 \end{center}
-\end{figure}
+נתון קטע הקו
+$\overline{OB}=\cos\theta$,
+בנו אנך ב-%
+$B$
+וסמן את החיתוך שלו עם מעגל היחידה ב-%
+$C$.
+אזי
+$\overline{OC}=1$
+ו-%
+$\cos \theta=\disfrac{\overline{OB}}{\overline{OC}}=\overline{OB}$,
+כך שי-%
+$\theta = \cos^{-1} (\overline{OB})$.
+המיתר 
+$\overline{AC}$
+הוא צלע של המצולע.
 
 \paragraph{פעולות חשבוניות שניתנות ליישם באמצעות בנייה}
 
 נתון קטע קו שאורכו מוגדר כ-%
 $1$,
-האורכים שניתנים לבנייה הם אלה שניתן לקבל מאורכים קיימים תוך שימוש בפעולות חיבור, חיסור, כפל, חילוק והוצאת שורש ריבועי.
+האורכים שניתנים לבנייה הם אלה שניתן לקבל מאורכים קיימים תוך שימוש בפעולות 
+$\{+,-,\times,\div,\surd\}$.
+בנספחים%
+~\L{\ref{a.triangle}, \ref{a.pentagon}}
+נראה שניתן לבנות משולש שווה-צלעות ומחומש משוכלל על ידי חישוב ביטויים עבור 
+$\cos \left(\disfrac{2\pi}{3}\right)$
+ו-%
+$\cos\left(\disfrac{2\pi}{5}\right)$
+המשתמש רק ב-%
+$\{+,-,\times,\div,\surd\}$.
+נפתח את הנוסחאות גם על ידי שימוש בטריגונומטריה וגם על ידי שימוש בגיאומטריה.
 
-הזווית המרכזית של משולש שווה-צלעות היא
-$360^\circ/3=120^\circ$ )איור ~\ref{fig.triangle-pentagon},
-שמאל(
-וניתן לחשב את הקוסינוס מהנוסחה לקוסינוס של שתי זוויות:
-\[
-\cos 120^\circ = \cos(90^\circ+30^\circ)=\cos 90^\circ \cos 30^\circ  -\sin 90^\circ \sin 30^\circ = 0\cdot \frac{\sqrt{3}}{2} - 1\cdot \frac{1}{2}=-\disfrac{1}{2}\,.
-\]
-ברור ש-%
-$-\frac{1}{2}$,
-מספר רציונלי,
-ניתן לבנייה.
-\begin{figure}[htb]
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=.9]
-\coordinate (O) at (0,0);
-\foreach \x/\name in {0/a,1/b,2/c} {
-  \coordinate (\name) at ($(O)+(\x*120:3cm)$);
-  \draw (O) -- (\name);
-  \fill (\name) circle (1pt);
-}
-\draw (a) -- (b) -- (c) -- cycle;
-\node[above right] at (O) {\sm{120^\circ}};
-\draw (O) circle (3cm);
-\begin{scope}[xshift=7cm]
-\coordinate (O) at (0,0);
-\foreach \x/\name in {0/a,1/b,2/c,3/d,4/e} {
-  \coordinate (\name) at ($(O)+(\x*72:3cm)$);
-  \draw (O) -- (\name);
-  \fill (\name) circle (1pt);
-}
-\draw (a) -- (b) -- (c) -- (d) -- (e) -- cycle;
-\node[below right,xshift=4pt] at (O) {\sm{72^\circ}};
-\node[above right,xshift=16pt] at (O) {\sm{36^\circ}};
-\draw[thick,dashed,name path=P1] (O) -- (36:3cm) coordinate (ten);
-\path[name path=P2] (a) -- (b);
-\path[name intersections={of=P1 and P2, by={right}}];
-\draw[rotate=-144] (right) rectangle +(6pt,6pt);
-\fill (ten) circle(1pt);
-\draw (O) circle (3cm);
-\end{scope}
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\caption{%
-שולש שווה-צלעות )שמאל(, מחומש משוכלל )ימין(.}%
-\label{fig.triangle-pentagon}
-\end{center}
-\end{figure}
-הזווית המרכזית של מחומש משוכלל היא
-$360^\circ/5=72^\circ$ )איור~\ref{fig.triangle-pentagon},
-ימין(.
-ניתן לחשב את
-$\cos 36^\circ$
-מ-%
-$\cos 90^\circ = \cos(72^\circ+ 18^\circ)$,
-אבל החישובים מעט מייגעים
-)ראו
-~\cite{wiki:pentagon}(.
-ניתן לחשב את
-$\cos 36^\circ=\disfrac{1+\sqrt{5}}{4}$
-על ידי שימוש בפעולות
-$\{+,-,\times,\div,\surd\}$
-כך שהערך ניתן לבייה.
-לאחר שבונים את הזווית
-$36^\circ$
-קל לבנות מחומש משוכלל על ידי הורדת אנך לרדיוס ב-%
-$36^\circ$.
-האנך יחתוך את המעגל ב-%
-$-36^\circ$
-וקטע הקו שנבנה הוא צלע של המחומש.
-
-איור%
-~\ref{fig.hept}
-מראה מצולע משוכלל עם 
+\paragraph{בניית מצולע משוכלל עם 
 $17$
-צלעות
-החסום על ידי מעגל היחידה.
-הזווית המרכזית היא
+צלעות}
+
+הזווית המרכזית של מצולע משוכלל עם 
+$17$
+צלעות היא
 $\disfrac{2\pi}{17}$
 רדיאנים או
 $\disfrac{360^\circ}{17}\approx 21.12^\circ$. 
-\begin{figure}
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.1]
@@ -299,12 +216,10 @@ $\disfrac{360^\circ}{17}\approx 21.12^\circ$.
 \node[above right,xshift=32pt] at (O) {\sm{2\pi/17=21.12^\circ}};
 \draw (O) circle (3cm);
 \end{tikzpicture}
-\selectlanguage{hebrew}
-\caption{מצולע משוכלל עם $17$ צלעות חסום על ידי מעגל היחידה}\label{fig.hept}
 \end{center}
-\end{figure}
 \L{Gauss}
-הראה ש:
+הראה ש-%
+\L{\cite{gauss,jorg}}:
 \begin{form}{3}
 \cos\left(\disfrac{2\pi}{17}\right) &=& 
 -\disfrac{1}{16}+\disfrac{1}{16}\sqrt{17} + 
@@ -322,21 +237,23 @@ $\disfrac{360^\circ}{17}\approx 21.12^\circ$.
 $\{+,-,\times,\div,\surd\}$
 ולכן הוא ניתן לבנייה. 
 
-סעיפים%
-~\ref{s.roots}, \ref{s.gauss}, \ref{s.derivation}
-מביא את הרעיונות המתמטיים של
+סעיפים~%
+\L{\ref{s.roots}, \ref{s.gauss}, \ref{s.derivation}}
+מביאים את הרעיונות המתמטיים של
 \L{Gauss},
 בתוספת החישובים המפורטים.
-ההוכחה מחייבת שימוש במספרים מרוכבים, אבל את רובה ניתן להבין ללא ידע במספרים מרוכבים אם אתם מוכנים לקבל מספר עובדות. העובדות הללו רשומות בקטעים מסומנים בטקסט.
-סעיף%
-~\ref{s.construction}
+ההוכחה לא משתמשת במפורש במספרים מרוכבים, אבל הוספתי מספר הערות עליהן.
+סעיף~%
+\L{\ref{s.construction}}
 מראה בנייה יעילה של
-$\cos\disfrac{2\pi}{17}$.
+$\cos\left(\disfrac{2\pi}{17}\right)$.
 
+\newpage
 
 \section{השורשים של אחד}\label{s.roots}
 
-\paragraph{המשפט הבסיס של אלגברה}
+נשתמש במשפט שלהלן ללא הוכחה:
+\paragraph{המשפט הבסיסי של אלגברה}
 לכל פולינום במעלה 
 $n$
 )עם מקדמים מרוכבים(
@@ -349,7 +266,9 @@ $n$
 השורשים של אחד ומצולעים משוכללים%
 }
 נתבונן במשוואה
-$x^{n}-1=0$.
+$x^{n}-1=0$
+עבור כל מספר שלם
+$n>	 1$.
 שורש אחד הוא
 $x=1$.
 לפי המשפט הבסיסי של אלגברה קיימים
@@ -362,24 +281,22 @@ $r$
 נקרא
 \textbf{שורש של אחד}.
 
-\begin{quote}
-\textbf{מספרים מרוכבים}\\
+\begin{center}
+\framebox[.9\textwidth]{\parbox{.85\textwidth}{
+\textbf{מספרים מרוכבים}
 השורש
 $r$
 הוא
 $\cos \left(\disfrac{2\pi}{n}\right) + i\sin  \left(\disfrac{2\pi}{n}\right)$.
+
 לפי נוסחאת
 \L{de Moivre}:
 \[
 \left[\cos \left(\disfrac{2\pi}{n}\right) + i\sin  \left(\disfrac{2\pi}{n}\right)\right]^{n}=
 \cos \left(\disfrac{2\cdot n\pi}{n}\right) + i\sin  \left(\disfrac{2\cdot n\pi}{n}\right)= 1\,,
 \]
-והוכחנו ש-%
-$r$
-הוא שורש
-$n$
-של אחד.
-\end{quote}
+}}
+\end{center}
 נתבונן כעת ב-%
 $r^2$.
 אנו רואים ש:
@@ -394,70 +311,87 @@ r^{2\cdot n}=(r^{n})^2=1^2=1\,.
 \[
 1, r, r^2, \ldots, r^{n-2}, r^{n-1}\,.
 \]
-אם
+
+\textbf{משפט}
+יהי
 $n$
-ראשוני 
-)כגון
-$17$(
-החזקות הללו שונות זו מזו,
-כך שהם כל שורשי ה-%
+ראשוני ו-%
+$r$
+שורש 
+$n$
+של אחד. אזי
+$\{1,r,r^2,\ldots,r^{n-2},r^{n-1}\}$
+שונים זה מזה, אז הם מהווים 
+\textbf{כל}
+שורשי ה-%
 $n$
 של אחד.
 
-\textbf{הוכחה:}
-שורש
-$n$
-של אחד נקרא פרימיטבי אם הוא אינו שורש
-$m$
-של אחד עבור
-$m<n$.
-אם
-$n$
-ראשוני, כל השורשים פרט ל-%
-$1$
-הם פרימיטיביים, וכל השורשים של אחד שונים זה מזה.
-אם לא,
+
+\textbf{הוכחה} 
+נניח ש-%
 $r^i=r^j$
-עבור
-$1\leq i<j\leq n$
-כלשהם, כך ש-%
-$r^j/r^i=r^{j-i}=1$
+עבור מספרים כלשהם
+$1\leq i<j\leq n$, 
+כך ש-%
+$r^j/r^i=r^{j-i}=1$.
+יהי
+$m$
+המספר הקטן ביותר 
+$0<m<n$
+כך ש-%
+$r^m=1$.
+כעת
+$n=ml+k$
+עבור מספרים
+$0<l<n$,
+$0\leq k<m$.
+מ-%
+$1=r^n=r^{ml+k}=(r^m)^l\cdot r^k=1^l\cdot r^k=r^k$,
+מתקבל ש-%
+$0\leq k<m$ 
 ו-%
-$r$
-אינו פרימיטיבי.
+$r^k=1$.
+$m$
+נבחר כמספר החיובי הקטן ביותר המקיים את התנאי, ולכן
+$k=0$
+ו-%
+$n=ml$,
+כך ש-%
+$n$
+אינו ראשוני.
 
-\begin{quote}
-\textbf{מספרים מרוכבים}\\
-השורשים הם הקואורדינטות הפולאריות של הקודקודים של מצולע משוכלל, כאשר החלק הממשי הוא  קואורדינטת ה-%
-$x$
-והחלק הדמיוני הוא קואורדינטת ה-%
-$y$.
+נשתמש במשפט שלהלן ללא הוכחה:
 
-עבור משולש שווה-צלעות השורשים הם
-$1+i\cdot 0,\disfrac{-1}{2}\pm i\disfrac{\sqrt{3}}{2}$.
-
-עבור מחומש משוכלל הם:
+\textbf{משפט}
+יהיו
+$\{a_1,a_2,\ldots,a_{n-1},a_n\}$
+השורשים של פולינום
+$f(x)$
+מסדר
+$n$.
+אזי:
 \[
-1+i\cdot 0,\frac{\sqrt{5}-1}{4}\pm i \frac{\sqrt{10+2\sqrt{5}}}{4},\frac{-\sqrt{5}-1}{4}\pm i \frac{\sqrt{10-2\sqrt{5}}}{4}\,.
+f(x) =(x-a_1) (x-a_2)\cdots (x-a_{n-1})(x-a_n)\,.
 \]
-\end{quote}
-
-\paragraph{הפולינום שמתקבל ממכפלת הגורמים הלינאריים}
-נתבונן בפולינום המתקבל על ידי הכפלת כל הגורמים הלינאריים המתקבלים מהשורשים של אחד:
-\[
-(x-1) (x-r)(x-r^2) \cdots (x-r^{n-1})=x^n-1\,.
-\]
-נכפיל ונמצא שהמקדם של
-$x^2$
+מהנוסחה של
+\L{\cite[\R{עמוד 28}]{jorg}} 
+\L{Viet\'{e}}
+מתקבלים המקדמים של הפולינום לפי השורשים. ניתן לקבל את הנוסחה על ידי הכפלה של הנוסחה במשפט. ניתן לראות שהמקדם של
+$x^{n-1}$
 הוא:
 \[
-1+r+r^2+\cdots + r^{n-2}+r^{n-1}\,,
+-(a_1+a_2+\cdots+a_{n-1}+a_n)\,.
 \]
-אבל, ברור שהמקדם שווה לאפס
-המקדם של
-$x^2$
-ב-%
-$x^{n}-1$.
+בפולינום
+$x^n-1$,
+ברור שהמקדם של 
+$x^{n-1}$
+vut 
+הוא אפס ולכן:
+\[
+1+r+r^2+\cdots + r^{n-2}+r^{n-1}=0\,.
+\]
 נשמתמש בעובדה זו בעתיד בצורה:
 \[
 r+r^2+\cdots + r^{n-2}+r^{n-1}=-1\,.
@@ -481,22 +415,21 @@ $17$
 $r,r^2,\ldots,r^{16}$. 
 במקום זה, נשים לב שהחזקות של
 $r^3$
-נותנות אם כל השורשים, אבל בסדר שונה:
+נותנות אם כל השורשים, אבל בסדר שונה. עבור
+$k<17$, $r^{17m+k}=(r^{17})^m\cdot r^k=1^m\cdot r^k=r^k$,
+ולכן רשמנו את החזקות כשאריות לאחר חלוקה ב-%
+$17$.
 \begin{form}{1.2}
 r^1, \;r^{1\cdot 3 =3},\; r^{3\cdot 3=9},\; r^{9\cdot 3=27=10},\; r^{10\cdot 3=30=13},\; r^{13\cdot 3=39=5},\; r^{5\cdot 3=15},\; r^{15\cdot 3=45=11},&&\\
 r^{11\cdot 3 =33=16}, \;r^{16\cdot 3=48=14},\; r^{14\cdot 3=42=8},\; r^{8\cdot 3=24=7},\;r^{7\cdot 3=21=4},\; r^{4\cdot 3=12},\; r^{12\cdot 3=36=2},\; r^{2\cdot 3=6}\,.&&
 \end{form}
-עבור
-$k<17$, $r^{17m+k}=(r^{17})^m\cdot r^k=1^m\cdot r^k=r^k$,
-ולכן רשמנו את החזקות כשאריות לאחר חלוקה ב-%
-$17$.
-
 חשוב שתבדקו שהרשימה כוללת את כל 
 $16$
 השורשים בדיוק פעם אחת.
 
-\paragraph{%
-פסק זמן על משוואות ריבועיות%
+\begin{quote}
+\textbf{%
+השורשים של משוואות ריבועיות%
 }
 נתבונן במשוואה הריבועית עם מקדם אחד ל-%
 $x^2$:
@@ -522,16 +455,10 @@ $ab$,
 \footnote{%
 \L{Po-Shen Lo}
 השתמש בעובדה זו כדי לפתח שיטה מהירה למצוא את השורשים אל משוואה ריבועית. ראו
-\cite{lo}
-והמסמך על האתר שלי
-)הכתובת בכותרת לעיל, והקליקו על הקישור
-\L{\texttt{mathematics}}(.}
-
-כעת נשתמש בעובדה זו על משוואות ריבועיות כדי להראות
-שניתן לחשב את הקוסינוס של הזווית המרכזית של מצולע משוכלל עם
-$17$ 
-צלעות באמצעות שורשים ריבועיים בלבד.
-
+\L{\cite{lo}}
+והמסמך על האתר שלי.
+}
+\end{quote}
 יהי
 $a_0$
 החיבור של השורשים במקומות האי-זוגיים ברשימה לעיל:
@@ -544,14 +471,16 @@ $a_1$
 \[
 a_1=r^3 + r^{10} + r^{5} +r^{11} +r^{14} + r^7+r^{12}+r^6\,.
 \]
-לפי תוצאה שכבר מצאנו:
+אנו רוצים לקבל את
+$a_0,a_1$
+כשורשים של משוואה ריבועית. תחילה נחשב את הסכום שלהם:
 \[
 a_0+a_1=r + r^2 + \cdots +r^{16}=-1\,.
 \]
 כעת עלינו לעבוד קשה מאוד כדי לחשב את
 $a_0a_1$!
 באיור%
-~\ref{fig.a0a1}
+~\L{\ref{fig.a0a1}}
 מופיע החישוב כאשר הערכים של
 $r^ir^j$
 רשומים לאחר חישוב
@@ -571,7 +500,7 @@ a_0a_1&=&(r + r^9 + r^{13} +r^{15} +r^{16} + r^8+r^4+r^2)\;\cdot\\
 
 &&\occ{1}{2} + \occ{8}{3} + \occ{3}{3} + \occ{9}{1} + \occ{12}{3} + \occ{5}{1} + \occ{10}{2} + \occ{4}{3}\;\;\: +\\
 
-&&\occ{2}{3} + \occ{9}{2} + \occ{4}{4} + \occ{10}{3} + \occ{13}{2} + \occ{10}{4} + \occ{11}{2} + \occ{5}{2} \:+\\
+&&\occ{2}{3} + \occ{9}{2} + \occ{4}{4} + \occ{10}{3} + \occ{13}{2} + \occ{6}{4} + \occ{11}{2} + \occ{5}{2} \:+\\
 
 &&\occ{11}{3} + \occ{1}{3} + \occ{13}{3} + \occ{2}{4} + \occ{5}{2} + \occ{15}{3} + \occ{3}{4} + \occ{14}{2} \;+\\
 
@@ -609,22 +538,15 @@ b_3&=& r^{10}+ r^{11} + r^{7} + r^6\,.\\
 \end{form}
 בדקו ש-%
 $b_0+b_2=a_0, b_1+b_3=a_1$.
-נחשב את המכפלות
-)איורים~\ref{fig.b0b2}, \ref{fig.b1b}).
-\begin{figure}[tb]
+נחשב את המכפלות:
 \begin{form}{1.3}
-b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\cdot\\
+b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\times\\
 &&(r^9 + r^{15} + r^{8} +r^{2})\\
 &=& r^{10}+r^{16}+r^9+r^3+\\
 && r^{5}+r^{11}+r^4+r^{15}+\\
 && r^{8}+r^{14}+r^7+r^1\;\:+\\
 && r^{13}+r^{2}+r^{12}+r^6\\
-&=&-1\,.
-\end{form}\vspace{-2em}
-\caption{החישוב של $b_0b_2$}\label{fig.b0b2}
-\end{figure}
-\begin{figure}[tb]
-\begin{form}{1.3}
+&=&-1\\
 b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\times\\
 &&(r^{10} + r^{11} + r^{7} +r^{6})\\
 &=& r^{13}+r^{14}+r^{10}+r^9\;+\\
@@ -632,12 +554,8 @@ b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\times\\
 && r^{7}+r^{8}+r^4+r^3\quad\;\;+\\
 && r^{5}+r^{6}+r^{2}+r^1\\
 &=&-1\,.
-\end{form}\vspace{-2em}
-\caption{החישוב של $b_1b_3$}\label{fig.b1b3}
-\end{figure}
-
+\end{form}
 נסכם את החישובים:
-To summarize these computations:
 \begin{form}{1.2}
 b_0+b_2&=&a_0\\
 b_0b_2&=&-1\\
@@ -659,7 +577,9 @@ y^2-a_1y-1 =0\,.
 מהנוסחה לפתרון משוואות ריבועיות ומהערכים שחישבנו קודם עבור 
 $a_0,a_1$,
 מתקבלים השורשים
-$b_0,b_1$ )איור~\ref{fig.b0}, \ref{fig.b1}).
+$b_0,b_1$
+)איור~%
+\L{\ref{fig.b0}, \ref{fig.b1}}(t.
 \begin{figure}[tb]
 \begin{form}{2.6}
 b_0&=&\disfrac{a_0+\sqrt{a_0^2+4}}{2}\\
@@ -696,21 +616,11 @@ b_1&=&\disfrac{a_1+\sqrt{a_1^2+4}}{2}\\
 \end{form}\vspace{-2em}
 \caption{החישוב של $b_1$}\label{fig.b1}
 \end{figure}
-%\begin{form}{1.4}
-%b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\times\\
-%&&(r^{10} + r^{11} + r^{7} +r^{6})\\
-%&=& r^{13}+r^{14}+r^{10}+r^9\;+\\
-%&& r^{15}+r^{16}+r^{12}+r^{11}+\\
-%&& r^{7}+r^{8}+r^4+r^3\quad\;\;+\\
-%&& r^{5}+r^{6}+r^{2}+r^1\\
-%&=&-1\,.
-%\end{form}
-
-לבסוף יהי,
+לבסוף יהי
 $c_0,c_4$ 
 הסכום של כל שורש שמיני החל מ-%
 $r^1,r^{13}$,
-בהתאמה:
+בהתאמה:%
 \footnote{יש סכומים נוספים אבל שני אלה יספיקו}
 \begin{form}{1.4}
 c_0&=&r^1+r^{16}\\
@@ -727,33 +637,8 @@ y^2-b_0y+b_1=0
 \]
 נראה שמספיק לחשב את השורש
 $c_0=r^1+r^{16}$
-)איור~\ref{fig.c0}).
-\begin{figure}
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=1.5]
-\coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$} node[below right,xshift=32pt] {$\theta$};
-\coordinate (A) at (4,0);
-\node[right] at (A) {$1$};
-\draw (O) -- (A);
-\coordinate (C) at (21.12:4cm);
-\coordinate (D) at (-21.12:4cm);
-\draw (D) arc(-21.12:21.12:4);
-\draw (D) -- (O) -- (C);
-\node[right] at (C) {$r^1$};
-\node[right] at (D) {$r^{16}$};
-\draw (C) -- (C |- A) coordinate (B);
-\draw (D) -- (D |- A);
-%\node[below left] at (B) {$B$};
-\draw[rotate=90] (B) rectangle +(6pt,6pt);
-\draw (D) -- node[left,xshift=-6pt] {$-\sin\theta$} (A) -- node[left,xshift=-6pt] {$\sin \theta$} (C);
-\path (O) -- node[below] {$\cos \theta$} (B);
-\end{tikzpicture}
-\selectlanguage{hebrew}
-\caption{בניית צלע מהזווית המרכזית שהוא כולא}\label{fig.two-cosine}
-\end{center}
-\end{figure}
-
+)איור~
+\L{\ref{fig.c0}}(.
 
 \begin{figure}
 \begin{form}{2.8}
@@ -814,18 +699,41 @@ c_0&=&\disfrac{b_0+\sqrt{b_0^2-4b_1}}{2}\\
 \end{form}
 \caption{החישוב של $c_0$}\label{fig.c0}
 \end{figure}
-
 סיימנו כי:
 \[
-c_0=r_1+r_{16}=2\cos\left(\frac{2\pi}{17}\right)\,,
+c_0=r_1+r_{16}=2\cos\left(\frac{2\pi}{17}\right)\,.
 \]
-כפי שניתן לראות באיור%
-~\ref{fig.two-cosine}.
 קואורדינטות ה-%
 $y$
-שוות עם סימנים הפוכים ולכן הסכום שלהם אפס. קואורדינטת ה-%
--coordinates are equal but with opposite signs and cancel $x$
-נספר פעמיים.
+שוות עם סימנים הפוכים ולכן הסכום שלהם אפס. קואורדינטות ה-%
+$x$
+נספרות פעמיים:
+%\begin{figure}
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.5]
+\coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$} node[below right,xshift=32pt] {$\theta$};
+\coordinate (A) at (4,0);
+\node[right] at (A) {$1$};
+\draw (O) -- (A);
+\coordinate (C) at (21.12:4cm);
+\coordinate (D) at (-21.12:4cm);
+\draw (D) arc(-21.12:21.12:4);
+\draw (D) -- (O) -- (C);
+\node[right] at (C) {$r^1$};
+\node[right] at (D) {$r^{16}$};
+\draw (C) -- (C |- A) coordinate (B);
+\draw (D) -- (D |- A);
+%\node[below left] at (B) {$B$};
+\draw[rotate=90] (B) rectangle +(6pt,6pt);
+\draw (D) -- node[left,xshift=-6pt] {$-\sin\theta$} (A) -- node[left,xshift=-6pt] {$\sin \theta$} (C);
+\path (O) -- node[below] {$\cos \theta$} (B);
+\end{tikzpicture}
+%\selectlanguage{hebrew}
+%\caption{בניית צלע מהזווית המרכזית שהוא כולא}\label{fig.two-cosine}
+\end{center}
+%\end{figure}
+
 
 הוכחנו שהקוסינוס שת הזווית המרכזית של מצולע משוכלל עם 
 $17$
@@ -844,23 +752,42 @@ $\{+,-,\times,\div,\surd\}$:
      \sqrt{34+2\sqrt{17}}
    }
 \end{form}
+\begin{center}
 
-\begin{quote}
+\framebox[.9\textwidth]{\parbox{.85\textwidth}{
 \textbf{מספרים מרוכבים}
-
-הקשר בין השורשים והקוסינוס ברור מהייצוג של השורשים כמספרים מרוכבים:
 \begin{form}{1.8}
 c_0\!\!\!&=&\!\!\!r_1+r_{16}\\
 \!\!\!&=&\!\!\!\cos\left(\disfrac{2\pi}{17}\right)\!+i\sin\left(\disfrac{2\pi}{17}\right)+\cos\left(\disfrac{2\cdot 16\pi}{17}\right)\!+i\sin\left(\disfrac{2\cdot 16\pi}{17}\right)\\
 \!\!\!&=&\!\!\!\cos\left(\disfrac{2\pi}{17}\right)\!+i\sin\left(\disfrac{2\pi}{17}\right)+\cos\left(\disfrac{-2\pi}{17}\right)\!+i\sin\left(\disfrac{-2\pi}{17}\right)=2\cos\left(\disfrac{2\pi}{17}\right)\,.
 \end{form}
-\end{quote}
+}}
+\end{center}
 
 
+\clearpage
 
 \section{פיתוח הנוסחה של %
 \L{Gauss}%
 }\label{s.derivation}
+
+הנוסחה שקיבלנו עבור 
+$\cos\left(\disfrac{2\pi}{17}\right)$
+איננה הנוסחה שניתנה על ידי
+\L{Gauss}
+עצמו
+\L{\cite[458 \R{עמוד}]{gauss}}.
+הנוסחה של 
+\L{Gauss}
+מופיעה גם ב-%
+\L{\cite[68 \R{עמוד}]{jorg}}.
+את הנוסחה שקיבלתי מצאתי רק ב-%
+\L{\cite{rike}},
+כאשר המחבר
+\L{Rike}
+רושם כתרגיל להמיר את הנוסחה לנוסחה שניתנה על ידי 
+\L{Gauss}.
+סעיף זה פותר את התרגיל.
 
 נפשט את הביטוי
 $2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}}$:
@@ -878,7 +805,7 @@ $2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}}$:
 \end{form}
 נזכור את הביטוי
 $-4\sqrt{34-2\sqrt{17}}$
-ונפשט את הביטוי הראשון, נרבע אותו ואז ניקח את השורש הריבועי:
+ונפשט את הביטוי הראשון. נרבע אותו ואז ניקח שורש הריבועי:
 \begin{form}{1.8}
 2(1+\sqrt{17})\sqrt{34-2\sqrt{17}}&=&
 2\sqrt{\left[(1+\sqrt{17})\sqrt{34-2\sqrt{17}}\right]^2}\\
@@ -910,43 +837,39 @@ $-4\sqrt{34-2\sqrt{17}}$
      \sqrt{34+2\sqrt{17}}
    }
 \end{form}
-נחשב את הביטוי עם מחשבון ונקבל
-$\cos\left(\disfrac{2\pi}{17}\right)\approx 0.298$ 
-ו-%
-$\cos^{-1}0.298\approx 0.3699$ 
-רדיאנים או
-$21.2926^\circ$.
-הערך הנכון הוא
-$\disfrac{2\pi}{17}\approx .3696$ 
-רדיאנים או
-$\disfrac{360^\circ}{17}\approx 21.176^\circ$.
+
+\newpage
 
 \section{בנייה עם סרגל ומחוגה}\label{s.construction}
 
 מספר בניות נמצאות ב-%
-\cite{wiki:heptadecagon}.
+\L{\cite{wiki:heptadecagon}}.
 כאן אביא את הבנייה מ-%
-\cite{callagy}
+\L{\cite{callagy}}
 כי הבנייה היא של
-$\cos \disfrac{2\pi}{17}$
+$\cos\left( \disfrac{2\pi}{17}\right)$
 שחישבנו.
 הבנייה משתמשת רק במשפט פיתגורס ובמשפט חוצי הזוויות
-\cite{wiki:bisector}.
+\L{\cite{wiki:bisector}}.
 
 נבנה מעגל יחידה שמרכזו
 $O$,
-המרכז של מערכת צירים, ויהי החיתוכים שלו עם הצירים
-$P,Q,R,S$.
-נבנה
-$A$
-כך ש-%
-$\overline{OA}=\disfrac{1}{4}\overline{OR}$.
-לפי משפט פיתגורס,
-$\overline{AP}=\sqrt{(1/4)^2+1^2}=\sqrt{17}/4$.
+עם קוטרים ניצבים
+$\overline{PQ},\overline{RS}$.\footnote{%
+כדי לחסוך במקום המעגל צומצם כך שהנקודות
+$R=(0,1),S=(0,-1)$
+לא מופיעות.}
 
 \begin{center}
 \selectlanguage{english}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=1.5]
+\clip (-5,-1.8) rectangle (5,1.8);
+
+\node at (-.2,1.5) {$\cdots$};
+\node at (-.2,1.7) {$R$};
+\node at (-.2,-1.5) {$\cdots$};
+\node at (-.2,-1.7) {$S$};
+
 \coordinate (O) at (0,0);
 \draw (O) circle (4cm);
 \coordinate (P) at (4,0);
@@ -978,6 +901,13 @@ $\overline{AP}=\sqrt{(1/4)^2+1^2}=\sqrt{17}/4$.
 } ($(B)+(0,-16pt)$);
 \end{tikzpicture}
 \end{center}
+נבנה
+$A$
+כך ש-%
+$\overline{OA}=\disfrac{1}{4}\overline{OR}$.
+לפי משפט פיתגורס,
+$\overline{AP}=\sqrt{(1/4)^2+1^2}=\sqrt{17}/4$.
+
 
 יהי
 $B$
@@ -992,29 +922,28 @@ $C$
 $\angle OAP$ 
 וציר ה-%
 $x$.
-לפי משפט חוצה הזווית הפנימית:
+לפי משפט חוצה הזווית:
 \begin{form}{2}
-\disfrac{OB}{BP}&=&\disfrac{AO}{AP}\\
-\disfrac{OB}{1-OB}&=&\disfrac{1/4}{\sqrt{17}/{4}}\\
-OB&=&\disfrac{1}{1+\sqrt{17}}\\
-&=&\disfrac{1}{1+\sqrt{17}}\cdot \disfrac{1-\sqrt{17}}{1-\sqrt{17}}\\
-&=&\disfrac{-1+\sqrt{17}}{16}\,.
+\disfrac{\overline{OB}}{\overline{BP}}&=&\disfrac{\overline{AO}}{\overline{AP}}\\
+\disfrac{\overline{OB}}{1-\overline{OB}}&=&\disfrac{1/4}{\sqrt{17}/{4}}\\
+\overline{OB}&=&\disfrac{1}{1+\sqrt{17}}=\disfrac{1}{1+\sqrt{17}}\cdot \disfrac{1-\sqrt{17}}{1-\sqrt{17}}\\
+&=&\disfrac{-1+\sqrt{17}}{16}\,,
 \end{form}
-ולפי משפט חוצה הזווית החיצוני:
+ו:
 \begin{form}{2}
-\disfrac{OC}{CP}&=&\disfrac{AO}{AP}\\
-\disfrac{OC}{1-OC}&=&\disfrac{1/4}{\sqrt{17}/{4}}\\
-OC&=&\disfrac{1}{-1+\sqrt{17}}\\
-&=&\disfrac{1}{-1+\sqrt{17}}\cdot \disfrac{1+\sqrt{17}}{1+\sqrt{17}}\\
+\disfrac{\overline{OC}}{\overline{CP}}&=&\disfrac{\overline{AO}}{\overline{AP}}\\
+\disfrac{\overline{OC}}{1-\overline{OC}}&=&\disfrac{1/4}{\sqrt{17}/{4}}\\
+\overline{OC}&=&\disfrac{1}{-1+\sqrt{17}}=\disfrac{1}{-1+\sqrt{17}}\cdot \disfrac{1+\sqrt{17}}{1+\sqrt{17}}\\
 &=&\disfrac{1+\sqrt{17}}{16}\,.
 \end{form}
 
+\pagebreak[3]
 בנו
 $D$
 על
-$OP$
+$\overline{OP}$
 כך ש-%
-$CD=CA$:
+$\overline{CD}=\overline{CA}$:
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.5]
@@ -1056,47 +985,46 @@ $CD=CA$:
 \end{center}
 
 \begin{form}{2}
-CD=CA&=&\sqrt{OA^2+OC^2}\\
+\overline{CD}=\overline{CA}&=&\sqrt{\overline{OA}^2+\overline{OC}^2}\\
 &=&\sqrt{\left(\disfrac{1}{4}\right)^2+\left(\disfrac{1+\sqrt{17}}{16}\right)^2}\\
 &=&\disfrac{1}{16}\sqrt{34+2\sqrt{17}}\,.
 \end{form}
-
-\selectlanguage{hebrew}
-
 נבנה
 $E$
 על
-$OP$
+$\overline{OP}$
 כך ש-%
-$BE=BA$:
+$\overline{BE}=\overline{BA}$:
 \begin{form}{2}
-BE=BA&=&\sqrt{OA^2+OB^2}\\
+\overline{BE}=\overline{BA}&=&\sqrt{\overline{OA}^2+\overline{OB}^2}\\
 &=&\sqrt{\left(\disfrac{1}{4}\right)^2+\left(\disfrac{1-\sqrt{17}}{16}\right)^2}\\
 &=&\disfrac{1}{16}\sqrt{34-2\sqrt{17}}\,.
 \end{form}
 
 בנו
 $M$,
-as the midpoint of $QD$
+נקודת האמצע של
+$\overline{QD}$
 ובנו
 $F$
 על
-$OS$
+$\overline{OS}$
 כך ש-%
-$MF=MQ$:
+$\overline{MF}=\overline{MQ}$:
 \begin{form}{2}
-MF=MQ&=&\disfrac{1}{2}QD\\
-&=&\disfrac{1}{2}(QC+CD)=\disfrac{1}{2}((1-OC)+CD)\\
+\overline{MF}=\overline{MQ}&=&\disfrac{1}{2}\overline{QD}=\disfrac{1}{2}(\overline{QC}+\overline{CD})=\disfrac{1}{2}((1-\overline{OC})+\overline{CD})\\
 &=&\disfrac{1}{2}\left[1-\left(\disfrac{1+\sqrt{17}}{16}\right)+\disfrac{\sqrt{34+2\sqrt{17}}}{16}\right]\\
 &=&\disfrac{1}{32}\left(15-\sqrt{17}+\sqrt{34+2\sqrt{17}}\right)\,.
 \end{form}
 
+\newpage
+
 בנו מעגל שקטרו 
-$OE$.
+$\overline{OE}$.
 בנו מיתר
-$OG=OF$.
+$\overline{OG}=\overline{OF}$.
 שימו לב ש-%
-$MO=1-MQ=1-MF$:
+$\overline{MO}=1-\overline{MQ}=1-\overline{MF}$:
 \begin{center}
 \selectlanguage{english}
 \begin{tikzpicture}[scale=1.5]
@@ -1155,8 +1083,8 @@ $MO=1-MQ=1-MF$:
 \selectlanguage{hebrew}
 
 \begin{form}{2}
-OG=OF&=&\sqrt{MF^2-MO^2}=\sqrt{MF^2-(1-MF)^2}\\
-&=&\sqrt{2MF-1}\\
+\overline{OG}=\overline{OF}&=&\sqrt{\overline{MF}^2-\overline{MO}^2}=\sqrt{\overline{MF}^2-(1-\overline{MF})^2}\\
+&=&\sqrt{2\overline{MF}-1}\\
 &=&\sqrt{\disfrac{1}{16}\left(15-\sqrt{17}+\sqrt{34+2\sqrt{17}}\right)-1}\\
 &=&\disfrac{1}{4}\sqrt{-1-\sqrt{17}+\sqrt{34+2\sqrt{17}}}\,.
 \end{form}
@@ -1164,20 +1092,21 @@ OG=OF&=&\sqrt{MF^2-MO^2}=\sqrt{MF^2-(1-MF)^2}\\
 יהי
 $E$
 החיתוך של המעגל עם
-$OP$;
+$\overline{OP}$;
 לפי ההגדרה,
-$OE$
+$\overline{OE}$
 הוא קוטר של המעגל כך ש-%
 $\angle OGE$
 היא זווית ישרה.
 בנו
 $H$
 על
-$OP$
+$\overline{OP}$
 כך ש-%
-$EH=EG$:
+$\overline{EH}=\overline{EG}$:
+
 \begin{form}{2}
-EH=EG&=&\sqrt{OE^2-OG^2}=\sqrt{(OB+BE)^2-OG^2}\\
+\overline{EH}=\overline{EG}&=&\sqrt{\overline{OE}^2-\overline{OG}^2}=\sqrt{(\overline{OB}+\overline{BE})^2-\overline{OG}^2}\\
 &=&\sqrt{\left(\disfrac{-1+\sqrt{17}}{16}+\disfrac{\sqrt{34-2\sqrt{17}}}{16}\right)^2-
 \disfrac{1}{16}\left(-1-\sqrt{17}+\sqrt{34+2\sqrt{17}}\right)}
 \\
@@ -1192,19 +1121,263 @@ EH=EG&=&\sqrt{OE^2-OG^2}=\sqrt{(OB+BE)^2-OG^2}\\
 \end{form}
 
 נחשב את
-$OE$:
+$\overline{OE}$:
 \begin{form}{2}
-OE=OB+BE&=&\disfrac{-1+\sqrt{17}}{16}+\disfrac{1}{16}\sqrt{34-2\sqrt{17}}\\
+\overline{OE}=\overline{OB}+\overline{BE}&=&\disfrac{-1+\sqrt{17}}{16}+\disfrac{1}{16}\sqrt{34-2\sqrt{17}}\\
 &=&\disfrac{1}{16}\left(-1+\sqrt{17}+\sqrt{34-2\sqrt{17}}\right)\,.
 \end{form}
 
 לבסוף,
-$OH=OE+EH$
+$\overline{OH}=\overline{OE}+\overline{EH}$
 שהוא
-$\cos \disfrac{2\pi}{17}$
-כפי שמופיע באיור%
-~\ref{fig.c0}.
+$\cos \left(\disfrac{2\pi}{17}\right)$
+כפי שמופיע באיור~%
+\L{\ref{fig.c0}}.
 
+\newpage
+
+\appendix
+\section{בניית משולש שווה-צלעות}\label{a.triangle}
+
+
+\paragraph{בניית משולש שווה-צלעות}
+הזווית המרכיזת של משולש שווה-צלעות היא
+$360^\circ/3=120^\circ$ 
+וניתן לחשב את הקוסינוס שלה מהנוסחה של הקוסינוס של הסכום של שתי זוויות:
+\[
+\cos 120^\circ = \cos(90^\circ+30^\circ)=\cos 90^\circ \cos 30^\circ  -\sin 90^\circ \sin 30^\circ = 0\cdot \frac{\sqrt{3}}{2} - 1\cdot \frac{1}{2}=-\disfrac{1}{2}\,.
+\]
+ערך זה ניתן לבנייה.
+
+\paragraph{גיאומטריה}
+נתבונן במשולש שווה-צלעות
+$ABC$
+שאורך צלעותיו 
+$1$.
+יהי
+$\overline{AD}$
+הגובה מ-%
+$A$
+ל-%
+$\overline{BC}$.
+$\overline{AB}=\overline{AC}$
+ולכן קטע הקו חוצה את
+$\overline{BC}$.
+מכאן ש:
+\[
+\overline{AD}= \sqrt{1^2-\left(\disfrac{1}{2}\right)^2}=\disfrac{\sqrt{3}}{2}\,.
+\]
+גם
+$\frac{1}{2}$
+וגם
+$\frac{\sqrt{3}}{2}$
+ניתנים לבנייה ולכן גם משולש שווה-צלעות.
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+\coordinate (O) at (0,0);
+\foreach \x/\name/\pos in {0/A/right,1/B/above,2/C/below} {
+  \coordinate (\name) at ($(O)+(\x*120:3cm)$);
+  \node[\pos] at (\name) {$\name$};
+  \fill (\name) circle (1pt);
+}
+\draw (A) -- node[above] {$1$} (B) -- (C) -- node[below] {$1$} cycle;
+\coordinate (D) at (-1.5,0);
+\draw (A) -- node[above] {$\frac{\sqrt{3}}{2}$} (D);
+\node[below left]  at (D) {$D$};
+\fill (D) circle(1pt);
+\path (D) -- node[left] {$\frac{1}{2}$} (B);
+\draw (D) rectangle +(7pt,7pt);
+\end{tikzpicture}
+\end{center}
+
+
+\section{בניית מחומש משוכלל}\label{a.pentagon}
+
+\paragraph{טריגונומטריה}
+הזווית המרכזית היא
+$360^\circ/5=72^\circ$.
+נחשב
+$\cos 36^\circ$
+תוך שימוש בזהויות הטריגונומטריות עבור
+$2\theta$
+ו-%
+$\theta/2$
+\L{\cite{wiki:pentagon}}:
+\begin{form}{1.5}
+0=\cos 90^\circ &=& \cos(72^\circ+18^\circ)\\
+&=&(2\cos^2 36^\circ-1)\sqrt{\disfrac{1+\cos 36^\circ}{2}}-2\sin 36^\circ\cos 36^\circ\sqrt{\disfrac{1-\cos 36^\circ}{2}}\,.
+\end{form}
+כעת יש רק זווית אחת בנוסחה; נסמן
+$x=\cos 36^\circ$ 
+ונחשב:
+\begin{form}{1.5}
+(2x^2-1)\sqrt{\disfrac{1+x}{2}}&=&2\sqrt{1-x^2}\cdot x \cdot \sqrt{\disfrac{1-x}{2}}\\
+(2x^2-1)\sqrt{1+x}&=&2\sqrt{1-x}\cdot\sqrt{1+x}\cdot x \cdot \sqrt{1-x}\\
+2x^2-1&=&2x(1-x)\\
+4x^2-2x-1&=&0\,.
+\end{form}
+מהפתרון למשוואה הריבועית מתקבל:
+\[
+\cos 36^\circ = \disfrac{1+\sqrt{5}}{4}\,,
+\]
+שניתן לחשב עם
+$\{+,-,\times,\div,\surd\}$
+ולכן הוא ניתן לבנייה.
+
+
+האיור שלהלן מראה שניתן לבנות מחומש משוכלל מ-%
+$\cos 36^\circ$.
+מ-%
+$D$
+במרחק
+$\cos 36^\circ$
+מ-%
+$O$
+בנו אנך ל-%
+$\overline{OA}$
+החותך את מעגל היחידה ב-%
+$C$.
+בנו
+$\overline{OC}$.
+בנו אנך מ-%
+$A$
+ל-%
+$\overline{OC}$.
+החיתוך שלו עם מעגל היחידה ב-%
+$B$
+מגדיר את
+$\overline{AB}$,
+הצלע של המחומש החסום על ידי המעגל.
+
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+\coordinate (O) at (0,0);
+\fill (O) circle(1pt) node[above left,xshift=1pt,yshift=4pt] {$O$};
+\draw[thick,dotted] (-3,0) -- (3,0);
+\draw[thick,dotted] (0,-3) -- (0,3);
+\foreach \x/\name in {0/a,1/b,2/c,3/d,4/e} {
+  \coordinate (\name) at ($(O)+(\x*72:3cm)$);
+  \draw (O) -- (\name);
+  \fill (\name) circle(1pt);
+}
+\draw (a) node[right] {$A$} -- (b) node[above] {$B$} -- (c) -- (d) -- (e) -- (a);
+%\node[below right,xshift=4pt] at (O) {\sm{72^\circ}};
+\node[above right,xshift=16pt] at (O) {\sm{36^\circ}};
+\draw[very thick,name path=P1] (O) -- (36:3cm) coordinate (ten) node[above right] {$C$};
+\path[name path=P2] (a) -- (b);
+\path[name intersections={of=P1 and P2, by={right}}];
+\coordinate (cos) at (ten|-a);
+\draw[rotate=126] (right) rectangle +(8pt,8pt);
+\draw[rotate=90] (cos) rectangle +(8pt,8pt);
+\draw[very thick] (ten) -- (cos) node[below] {$D$};
+\draw (O) circle (3cm);
+\fill (right) circle (1pt);
+\fill (ten) circle (1pt);
+\fill (cos) circle(1pt);
+\path (O) -- node[below] {\sm{\cos 36^\circ}} (cos);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{גיאומטריה}
+
+הנה פתרון לתרגילים
+\L{2.3.3--2.3.4}
+ב-%
+\L{\cite[28 \R{עמוד}]{stillwell}}, 
+המראה שניתן לבנות מחומש משוכלל.
+
+יהי
+$ABCDE$ 
+מחומש משוכלל שצלעותיו באורך
+$1$. 
+בנו את האלכסונים
+$\overline{AC}$
+ו-%
+$\overline{CE}$.
+$\angle AED=\angle EDC$
+כי הם זוויות פנימיות של מפוליגון משוכלל. 
+$\overline{AE}=\overline{CD}$
+כי הם צלעות של פליגון משוכלל. לכן, 
+$ACDE$
+הוא טרפז שווה צלעות ו-%
+$\overline{AC}\parallel \overline{ED}$.
+%\begin{figure}[htb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1]
+\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
+  \fill (\name) circle (1.5pt);
+  \node[\po] at (\name) {$\n$};
+}
+\draw (a) -- (b) -- (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
+\draw[very thick] (e)-- node[right] {$1$} (a);
+\draw[very thick] (a) -- (c);
+\draw[very thick] (c) -- node[below] {$x$} (e);
+
+\path[name path=ef] (e) -- +(108:5);
+\path[name path=ac] (a) -- (c);
+\path[name intersections={of=ac and ef,by={f}}];
+\fill (f) circle(1.5pt);
+\node[above] at (f) {$F$};
+\draw[very thick] (e) -- node[right] {$1$} (f);
+\path (a) -- node[above,xshift=-4pt] {$x-1$} (f);
+\node[below left] at (a) {$\alpha$};
+\node[below right,xshift=2pt] at (f) {$\alpha$};
+\path (c) -- node[above] {$1$} (f);
+\draw ($(e)+(72:.5)$) arc(72:144:.5cm);
+\node[above,yshift=12pt] at (e) {$\alpha$};
+\end{tikzpicture}
+%\caption{Construction of a regular pentagon}\label{fig.pentagon1}
+\end{center}
+%\end{figure}
+בנו קו דרך 
+$E$
+המקביל ל-%
+$\overline{DC}$
+ותהי
+$F$
+נקודת החיתוך שלו עם
+$\overline{AC}$.
+מכאן ש-%
+$\overline{EF}=1$.
+יהי
+$x$
+האורך של האלכסונים של המחומש המשוכלל; 
+קל להראות שהם שווים. אזי
+$\overline{AC}=\overline{CE}=x$,
+כך ש-%
+$\triangle ACE$ 
+הוא משולש שווה-שוקיים עם זוויות בסיס
+$\alpha$. $\triangle AEF$
+הוא גם שווה-שוקיים ולכן
+$\angle AFE=\angle FAE=\alpha$.
+מכאן ש-%
+$\triangle ACE\sim\triangle AEF$:
+\[
+\disfrac{x}{1}=\disfrac{1}{x-1}\,.
+\]
+נכפיל ונקבל את המשוואה הריבועית:
+\[
+x^2-x-1=0\,,
+\]
+שהשורש החיובי שלה הוא:
+\[
+\disfrac{1+\sqrt{5}}{2}\,.
+\]
+ניתן לבנות אורך כי הוא מורכב ממספרים רציונליים ושורשים ריבועיים. ניתן לבנות את המחומש המשוכלל כי מקטע הקו
+$\overline{AC}$
+באורך
+$\frac{1+\sqrt{5}}{2}$,
+ניתן לבנות משולש שווה-שוקיים
+$\triangle ABC$
+שהשוקיים הם הצלעות והזווית
+$\angle ABC$
+הוא הזווית הפנימית.
+
+%\newpage
 
 \selectlanguage{english}
 \bibliographystyle{plain}
