@@ -64,16 +64,16 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 \end{footnotesize}
 
-This document presents Gauss's insight that it is possible to construct a \emph{heptadecagon}---a regular polygon with $17$ sides---using a straightedge and compass. The presentation is based upon \cite{jorg}; I have added the detailed calculations leading to Gauss's formula. An actual construction from \cite{callagy} is also presented; again I have added the detailed calculations.
+This document presents Gauss's insight that it is possible to construct a \emph{heptadecagon}---a regular polygon with $17$ sides---with straightedge and compass. The presentation is based on \cite{jorg}; I have added the detailed calculations leading to Gauss's formula. An actual construction from \cite{callagy} is also presented; again I have added the detailed calculations.
 
 \section{Construction of regular polygons}
 
 \paragraph{History}
-The ancient Greeks knew how to construct some regular polygons using a straightedge and compass: a triangle, a square, a pentagon and a regular polygon with $15$ sides. Of course, given a regular polygon with $n$ sides, it is easy to construct a polygon with $2n$ sides by bisecting the sides.
+The ancient Greeks knew how to construct some regular polygons with straightedge and compass: a triangle, a square, a pentagon and a regular polygon with $15$ sides. Of course, given a regular polygon with $n$ sides, it is easy to construct a polygon with $2n$ sides by bisecting the sides.
 
 No progress was made for two thousand years until in 1796, just before his $19$th birthday, Carl Friedrich Gauss awoke one morning and by ``concentrated thought'' figured out how to construct a regular \emph{heptadecagon}, a regular polygon with $17$ sides. This achievement inspired him to become a mathematician.
 
-The construction of the regular heptadecagon led to the Gauss-Wantzel Theorem which states that a regular polygon with $n$ sides can be constructed using a straightedge and compass if and only if $n$ is the product of a power of $2$ and zero or more \emph{distinct} prime Fermat numbers $2^{2^k}+1$. The known Fermat primes are $F_0=3, F_1=5, F_2=17, F_3=257, F_4=65537$. A regular polygon with $257$ sides was first constructed by Magnus Georg Paucker in $1822$ and Friedrich Julius Richelot $1832$. In $1894$ Johann Gustav Hermes claimed to have constructed a regular polygon  with $65537$ sides and his manuscript is saved at the University of G\"{o}ttigen should you wish to check it.
+The construction of the regular heptadecagon led to the Gauss-Wantzel Theorem which states that a regular polygon with $n$ sides can be constructed with straightedge and compass if and only if $n$ is the product of a power of $2$ and zero or more \emph{distinct} prime Fermat numbers $2^{2^k}+1$. The known Fermat primes are $F_0=3, F_1=5, F_2=17, F_3=257, F_4=65537$. A regular polygon with $257$ sides was first constructed by Magnus Georg Paucker in $1822$ and Friedrich Julius Richelot $1832$. In $1894$ Johann Gustav Hermes claimed to have constructed a regular polygon  with $65537$ sides and his manuscript is saved at the University of G\"{o}ttigen should you wish to check it.
 
 \paragraph{The cosine of the central angle}
 To construct a regular polygon, it is sufficient to construct a line segment of length $\cos \theta$, where $\theta$ is the central angle subtended by a chord that is a side of the polygon inscribed in a unit circle. Given the line segment $\overline{OB}=\cos\theta$, construct a perpendicular at $B$ and label its intersection with the unit circle by $C$. Then $\cos \theta=\disfrac{\overline{OB}}{\overline{OC}}=\overline{OB}$ so $\theta = \cos^{-1} (\overline{OB})$. The chord $\overline{AC}$ is a side of the polygon.
@@ -96,7 +96,7 @@ To construct a regular polygon, it is sufficient to construct a line segment of 
 \end{center}
 
 \paragraph{Constructible lengths} Given a line segment defined to have length $1$, the lengths that are constructible are those which can be obtained from line segments of known length using the operations $\{+,-,\times,\div,\surd\}$.
-In Appendices~\ref{a.triangle}, \ref{a.pentagon} we show that a equilateral triangle and a regular pentagon are constructible by giving expressions for  $\cos\left(\disfrac{2\pi}{3}\right)$ and $\cos\left(\disfrac{2\pi}{5}\right)$ that use only the operations $\{+,-,\times,\div,\surd\}$. Both trigonometric and geometric derivations are given.
+Appendices~\ref{a.triangle}, \ref{a.pentagon} present both trigonometric and geometric derivations showing that an equilateral triangle and a regular pentagon are constructible by giving expressions  that use only these operations. 
 
 \paragraph{Construction of a heptadecagon}
 The central angle of a heptadecagon is $\disfrac{2\pi}{17}$ radians or $\disfrac{360^\circ}{17}\approx 21.12^\circ$. 
@@ -162,7 +162,7 @@ are $n$-th roots of unity.
 \textbf{Theorem}
 Let $n$ be a prime and $r$ an $n$-th root of unity; then $\{1,r,r^2,\ldots,r^{n-2},r^{n-1}\}$ are distinct, so they are \emph{all} the $n$-th roots of unity.
 
-\textbf{Proof} Suppose that $r^i=r^j$ for some $1\leq i<j\leq n$, so $r^j/r^i=r^{j-i}=1$. Let $m$ be the smallest number $0<m<n$ such that $r^m=1$. Now $n=ml+k$ for some $0<l<n$ and $0\leq k<m$. From $1=r^n=r^{ml+k}=(r^m)^l\cdot r^k=1^l\cdot r^k=r^k$, we have $0\leq k<m$ and $r^k=1$. Since $m$ is the smallest such positive integer, $k=0$ and $n=ml$, so $n$ is not prime.
+\textbf{Proof} Suppose that $r^i=r^j$ for some $1\leq i<j\leq n$, so $r^j/r^i=r^{j-i}=1$. Let $m$ be the smallest positive integer less than $n$ such that $r^m=1$. Now $n=ml+k$ for some $0<l<n$ and $0\leq k<m$. From $1=r^n=r^{ml+k}=(r^m)^l\cdot r^k=1^l\cdot r^k=r^k$, we have $0\leq k<m$ and $r^k=1$. Since $m$ is the smallest such positive integer, $k=0$ and $n=ml$, so $n$ is not prime.
 
 \begin{comment}
 \begin{center}
@@ -186,7 +186,7 @@ We use the following theorem without proof.
 \[
 f(x) =(x-a_1) (x-a_2)\cdots (x-a_{n-1})(x-a_n)\,.
 \]
-Viet\'{e}'s formula \cite[p. 28]{jorg} gives the coefficients of the polynomial in terms of its roots; the formula can be obtained by multiplication. You can see that the coefficient of $x^{n-1}$ is:
+Viet\'{e}'s formula \cite[p. 28]{jorg} gives the coefficients of the polynomial in terms of its roots; the formula can be obtained by multiplication. It is easy to see that the coefficient of $x^{n-1}$ is:
 \[
 -(a_1+a_2+\cdots+a_{n-1}+a_n)\,.
 \]
@@ -236,7 +236,7 @@ and let $a_1$ be the sum of the roots in the even positions in the above list:
 \[
 a_1=r^3 + r^{10} + r^{5} +r^{11} +r^{14} + r^7+r^{12}+r^6\,.
 \]
-We want to obtain $a_0,a_1$ as roots of a quadratic equation. We first compute their sum:
+To obtain $a_0,a_1$ as roots of a quadratic equation, we first compute their sum:
 \[
 a_0+a_1=r + r^2 + \cdots +r^{16}=-1\,.
 \]
@@ -360,45 +360,9 @@ y^2-b_0y+b_1=0
 It suffices to compute the root $c_0=r^1+r^{16}$
 (Figure~\ref{fig.c0}) since:
 \[
-c_0=r_1+r_{16}=2\cos\left(\frac{2\pi}{17}\right)\,.
+c_0=r_1+r_{16}=2\cos\left(\frac{2\pi}{17}\right)\,,
 \]
-The $y$-coordinates are equal but with opposite signs and cancel, while the $x$-coordinate is counted twice:
-\begin{center}
-\begin{tikzpicture}[scale=1.5]
-\coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$} node[below right,xshift=32pt] {$\theta$};
-\coordinate (A) at (4,0);
-\node[right] at (A) {$1$};
-\draw (O) -- (A);
-\coordinate (C) at (21.12:4cm);
-\coordinate (D) at (-21.12:4cm);
-\draw (D) arc(-21.12:21.12:4);
-\draw (D) -- (O) -- (C);
-\node[right] at (C) {$r^1$};
-\node[right] at (D) {$r^{16}$};
-\draw (C) -- (C |- A) coordinate (B);
-\draw (D) -- (D |- A);
-\draw[rotate=90] (B) rectangle +(6pt,6pt);
-\draw (D) -- (A) -- (C);
-\path (O) -- node[below] {$\cos \theta$} (B);
-\end{tikzpicture}
-\end{center}
-Therefore, the cosine of the central angle of a heptadecagon is constructible with straightedge and compass, since it is composed only of rational numbers and the operations $\{+,-,\times,\div,\surd\}$:
-
-\begin{form}{2.2}
-\cos\left(\disfrac{2\pi}{17}\right) &=& 
-\disfrac{c_0}{2}\\
-&=&
--\disfrac{1}{16}+\disfrac{1}{16}\sqrt{17} + 
-     \disfrac{1}{16}\sqrt{34-2\sqrt{17}}
-    + \\
-    &&
-     \disfrac{1}{16}\sqrt{
-     68+12\sqrt{17} + 
-     2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}}
-   -16
-     \sqrt{34+2\sqrt{17}}
-   }
-\end{form}
+as shown below (page~\pageref{page.cosine}).
 
 
 \begin{figure}
@@ -462,6 +426,48 @@ c_0&=&\disfrac{b_0+\sqrt{b_0^2-4b_1}}{2}\\
 \end{figure}
 
 
+\clearpage
+
+The $y$-coordinates of $r_1,r_{16}$ are equal but with opposite signs and cancel, while the $x$-coordinate is counted twice:\label{page.cosine}
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$} node[below right,xshift=32pt] {$\theta$};
+\coordinate (A) at (4,0);
+\node[right] at (A) {$1$};
+\draw (O) -- (A);
+\coordinate (C) at (21.12:4cm);
+\coordinate (D) at (-21.12:4cm);
+\draw (D) arc(-21.12:21.12:4);
+\draw (D) -- (O) -- (C);
+\node[right] at (C) {$r^1$};
+\node[right] at (D) {$r^{16}$};
+\draw (C) -- (C |- A) coordinate (B);
+\draw (D) -- (D |- A);
+\draw[rotate=90] (B) rectangle +(6pt,6pt);
+\draw (D) -- (A) -- (C);
+\path (O) -- node[below] {$\cos \theta$} (B);
+\end{tikzpicture}
+\end{center}
+Therefore, the cosine of the central angle of a heptadecagon is constructible with straightedge and compass, since it is composed only of rational numbers and the operations $\{+,-,\times,\div,\surd\}$:
+
+\begin{form}{2.2}
+\cos\left(\disfrac{2\pi}{17}\right) &=& 
+\disfrac{c_0}{2}\\
+&=&
+-\disfrac{1}{16}+\disfrac{1}{16}\sqrt{17} + 
+     \disfrac{1}{16}\sqrt{34-2\sqrt{17}}
+    + \\
+    &&
+     \disfrac{1}{16}\sqrt{
+     68+12\sqrt{17} + 
+     2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}}
+   -16
+     \sqrt{34+2\sqrt{17}}
+   }
+\end{form}
+
+
+
 \begin{center}
 \framebox[.9\textwidth]{\parbox{.85\textwidth}{
 \textbf{Complex numbers}
@@ -474,7 +480,7 @@ c_0\!\!\!&=&\!\!\!r_1+r_{16}\\
 }}
 \end{center}
 
-\clearpage
+\newpage
 
 \section{Derivation of Gauss's formula}\label{s.derivation}
 
@@ -528,7 +534,7 @@ Substituting terms results in Gauss's formula:
 \section{Construction with a straightedge and compass}\label{s.construction}
 Several constructions are given in \cite{wiki:heptadecagon}. Here I give the construction from \cite{callagy} because it directly constructs $\cos\left( \disfrac{2\pi}{17}\right)$. The construction uses only Pythagoras's Theorem and the Angle Bisector Theorem \cite{wiki:bisector}.
 
-Construct a unit circle centered at  $O$,  and construct perpendicular diameters,  $\overline{QP}, \overline{SR}$.\footnote{To save space I have clipped the circle so that $R=(0,1),S=(0,-1)$ do not appear.}
+Construct a unit circle centered at  $O$,  and construct perpendicular diameters  $\overline{QP}, \overline{SR}$.\footnote{To save space I have clipped the circle so that $R=(0,1),S=(0,-1)$ do not appear.}
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
 \clip (-5,-1.8) rectangle (5,1.8);
@@ -564,7 +570,7 @@ Construct a unit circle centered at  $O$,  and construct perpendicular diameters
 \draw[<->] ($(C)+(0,-16pt)$) -- node[below] {\sm{\frac{1+\sqrt{17}}{16}}} ($(O)+(0,-16pt)$);
 \draw[<->] ($(O)+(0,-16pt)$) -- node[below,xshift=4pt] {
 \sm{
-\frac{\sqrt{34+2\sqrt{17}}}{16}
+\frac{-1+\sqrt{17}}{16}
 }
 } ($(B)+(0,-16pt)$);
 \end{tikzpicture}
@@ -583,7 +589,7 @@ Let $B$ be the intersection of the internal bisector of $\angle OAP$ and $\overl
 and:
 \begin{form}{2}
 \disfrac{\overline{OC}}{\overline{CP}}&=&\disfrac{\overline{AO}}{\overline{AP}}\\
-\disfrac{\overline{OC}}{1-\overline{OC}}&=&\disfrac{1/4}{\sqrt{17}/{4}}\\
+\disfrac{\overline{OC}}{1+\overline{OC}}&=&\disfrac{1/4}{\sqrt{17}/{4}}\\
 \overline{OC}&=&\disfrac{1}{-1+\sqrt{17}}=\disfrac{1}{-1+\sqrt{17}}\cdot \disfrac{1+\sqrt{17}}{1+\sqrt{17}}\\
 &=&\disfrac{1+\sqrt{17}}{16}\,.
 \end{form}
@@ -612,7 +618,7 @@ Construct $D$ on $\overline{OP}$ such that $\overline{CD}=\overline{CA}$:
 \draw (P) -- (Q);
 \draw (R) -- (S);
 \draw (A) -- (P);
-\draw (C) -- node[above] {$a$} (A) -- node[above] {$b$} (B);
+\draw (C) -- node[above] {$a$} (A) -- node[xshift=2pt,right] {$b$} (B);
 \path (Q) -- node[below] {$f$}  (M);
 \path (B) -- node[below] {$b$} (E);
 
@@ -646,6 +652,9 @@ Construct $M$ as the midpoint of $\overline{QD}$ and construct $F$ on $\overline
 &=&\disfrac{1}{2}\left[1-\left(\disfrac{1+\sqrt{17}}{16}\right)+\disfrac{\sqrt{34+2\sqrt{17}}}{16}\right]\\
 &=&\disfrac{1}{32}\left(15-\sqrt{17}+\sqrt{34+2\sqrt{17}}\right)\,.
 \end{form}
+
+\newpage
+
 Construct a circle whose diameter is $\overline{OE}$. Construct a chord $\overline{OG}=\overline{OF}$. Note that $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$:
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
@@ -743,9 +752,9 @@ This value is constructible.
 \[
 \overline{AD}=\sqrt{1^2-\left(\disfrac{1}{2}\right)^2}=\disfrac{\sqrt{3}}{2}\,.
 \]
-Since $\frac{1}{2}$ and $\frac{\sqrt{3}}{2}$ are both constructible so is the equilateral triangle.
+$1,\frac{1}{2},\frac{\sqrt{3}}{2}$ are constructible so we can construct an equilateral triangle by constructing the right triangles $\triangle ADB,\triangle ADC$.
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.9]
 \coordinate (O) at (0,0);
 \foreach \x/\name/\pos in {0/A/right,1/B/above,2/C/below} {
   \coordinate (\name) at ($(O)+(\x*120:3cm)$);
@@ -758,10 +767,10 @@ Since $\frac{1}{2}$ and $\frac{\sqrt{3}}{2}$ are both constructible so is the eq
 \node[below left]  at (D) {$D$};
 \fill (D) circle(1pt);
 \path (D) -- node[left] {$\frac{1}{2}$} (B);
+\path (D) -- node[left] {$\frac{1}{2}$} (C);
 \draw (D) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
-
 
 \section{Constructing a regular pentagon}\label{a.pentagon}
 
@@ -784,19 +793,16 @@ Solving the quadratic equation gives:
 \]
 which can be computed using $\{+,-,\times,\div,\surd\}$ so it is constructible.
 
-The following figure shows how to construct a regular pentagon from $\cos 36^\circ$. From $D$ at distance $\cos 36^\circ$ from $O$ construct a perpendicular to $\overline{OA}$ that intersects a unit circle at $C$. Construct $\overline{OC}$. Construct a perpendicular from $A$ to $\overline{OC}$. Its intersection with the unit circle at $B$ defines $\overline{AB}$, the side of the inscribed pentagon. 
+The following figure shows how to construct a regular pentagon from $\cos 36^\circ$. From $D$ at distance $\cos 36^\circ$ from $O$ construct a perpendicular to $\overline{OA}$ that intersects the unit circle centered at $O$ at $C$. Construct $\overline{OC}$. Construct a perpendicular from $A$ to $\overline{OC}$. Its intersection with the unit circle at $B$ defines $\overline{AB}$, the side of the inscribed pentagon. 
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
 \fill (O) circle(1pt) node[above left,xshift=1pt,yshift=4pt] {$O$};
-\draw[thick,dotted] (-3,0) -- (3,0);
-\draw[thick,dotted] (0,-3) -- (0,3);
-\foreach \x/\name in {0/a,1/b,2/c,3/d,4/e} {
-  \coordinate (\name) at ($(O)+(\x*72:3cm)$);
-  \draw (O) -- (\name);
-  \fill (\name) circle(1pt);
-}
-\draw (a) node[right] {$A$} -- (b) node[above] {$B$} -- (c) -- (d) -- (e) -- (a);
+\coordinate (a) at (3,0);
+\fill (a) circle(1pt) node[right] {$A$};
+\coordinate (b) at (72:3cm);
+\fill (b) circle(1pt) node[above] {$B$};
+\draw (O) -- (a) -- (b) -- cycle;
 \node[above right,xshift=16pt] at (O) {\sm{36^\circ}};
 \draw[very thick,name path=P1] (O) -- (36:3cm) coordinate (ten) node[above right] {$C$};
 \path[name path=P2] (a) -- (b);
@@ -805,11 +811,11 @@ The following figure shows how to construct a regular pentagon from $\cos 36^\ci
 \draw[rotate=126] (right) rectangle +(8pt,8pt);
 \draw[rotate=90] (cos) rectangle +(8pt,8pt);
 \draw[very thick] (ten) -- (cos) node[below] {$D$};
-\draw (O) circle (3cm);
 \fill (right) circle (1pt);
 \fill (ten) circle (1pt);
 \fill (cos) circle(1pt);
 \path (O) -- node[below] {\sm{\cos 36^\circ}} (cos);
+\draw (a) arc (0:90:3cm);
 \end{tikzpicture}
 \end{center}
 
@@ -818,8 +824,6 @@ The following figure shows how to construct a regular pentagon from $\cos 36^\ci
 Here is a solution to Exercises~2.3.3--2.3.4 of \cite[page~28]{stillwell}, 
 showing that a regular pentagon is constructible.
 
-Let $ABCDE$ be a regular pentagon whose sides are of length $1$. 
-Construct the diagonals $\overline{AC}$ and $\overline{CE}$. $\angle AED=\angle EDC$ because they are the interior angles of a regular polygon. $\overline{AE}=\overline{CD}$ because they are the sides of a regular polygon. Therefore, $ACDE$ is an isoceles trapezoid and $\overline{AC}\parallel \overline{ED}$.
 
 \begin{center}
 \begin{tikzpicture}[scale=.9]
@@ -828,7 +832,33 @@ Construct the diagonals $\overline{AC}$ and $\overline{CE}$. $\angle AED=\angle 
   \fill (\name) circle (1.5pt);
   \node[\po] at (\name) {$\n$};
 }
-\draw (a) -- (b) -- (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
+\draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e) -- node[right] {$1$} (a);
+\draw[thick] (a) -- node[above] {$x$} (c);
+\draw[thick,name path=ad] (a) -- node[above] {$x$} (d);
+\draw[thick,name path=cd] (c) -- node[above] {$x$} (e);
+\path[name intersections={of=ad and cd,by={f}}];
+\fill (f) circle (1.5pt) node[above] {$\psi$} node[below] {$\psi$} node[right,xshift=6pt] {$F$};
+\node[below right,xshift=14pt] at (c) {$\theta$};
+\node[below left,xshift=-14pt] at (a) {$\theta$};
+\node[above right,xshift=16pt] at (d) {$\phi$};
+\node[above left,xshift=-16pt] at (e) {$\phi$};
+\end{tikzpicture}
+\end{center}
+Let $ABCDE$ be a regular pentagon. By definition all the sides and all the interior angles are equal. It is easy to show that all diagonals are equal.\footnote{For example, $\triangle ABC\cong \triangle AED$ by SAS, so $\overline{AC}=\overline{AD}$.} Let the length of the sides be $1$ and the length of the diagonals be $x$.
+
+$\triangle ACE\cong \triangle CAD$ so $\angle ACE=\angle CAD=\theta$. $\triangle AED\cong\triangle CDE$ so $\angle ADE=\angle CED=\phi$. $\angle AFC=\angle EFD=\psi$ are vertical angles.
+$\psi+2\theta=\psi+ 2\phi=180^\circ$ so $\theta=\phi$.
+By alternate interior angles, we conclude that $\overline{AC}\parallel \overline{DE}$.
+
+
+Construct a line through $E$ parallel to $\overline{DC}$ and let $F$ be its intersection with $\overline{AC}$. $\triangle ACE$ is an isoceles triangle with base angles $\alpha$. $\triangle AEF$ is also isoceles so $\angle AFE=\angle FAE=\alpha$. \begin{center}
+\begin{tikzpicture}[scale=.9]
+\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
+  \fill (\name) circle (1.5pt);
+  \node[\po] at (\name) {$\n$};
+}
+\draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
 \draw[very thick] (e)-- node[right] {$1$} (a);
 \draw[very thick] (a) -- (c);
 \draw[very thick] (c) -- node[below] {$x$} (e);
@@ -848,8 +878,7 @@ Construct the diagonals $\overline{AC}$ and $\overline{CE}$. $\angle AED=\angle 
 \end{tikzpicture}
 \end{center}
 
-Construct a line through $E$ parallel to $\overline{DC}$ and let $F$ be its intersection with $\overline{AC}$. It follows that $\overline{EF}=1$.
-Let $x$ be the length of the diagonals of the regular pentagon; it is easy to show that they are all equal. Then $\overline{AC}=\overline{CE}=x$, so $\triangle ACE$ is an isoceles triangle with base angles $\alpha$. $\triangle AEF$ is also isoceles so $\angle AFE=\angle FAE=\alpha$. Therefore, $\triangle ACE\sim\triangle AEF$:
+Therefore, $\triangle ACE\sim\triangle AEF$:
 \[
 \disfrac{x}{1}=\disfrac{1}{x-1}\,.
 \]
@@ -861,10 +890,11 @@ whose positive root is:
 \[
 \disfrac{1+\sqrt{5}}{2}\,.
 \]
-This length is constructible using rational numbers and square roots. The regular pentagon is constructible since from a line segment $\overline{AC}$ of length $\frac{1+\sqrt{5}}{2}$, construct the isoceles triangle $\triangle ABC$ which gives two sides and the interior angle of a regular pentagon.
+This length is constructible using rational numbers and square roots. The regular pentagon is constructible: construct $\overline{AC}$ of length $\frac{1+\sqrt{5}}{2}$ and then construct the isoceles triangle $\triangle ABC$ with sides of length $1$ intersecting at $B$. $\overline{AB}$ and $\overline{BC}$ are two sides of the regular pentagon with interior angle $\angle ABC$.
+
 \newpage
 
 \bibliographystyle{plain}
-\bibliography{heptadecagon}
+\bibliography{heptadecagon-en}
 
 \end{document}
