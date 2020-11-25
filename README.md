@@ -57,6 +57,13 @@ Origami is the art of paper folding. There is a mathematical formalization of or
 * Constructing a nonagon (regular polygon with 9 sides)
 I would like to thank Oriah Ben-Lulu for introducing me to this topic.
 
+**The mathematics of origami for secondary-school students**
+Activities on the mathematics of origami with emphasis on the concept of geometric locus.
+
+The Hebrew document was written by Oriah Ben-Lulu, at the Department of Science Teaching, Weizmann Institute of Science.
+
+The English document is my translation and adaptation of her work.
+
 probability
 -----------
 **Two interesting problems from Frederick Mosteller's book**  

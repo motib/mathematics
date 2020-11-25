@@ -1,6 +1,6 @@
 ﻿origami/ggb/*.png
-origami/activities-en
-origami/activities-he
+origami/activities-en/tikz
+origami/activities-he/*.tex
 origami/en/tikz
 construct/he/tikz
 construct/en/tikz
