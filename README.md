@@ -18,6 +18,11 @@ construct
 * Any construction possible with straightedge and compass can be performed with a straightedge only, provided that a single circle exists somewhere in the plane.
 * Can there be non-congruent triangles with the same perimeter and area? The answer is yes! Here we show how to derive the values 156/35, 101/21, 41/15 of the edges of the triangle that have the same perimenter and area as the triangle with sides 3, 4, 5. (This result is not about construction with straightedge and compass but I included it anyway.
 
+fivecolor
+---------
+**The five-color theorem**
+While the four-color theorem is extremely difficult to prove, proving the five-color theorem is at all difficult, and follows from a theorem that a planar graph must have a vertex with at most five neighboring vertices. This document also contains an explanation of Alfred Kempe's incorrect proof of the four-color theorem.
+
 geometry
 --------
 **Geometry without words** (language independent)  
