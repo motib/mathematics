@@ -1,15 +1,18 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage{mathpazo}
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+
 \usepackage{verbatim}
+\usepackage{url}
 \usepackage{bm}
+
+\newtheorem{theorem}{משפט}
+\newtheorem{definition}{הגדרה}
+
 \usepackage{tikz}
 \usetikzlibrary{intersections,calc,through,arrows.meta,shapes.geometric}
 \tikzset {>=Stealth}
-
-\usepackage{url}
-
-\newtheorem{theorem}{Theorem}
-\newtheorem{definition}{Definition}
 
 \textwidth=15cm
 \textheight=23cm
@@ -21,8 +24,6 @@
 \renewcommand{\baselinestretch}{1.15}
 \setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
 
-\newcommand*{\qed}{\hfill\rule{1ex}{1.5ex}}
-
 \newenvironment{form}[1]{%
 \begin{displaymath}%
 \renewcommand{\arraystretch}{#1}%
@@ -31,45 +32,59 @@
 \end{displaymath}%
 }
 
-\begin{document}
+\newcommand*{\qed}{\hfill\rule{1ex}{1.5ex}}
 
+\begin{document}
 \thispagestyle{empty}
+\selectlanguage{hebrew}
 \begin{center}
-\textbf{\LARGE The Five-Color Theorem}
+\textbf{\LARGE משפט חמשת הצבעים}
 
 \bigskip
 
-\textbf{\Large Moti Ben-Ari\\\bigskip\url{http://www.weizmann.ac.il/sci-tea/benari/}}
+\textbf{\Large מוטי בן-ארי\\\bigskip\url{http://www.weizmann.ac.il/sci-tea/benari/}}
+\smallskip
 
-Version 1.1
+גרסה
+$1.1$
 \end{center}
 
 \begin{footnotesize}
 \begin{center}
-\copyright{}\  2021 by Moti Ben-Ari. 
+\L{\copyright{}\  2021} מוטי בן-ארי. 
 \end{center}
+\selectlanguage{english}
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/3.0/} or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
-\end{footnotesize}
 
-\section{Planar maps and graphs}\label{s.planar}
+\end{footnotesize}
+\selectlanguage{hebrew}
+
+
+\section{מפות מישוריות וגרפים מישוריים}\label{s.planar}
 
 \begin{theorem}
-A planar map can be colored with four colors so that no adjacent regions share the same color.
+ניתן לצבוע מפה מישורית עם ארבעה צבעים כך ששני שטחים שכנים צבועים בצבע שונה.
 \end{theorem}
 
-The proof of this theorem is extremely difficult; here we prove the much simpler five-color theorem, originally proved in the nineteenth century.
+הוכחת משפט זה קשה ביותר; כאן נוכיח משפט הרבה יותר קל, משפט חמשת הצבעים, משפט שהוכח במאה התשע-עשרה.
 
 \begin{theorem}
-A planar map can be colored with five colors so that no adjacent regions share the same color.
+ניתן לצבוע מפה מישורית עם חמישה צבעים כך ששני שטחים שכנים צבועים בצבעים שונים.
 \end{theorem}
 
 \begin{definition}
-A \textit{planar map} is a set of regions in the plane sharing boundaries. A \textit{coloring} of a map is an assignment of a color to each region such that regions sharing a boundary are assigned different colors.\footnote{Regions not sharing a boundary may be considered as ``the same,'' for example, state of Alaska and the state of Washington both belong to the United States, although they do not share a boundary and it is impossible to drive from one state to the other without passing through a different country (Canada). In the mathematical problem, such regions can be colored with the same color or different colors.}
+\textbf{מפה מישורית}
+היא אוסף של שטחים במישור עם גבולות משותפים.
+\textbf{צביעה}
+של מפה היא השמה של צבעים לשטחים כך שכל זוג שטחים שיש להם גבולות  משותפים צבועים בצבעים שונים.%
+\footnote{%
+שטחים שאין להם גבול משותף יכולים להיחשב כ-"אותו שטח", למשל, מדינת אלסקה ומדינת וושינגטון נחשבות כחלק מארה"ב למרות שאין להם גבול משותף, ואי אפשר לנסוע מאחד לשני בלי לעבור דרך ארץ אחרת (קנדה). בבעיה המתימטית, נתייחס אל שתי המדינות כשטחים שונים שניתן לצבוע באותו צבע או בצבע שונה.%
+}
 \end{definition}
 
-The following diagrams show a planar map with ten regions. The left diagram shows a five-coloring and the right diagram shows a four-coloring.
-
+האיורים שלהלן מראים מפה מישורית עם עשרה שטחים. האיור משמאל מראה צביעה עם חמישה צבעים והאיור מימין מראה צביעה עם ארבעה צבעים.
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.667]
 \draw[fill=blue!80] (-3.5,-3.5) rectangle +(7,7);
 
@@ -138,25 +153,35 @@ The following diagrams show a planar map with ten regions. The left diagram show
 \end{center}
 
 \begin{definition}
-A \emph{graph} is a set of \emph{vertices} $V$ and a set of \emph{edges} $E$, such that each edge is incident with exactly two vertices.
+\textbf{גרף}
+הוא קבוצה של 
+\textbf{צמתים}
+$V$
+וקבוצה של 
+\textbf{קשתות}
+$E$,
+כך שכל קשת מחבר בדיוק שני צמתים.
 
-A \emph{planar graph} is a graph such that no edges cross each other. In a planar graph, areas enclosed by a set of edges are called \emph{faces}.
+\textbf{גרף מישורי}
+הוא גרף בו שתי קשתות לא חותכות אחת את השניה. בגרף מישורי קטע מהמישור התחום על ידי קבוצה של קשתות נקרא 
+\textbf{שטח}.
 
-A \emph{coloring} of a planar graph is an assignment of colors to vertices such that no two vertices of the same color are connected by an edge.
+\textbf{צביעה}
+של גרף מישורי היא השמה של צבעים לצמתים, כך ששני צמתים המחוברים על ידי קשת צבועים בצבעים שונים.
 \end{definition}
 
-Planar maps and planar graphs are dual and it is convenient to treat coloring problems in graphs rather than maps.
-
+מפות וגרפים דואליים ונוח יותר לטפל בבעיות צביעה בגרפים ולא במפות.
 \begin{theorem}
-Given a planar map, a planar graph can be constructed such for each coloring of the regions of the map, there is a coloring of the vertices of the graph, and conversely.
+נתונה מפה מישורית, ניתן לבנות גרף מישורי כך שעבור כל צביעה של שטחים במפה קיימת צביעה של הצמתים בגרף, ולהיפך.
 \end{theorem}
 
-\textbf{Proof}
-Construct one vertex for each region and construct an edge between two vertices iff the regions are share a boundary.\qed
+\textbf{הוכחה}
+בנו צומת עבור כל שטח במפה ובנו קשת בין שני צמתים או"א קיים גבול בין שני השטחים.
+\qed
 
-The following diagram shows how a planar graph can be constructed and colored based on the planar map shown above.
-
+האיור שלהלן מראה את הגרף המישורי שניתן לבנות מהמפה המישורית שהבאנו לעיל.
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.667]
 
 \draw[fill=blue!80] (-3.5,-3.5) rectangle +(7,7);
@@ -253,10 +278,23 @@ The following diagram shows how a planar graph can be constructed and colored ba
 \end{tikzpicture}
 \end{center}
 
-We can further limit our graphs to those whose faces are \textit{triangular}.\footnote{The faces are not necessarily \textit{triangles} because the edges may be curved. By F\'{a}ry's theorem, any triangular planar graph can be be transformed to an equivalent graph with straight edges.}
+ניתן להגביל את עצמנו לגרפים שהשטחים שלו
+\textbf{משולשיים}.%
+\footnote{%
+השטחים הם לא בהכרח 
+\textbf{משולשים}
+כי הקשתות יכולות להיות עקומות. לפי משפט
+\L{F\'{a}ry},
+כל גרף מישורי משולשי ניתן להפוך לגרף מישורי שקול עם קשתות ישרות.%
+}
 
-The left diagram below shows that a square can be two-colored, but if it is triangulated (center), three colors are necessary. However, the goal is to prove that \emph{all} graphs can be five-colored, so if the triangulated graph is five-colored, so is the original graph, because deleting the extra edge does not invalidate the coloring (right).
+האיור השמאלי שלהלן מראה שניתן לצבוע ריבוע עם שני צבעים, אבל אם מתלתים
+\L{(triangulate)} 
+אותו---ראו איור מרכזי, חייבים להשתמש בארבעה צבעים. היעד הוא להוכיח 
+\textbf{שכל}
+גרף ניתן לצבוע בחמישה צבעים, כך שאם הדבר אפשרי בגרף המשולשי, הוא אפשרי גם בגרף המקורי, כי מחיקת הקשתות הנוספות לא מקלקל את הצביעה )איור ימני(.
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.33]
 \draw (-3.5,-3.5) rectangle +(7,7);
 \fill[red] (-3.5,-3.5) circle(7pt);
@@ -282,19 +320,59 @@ The left diagram below shows that a square can be two-colored, but if it is tria
 \end{tikzpicture}
 \end{center}
 
-\section{Euler's formula}
+\section{הנוסחה של
+\L{Euler}}
 
-\begin{theorem}[Euler]\label{thm.euler}
-Let $G$ be a connected planar graph with $V$ vertices, $E$ edges and $F$ faces. Then $V-E+F=2$.
+\begin{theorem}[\L{Euler}]\label{thm.euler}
+יהי
+$G$
+גרף מישורי מקושר עם
+$V$
+צמתים,
+$E$
+קשתות ו-%
+$F$
+שטחים. אזי
+$V-E+F=2$.
 \end{theorem}
 
-\textbf{Proof} By induction on the number of edges. If the number of edges in the connected planar graph is zero, there is only a single vertex and a single face, so $1-0+1=2$.
+\textbf{הוכחה} 
+באינדוקציה על מספר הקשתות. אם מספר הקשתות בגרף מישורי מקושר הוא אפס, קיים רק צומת אחד ושטח אחד, כך ש-%
+$1-0+1=2$.
 
-Let $G$ be a connected planar graph with $V$ vertices, $E$ edges and $F$ faces, and remove an edge $e$ connecting vertices $v_1,v_2$. There are two cases:
+יהי 
+$G$
+גרף מישורי מקושר עם 
+$V$
+צמתים, 
+$E$
+קשתות ו-%
+$F$
+שטחים, ומחק קשת 
+$e$
+המחבר את הצמתים
+$v_1,v_2$.
+יש שני מקרים:
 
-\textbf{Case 1} The graph becomes disconnected. Identify $v_1$ with $v_2$. The resulting graph $G'$ is a planar connected graph and has fewer edges than $G$, so by the induction hypothesis, $(V-1)-(E-1)+F=2$ since the number of vertices is also reduced by one. Simplifying, we get $V-E+F=2$ for $G$.
+\textbf{מקרה 1}
+הגרף מפסיק להיות מקושר. זהה את
+$v_1$
+עם
+$v_2$.
+ל-%
+$G'$,
+הגרף הנוצר, פחות קשתות מ-%
+$G$,
+הוא שוב גרף מישורי מקושר,
+ולכן לפי הנחת האינדוקציה,
+$(V-1)-(E-1)+F=2$
+כי יש גם צומת אחד פחות. נפשט ונקבל
+$V-E+F=2$
+עבור
+$G$.
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}
 \foreach \x/\y in {0/0, 2/0, 1/1.5,4/0,6/0,5/1.5}
   \fill (\x,\y) circle (2pt);
@@ -307,9 +385,20 @@ Let $G$ be a connected planar graph with $V$ vertices, $E$ edges and $F$ faces, 
 \end{tikzpicture}
 \end{center}
 
-\textbf{Case 2} The graph remains connected. The resulting graph $G'$ has fewer edges than $G$ so by the induction hypothesis, $V-(E-1)+(F-1)=2$ since removing the edge joins two faces into one. Simplifying, we get $V-E+F=2$ for $G$.
+\textbf{מקרה 2}
+הגרף נשאר מקושר. לגרף הנוצר
+$G'$
+פחות קשתות מ-%
+$G$,
+ולכן לפי הנחת האינדוקציה,
+$V-(E-1)+(F-1)=2$
+כי מחיקת קשת אחת מאחדת שני שטחים לאחד. נפשט ונקבל
+$V-E+F=2$ 
+עבור
+$G$.
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}
 \foreach \x/\y in {0/0, 2/0, 1/1.5,4/0,6/0,5/1.5}
   \fill (\x,\y) circle (2pt);
@@ -327,13 +416,25 @@ Let $G$ be a connected planar graph with $V$ vertices, $E$ edges and $F$ faces, 
 \qed
 
 \begin{theorem}
-Let $G$ be a connected, triangulated planar graph. Then $E= 3V-6$.
+יהי
+$G$
+גרף מישורי מקושר ומתולת. אזי
+$E= 3V-6$.
 \end{theorem}
 
-For example, the planar graph in Section~\ref{s.planar} has $10$ vertices and $24= 3\cdot 10-6=24$ edges.
+למשל, בגרף המישורי בסעיף
+\L{~\ref{s.planar}}
+יש
+$10$
+צמתים ו-%
+$24= 3\cdot 10-6$
+קשתות.
 
-\textbf{Proof}
-Each face is bounded by three edges, so $E=3F/2$ because each edge has been counted twice, once for each face it bounds. By Euler's formula:
+\textbf{הוכחה}
+כל שטח חסום על ידי שלוש קשתות, כך ש-%
+$E=3F/2$
+כי כל קשת נספר פעמיים, פעם אחת לכל שטח שהיא חוסמת. לפי נוסחת
+\L{Euler}:
 \begin{form}{1}
 E&=&V+F-2\\
 E&=&V+2E/3-2\\
@@ -345,12 +446,17 @@ E&=&3V-6\,.
 \newpage
 
 \begin{theorem}\label{thm.count}
-Let $G$ be a connected planar graph. Then $E\leq 3V-6$.
+יהי
+$G$
+גרף מישורי מקושר. אזי
+$E\leq 3V-6$.
 \end{theorem}
 
-For the following graph, $E=8< 3\cdot 6 - 6= 12$.
+עבור הגרף באיור שלהלן,
+$E=8\leq 3\cdot 6 - 6= 12$.
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}
 \foreach \x/\y in {0/0, 2/0, 1/1.5,4/0,6/0,5/1.5}
   \fill (\x,\y) circle (2pt);
@@ -359,12 +465,27 @@ For the following graph, $E=8< 3\cdot 6 - 6= 12$.
 \end{tikzpicture}
 \end{center}
 
-\textbf{Proof}
-Triangulate $G$ to obtain $G'$. In $G'$, $E= 3V-6$ by Theorem~\ref{thm.count}. Now remove edges from $G'$ to obtain $G$. The number of vertices does not change so  $E\leq 3V-6$.
+\textbf{הוכחה}
+תלתו את
+$G$
+כדי לקבל
+$G'$.
+ב-%
+$G'$, $E= 3V-6$
+לפי משפט
+\L{~\ref{thm.count}}.
+כעת, מחק קשתות מ-%
+$G'$
+כדי לקבל את
+$G$.
+מספר הצמתים לא משתנה כך ש-%
+$E\leq 3V-6$.
 \qed
 
-Here is the triangulated graph for which $E=12=3\cdot 6 - 6= 12$.
+הנה הגרף המתולת שעבורו
+$E=3\cdot 6 - 6= 12$.
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}
 \foreach \x/\y in {0/0, 2/0, 1/1.5,4/0,6/0,5/1.5}
   \fill (\x,\y) circle (2pt);
@@ -376,14 +497,20 @@ Here is the triangulated graph for which $E=12=3\cdot 6 - 6= 12$.
 \end{tikzpicture}
 \end{center}
 
-\section{Non-planar graphs}
-Let us take a short detour to show how Theorems~\ref{thm.euler} and~\ref{thm.count} can be used to prove that certain graphs are not planar.
+\section{גרפים שאינם מישוריים}
+נסטה מעט מהסיפור כדי להראות איך ניתן להשתמש במשפטים 
+\L{~\ref{thm.euler}}
+ו-%
+\L{~\ref{thm.count}}
+כדי להוכיח שגרפים מסויימים אינם מישוריים.
 
 \begin{theorem}
-$K_5$, the complete graph on five vertices, is not planar.
+$K_5$,
+הגרף השלם עם חמישה צמתים, אינו מישורי.
 \end{theorem}
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.8]
 \node (pentagon) [minimum size=4cm,regular polygon,regular polygon sides=5] at (0,0) {};
 \draw (pentagon.corner 1) -- (pentagon.corner 2);
@@ -421,16 +548,23 @@ $K_5$, the complete graph on five vertices, is not planar.
 \end{scope}
 \end{tikzpicture}
 \end{center}
-\textbf{Proof}
-For $K_5$, $V=5$ and $E=10$. But $10 \not\leq 3\cdot 5 -6=9$.\qed
+\textbf{הוכחה}
+עבור
+$K_5$, $V=5$
+ן-%
+$E=10$.
+אבל
+$10 \not\leq 3\cdot 5 -6=9$.\qed
 
 \newpage
 
 \begin{theorem}
-$K_{3,3}$, the bipartite graph with three vertices on each side, is not planar.
+$K_{3,3}$,
+הגרף הדו-אזורי עם שלושה צמתים בכל אזור, אינו מישורי.
 \end{theorem}
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.8]
 \foreach \x/\y in {0/0,0/2,0/4,3/0,3/2,3/4}
   \fill (\x,\y) circle (2pt);
@@ -459,69 +593,178 @@ c\draw (0,2) -- (3,4);
 \end{scope}
 \end{tikzpicture}
 \end{center}
-\textbf{Proof}
-$V=6$ and $E=9$. By Theorem~\ref{thm.euler}, $F=E-V+2=9-6+2=5$. But each face is bounded by four edges, so $E=4F/2=10\neq 9$.\qed
+\textbf{הוכחה}
+$V=6$
+ו-%
+$E=9$.
+לפי משפט
+\L{~\ref{thm.euler}},
+$F=E-V+2=9-6+2=5$.
+אבל כל שטח תחום על ידי ארבע קשתות, ולכן
+$E=4F/2=(4\cdot 5)/2\neq 9$.\qed
 
-\section{The degrees of the vertices}
+\section{המעלה של הצמתים}
 
 \begin{definition}
-$d(v)$, the \emph{degree} of vertex $v$, is the number of edges incident with $v$.
+$d(v)$,
+\textbf{המעלה}
+של צומת
+$v$,
+היא מספר הקשתות הנפגשות ב-%
+$v$.
 \end{definition}
-For the graph in Section~\ref{s.planar}, there are $8$ vertices in the two annuli, each of degree $5$; the vertices of the outer face and the inner circular face are each of degree $4$. Therefore:
+עבור הגרף בסעיף
+\L{~\ref{s.planar}},
+קיימים 
+$8$
+צמתים בתוך הטבעות, כל אחד ממעלה
+$5$.
+המעלה של השטח החיצוני ושל המעגל הפנימי הוא 
+$4$.
+לכן:
 \[
 \sum_{v\in V} d(v) = 5\cdot 8 + 4\cdot 2=48\,.
 \]
-To get the total number of edges, divide by $2$ because  each edge was counted twice, once for each of the vertices it is incident to.
-
-By generalizing the argument we get:
+כדי לקבל את מספר הקשתות בגרף, עלינו לחלק ב-%
+$2$
+כי כל קשת נספרה פעמיים, פעם אחת עבור כל צומת שהיא נוגעת בו.
+על ידי הכללת הטיעונים הללו נקבל:
 \begin{theorem}\label{thm.degrees}
-Let $d_i, i=1,2,3,\ldots,k$ be the number of vertices of degree $i$ in a connected planar graph $G$ with $V$ vertices and $E$ edges, where $k$ is the highest degree of a vertex in $V$. Then:
+יהי
+$d_i, i=1,2,3,\ldots,k$
+מספרי הצמתים ממעלה
+$i$
+בגרף מישורי מקושר עם
+$V$
+צמתים ו-%
+$E$ 
+קשתות, כאשר
+$k$
+הוא המעלה הגבוהה ביותר של צומת ב-%
+$V$.
+אזי:
 \[
 \sum_{v\in V} d(v) =\sum_{i=1}^{k} i\cdot d_i=2E\,.
 \]
 \end{theorem}
-
+\vspace*{-6ex}
 \begin{theorem}\label{thm.degree5}
-Let $G$ be a connected planar graph with $E$ edges and $V$ vertices, and let $d_i,i=1,\ldots,k$ be the number of vertices of degree $i$, where $k$ is the highest degree of a vertex in $V$. Then there must be a vertex $v$ in $V$ such that $d(v) \leq 5$.
+יהי
+$G$
+גרף מישורי מקושר עם
+$E$
+קשתות ו-%
+$V$
+צמתים, ויהי
+$d_i,i=1,\ldots,k$
+מספרי ההצמתים ממעלה
+$i$,
+כאשר
+$k$
+הוא המעלה הגבוהה ביותר של צומת ב-%
+$V$.
+אזי חייב להיות צומת
+$v$
+ב-%
+$V$
+כך ש-%
+$d(v) \leq 5$.
 \end{theorem}
-\textbf{Proof 1}
-Clearly, if there are $d_1$ vertices of degree $1$, $d_2$ vertices of degree $2$, \ldots, $d_k$ vertices of degree $k$, then $V=\sum_{i=1}^{k}d_i$.  From Theorems~\ref{thm.count} and \ref{thm.degrees}:
+\textbf{הוכחה 1}
+ברור שאם יש 
+$d_1$
+צמתים ממעלה
+$1$, $d_2$ 
+צמתים ממעלה
+$2$, \ldots, $d_k$
+צמתים ממעלה
+$k$, 
+אזי
+$V=\sum_{i=1}^{k}d_i$. 
+מהמשפטים
+\L{~\ref{thm.count}}
+ו-%
+\L{~\ref{thm.degrees}}:
 \[
 \sum_{i=1}^{k} i\cdot d_i=2E\leq 2(3V-6) = 6V-12=6\sum_{i=1}^{k} d_i -12\,.
 \]
-Therefore:
+מכאן ש:
 \[
 \sum_{i=1}^{k} i\cdot d_i \leq 6\sum_{i=1}^{k} d_i -12\,,
 \]
-and:
+ו:
 \[
 \sum_{i=1}^{k} (6-i)d_i> 12\,.
 \]
-Since $12>0$, for least one $i$, $6-i>0$ and for that $i$, $i<6$. \qed
+בגלל ש-%
+$12>0$,
+ל-%
+$i$
+אחד לפחות,
+$6-i>0$
+ועבור 
+$i$
+זה,
+$i<6$. \qed
 
-\textbf{Proof 2} Let us compute the \emph{average} degree of the vertices, which is the sum of the degrees divided by the number of vertices:
+\textbf{הוכחה 2}
+נחשב את 
+\textbf{הממוצע}
+של המעלות של הצמתים: סכום המעלות לחלק למספר הצמתים:
 \[
 d_{\textit{\footnotesize avg}}=\frac{\sum_{i=1}^{k} i\cdot d_i}{V}\,.
 \]
-But the sum of the degrees is twice the number of edges which by Theorem~\ref{thm.count} gives:
+אבל סכום המעלות הוא פעמיים מספר הקשתות, ולפי משפט
+\L{~\ref{thm.count}}
+נקבל:
 \[
 d_{\textit{\footnotesize avg}}=\frac{2E}{V}\leq \frac{6V-12}{V}=6-\frac{6}{V}<6\,.
 \]
-If the average degree is less than six, there must be a vertex of degree less than six.\qed
+אם ממוצע המעלות הוא פחות משש, חייב להיות צומת אחד לפחות ממעלה פחות משש.
+\qed
 
+עבור הגרף בסעיף
+\L{~\ref{s.planar}},
+סכום המעלות הוא
+$8\cdot 5 + 2\cdot 4=48$.
+יש 
+$10$
+צמתים, כך שממוצע המעלות שלו הוא
+$\frac{48}{10}=4.8$
+וחייב להיות צומת ממעלה 
+$4$
+או פחות.
 
-For the graph in Section~\ref{s.planar}, the sum of the degrees is $8\cdot 5 + 2\cdot 4=48$. There are $10$ vertices, so the average degree is $\frac{48}{10}=4.8$ and there must be a vertex of degree $4$ or less.
-
-\section{The six-color theorem}
+\section{משפט ששת הצבעים}
 
 \begin{theorem}\label{thm.sixcolor}
-Any planar graph $G$ can be six-colored.
+כל גרף מישורי ניתן לצביעה בששה צבעים.
 \end{theorem}
-\textbf{Proof} By induction on the number of vertices in $G$. Clearly, if the graph has six vertices or fewer, six colors suffice.
+\textbf{הוכחה}
+באינדוקציה על מספר הצמתים ב-%
+$G$.
+אם לגרף ששה צמתים או פחות, ברור שניתן לצבוע את הגרף בששה צבעים.
 
-For the inductive step, let $G$ be a planar graph. By Theorem~\ref{thm.degree5} it has a vertex $v$ with degree $5$ or fewer. Delete vertex $v$ to obtain the graph $G'$. By the induction hypothesis, $G'$ can be six-colored, but $v$ has at most $5$ neighbors and at most $5$ colors are used to color them, so $v$ can be colored using the sixth color. \qed
+עבור הצעד האינדוקטיבי, יהי
+$G$
+גרף מישורי. לפי משפט
+\L{~\ref{thm.degree5}}
+קיים צומת
+$v$
+ממעלה חמש או פחות. מחק צומת
+$v$
+כדי לקבל את הגרף
+$G'$.
+לפי הנחת האינדוקציה, ניתן לצבוע את
+$G'$
+עם ששה צבעים, אבל ל-%
+$v$
+חמישה שכנים לכל היותר שצבועים בחמישה 
+צבעים לכל היותר, כך שנשאר צבע ששי שניתן לצבוע בו את
+$v$. \qed
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.75,minimum size=6mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/green/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -549,22 +792,69 @@ For the inductive step, let $G$ be a planar graph. By Theorem~\ref{thm.degree5} 
 \end{center}
 
 
-\section{The five-color theorem}
+\section{משפט חמשת הצבעים}
 
 \begin{definition}
-Let $G$ be a colored planar graph. $G'$ is a \emph{chain} iff $G'$ is a maximal, two-colored subgraph of $G$.\footnote{This is also called a \emph{Kempe chain} because it was introduced by Alfred Kempe in his (incorrect) proof of the four-color theorem (see Section~\ref{s.kempe}).}
+יהי
+$G$
+גרף מישורי מקושר צבוע. 
+$G'$
+הוא
+\textbf{שרשרת}
+או"א
+$G'$
+הוא תת-גרף מקסימלי של
+$G$
+הצבוע בשני צבעים.%
+\footnote{%
+השרשרת נקראת גם
+\textbf{שרשרת \L{Kempe}}
+כי היא הוגדרה על ידי
+\L{Alfred Kempe}
+בהוכחה השגויה שלו למשפט ארבעת הצבעים. ראו סעיף
+\L{~\ref{s.kempe}}.}
 \end{definition}
 
 \begin{theorem}\label{thm.fivecolor}
-Any planar graph $G$ can be five colored.
+כל גרף מישורי 
+$G$
+ניתן לצבוע בחמישה צבעים.
 \end{theorem}
 
-\textbf{Proof} By induction on the number of vertices. The base case is any planar graph with five vertices or less.
+\textbf{הוכחה}
+באינדקציה על מספר הצמתים. נכונות המשפט ברורה עבור גרף מישורי עם חמישה צמתים או פחות.
 
-For the inductive step, let $G$ be a planar graph. By Theorem~\ref{thm.degree5} it has a vertex $v$ with degree $5$ or less. Delete the vertex $v$ to obtain $G'$. By the induction hypothesis, $G'$ can be five-colored. In $G$, if the degree of $v$ is less than $5$, or if $v_1,\ldots,v_5$, the neighbors of $v$, are colored with four colors or fewer, $v$ can be colored with the fifth color.
+עבור הצעד האינדוקטיבי, יהי
+$G$
+גרף מישורי. לפי משפט
+\L{~\ref{thm.degree5}}
+קיים צומת
+$v$
+ממעלה חמש או פחות. מחק את הצומת
+$v$
+כדי לקבל את הגרף
+$G'$.
+לפי הנחת האינדוקציה, ניתן לצבוע את
+$G'$
+עם חמישה צבעים או פחות. ב-%
+$G$,
+אם המעלה של
+$v$
+היא פחות מחמש,
+או אם
+$v_1,\ldots,v_5$,
+השכנים של
+$v$,
+צבועים עם ארבעה צבעים או פחות, ניתן לצבוע את
+$v$
+עם הצבע החמישי.
 
-Otherwise, $v_1,\ldots,v_5$ are colored with different colors in $G'$. 
+אחרת, הצמתים
+$v_1,\ldots,v_5$
+צבועים בצבעים שונים ב-%
+$G'$. 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.75,minimum size=6mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/green/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -622,8 +912,19 @@ Otherwise, $v_1,\ldots,v_5$ are colored with different colors in $G'$.
 \draw (D) -- (C);
 \end{tikzpicture}
 \end{center}
-Consider the vertex $v_1$ colored blue and the vertex $v_3$ colored red, and consider the blue-red chain in which they are contained. By adding the vertex $v$ and the edges $\overline{vv_1},\overline{vv_3}$ to the chain we obtain a closed path $P$ (denoted in the diagram below by a double line) that divides the plane into an ``inside'' region and an ``outside'' region.
+נתבונן בצומת
+$v_1$
+הצבוע בכחול ובצומת 
+$v_3$
+הצבוע באדום, ונתבונן בשרשרת הכחול-אדום המכילה אותם. על ידי הוספת הצומת 
+$v$
+והקשתות
+$\overline{vv_1},\overline{vv_3}$
+לשרשרת, נקבל מסלול סגור
+$P$
+)המסומן בקו כפול( שמחלק את המישור לשטח "פנימי" ולשטח "חיצוני".
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.75,minimum size=6mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/green/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -682,8 +983,38 @@ Consider the vertex $v_1$ colored blue and the vertex $v_3$ colored red, and con
 \draw (D) -- (C);
 \end{tikzpicture}
 \end{center}
-Consider the vertex $v_2$ colored green and the vertex $v_4$ colored orange. These vertices \emph{cannot} be contained in a single green-orange chain, because $v_2$ is \emph{inside} $P$ and $v_4$ is \emph{outside} $P$, so any path connecting them must cross $P$, contradicting the assumption that the graph is planar.\footnote{This follows from the \emph{Jordan curve theorem} which is intuitively obvious but very difficult to prove.} In the following diagram the two \emph{unconnected} green-orange chains which contain $v_2$ and $v_4$ are denoted with a double dashed line.
+כעת נתבונן בצומת
+$v_2$
+הצבוע ירוק ובצומת
+$v_4$
+הצבוע כתום. הצמתים הללו 
+\textbf{אינם}
+יכולים להיות בשרשרת ירוק-כתום אחת, כי 
+$v_2$
+נמצא 
+\textbf{בתוך}
+$P$
+ו-%
+$v_4$
+נמצא
+\textbf{מחוץ}
+ל-%
+$P$,
+ולכן כל מסלול המחבר אותם חייב לחתוך את
+$P$,
+הסותר את ההנחה שהגרף מישורי.%
+\footnote{%
+טענה זו נובעת מה-%
+\L{\emph{Jordan curve theorem}},
+שהוא ברור באופן אינטואיטיבי, אבל קשה מאוד להוכיח.%
+}
+בתרשים שלהלן אפשר לראות שתי שרשרות ירוק-כתום המכילות את
+$v_2$
+ו-%
+$v_4$
+שאינן מחוברות מסומנות בקו מקווקוו כפול.
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.75,minimum size=6mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/green/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -745,8 +1076,22 @@ Consider the vertex $v_2$ colored green and the vertex $v_4$ colored orange. The
 \end{tikzpicture}
 \end{center}
 \newpage
-We can exchange the colors on the chain containing  $v_2$, and this will not change the fact that $G'$ is five-colored. Since $v_2$ and $v_4$ are now both colored orange, $v$ can be colored green to obtain a five-coloring of $G$.\qed
+נחליף ביניהם את שני ההצבעים בשרשרת המכילה את
+$v_2$.
+זה לא ישנה את העובדה שניתן לצבוע את
+$G'$
+עם חמישה צבעים.
+$v_2$
+ו-%
+$v_4$
+שניהם צבועים בכתום, וניתן לצבוע את
+$v$
+בירוק כדי לקבל צביעה של
+$G$
+עם חמישה צבעים.
+\qed
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.75,minimum size=6mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/orange/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -817,17 +1162,57 @@ We can exchange the colors on the chain containing  $v_2$, and this will not cha
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Kempe's incorrect proof of the four-color theorem}\label{s.kempe}
+\section{ההוכחה השגויה של
+\L{Kempe}
+למשפט ארבעת הצבעים}
+\label{s.kempe}
 
-The four-color theorem was posed and conjectured to hold in $1852$. In $1879$, Alfred B. Kempe published a proof of the theorem,  but eleven years later, in $1890$, Percy J. Heawood found an error in the proof. Nevertheless, Kempe's work is important because: (1) it provided a correct proof of the five-color theorem, and (2) his proof contained the basic ideas that were used by Kenneth Appel and Wolfgang Haken in their correct proof published in $1976$.
+משפט ארבעת הצבעים הוצג כהשערה ב-%
+$1852$.
+ב-%
+$1879$, 
+\L{Alfred B. Kempe}
+פרסם הוכחה של המשפט, אבל לאחר אחת-עשר שנים, ב-%
+$1890$,
+\L{Percy J. Heawood}
+מצא שגיאה בהוכחה. למרות זאת, העבודה של
+\L{Kempe}
+חשובה כי: 
+$(1)$
+ההוכחה נכונה עבור חמישה צבעים, ו-%
+$(2)$
+בהוכחה שלו הוא המציא את הרעיונות הבסיסיים ששימשו את
+\L{Kenneth Appel}
+ו-%
+\L{Wolfgang Haken}
+בהוכחה הנכונה שלהם שפורסמה ב-%
+$1976$.
 
-\textbf{Proof} The base case of the induction and most of the proof is the same as that of the five-color theorem. The new case that must be considered is a vertex $v$ with five neighbors which, by the inductive hypothesis, are colored with four colors after removing $v$.
+\textbf{הוכחה}
+רוב ההוכחה זהה להוכחה של משפט חמשת הצבעים. המקרה החדש שיש לטפל בו הוא כאשר יש צומת 
+$v$
+עם חמישה שכנים, כאשר לפי ההנחה האינדוקטיבית ניתן לצבוע אותם בארבעה צבעים לאחר מחיקת הצומת
+$v$.
 
-In the left diagram below, there are two vertices $v_2,v_5$ colored blue. Consider the blue-green chain containing $v_2$ and the blue-yellow chain containing $v_5$. The blue-green chain is contained within the closed path defined by the red-yellow chain containing $v_1,v_3$ and the blue-yellow chain in contained within the closed path defined by the red-green chain containing $v_1,v_4$.
+באיור השמאלי שלהלן, קיימים שני צמתים
+$v_2,v_5$
+הצבועים בכחול. נתבונן עכשיו בשרשרת הכחול-ירוק המכילה את 
+$v_2$
+ובשרשרת הכחול-צהוב המכילה את
+$v_5$.
+השרשרת הכחול-ירוק נמצאת מתוך המסלול הסגור המוגדר על ידי השרשרת האדום-צהוב שמכילה את
+$v_1,v_3$,
+והשרשרת הכחול-צהוב נמצאת בתוך המסלול הסגור המוגדר על ידי השרשרת האדום-ירוק המכילה את
+$v_1,v_4$.
 
-Now exchange the colors on the blue-green chain and on the blue-yellow chain (right diagram below). The result is that the neighbors of $v$ are colored with the three colors red, green and yellow, leaving blue free to color $v$.
+נחליף את הצבעים בשרשרת הכחול-ירוק ובשרשרת הכחול-צהוב )איור ימני(. התוצאה היא שהשכנים של
+$v$
+צבועים בשלושה צבעים אדום, ירוק וצהוב, וניתן לצבוע את
+$v$
+בכחול.
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.6,minimum size=6mm,inner sep=0pt]
 
 % Draw center node and adjacent nodes
@@ -919,10 +1304,16 @@ Now exchange the colors on the blue-green chain and on the blue-yellow chain (ri
 \end{tikzpicture}
 \end{center}
 
-Heawood noted that the closed paths defined by the red-yellow and red-green chains can share red vertices ($v_1$ and the red vertex below $v_4$ in the left diagram below).
-When the colors are exchanged in the blue-green and blue-yellow chains, it is possible for blue vertices to be connected (right diagram below), so the coloring is no longer correct.
+\L{Heawood}
+שם לב שלמסלולים הסגורים, המוגדרים על ידי השרשראות האדום-צהוב והאדום-ירוק, ייתכן שיש צמתים אדומים משותפים )%
+$v_1$
+והצומת האדום מתחת ל-%
+$v_4$
+באיור השמאלי(.
+כאשר מחליפים צבעים בשרשראות הכחול-ירוק והכחול-צהוב, יש אפשרות שיהיו צמתים צבועים בכחול הקשורים בקשת )איור ימני(, כך שהצביעה כבר לא חוקית.
 
 \begin{center}
+\selectlanguage{english}
 \begin{tikzpicture}[scale=.6,minimum size=6mm,inner sep=0pt]
 
 % Draw center node and adjacent nodes
@@ -1005,6 +1396,7 @@ When the colors are exchanged in the blue-green and blue-yellow chains, it is po
 \newpage
 
 \nocite{*}
+\selectlanguage{english}
 \bibliographystyle{plain}
-\bibliography{five-en}
+\bibliography{five-he}
 \end{document}
