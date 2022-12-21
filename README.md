@@ -6,10 +6,10 @@ This repository contains learning materials for secondary school mathematics, as
 https://link.springer.com/book/10.1007/978-3-031-13566-8.
 The LaTeX source from the `surprises` repository.
 
+
 bagrut
 ------
-Fifteen fully solved Israeli matriculation exams in mathematics (806) (Hebrew only). The graphical representation of the geometric figures is in directory `geometry`.
-
+**The bagrut material has been moved to its own repository**
 
 geometry
 --------

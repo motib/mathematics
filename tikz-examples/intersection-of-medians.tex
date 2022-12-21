@@ -40,21 +40,18 @@ TikZ features: name path, name intersections, circle through,
 \begin{tikzpicture}
   
   % Define the coordinates of an arbitrary triangle,
-  %   label the vertices, and draw dots at each vertex.
+  %   label the vertices
   
   \coordinate[label = left:$A$]  (A) at ( 0, 0);
   \coordinate[label = right:$B$] (B) at (10, 0);
   \coordinate[label = above:$C$] (C) at ( 7 ,8);
-  \fill (A) circle (1pt);
-  \fill (B) circle (1pt);
-  \fill (C) circle (1pt);
   
   % Draw the triangle, each side in a different color.
   
   \draw[blue, thick] (A) -- (C);
   \draw[red,  thick] (A) -- (B);
   \draw[teal, thick] (B) -- (C);
-  
+
   % The coordinates of medians are obtained using partway 
   %   modifier .5 between the vertices of each side.
   
@@ -68,13 +65,20 @@ TikZ features: name path, name intersections, circle through,
   \draw[blue, thick, name path = Bmedian] (B) -- (AC);
   \draw[red,  thick, name path = Cmedian] (C) -- (AB);
   
-  % Get the intersection of two medians and draw a dot.
+  % Draw dots at vertices after drawing the lines
+  %   so the lines won't cover the vertices
+
+  \fill (A) circle (1.5pt);
+  \fill (B) circle (1.5pt);
+  \fill (C) circle (1.5pt);
+  
+  % Get the intersection of two medians and draw a largedot
 
   \path [name intersections = {% % The comment is necessary!
     of = Amedian and Bmedian,
     by = {intersection}
     }];
-  \fill (intersection) circle(3pt);
+  \fill (intersection) circle(2pt);
   
   % Get the intersection with the third median to check
   %   that it is the same point.
@@ -112,7 +116,7 @@ TikZ features: name path, name intersections, circle through,
         % This is used to place a label halfway between
         %   (intersection) and (\point).
       %
-      node {\pgfmathparse{
+      node[fill=white] {\pgfmathparse{
              round(
                veclen(\x1,\y1)
              )
