@@ -11,6 +11,10 @@ bagrut
 ------
 **The bagrut material has been moved to its own repository**
 
+divsha-amira
+------------
+Scan of **Geometry** by Divsha Amira (in Hebrew).
+
 geometry
 --------
 **Geometry without words**

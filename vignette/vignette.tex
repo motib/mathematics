@@ -5,9 +5,10 @@
 \usepackage{tikz}
 \usetikzlibrary{through,calc,intersections}
 \tikzset{>=stealth}
+
 \newcommand*{\vertex}[1]
   {\fill[shift only] (#1) circle (1.5pt)}
-\newcommand*{\sm}[1]{$\scriptstyle #1$}
+
 \newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
 
 % Layout
@@ -22,10 +23,8 @@
 \renewcommand{\baselinestretch}{1.1}
 \setlength{\parskip}{0.3\baselineskip plus 1pt minus 1pt}
 
+\hyphenation{hep-ta-de-ca-gon}
 
-\newcommand\qed{\hfill\hbox{\rlap{$\sqcap$}$\sqcup$}}
-\newtheorem{theorem}{Theorem}
-\newenvironment{proof}{\textbf{Proof}}{\qed}
 \addtolength{\arraycolsep}{-3pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,11 +42,14 @@ Moti Ben-Ari
 
 \textbf{Introduction}
 
-For centuries people learned mathematics by studying Euclid's \textit{Elements}. A focus of the \textit{Elements} is on the construction of geometric figures using a straightedge (a ruler with no markings) and a compass. The \textit{Elements} gives constructions of regular polygons with $n=3,4,5,15$ sides (and polygons with $2^kn$ sides), but not until two thousand years later was the construction of another regular polygon discovered. In $1796$ Carl Friedrich Gauss awoke one morning just before his 19th birthday, and by ``concentrated thought'' discovered that a regular heptadecagon (a regular polygon with $17$ sides) is constructible. It was a  revolutionary development because Gauss proved the constructibility \emph{algebraically} not geometrically.
+For centuries people learned mathematics by studying Euclid's \textit{Elements}. A focus of the \textit{Elements} is on the construction of geometric figures using a straightedge (a ruler with no markings) and a compass. The \textit{Elements} gives constructions of regular polygons with $n=3,4,5,15$ sides (and polygons with $2^kn$ sides), but not until two thousand years later was the construction of another regular polygon discovered. In $1796$ Carl Friedrich Gauss awoke one morning just before his 19th birthday, and by ``concentrated thought'' discovered that a \emph{regular heptadecagon} (a regular polygon with $17$ sides) is constructible.
+
+In Euclidean geometry constructions are given as step-by-step instructions: starting with given points and lines, lines and circles are constructed and their points of intersection are used to construct new lines and circles. Gauss's proof is revolutionary because he did not give any geometric constructions whatsoever. Instead, he defined constructibility as a property of expressions using integers and arithmetical operators, and then using algebra alone proved that the length of a side of a heptadecagon is given by an expression with the property required for constructibility. The algebra required is accessible with a knowledge of secondary-school mathematics.
 
 \textbf{Constructibility}
 
-The first proposition in the \textit{Elements} is that an equilateral triangle can be constructed. (The word ``construct'' will be used as an abbreviation for ``construct by straightedge and compass.'') Given a line segment $\overline{AB}$ draw two circles whose centers are $A,B$ and whose radii are the length of $\overline{AB}$. $C$, the intersection of the circles, defines the third vertex of the triangle:
+The first proposition in the \textit{Elements} claims that an equilateral triangle can be constructed. (Henceforth, ``construct'' will be used as an abbreviation for ``construct by straightedge and compass.'') Given a line segment $\overline{AB}$, draw two circles whose centers are $A$ and $B$, and whose radii are the length of $\overline{AB}$. $C$, the intersection of the circles, defines the third vertex of the triangle (Figure~\ref{fig.equilateral}).
+\begin{figure}[hbt]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
@@ -62,98 +64,137 @@ The first proposition in the \textit{Elements} is that an equilateral triangle c
 \node[above right,xshift=-2pt,yshift=3pt] at (t) {$C$};
 \draw (A) -- (t) -- (B);
 \end{tikzpicture}
+\caption{Construction of an equilateral triangle}\label{fig.equilateral}
 \end{center}
+\end{figure}
 
-Define a real number $x$ to be \textit{constructible} if and only if starting with a line segment defined to be of length $1$ it is possible to construct a line segment of length $x$.
+\textbf{Definition:} A real number $x$ is \textit{constructible} if and only if starting with a line segment defined to be of length $1$ it is possible to construct a line segment of length $x$.
 
-\textbf{Theorem:} $x$ is constructible if and only if it is the result of evaluating an expression composed from the integer $1$ using the operations $\{+,-,\times,/,\surd\}$.
+\textbf{Theorem:} $x$ is constructible if and only if it is the result of evaluating an expression that uses only the integer $1$ and the operations $\{+,-,\times,/,\surd\}$.
 
-Here is an outline of the proof:
-\begin{itemize}
-\item Lines are defined by linear equations and circles by quadratic equations, so the intersections of lines and circles are the solutions of two such equations. Expressions for the coordinates of the intersections (and hence the length of line segments between two points) must also be composed from integers and the operations $\{+,-,\times,/,\surd\}$.
-\item Given two line segments, their sum and difference can be obtained by copying one onto the other or onto an extension of the other. The following diagrams show how to construct products, differences and square roots using similar triangles.
-\end{itemize}
+\textbf{Examples:} Figure~\ref{fig.plus-minus-sqrt} (left) shows how to construct $a-b=3$ and $a+b=7$ given $a=5$ and $b=2$ by constructing a circle of radius $2$ whose center is an endpoint of $a$. Figure~\ref{fig.plus-minus-sqrt} (right) shows how to construct $\sqrt{a}=\sqrt{3}$ given $1$ and $a=3$ by constructing similar triangles within a semicircle.
+\begin{figure}[htb]
 \begin{center}
-\begin{tikzpicture}[scale=.75]
-\draw[name path=horz] (0,0) coordinate (o) -- (6,0);
-%\node[left] at (o) {$O$};
-\coordinate (a) at (6,0);
-%\node[below]  at (a) {$A$};
-\draw (o) -- (30:5);
-\coordinate (c) at (30:3);
-\coordinate (b) at (30:5);
-%\node[above] at (c) {$C$};
-%\node[above] at (b) {$B$};
-\draw (a) -- (b);
-\path[name path=par] (c) -- +($(a)-(b)$);
-\path[name intersections={of=par and horz,by=d}];
-%\node[below] at (d) {$D$};
-\draw (c) -- (d);
-\draw[<->] (-.4,.5) -- node[fill=white] {$b$} +(30:5.2);
-\path (o) -- node[above] {$1$} (c);
-\draw[<->] (0,-.8) -- node[fill=white] {$ab$} +(6,0);
-\path (o) -- node[below] {$a$} (d);
-\begin{scope}[xshift=9cm]
-\draw[name path=horz] (0,0) coordinate (o) -- (6,0);
-%\node[left] at (o) {$O$};
-\coordinate (a) at (6,0);
-%\node[below]  at (a) {$A$};
-\draw (o) -- (30:5);
-\coordinate (c) at (30:3);
-\coordinate (b) at (30:5);
-%\node[above] at (c) {$C$};
-%\node[above] at (b) {$B$};
-\draw (a) -- (b);
-\path[name path=par] (c) -- +($(a)-(b)$);
-\path[name intersections={of=par and horz,by=d}];
-%\node[below] at (d) {$D$};
-\draw (c) -- (d);
-\draw[<->] (-.4,.5) -- node[fill=white] {$b$} +(30:5.2);
-\path (o) -- node[above] {$1$} (c);
-\draw[<->] (0,-.8) -- node[fill=white] {$a$} +(6,0);
-\path (o) -- node[below] {$a/b$} (d);
-\end{scope}
-\end{tikzpicture}
-\end{center}
-\begin{center}
-\begin{tikzpicture}[scale=.9]
+\begin{tikzpicture}[scale=.8]
+\coordinate (P) at (0,0);
+\coordinate (Q) at (5,0);
+\coordinate (T) at (3,0);
+\coordinate (U) at (7,0);
+\vertex{P};
+\vertex{Q};
+\vertex{T};
+\vertex{U};
+\draw (P) -- (Q);
+\draw (Q) -- (8,0);
+\draw (Q) circle[radius=2cm];
+\draw[->] (Q) -- node[fill=white] {$b\!=\!2$} ++(40:2cm);
+\draw[<->] (0,-.5) -- node[fill=white] {$a\!=\!5$} (5,-.5);
+\draw[<->] (0,-1) -- node[fill=white] {$3$} (3,-1);
+\draw[<->] (0,-1.5) -- node[fill=white] {$7$} (7,-1.5);
+
+\begin{scope}[xshift=10cm,yshift=-1cm]
 \draw[name path=horz] (0,0) coordinate (a) -- (6,0);
-%\node[left] at (a) {$A$};
 \coordinate (b) at (6,0);
-%\node[below] at (b) {$B$};
 \draw[name path=circle] (b) arc(0:180:3);
 \path[name path=perp] (2,0) -- +(0,3.2);
 \coordinate (c) at (2,0);
-%\node[below] at (c) {$C$};
 \path[name intersections={of=circle and perp,by=d}];
-%\node[above] at (d) {$D$};
-\draw (c) -- node[right,yshift=-3pt] {$\sqrt{a}$} (d);
-\path (a) -- node[below] {$1$} (c) -- node[below] {$a$} (b);
+\draw (c) -- node[fill=white,yshift=-4pt] {$\sqrt{a}\!=\!\sqrt{3}$} (d);
+\path (a) -- node[below] {$1$} (c) -- node[below] {$a\!=\!3$} (b);
 \draw (c) rectangle +(6pt,6pt);
 \draw (a) -- (d) -- (b);
 \draw[rotate=-125] (d) rectangle +(6pt,6pt);
-\node[above right,xshift=4pt] at (a) {$\alpha$};
-%\node[above left,xshift=-12pt] at (b) {$90^\circ-\alpha$};
-\node[below right,yshift=-8pt] at (d) {$\alpha$};
-%\node[below left,xshift=3pt,yshift=-22pt] at (d) {$90^\circ-\alpha$};
+\node[above right,xshift=4pt,yshift=-1pt] at (a) {$\theta$};
+\node[below right,yshift=-8pt,yshift=2pt] at (d) {$\theta$};
+\end{scope}
 \end{tikzpicture}
+\caption{Construction of $a\pm b, \sqrt{a}$}\label{fig.plus-minus-sqrt}
 \end{center}
+\end{figure}
+
+These constructions can be generalized to prove that an expression using $\{+,-,\surd\}$ can be constructed. Expressions using $\{\times,/\}$ can be constructed using similar triangles
+(Figure~\ref{fig.times-div}).
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\draw[name path=horz] (0,0) coordinate (o) -- (6,0);
+\coordinate (a) at (6,0);
+\draw (o) -- (30:5);
+\coordinate (c) at (30:3);
+\coordinate (b) at (30:5);
+\draw (a) -- (b);
+\path[name path=par] (c) -- +($(a)-(b)$);
+\path[name intersections={of=par and horz,by=d}];
+\draw (c) -- (d);
+\draw[<->] (-.4,.4) -- node[fill=white] {$b$} +(30:5.2);
+\path (o) -- node[fill=white] {$1$} (c);
+\draw[<->] (0,-.5) -- node[fill=white] {$ab$} +(6,0);
+\path (o) -- node[fill=white] {$a$} (d);
+
+\begin{scope}[xshift=9cm]
+\draw[name path=horz] (0,0) coordinate (o) -- (6,0);
+\coordinate (a) at (6,0);
+\draw (o) -- (30:5);
+\coordinate (c) at (30:3);
+\coordinate (b) at (30:5);
+\draw (a) -- (b);
+\path[name path=par] (c) -- +($(a)-(b)$);
+\path[name intersections={of=par and horz,by=d}];
+\draw (c) -- (d);
+\draw[<->] (-.4,.4) -- node[fill=white] {$b$} +(30:5.2);
+\path (o) -- node[fill=white] {$1$} (c);
+\draw[<->] (0,-.5) -- node[fill=white] {$a$} +(6,0);
+\path (o) -- node[fill=white] {$a/b$} (d);
+\end{scope}
+\end{tikzpicture}
+\caption{Construction of $ab,a/b$}\label{fig.times-div}
+\end{center}
+\end{figure}
+
+To prove the forward direction of the theorem, note that lines are defined by linear equations and circles by quadratic equations. By solving pairs of equations, it can be shown that the points of intersection of lines and circles are given by expressions using $\{+,-,\times,/,\surd\}$, as are the lengths of line segments which are the distances between two points.
 
 \textbf{Impossible constructions}
 
-The Greeks were unable to trisect an angle (divide a given angle into three equal parts), square a circle (construct a square with the same area as a given circle) and double a cube (construct a cube with twice the volume of a given cube). During the nineteenth century it was proved that these constructions are impossible. Of equal interest was the construction of regular polygons. The Greeks were unable to construct regular polygons with $n=7,9,11,13,14,17,18,\ldots$ sides.
+The Greeks were unable to trisect an angle (divide a given angle into three equal parts), square a circle (construct a square with the same area as a given circle) and double a cube (construct a cube with twice the volume of a given cube). During the nineteenth century it was proved that these constructions are impossible.
+
+Of equal interest was the construction of regular polygons. The Greeks were unable to construct regular polygons with $n=7,9,11,13,14,17,18,\ldots$ sides, but not until the work of Gauss was any progress made to determine if the construction of these polygons is possible or not.
 
 \textbf{The mathematics of constructibility}
 
-A regular polygon can be inscribed in a unit circle. The polygon can be constructed if and only the central angle subtended by one of its sides (or the cosine of the angle) can be constructed. In the following diagram $\overline{AC}$ is a side of the polygon.
+A regular polygon can be inscribed in a unit circle; all of its sides are equal and as are all of its central angles (Figure~\ref{fig.pentagon}). Clearly, if we can construct a central angle we can construct the side of the polygon that subtends it. Construction has been defined only for line segments, so we first show that given a line segment of length $\cos \theta$, where $\theta$ is the central angle of a regular polygon, the polygon is constructible. 
+\begin{figure}[htb]
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=.6]
+\coordinate (O) at (0,0);
+\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
+}
+\node[above right,xshift=-1pt] at (O) {$\scriptstyle \theta$};
+\node[right,xshift=2pt,yshift=-3pt] at (O) {$\scriptstyle \theta$};
+\node[above left,xshift=1pt] at (O) {$\scriptstyle \theta$};
+\node[below] at (O) {$\scriptstyle \theta$};
+\node[left,xshift=-1pt,yshift=-3pt] at (O) {$\scriptstyle \theta$};
+\draw (a) -- node[fill=white] {$\scriptstyle a$} 
+      (b) -- node[fill=white] {$\scriptstyle a$} 
+      (c) -- node[fill=white] {$\scriptstyle a$} 
+      (d) -- node[fill=white] {$\scriptstyle a$} 
+      (e) -- node[fill=white] {$\scriptstyle a$} (a);
+\node[draw,circle through=(a)] at (O) {};
+\draw (a) -- (O) -- (b) -- (O) -- (c) -- (O) -- (d) -- (O) -- (e) -- (O);
+\end{tikzpicture}
+\caption{A regular polygon (pentagon) inscribed in a circle}\label{fig.pentagon}
+\end{center}
+\end{figure}
+
+Construct a unit circle centered at $O$ and let $A$ be an arbitrary point on the circle. Construct the radius $\overline{OA}$ and construct the (given) line segment $\overline{OB}$ of length $\cos \theta$ on $\overline{OA}$. Construct the perpendicular at $B$ (Figure~\ref{fig.cosine}). By the definition of cosine, $C$, the intersection of the perpendicular with the circle, defines the central angle $\theta$ and thus $\overline{AC}$ is a side of the polygon.
+\begin{figure}[hbt]
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
 \coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$};
 \coordinate (A) at (4,0);
 \node[right] at (A) {$A$};
 \draw (O) -- (A);
 \draw (-8:4) arc (-8:26:4);
-%\draw (A) arc(0:21.18:4);
 \coordinate (C) at (21.18:4cm);
 \draw (O) -- node[above] {$1$} (C);
 \node[right] at (C) {$C$};
@@ -163,73 +204,123 @@ A regular polygon can be inscribed in a unit circle. The polygon can be construc
 \draw[thick] (A) -- (C);
 \path (O) -- node[below] {$\cos \theta$} (B); 
 \end{tikzpicture}
+\caption{The side of a regular polygon and its central angle}\label{fig.cosine}
 \end{center}
-The central angle of an equilateral triangle is $120^\circ$ and $\cos 120^\circ=-1/2$ is constructible. The central angle of a regular pentagon is $72^\circ$ and it is not too hard to show that $\cos 72^{\circ}=(\sqrt{5}-1)/4$, so a regular pentagon is constructible. A regular pentadecagon (a regular polygon with $15$ sides) is constructible since its central angle is $360^\circ/15=24^\circ=(120^\circ-72^\circ)/2$. We want to show that the angle $360^\circ/17$ or its cosine is constructible.
+\end{figure}
+
+Let us look at some examples:
+\begin{itemize}
+\item The central angle of an equilateral triangle is $120^\circ$ and $\cos 120^\circ=-1/2$ is constructible, so the equilateral triangle is constructible.
+\item The central angle of a regular pentagon is $72^\circ$ and it is not too hard to show that $\cos 72^{\circ}=(\sqrt{5}-1)/4$, so a regular pentagon is constructible.
+\item The central angle of regular pentadecagon (a regular polygon with $15$ sides) is $360^\circ/15=24^\circ=(120^\circ-72^\circ)/2$. This can be constructed from an equilateral triangle (dashed blue) and regular pentagon (dashed red) with a common vertex and a common radius of a central angle (Figure~\ref{fig.central}). $\angle AOB$ (red) is the central angle of the pentagon, $\angle AOC$ (blue) is the central angle of the triangle and their difference is $\angle BOC=48^\circ$, which can be bisected to obtain $24^\circ$.
+
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+  \coordinate (\name) at ($(O)+(\x*72-30:3cm)$);
+}
+
+\node[above right,xshift=-1pt,yshift=9pt] at (O) {$\scriptstyle 48^\circ$};
+\node[below left] at (O) {$O$};
+\draw[thick,dashed,red] (a) -- (b) -- (c) -- (d) -- (e) -- (a);
+\node[draw,circle through=(a)] at (O) {};
+\draw[red,very thick] (O) -- (b);
+
+\draw[red!50!blue,very thick] (O) -- (-30:3cm);
+\coordinate (t) at (-150:3cm);
+\draw[blue,very thick] (O) -- (90:3cm) coordinate (u);
+
+\draw[dashed,thick,blue] (a) -- (t) -- (u) -- (a);
+
+\node [right] at (a) {$A$};
+\node [above right] at (b) {$B$};
+\node [above] at (u) {$C$};
+\end{tikzpicture}
+\caption{Central angles of an equilateral triangle and a pentagon}\label{fig.central}
+\end{center}
+\end{figure}
+Alternatively, trigonometric identities can be used to define $\cos 24^\circ$ from lengths previously shown to be constructible:
+\begin{eqnarray*}
+\cos 48^\circ &=& \cos (120^\circ- 72^\circ) = \cos 120^\circ \cos 72^\circ +\sin 120^\circ \sin 72^\circ\\
+\cos 24^\circ &=& \cos \frac{48^\circ}{2} = \sqrt{\frac{1+\cos 48^\circ}{2}}
+\end{eqnarray*}
+\end{itemize}
+Gauss's goal was to show that $\cos (360^\circ/17)$ is constructible.
 
 \textbf{Mathematical prerequisites}
 
-With one exception we will only use secondary-school algebra: multiplication of variables with exponents,
-% $x^nx^m=x^{n+m}$, 
-integer division with remainder,
-%$a=bq+r, 0\leq r < q$, 
-and finding the roots of quadratic equations.
-% $x^2+bx+c$ from the formula $r_1,r_2=(-b\pm\sqrt{b^2-4c})/2$. 
-The exception is the Fundamental Theorem of Algebra, which states that an $n$-th degree polynomial with complex coefficients has $n$ complex roots. Actually, we only need one simple case of the theorem: the polynomial $x^{n}-1$ has (at least) one root $r\neq 1$ or, even more narrowly, that $x^{17}-1$ has (at least) one root $r\neq 1$
-
-%In terms of complex numbers, the root is $r=\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)$, since by de Moivre's formula:
-%\[
-%\left[\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)\right]^{n}=
-%\cos \left(\frac{2 n\pi}{n}\right) + i\sin  \left(\frac{2 n\pi}{n}\right)= 1\,.
-%\]
-%However, this is not necessary for the proof since we are searching for an expression that is constructible.
-%
+With one exception we will only use mathematics usually taught in secondary school:
+\begin{itemize}
+\item Exponents: $x^n\cdot x^m=x^{n+m}$.
+\item Integer division: given $n,d$, there exist $q,0\leq r<d$ such that $n=qd+r$.
+\item Quadratic polynomials: the roots of $x^2+bx+c$ are $\frac{-b\pm\sqrt{b^2-4c}}{2}$.
+\item Trigonometric identities for $\cos(\alpha\pm\beta),\sin(\alpha\pm\beta)$.
+\item Complex numbers: points on the unit circle can be represented as $\cos\theta +i\sin\theta$. de Moivre's formula: $(\cos\theta +i\sin\theta)^n=\cos n\theta +i\sin n\theta$.
+\end{itemize}
+ The exception is the Fundamental Theorem of Algebra, which states that an $n$ degree polynomial with complex coefficients has $n$ complex roots. Actually, we only need one simple case of the theorem: the polynomial $x^{n}-1$ has (at least) one root $r\neq 1$ or, even more narrowly, that $x^{17}-1$ has (at least) one root $r\neq 1$
 
 \textbf{The roots of unity}
 
-The roots of $x^{n}-1$ are called the \emph{$n$-th roots of unity}. If $r$ is an $n$-th root of unity then $(r^{2})^n=(r^{n})^2=1^2=1$ so $r^2$ is also an $n$-th root of unity. It follows that $1, r, r^2, \ldots, r^{n-2}, r^{n-1}$ are all $n$-th roots of unity. What we don't know is if they are distinct and thus all the $n$-th roots of unity. For example, the roots of the polynomial $x^4-1$ are $1,-1,i,-i$, but $(-1)^2=1$, $(-1)^3=-1$, $(-1)^4=1$ so the powers of $r=-1$ are not distinct and do not give all the fourth roots of unity.
+The roots of $x^{n}-1$ are called the \emph{$n$-th roots of unity}. If $r$ is an $n$-th root of unity then $(r^{2})^n=(r^{n})^2=1^2=1$ so $r^2$ is also an $n$-th root of unity. It follows that $1, r, r^2, \ldots, r^{n-2}, r^{n-1}$ are all $n$-th roots of unity. What we don't know is if they are \emph{distinct} and thus all the $n$-th roots of unity.
+\begin{itemize}
+\item The roots of the polynomial $x^4-1$ are $\{1,-1,i,-i\}$. By computation we find that $\{i^0,i^1,i^2,i^3\}=\{1,i,-1,-i\}$, but $\{(-1)^0,(-1)^1,(-1)^2,(-1)^3\}=\{1,-1\}$, so the powers of $-1$ are not distinct.
+\item The roots of the polynomial $x^3-1$ are:
+\[
+x_0=1,\quad x_1=\frac{-1+i\sqrt{3}}{2},\quad x_2\frac{-1-i\sqrt{3}}{2}\,.
+\]
+By computation we find that $\{x_1^0,x_1^1,x_1^2\}=\{x_0,x_1,x_2\}$ and similarly $\{x_2^0,x_2^1,x_2^2\}=\{x_0,x_2,x_1\}$, so the powers of the two roots ($\neq 1$) are distinct.
+\end{itemize}
 
-\textbf{Theorem:} If $n$ is a prime number and $r$ is an $n$-the root of unity then $1,r,r^2,\ldots,r^{n-2},r^{n-1}$ are distinct.
+\textbf{Theorem:} If $n$ is a \emph{prime number} and $r\neq 1$ is an $n$-the root of unity then $1,r,\ldots,r^{n-1}$ are distinct.
 
 \textbf{Proof:} If $r^i=r^j$ for some $0\leq i<j\leq n-1$ then $r^j/r^i=r^{j-i}=1$. Let $m$ be the smallest positive integer such that $r^{m}=1$. By the division formula:
 \[
 1=r^n=r^{ml+k}=(r^m)^l\cdot r^k=1^l\cdot r^k=r^k\,,
 \]
-where $0\leq k<m$, but $0<k$ and $r^k=1$ contradict the assumption that $m$ was the smallest such positive number. Therefore, $k=0$ and $n=ml$ is not prime.
+where $0\leq k<m$. But $0<k<m$ and $r^k=1$ contradict the assumption that $m$ was the smallest such positive number, so $k=0$ and $n=ml$ is not prime.
 
-\textbf{From roots back to coefficients of polynomials}
+\textbf{From roots to coefficients of polynomials}
 
 Suppose that we know the values of $r_1,r_2$, two roots of a quadratic polynomial $x^2+bx+c$. What are the coefficients? By computation:
 \[
 (x-r_1)(x-r_2)=x^2 - (r_1+r_2)x + r_1r_2=x^2+bx+c\,,
 \]
-so
+so:
 \begin{equation}\label{eq.v1}
-b=-(r_1+r_2), \qquad c=r_1r_2\,,
+b=-(r_1+r_2), \qquad c=r_1r_2\,.
 \end{equation}
-and similarly the coefficients of any polynomial can be computed if the roots are known. Given that the roots of $x^{17}-1$ are $\{1,r,r^2,\cdots, r^{15}, r^{16}\}$, we can find and coefficient of the polynomial by multiplying $(x-1)(x-r^1)(x-r^2)\cdots (x-r^{15})(x-r^{16})$. The coefficient of $x^{16}$ is:
+Similarly the coefficients of any polynomial can be computed if the roots are known. Given that the roots of $x^{17}-1$ are $\{1,r,r^2,\cdots, r^{15}, r^{16}\}$, we can find the coefficients of the polynomial by multiplying $(x-1)(x-r^1)(x-r^2)\cdots (x-r^{15})(x-r^{16})$. The coefficient of $x^{16}$ is:
 \[
 -(1+r^1+r^2+\cdots+r^{15}+r^{16})\,,
 \]
-which is $0$ in $x^{17}-1$ so:
+which is zero in $x^{17}-1$ so:
 \begin{equation}\label{eq.sum-is-minus1}
 r^1+r^2+\cdots+r^{15}+r^{16}=-1\,.
 \end{equation}
 
-\textbf{Gauss's proof that the heptadecagon is constructible}
+\textbf{Quadratic polynomials from the $17$-th roots of unity}
 
-Gauss's insight was that we need not work with the roots in their natural order $r,\cdots,r^{16}$, but that other powers of roots can generate all the roots. Starting from $r$, repeatedly raising it to the third power (modulo $17$) gives:
+Gauss's insight was that we need not work with the roots in their natural order $r,\cdots,r^{16}$, but that other powers of roots can generate all the roots.
+
+Is there a number $g$ such that the sequence $g^0,g^1,g^2,\ldots, g^{16}$ (all modulo $17$) gives all the numbers in the sequence $1,2,\ldots,16$ in a different order? Well, not all numbers work; for $g=4$, we get only four distinct numbers:
 \[
-\begin{array}{l}
-r^1, \;(r^1)^3 =r^3,\; (r^3)^3=r^9,\; (r^9)^3=r^{27}=r^{10}, \; (r^{10})^3=r^{30}=r^{13}, \;\ldots \,.
-\end{array}
+1,\;\; 4,\;\; 16,\;\; 64=(17\cdot 3 +13)= 13,\;\; 256=(17\cdot 15)+1=1\,.
 \]
-The reader is invited to compute the roots and check that the following list contains all the roots (except $1$) exactly once:
+However, for $g=3$, the sequence $g^0,g^1,g^2,\ldots, g^{16}$ gives of all the numbers in the sequence $1,2,\ldots,16$ in a different order:
+\[
+1,\; 3,\; 9,\; 10,\; 13,\; 5,\; 15,\; 11,\; 16,\; 14,\; 8,\; 7,\; 4,\; 12,\; 2,\; 6\,.
+\]
+The reason is that $3$ is relatively prime to $16$ (and is, in fact, the smallest such integer).
+
+Using $g^0,g^1,g^2,\ldots, g^{16}$ as exponents we obtain a reordering of the powers of the root $r$:
 \[
 \begin{array}{rrrrrrrrrrrrrrrr}
-r^1& r^3& r^9& r^{10}& r^{13}& r^5& r^{15}& r^{11}& r^{16}& r^{14}& r^8& r^7& r^4& r^{12}& r^2& r^6\,.
+r^1,\:& r^3,\:& r^9,\:& r^{10},\:& r^{13},\:& r^5,\:& r^{15},\:& r^{11},\:& r^{16},\:& r^{14},\:& r^8,\:& r^7,\:& r^4,\:& r^{12},\:& r^2,\:& r^6\,.
 \end{array}
 \]
-Write the roots as follows in order to emphasize the roots in the odd and even positions:
+Write the sequence of roots as follows in order to distinguish roots in the odd positions from those in the even positions:
 \[
 \begin{array}{rrrrrrrrrrrrrrrr}
 r^1 &&  r^9 &&  r^{13} && r^{15} &&  r^{16} && r^8 && r^4 && r^2\\\
@@ -245,7 +336,7 @@ Compute $a_0+a_1$ using Equation~\ref{eq.sum-is-minus1}:
 \[
 a_0+a_1=r + r^2 + \cdots +r^{16}=-1\,.
 \]
-Now compute $a_0a_1$ and simplify. It takes quite a lot of work, but the result is the sum of four copies of Equation~\ref{eq.sum-is-minus1} so:
+Now compute $a_0a_1$ and simplify. It takes quite a lot of work \cite[Section~16.4]{surprises}, but the result is the sum of four copies of Equation~\ref{eq.sum-is-minus1} so:
 \[
 a_0a_1=-4\,.
 \]
@@ -264,73 +355,28 @@ b_1&=& r^3+ r^{5} + r^{14} + r^{12}\\
 b_2&=& r^9+ r^{15} + r^{8} + r^2\\
 b_3&=& r^{10}+ r^{11} + r^{7} + r^6\,.
 \end{eqnarray*}
-Check that $b_0+b_2=a_0, b_1+b_3=a_1$ and compute the corresponding products which are $b_0b_2=b_1b_3=-1$.
-%\begin{eqnarray*}
-%b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\;\times\;(r^9 + r^{15} + r^{8} +r^{2})\\
-%&=&(r^{10}+r^{16}+r^9+r^3)\,+\;\,(r^{5}+r^{11}+r^4+r^{15})+\\
-%&&(r^{8}+r^{14}+r^7+r^1)\,\;\,+\;\,(r^{13}+r^{2}+r^{12}+r^6)\\
-%&=&-1\\
-%%\end{eqnarray*}
-%%
-%%\begin{eqnarray*}
-%b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\;\;\times\;(r^{10} + r^{11} + r^{7} +r^{6})\\
-%&=&(r^{13}+r^{14}+r^{10}+r^9)\;+\;(r^{15}+r^{16}+r^{12}+r^{11})+\\
-%&&(r^{7}+r^{8}+r^4+r^3)\quad\;\, +\;(r^{5}+r^{6}+r^{2}+r^1)\\
-%&=&-1\,.
-%\end{eqnarray*}
-%To summarize these computations:
-%\begin{eqnarray*}
-%b_0+b_2&=&a_0\\
-%b_0b_2&=&-1\\
-%b_1+b_3&=&a_1\\
-%b_1b_3&=&-1\,,
-%\end{eqnarray*}
-Therefore, $b_0,b_2$ are the solutions of $y^2-a_0y-1= 0$, and $b_1,b_3$ are the solutions of $y^2-a_1y-1 =0$. Using the values previously computed for $a_0,a_1$ we can compute the roots $b_0,b_1$. We will spare the readers the messy algebra and just give the results:
+Check that $b_0+b_2=a_0, b_1+b_3=a_1$ and compute the corresponding products which are $b_0b_2=b_1b_3=-1$. Therefore, $b_0,b_2$ are the solutions of $y^2-a_0y-1= 0$, and $b_1,b_3$ are the solutions of $y^2-a_1y-1 =0$. Using the values previously computed for $a_0,a_1$ we can compute the roots $b_0,b_1$. The results are:
 \[
 b_0, b_1 =\frac{(-1\pm\sqrt{17}) + \sqrt{34\mp2\sqrt{17}}}{4}\,.
 \]
 (For $b_0$ take plus and then minus and for $b_1$ take minus and then plus.)
 
-Finally, let $c_0,c_4$ be the sums of every eighth root starting with $r^1,r^{13}$:
+Finally, let $c_0,c_4$ be the sums of every eighth root starting with $r^1,r^{13}$, respectively:
 \begin{eqnarray*}
 c_0&=&r^1+r^{16}\\
 c_4&=&r^{13}+r^4\\
 c_0+c_4&=&=b_0\\
-c_0c_4&=&b_1\,,
-%c_0+c_4&=&r^1+r^{16}+r^{13}+r^4=b_0\\
-%c_0c_4&=&(r^1+r^{16})\cdot(r^{13}+r^4)\\
-%&=&r^{14}+r^5+r^{12}+r^3=b_1\,,
+c_0c_4&=&b_1\,.
 \end{eqnarray*}
-so $c_0,c_4$ are the roots of $y^2-b_0y+b_1=0$.
-
-For $\theta=(360^\circ/17)$, $\cos\theta= c_0/2=(r^1+r^{16})/2$:
-\begin{center}
-\begin{tikzpicture}[scale=1.1]
-\coordinate (O) at (0,0) node[left] {$O$}
-  node[above right,xshift=30pt] {$\theta$}
-  node[below right,xshift=30pt] {$\theta$};
-\coordinate (A) at (4,0);
-\node[right] at (A) {$r^0=1$};
-\coordinate (C) at (21.12:4cm);
-\coordinate (D) at (-21.12:4cm);
-\draw (D) arc(-21.12:21.12:4);
-\draw (D) -- node[below] {$1$} (O) -- node[above] {$1$} (C);
-\node[right] at (C) {$r^1$};
-\node[right] at (D) {$r^{16}$};
-\draw (C) -- (C |- A) coordinate (B);
-\draw (D) -- (D |- A);
-\draw[rotate=90] (B) rectangle +(5pt,5pt);
-\draw (D) -- (A) -- (C);
-\draw (O) --  node[fill=white] {$\cos \theta$} (B);
-\end{tikzpicture}
-\end{center}
-so it suffices to compute the root $c_0$. The result is:
+$c_0,c_4$ are the roots of $y^2-b_0y+b_1=0$:
+\[
+c_0,c_4=\frac{b_0\pm\sqrt{(-b_0)^2-4b_1}}{2}\,,
+\]
+which after a lot of messy algebra reduces to:
 \begin{eqnarray*}
-\cos\left(\disfrac{360^\circ}{17}\right) &=& 
-\disfrac{c_0}{2}\\
-&=&-\disfrac{1}{16}+\disfrac{1}{16}\sqrt{17} + 
-     \disfrac{1}{16}\sqrt{34-2\sqrt{17}}\; +\\
- &\;\;& \quad\disfrac{1}{16}\sqrt{
+c_0&=&-\disfrac{1}{8}+\disfrac{1}{8}\sqrt{17} + 
+     \disfrac{1}{8}\sqrt{34-2\sqrt{17}}\; +\\
+ &\;\;& \quad\disfrac{1}{8}\sqrt{
      68+12\sqrt{17} + 
      2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}}
    -16
@@ -338,20 +384,43 @@ so it suffices to compute the root $c_0$. The result is:
    }\,.
 \end{eqnarray*}
 
+What do these solutions of quadratic equations whose coefficients are derived from the roots of $x^{17}-1$ have to do with the heptadecagon?
 
-The cosine of the central angle of a heptadecagon is constructible since it is the value of an expression composed of integers and the operations $\{+,-,\times,/,\surd\}$!
+\textbf{Connecting the quadratic expression to the heptadecagon}
 
-%With complex numbers it is easy to see the relation between the roots and the cosine of the central angle:
-%\begin{eqnarray*}
-%r_1+r_{16}&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{2\cdot 16\pi}{17}\right)+i\sin\left(\frac{2\cdot 16\pi}{17}\right)\\
-%&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{-2\pi}{17}\right)+i\sin\left(\frac{-2\pi}{17}\right)\\
-%&=&2\cos\left(\frac{2\pi}{17}\right)\,.
-%\end{eqnarray*}
-%
+Actually, we know an expression for a root of $x^{17}-1$, although the expression does not show that the value is constructible:
+\[
+r=\cos \frac{2 \pi}{17}+i \sin \frac{2\pi}{17}\,.
+\]
+This follows from de Moivre's formula:
+\[
+r^{17}=\left(\cos \frac{2 \pi}{17}+i \sin \frac{2\pi}{17}\right)^{17}=
+\cos 2 \pi+i \sin 2\pi=1\,.
+\]
+We found a constructible expression for $r^1+r^{16}$ so let's see where this leads us:
+\[
+r^1+r^{16} =\left(\cos \frac{2 \pi}{17}+\sin \frac{2\pi}{17}\right)+
+\left(\cos \frac {16 \cdot 2 \pi}{17}+\sin \frac{16 \cdot 2\pi}{17}\right)=
+2\cos\frac{2 \pi}{17}\,,
+\]
+since:
+\[
+\cos\frac{16\cdot 2\pi}{17}=
+\cos\left(\frac{34\pi}{17}-\frac{2\pi}{17}\right)=
+\cos 2\pi \cos \frac{2\pi}{17} - \sin 2\pi\sin \frac{2\pi}{17}=
+\cos\frac{ 2\pi}{17}\,,
+\]
+and similarly 
+$\sin (16\cdot 2\pi/17)=-\sin (2\pi/17)$.
+It follows that:
+\[
+\frac{c_0}{2}=\frac{r^1+r^{16}}{2} = \cos\frac{2 \pi}{17}\,.
+\]
+Therefore, the cosine of the central angle of a heptadecagon is the result of evaluating an expression that uses only the integer $1$ and the operations $\{+,-,\times,/,\surd\}$, so a regular heptadecagon is constructible using a straightedge and compass!
 
 The formula that usually appears in the literature is:
 \begin{eqnarray*}
-\cos\left(\frac{360^\circ}{17}\right)
+\cos\frac{2\pi}{17}
 &=&-\frac{1}{16}+\frac{1}{16}\sqrt{17} + 
      \frac{1}{16}\sqrt{34-2\sqrt{17}}\\
 &&+\,\frac{1}{8}\sqrt{
@@ -365,19 +434,28 @@ We leave it to the reader to derive this formula from the one we derived above.
 
 \textbf{Gauss-Wantzel Theorem}
 
-The construction of the regular heptadecagon led to the Gauss-Wantzel theorem, which states that a regular polygon with $n$ sides is constructible if and only if $n$ is the product of a power of $2$ and zero or more \emph{distinct} Fermat numbers $2^{2^k}+1$ which are prime. The known Fermat primes are:
+\textbf{Theorem:} A regular polygon with $n$ sides is constructible if and only if $n$ is the product of a power of $2$ and zero or more \emph{distinct} Fermat numbers $2^{2^k}+1$ which are prime.
+
+Gauss proved that the condition for constructibility is sufficient and Pierre Laurent Wantzel proved that the condition is necessary.
+
+The known Fermat primes are:
 \[
-F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,.
+F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,,
 \]
-A regular polygon with $257$ sides was constructed by Magnus Georg Paucker in $1822$ and by Friedrich Julius Richelot $1832$. In $1894$ Johann Gustav Hermes claimed to have constructed a regular polygon  with $65537$ sides.
+and it has been proven that $F_5,\ldots,F_{32}$ are not prime.
+
+The equilateral triangle is constructible by $F_0=3$, the regular polygon by $F_1=5$, the regular heptadecagon by $F_2=17$. The Greeks were also able to construct the regular pentadecagon 
+which is constructible by $F_0F_1=15$. By the theorem the regular polygons with $3\cdot 17=51$, $5\cdot 17=85$ and $3\cdot 5\cdot 17 =255$ sides are constructible.
+
+A regular polygon with $F_3=257$ sides was constructed by Magnus Georg Paucker in $1822$ and by Friedrich Julius Richelot $1832$. In $1894$ Johann Gustav Hermes claimed to have constructed a regular polygon  with $F_4=65537$ sides.
 
 \textbf{Conclusion}
 
-Until the eighteenth or nineteenth century, mathematical theorems were proved geometrically. Even Newton who invented the calculus used it as a means of discovery and he insisted that a proof must be geometric. This is not surprising since calculus was not placed on a firm theoretical foundation until the late nineteenth century.
+Until the late eighteenth century mathematical theorems were proved geometrically. Even Newton who invented the calculus used it as a means of discovery always proved theorems using geometry. Gauss proved the constructibility of the heptadecagon without giving a geometric construction. In fact, the first constructions were not published until almost a century later (a modern construction is given in \cite{callagy}). His algebraic solution led to the growing ascendancy of algebra during the nineteenth century and to the birth of fields of modern mathematics like algebraic geometry and algebraic topology.
 
-Gauss proved the constructibility of the heptadecagon without giving a geometric construction! In fact, the first constructions were not published until almost a century later (a modern construction is given in \cite{callagy}). His algebraic solution led to the growing ascendancy of algebra during the nineteenth century.
+\textbf{Acknowledgment}
 
-%, as indicated by the proliferation of fields of mathematics like algebraic geometry and algebraic topology.
+I would like to thank Samuel Bengmark for his comments that helped significantly improve the vignette.
 
 \nocite{*}
 \bibliographystyle{plain}

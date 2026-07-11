@@ -280,7 +280,7 @@ TikZ features: name path, name intersections, circle through,
   %   Draw a circle at R through H and find its intersection
   %   with RK.
 
-  \node [draw, name path = RHcircle] at (R)
+  \node [name path = RHcircle] at (R)
     [circle through = (H)] {};
   \path [name intersections = {% % The comment is necessary!
      of = RK and RHcircle,
@@ -306,7 +306,7 @@ TikZ features: name path, name intersections, circle through,
     by = D
     }];
   \fill (D) circle (1pt);
-  \draw (C) -- (D) node[above left] {$D$};
+  \draw (C) -- (D) node[above] {$D$};
   
   % Computation:
   %   Since CD is parallel to LK, by similar triangles,
