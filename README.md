@@ -2,14 +2,7 @@
 Learning Materials for Secondary School Mathematics
 ===================================================
 
-This repository contains learning materials for secondary school mathematics, as well as enrichment and more advanced tutorials. Much of the material that used to be here was incorporated into the book _Mathematical Surprises_. The PDF can be downloaded from:
-https://link.springer.com/book/10.1007/978-3-031-13566-8.
-The LaTeX source from the `surprises` repository.
-
-
-bagrut
-------
-**The bagrut material has been moved to its own repository**
+This repository contains learning materials for secondary school mathematics, as well as enrichment and more advanced tutorials.
 
 divsha-amira
 ------------
@@ -18,13 +11,12 @@ Scan of **Geometry** by Divsha Amira (in Hebrew).
 geometry
 --------
 **Geometry without words**
-An A2 sized poster with 15 theorems of secondary-school geometry displayed visually in color, but without words. It should be easier for students to see a color diagram than to understand textual theorems like "The intersection of the medians of a triangle divides the medians in the ration 2:1".
+Color visualizations of theorems of Euclidean geometry.
 
 induction
 ---------
 **The many guises of induction**  
 Induction is often presented as a mechanical procedure for proving properties of sequences, but it widely used in other areas of mathematics (geometry, trigonometry, logic) and in computer science (data structures, automata, formal languages). This document tries to show that induction is a uniform concept although it appears in many guises. (Some of the examples and exercises require a background in computer science and discrete mathematics.)
-
 
 minesweeper
 -----------
